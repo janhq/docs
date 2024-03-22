@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[4121],{88070:s=>{s.exports=JSON.parse('[{"label":"use-cases","permalink":"/tags/use-cases","count":3},{"label":"audiences","permalink":"/tags/audiences","count":4},{"label":"industries","permalink":"/tags/industries","count":4}]')}}]);
