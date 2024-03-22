@@ -18,17 +18,19 @@ export default function Download() {
       >
         <main>
           {/* Hero */}
-          <div className="text-center px-4 py-20">
-            <h1 className="text-6xl lg:text-7xl !font-normal leading-tight lg:leading-tight mt-2 font-serif">
-              Download Jan for your desktop
-            </h1>
-            <p className="text-2xl -mt-1 leading-relaxed text-black/60 dark:text-white/60">
-              Turn your computer into an AI machine
-            </p>
-            <div className="my-8">
-              <DownloadApp />
-            </div>
+          <div className="container">
+            <div className="text-center px-4 py-20">
+              <h1 className="text-6xl lg:text-7xl !font-normal leading-tight lg:leading-tight mt-2 font-serif">
+                Download Jan for your desktop
+              </h1>
+              <p className="text-2xl -mt-1 leading-relaxed text-black/60 dark:text-white/60">
+                Turn your computer into an AI machine
+              </p>
+              <div className="my-8">
+                <DownloadApp />
+              </div>
 
+cahyosubroto-patch-1
             <div className="mb-14">
               <a
                 href="https://jan.ai/guides/quickstart/"
@@ -44,6 +46,7 @@ export default function Download() {
               >
                 Changelog
               </a>
+              </div>
             </div>
           </div>
         </main>
