@@ -165,7 +165,7 @@ const sidebars = {
       className: "head_Menu",
       items: [
         "guides/get-started/overview",
-        "guides/get-started/quickstart",
+        "guides/get-started/quickstart"
 
         // {
         //   type: "category",
