@@ -5,7 +5,6 @@ import Heading from '@theme/Heading';
 import { DocSearch } from '@docsearch/react';
 import HomepagePrimaryFeatures from '../components/HomepagePrimaryFeatures';
 import HomepageSecondaryFeatures from '../components/HomepageSecondaryFeatures';
-// import HomepageTerinaryFeatures from '../components/HomepageTerinaryFeatures';
 
 import styles from './docs.module.css'
 
@@ -49,7 +48,6 @@ export default function Home() {
         <main className="bg-whitesmoke dark:bg-gray-900">
           <HomepagePrimaryFeatures />
           <HomepageSecondaryFeatures />
-          // <HomepageTerinaryFeatures />
         </main>
       </div>
     </Layout>
