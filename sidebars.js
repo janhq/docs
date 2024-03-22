@@ -167,34 +167,33 @@ const sidebars = {
       items: [
         "guides/get-started/overview",
         "guides/get-started/quickstart",
-
-        {
-          type: "category",
-          label: "Hardware Setup",
-          className: "head_SubMenu",
-          link: {
-            type: 'doc',
-            id: "guides/get-started/hardware-setup",
-          },
-          items: [
-            "guides/get-started/settingup-gpu",
-          ]
-        },
-        {
-          type: "category",
-          label: "Installation",
-          className: "head_SubMenu",
-          link: {
-            type: 'doc',
-            id: "guides/installation/README",
-          },
-          items: [
-            "guides/installation/docker",
-            "guides/installation/linux",
-            "guides/installation/mac",
-            "guides/installation/windows"
-          ]
-        },
+        // {
+        //   type: "category",
+        //   label: "Hardware Setup",
+        //   className: "head_SubMenu",
+        //   link: {
+        //     type: 'doc',
+        //     id: "guides/get-started/hardware-setup",
+        //   },
+        //   items: [
+        //     "guides/get-started/settingup-gpu",
+        //   ]
+        // },
+        // {
+        //   type: "category",
+        //   label: "Installation",
+        //   className: "head_SubMenu",
+        //   link: {
+        //     type: 'doc',
+        //     id: "guides/installation/README",
+        //   },
+        //   items: [
+        //     "guides/installation/docker",
+        //     "guides/installation/linux",
+        //     "guides/installation/mac",
+        //     "guides/installation/windows"
+        //   ]
+        // },
       ]
     },
     {
@@ -203,10 +202,10 @@ const sidebars = {
       collapsible: false,
       className: "head_Menu",
       items: [
-        "guides/user-guides/overview-guides",
-        "guides/user-guides/jan-data-folder",
-        "guides/user-guides/manage-models",
-        "guides/user-guides/manage-assistants",
+        // "guides/user-guides/overview-guides",
+        // "guides/user-guides/jan-data-folder",
+        // "guides/user-guides/manage-models",
+        // "guides/user-guides/manage-assistants",
         "guides/user-guides/manage-threads",
         "guides/user-guides/local-server",
         "guides/user-guides/advanced-settings"
@@ -218,7 +217,7 @@ const sidebars = {
       collapsible: false,
       className: "head_Menu",
       items: [
-        "guides/inference/overview-inference",
+        // "guides/inference/overview-inference",
         {
           type: "category",
           label: "Local Engines",
@@ -243,7 +242,7 @@ const sidebars = {
             id: "guides/remote-providers/README",
           },
           items: [
-            "guides/remote-providers/claude",
+            // "guides/remote-providers/claude",
             "guides/remote-providers/groq",
             "guides/remote-providers/mistral",
             "guides/remote-providers/openai",
@@ -277,12 +276,12 @@ const sidebars = {
             id: "guides/integrations/README",
           },
           items: [
-            "guides/integrations/crewai",
+            // "guides/integrations/crewai",
             "guides/integrations/discord",
             "guides/integrations/interpreter",
             "guides/integrations/raycast",
             "guides/integrations/router",
-            "guides/integrations/unsloth",
+            // "guides/integrations/unsloth",
             "guides/integrations/vscode"
           ]
         },
