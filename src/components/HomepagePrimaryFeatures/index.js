@@ -9,7 +9,7 @@ export default function HomepagePrimaryFeatures() {
                             <h3 className="text-1xl md:text-2xl xl:text-3xl font-semibold">Install Jan across multiple platforms.</h3>
                         </div>
                         <div>
-                            <a href={"/guides/install"} className="btn bg-black hover:bg-gray-600 dark:bg-blue-500 text-normal md:text-xl text-white font-normal py-2 px-4 rounded-xl">Get Started</a>
+                            <a href={"/guides/quickstart"} className="btn bg-black hover:bg-gray-600 dark:bg-blue-500 text-normal md:text-xl text-white font-normal py-2 px-4 rounded-xl">Get Started</a>
                         </div>
                         <div className="absolute right-4 bottom-4">
                             <img alt={"Card Image"} src={"/img/homepage-new/rocket.png"} className="h-12 lg:h-24" />
