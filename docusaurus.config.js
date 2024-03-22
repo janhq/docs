@@ -458,7 +458,7 @@ const config = {
         route: '/api-reference',
         configuration: {
           spec: {
-            url: 'https://raw.githubusercontent.com/janhq/jan/dev/docs/openapi/jan.json',
+            url: 'https://raw.githubusercontent.com/janhq/docs/main/openapi/jan.json',
           },
         },
       },
