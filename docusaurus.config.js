@@ -103,7 +103,7 @@ const config = {
           },
           {
             from: '/install/',
-            to: '/guides/install/',
+            to: '/guides/quickstart/',
           },
           {
             from: '/guides/using-models/',
@@ -119,7 +119,7 @@ const config = {
           },
           {
             from: '/install/mac/',
-            to: '/guides/install/mac/',
+            to: '/guides/quickstart/',
           },
           {
             from: '/guides/using-models/integrate-with-remote-server/',
@@ -151,7 +151,7 @@ const config = {
           },
           {
             from: '/install/windows/',
-            to: '/guides/install/windows/',
+            to: '/guides/quickstart/',
           },
           {
             from: '/api/overview/',
@@ -159,11 +159,11 @@ const config = {
           },
           {
             from: '/install/linux/',
-            to: '/guides/install/linux/',
+            to: '/guides/quickstart/',
           },
           {
             from: '/install/from-source/',
-            to: '/guides/install/#install-server-side',
+            to: '/guides/quickstart',
           },
           {
             from: '/troubleshooting/gpu-not-used/',
@@ -195,7 +195,7 @@ const config = {
           },
           {
             from: '/guides/install/hardware/',
-            to: '/guides/hardware/',
+            to: '/guides/quickstart/',
           },
           {
             from: '/docs/engineering/files/',
@@ -219,7 +219,7 @@ const config = {
           },
           {
             from: '/install/docker/',
-            to: '/guides/install/server/',
+            to: '/guides/quickstart',
           },
           {
             from: '/guides/using-models/import-manually/',
@@ -235,7 +235,7 @@ const config = {
           },
           {
             from: '/guides/installation/hardware/',
-            to: '/guides/hardware/',
+            to: '/guides/quickstart',
           },
           {
             from: '/guides/chatting/start-thread/',
@@ -263,7 +263,7 @@ const config = {
           },
           {
             from: '/getting-started/install/linux/',
-            to: '/guides/install/linux/',
+            to: '/guides/quickstart/',
           },
           {
             from: '/features/extensions',
@@ -291,7 +291,7 @@ const config = {
           },
           {
             from: '/guides/windows/',
-            to: '/guides/install/windows/',
+            to: '/guides/quickstart/',
           },
           {
             from: '/specs/',
@@ -311,7 +311,7 @@ const config = {
           },
           {
             from: '/install/overview/',
-            to: '/guides/install/',
+            to: '/guides/quickstart/',
           },
           {
             from: '/docs/get-started/extension-anatomy/',
@@ -323,7 +323,7 @@ const config = {
           },
           {
             from: '/guides/mac/',
-            to: '/guides/install/mac/',
+            to: '/guides/quickstart/',
           },
           {
             from: '/specs/fine-tuning/',
@@ -355,7 +355,7 @@ const config = {
           },
           {
             from: '/getting-started/install/mac',
-            to: '/guides/install/mac/',
+            to: '/guides/quickstart/',
           },
           {
             from: '/guides/fine-tuning/what-models-can-be-fine-tuned',
@@ -363,7 +363,7 @@ const config = {
           },
           {
             from: '/guides/linux/',
-            to: '/guides/install/linux/',
+            to: '/guides/quickstart/',
           },
           {
             from: '/docs/specs/threads',
@@ -383,7 +383,7 @@ const config = {
           },
           {
             from: '/getting-started/install/windows',
-            to: '/guides/install/windows/',
+            to: '/guides/quickstart/',
           },
           {
             from: '/docs/api-reference/messages',
