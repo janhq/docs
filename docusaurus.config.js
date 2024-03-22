@@ -117,10 +117,10 @@ const config = {
             from: '/integrations/tensorrt',
             to: '/guides/providers/tensorrt-llm',
           },
-          {
-            from: '/install/mac/',
-            to: '/guides/install/mac/',
-          },
+          // {
+          //   from: '/install/mac/',
+          //   to: '/guides/install/mac/',
+          // },
           {
             from: '/guides/using-models/integrate-with-remote-server/',
             to: '/guides/engines/remote-server/',
@@ -149,22 +149,22 @@ const config = {
             from: '/docs/product/chat/',
             to: '/developer/framework/product/chat/',
           },
-          {
-            from: '/install/windows/',
-            to: '/guides/install/windows/',
-          },
+          // {
+          //   from: '/install/windows/',
+          //   to: '/guides/install/windows/',
+          // },
           {
             from: '/api/overview/',
             to: '/api-reference/',
           },
-          {
-            from: '/install/linux/',
-            to: '/guides/install/linux/',
-          },
-          {
-            from: '/install/from-source/',
-            to: '/guides/install/#install-server-side',
-          },
+          // {
+          //   from: '/install/linux/',
+          //   to: '/guides/install/linux/',
+          // },
+          // {
+          //   from: '/install/from-source/',
+          //   to: '/guides/install/#install-server-side',
+          // },
           {
             from: '/troubleshooting/gpu-not-used/',
             to: '/troubleshooting/#troubleshooting-nvidia-gpu',
@@ -217,10 +217,10 @@ const config = {
             from: '/guides/using-models/import-models-using-absolute-filepath/',
             to: '/guides/models/',
           },
-          {
-            from: '/install/docker/',
-            to: '/guides/install/server/',
-          },
+          // {
+          //   from: '/install/docker/',
+          //   to: '/guides/install/server/',
+          // },
           {
             from: '/guides/using-models/import-manually/',
             to: '/guides/models/',
@@ -261,10 +261,10 @@ const config = {
             from: '/developer/build-extension/package-your-assistant/',
             to: '/developer/extension/package-your-extension/',
           },
-          {
-            from: '/getting-started/install/linux/',
-            to: '/guides/install/linux/',
-          },
+          // {
+          //   from: '/getting-started/install/linux/',
+          //   to: '/guides/install/linux/',
+          // },
           {
             from: '/features/extensions',
             to: '/extensions/',
@@ -289,10 +289,10 @@ const config = {
             from: '/guides/how-jan-works/',
             to: '/guides/',
           },
-          {
-            from: '/guides/windows/',
-            to: '/guides/install/windows/',
-          },
+          // {
+          //   from: '/guides/windows/',
+          //   to: '/guides/install/windows/',
+          // },
           {
             from: '/specs/',
             to: '/developer/framework/',
@@ -309,10 +309,10 @@ const config = {
             from: '/guides/using-models/package-models/',
             to: '/guides/models/',
           },
-          {
-            from: '/install/overview/',
-            to: '/guides/install/',
-          },
+          // {
+          //   from: '/install/overview/',
+          //   to: '/guides/install/',
+          // },
           {
             from: '/docs/get-started/extension-anatomy/',
             to: '/developer/extension/extension-anatomy/',
@@ -321,10 +321,10 @@ const config = {
             from: '/docs/get-started/',
             to: '/guides/',
           },
-          {
-            from: '/guides/mac/',
-            to: '/guides/install/mac/',
-          },
+          // {
+          //   from: '/guides/mac/',
+          //   to: '/guides/install/mac/',
+          // },
           {
             from: '/specs/fine-tuning/',
             to: '/developer/framework/engineering/fine-tuning/',
@@ -353,18 +353,18 @@ const config = {
             from: '/developers/plugins/azure-openai',
             to: '/guides/engines/openai/',
           },
-          {
-            from: '/getting-started/install/mac',
-            to: '/guides/install/mac/',
-          },
+          // {
+          //   from: '/getting-started/install/mac',
+          //   to: '/guides/install/mac/',
+          // },
           {
             from: '/guides/fine-tuning/what-models-can-be-fine-tuned',
             to: '/developer/framework/engineering/fine-tuning/',
           },
-          {
-            from: '/guides/linux/',
-            to: '/guides/install/linux/',
-          },
+          // {
+          //   from: '/guides/linux/',
+          //   to: '/guides/install/linux/',
+          // },
           {
             from: '/docs/specs/threads',
             to: '/developer/framework/engineering/threads/',
@@ -381,10 +381,10 @@ const config = {
             from: '/getting-started/troubleshooting',
             to: '/troubleshooting/',
           },
-          {
-            from: '/getting-started/install/windows',
-            to: '/guides/install/windows/',
-          },
+          // {
+          //   from: '/getting-started/install/windows',
+          //   to: '/guides/install/windows/',
+          // },
           {
             from: '/docs/api-reference/messages',
             to: '/api-reference#tag/messages/get/threads/{thread_id}/messages',
