@@ -251,6 +251,7 @@ const Testimonial = () => {
                 />
               </g>
               <defs>
+
                 <clipPath id="clip0_1810_7276">
                   <rect width="24" height="24" fill="white" />
                 </clipPath>
@@ -272,6 +273,7 @@ const Testimonial = () => {
                   if (item.type === 'youtube')
                     return (
                       <div key={i}>
+
                         <iframe
                           width="100%"
                           height="260"
@@ -281,6 +283,7 @@ const Testimonial = () => {
                           allowFullScreen
                           className="rounded-xl"
                           loading="lazy"
+                          {...(item.type === 'youtube' ? { noindex: 'true' } : {})}
                         />
                       </div>
                     )
