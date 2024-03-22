@@ -49,7 +49,7 @@ export default function Home() {
         <main className="bg-whitesmoke dark:bg-gray-900">
           <HomepagePrimaryFeatures />
           <HomepageSecondaryFeatures />
-          <HomepageTerinaryFeatures />
+          // <HomepageTerinaryFeatures />
         </main>
       </div>
     </Layout>
