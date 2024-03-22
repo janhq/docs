@@ -5,7 +5,7 @@ import Heading from '@theme/Heading';
 import { DocSearch } from '@docsearch/react';
 import HomepagePrimaryFeatures from '../components/HomepagePrimaryFeatures';
 import HomepageSecondaryFeatures from '../components/HomepageSecondaryFeatures';
-import HomepageTerinaryFeatures from '../components/HomepageTerinaryFeatures';
+// import HomepageTerinaryFeatures from '../components/HomepageTerinaryFeatures';
 
 import styles from './docs.module.css'
 
