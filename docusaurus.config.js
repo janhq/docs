@@ -101,10 +101,10 @@ const config = {
             from: '/troubleshooting/undefined-issue/',
             to: '/troubleshooting/',
           },
-          {
-            from: '/install/',
-            to: '/guides/install/',
-          },
+          // {
+          //   from: '/install/',
+          //   to: '/guides/install/',
+          // },
           {
             from: '/guides/using-models/',
             to: '/guides/models/',
