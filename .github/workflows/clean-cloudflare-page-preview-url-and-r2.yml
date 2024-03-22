@@ -8,7 +8,7 @@ jobs:
   clean-cloudflare-pages-preview-urls:
     strategy:
       matrix:
-        project: ["jan", "nitro", "docs"]
+        project: ["nitro", "docs"]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v4
