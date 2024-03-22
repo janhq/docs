@@ -257,10 +257,10 @@ const config = {
             from: '/docs/modules/models/',
             to: '/guides/models/',
           },
-          {
-            from: '/developer/build-extension/package-your-assistant/',
-            to: '/developer/extension/package-your-extension/',
-          },
+          // {
+          //   from: '/developer/build-extension/package-your-assistant/',
+          //   to: '/developer/extension/package-your-extension/',
+          // },
           // {
           //   from: '/getting-started/install/linux/',
           //   to: '/guides/install/linux/',
@@ -297,10 +297,10 @@ const config = {
             from: '/specs/',
             to: '/developer/framework/',
           },
-          {
-            from: '/docs/get-started/build-extension/',
-            to: '/developer/extension/',
-          },
+          // {
+          //   from: '/docs/get-started/build-extension/',
+          //   to: '/developer/extension/',
+          // },
           {
             from: '/specs/files/',
             to: '/developer/framework/engineering/files/',
@@ -313,10 +313,10 @@ const config = {
           //   from: '/install/overview/',
           //   to: '/guides/install/',
           // },
-          {
-            from: '/docs/get-started/extension-anatomy/',
-            to: '/developer/extension/extension-anatomy/',
-          },
+          // {
+          //   from: '/docs/get-started/extension-anatomy/',
+          //   to: '/developer/extension/extension-anatomy/',
+          // },
           {
             from: '/docs/get-started/',
             to: '/guides/',
@@ -441,10 +441,10 @@ const config = {
             from: '/chat',
             to: '/guides/threads/',
           },
-          {
-            from: '/docs/modules/assistants',
-            to: '/developer/assistant/',
-          },
+          // {
+          //   from: '/docs/modules/assistants',
+          //   to: '/developer/assistant/',
+          // },
         ],
       },
     ],
