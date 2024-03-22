@@ -31,7 +31,7 @@ export default function Download() {
 
             <div className="mb-14">
               <a
-                href="https://jan.ai/guides/install/"
+                href="https://jan.ai/guides/quickstart/"
                 target="_blank"
                 className="text-blue-500 hover:text-blue-500 pr-4 border-r border-black/40 dark:border-white/40 mr-4 inline-block"
               >
