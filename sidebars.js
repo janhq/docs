@@ -166,34 +166,6 @@ const sidebars = {
       items: [
         "guides/get-started/overview",
         "guides/get-started/quickstart"
-
-        // {
-        //   type: "category",
-        //   label: "Hardware Setup",
-        //   className: "head_SubMenu",
-        //   link: {
-        //     type: 'doc',
-        //     id: "guides/get-started/hardware-setup",
-        //   },
-        //   items: [
-        //     "guides/get-started/settingup-gpu",
-        //   ]
-        // },
-        // {
-        //   type: "category",
-        //   label: "Installation",
-        //   className: "head_SubMenu",
-        //   link: {
-        //     type: 'doc',
-        //     id: "guides/installation/README",
-        //   },
-        //   items: [
-        //     "guides/installation/docker",
-        //     "guides/installation/linux",
-        //     "guides/installation/mac",
-        //     "guides/installation/windows"
-        //   ]
-        // },
       ]
     },
     {
@@ -202,10 +174,6 @@ const sidebars = {
       collapsible: false,
       className: "head_Menu",
       items: [
-        // "guides/user-guides/overview-guides",
-        // "guides/user-guides/jan-data-folder",
-        // "guides/user-guides/manage-models",
-        // "guides/user-guides/manage-assistants",
         "guides/user-guides/manage-threads",
         "guides/user-guides/local-server",
         "guides/user-guides/advanced-settings"
@@ -217,7 +185,6 @@ const sidebars = {
       collapsible: false,
       className: "head_Menu",
       items: [
-        // "guides/inference/overview-inference",
         {
           type: "category",
           label: "Local Engines",
@@ -242,7 +209,6 @@ const sidebars = {
             id: "guides/remote-providers/README",
           },
           items: [
-            // "guides/remote-providers/claude",
             "guides/remote-providers/groq",
             "guides/remote-providers/mistral",
             "guides/remote-providers/openai",
@@ -266,7 +232,6 @@ const sidebars = {
       collapsible: false,
       className: "head_Menu",
       items: [
-        // "guides/integrations/overview-integration",
         {
           type: "category",
           label: "Integrations",
@@ -276,12 +241,10 @@ const sidebars = {
             id: "guides/integrations/README",
           },
           items: [
-            // "guides/integrations/crewai",
             "guides/integrations/discord",
             "guides/integrations/interpreter",
             "guides/integrations/raycast",
             "guides/integrations/router",
-            // "guides/integrations/unsloth",
             "guides/integrations/vscode"
           ]
         },
@@ -296,125 +259,6 @@ const sidebars = {
         "guides/troubleshooting",
       ]
     },
-    // {
-    //   type: "category",
-    //   label: "Advanced Features",
-    //   collapsible: false,
-    //   className: "head_Menu",
-    //   items: [
-    //     {
-    //       type: "category",
-    //       label: "Advanced Settings",
-    //       className: "head_SubMenu",
-    //       link: {
-    //         type: 'doc',
-    //         id: "guides/advanced-settings/advanced-settings",
-    //       },
-    //       items: [
-    //         "guides/advanced-settings/http-proxy",
-    //       ]
-    //     },
-    //     {
-    //       type: "category",
-    //       label: "Advanced Model Setup",
-    //       className: "head_SubMenu",
-    //       link: {
-    //         type: 'doc',
-    //         id: "guides/models/README",
-    //       },
-    //       items: [
-    //         "guides/models/customize-engine",
-    //         "guides/models/import-models",
-    //         "guides/models/integrate-remote",
-    //       ]
-    //     },
-    //     {
-    //       type: "category",
-    //       label: "Inference Providers",
-    //       className: "head_SubMenu",
-    //       link: {
-    //         type: 'doc',
-    //         id: "guides/providers/README",
-    //       },
-    //       items: [
-    //         "guides/providers/llama-cpp",
-    //         "guides/providers/tensorrt-llm",
-    //       ]
-    //     },
-    //     {
-    //       type: "category",
-    //       label: "Extensions",
-    //       className: "head_SubMenu",
-    //       link: {
-    //         type: 'doc',
-    //         id: "guides/extensions/README",
-    //       },
-    //       items: [
-    //         "guides/extensions/import-ext",
-    //         "guides/extensions/setup-ext",
-    //       ]
-    //     },
-    //     {
-    //       type: "category",
-    //       label: "Integrations",
-    //       className: "head_SubMenu",
-    //       link: {
-    //         type: 'doc',
-    //         id: "guides/integration/README",
-    //       },
-    //       items: [
-    //         "guides/integration/azure",
-    //         "guides/integration/discord",
-    //         "guides/integration/groq",
-    //         "guides/integration/lmstudio",
-    //         "guides/integration/mistral",
-    //         "guides/integration/ollama",
-    //         "guides/integration/openinterpreter",
-    //         "guides/integration/openrouter",
-    //         "guides/integration/raycast",
-    //         "guides/integration/vscode",
-    //       ]
-    //     },
-    //   ]
-    // },
-    // {
-    //   type: "category",
-    //   label: "Troubleshooting",
-    //   collapsible: false,
-    //   className: "head_Menu",
-    //   items: [
-    //     {
-    //       type: "category",
-    //       label: "Error Codes",
-    //       className: "head_SubMenu",
-    //       link: {
-    //         type: 'doc',
-    //         id: "guides/error-codes/README",
-    //       },
-    //       items: [
-    //         "guides/error-codes/how-to-get-error-logs",
-    //         "guides/error-codes/permission-denied",
-    //         "guides/error-codes/something-amiss",
-    //         "guides/error-codes/undefined-issue",
-    //         "guides/error-codes/unexpected-token",
-    //       ]
-    //     },
-    //     {
-    //       type: "category",
-    //       label: "Common Error",
-    //       className: "head_SubMenu",
-    //       link: {
-    //         type: 'doc',
-    //         id: "guides/common-error/README",
-    //       },
-    //       items: [
-    //         "guides/common-error/broken-build",
-    //         "guides/common-error/not-using-gpu",
-    //       ]
-    //     },
-    //     "guides/faq"
-    //   ]
-    // },
   ],
   developerSidebar: [
     {
