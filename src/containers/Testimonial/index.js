@@ -259,7 +259,7 @@ const Testimonial = () => {
             </svg>
           </p>
         </div>
-        <div className="w-full mx-auto relative text-center">
+        <div className="w-full mx-auto relative text-center" noindex>
           <div data-theme={colorMode} className="mt-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 text-left">
               <div className="space-y-4 lg:space-y-8">
