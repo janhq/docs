@@ -79,7 +79,7 @@ const Testimonial = () => {
   return (
     <div className="bg-[#F0F0F0] dark:bg-[#242424] p-8 mt-10 pb-20">
       <div className="container">
-        <div className="w-full mx-auto relative py-8 text-center">
+        <div className="w-full mx-auto relative py-8 text-center" noindex>
           <h1 className="text-5xl !font-normal leading-tight lg:leading-tight mt-2 font-serif">
             People say nice things
           </h1>
@@ -251,6 +251,7 @@ const Testimonial = () => {
                 />
               </g>
               <defs>
+
                 <clipPath id="clip0_1810_7276">
                   <rect width="24" height="24" fill="white" />
                 </clipPath>
@@ -258,7 +259,7 @@ const Testimonial = () => {
             </svg>
           </p>
         </div>
-        <div className="w-full mx-auto relative text-center">
+        <div className="w-full mx-auto relative text-center" noindex>
           <div data-theme={colorMode} className="mt-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 text-left">
               <div className="space-y-4 lg:space-y-8">
@@ -272,6 +273,7 @@ const Testimonial = () => {
                   if (item.type === 'youtube')
                     return (
                       <div key={i}>
+
                         <iframe
                           width="100%"
                           height="260"
@@ -281,6 +283,7 @@ const Testimonial = () => {
                           allowFullScreen
                           className="rounded-xl"
                           loading="lazy"
+                          {...(item.type === 'youtube' ? { noindex: 'true' } : {})}
                         />
                       </div>
                     )
@@ -306,6 +309,7 @@ const Testimonial = () => {
                           allowFullScreen
                           className="rounded-xl"
                           loading="lazy"
+                          {...(item.type === 'youtube' ? { noindex: 'true' } : {})}
                         />
                       </div>
                     )
@@ -331,6 +335,7 @@ const Testimonial = () => {
                           allowFullScreen
                           className="rounded-xl"
                           loading="lazy"
+                          {...(item.type === 'youtube' ? { noindex: 'true' } : {})}
                         />
                       </div>
                     )
@@ -356,6 +361,7 @@ const Testimonial = () => {
                           allowFullScreen
                           className="rounded-xl"
                           loading="lazy"
+                          {...(item.type === 'youtube' ? { noindex: 'true' } : {})}
                         />
                       </div>
                     )

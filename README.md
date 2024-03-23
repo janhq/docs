@@ -31,7 +31,7 @@ slug: /docs
 
 ## How to Contribute
 
-Refer to the [Contributing Guide](https://github.com/janhq/jan/blob/dev/CONTRIBUTING.md) for more comprehensive information on how to contribute to the Jan project.
+Refer to the [Contributing Guide](https://github.com/janhq/jan/blob/main/CONTRIBUTING.md) for more comprehensive information on how to contribute to the Jan project.
 
 ### Pre-requisites and Installation
 
