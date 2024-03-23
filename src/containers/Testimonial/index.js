@@ -309,6 +309,7 @@ const Testimonial = () => {
                           allowFullScreen
                           className="rounded-xl"
                           loading="lazy"
+                          {...(item.type === 'youtube' ? { noindex: 'true' } : {})}
                         />
                       </div>
                     )
@@ -334,6 +335,7 @@ const Testimonial = () => {
                           allowFullScreen
                           className="rounded-xl"
                           loading="lazy"
+                          {...(item.type === 'youtube' ? { noindex: 'true' } : {})}
                         />
                       </div>
                     )
@@ -359,6 +361,7 @@ const Testimonial = () => {
                           allowFullScreen
                           className="rounded-xl"
                           loading="lazy"
+                          {...(item.type === 'youtube' ? { noindex: 'true' } : {})}
                         />
                       </div>
                     )
