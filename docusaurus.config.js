@@ -649,7 +649,7 @@ const config = {
         {
           type: 'docSidebar',
           sidebarId: 'productSidebar',
-          positionL: 'left',
+          position: 'left',
           label: 'Product',
         },
         {
