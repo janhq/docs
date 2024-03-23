@@ -1,6 +1,5 @@
 import { useColorMode } from '@docusaurus/theme-common'
 import { Tweet } from 'react-tweet'
-import { useEffect } from 'react';
 
 const firstColumn = [
   {
@@ -76,23 +75,11 @@ const fourthColumn = [
 
 const Testimonial = () => {
   const { colorMode } = useColorMode()
-  useEffect(() => {
-    // Add a noindex meta tag to the document head
-    const metaTag = document.createElement('meta');
-    metaTag.name = 'robots';
-    metaTag.content = 'noindex';
-    document.head.appendChild(metaTag);
-
-    // Clean up function to remove the meta tag when the component unmounts
-    return () => {
-      document.head.removeChild(metaTag);
-    };
-  }, []);
 
   return (
     <div className="bg-[#F0F0F0] dark:bg-[#242424] p-8 mt-10 pb-20">
       <div className="container">
-        <div className="w-full mx-auto relative py-8 text-center">
+        <div className="w-full mx-auto relative py-8 text-center" noindex>
           <h1 className="text-5xl !font-normal leading-tight lg:leading-tight mt-2 font-serif">
             People say nice things
           </h1>
