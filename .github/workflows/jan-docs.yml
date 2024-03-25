@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-      - release
   pull_request:
     branches:
       - main
-      - release
     # Review gh actions docs if you want to further define triggers, paths, etc
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
@@ -52,18 +50,6 @@ jobs:
         run: sed -i '/process.env.DEBUG = namespaces;/c\// process.env.DEBUG = namespaces;' ./node_modules/debug/src/node.js && yarn build
 
       - name: Publish to Cloudflare Pages PR Preview and Staging
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ env.CLOUDFLARE_PROJECT_NAME }}
-          directory: ./build
-          branch: main
-          # Optional: Enable this if you want to have GitHub Deployments triggered
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish to Cloudflare Pages PR Preview and Staging
         if: github.event_name == 'pull_request'
         uses: cloudflare/pages-action@v1
         with:
@@ -82,13 +68,13 @@ jobs:
               Preview URL: ${{ steps.deployCloudflarePages.outputs.url }}
 
       - name: Add Custome Domain file
-        if: github.event_name == 'push' && github.ref == 'refs/heads/release' && github.event.pull_request.head.repo.full_name != github.repository
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.event.pull_request.head.repo.full_name != github.repository
         run: echo "${{ vars.DOCUSAURUS_DOMAIN }}" > ./build/CNAME
 
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
       - name: Deploy to GitHub Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/release' && github.event.pull_request.head.repo.full_name != github.repository
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.event.pull_request.head.repo.full_name != github.repository
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
