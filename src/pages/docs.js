@@ -12,7 +12,7 @@ function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <header className="bg-white dark:bg-gray-800 py-16 h-[20%] 2xl:h-[80vh] text-center relative overflow-hidden">
+    <header className="bg-white dark:bg-gray-800 py-16 h-[20%] 2xl:h-[50vh] text-center relative overflow-hidden">
       <div className="bg-custom-img w-full h-full absolute top-0 left-0 bg-cover bg-center"></div>
       <div className="container relative z-10">
         <Heading as="h1" className="text-2xl lg:text-3xl xl:text-5xl 2xl:text-7xl font-semibold text-white dark:text-gray-200 mb-8 mt-8 2xl:mt-24 2xl:mb-16">
@@ -27,7 +27,7 @@ function HomepageHeader() {
             insight={true}
           />
         </div>
-        <p className="text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-white dark:text-gray-200 mt-8 xl:mt-12">
+        <p className="text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-white dark:text-gray-200 mt-8 xl:mt-12 2xl:mt-16">
           Open-source ChatGPT alternative that runs 100% offline on your computer.
         </p>
       </div>
