@@ -325,10 +325,10 @@ const config = {
           //   from: '/guides/mac/',
           //   to: '/guides/install/mac/',
           // },
-          {
-            from: '/specs/fine-tuning/',
-            to: '/developer/framework/engineering/fine-tuning/',
-          },
+          // {
+          //   from: '/specs/fine-tuning/',
+          //   to: '/developer/framework/engineering/fine-tuning/',
+          // },
           {
             from: '/guides/server/',
             to: '/guides/local-api/',
@@ -345,10 +345,10 @@ const config = {
             from: '/api/',
             to: '/api-reference/',
           },
-          {
-            from: '/products/desktop',
-            to: '/desktop/',
-          },
+          // {
+          //   from: '/products/desktop',
+          //   to: '/desktop/',
+          // },
           {
             from: '/developers/plugins/azure-openai',
             to: '/guides/engines/openai/',
@@ -357,10 +357,10 @@ const config = {
           //   from: '/getting-started/install/mac',
           //   to: '/guides/install/mac/',
           // },
-          {
-            from: '/guides/fine-tuning/what-models-can-be-fine-tuned',
-            to: '/developer/framework/engineering/fine-tuning/',
-          },
+          // {
+          //   from: '/guides/fine-tuning/what-models-can-be-fine-tuned',
+          //   to: '/developer/framework/engineering/fine-tuning/',
+          // },
           // {
           //   from: '/guides/linux/',
           //   to: '/guides/install/linux/',
@@ -421,10 +421,10 @@ const config = {
             from: '/docs/api-reference/models',
             to: '/api-reference#tag/models/get/models',
           },
-          {
-            from: '/docs/guides/fine-tuning',
-            to: '/developer/framework/engineering/fine-tuning/',
-          },
+          // {
+          //   from: '/docs/guides/fine-tuning',
+          //   to: '/developer/framework/engineering/fine-tuning/',
+          // },
           {
             from: '/docs/specs/files',
             to: '/developer/framework/engineering/files/',
@@ -440,6 +440,10 @@ const config = {
           {
             from: '/chat',
             to: '/guides/threads/',
+          },
+          {
+            from: '/docs/engineering/',
+            to: '/developer/engineering/',
           },
           // {
           //   from: '/docs/modules/assistants',
@@ -646,18 +650,18 @@ const config = {
             },
           ],
         },
-        {
-          type: 'docSidebar',
-          sidebarId: 'productSidebar',
-          position: 'left',
-          label: 'Product',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'ecosystemSidebar',
-          position: 'left',
-          label: 'Ecosystem',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'productSidebar',
+        //   position: 'left',
+        //   label: 'Product',
+        // },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'ecosystemSidebar',
+        //   position: 'left',
+        //   label: 'Ecosystem',
+        // },
         {
           to: 'download',
           position: 'left',
