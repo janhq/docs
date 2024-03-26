@@ -148,16 +148,16 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <Layout description="Jan is an open-source ChatGPT alternative that runs on your computer. Run LLMs locally, build, and fine-tune AI to meet your needs.">
+      <Layout description="Jan turns your computer into an AI machine by running LLMs locally on your computer. It's a privacy-focus, local-first, open-source solution.">
         <main>
           {/* Hero */}
           <div className="container">
             <div className="text-center px-4 py-16">
               <h1 className="text-6xl lg:text-[80px] !font-normal leading-tight lg:leading-tight mt-2 font-serif">
-                Customizable Intelligence
+              Rethink the Computer
               </h1>
               <p className="text-2xl -mt-1 leading-relaxed text-black/60 dark:text-white/60">
-              An open-source ChatGPT alternative that runs on your computer. Run LLMs locally, build, and fine-tune AI to meet your needs.
+              Turn your computer into an AI machine
               </p>
               <div className="mt-10">
                 {!isBrowserChrome ? (
@@ -778,13 +778,13 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="text-center">
-                    <h1>39+</h1>
+                    <h1>40+</h1>
                     <p className="font-medium text-black/60 dark:text-white/60">
                       Contributors
                     </p>
                   </div>
                   <div className="text-center">
-                    <h1>2416+</h1>
+                    <h1>2500+</h1>
                     <p className="font-medium text-black/60 dark:text-white/60">
                       Pull Requests
                     </p>

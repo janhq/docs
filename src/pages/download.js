@@ -14,7 +14,7 @@ export default function Download() {
       <Banner />
       <Layout
         title="Download"
-        description="Jan is an open-source ChatGPT alternative that runs on your computer. Run LLMs locally, build, and fine-tune AI to meet your needs."
+        description="Jan turns your computer into an AI machine by running LLMs locally on your computer. It's a privacy-focus, local-first, open-source solution."
       >
         <main>
           {/* Hero */}

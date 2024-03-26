@@ -7,7 +7,7 @@ const path = require('path')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Jan | Customizable Intelligence',
+  title: 'Jan | Rethink the Computer',
   tagline: 'Run your own AI',
   favicon: 'img/favicon.ico',
 
@@ -554,21 +554,21 @@ const config = {
     metadata: [
       {
         name: 'description',
-        content: `Jan is an open-source ChatGPT alternative that runs on your computer. Run LLMs locally, build, and fine-tune AI to meet your needs.`,
+        content: `Jan turns your computer into an AI machine by running LLMs locally on your computer. It's a privacy-focus, local-first, open-source solution.`,
       },
       {
         name: 'keywords',
         content:
-          'Jan, Customizable Intelligence, LLM, local AI, privacy focus, free and open source, private and offline, conversational AI, no-subscription fee, large language models',
+          'Jan, Rethink the Computer, LLM, local AI, privacy focus, free and open source, private and offline, conversational AI, no-subscription fee, large language models',
       },
       { name: 'robots', content: 'index, follow' },
       {
         property: 'og:title',
-        content: 'Jan | Customizable Intelligence',
+        content: 'Jan | Rethink the Computer',
       },
       {
         property: 'og:description',
-        content: `An open-source ChatGPT alternative that runs on your computer. Run LLMs locally, build, and fine-tune AI to meet your needs.`,
+        content: `Jan turns your computer into an AI machine by running LLMs locally on your computer. It's a privacy-focus, local-first, open-source solution.`,
       },
       {
         property: 'og:image',
@@ -579,11 +579,11 @@ const config = {
       { property: 'twitter:site', content: '@janframework' },
       {
         property: 'twitter:title',
-        content: 'Jan | Customizable Intelligence',
+        content: 'Jan | Rethink the Computer',
       },
       {
         property: 'twitter:description',
-        content: `Jan is an open-source ChatGPT alternative that runs on your computer. Run LLMs locally, build, and fine-tune AI to meet your needs.`,
+        content: `Jan turns your computer into an AI machine by running LLMs locally on your computer. It's a privacy-focus, local-first, open-source solution.`,
       },
       {
         property: 'twitter:image',
