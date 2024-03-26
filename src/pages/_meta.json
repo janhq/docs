@@ -1,0 +1,57 @@
+{
+  "index": {
+    "type": "page",
+    "title": "Homepage",
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "guides": {
+    "type": "page",
+    "title": "Guides"
+  },
+  "developer": {
+    "type": "page",
+    "title": "Developer",
+    "display": "hidden"
+  },
+  "api-reference": {
+    "type": "page",
+    "title": "API reference",
+    "href": "/api-reference",
+    "newWindow": true,
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "product": {
+    "type": "page",
+    "title": "Product",
+    "display": "hidden"
+  },
+  "changelog": {
+    "type": "page",
+    "title": "Changelog",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "about": {
+    "type": "page",
+    "title": "About"
+  },
+  "blog": {
+    "type": "page",
+    "title": "Blog",
+    "theme": {
+      "breadcrumb": false,
+      "pagination": false,
+      "toc": false
+    }
+  },
+  "post": {
+    "type": "page",
+    "display": "hidden"
+  }
+}

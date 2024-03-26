@@ -1,0 +1,38 @@
+{
+  "assistants": {
+    "title": "Assistants",
+    "href": "/developer/framework/engineering/assistants"
+  },
+  "chats": {
+    "title": "Chats",
+    "href": "/developer/framework/engineering/chats"
+  },
+  "engine": {
+    "title": "Engine",
+    "href": "/developer/framework/engineering/engine"
+  },
+  "files": {
+    "title": "Files",
+    "href": "/developer/framework/engineering/files"
+  },
+  "fine-tuning": {
+    "title": "Fine-tuning",
+    "href": "/developer/framework/engineering/fine-tuning"
+  },
+  "messages": {
+    "title": "Messages",
+    "href": "/developer/framework/engineering/messages"
+  },
+  "models": {
+    "title": "Models",
+    "href": "/developer/framework/engineering/models"
+  },
+  "prompts": {
+    "title": "Prompts",
+    "href": "/developer/framework/engineering/prompts"
+  },
+  "threads": {
+    "title": "Threads",
+    "href": "/developer/framework/engineering/threads"
+  }
+}

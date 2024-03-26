@@ -1,0 +1,35 @@
+---
+title: Local Engines
+description: Jan is a ChatGPT-alternative that runs on your own computer, with a local API server.
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    build extension,
+  ]
+---
+
+import childPages from './engines-local/_meta.json';
+
+import { Cards, Card } from 'nextra/components'
+
+# Local Engines
+
+<br/>
+
+<Cards
+  children={Object.keys(childPages).map((key, i) => (
+    <Card
+      key={i}
+      title={childPages[key].title}
+      href={childPages[key].href}
+    />
+  ))}
+/>

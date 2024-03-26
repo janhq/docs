@@ -1,0 +1,16 @@
+{
+  "get-started": {
+    "title": "Get Started",
+    "type": "separator"
+  },
+  "index": "Overview",
+  "architecture": "",
+  "file-based": "",
+  "install-and-prerequisites": "",
+  "user-interface": "",
+  "framework-separator": {
+    "title": "Framework",
+    "type": "separator"
+  },
+  "framework": ""
+}
