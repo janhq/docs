@@ -45,9 +45,7 @@
     "type": "page",
     "title": "Blog",
     "theme": {
-      "breadcrumb": false,
-      "pagination": false,
-      "toc": false
+      "layout": "raw"
     }
   },
   "post": {
