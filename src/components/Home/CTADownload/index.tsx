@@ -1,4 +1,9 @@
+import DropdownDownload from '@/components/DropdownDownload'
+import { useData } from 'nextra/data'
+
 const CTADownload = () => {
+  const { lastRelease } = useData()
+
   return (
     <div className="w-full xl:w-10/12 mx-auto relative py-8">
       <div className="nextra-wrap-container">
@@ -8,7 +13,10 @@ const CTADownload = () => {
               Change how <br className="hidden lg:block" /> you use computers
             </h1>
           </div>
-          <div className="mt-10 w-full lg:w-1/2 mx-auto lg:mr-auto lg:text-right">
+          <div className="lg:mt-10 w-full lg:w-1/2 mx-auto lg:mr-auto lg:text-right">
+            <div className="my-4">
+              <DropdownDownload lastRelease={lastRelease} />
+            </div>
             <p className="mt-6 text-zinc-text-black/60 dark:text-white/60">
               500K+ Downloads | Free & Open Source
             </p>
