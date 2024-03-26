@@ -21,15 +21,16 @@ import Home from "@/components/Home"
 export const getStaticProps = async() => {
   const resRelease = await fetch('https://api.github.com/repos/janhq/jan/releases/latest')  
   const resRepo = await fetch('https://api.github.com/repos/janhq/jan')
-  const repo = await resRepo.json({ revalidated: 21600 })
+  const repo = await resRepo.json()
   const release = await resRelease.json()
 
   return {
     props: {
       ssg: {
-        stars: repo.stargazers_count || 0,
-        lastVersion: release.tag_name || ''
-      }
+        stars: repo.stargazers_count || 2000,
+        lastVersion: release.tag_name || 'v.0.4.9'
+      },
+    revalidated: 21600
     },
   }
 }
