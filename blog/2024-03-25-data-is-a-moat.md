@@ -15,7 +15,7 @@ authors:
         image_url: https://avatars.githubusercontent.com/u/22268502?v=4
         email: alan@jan.ai
 unlisted: true
-categories: Reseach
+categories: Research
 ---
 
 In the crowded AI landscape, OpenAI's ChatGPT stands out, not just for its capabilities but for its unique access to vast, original datasets. This post explores the vital role of data in maintaining a competitive edge, focusing on OpenAI's strategic advantage through data ownership.
