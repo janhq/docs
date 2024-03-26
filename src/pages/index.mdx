@@ -18,16 +18,20 @@ keywords:
 
 import Home from "@/components/Home"
 
-export const getStaticProps = () => {
-  return fetch(`https://api.github.com/repos/janhq/jan`)
-    .then(res => res.json())
-    .then(repo => ({
-      props: {
-        ssg: repo
-      },
-    // The page will be considered as stale and regenerated every 6 hours.
-    revalidate: 21600
-    }))
+export const getStaticProps = async() => {
+  const resRelease = await fetch('https://api.github.com/repos/janhq/jan/releases/latest')  
+  const resRepo = await fetch('https://api.github.com/repos/janhq/jan')
+  const repo = await resRepo.json({ revalidated: 21600 })
+  const release = await resRelease.json()
+
+  return {
+    props: {
+      ssg: {
+        stars: repo.stargazers_count,
+        lastVersion: release.tag_name
+      }
+    },
+  }
 }
 
 <Home />

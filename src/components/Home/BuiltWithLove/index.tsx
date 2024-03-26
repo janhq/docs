@@ -6,7 +6,7 @@ import { useData } from 'nextra/data'
 
 const BuiltWithLove = () => {
   const { data: discordWidget } = useDiscordWidget()
-  const { stargazers_count } = useData()
+  const { stars } = useData()
 
   return (
     <div className="nextra-wrap-container mt-10 text-sm">
@@ -35,9 +35,7 @@ const BuiltWithLove = () => {
                 <h6 className="text-base">Github</h6>
                 <div className="text-sm text-black/60 dark:text-white/60 flex items-center space-x-1 py-1 px-2 rounded-md bg-[#E9E9E9] dark:bg-[#484748]">
                   <RiStarSFill className="text-lg text-[#CA8A04]" />
-                  <span className="font-semibold">
-                    {stargazers_count} stars
-                  </span>
+                  <span className="font-semibold">{stars} stars</span>
                 </div>
               </div>
               <p className="text-sm mt-1">
