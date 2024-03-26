@@ -37,17 +37,17 @@ const Changelog = () => {
           </div>
         </div>
         <div className="mt-20">
-          {releases?.map((changelog: any, i: number) => {
+          {releases?.map((log: Release, i: number) => {
             return (
               <div key={i} className="flex gap-8 items-start">
                 <div className="w-3/12 -mt-2">
                   <p className="text-black/60 dark:text-white/60 font-medium">
-                    {format(changelog.published_at, 'MMMM do, yyyy')}
+                    {format(log.published_at, 'MMMM do, yyyy')}
                   </p>
                 </div>
                 <div
                   onClick={() => {
-                    setDetailChangelog(changelog.tag_name)
+                    setDetailChangelog(log.tag_name)
                   }}
                   className="border-l dark:nx-border-neutral-800 w-full cursor-pointer"
                   key={i}
@@ -57,12 +57,10 @@ const Changelog = () => {
                     <div className="pb-14 w-full -mt-2">
                       <div className="border dark:nx-border-neutral-800 w-full py-4 px-8 dark:bg-white/5 bg-black/5 rounded-lg flex flex-col lg:flex-row justify-between">
                         <div>
-                          <h6 className="text-2xl font-bold">
-                            {changelog.tag_name}
-                          </h6>
+                          <h6 className="text-2xl font-bold">{log.tag_name}</h6>
                           <p className="mt-2 text-black/60 dark:text-white/60 text-medium">
                             New release Jan App -{' '}
-                            {format(changelog.published_at, 'MMMM do, yyyy')}
+                            {format(log.published_at, 'MMMM do, yyyy')}
                           </p>
                         </div>
                         <button
@@ -81,7 +79,7 @@ const Changelog = () => {
         </div>
       </div>
       <dialog
-        open={releases.some((x: any) => x.tag_name === detailChangelog)}
+        open={releases.some((x: Release) => x.tag_name === detailChangelog)}
         className={twMerge(
           'fixed bg-black/80 dark:bg-black/40 z-50 w-full top-0 left-0 h-screen py-8 px-4 lg:px-8 backdrop-blur-lg',
           releases.some((x: any) => x.tag_name === detailChangelog) && 'flex'
