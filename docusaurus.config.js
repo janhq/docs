@@ -559,7 +559,7 @@ const config = {
       {
         name: 'keywords',
         content:
-          'Jan, Rethink the Computer, local AI, privacy focus, free and open source, private and offline, conversational AI, no-subscription fee, large language models',
+          'Jan, Rethink the Computer, LLM, local AI, privacy focus, free and open source, private and offline, conversational AI, no-subscription fee, large language models',
       },
       { name: 'robots', content: 'index, follow' },
       {

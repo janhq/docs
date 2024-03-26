@@ -5,7 +5,7 @@ description: Jan Docs | Jan is a ChatGPT-alternative that runs on your own compu
 keywords:
   [
     Jan,
-    Rethink the Computer,
+    Customizable Intelligence, LLM,
     local AI,
     privacy focus,
     free and open source,

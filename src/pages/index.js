@@ -154,10 +154,10 @@ export default function Home() {
           <div className="container">
             <div className="text-center px-4 py-16">
               <h1 className="text-6xl lg:text-[80px] !font-normal leading-tight lg:leading-tight mt-2 font-serif">
-                Rethink the Computer
+              Rethink the Computer
               </h1>
               <p className="text-2xl -mt-1 leading-relaxed text-black/60 dark:text-white/60">
-                Turn your computer into an AI machine
+              Turn your computer into an AI machine
               </p>
               <div className="mt-10">
                 {!isBrowserChrome ? (
@@ -778,13 +778,13 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="text-center">
-                    <h1>39+</h1>
+                    <h1>40+</h1>
                     <p className="font-medium text-black/60 dark:text-white/60">
                       Contributors
                     </p>
                   </div>
                   <div className="text-center">
-                    <h1>2416+</h1>
+                    <h1>2500+</h1>
                     <p className="font-medium text-black/60 dark:text-white/60">
                       Pull Requests
                     </p>

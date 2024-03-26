@@ -5,7 +5,7 @@ description: Built for Home Servers
 keywords:
   [
     Jan,
-    Rethink the Computer,
+    Customizable Intelligence, LLM,
     local AI,
     privacy focus,
     free and open source,

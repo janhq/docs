@@ -5,7 +5,7 @@ description: Jan is a desktop application that turns computers into thinking mac
 keywords:
   [
     Jan,
-    Rethink the Computer,
+    Customizable Intelligence, LLM,
     local AI,
     privacy focus,
     free and open source,

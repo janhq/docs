@@ -5,7 +5,7 @@ description: Information about the Jan website and documentation.
 keywords:
   [
     Jan,
-    Rethink the Computer,
+    Customizable Intelligence, LLM,
     local AI,
     privacy focus,
     free and open source,

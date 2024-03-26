@@ -4,7 +4,7 @@ description: Jan is a ChatGPT-alternative that runs on your own computer, with a
 keywords:
   [
     Jan,
-    Rethink the Computer,
+    Customizable Intelligence, LLM,
     local AI,
     privacy focus,
     free and open source,
