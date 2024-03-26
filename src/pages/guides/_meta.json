@@ -1,0 +1,36 @@
+{
+  "get-started": {
+    "title": "Get Started",
+    "type": "separator"
+  },
+  "index": "Overview",
+  "quickstart": "",
+  "user-guides": {
+    "title": "User Guides",
+    "type": "separator"
+  },
+  "threads": "",
+  "local-api": "",
+  "advanced": "",
+  "inference-engines": {
+    "title": "Inference Engines",
+    "type": "separator"
+  },
+  "engines-local": "",
+  "engines-remote": "",
+  "extentions-separator": {
+    "title": "Extentions",
+    "type": "separator"
+  },
+  "extentions": "What are Jan Extensions?",
+  "integrations-separator": {
+    "title": "Integrations",
+    "type": "separator"
+  },
+  "integrations": "",
+  "troubleshooting-separator": {
+    "title": "Troubleshooting",
+    "type": "separator"
+  },
+  "troubleshooting": "Troubleshooting"
+}
