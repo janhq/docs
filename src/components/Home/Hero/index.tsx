@@ -1,9 +1,10 @@
+import DropdownDownload from '@/components/DropdownDownload'
 import { ThemeImage } from '@/components/ThemeImage'
 import Link from 'next/link'
 import { useData } from 'nextra/data'
 
 const Hero = () => {
-  const { lastVersion } = useData()
+  const { lastVersion, lastRelease } = useData()
 
   return (
     <div className="nextra-wrap-container">
@@ -23,6 +24,9 @@ const Hero = () => {
         <p className="text-xl -mt-1 leading-relaxed text-black/60 dark:text-white/60">
           Turn your computer into an AI machine
         </p>
+        <div className="mb-4 mt-10">
+          <DropdownDownload lastRelease={lastRelease} />
+        </div>
         <p className="mt-6 text-black/60 dark:text-white/60">
           500K+ Downloads | Free & Open Source
         </p>
