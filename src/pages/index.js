@@ -157,7 +157,7 @@ export default function Home() {
                 Customizable Intelligence
               </h1>
               <p className="text-2xl -mt-1 leading-relaxed text-black/60 dark:text-white/60">
-                Turn your computer into an AI machine
+              An open-source ChatGPT alternative that runs on your computer. Run LLMs locally, build, and fine-tune AI to meet your needs.
               </p>
               <div className="mt-10">
                 {!isBrowserChrome ? (
