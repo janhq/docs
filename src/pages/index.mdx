@@ -28,6 +28,7 @@ export const getStaticProps = async() => {
     props: {
       ssg: {
         stars: repo.stargazers_count || 2000,
+        lastRelease: release,
         lastVersion: release.tag_name || 'v.0.4.9'
       },
     revalidated: 21600
