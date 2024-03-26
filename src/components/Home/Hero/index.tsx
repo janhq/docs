@@ -20,6 +20,7 @@ const Hero = () => {
               light: '/assets/images/homepage/app-frame-light.webp',
               dark: '/assets/images/homepage/app-frame-dark.webp',
             }}
+            priority
             alt="App screenshots"
             width={800}
             height={800}

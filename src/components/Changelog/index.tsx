@@ -68,7 +68,7 @@ const Changelog = () => {
                           </div>
                           <button
                             type="submit"
-                            className="inline-block p-2 px-4 mt-4 items-center dark:text-black bg-black text-white dark:bg-white h-10 border border-gray-600 rounded-md font-medium"
+                            className="text-sm inline-block p-2 px-4 mt-4 items-center dark:text-black bg-black text-white dark:bg-white h-10 border border-gray-600 rounded-md font-medium"
                           >
                             Release details
                           </button>

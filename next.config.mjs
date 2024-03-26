@@ -24,6 +24,9 @@ const withNextra = nextra({
 
 const nextConfig = {
   reactStrictMode: true,
+  env: {
+    GTM_ID: process.env.GTM_ID,
+  },
   async redirects() {
     return [
       {
