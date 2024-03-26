@@ -10,7 +10,7 @@ import { Cross2Icon } from '@radix-ui/react-icons'
 import { twMerge } from 'tailwind-merge'
 
 const Changelog = () => {
-  const data = useData()
+  const { releases } = useData()
   const [detailChangelog, setDetailChangelog] = useState<string | null>(null)
 
   useBodyClass(detailChangelog ? 'overflow-hidden' : 'overflow-y-scroll')
@@ -37,55 +37,54 @@ const Changelog = () => {
           </div>
         </div>
         <div className="mt-20">
-          {data &&
-            data?.map((changelog: any, i: number) => {
-              return (
-                <div key={i} className="flex gap-8 items-start">
-                  <div className="w-3/12 -mt-2">
-                    <p className="text-black/60 dark:text-white/60 font-medium">
-                      {format(changelog.published_at, 'MMMM do, yyyy')}
-                    </p>
-                  </div>
-                  <div
-                    onClick={() => {
-                      setDetailChangelog(changelog.tag_name)
-                    }}
-                    className="border-l dark:nx-border-neutral-800 w-full cursor-pointer"
-                    key={i}
-                  >
-                    <div className="flex gap-8 items-start w-full">
-                      <div className="w-2 h-2 relative -left-1 bg-blue-500 rounded-full flex-shrink-0" />
-                      <div className="pb-14 w-full -mt-2">
-                        <div className="border dark:nx-border-neutral-800 w-full py-4 px-8 dark:bg-white/5 bg-black/5 rounded-lg flex flex-col lg:flex-row justify-between">
-                          <div>
-                            <h6 className="text-2xl font-bold">
-                              {changelog.tag_name}
-                            </h6>
-                            <p className="mt-2 text-black/60 dark:text-white/60 text-medium">
-                              New release Jan App -{' '}
-                              {format(changelog.published_at, 'MMMM do, yyyy')}
-                            </p>
-                          </div>
-                          <button
-                            type="submit"
-                            className="text-sm inline-block p-2 px-4 mt-4 items-center dark:text-black bg-black text-white dark:bg-white h-10 border border-gray-600 rounded-md font-medium"
-                          >
-                            Release details
-                          </button>
+          {releases?.map((changelog: any, i: number) => {
+            return (
+              <div key={i} className="flex gap-8 items-start">
+                <div className="w-3/12 -mt-2">
+                  <p className="text-black/60 dark:text-white/60 font-medium">
+                    {format(changelog.published_at, 'MMMM do, yyyy')}
+                  </p>
+                </div>
+                <div
+                  onClick={() => {
+                    setDetailChangelog(changelog.tag_name)
+                  }}
+                  className="border-l dark:nx-border-neutral-800 w-full cursor-pointer"
+                  key={i}
+                >
+                  <div className="flex gap-8 items-start w-full">
+                    <div className="w-2 h-2 relative -left-1 bg-blue-500 rounded-full flex-shrink-0" />
+                    <div className="pb-14 w-full -mt-2">
+                      <div className="border dark:nx-border-neutral-800 w-full py-4 px-8 dark:bg-white/5 bg-black/5 rounded-lg flex flex-col lg:flex-row justify-between">
+                        <div>
+                          <h6 className="text-2xl font-bold">
+                            {changelog.tag_name}
+                          </h6>
+                          <p className="mt-2 text-black/60 dark:text-white/60 text-medium">
+                            New release Jan App -{' '}
+                            {format(changelog.published_at, 'MMMM do, yyyy')}
+                          </p>
                         </div>
+                        <button
+                          type="submit"
+                          className="text-sm inline-block p-2 px-4 mt-4 items-center dark:text-black bg-black text-white dark:bg-white h-10 border border-gray-600 rounded-md font-medium"
+                        >
+                          Release details
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
-              )
-            })}
+              </div>
+            )
+          })}
         </div>
       </div>
       <dialog
-        open={data.some((x: any) => x.tag_name === detailChangelog)}
+        open={releases.some((x: any) => x.tag_name === detailChangelog)}
         className={twMerge(
           'fixed bg-black/80 dark:bg-black/40 z-50 w-full top-0 left-0 h-screen py-8 px-4 lg:px-8 backdrop-blur-lg',
-          data.some((x: any) => x.tag_name === detailChangelog) && 'flex'
+          releases.some((x: any) => x.tag_name === detailChangelog) && 'flex'
         )}
       >
         <div
@@ -96,7 +95,7 @@ const Changelog = () => {
             className="sticky top-0 cursor-pointer text-black dark:text-white ml-auto"
             onClick={() => setDetailChangelog(null)}
           />
-          {data
+          {releases
             .filter((x: any) => x.tag_name === detailChangelog)
             .map((detail: any, i: number) => {
               return (

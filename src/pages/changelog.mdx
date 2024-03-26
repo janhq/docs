@@ -18,14 +18,16 @@ keywords:
 
 import Changelog from "@/components/Changelog"
 
-export const getStaticProps = () => {
-  return fetch(`https://api.github.com/repos/janhq/jan/releases`)
-    .then(res => res.json())
-    .then(repo => ({
-      props: {
-        ssg: repo
-      },
-    }))
+export const getStaticProps = async() => {
+  const res = await fetch('https://api.github.com/repos/janhq/jan/releases/latest')  
+  const releases = await res.json()
+  return {
+    props: {
+      ssg: {
+        releases: releases.message ? [{published_at: "2023/8/20", tag_name:'v.4.0.0' }] : releases
+      }
+    },  
+  }
 }
 
 <Changelog />
