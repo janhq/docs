@@ -1,0 +1,10 @@
+{
+  "*": {
+    "display": "hidden",
+    "theme": {
+      "breadcrumb": false,
+      "sidebar": false,
+      "pagination": false
+    }
+  }
+}
