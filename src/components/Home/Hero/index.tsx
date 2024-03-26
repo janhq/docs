@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div className="nextra-wrap-container">
       <div className="mt-10 text-center">
-        <Link href="/https://github.com/janhq/jan/releases">
+        <Link href="https://github.com/janhq/jan/releases">
           <div className="inline-flex my-2 py-2 pl-2 pr-4 rounded-lg mb-10 bg-indigo-500">
             <div className="flex items-center rounded bg-white px-2">
               <span className="font-bold uppercase text-blue-600">new</span>

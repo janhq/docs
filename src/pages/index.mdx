@@ -27,8 +27,8 @@ export const getStaticProps = async() => {
   return {
     props: {
       ssg: {
-        stars: repo.stargazers_count,
-        lastVersion: release.tag_name
+        stars: repo.stargazers_count || 0,
+        lastVersion: release.tag_name || ''
       }
     },
   }
