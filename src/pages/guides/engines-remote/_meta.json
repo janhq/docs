@@ -1,0 +1,15 @@
+{
+  "groq": { "title": "Groq", "href": "/guides/engines-remote/groq" },
+  "mistralai": {
+    "title": "Mistral AI",
+    "href": "/guides/engines-remote/mistralai"
+  },
+  "openai": {
+    "title": "Azure OpenAI",
+    "href": "/guides/engines-remote/openai"
+  },
+  "remote-server-integration": {
+    "title": "Remote Server Integration",
+    "href": "/guides/engines-remote/remote-server-integration"
+  }
+}
