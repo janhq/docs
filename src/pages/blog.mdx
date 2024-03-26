@@ -24,7 +24,6 @@ import matter from 'gray-matter'
 <Blog/>
 
 export const getStaticProps = async() => {
-
   const blogPosts = await fs.readdirSync(path.join(process.cwd(), 'src/pages/post')).filter((file) => {
     return path.extname(file).toLowerCase() === ".mdx" && !file.startsWith('index')
   })
