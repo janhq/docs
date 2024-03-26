@@ -3,7 +3,7 @@ import { format } from 'date-fns'
 import { useData } from 'nextra/data'
 
 import Markdown from 'react-markdown'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useBodyClass } from '@/hooks/useBodyClass'
 import { useClickOutside } from '@/hooks/useClickOutside'
 import { Cross2Icon } from '@radix-ui/react-icons'
@@ -56,17 +56,19 @@ const Changelog = () => {
                     <div className="flex gap-8 items-start w-full">
                       <div className="w-2 h-2 relative -left-1 bg-blue-500 rounded-full flex-shrink-0" />
                       <div className="pb-14 w-full -mt-2">
-                        <div className="border dark:nx-border-neutral-800 w-full py-4 px-8 dark:bg-white/5 bg-black/5 rounded-lg">
-                          <h6 className="text-2xl font-bold">
-                            {changelog.tag_name}
-                          </h6>
-                          <p className="mt-2 text-black/60 dark:text-white/60 text-medium">
-                            New release Jan App -{' '}
-                            {format(changelog.published_at, 'MMMM do, yyyy')}
-                          </p>
+                        <div className="border dark:nx-border-neutral-800 w-full py-4 px-8 dark:bg-white/5 bg-black/5 rounded-lg flex flex-col lg:flex-row justify-between">
+                          <div>
+                            <h6 className="text-2xl font-bold">
+                              {changelog.tag_name}
+                            </h6>
+                            <p className="mt-2 text-black/60 dark:text-white/60 text-medium">
+                              New release Jan App -{' '}
+                              {format(changelog.published_at, 'MMMM do, yyyy')}
+                            </p>
+                          </div>
                           <button
                             type="submit"
-                            className="flex p-2 px-4 mt-4 items-center dark:text-black bg-black text-white dark:bg-white h-10 border border-gray-600 rounded-md font-medium"
+                            className="inline-block p-2 px-4 mt-4 items-center dark:text-black bg-black text-white dark:bg-white h-10 border border-gray-600 rounded-md font-medium"
                           >
                             Release details
                           </button>
