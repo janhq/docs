@@ -10,10 +10,11 @@ type Props = Omit<ImageProps, 'src' | 'priority' | 'loading'> & {
   alt: string
   width: number
   height: number
+  priority?: boolean
 }
 
 export const ThemeImage = (props: Props) => {
-  const { source, className, alt, width, height } = props
+  const { source, className, alt, width, height, priority } = props
 
   return (
     <>
@@ -23,6 +24,7 @@ export const ThemeImage = (props: Props) => {
         alt={alt}
         width={width}
         height={height}
+        priority={priority}
       />
       <Image
         src={source.dark}
@@ -30,6 +32,7 @@ export const ThemeImage = (props: Props) => {
         alt={alt}
         width={width}
         height={height}
+        priority={priority}
       />
     </>
   )
