@@ -14,6 +14,7 @@ authors:
         image_url: https://avatars.githubusercontent.com/u/22268502?v=4
         email: alan@jan.ai
 unlisted: true
+categories: Research
 ---
 
 # RAG is not enough: Lessons from Beating GPT-3.5 on Specialized Tasks with Mistral 7B
