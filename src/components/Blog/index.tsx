@@ -1,44 +1,86 @@
 import { useData } from 'nextra/data'
-import { twMerge } from 'tailwind-merge'
-
-import { usePathname, useSearchParams } from 'next/navigation'
+import { format } from 'date-fns'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 import Link from 'next/link'
 import { Cards } from 'nextra/components'
+import { twMerge } from 'tailwind-merge'
 
 const Blog = () => {
   const blogPost = useData()
-  const categories: string[] = blogPost
-    .map((x: BlogPostsThumbnail) => x.categories)
-    .flat(1)
-
   const searchParams = useSearchParams()
   const search = searchParams?.get('category')
+  const router = useRouter()
 
-  console.log(categories)
+  const staticCategories = [
+    {
+      name: 'Product Updates',
+      id: 'product-updates',
+    },
+    {
+      name: 'Building Jan',
+      id: 'building-jan',
+    },
+    {
+      name: 'Research',
+      id: 'research',
+    },
+  ]
 
   return (
-    <div className="nextra-wrap-container">
+    <div className="nextra-wrap-container py-14">
       <div className="w-full mx-auto">
-        <div className="mt-14">
-          <h1 className="text-6xl !fqont-normal leading-tight lg:leading-tight mt-2 font-serif">
-            Blog
-          </h1>
-          <div className="text-black/60 dark:text-white/60">
-            <p className="text-base mt-2 leading-relaxed">
-              The latest updates from Langfuse. See updates.
-              <a
-                href="https://github.com/orgs/janhq/projects/5/views/16"
-                className="text-blue-600 dark:text-blue-400 cursor-pointer"
-              >
-                Changelog
-              </a>
-              &nbsp;for more product
-            </p>
-          </div>
+        <h1 className="text-6xl !fqont-normal leading-tight lg:leading-tight mt-2 font-serif">
+          Blog
+        </h1>
+        <div className="text-black/60 dark:text-white/60">
+          <p className="text-base mt-2 leading-relaxed">
+            The latest updates from Langfuse. See updates.&nbsp;
+            <a
+              href="/changelog"
+              className="text-blue-600 dark:text-blue-400 cursor-pointer"
+            >
+              Changelog
+            </a>
+            &nbsp;for more product
+          </p>
         </div>
 
-        <Cards num={2} className="mt-10">
+        <div className="mt-10">
+          <ul className="flex gap-4">
+            <li
+              onClick={() => {
+                router.push(`blog/`)
+              }}
+              className={twMerge(
+                'cursor-pointer py-1 px-3 rounded-full',
+                search === null &&
+                  'dark:bg-blue-400 bg-blue-500 font-medium text-white'
+              )}
+            >
+              <p>All Categories</p>
+            </li>
+            {staticCategories.map((cat, i) => {
+              return (
+                <li
+                  key={i}
+                  onClick={() => {
+                    router.push(`blog/?category=${cat.id}`)
+                  }}
+                  className={twMerge(
+                    'cursor-pointer py-1 px-3 rounded-full',
+                    cat.id === search &&
+                      'dark:bg-blue-400 bg-blue-500 font-medium text-white'
+                  )}
+                >
+                  <p>{cat.name}</p>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+
+        <Cards num={4} className="mt-14 gap-8">
           {blogPost
             .filter((post: BlogPostsThumbnail) => {
               if (search) {
@@ -52,14 +94,44 @@ const Blog = () => {
                 <Link
                   href={String(post.url)}
                   key={i}
-                  className="nextra-card nx-group nx-flex nx-flex-col nx-justify-start nx-overflow-hidden nx-rounded-lg nx-border nx-border-gray-200 nx-text-current nx-no-underline dark:nx-shadow-none hover:nx-shadow-gray-100 dark:hover:nx-shadow-none nx-shadow-gray-100 active:nx-shadow-sm active:nx-shadow-gray-200 nx-transition-all nx-duration-200 hover:nx-border-gray-300 nx-bg-transparent nx-shadow-sm dark:nx-border-neutral-800 hover:nx-bg-slate-50 hover:nx-shadow-md dark:hover:nx-border-neutral-700 dark:hover:nx-bg-neutral-900"
+                  className="nextra-card nx-group nx-flex nx-flex-col nx-justify-start nx-overflow-hidden nx-rounded-xl nx-border nx-border-gray-200 nx-text-current nx-no-underline dark:nx-shadow-none hover:nx-shadow-gray-100 dark:hover:nx-shadow-none nx-shadow-gray-100 active:nx-shadow-sm active:nx-shadow-gray-200 nx-transition-all nx-duration-200 hover:nx-border-gray-300 nx-bg-transparent nx-shadow-sm dark:nx-border-neutral-800 hover:nx-shadow-md dark:hover:nx-border-neutral-700"
                 >
-                  <div className="p-4">
-                    <h6 className="text-lg line-clamp-1">{post.title}</h6>
-                    <p className="text-sm mt-2 mb-4 text-gray-400 line-clamp-2 leading-normal">
+                  <div
+                    className={twMerge(
+                      'min-h-40 border-b border-gray-200 dark:border-neutral-800',
+                      i % 2 == 0
+                        ? 'bg-gradient-to-r from-cyan-500 to-blue-500'
+                        : 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
+                    )}
+                  >
+                    <div className="flex w-full h-full items-center px-4 justify-center">
+                      <div className="text-center">
+                        {post.categories?.map((cat, i) => {
+                          return (
+                            <p
+                              className="inline-flex capitalize text-xl font-bold text-white"
+                              key={i}
+                            >
+                              {cat?.replaceAll('-', ' ')}
+                            </p>
+                          )
+                        })}
+                        <p className="font-medium text-white">
+                          {format(String(post.date), 'MMMM do, yyyy')}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="px-4 py-6">
+                    <h6 className="text-lg line-clamp-1 font-bold">
+                      {post.title}
+                    </h6>
+                    <p className="text-sm my-2 text-black/60 dark:text-white/60 line-clamp-2 leading-relaxed">
                       {post.description}
                     </p>
-                    <p className="text-xs">{post.date}</p>
+                    <p className="text-blue-400 line-clamp-2 text-sm">
+                      Read more...
+                    </p>
                   </div>
                 </Link>
               )
