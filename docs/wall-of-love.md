@@ -5,7 +5,7 @@ description: Check out what our amazing users are saying about Jan!
 keywords:
   [
     Jan,
-    Rethink the Computer,
+    Customizable Intelligence, LLM,
     local AI,
     privacy focus,
     free and open source,

@@ -7,7 +7,7 @@ const path = require('path')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Jan | Rethink the Computer',
+  title: 'Jan | Customizable Intelligence',
   tagline: 'Run your own AI',
   favicon: 'img/favicon.ico',
 
@@ -579,11 +579,11 @@ const config = {
       { property: 'twitter:site', content: '@janframework' },
       {
         property: 'twitter:title',
-        content: 'Jan | Rethink the Computer',
+        content: 'Jan | Customizable Intelligence',
       },
       {
         property: 'twitter:description',
-        content: `Jan turns your computer into an AI machine by running LLMs locally on your computer. It's a privacy-focus, local-first, open-source solution.`,
+        content: `Jan is an open-source ChatGPT alternative that runs on your computer. Run LLMs locally, build, and fine-tune AI to meet your needs.`,
       },
       {
         property: 'twitter:image',

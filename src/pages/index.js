@@ -148,13 +148,13 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <Layout description="Jan turns your computer into an AI machine by running LLMs locally on your computer. It's a privacy-focus, local-first, open-source solution.">
+      <Layout description="Jan is an open-source ChatGPT alternative that runs on your computer. Run LLMs locally, build, and fine-tune AI to meet your needs.">
         <main>
           {/* Hero */}
           <div className="container">
             <div className="text-center px-4 py-16">
               <h1 className="text-6xl lg:text-[80px] !font-normal leading-tight lg:leading-tight mt-2 font-serif">
-                Rethink the Computer
+                Customizable Intelligence
               </h1>
               <p className="text-2xl -mt-1 leading-relaxed text-black/60 dark:text-white/60">
                 Turn your computer into an AI machine

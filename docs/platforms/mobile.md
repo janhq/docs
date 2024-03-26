@@ -5,7 +5,7 @@ description: Jan Mobile allows you to bring your AI on the go
 keywords:
   [
     Jan,
-    Rethink the Computer,
+    Customizable Intelligence, LLM,
     local AI,
     privacy focus,
     free and open source,
