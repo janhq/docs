@@ -1,0 +1,12 @@
+{
+  "chat": { "title": "Chat", "href": "/developer/framework/product/chat" },
+  "hub": { "title": "Hub", "href": "/developer/framework/product/hub" },
+  "jan": {
+    "title": "The Default Assistant",
+    "href": "/developer/framework/product/jan"
+  },
+  "system-monitor": {
+    "title": "System Monitor",
+    "href": "/developer/framework/product/system-monitor"
+  }
+}

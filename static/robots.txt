@@ -1,3 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /src/containers/Testimonial/index.js
