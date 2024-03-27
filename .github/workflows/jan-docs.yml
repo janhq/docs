@@ -45,7 +45,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build website
-        run: export NODE_ENV=production && yarn build
+        run: yarn build
 
       - name: Publish to Cloudflare Pages PR Preview and Staging
         if: github.event_name == 'pull_request'
