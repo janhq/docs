@@ -69,7 +69,7 @@ const CTANewsletter = () => {
                   <input
                     type="email"
                     autoComplete="off"
-                    className="w-full h-16 p-4 pr-14 rounded-xl border border-[#F0F0F0] dark:bg-white/10 dark:border-gray-600 focus-visible:ring-0"
+                    className="w-full h-16 p-4 pr-14 rounded-xl border bg-white border-[#F0F0F0] dark:bg-white/10 dark:border-gray-600 focus-visible:ring-0"
                     placeholder="Enter your email"
                     {...register('email')}
                   />
