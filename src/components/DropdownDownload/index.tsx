@@ -73,7 +73,7 @@ const DropdownDownload = ({ lastRelease }: Props) => {
   useEffect(() => {
     const updateDownloadLinks = async () => {
       try {
-        const firstAssetName = lastRelease.assets[0].name
+        const firstAssetName = await lastRelease.assets[0]?.name
         const appname = extractAppName(firstAssetName)
         if (!appname) {
           console.error(
