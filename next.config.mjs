@@ -24,6 +24,10 @@ const withNextra = nextra({
 
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
   env: {
     GTM_ID: process.env.GTM_ID,
   },
