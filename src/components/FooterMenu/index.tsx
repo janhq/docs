@@ -67,7 +67,6 @@ const menus = [
       {
         menu: 'API Reference',
         path: '/api-reference',
-        external: true,
       },
     ],
   },
@@ -181,7 +180,7 @@ export default function Footer() {
               <form className="relative" onSubmit={handleSubmit(onSubmit)}>
                 <input
                   type="email"
-                  className="lg:ml-0.5 w-full h-12 p-4 pr-14 rounded-xl border dark:border-gray-600 dark:bg-[#252525] border-[#F0F0F0] focus-visible:ring-0"
+                  className="lg:ml-0.5 w-full h-12 p-4 pr-14 rounded-xl bg-white border dark:border-gray-600 dark:bg-[#252525] border-[#F0F0F0] focus-visible:ring-0"
                   placeholder="Enter your email"
                   autoComplete="off"
                   {...register('email')}
