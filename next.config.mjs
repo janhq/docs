@@ -31,25 +31,6 @@ const nextConfig = {
   env: {
     GTM_ID: process.env.GTM_ID,
   },
-  async redirects() {
-    return [
-      {
-        source: '/community',
-        destination: '/about/community',
-        permanent: true,
-      },
-      {
-        source: '/team',
-        destination: '/about/team',
-        permanent: true,
-      },
-      {
-        source: '/features',
-        destination: '/product/features',
-        permanent: true,
-      },
-    ]
-  },
 }
 
 export default withNextra(nextConfig)
