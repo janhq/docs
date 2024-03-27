@@ -20,8 +20,9 @@ keywords:
   ]
 ---
 
-import { Tabs } from 'nextra/components'
-import { Callout } from 'nextra/components'
+import { Tabs, Steps, Callout } from 'nextra/components'
+
+# Advanced Settings
 
 This guide will show you how to use the advanced settings in Jan.
 
@@ -149,7 +150,9 @@ This guide provides a simple overview of setting up an HTTPS proxy server using 
   Other software options are also available depending on your requirements.
 </Callout>
 
-#### Step 1: Choosing a Server
+<Steps>
+
+### Step 1: Choosing a Server
 
 1. Firstly, you need to choose a server to host your proxy server.
 
@@ -165,7 +168,7 @@ This guide provides a simple overview of setting up an HTTPS proxy server using 
 
 2. Ensure that your server has a public IP address and is accessible from the internet.
 
-#### Step 2: Installing Squid
+### Step 2: Installing Squid
 
 Instal **Squid** using the following command:
 
@@ -174,7 +177,7 @@ sudo apt-get update
 sudo apt-get install squid
 ```
 
-#### Step 3: Configure Squid for HTTPS
+### Step 3: Configure Squid for HTTPS
 
 To enable HTTPS, you will need to configure Squid with SSL support.
 
@@ -194,7 +197,7 @@ ssl_bump bump all
 
 3. To intercept HTTPS traffic, Squid uses a process called SSL Bumping. This process allows Squid to decrypt and re-encrypt HTTPS traffic. To enable SSL Bumping, ensure the `ssl_bump` directives are configured correctly in your `squid.conf` file.
 
-#### Step 4 (Optional): Configure ACLs and Authentication
+### Step 4 (Optional): Configure ACLs and Authentication
 
 1. You can define rules to control who can access your proxy. This is done by editing the squid.conf file and defining ACLs:
 
@@ -211,7 +214,7 @@ acl authenticated proxy_auth REQUIRED
 http_access allow authenticated
 ```
 
-#### Step 5: Restart and Test Your Proxy
+### Step 5: Restart and Test Your Proxy
 
 1. After configuring, restart Squid to apply the changes:
 
@@ -229,6 +232,12 @@ sudo systemctl restart squid
   - **Regular updates**: Keep your server and proxy software updated to ensure that you are protected against known vulnerabilities.
   - **Monitoring and logging**: Monitor your proxy server for unusual activity and enable logging to keep track of the traffic passing through your proxy.
 </Callout>
+
+</Steps>
+
+
+
+
 
 
 ### Setting Up Jan to Use Your HTTPS Proxy

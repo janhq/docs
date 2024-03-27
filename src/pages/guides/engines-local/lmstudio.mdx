@@ -16,7 +16,7 @@ keywords:
   ]
 ---
 
-import { Callout } from 'nextra/components'
+import { Callout, Steps } from 'nextra/components'
 
 # LM Studio
 
@@ -33,6 +33,7 @@ To integrate LM Studio with Jan follow the steps below:
   In this guide, we're going to show you how to connect Jan to [LM Studio](https://lmstudio.ai/) using the second method. We'll use the [Phi 2 - GGUF](https://huggingface.co/TheBloke/phi-2-GGUF) model from Hugging Face as our example.
 </Callout>
 
+<Steps>
 
 ### Step 1: Server Setup
 
@@ -94,8 +95,11 @@ To integrate LM Studio with Jan follow the steps below:
 1. Restart Jan and proceed to the **Hub**.
 2. Locate your model and click **Use** to activate it.
 
+</Steps>
+
 ## Migrating Models from LM Studio to Jan (version 0.4.6 and older)
 
+<Steps>
 ### Step 1: Model Migration
 
 1. In LM Studio, navigate to `My Models` and access your model folder.
@@ -107,10 +111,13 @@ To integrate LM Studio with Jan follow the steps below:
 1. Restart Jan and navigate to the **Hub**, where the model will be automatically detected.
 2. Click **Use** to use the model.
 
+</Steps>
+
 ## Direct Access to LM Studio Models from Jan (version 0.4.7+)
 
 Starting from version 0.4.7, Jan enables direct import of LM Studio models using absolute file paths.
 
+<Steps>
 ### Step 1: Locating the Model Path
 
 1. Access `My Models` in LM Studio and locate your model folder.
@@ -172,3 +179,4 @@ Starting from version 0.4.7, Jan enables direct import of LM Studio models using
 
 1. Restart Jan and proceed to the **Hub**.
 2. Locate your model and click **Use** to activate it.
+</Steps>
