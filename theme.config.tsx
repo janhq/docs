@@ -1,8 +1,19 @@
 import React, { Fragment } from 'react'
-import { useRouter } from 'next/router'
 import { useConfig, DocsThemeConfig } from 'nextra-theme-docs'
 import LogoMark from '@/components/LogoMark'
 import FooterMenu from '@/components/FooterMenu'
+import JSONLD from '@/components/JSONLD'
+
+const defaultUrl = 'https://jan.ai'
+const defaultImage = 'https://jan.ai/assets/images/general/og-image.png'
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  'name': 'Jan',
+  'url': `${defaultUrl}`,
+  'logo': `${defaultImage}`,
+}
 
 const config: DocsThemeConfig = {
   logo: (
@@ -22,11 +33,25 @@ const config: DocsThemeConfig = {
     text: 'Edit this page on GitHub →',
   },
   useNextSeoProps() {
-    const { asPath } = useRouter()
-    if (asPath !== '/') {
-      return {
-        titleTemplate: '%s | Customizable Intelligence, LLM',
-      }
+    return {
+      titleTemplate: '%s | Customizable Intelligence, LLM',
+      canonical: defaultUrl,
+      twitter: {
+        cardType: 'summary_large_image',
+        site: '@janframework',
+      },
+      openGraph: {
+        type: 'website',
+        url: defaultUrl,
+        images: [
+          {
+            url: `${defaultImage}`,
+            width: 800,
+            height: 600,
+            alt: 'Jan-OGImage',
+          },
+        ],
+      },
     }
   },
   sidebar: {
@@ -34,7 +59,6 @@ const config: DocsThemeConfig = {
       if (type === 'separator') {
         return <span className="cursor-default">{title}</span>
       }
-      return <>{title}</>
     },
     defaultMenuCollapseLevel: 1,
     toggleButton: false,
@@ -87,6 +111,7 @@ const config: DocsThemeConfig = {
             ]
           }
         />
+        <JSONLD data={structuredData} />
       </Fragment>
     )
   },
