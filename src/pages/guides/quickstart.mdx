@@ -19,14 +19,14 @@ keywords:
   ]
 ---
 
-import { Tabs } from 'nextra/components'
-import { Callout } from 'nextra/components'
+import { Tabs, Callout, Steps } from 'nextra/components'
 
 # Quickstart
 
 To get started quickly with Jan, follow the steps below:
 
-## Step 1: Get Jan Desktop
+<Steps>
+### Step 1: Get Jan Desktop
 
 <Tabs items={['Mac', 'Windows', 'Linux']}>
   <Tabs.Tab>
@@ -175,7 +175,7 @@ To get started quickly with Jan, follow the steps below:
   </Tabs.Tab>
 </Tabs>
 
-## Step 2: Download a Model
+### Step 2: Download a Model
 
 Jan provides a variety of local AI models tailored to different needs, ready for download. These models are installed and run directly on the user's device.
 
@@ -191,7 +191,7 @@ Jan provides a variety of local AI models tailored to different needs, ready for
   hardware specifications.
 </Callout>
 
-## Step 3: Connect to ChatGPT (Optional)
+### Step 3: Connect to ChatGPT (Optional)
 
 Jan also provides access to remote models hosted on external servers, requiring an API key for connectivity. For example, to use the ChatGPT model with Jan, you must input your API key by following these steps:
 
@@ -201,11 +201,13 @@ Jan also provides access to remote models hosted on external servers, requiring 
 
 ![Connect to ChatGPT](./_assets/gpt.gif)
 
-## Step 4: Chat with Models
+### Step 4: Chat with Models
 
 After downloading and configuring your model, you can immediately use it in the **Thread** tab.
 
 ![Chat with a model](./_assets/model.gif)
+
+</Steps>
 
 ## Best Practices
 

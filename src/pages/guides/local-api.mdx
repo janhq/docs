@@ -18,13 +18,14 @@ keywords:
   ]
 ---
 
-import { Callout } from 'nextra/components'
+import { Callout, Steps } from 'nextra/components'
 
 # Local Server or API Endpoint
 
 Jan provides a built-in API server that can be used as a drop-in for OpenAI's API local replacement. This guide will walk you through on how to start the local server and use it to make request to the local server.
 
-## Step 1: Set the Local Server
+<Steps>
+### Step 1: Set the Local Server
 
 To start the local server, follow the steps below:
 
@@ -40,7 +41,7 @@ To start the local server, follow the steps below:
 | Cross-Origin Resource Sharing (CORS) | Manages resource access from external domains. Enabled for security by default but can be disabled if needed.                                                                                                                                                             | Enabled                         |
 | Verbose Server Logs                  | Provides extensive details about server activities as the local server runs, displayed at the center of the screen.                                                                                                                                                       | Not specified (implied enabled) |
 
-## Step 2: Start and Use the Built-in API Server
+### Step 2: Start and Use the Built-in API Server
 
 Once you have set the server settings, you can start the server by following the steps below:
 
@@ -107,3 +108,4 @@ Once you have set the server settings, you can start the server by following the
   }
 }
 ```
+</Steps>
