@@ -5,8 +5,8 @@
   },
   "index": "Jan Desktop",
   "home-server": "",
-  "feature-separator": {
-    "title": "Feature",
+  "features-separator": {
+    "title": "Features",
     "type": "separator"
   }
 }

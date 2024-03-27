@@ -61,6 +61,10 @@ const menus = [
         path: '/developer',
       },
       {
+        menu: 'Product',
+        path: '/product',
+      },
+      {
         menu: 'API Reference',
         path: '/api-reference',
         external: true,
