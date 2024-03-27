@@ -20,7 +20,7 @@
     "type": "page",
     "title": "API reference",
     "href": "/api-reference",
-    "newWindow": true,
+    "newWindow": false,
     "theme": {
       "layout": "full"
     }
