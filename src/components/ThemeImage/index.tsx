@@ -6,7 +6,7 @@ type Props = Omit<ImageProps, 'src' | 'priority' | 'loading'> & {
     light: string
     dark: string
   }
-  className: string
+  className?: string
   alt: string
   width: number
   height: number
