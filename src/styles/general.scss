@@ -69,16 +69,15 @@
   nav {
     justify-content: flex-start;
     > a {
-      margin-right: 0 !important;
+      @media (min-width: 768px) {
+        margin-right: 0 !important;
+      }
     }
     > a:nth-child(2) {
       margin-left: 16px;
     }
     > a:nth-child(3) {
       margin-right: auto !important;
-    }
-    .nextra-hamburger {
-      margin-left: auto !important;
     }
   }
 }
