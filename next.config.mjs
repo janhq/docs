@@ -31,7 +31,7 @@ const nextConfig = {
   env: {
     GTM_ID: process.env.GTM_ID,
   },
-  transpilePackages: ['@scalar'],
+  transpilePackages: ['@scalar', 'react-tweet'],
 }
 
 export default withNextra(nextConfig)
