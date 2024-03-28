@@ -7,9 +7,9 @@
       "layout": "raw"
     }
   },
-  "guides": {
+  "docs": {
     "type": "page",
-    "title": "Guides"
+    "title": "Documentation"
   },
   "developer": {
     "type": "page",
