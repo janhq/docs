@@ -129,3 +129,9 @@ Here is the illustration
 | Disk Size (GB)       | 4.07             | 3.66         | 🤯 10% less   |
 
 ![alt text](./images/4090_benchmark_mistral_7b_int4.png)
+
+## Conclusion
+
+- On NVIDIA GeForce RTX and 7B model at INT4, TensorRT-LLM yields ~55% faster compared to llama.cpp at the moment while using less RAM, VRAM and model disk size.
+- With 7B moel at INT4, NVIDIA GTX Geforce 4090 performs ~12% better compared to NVIDIA GTX Geforce 4090.
+- We also found out that the performance with TensorRT-LLM can increase around 15% if we enable [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html) in BIOS for RAM bus speed from 3600 to 5600.
