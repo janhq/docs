@@ -20,6 +20,7 @@ import Blog from "@/components/Blog"
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { format } from 'date-fns'
 
 <Blog/>
 
@@ -34,12 +35,14 @@ export const getStaticProps = async() => {
 
     const frontmatter = matter(content)
 
+
+
     if(!frontmatter.data.unlisted) {
       allBlogPosts.push({
         title: frontmatter.data?.title || null,
         url: '/post/' + item?.replace(/\.mdx?/, ''),
         description: frontmatter.data?.description || null,
-        date: frontmatter.data?.date || null,
+        date: format(String(frontmatter.data?.date), 'yyyy-M-dd') || null,
         tags: frontmatter.data.tags?.split(', ') || null,
         author: frontmatter.data?.author || null,
         categories: frontmatter.data.categories?.split(', ') || null,
