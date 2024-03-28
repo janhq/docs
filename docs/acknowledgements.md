@@ -20,13 +20,14 @@ keywords:
 
 # Acknowledgements
 
-We would like to express our gratitude to the following third-party libraries that have made the development of Jan possible.
+We would like to express our gratitude to the following third-party libraries and tools that have made the development of Jan possible. ❤️
 
 ## Core Dependencies
-- [llama.cpp](https://github.com/ggerganov/llama.cpp/blob/master/LICENSE)
+- [Llama.cpp](https://github.com/ggerganov/llama.cpp/blob/master/LICENSE)
 - [LangChain.js](https://github.com/langchain-ai/langchainjs/blob/main/LICENSE)
-- [TensorRT](https://github.com/NVIDIA/TensorRT/blob/main/LICENSE)
 - [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM/blob/main/LICENSE)
+- [TheBloke/GGUF](https://huggingface.co/TheBloke)
 
 ## Dev Tools
 - [Scalar](https://github.com/scalar/scalar)
+- [Continue](https://continue.dev/)
