@@ -1,13 +1,13 @@
 {
-  "discord": { "title": "Discord", "href": "/guides/integrations/discord" },
+  "discord": { "title": "Discord", "href": "/docs/integrations/discord" },
   "interpreter": {
     "title": "Open Interpreter",
-    "href": "/guides/integrations/interpreter"
+    "href": "/docs/integrations/interpreter"
   },
-  "raycast": { "title": "Raycast", "href": "/guides/integrations/raycast" },
-  "router": { "title": "OpenRouter", "href": "/guides/integrations/router" },
+  "raycast": { "title": "Raycast", "href": "/docs/integrations/raycast" },
+  "router": { "title": "OpenRouter", "href": "/docs/integrations/router" },
   "vscode": {
     "title": "Continue Intergration",
-    "href": "/guides/integrations/vscode"
+    "href": "/docs/integrations/vscode"
   }
 }

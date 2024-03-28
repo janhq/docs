@@ -1,18 +1,18 @@
 {
   "llamacpp": {
     "title": "LlamaCPP Extension",
-    "href": "/guides/engines-local/llamacpp"
+    "href": "/docs/engines-local/llamacpp"
   },
   "lmstudio": {
     "title": "LM Studio",
-    "href": "/guides/engines-local/lmstudio"
+    "href": "/docs/engines-local/lmstudio"
   },
   "ollama": {
     "title": "Ollama",
-    "href": "/guides/engines-local/ollama"
+    "href": "/docs/engines-local/ollama"
   },
   "tensorrt": {
     "title": "TensorRT-LLM Extension",
-    "href": "/guides/engines-local/tensorrt"
+    "href": "/docs/engines-local/tensorrt"
   }
 }
