@@ -47,13 +47,13 @@ const Blog = () => {
         </div>
 
         <div className="mt-10">
-          <ul className="flex gap-4">
+          <ul className="flex lg:gap-4 gap-1 whitespace-nowrap overflow-scroll lg:whitespace-normal">
             <li
               onClick={() => {
                 router.push(`blog/`)
               }}
               className={twMerge(
-                'cursor-pointer py-1 px-3 rounded-full',
+                'cursor-pointer py-1 px-2 lg:px-3 rounded-full',
                 search === null &&
                   'dark:bg-blue-400 bg-blue-500 font-medium text-white'
               )}
@@ -68,7 +68,7 @@ const Blog = () => {
                     router.push(`blog/?category=${cat.id}`)
                   }}
                   className={twMerge(
-                    'cursor-pointer py-1 px-3 rounded-full',
+                    'cursor-pointer py-1 px-2 lg:px-3 rounded-full',
                     cat.id === search &&
                       'dark:bg-blue-400 bg-blue-500 font-medium text-white'
                   )}
