@@ -99,7 +99,7 @@ const Blog = () => {
                   <div
                     className={twMerge(
                       'min-h-40 border-b border-gray-200 dark:border-neutral-800',
-                      i % 2 == 0
+                      i % 2 !== 0
                         ? 'bg-gradient-to-r from-cyan-500 to-blue-500'
                         : 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
                     )}
