@@ -4,6 +4,9 @@ title: Privacy - Jan
 
 # Privacy Policy
 
+❗This privacy policy only pertains to the DEPRECATED Jan Mobile Application in the iOS and Android app store. 
+❗❗Jan Desktop DOES NOT collect identifying data at all.
+
 Jan is committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible way. This policy outlines how we collect, store, and use your personal information when you use our mobile application.
 
 ## Data Collection and Usage
