@@ -40,10 +40,6 @@ const menus = [
         path: '/download',
       },
       {
-        menu: 'Documentation',
-        path: '/developer',
-      },
-      {
         menu: 'Changelog',
         path: '/changelog',
       },
