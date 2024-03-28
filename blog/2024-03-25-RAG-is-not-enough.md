@@ -1,7 +1,6 @@
 ---
 description: We present a straightforward approach to customizing small, open-source models using fine-tuning and RAG that outperforms GPT-3.5 for specialized use cases. 
 tags: [RAG, opensource chatgpt alternative, outperform ChatGPT, Mistral]
-unlisted: true
 authors:
     -   name: Rex Ha
         title: LLM Researcher & Content Writer
