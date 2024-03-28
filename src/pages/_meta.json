@@ -20,6 +20,7 @@
     "type": "page",
     "title": "API Reference",
     "href": "/api-reference",
+    "newWindow": true,
     "theme": {
       "layout": "raw"
     }
