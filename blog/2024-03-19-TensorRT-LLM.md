@@ -5,13 +5,11 @@ tags: [Nvidia, TensorRT-LLM, llama.cpp, 3090, 4090, "inference engine"]
 unlisted: true
 ---
 
-Jan now supports [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM) to further accelerate model inference for users with Nvidia GPUs. 
+Jan now supports [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM) to further accelerate model inference for users with Nvidia GPUs. Users with Windows & RTX GPUs can use it as an alternative to [llama.cpp](https://github.com/ggerganov/llama.cpp). 
 
-Users with Windows & RTX GPUs can use it as an alternative to [llama.cpp](https://github.com/ggerganov/llama.cpp). 
+This post compares GGUF/llama.cpp vs. TensorRT/TRT-LLM on speed and resource requirements, for popular consumer Ada & Ampere architectures.
 
-This update offers insights into how these two options compare in terms of speed and resource requirements.
-
-Checkout the [TensorRT-LLM Guide](/guides/engines/tensorrt-llm) for setup instructions and access our Model Hub for downloadable TensorRT-LLM models.
+Checkout the [TensorRT-LLM Guide](/guides/engines/tensorrt-llm) for setup instructions and access our Model Hub for prebuilt TensorRT-LLM models:
 
 - Mistral 7b
 - TinyLlama-1.1b
@@ -19,17 +17,17 @@ Checkout the [TensorRT-LLM Guide](/guides/engines/tensorrt-llm) for setup instru
 
 :::tip
 
-TensorRT-LLM support is available in [v0.4.9+](https://github.com/janhq/jan/releases/tag/v0.4.9), but should be considered an experimental feature.
+TensorRT-LLM is available in [v0.4.9+](https://github.com/janhq/jan/releases/tag/v0.4.9) through [Nitro](https://github.com/janhq/nitro-tensorrt-llm), but should be considered an experimental feature.
 
-Feedback? Let us know on [Github](https://github.com/janhq/jan) or our Discord [#tensorrt-llm](https://discord.com/channels/1107178041848909847/1201832734704795688). We're here to help!
+Feedback? Let us know on [Github](https://github.com/janhq/jan) or via Discord [#tensorrt-llm](https://discord.com/channels/1107178041848909847/1201832734704795688). We're here to help!
 
 :::
 
 ## Detailed Performance Comparison
 
-We were curious about how TensorRT-LLM performs against llama.cpp on consumer-grade GPUs. TensorRT-LLM has previously been shown by Nvidia to reach performance of up to [10,000 tokens/s](https://nvidia.github.io/TensorRT-LLM/blogs/H100vsA100.html) on datacenter-grade GPUs. 
+We were curious on how TensorRT-LLM performs against llama.cpp on consumer-grade GPUs. TensorRT-LLM has previously been shown by Nvidia to reach performance of up to [10,000 tokens/s](https://nvidia.github.io/TensorRT-LLM/blogs/H100vsA100.html) on datacenter-grade GPUs. 
 
-So as self-proclaimed [GPU Poors](https://www.semianalysis.com/p/google-gemini-eats-the-world-gemini#the-gpu-poor), we tested both inference engines across our Ada and Ampere cards, the most popular architectures for consumers.
+So as proud, self-proclaimed [GPU Poors](https://www.semianalysis.com/p/google-gemini-eats-the-world-gemini#the-gpu-poor), we tested both inference engines across our Ada and Ampere cards, the most popular architectures for consumers.
 
 :::info
 
@@ -138,13 +136,12 @@ Here is the illustration
 
 ## Conclusion
 
-We were surprised to discover that TensorRT uses less RAM, VRAM, and disk size while yielding faster TPS. [say more about this!]
-
-- On NVIDIA GeForce RTX and 7B model at INT4, TensorRT-LLM yields ~55% faster compared to llama.cpp at the moment while using less RAM, VRAM and model disk size.
+We were surprised to discover that TensorRT-LLM uses less RAM, VRAM, and disk size while yielding faster TPS. i.e. On NVIDIA GeForce RTX and 7B model at INT4, TensorRT-LLM is ~55% faster than llama.cpp
+ [say more about this!]
 
 ?? [this sentence doesnt make sense] For popular 7B int4 models, NVIDIA GTX Geforce 4090s perform ~12% better compared to NVIDIA GTX Geforce 4090.
 
 
 We also found out that the performance with TensorRT-LLM can increase around 15% if we enable [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html) in BIOS for RAM bus speed from 3600 to 5600. [say more about this?! why what is it]
 
-Users with larger VRAM should use TensorRT-LLM engine, whereas users with smaller cards should stick with llama.cpp.
+**tl;dr: Users with larger VRAM should use TensorRT-LLM engine. Whereas, users with smaller cards should stick with llama.cpp, which seems to excel at CPU inference, in highly resource constrained environments.**
