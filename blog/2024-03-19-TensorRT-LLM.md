@@ -100,13 +100,13 @@ Nvidia's RTX-4090 is their top-of-the-line consumer GPU, and retails for [approx
 
 | Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | Difference on GPU |
 | -------------------- | ---------------- | ---------------- | ------------ | ----------------- |
-| Throughput (token/s) | 11.42            | 101.3            | 159          | ✅ 57% faster     |
+| Throughput (token/s) | 14.0             | 99.69            | 166.9        | ✅ 57% faster     |
 | VRAM Used (GB)       | 0                | 5.5              | 6.3          | 🤔 14% more       |
 | RAM Used (GB)        | 0.611            | 0.54             | 0.42         | 🤯 20% less       |
 | Disk Size (GB)       | 4.07             | 4.07             | 3.66         | 🤯 10% smaller    |
 
 Here is the illustration
-![alt text](./images/3090_benchmark_mistral_7b_int4.png)
+![alt text](./images/4090_benchmark_mistral_7b_int4.png)
 
 ### RTX-3090 Desktop
 
@@ -123,16 +123,16 @@ Here is the illustration
 
 | Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | Difference on GPU |
 | -------------------- | ---------------- | ---------------- | ------------ | ----------------- |
-| Throughput (token/s) | 14.0             | 90               | 140.27       | ✅ 55% faster     |
+| Throughput (token/s) | 11.42            | 90               | 140.27       | ✅ 55% faster     |
 | VRAM Used (GB)       | 0                | 6.0              | 6.8          | 🤔 13% more       |
 | RAM Used (GB)        | 0.611            | 0.54             | 0.42         | 🤯 22% less       |
 | Disk Size (GB)       | 4.07             | 4.07             | 3.66         | 🤯 10% smaller    |
 
-![alt text](./images/4090_benchmark_mistral_7b_int4.png)
+![alt text](./images/3090_benchmark_mistral_7b_int4.png)
 
 ## Conclusion
 
-- LLM inference is possible on CPU, but you get 10x performance with NVIDIA GPU
+- LLM inference is possible on CPU, but you get 10x performance with NVIDIA GPU.
 - On NVIDIA GeForce RTX and 7B model at INT4, TensorRT-LLM yields ~55% faster compared to llama.cpp at the moment while using less RAM, VRAM and model disk size.
 - With 7B moel at INT4, NVIDIA GTX Geforce 4090 performs ~12% better compared to NVIDIA GTX Geforce 4090.
 - We also found out that the performance with TensorRT-LLM can increase around 15% if we enable [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html) in BIOS for RAM bus speed from 3600 to 5600.
