@@ -129,25 +129,3 @@ Here is the illustration
 | Disk Size (GB)       | 4.07             | 3.66         | 🤯 10% less   |
 
 ![alt text](./images/4090_benchmark_mistral_7b_int4.png)
-
-### RTX-4060 Laptop
-
-- [ ] Dan to re-run perf tests and fill in details
-
-:::info[Hardware Details]
-
-- Manufacturer: Acer Nitro 16 Phenix
-- CPU: Ryzen 7000
-- RAM: 16GB
-- GPU: NVIDIA Laptop GPU 4060 (Ada)
-
-:::
-
-#### Mistral-7b int4
-
-| Metrics              | GGUF (using the GPU) | TensorRT-LLM | Difference |
-| -------------------- | -------------------- | ------------ | ---------- |
-| Throughput (token/s) | 22                   | ❌ 19        |            |
-| VRAM Used (GB)       | 2.1                  | 7.7          |            |
-| RAM Used (GB)        | 0.3                  | 13.5         |            |
-| Disk Size (GB)       | 4.07                 | 4.07         |            |
