@@ -56,7 +56,7 @@ We chose the popular Mistral 7b model to run on both GGUF and TensorRT-LLM, pick
 #### llama.cpp Setup
 
 - llama.cpp commit [15499eb](https://github.com/ggerganov/llama.cpp/commit/15499eb94227401bdc8875da6eb85c15d37068f7)
-- We used `Mistral-7b-q4_k_m` in `GGUF` with `ngl` at `100`
+- We used `Mistral-7b-q4_k_m` in `GGUF` with `ngl` at `100` (`ngl` is the abbreviation of `Number of GPU Layers` with the range from `0` as no GPU acceleration to `100` as full on GPU)
 
 #### TensorRT-LLM Setup
 
@@ -88,7 +88,7 @@ Our biggest takeaway: TensorRT-LLM is faster than llama.cpp on 4090s and 3090s w
 :::info[Hardware Details]
 
 - CPU: Intel 13th series
-- GPU: NVIDIA GPU 4090 (Ampere - sm 89)
+- GPU: NVIDIA GPU 4090 (Ada - sm 89)
 - RAM: 32GB
 - OS: Windows 11 Pro
 
@@ -104,6 +104,9 @@ Nvidia's RTX-4090 is their top-of-the-line consumer GPU, and retails for [approx
 | VRAM Used (GB)       | 5.5              | 6.3          | 🤔 14% more    |
 | RAM Used (GB)        | 0.54             | 0.42         | 🤯 20% less    |
 | Disk Size (GB)       | 4.07             | 3.66         | 🤯 10% smaller |
+
+Here is the illustration
+![alt text](./images/3090_benchmark_mistral_7b_int4.png)
 
 ### RTX-3090 Desktop
 
@@ -124,6 +127,8 @@ Nvidia's RTX-4090 is their top-of-the-line consumer GPU, and retails for [approx
 | VRAM Used (GB)       | 6.0              | 6.8          | 🤔 13% more   |
 | RAM Used (GB)        | 0.54             | 0.42         | 🤯 22% less   |
 | Disk Size (GB)       | 4.07             | 3.66         | 🤯 10% less   |
+
+![alt text](./images/4090_benchmark_mistral_7b_int4.png)
 
 ### RTX-4060 Laptop
 
