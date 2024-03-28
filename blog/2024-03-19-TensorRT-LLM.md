@@ -76,7 +76,7 @@ We ran the experiment using a standardized inference request in a sandboxed envi
 
 ## Results
 
-Our biggest takeaway: TensorRT-LLM is faster than llama.cpp on 4090s and 3090s with larger VRAMs. However, on smaller GPUs (e.g. Laptop 4060 GPUs),
+Our biggest takeaway: TensorRT-LLM is faster than llama.cpp on 4090s and 3090s with larger VRAMs.
 
 |              | 4090 Desktop | 3090 Desktop | 4060 Laptop |
 | ------------ | ------------ | ------------ | ----------- |
