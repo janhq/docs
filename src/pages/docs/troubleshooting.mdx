@@ -381,11 +381,11 @@ When you start a chat with a model and encounter with a Something's Amiss error,
 
 1. Ensure your OS is up to date.
 2. Choose a model smaller than 80% of your hardware's V/RAM. For example, on an 8GB machine, opt for models smaller than 6GB.
-3. Install the latest [Nightly release](/guides/quickstart/#nightly-releases) or [clear the application cache](/troubleshooting/#broken-build) when reinstalling Jan.
+3. Install the latest [Nightly release](/guides/quickstart/#nightly-releases) or [clear the application cache](#broken-build) when reinstalling Jan.
 4. Confirm your V/RAM accessibility, particularly if using virtual RAM.
 5. Nvidia GPU users should download [CUDA](https://developer.nvidia.com/cuda-downloads).
-6. Linux users, ensure your system meets the requirements of gcc 11, g++ 11, cpp 11, or higher. Refer to this [link](/troubleshooting/#troubleshooting-nvidia-gpu) for details.
-7. You might use the wrong port when you [check the app logs](/troubleshooting/#how-to-get-error-logs) and encounter the Bind address failed at 127.0.0.1:3928 error. To check the port status, try use the `netstat` command, like the following:
+6. Linux users, ensure your system meets the requirements of gcc 11, g++ 11, cpp 11, or higher. Refer to this [link](#troubleshooting-nvidia-gpu) for details.
+7. You might use the wrong port when you [check the app logs](#how-to-get-error-logs) and encounter the Bind address failed at 127.0.0.1:3928 error. To check the port status, try use the `netstat` command, like the following:
 
 <Tabs items={['Mac', 'Windows', 'Linux']}>
     <Tabs.Tab >
@@ -429,7 +429,7 @@ Encountering an `undefined issue` in Jan is caused by errors related to the Nitr
 2. Manually run the nitro tool located at `~/jan/extensions/@janhq/inference-nitro-extensions/dist/bin/(your-os)/nitro` to check for error messages.
 3. Address any nitro error messages that are identified and reassess the persistence of the issue.
 4. Reopen Jan to determine if the problem has been resolved after addressing any identified errors.
-5. If the issue persists, please share the [app logs](/troubleshooting/#how-to-get-error-logs) via [Jan Discord](https://discord.gg/mY69SZaMaC) for further assistance and troubleshooting.
+5. If the issue persists, please share the [app logs](#how-to-get-error-logs) via [Jan Discord](https://discord.gg/mY69SZaMaC) for further assistance and troubleshooting.
 
 <Callout type="info">
   If you have any questions or are looking for support, please don't hesitate to contact us via our [Discord community](https://discord.gg/Dt7MxDyNNZ) or create a new issue in our [GitHub repository](https://github.com/janhq/jan/issues/new/choose).
