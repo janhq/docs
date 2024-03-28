@@ -18,7 +18,7 @@ unlisted: true
 categories: Research
 ---
 
-In the crowded AI landscape, OpenAI's ChatGPT stands out, not just for its capabilities but for its unique access to vast, original datasets. This post explores the vital role of data in maintaining a competitive edge, focusing on OpenAI's strategic advantage through data ownership.
+In the crowded AI landscape, OpenAI's ChatGPT stands out, not just for its capabilities but for its unique access to the pretrained dataset. This post explores the vital role of data in maintaining a competitive edge, focusing on OpenAI's strategic advantage through data ownership.
 
 ## Data: The Secret Weapon
 
@@ -30,17 +30,7 @@ Owning the original dataset tackles the critical issue of ["Catastrophic forgett
 
 ![Catastrophic forgetting](img/catastrophic-demo.png)
 
-Figure 1. Demonstration of catastrophic forgetting problem
-
-### Smoothing Distribution Shifts
-
-The original dataset ensures smoother distribution shifts when introducing new information, as it embodies a comprehensive spectrum of prior knowledge. This continuity in knowledge transition helps in maintaining the robustness of the model against sudden changes, akin to providing a more gradual learning curve where the new information is incrementally integrated with the existing knowledge base.
-
-This concept is supported by the [EleutherAI's research](https://arxiv.org/abs/2403.08763) highlighting the importance of how tasks are sequenced in the learning process, suggesting that introducing dissimilar tasks early on can expand the network's capacity for new information.
-
-### Acting as a Noise Mask
-
-The original data can serve as a form of noise masking, similar to techniques used in training [early computer vision models](https://arxiv.org/abs/1911.04252). This approach introduces a level of variability or ["noise"](https://arxiv.org/abs/2310.05914) during training, which can prevent the model from overfitting to the new dataset. By retaining a mix of old and new data, the model is exposed to a broader range of scenarios, enhancing its generalization capabilities and robustness across tasks.
+**Figure 1.** Demonstrates the catastrophic forgetting issue: without mixing datasets, AI overfits on new tasks, impairing normal communication.
 
 ### Illustrating Catastrophic Forgetting
 
@@ -48,11 +38,33 @@ Catastrophic forgetting can be visualized as a ball in a multidimensional landsc
 
 ![Gradient decent](img/gradient-decent.gif)
 
-Figure 2. [Gradient decent demonstration](https://en.wikipedia.org/wiki/Gradient_descent)
+**Figure 2.** [Gradient decent demonstration](https://en.wikipedia.org/wiki/Gradient_descent)
+
+### Smoothing Distribution Shifts
+
+As described above, with the mixture of the pretrained dataset ensures smoother distribution shifts when introducing new information, as it embodies a comprehensive spectrum of prior knowledge.
+
+This continuity in knowledge transition helps in maintaining the robustness of the model against sudden changes, akin to providing a more gradual learning curve where the new information is incrementally integrated with the existing knowledge base.
+
+This concept is supported by the [EleutherAI's research](https://arxiv.org/abs/2403.08763) highlighting the importance of how tasks are sequenced in the learning process, suggesting that introducing dissimilar tasks early on can expand the network's capacity for new information.
+
+**Table 1.** Final results for English-only 405M parameter models trained with different replay amounts show models with more replay perform better in balancing learning and forgetting (measured as AVG Loss). Notably, just 1% mix with a pre-trained dataset significantly lowers AVG loss, effectively shifting model knowledge from English (the Pile) to German.
+
+![Replay method](img/replay.png)
+
+*Note:* **Replay** is the method involves combining the training dataset from the pre-trained model with new task datasets.
+
+### Acting as a Noise Mask
+
+The pretrained data can also serve as a form of "noise masking", similar to techniques used in training [early computer vision models](https://arxiv.org/abs/1911.04252).
+
+This approach introduces a level of  ["noise"](https://arxiv.org/abs/2310.05914) during training, which can prevent the model from overfitting to the new dataset. By retaining a mix of original and new data, the model is exposed to a broader range of scenarios, enhancing its generalization capabilities and robustness across tasks.
 
 ## Viable Solutions
 
-Overcoming these challenges requires a balanced approach. One method involves inundating the model with extensive, quality data, allowing for comprehensive fine-tuning. While effective, this demands significant computational resources and the cost of gathering millions of top-rated GPT-4 and human reponses. Examples include [OpenChat](https://huggingface.co/openchat/openchat-3.5-0106) and [OpenHermes](https://huggingface.co/teknium/OpenHermes-2.5-Mistral-7B), which demonstrate the trade-offs between data quantity, quality, and computational demands.
+Overcoming these challenges requires a balanced approach. One method involves inundating the model with extensive, quality data, allowing for comprehensive fine-tuning. While effective, this demands significant computational resources and the cost of gathering millions of top-rated GPT-4 and human reponses.
+
+Examples include [OpenChat](https://huggingface.co/openchat/openchat-3.5-0106) and [OpenHermes](https://huggingface.co/teknium/OpenHermes-2.5-Mistral-7B), which demonstrate the trade-offs between data quantity, quality, and computational demands.
 
 ## Conclusion
 
