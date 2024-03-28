@@ -32,7 +32,7 @@ const nextConfig = {
     GTM_ID: process.env.GTM_ID,
   },
   transpilePackages: ['@scalar'],
-  async redirects(){
+  async redirects() {
     return [
       {
         source: '/docs/troubleshooting/failed-to-fetch',
@@ -204,7 +204,6 @@ const nextConfig = {
         permanent: true,
       },
 
-      
       {
         source: '/guides/using-server',
         destination: '/docs/local-api/',
@@ -212,7 +211,8 @@ const nextConfig = {
       },
       {
         source: '/guides/using-server/server',
-        destination: '/docs/local-api#step-2-start-and-use-the-built-in-api-server',
+        destination:
+          '/docs/local-api#step-2-start-and-use-the-built-in-api-server',
         permanent: true,
       },
       {
@@ -237,7 +237,8 @@ const nextConfig = {
         permanent: true,
       },
     ]
-  }
+  },
+  transpilePackages: ['@scalar', 'react-tweet'],
 }
 
 export default withNextra(nextConfig)
