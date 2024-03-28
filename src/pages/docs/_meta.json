@@ -18,11 +18,11 @@
   },
   "engines-local": "",
   "engines-remote": "",
-  "extentions-separator": {
-    "title": "Extentions",
+  "extensions-separator": {
+    "title": "Extensions",
     "type": "separator"
   },
-  "extentions": "What are Jan Extensions?",
+  "extensions": "What are Jan Extensions?",
   "integrations-separator": {
     "title": "Integrations",
     "type": "separator"
