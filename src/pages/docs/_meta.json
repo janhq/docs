@@ -4,7 +4,12 @@
     "type": "separator"
   },
   "index": "Overview",
-  "quickstart": "",
+  "desktop": {
+    "title": "Desktop Installation"
+  },
+  "server": {
+    "title": "Server Installation"
+  },
   "user-guides": {
     "title": "User Guides",
     "type": "separator"
