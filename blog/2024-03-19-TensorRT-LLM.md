@@ -54,7 +54,7 @@ Our biggest takeaway: **TensorRT-LLM is up to 60% faster than llama.cpp on large
   | RTX 3090 Desktop (Ampere) | 24             | 10,496     | 328          | 384                    | 935.8                   |
   | RTX 4060 Laptop (Ada)     | 8              | 3,072      | 96           | 128                    | 272                     |
 
-  Both desktop GPUs utilize PCIE lane 450, offering substantial bandwidth at 63.015 Gbps, in contrast to the RTX 4070 laptop's more limited capabilities due to power and thermal restrictions.
+  Both desktop GPUs utilize PCIE 5.0, offering substantial bandwidth at 63.015 Gbps, in contrast to the RTX 4070 laptop's more limited capabilities due to power and thermal restrictions.
 
 :::warning[Low-spec Machines?]
 
@@ -162,6 +162,10 @@ Nvidia's RTX-4090 is their top-of-the-line consumer GPU, and retails for [approx
 | VRAM Used (GB)       | 0                | 6.0              | 6.8          | 🤔 13% more       |
 | RAM Used (GB)        | 0.611            | 0.54             | 0.42         | 🤯 22% less       |
 | Disk Size (GB)       | 4.07             | 4.07             | 3.66         | 🤯 10% smaller    |
+
+The NVIDIA GPU laptop compared to NVIDIA GPU on desktop is worse (metrics to prove) because of the thermal constraint and energy consumption (it's a good tradeoff for portability). The PCIe 5.0 speed is the same at 63.015 Gbp.
+
+There is a way to extend laptop with GPU is eGPU (metrics to prove). Though it extends the capabilites, it also has performance issue because of the bandwidth in Thunderbolt 3.0 at 40Gbps.
 
 ## ROI comparison
 
