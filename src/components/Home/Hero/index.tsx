@@ -12,7 +12,7 @@ const Hero = () => {
         <Link
           href="https://github.com/janhq/jan/releases"
           target="_blank"
-          className="hidden lg:block"
+          className="hidden lg:inline-block"
         >
           <div className="inline-flex my-2 py-2 pl-2 pr-4 rounded-lg mb-10 bg-indigo-500 text-white">
             <div className="flex items-center rounded bg-white px-2">
