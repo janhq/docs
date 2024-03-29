@@ -6,7 +6,7 @@ const camelCase = (str) => {
   return str.replace(/[-_](\w)/g, (_, c) => c.toUpperCase())
 }
 
-const categories = ['product-update', 'building-jan', 'research']
+const categories = ['product-updates', 'building-jan', 'research']
 
 /**
  * @param {import("plop").NodePlopAPI} plop
@@ -24,23 +24,23 @@ module.exports = function main(plop) {
       {
         type: 'list',
         name: 'categories',
-        message: 'what is categories of blog post',
+        message: 'what is categories of blog post: ',
         choices: categories,
       },
       {
         type: 'input',
         name: 'slug',
-        message: 'Enter slug of blog post',
+        message: 'Enter slug of blog post: ',
       },
       {
         type: 'input',
         name: 'title',
-        message: 'Enter title of blog post',
+        message: 'Enter title of blog post: ',
       },
       {
         type: 'input',
         name: 'description',
-        message: 'The description of blog post',
+        message: 'The description of blog post: ',
       },
     ],
 
