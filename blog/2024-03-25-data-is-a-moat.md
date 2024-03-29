@@ -64,13 +64,17 @@ This approach introduces a level of  ["noise"](https://arxiv.org/abs/2310.05914)
 
 ## Viable Solutions
 
-Overcoming these challenges requires a balanced approach. One method involves inundating the model with extensive, quality data, allowing for comprehensive fine-tuning. While effective, this demands significant computational resources, comprehensive filtering low-quality processing pipeline and the cost of gathering millions of top-rated GPT-4 and human reponses.
+Overcoming these challenges requires a balanced approach. One partial method involves inundating the model with extensive, curated data, allowing for comprehensive fine-tuning. While effective, this approach demands significant computational resources, a comprehensive filtering process for low-quality inputs, and an extraordinarily high cost associated with gathering millions of high-quality responses.
 
-Examples include [OpenChat](https://huggingface.co/openchat/openchat-3.5-0106) and [OpenHermes](https://huggingface.co/teknium/OpenHermes-2.5-Mistral-7B), which demonstrate the trade-offs between data quantity, quality, and computational demands.
+In the open-source community, 2 notable examples of fine-tuning with Mistral as a base model on large datasets collected from top-rated GPT-4 and human responses demonstrate a distribution shift that enhances model performance, including [OpenChat](https://huggingface.co/openchat/openchat-3.5-0106) and [Hermes-Pro](https://huggingface.co/teknium/OpenHermes-2.5-Mistral-7B).
+
+![Openchat results](img/openchat-bench-0106.png)
+
+**Figure 2.** After fine-tuning with a large amount of data samples, the model's performance improved, outperforming ChatGPT and Grok-1 in some benchmarks.
 
 ## Conclusion
 
-The ownership and strategic use of pre-trained data serve as an invisible moat. It not only enables the tackling of complex challenges like catastrophic forgetting but also provides a framework for continuous, targeted improvements. This foundational advantage underscores the critical importance of data in the ongoing evolution of LLMs.
+The ownership and strategic use of pre-trained data serve as an invisible moat. It not only enables the tackling of complex challenges like catastrophic forgetting but also provides a baseline for continuous, targeted improvements. Although there is a solution to decomotralize, the cost remains 
 
 ## Reference
 - [Catastrophic forgetting](https://arxiv.org/abs/2308.08747)
