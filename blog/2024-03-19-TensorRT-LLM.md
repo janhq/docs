@@ -1,5 +1,5 @@
 ---
-title: Comparing Performance - TensorRT-LLM and llama.cpp on Nvidia GPUs
+title: Comparison - TensorRT-LLM and llama.cpp on Nvidia GPUs
 description: This post compares the performance of TensorRT-LLM and llama.cpp on Nvidia GPUs, highlighting the trade-offs between speed and resource usage.
 tags: [Nvidia, TensorRT-LLM, llama.cpp, 3090, 4090, "inference engine"]
 unlisted: true
@@ -46,15 +46,17 @@ Our biggest takeaway: **TensorRT-LLM is up to 60% faster than llama.cpp on large
 | TensorRT-LLM | ✅ 159t/s    | ✅ 140.27t/s | ❌ 19t/s    |
 | llama.cpp    | 101.3t/s     | 90t/s        | 22t/s       |
 
-- **Hardware Selection**: The choice of Nvidia RTX 4090 and RTX 3090 GPUs highlights the engines' behavior on top-tier consumer hardware. The RTX 4070 laptop GPU is also discussed to explore performance in constrained environments.
+#### Hardware Selection:
 
-  | NVIDIA GPU                | VRAM Used (GB) | CUDA Cores | Tensor Cores | Memory Bus Width (bit) | Memory Bandwidth (GB/s) |
-  | ------------------------- | -------------- | ---------- | ------------ | ---------------------- | ----------------------- |
-  | RTX 4090 Desktop (Ada)    | 24             | 16,384     | 512          | 384                    | ~1000                   |
-  | RTX 3090 Desktop (Ampere) | 24             | 10,496     | 328          | 384                    | 935.8                   |
-  | RTX 4060 Laptop (Ada)     | 8              | 3,072      | 96           | 128                    | 272                     |
+The choice of Nvidia RTX 4090 and RTX 3090 GPUs highlights the engines' behavior on top-tier consumer hardware. The RTX 4070 laptop GPU is also discussed to explore performance in constrained environments.
 
-  Both desktop GPUs utilize PCIE 5.0, offering substantial bandwidth at 63.015 Gbps, in contrast to the RTX 4070 laptop's more limited capabilities due to power and thermal restrictions.
+| NVIDIA GPU                | VRAM Used (GB) | CUDA Cores | Tensor Cores | Memory Bus Width (bit) | Memory Bandwidth (GB/s) |
+| ------------------------- | -------------- | ---------- | ------------ | ---------------------- | ----------------------- |
+| RTX 4090 Desktop (Ada)    | 24             | 16,384     | 512          | 384                    | ~1000                   |
+| RTX 3090 Desktop (Ampere) | 24             | 10,496     | 328          | 384                    | 935.8                   |
+| RTX 4060 Laptop (Ada)     | 8              | 3,072      | 96           | 128                    | 272                     |
+
+Both desktop GPUs utilize PCIE 5.0, offering substantial bandwidth at 63.015 Gbps, in contrast to the RTX 4070 laptop's more limited capabilities due to power and thermal restrictions.
 
 :::warning[Low-spec Machines?]
 
@@ -66,13 +68,15 @@ We've found that [llama.cpp](https://github.com/ggerganov/llama.cpp) does an inc
 
 :::
 
-- **Experiment Setup**:
-  We ran the experiment using a standardized inference request in a sandboxed environment on the same machine:
-  - Model: Mistral 7b model to run on both GGUF and TensorRT-LLM with quantizations at `INT4`.
-  - We ran tests 5 times for each inference engine, on a baremetal PC with no other opened applications.
-  - Each inference request was of `batch_size` 1 and `input_len` 2048, `output_len` 512 as a realistic test case
-  - CPU and Memory usage were obtained from.... Windows Task Manager 😱
-  - GPU usage was obtained from `nvidia-smi`
+#### Experiment Setup
+
+We ran the experiment using a standardized inference request in a sandboxed environment on the same machine:
+
+- Model: Mistral 7b model to run on both GGUF and TensorRT-LLM with quantizations at `INT4`.
+- We ran tests 5 times for each inference engine, on a baremetal PC with no other opened applications.
+- Each inference request was of `batch_size` 1 and `input_len` 2048, `output_len` 512 as a realistic test case
+- CPU and Memory usage were obtained from.... Windows Task Manager 😱
+- GPU usage was obtained from `nvidia-smi`
 
 > TensorRT-LLM and llama.cpp Params: Benchmarking focused on both engines' latest configurations, highlighting the difference between llama.cpp's use of the open-source cuBLAS and TensorRT-LLM's proprietary optimizations.
 
@@ -87,8 +91,6 @@ We've found that [llama.cpp](https://github.com/ggerganov/llama.cpp) does an inc
 - For TensorRT-LLM, we used `Mistral-7b-int4 AWQ`
 - We ran TensorRT-LLM with `free_gpu_memory_fraction` to test it with the lowest VRAM consumption (performance may be affected)
 - Note: We picked AWQ for TensorRT-LLM as a handicap as AWQ supposedly sacrifices quality for performance
-
-#### Experiment Setup
 
 ## Results
 
@@ -116,6 +118,7 @@ Nvidia's RTX-4090 is their top-of-the-line consumer GPU, and retails for [approx
 
 ### RTX-3090 Desktop
 
+Nvidia's RTX-3090 is their top-of-the-line consumer GPU, and retails for [approximately $1,440](https://www.amazon.com/s?k=rtx+3090&crid=3PXL42XYQABYN&sprefix=rtx+30%2Caps%2C311&ref=nb_sb_noss_2).
 :::info[Hardware Details]
 
 - CPU: Intel 13th series
