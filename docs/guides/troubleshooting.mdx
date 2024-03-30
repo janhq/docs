@@ -76,9 +76,11 @@ To resolve the issue where your Jan is stuck in a broken build after installatio
         #### 2. Delete Application Data, Cache, and User Data
 
         ```sh
-        # You can delete the `/Jan` directory in Windows's AppData Directory by visiting the following path `%APPDATA%\Jan`
-        cd C:\Users\%USERNAME%\AppData\Roaming
-        rmdir /S jan
+        # Delete the `/Jan` directory in Windows's AppData
+        rm -r C:\Users\%USERNAME%\AppData\Roaming\Jan
+
+        # Delete the `/Jan` directory in Windows's AppData
+        rm -r C:\Users\%USERNAME%\jan
         ```
 
         #### 3. Additional Step for Versions Before 0.4.2
