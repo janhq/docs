@@ -11,7 +11,7 @@
     "title": "Ollama",
     "href": "/docs/engines-local/ollama"
   },
-  "tensorrt": {
+  "tensorrtllm": {
     "title": "TensorRT-LLM Extension",
     "href": "/docs/engines-local/tensorrt"
   }
