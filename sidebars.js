@@ -228,9 +228,9 @@ const sidebars = {
           },
           items: [
             "guides/local-providers/llamacpp",
+            "guides/local-providers/tensorrt",
             "guides/local-providers/lmstudio",
             "guides/local-providers/ollama",
-            "guides/local-providers/tensorrt",
           ]
         },
         {
