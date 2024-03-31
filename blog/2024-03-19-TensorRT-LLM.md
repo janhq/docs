@@ -23,8 +23,6 @@ Feedback? Let us know on [Github](https://github.com/janhq/jan) or via Discord [
 
 :::
 
-## Detailed Performance Comparison
-
 We were curious on how TensorRT-LLM performs against llama.cpp on consumer-grade GPUs. TensorRT-LLM has previously been shown by Nvidia to reach performance of up to [10,000 tokens/s](https://nvidia.github.io/TensorRT-LLM/blogs/H100vsA100.html) on datacenter-grade GPUs.
 
 So as proud, self-proclaimed [GPU Poors](https://www.semianalysis.com/p/google-gemini-eats-the-world-gemini#the-gpu-poor), we tested both inference engines across our Ada and Ampere cards, the most popular architectures for consumers.
@@ -34,8 +32,6 @@ So as proud, self-proclaimed [GPU Poors](https://www.semianalysis.com/p/google-g
 An interesting aside: Jan actually started out in June 2023 building on [FastTransformer](https://github.com/NVIDIA/FasterTransformer), the precursor library to TensorRT-LLM. TensorRT-LLM was released in September 2023, making it a very young library. We're excited to see it's roadmap develop!
 
 :::
-
-### How We Conducted the Tests
 
 This analysis delves into the comparative performance of TensorRT-LLM and llama.cpp on Nvidia's high-end RTX 4090 and RTX 3090 GPUs, with a special note on the limitations when extending these findings to laptop GPUs like the RTX 4070. We aim to uncover how the distinct architectural enhancements and software implementations of these inference engines interact with the hardware capabilities, focusing on CUDA and Tensor Cores, memory usage, and the impact of system-wide optimizations such as XMP on RAM speed. Our objective is to provide users with a deep understanding of the trade-offs involved, enabling informed choices that align with their specific computational needs and hardware setups.
 
