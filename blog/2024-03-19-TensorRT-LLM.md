@@ -39,12 +39,15 @@ An interesting aside: Jan actually started out in June 2023 building on [FastTra
 
 This analysis delves into the comparative performance of TensorRT-LLM and llama.cpp on Nvidia's high-end RTX 4090 and RTX 3090 GPUs, with a special note on the limitations when extending these findings to laptop GPUs like the RTX 4070. We aim to uncover how the distinct architectural enhancements and software implementations of these inference engines interact with the hardware capabilities, focusing on CUDA and Tensor Cores, memory usage, and the impact of system-wide optimizations such as XMP on RAM speed. Our objective is to provide users with a deep understanding of the trade-offs involved, enabling informed choices that align with their specific computational needs and hardware setups.
 
-Our biggest takeaway: **TensorRT-LLM is up to 60% faster than llama.cpp on larger VRAMs** like the 4090s and 3090s.
+Our biggest takeaway:
 
-|              | 4090 Desktop | 3090 Desktop | 4060 Laptop |
+- **TensorRT-LLM is up to 60% faster than llama.cpp on larger VRAMs** like the 4090s and 3090s and 30% on smaller/ laptop GPU like 4070.
+- **The ROI for using laptop GPU is the best while desktop GPU is decent**
+
+|              | 4090 Desktop | 3090 Desktop | 4070 Laptop |
 | ------------ | ------------ | ------------ | ----------- |
-| TensorRT-LLM | ✅ 159t/s    | ✅ 140.27t/s | ❌ 19t/s    |
-| llama.cpp    | 101.3t/s     | 90t/s        | 22t/s       |
+| TensorRT-LLM | ✅ 166.9t/s  | ✅ 140.27t/s | ✅ 51.98t/s |
+| llama.cpp    | 99.69t/s     | 90t/s        | 38.75t/s    |
 
 #### Hardware Selection:
 
@@ -94,6 +97,34 @@ We ran the experiment using a standardized inference request in a sandboxed envi
 
 ## Results
 
+#### Performance comparison
+
+Comparison for `TensorRT-LLM` and `llama.cpp GGUF` on NVIDIA GPUs
+![CPI comparison on NVIDIA GPU](./images/gpu.png)
+
+Comparison for `TensorRT-LLM` and `llama.cpp GGUF` on Intel/ AMD cpu
+![CPI comparison on NVIDIA GPU](./images/cpu.png)
+
+### ROI comparison
+
+To evaluate ROI, we consider the cost per throughput unit (tokens/s) for each GPU:
+
+- **Cost per Throughput Unit (CPT)**: Calculating the CPT provides insight into the efficiency of the investment in terms of performance gain per dollar spent.
+
+- **Price**:
+  - Laptop 4090 on Thunderbolt 3: USD 2300
+  - Desktop 4090 on PCIE 5: USD 2000,
+  - Desktop 3090 on PCIE 5: USD 1500,
+  - Laptop 4070 on PCIE 5: USD 524,
+
+#### ROI Insights
+
+![CPI comparison on NVIDIA GPU](./images/CPI.png)
+
+From the chart, "Laptop 4070 on PCIE 5" setup has the lowest CPT for both "TensorRT-LLM" and "llama.cpp GGUF (GPU)", making it the most cost-effective option among the setups presented. The "Laptop 4090 on Thunderbolt 3" has the highest CPT for both methods, which suggests it's the least cost-effective in terms of throughput.
+
+## Detailed metrics
+
 ### RTX-4090 Desktop
 
 :::info[Hardware Details]
@@ -116,9 +147,12 @@ Nvidia's RTX-4090 is their top-of-the-line consumer GPU, and retails for [approx
 | RAM Used (GB)        | 0.611            | 0.54             | 0.42         | 🤯 20% less       |
 | Disk Size (GB)       | 4.07             | 4.07             | 3.66         | 🤯 10% smaller    |
 
+NVIDIA GPU Geforce RTX 4090 is the latest and biggest in GTX Geforce with Ada architecture. The result is impressive. We can clearly see that the go-to choice to run LLM on NVIDIA GPU Geforce RTX 4090 is `TensorRT-LLM`
+We also found out that the performance with TensorRT-LLM can increase around 15% if we enable [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html) in BIOS for RAM bus speed from 3600 to 5600.
+
 ### RTX-3090 Desktop
 
-Nvidia's RTX-3090 is their top-of-the-line consumer GPU, and retails for [approximately $1,440](https://www.amazon.com/s?k=rtx+3090&crid=3PXL42XYQABYN&sprefix=rtx+30%2Caps%2C311&ref=nb_sb_noss_2).
+Nvidia's RTX-3090 is their top-of-the-line consumer GPU, and retails for [approximately $1,500](https://www.amazon.com/s?k=rtx+3090&crid=3PXL42XYQABYN&sprefix=rtx+30%2Caps%2C311&ref=nb_sb_noss_2).
 :::info[Hardware Details]
 
 - CPU: Intel 13th series
@@ -137,11 +171,14 @@ Nvidia's RTX-3090 is their top-of-the-line consumer GPU, and retails for [approx
 | RAM Used (GB)        | 0.611            | 0.54             | 0.42         | 🤯 22% less       |
 | Disk Size (GB)       | 4.07             | 4.07             | 3.66         | 🤯 10% smaller    |
 
+NVIDIA GPU Geforce RTX 3090 uses Ampere architecture. It has 36% less CUDA core and Tensor Core compared to 4090 but only 17% slower in terms of performance
+We also found out that the performance with TensorRT-LLM can increase around 15% if we enable [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html) in BIOS for RAM bus speed from 3600 to 5600.
+
 ### RTX-4070 Laptop with eGPU
 
 :::info[Hardware Details]
 
-- CPU: AMD Ryzen
+- CPU: AMD Ryzen 7
 - GPU: NVIDIA GPU 4070 (Ada - sm 89) on PCIE 5.0 and NVIDIA GPU 4090 (Ada - sm 89) on eGPU
 - RAM: 64GB
 - OS: Windows 11 Pro
@@ -152,72 +189,26 @@ Nvidia's RTX-3090 is their top-of-the-line consumer GPU, and retails for [approx
 
 | Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | Difference on GPU |
 | -------------------- | ---------------- | ---------------- | ------------ | ----------------- |
-| Throughput (token/s) |                  |                  |              |                   |
-| VRAM Used (GB)       | 0                | 6.0              | 6.8          | 🤔 13% more       |
-| RAM Used (GB)        | 0.611            | 0.54             | 0.42         | 🤯 22% less       |
+| Throughput (token/s) | 11.56            | 38.75            | 51.98        | ✅ 25.4% faster   |
+| VRAM Used (GB)       | 0                | 9.96             | 6.12         | 🤔 39% less       |
+| RAM Used (GB)        | 0.611            | 4.33             | 4.05         | 🤯 7% less        |
 | Disk Size (GB)       | 4.07             | 4.07             | 3.66         | 🤯 10% smaller    |
 
 #### Mistral-7b int4 with NVIDIA GPU 4090 in eGPU via Thunderbolt 3
 
 | Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | Difference on GPU |
 | -------------------- | ---------------- | ---------------- | ------------ | ----------------- |
-| Throughput (token/s) |                  |                  |              |                   |
-| VRAM Used (GB)       | 0                | 6.0              | 6.8          | 🤔 13% more       |
-| RAM Used (GB)        | 0.611            | 0.54             | 0.42         | 🤯 22% less       |
+| Throughput (token/s) | 11.56            | 62.22            | 104.95       | ✅ 41% faster     |
+| VRAM Used (GB)       | 0                | 7.8              | 7.74         | 🤔 1% less        |
+| RAM Used (GB)        | 0.611            | 5.38             | 4.11         | 🤯 24% less       |
 | Disk Size (GB)       | 4.07             | 4.07             | 3.66         | 🤯 10% smaller    |
 
-The NVIDIA GPU laptop compared to NVIDIA GPU on desktop is worse (metrics to prove) because of the thermal constraint and energy consumption (it's a good tradeoff for portability). The PCIe 5.0 speed is the same at 63.015 Gbp.
+The NVIDIA GPU laptop compared to NVIDIA GPU on desktop is worse because of the thermal constraint and energy consumption (it's a good tradeoff for portability). The PCIe 5.0 speed is the same at 63.015 Gbp.
 
 There is a way to extend laptop with GPU is eGPU (metrics to prove). Though it extends the capabilites, it also has performance issue because of the bandwidth in Thunderbolt 3.0 at 40Gbps.
-
-## ROI comparison
-
-- **Price**: The RTX 3090 is priced at approximately $1,440, whereas the RTX 4090 retails for around $2,000.
-- **Throughput**: As previously discussed, TensorRT-LLM achieves a throughput of 159 tokens/s on the RTX 4090 and 140.27 tokens/s on the RTX 3090.
-
-To evaluate ROI, we consider the cost per throughput unit (tokens/s) for each GPU:
-
-- **Cost per Throughput Unit (CPT)**: Calculating the CPT provides insight into the efficiency of the investment in terms of performance gain per dollar spent.
-
-### Resource Usage Comparison: TensorRT-LLM vs. llama.cpp
-
-Resource efficiency is a critical component in assessing the overall value provided by each inference engine, influencing both short-term performance and long-term operational costs.
-
-### ROI Analysis
-
-To quantify ROI, we compare the cost per throughput unit with the resource usage efficiencies, providing a balanced view of performance versus investment.
-
-- **RTX 4090**:
-
-  - CPT for TensorRT-LLM: $2,000 / 166.9 tokens/s ≈ $11.98 per token/s
-  - CPT for llama.cpp (GPU): $2,000 / 99.69 tokens/s ≈ $20.07 per token
-
-- **RTX 4090**:
-
-  - Cost per Throughput Unit for TensorRT-LLM: $\approx $11.98 per token/s
-  - Cost per Throughput Unit for llama.cpp: $\approx $20.06 per token/s
-
-- **RTX 3090**:
-  - Cost per Throughput Unit for TensorRT-LLM: $\approx $10.27 per token/s
-  - Cost per Throughput Unit for llama.cpp: $\approx $16.00 per token/s
-
-#### ROI Insights
-
-- **Performance vs. Cost**: The RTX 3090 demonstrates a lower cost per throughput unit for both TensorRT-LLM and llama.cpp compared to the RTX 4090, indicating a more cost-efficient performance for the investment. This suggests that while the RTX 4090 offers superior performance, the RTX 3090 provides better value for money, especially when using TensorRT-LLM.
-- **TensorRT-LLM vs. llama.cpp**: Across both GPUs, TensorRT-LLM offers a lower cost per throughput unit compared to llama.cpp, highlighting its efficiency and optimization for Nvidia's latest hardware. This efficiency not only translates to faster inference speeds but also to a more favorable ROI, especially when considering the added benefits of lower RAM and disk space usage.
-
-#### Resource Usage Considerations
-
-- **VRAM and RAM Efficiency**: TensorRT-LLM's slightly higher VRAM requirement is offset by its substantial gains in throughput and reduced RAM and disk usage. For users prioritizing performance and resource efficiency, TensorRT-LLM presents a compelling choice, despite the initial higher hardware investment.
-- **Long-Term Operational Costs**: The operational cost benefits from reduced RAM and disk usage by TensorRT-LLM, combined with its superior throughput, could translate into significant savings over time, further enhancing the ROI for users with the requisite hardware capabilities.
 
 ## Conclusion
 
 We were surprised to discover that TensorRT-LLM uses less RAM, VRAM, and disk size while yielding faster TPS. i.e. On NVIDIA GeForce RTX and 7B model at INT4, TensorRT-LLM is ~55% faster than llama.cpp
-[say more about this!]
-
-?? [this sentence doesnt make sense] For popular 7B int4 models, NVIDIA GTX Geforce 4090s perform ~12% better compared to NVIDIA GTX Geforce 4090.
-
-We also found out that the performance with TensorRT-LLM can increase around 15% if we enable [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html) in BIOS for RAM bus speed from 3600 to 5600. [say more about this?! why what is it]
 
 **tl;dr: Users with larger VRAM should use TensorRT-LLM engine. Whereas, users with smaller cards should stick with llama.cpp, which seems to excel at CPU inference, in highly resource constrained environments.**
