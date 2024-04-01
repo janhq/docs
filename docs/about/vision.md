@@ -21,13 +21,13 @@ keywords:
 
 ## Jan's vision is to shape a future where humans and machines collaborate, continuing our legacy as toolmakers
 
-Throughout history, humanity has thrived by mastering tools, from [controlling fire](https://en.wikipedia.org/wiki/Control_of_fire_by_early_humans) to [inventing the wheel](https://en.wikipedia.org/wiki/Wheel). These leaps weren't just about survival, they were foundational to our civilization.
+Throughout history, our progress as a species has been marked by our ability to create and utilize tools, from [controlling fire](https://en.wikipedia.org/wiki/Control_of_fire_by_early_humans) to [inventing the wheel](https://en.wikipedia.org/wiki/Wheel). These milestones were not just about survival; they were fundamental to the development of our civilization.
 
-Today, we stand on the brink of a new frontier with artificial intelligence. AI is not merely another tool, it represents a new form of collaboration between humans and machines - promising to enhance our creativity, augment our lives, and deepen our understanding of the world.
+As we stand at the edge of a new era with artificial intelligence, we recognize AI as not just another tool but as a partner in our ongoing journey. AI promises to extend our creative capacities, enhance our day-to-day lives, and deepen our comprehension of the universe.
 
 ![jan ai shapes the future](./assets/vision-1.webp)
 
-In the future we envision, AI will be as integral to our lives as fire and the wheel once were, with each individual having their own machines/robots. Mastering AI, like mastering fire, will require understanding its potential, respecting its power, and learning to control it for the betterment of humanity.
+In the future we see AI will be as integral to our lives as fire and the wheel once were, with each individual having their own machines/robots. Mastering AI, like mastering fire, will require understanding its potential, respecting its power, and learning to control it for the betterment of humanity.
 
 ### Inspired by Science Fiction, Grounded in Optimism
 
@@ -65,7 +65,7 @@ Now, let's take a glimpse into this future through a day in the life of Emre, a 
 >
 > In 2050, Jan is more than just a tool, it's an integral part of Emre's life, **augmenting his abilities** and enabling him to live a more fulfilling life.
 
-What a day, hah!
+Embrace the future where human and machine collaboration unfolds new horizons of innovation and growth.
 
 ---
 
