@@ -3,6 +3,7 @@ import { Tweet } from 'react-tweet'
 import AutoScroll from 'embla-carousel-auto-scroll'
 import { PrevButton, NextButton, usePrevNextButtons } from './ArrowButton'
 import SliderMobile from './SliderMobile'
+import { twMerge } from 'tailwind-merge'
 
 const firstSLide = {
   firstColumn: [
@@ -82,7 +83,11 @@ const secondSlide = {
   ],
 }
 
-const WallOfLove = () => {
+type Props = {
+  transparent?: boolean
+}
+
+const WallOfLove = ({ transparent }: Props) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { slidesToScroll: 'auto', loop: true },
     [AutoScroll({ playOnInit: false })]
@@ -96,7 +101,12 @@ const WallOfLove = () => {
   } = usePrevNextButtons(emblaApi)
 
   return (
-    <div className="bg-[#F0F0F0] dark:bg-[#242424] py-8 mt-10 pb-10">
+    <div
+      className={twMerge(
+        'bg-[#F0F0F0] dark:bg-[#242424] py-8 mt-10 pb-10',
+        transparent && 'bg-transparent dark:bg-transparent py-0'
+      )}
+    >
       <div className="nextra-wrap-container">
         <div className="w-full mx-auto relative lg:p-8 text-center flex justify-between">
           <div className="hidden lg:block">
