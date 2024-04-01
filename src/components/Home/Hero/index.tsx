@@ -32,7 +32,7 @@ const Hero = () => {
           <DropdownDownload lastRelease={lastRelease} />
         </div>
         <p className="mt-6 text-black/60 dark:text-white/60">
-          500K+ Downloads | Free & Open Source
+          600K+ Downloads | Free & Open Source
         </p>
         <div className="w-4/5 mx-auto mt-10">
           <ThemeImage
