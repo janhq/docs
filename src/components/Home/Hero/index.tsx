@@ -2,9 +2,16 @@ import DropdownDownload from '@/components/DropdownDownload'
 import { ThemeImage } from '@/components/ThemeImage'
 import Link from 'next/link'
 import { useData } from 'nextra/data'
+import { useEffect, useState } from 'react'
 
 const Hero = () => {
   const { lastVersion, lastRelease } = useData()
+  const [isChrome, setIsChrome] = useState(false)
+  useEffect(() => {
+    if (navigator.userAgent.includes('Chrome')) {
+      setIsChrome(true)
+    }
+  }, [])
 
   return (
     <div className="nextra-wrap-container">
@@ -29,7 +36,16 @@ const Hero = () => {
           Turn your computer into an AI machine
         </p>
         <div className="mb-4 mt-10">
-          <DropdownDownload lastRelease={lastRelease} />
+          {isChrome ? (
+            <DropdownDownload lastRelease={lastRelease} />
+          ) : (
+            <a
+              className="dark:nx-bg-neutral-900 dark:text-white bg-black text-white hover:text-white justify-center dark:border dark:border-neutral-800 flex-shrink-0 p-4 rounded-xl inline-flex items-center"
+              href="/download"
+            >
+              Download Jan for PC
+            </a>
+          )}
         </div>
         <p className="mt-6 text-black/60 dark:text-white/60">
           600K+ Downloads | Free & Open Source
