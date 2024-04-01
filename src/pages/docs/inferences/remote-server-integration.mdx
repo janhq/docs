@@ -1,0 +1,93 @@
+---
+title: Remote Server Integration
+description: A step-by-step guide on how to set up Jan to connect with any remote or local API server.
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    import-models-manually,
+    remote server,
+    OAI compatible,
+  ]
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Any OAI Compatible Server
+This guide outlines the process for configuring Jan as a client for both remote and local API servers, using the `mistral-ins-7b-q4` model for illustration. We'll show how to connect to Jan's API-hosting servers.
+
+<Callout type='info'>
+  Currently, you can only connect to one OpenAI-compatible endpoint at a time.
+</Callout>
+
+<Steps>
+### Step 1: Configure a Client Connection
+
+1. Navigate to the `~/jan/engines` folder.
+2. Modify the `openai.json file`.
+
+<Callout type='info'>
+  Please note that currently, the code that supports any OpenAI-compatible endpoint only reads `engine/openai.json` file. Thus, it will not search any other files in this directory.
+</Callout>
+
+3. Configure `full_url` properties with the endpoint server that you want to connect. For example, if you're going to communicate to Jan's API server, you can configure it as follows:
+
+```json ~/jan/engines/openai.json
+{
+  // "full_url": "https://<server-ip-address>:<port>/v1/chat/completions"
+  "full_url": "https://<server-ip-address>:1337/v1/chat/completions"
+  // Skip api_key if your local server does not require authentication
+  // "api_key": "sk-<your key here>"
+}
+```
+
+### Step 2: Create a Model JSON
+
+1. In `~/jan/models`, create a folder named `mistral-ins-7b-q4`.
+
+2. In this folder, add a `model.json` file with Filename as `model.json`, ensure the following configurations:
+
+- `id` matching folder name.
+- `Format` set to `api`.
+- `Engine` set to `openai`
+- `State` set to `ready`.
+
+```json ~/jan/models/mistral-ins-7b-q4/model.json
+{
+  "sources": [
+    {
+      "filename": "janai",
+      "url": "https://jan.ai"
+    }
+  ],
+  "id": "mistral-ins-7b-q4",
+  "object": "model",
+  "name": "Mistral Instruct 7B Q4 on Jan API Server",
+  "version": "1.0",
+  "description": "Jan integration with remote Jan API server",
+  "format": "api",
+  "settings": {},
+  "parameters": {},
+  "metadata": {
+    "author": "MistralAI, The Bloke",
+    "tags": ["remote", "awesome"]
+  },
+  "engine": "openai"
+}
+```
+
+### Step 3: Start the Model
+
+1. Restart Jan and navigate to the **Hub**.
+2. Locate your model and click the **Use** button.
+</Steps>
+<Callout type='info'>
+  Assistance and Support, If you have questions or want more preconfigured GGUF models, please join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
+</Callout>

@@ -1,5 +1,5 @@
 ---
-title: LlamaCPP Extension
+title: Llama.cpp Extension
 description: A step-by-step guide on how to customize the LlamaCPP extension.
 keywords:
   [
@@ -40,162 +40,169 @@ import { Callout } from 'nextra/components'
 
 In this guide, we'll walk you through the process of customizing your engine settings by configuring the `nitro.json` file
 
-1. Navigate to the `App Settings` > `Advanced` > `Open App Directory` > `~/jan/engine` folder.
-
+### Prerequisites
 <Tabs items={['Mac', 'Windows', 'Linux']}>
     <Tabs.Tab >
       <Tabs items={['Mac Intel', 'Mac Silicon']}>
         <Tabs.Tab >
-          Listed here in the Wikipedia page [Intel-based Macs](https://en.wikipedia.org/wiki/MacBook_Pro_(Intel-based))
+          Make sure you're using an Intel-based Mac. For a full list of supported Intel CPUs, please see [here](https://en.wikipedia.org/wiki/MacBook_Pro_(Intel-based)).
           
-          This uses CPU by default and there is no acceleration option available. 
+          <Callout type="info">
+            This uses CPU by default and there is no acceleration option available. 
+          </Callout>
           
-          Please use small models, expect
+          For Mac Intel, it is recommended to utilize smaller models. Expect the following outcomes:
            - High time to first token (ms) 
            - Low throughput (tokens/sec)
         </Tabs.Tab>
 
         <Tabs.Tab >
-          Listed here in the Wikipedia page [Apple Silicon](https://en.wikipedia.org/wiki/Apple_Silicon)
+          Make sure you're using a Mac Silicon. For a full list of supported Apple Silicon CPUs, please see [here](https://en.wikipedia.org/wiki/Apple_Silicon)
           
-          This can use Apple GPU with Metal by default for acceleration. Apple ANE is not supported yet.
+          <Callout type="info">
+            This can use Apple GPU with Metal by default for acceleration. Apple ANE is not supported yet.
+          </Callout>
 
-          Please use an adequate model size based on your hardware as it has limited unified memory
+          For Mac Silicon, it is recommended to use an adequate model size based on your hardware. Expect the following outcomes:
           - Low time to first token (ms)
           - High throughput (tokens/sec)
         </Tabs.Tab>
         
       </Tabs>
-      Engine location
-        ```bash
-        ~/jan/engines
-        ```
+      ## Step-by-step Guide
+      1. Navigate to the `App Settings` > `Advanced` > `Open App Directory` > `~/jan/engine` folder.
     </Tabs.Tab>
     <Tabs.Tab >
-      Currently, only Windows with x86_64 architecture is supported by default. If you do not have any GPU/ NPU, it will use CPU by default.
+      Currently, only Windows with x86_64 architecture is supported by default. 
       
-      Please use an adequate model size based on your hardware based on the `Recommended` tag for `RAM` in the Hub
+      <Callout type="info">
+        If you do not have any GPU/ NPU, it will use CPU by default.
+      </Callout>
+      
+      For Windows, select a model size suited to your hardware by looking for the `Recommended RAM` tag in the Hub. Expect the following outcomes:
         - High time to first token (ms) 
         - Low throughput (tokens/sec)
 
+      ### CPU Instruction
       Prebuilt Nitro with llama.cpp inference engine needs to run on the correct CPU instruction.
       Available CPU instruction options are:
       <Tabs items={['AVX2', 'AVX', 'AVX-512']}>
         <Tabs.Tab >
-          - Please refer to this [List of CPUs support AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2) for more information
-          - AVX2 is the default instruction set for Intel CPUs and AMD CPUs in Jan
+          - Please refer to this [List of CPUs support AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2) for more information.
+          - AVX2 is the default instruction set for Intel CPUs and AMD CPUs in Jan.
         </Tabs.Tab>
         <Tabs.Tab >
-          - Please refer to this [List of CPUs support AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX) for more information
+          - Please refer to this [List of CPUs support AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX) for more information.
           - Please refer to this [discussion](https://github.com/janhq/jan/issues/2489) for manual fixes, we will update the installer soon.
         </Tabs.Tab>
         <Tabs.Tab >
-          - Please refer to this [List of CPUs support AVX-512](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX-512) for more information
+          - Please refer to this [List of CPUs support AVX-512](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX-512) for more information.
           - Please refer to this [discussion](https://github.com/janhq/jan/issues/2489) for manual fixes, we will update the installer soon.
         </Tabs.Tab>
       </Tabs>
-
+      ### Acceleration Options
       Available acceleration options are:
       <Tabs items={['NVIDIA GPU', 'AMD Radeon GPU', 'Intel Arc GPU']}>
         <Tabs.Tab >
-          ### Prerequisites
+          #### Prerequisites
             - Nvidia Driver v535+ (For installation guide, please see [here](/docs/troubleshooting#1-ensure-gpu-mode-requirements))
             - CUDA Toolkit v12.2+ (For installation guide, please see [here](/docs/troubleshooting#1-ensure-gpu-mode-requirements))
-          ### How to use
+          #### How to Use
             - This feature is supported by `llama.cpp` with CUBLAS build
             - Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the NVIDIA GPU you want.
-            - Please use an adequate to big model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub
-              - High time to first token (ms) 
+            - Select a model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub. Expect the following outcomes:
+              - High time to first token (ms)
               - Low throughput (tokens/sec)
         </Tabs.Tab>
         <Tabs.Tab >
-          ### Prerequisites
+          #### Prerequisites
             - You do not need to install any additional drivers or software for AMD Radeon GPU as it's supported by default with Vulkan.
-          ### How to use
+          #### How to Use
             - This feature is supported by `llama.cpp` with Vulkan build
             - Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the AMD Radeon GPU you want.
-            - Please use adequate to big model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub
-              - High time to first token (ms) 
+            - Select a model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub. Expect the following outcomes:
+              - High time to first token (ms)
               - Low throughput (tokens/sec)
         </Tabs.Tab>
         <Tabs.Tab >
-          ### Prerequisites
+          #### Prerequisites
             - You do not need to install any additional drivers or software for AMD Radeon GPU as it's supported by default with Vulkan.
-          ### How to use
+          #### How to Use
             - This feature is supported by `llama.cpp` with Vulkan build
             - Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the Intel Arc GPU you want.
-            - Please use adequate to big model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub
-              - High time to first token (ms) 
+            - Select a model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub. Expect the following outcomes:
+              - High time to first token (ms)
               - Low throughput (tokens/sec)
         </Tabs.Tab>
       </Tabs>
-      Engine location
-        ```bash
-        C:/Users/<your_user_name>/jan/engines
-        ```
+      ## Step-by-step Guide
+      1. Navigate to the `App Settings` > `Advanced` > `Open App Directory` > `~/<YOUR_USERNAME>/jan/engine` folder.
     </Tabs.Tab>
     <Tabs.Tab >
-        Currently, only Linux with x86_64 architecture is supported. . If you do not have any GPU/ NPU, it will use CPU by default.
-      
-      Please use an adequate model size based on your hardware based on the `Recommended` tag for `RAM` in the Hub
+        Currently, only Linux with x86_64 architecture is supported.
+
+      <Callout type="info">
+        If you do not have any GPU/ NPU, it will use CPU by default.
+      </Callout>
+
+     For Linux, select a model size suited to your hardware based on the `Recommended` tag for `RAM` in the Hub. Expect the following outcomes:
         - High time to first token (ms) 
         - Low throughput (tokens/sec)
 
+      ### CPU Instruction
       Prebuilt Nitro with llama.cpp inference engine needs to run on the correct CPU instruction.
       Available CPU instruction options are:
       <Tabs items={['AVX2', 'AVX', 'AVX-512']}>
         <Tabs.Tab >
-          - Please refer to this [List of CPUs support AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2) for more information
-          - AVX2 is the default instruction set for Intel CPUs and AMD CPUs in Jan
+          - Please refer to this [List of CPUs support AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2) for more information.
+          - AVX2 is the default instruction set for Intel CPUs and AMD CPUs in Jan.
         </Tabs.Tab>
         <Tabs.Tab >
-          - Please refer to this [List of CPUs support AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX) for more information
+          - Please refer to this [List of CPUs support AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX) for more information.
           - Please refer to this [discussion](https://github.com/janhq/jan/issues/2489) for manual fixes, we will update the installer soon.
         </Tabs.Tab>
         <Tabs.Tab >
-          - Please refer to this [List of CPUs support AVX-512](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX-512) for more information
+          - Please refer to this [List of CPUs support AVX-512](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX-512) for more information.
           - Please refer to this [discussion](https://github.com/janhq/jan/issues/2489) for manual fixes, we will update the installer soon.
         </Tabs.Tab>
       </Tabs>
-
+      ### Acceleration Options
       Available acceleration options are:
       <Tabs items={['NVIDIA GPU', 'AMD Radeon GPU', 'Intel Arc GPU']}>
         <Tabs.Tab >
-          ### Prerequisites
+          #### Prerequisites
             - Nvidia Driver v535+ (For installation guide, please see [here](/docs/troubleshooting#1-ensure-gpu-mode-requirements))
             - CUDA Toolkit v12.2+ (For installation guide, please see [here](/docs/troubleshooting#1-ensure-gpu-mode-requirements))
-          ### How to use
+          #### How to Use
             - This feature is supported by `llama.cpp` with CUBLAS build
             - Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the NVIDIA GPU you want.
-            - Please use adequate to big model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub
-              - High time to first token (ms) 
+            - Select a model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub. Expect the following outcomes:
+              - High time to first token (ms)
               - Low throughput (tokens/sec)
         </Tabs.Tab>
         <Tabs.Tab >
-          ### Prerequisites
+          #### Prerequisites
             - You do not need to install any additional drivers or software for AMD Radeon GPU as it's supported by default with Vulkan.
-          ### How to use
+          #### How to Use
             - This feature is supported by `llama.cpp` with Vulkan build
             - Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the AMD Radeon GPU you want.
-            - Please use adequate to big model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub
-              - High time to first token (ms) 
+            - Select a model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub. Expect the following outcomes:
+              - High time to first token (ms)
               - Low throughput (tokens/sec)
         </Tabs.Tab>
         <Tabs.Tab >
-          ### Prerequisites
+          #### Prerequisites
             - You do not need to install any additional drivers or software for AMD Radeon GPU as it's supported by default with Vulkan.
-          ### How to use
+          #### How to Use
             - This feature is supported by `llama.cpp` with Vulkan build
             - Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the Intel Arc GPU you want.
-            - Please use adequate to big model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub
-              - High time to first token (ms) 
+            - Select a model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub. Expect the following outcomes:
+              - High time to first token (ms)
               - Low throughput (tokens/sec)
         </Tabs.Tab>
       </Tabs>
-        Engine location
-        ```bash
-        ~/jan/engines
-        ```
+      ## Step-by-step Guide
+      1. Navigate to the `App Settings` > `Advanced` > `Open App Directory` > `~/jan/engines` folder.
     </Tabs.Tab>
 </Tabs>
 
