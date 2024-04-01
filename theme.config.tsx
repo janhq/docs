@@ -73,8 +73,7 @@ const config: DocsThemeConfig = {
   },
   head: function useHead() {
     const { title, frontMatter } = useConfig()
-    const titleTemplate =
-      (frontMatter?.title || title) + ' | ' + 'Customizable Intelligence, LLM'
+    const titleTemplate = 'Jan' + ' - ' + (frontMatter?.title || title)
 
     return (
       <Fragment>
@@ -87,14 +86,14 @@ const config: DocsThemeConfig = {
           name="description"
           content={
             frontMatter?.description ||
-            'Jan is a desktop application that turns computers into thinking machines.'
+            `Run LLMs like Mistral or Llama2 locally and offline on your computer, or connect to remote AI APIs like OpenAI’s GPT-4 or Groq.`
           }
         />
         <meta
           name="og:description"
           content={
             frontMatter?.description ||
-            'Jan is a desktop application that turns computers into thinking machines.'
+            `Run LLMs like Mistral or Llama2 locally and offline on your computer, or connect to remote AI APIs like OpenAI’s GPT-4 or Groq.`
           }
         />
         <meta
