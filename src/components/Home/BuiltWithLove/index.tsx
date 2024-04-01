@@ -60,7 +60,7 @@ const BuiltWithLove = () => {
           <a
             href="https://huggingface.co/janhq"
             target="_blank"
-            className="card-wrapper dark:card-wrapper-dark inline-flex w-56 px-4 py-3 rounded-xl cursor-pointer justify-center items-start space-x-4 "
+            className="card-wrapper !shadow-none dark:card-wrapper-dark inline-flex w-56 px-4 py-3 rounded-xl cursor-pointer justify-center items-start space-x-4 "
           >
             <span>
               <svg

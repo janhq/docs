@@ -5,7 +5,7 @@ const CTADownload = () => {
   const { lastRelease } = useData()
 
   return (
-    <div className="w-full xl:w-10/12 mx-auto relative py-8">
+    <div className="relative py-8">
       <div className="nextra-wrap-container">
         <div className="flex p-4 lg:justify-between flex-col lg:flex-row">
           <div className="w-full">
