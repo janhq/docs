@@ -20,7 +20,7 @@ const BuiltWithLove = () => {
             <br className="hidden lg:block" /> and Jan is built in public
           </p>
         </div>
-        <div className="flex gap-8 mt-8 justify-center">
+        <div className="flex flex-col lg:flex-row gap-8 mt-8 items-center justify-center">
           <a
             href="https://github.com/janhq/jan"
             target="_blank"
