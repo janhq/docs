@@ -1,5 +1,5 @@
 ---
-title: "Data is an invisible moat and OpenAI has it"
+title: "The Invisible Moat around Open-Source LLM"
 description: "Uncover the pivotal role of data ownership in training the next iteration of LLM."
 slug: /data-is-a-moat
 tags: [OpenAI has a moat, Catastrophic forgetting, ChatGPT]
@@ -21,10 +21,25 @@ categories: Research
 In the crowded AI landscape, OpenAI's ChatGPT stands out, not just for its capabilities but for its unique access to the pre-trained dataset. This post explores the vital role of data in maintaining a competitive edge, focusing on OpenAI's strategic advantage through data ownership.
 
 ## Data: The Secret Weapon
-
 OpenAI, with ChatGPT, has carved a distinct advantage. By harnessing user interactions, it gains invaluable insights into diverse use cases, enabling precise model refinements. The cornerstone of this advantage lies in the "pre-trained dataset." This treasure trove of data empowers OpenAI to cater to specific needs, ensuring sustained improvement and differentiation.
 
-### The Significance of Pre-trained Data
+## The rise of the opensource
+
+```
+- How they/Mistral/Llama make money?
+
+-> around having pretrained data -> finetuning
+
+First para:
+Rise of Open Source LLMs like Mistral, Llama2, Llama3
+People think they don't have a moat = everything is open source
+
+Second para:
+We actually think these guys have an "invisible moat"
+Pre-training data is not released, and makes a huge difference in fine-tuning efficacy
+```
+
+### Why pretrained data is important?
 
 > *Owning the pre-trained dataset is crucial as it represents the original distribution.*
 
@@ -36,7 +51,19 @@ Access to the pre-trained dataset acts as a master key to address the critical i
 
 ### Illustrating Catastrophic Forgetting
 
-Catastrophic forgetting can be visualized as a ball in a multidimensional landscape, where moving towards new knowledge risks losing grasp on the old. Pre-trained data acts as a map, guiding fine-tuning in a way that incorporates new information while safeguarding existing knowledge.
+```
+What is fine-tuning
+   Process of Finetuning (pretrain, instruct, finetune)
+   Fine-tuning datasets
+   Risk of catastrophic forgetting
+"Why is Pre-trained data important?"
+   What is pre-training dataset
+   How does fine-tuning with pre-training dataset differ from when you don't have it
+   How does it avoid catastrophic forgetting
+```
+
+Catastrophic forgetting can be visualized as a ball in a multidimensional landscape, where moving towards new knowledge risks losing grasp on the old. 
+Pre-trained data acts as a map, guiding fine-tuning in a way that incorporates new information while safeguarding existing knowledge.
 
 ![Gradient decent](img/gradient-decent.gif)
 
@@ -62,7 +89,9 @@ The pre-trained data can also serve as a form of "noise masking", similar to tec
 
 This approach introduces a level of  ["noise"](https://arxiv.org/abs/2310.05914) during training, which can prevent the model from overfitting to the new dataset. By retaining a mix of original and new data, the model is exposed to a broader range of scenarios, enhancing its generalization capabilities and robustness across tasks.
 
-## Viable Solutions
+## Solutions
+
+### Overwholming approach
 
 Overcoming these challenges requires a balanced approach. One partial method involves inundating the model with extensive, curated data, allowing for comprehensive fine-tuning. While effective, this approach demands significant computational resources, a comprehensive filtering process for low-quality inputs, and an extraordinarily high cost associated with gathering millions of high-quality responses.
 
@@ -72,9 +101,16 @@ In the open-source community, 2 notable examples of fine-tuning with Mistral as 
 
 **Figure 2.** After fine-tuning with a large amount of data samples, the model's performance improved, outperforming ChatGPT and Grok-1 in some benchmarks.
 
+### Fully open source model
+
+- Example: Dolma + olma from allenai
+
+
 ## Conclusion
 
-The ownership and strategic use of pre-trained data serve as an invisible moat. It not only enables the tackling of complex challenges like catastrophic forgetting but also provides a baseline for continuous, targeted improvements. Although there is a solution to decomotralize, the cost remains 
+The ownership and strategic use of pre-trained data serve as an invisible moat. It not only enables the tackling of complex challenges like catastrophic forgetting but also provides a baseline for continuous, targeted improvements. Although there is a solution to decomotralize, the cost remains reasonably high.
+
+Fully open pretrained + open weight
 
 ## Reference
 - [Catastrophic forgetting](https://arxiv.org/abs/2308.08747)
