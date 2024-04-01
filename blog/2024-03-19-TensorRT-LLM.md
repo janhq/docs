@@ -1,5 +1,5 @@
 ---
-title: Comparison - TensorRT-LLM and llama.cpp on Nvidia GPUs
+title: Benchmarking TensorRT-LLM and llama.cpp on Nvidia GPUs
 description: This post compares the performance of TensorRT-LLM and llama.cpp on Nvidia GPUs, highlighting the trade-offs between speed and resource usage.
 tags: [Nvidia, TensorRT-LLM, llama.cpp, 3090, 4090, "inference engine"]
 unlisted: true
@@ -7,9 +7,11 @@ unlisted: true
 
 Jan now supports [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM) to further accelerate model inference for users with Nvidia GPUs. Users with Windows & RTX GPUs can use it as an alternative to [llama.cpp](https://github.com/ggerganov/llama.cpp).
 
-This post compares GGUF/llama.cpp vs. TensorRT/TRT-LLM on speed and resource requirements, for popular consumer Ada & Ampere architectures.
+This post compares GGUF/llama.cpp and TensorRT/TRT-LLM on speed and resource consumption, across popular consumer Ada & Ampere architectures.
 
-Checkout the [TensorRT-LLM Guide](/guides/engines/tensorrt-llm) for setup instructions and access our Model Hub for prebuilt TensorRT-LLM models:
+To use this new extension in Jan Desktop, checkout the [TensorRT-LLM Guide](/guides/engines/tensorrt-llm) for setup instructions.
+
+We've prebuilt the following TensorRT-LLM models for easy download in Jan Hub:
 
 - Mistral 7b
 - TinyLlama-1.1b
@@ -33,27 +35,28 @@ An interesting aside: Jan actually started out in June 2023 building on [FastTra
 
 :::
 
-This analysis delves into the comparative performance of TensorRT-LLM and llama.cpp on Nvidia's high-end RTX 4090 and RTX 3090 GPUs, with a special note on the limitations when extending these findings to laptop GPUs like the RTX 4070. We aim to uncover how the distinct architectural enhancements and software implementations of these inference engines interact with the hardware capabilities, focusing on CUDA and Tensor Cores, memory usage, and the impact of system-wide optimizations such as XMP on RAM speed. Our objective is to provide users with a deep understanding of the trade-offs involved, enabling informed choices that align with their specific computational needs and hardware setups.
+## Highlights
 
-Our biggest takeaway:
+- **TensorRT-LLM is up to 60% faster than llama.cpp on consumer GPUs**, while using less RAM & CPU.
+- On smaller Nvidia GPUs, like the 4070s or on laptops, TRT-LLM is up to 30% faster.
+- On smaller Nvidia GPUs, **Llama.cpp uses less VRAM** but the comparison inverts as you scale up in VRAM.
+- **Llama.cpp uniquely works on CPUs and likely the best ROI for AI users that work with smaller models.** Llama.cpp works on almost all NVIDIA cards from 2-4GB VRAM, while TensorRT-LLM requires at least 6gb ram on RTX 30s/ 40s (2xxx is not supported).
+- **Users scaling up their setup with Nvidia GPUs should consider the RTX 4070 dGPU** (laptop version) which has the best performance to cost ROI.
 
-- **TensorRT-LLM is up to 60% faster than llama.cpp on larger VRAMs** like the 4090s and 3090s and 30% on smaller/ laptop GPU like 4070.
-- **The ROI for using laptop GPU is the best while desktop GPU is decent**
+|              | 4090 Desktop | 3090 Desktop | 4070 Laptop | Laptop Intel i7 13800H CPU |
+| ------------ | ------------ | ------------ | ----------- | -------------------------- |
+| TensorRT-LLM | ✅ 166.9t/s  | ✅ 140.27t/s | ✅ 51.98t/s | (Not supported)            |
+| Llama.cpp    | 99.69t/s     | 90t/s        | 38.75t/s    | ✅ 11.566t/s               |
 
-|              | 4090 Desktop | 3090 Desktop | 4070 Laptop |
-| ------------ | ------------ | ------------ | ----------- |
-| TensorRT-LLM | ✅ 166.9t/s  | ✅ 140.27t/s | ✅ 51.98t/s |
-| llama.cpp    | 99.69t/s     | 90t/s        | 38.75t/s    |
+## Hardware Selection
 
-#### Hardware Selection:
+We chose the following popular GPUs architectures based on our users' preferences:
 
-The choice of Nvidia RTX 4090 and RTX 3090 GPUs highlights the engines' behavior on top-tier consumer hardware. The RTX 4070 laptop GPU is also discussed to explore performance in constrained environments.
-
-| NVIDIA GPU                | VRAM Used (GB) | CUDA Cores | Tensor Cores | Memory Bus Width (bit) | Memory Bandwidth (GB/s) |
-| ------------------------- | -------------- | ---------- | ------------ | ---------------------- | ----------------------- |
-| RTX 4090 Desktop (Ada)    | 24             | 16,384     | 512          | 384                    | ~1000                   |
-| RTX 3090 Desktop (Ampere) | 24             | 10,496     | 328          | 384                    | 935.8                   |
-| RTX 4060 Laptop (Ada)     | 8              | 3,072      | 96           | 128                    | 272                     |
+| NVIDIA GPU        | VRAM (GB) | CUDA Cores | Tensor Cores | Memory Bus Width (bit) | Memory Bandwidth (GB/s) |
+| ----------------- | --------- | ---------- | ------------ | ---------------------- | ----------------------- |
+| RTX 4090 (Ada)    | 24        | 16,384     | 512          | 384                    | ~1000                   |
+| RTX 3090 (Ampere) | 24        | 10,496     | 328          | 384                    | 935.8                   |
+| RTX 4060 (Ada)    | 8         | 7680       | 144          | 192                    | 272                     |
 
 Both desktop GPUs utilize PCIE 5.0, offering substantial bandwidth at 63.015 Gbps, in contrast to the RTX 4070 laptop's more limited capabilities due to power and thermal restrictions.
 
@@ -96,10 +99,10 @@ We ran the experiment using a standardized inference request in a sandboxed envi
 #### Performance comparison
 
 Comparison for `TensorRT-LLM` and `llama.cpp GGUF` on NVIDIA GPUs
-![CPI comparison on NVIDIA GPU](./images/gpu.png)
+![GPU benchmark](./images/gpu.png)
 
-Comparison for `TensorRT-LLM` and `llama.cpp GGUF` on Intel/ AMD cpu
-![CPI comparison on NVIDIA GPU](./images/cpu.png)
+Performance`llama.cpp GGUF` on Intel CPU
+![CPU benchmark](./images/cpu.png)
 
 ### ROI comparison
 
@@ -108,14 +111,21 @@ To evaluate ROI, we consider the cost per throughput unit (tokens/s) for each GP
 - **Cost per Throughput Unit (CPT)**: Calculating the CPT provides insight into the efficiency of the investment in terms of performance gain per dollar spent.
 
 - **Price**:
-  - Laptop 4090 on Thunderbolt 3: USD 2300
-  - Desktop 4090 on PCIE 5: USD 2000,
-  - Desktop 3090 on PCIE 5: USD 1500,
-  - Laptop 4070 on PCIE 5: USD 524,
+  | Name | Connection | Retail price |
+  |-------------------|-----------------|--------------|
+  | Laptop eGPU 4090 | Thunderbolt 3 | USD 2300 |
+  | Desktop 4090 | PCIE 4 | USD 2000 |
+  | Desktop 3090 | PCIE 4 | USD 1500 |
+  | Laptop 4070 | PCIE 4 | USD 524 |
+  | Intel i7 14700 | - | USD 400 |
+  | Intel i9 13900 | - | USD 520 |
+  | Intel i7 13800H | - | USD 457 |
 
 #### ROI Insights
 
-![CPI comparison on NVIDIA GPU](./images/CPI.png)
+![CPI GPU](./images/cpi_gpu.png)
+
+![CPI CPU](./images/cpi_cpu.png)
 
 From the chart, "Laptop 4070 on PCIE 5" setup has the lowest CPT for both "TensorRT-LLM" and "llama.cpp GGUF (GPU)", making it the most cost-effective option among the setups presented. The "Laptop 4090 on Thunderbolt 3" has the highest CPT for both methods, which suggests it's the least cost-effective in terms of throughput.
 
@@ -136,19 +146,21 @@ Nvidia's RTX-4090 is their top-of-the-line consumer GPU, and retails for [approx
 
 #### Mistral-7b int4
 
-| Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | Difference on GPU |
-| -------------------- | ---------------- | ---------------- | ------------ | ----------------- |
-| Throughput (token/s) | 14.0             | 99.69            | 166.9        | ✅ 57% faster     |
-| VRAM Used (GB)       | 0                | 5.5              | 6.3          | 🤔 14% more       |
-| RAM Used (GB)        | 0.611            | 0.54             | 0.42         | 🤯 20% less       |
-| Disk Size (GB)       | 4.07             | 4.07             | 3.66         | 🤯 10% smaller    |
+| Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | How TRT-LLM Compares |
+| -------------------- | ---------------- | ---------------- | ------------ | -------------------- |
+| Throughput (token/s) | 14.0             | 99.69            | 166.9        | ✅ 57% faster        |
+| VRAM Used (GB)       | 0                | 5.5              | 6.3          | 14% more             |
+| RAM Used (GB)        | 0.611            | 0.54             | 0.42         | ✅ 20% less          |
+| Disk Size (GB)       | 4.07             | 4.07             | 3.66         | ✅ 10% smaller       |
 
-NVIDIA GPU Geforce RTX 4090 is the latest and biggest in GTX Geforce with Ada architecture. The result is impressive. We can clearly see that the go-to choice to run LLM on NVIDIA GPU Geforce RTX 4090 is `TensorRT-LLM`
-We also found out that the performance with TensorRT-LLM can increase around 15% if we enable [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html) in BIOS for RAM bus speed from 3600 to 5600.
+4090's yielded the biggest performance differences.
+
+Tip: We also found out that the performance with TensorRT-LLM can increase around 15% if we enable [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html) in BIOS for RAM bus speed from 3600 to 5600.
 
 ### RTX-3090 Desktop
 
 Nvidia's RTX-3090 is their top-of-the-line consumer GPU, and retails for [approximately $1,500](https://www.amazon.com/s?k=rtx+3090&crid=3PXL42XYQABYN&sprefix=rtx+30%2Caps%2C311&ref=nb_sb_noss_2).
+
 :::info[Hardware Details]
 
 - CPU: Intel 13th series
@@ -160,12 +172,12 @@ Nvidia's RTX-3090 is their top-of-the-line consumer GPU, and retails for [approx
 
 #### Mistral-7b int4
 
-| Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | Difference on GPU |
-| -------------------- | ---------------- | ---------------- | ------------ | ----------------- |
-| Throughput (token/s) | 11.42            | 90               | 140.27       | ✅ 55% faster     |
-| VRAM Used (GB)       | 0                | 6.0              | 6.8          | 🤔 13% more       |
-| RAM Used (GB)        | 0.611            | 0.54             | 0.42         | 🤯 22% less       |
-| Disk Size (GB)       | 4.07             | 4.07             | 3.66         | 🤯 10% smaller    |
+| Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | How TRT-LLM Compares |
+| -------------------- | ---------------- | ---------------- | ------------ | -------------------- |
+| Throughput (token/s) | 11.42            | 90               | 140.27       | ✅ 55% faster        |
+| VRAM Used (GB)       | 0                | 6.0              | 6.8          | 13% more             |
+| RAM Used (GB)        | 0.611            | 0.54             | 0.42         | ✅ 22% less          |
+| Disk Size (GB)       | 4.07             | 4.07             | 3.66         | ✅ 10% smaller       |
 
 NVIDIA GPU Geforce RTX 3090 uses Ampere architecture. It has 36% less CUDA core and Tensor Core compared to 4090 but only 17% slower in terms of performance
 We also found out that the performance with TensorRT-LLM can increase around 15% if we enable [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html) in BIOS for RAM bus speed from 3600 to 5600.
@@ -186,18 +198,18 @@ We also found out that the performance with TensorRT-LLM can increase around 15%
 | Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | Difference on GPU |
 | -------------------- | ---------------- | ---------------- | ------------ | ----------------- |
 | Throughput (token/s) | 11.56            | 38.75            | 51.98        | ✅ 25.4% faster   |
-| VRAM Used (GB)       | 0                | 9.96             | 6.12         | 🤔 39% less       |
-| RAM Used (GB)        | 0.611            | 4.33             | 4.05         | 🤯 7% less        |
-| Disk Size (GB)       | 4.07             | 4.07             | 3.66         | 🤯 10% smaller    |
+| VRAM Used (GB)       | 0                | 9.96             | 6.12         | ✅ 39% less       |
+| RAM Used (GB)        | 0.611            | 4.33             | 4.05         | ✅ 7% less        |
+| Disk Size (GB)       | 4.07             | 4.07             | 3.66         | ✅ 10% smaller    |
 
 #### Mistral-7b int4 with NVIDIA GPU 4090 in eGPU via Thunderbolt 3
 
 | Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | Difference on GPU |
 | -------------------- | ---------------- | ---------------- | ------------ | ----------------- |
 | Throughput (token/s) | 11.56            | 62.22            | 104.95       | ✅ 41% faster     |
-| VRAM Used (GB)       | 0                | 7.8              | 7.74         | 🤔 1% less        |
-| RAM Used (GB)        | 0.611            | 5.38             | 4.11         | 🤯 24% less       |
-| Disk Size (GB)       | 4.07             | 4.07             | 3.66         | 🤯 10% smaller    |
+| VRAM Used (GB)       | 0                | 7.8              | 7.74         | 1% less           |
+| RAM Used (GB)        | 0.611            | 5.38             | 4.11         | ✅ 24% less       |
+| Disk Size (GB)       | 4.07             | 4.07             | 3.66         | ✅ 10% smaller    |
 
 The NVIDIA GPU laptop compared to NVIDIA GPU on desktop is worse because of the thermal constraint and energy consumption (it's a good tradeoff for portability). The PCIe 5.0 speed is the same at 63.015 Gbp.
 
@@ -205,6 +217,8 @@ There is a way to extend laptop with GPU is eGPU (metrics to prove). Though it e
 
 ## Conclusion
 
-We were surprised to discover that TensorRT-LLM uses less RAM, VRAM, and disk size while yielding faster TPS. i.e. On NVIDIA GeForce RTX and 7B model at INT4, TensorRT-LLM is ~55% faster than llama.cpp
+Across Nvidia consumer-grade GPUs, TensorRT-LLM uses less RAM, VRAM, and disk size while yielding faster TPS than Llama.cpp.
 
-**tl;dr: Users with larger VRAM should use TensorRT-LLM engine. Whereas, users with smaller cards should stick with llama.cpp, which seems to excel at CPU inference, in highly resource constrained environments.**
+On Jan, users with larger VRAM should use the TensorRT-LLM engine.
+
+Whereas, users with smaller cards should still use the Llama.cpp engine, which seems to excel at CPU inference, running in highly resource constrained environments and older Nvidia cards.
