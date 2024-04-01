@@ -2,17 +2,19 @@
 
 import { ApiReferenceReact } from '@scalar/api-reference-react'
 import { useTheme } from 'nextra-theme-docs'
-import { useEffect } from 'react'
+import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 
 export const APIReference = () => {
   const { theme } = useTheme()
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (theme === 'dark' || theme === 'system') {
       localStorage.setItem('isDark', 'true')
     } else {
       localStorage.setItem('isDark', 'false')
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme])
 
   return (
