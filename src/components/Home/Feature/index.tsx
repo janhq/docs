@@ -5,20 +5,16 @@ import { twMerge } from 'tailwind-merge'
 
 const features = [
   {
-    title: 'Run local AI or connect to remote APIs',
+    title: 'Local or Remote AI',
     description:
       'Choose between running AI models locally for privacy, like Llama or Mistral, or connect to remote APIs, like ChatGPT or Claude.',
   },
   {
-    title: 'Browse and download models',
-    description: `With Jan's Hub, instantly download popular AI models or import your own to expand your toolkit without hassle.`,
+    title: '100% offline',
+    description: `Conversations, preferences, and model usage stay on your computer. It's secure, exportable and can be deleted at any time.`,
   },
   {
-    title: 'Use Jan in your natural workflows',
-    description: `Jan works with your workflow, ready to assist at a moment's notice without interrupting your work.`,
-  },
-  {
-    title: 'Customize and add features with Extensions',
+    title: 'Extensions',
     description: `Tailor Jan exactly to your needs with Extensions, making your experience truly your own.`,
   },
 ]
@@ -33,8 +29,7 @@ const Feature = () => {
           <div className="flex p-4 lg:px-0 lg:justify-between flex-col lg:flex-row items-end">
             <div className="w-full">
               <h1 className="text-5xl lg:text-7xl !font-normal leading-tight lg:leading-tight mt-2 font-serif">
-                Jan redefines <br className="hidden lg:block" /> how we use
-                computers
+                Features
               </h1>
             </div>
             <div className="mt-10 w-full lg:w-1/2 mr-auto lg:text-right">
@@ -86,16 +81,12 @@ const Feature = () => {
 
             <div className="relative w-full rounded-l-3xl overflow-hidden block">
               {activeFeature === 0 && (
-                <ThemeImage
-                  alt="App screenshots"
-                  width={800}
-                  height={800}
-                  className="w-full"
-                  source={{
-                    light: '/assets/images/homepage/features01.webp',
-                    dark: '/assets/images/homepage/features01dark.webp',
-                  }}
-                />
+                <video width="960" height="960" controls autoPlay>
+                  <source
+                    src="/assets/images/homepage/testing.mp4"
+                    type="video/mp4"
+                  />
+                </video>
               )}
               {activeFeature === 1 && (
                 <ThemeImage

@@ -13,7 +13,7 @@ const BuiltWithLove = () => {
       <div className="w-full px-4 xl:w-3/4 mx-auto relative py-8">
         <div className="text-center">
           <h1 className="text-5xl !font-normal leading-tight lg:leading-tight mt-2 font-serif">
-            Built with love
+            100% Open Source
           </h1>
           <p className="leading-relaxed text-black/60 dark:text-white/60">
             Jan is entirely open-source. We build it transparently, guided by
