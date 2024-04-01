@@ -10,7 +10,8 @@ const CTADownload = () => {
         <div className="flex p-4 lg:justify-between flex-col lg:flex-row">
           <div className="w-full">
             <h1 className="text-5xl lg:text-7xl !font-normal leading-tight lg:leading-tight mt-2 font-serif">
-              Change how <br className="hidden lg:block" /> you use computers
+              Turn your computer <br className="hidden lg:block" /> into an AI
+              computer
             </h1>
           </div>
           <div className="lg:mt-10 w-full lg:w-1/2 mx-auto lg:mr-auto lg:text-right">

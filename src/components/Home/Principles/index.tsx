@@ -1,48 +1,12 @@
 import LogoMark from '@/components/LogoMark'
 
-const table = {
-  labels: [
-    'Ownership',
-    'Openness',
-    'Your Role',
-    'Approach',
-    'Data Handling',
-    'Privacy',
-    'Transparency',
-    'Outage Resilience',
-    'Philosophy',
-  ],
-  statusQuo: [
-    'Owned by Big Tech',
-    'Closed-source',
-    'Consumer',
-    'Cloud-based',
-    'Stored on external servers',
-    'Questionable',
-    'Opaque "Black Box',
-    'Potential data hostage',
-    'User monetization',
-  ],
-  jan: [
-    'Fully owned by you',
-    'Open-source (AGPLv3)',
-    'Creator',
-    'Local-first',
-    'Stored locally, openly accessible',
-    'Private and offline',
-    'Open-source and customizable',
-    'Continues to work on your device',
-    'Empower users with the right to repair',
-  ],
-}
-
-const Philosophy = () => {
+const Principles = () => {
   return (
-    <div className="px-4 lg:px-8 mt-10 lg:mt-20 border-y dark:nx-border-neutral-800 text-sm">
+    <div className="px-4 lg:px-8 mt-10 pb-24 lg:mt-20 text-sm">
       <div className="nx-mx-auto nx-flex nx-max-w-[90rem] nx-pl-[max(env(safe-area-inset-left),1.5rem)] nx-pr-[max(env(safe-area-inset-right),1.5rem)]">
         <div className="w-full mx-auto relative pt-8 text-center">
           <h1 className="text-5xl !font-normal leading-tight lg:leading-tight mt-2 font-serif">
-            Our Philosophy
+            Our Principles
           </h1>
           <p className="leading-relaxed mt-2 text-black/60 dark:text-white/60 flex gap-x-2 justify-center">
             Jan is opinionated software on what AI should be
@@ -124,9 +88,10 @@ const Philosophy = () => {
               />
             </svg>
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left mt-16">
-            <div>
+          <div className="grid grid-cols-1 gap-8 mt-16 text-center">
+            <div className="lg:w-2/5 mx-auto">
               <svg
+                className="mx-auto"
                 width="32"
                 height="32"
                 viewBox="0 0 32 32"
@@ -162,8 +127,9 @@ const Philosophy = () => {
                 open-source models directly on your computer.`}
               </p>
             </div>
-            <div>
+            <div className="lg:w-2/5 mx-auto">
               <svg
+                className="mx-auto"
                 width="29"
                 height="32"
                 viewBox="0 0 29 32"
@@ -226,8 +192,9 @@ const Philosophy = () => {
                 without tricks or traps.
               </p>
             </div>
-            <div>
+            <div className="lg:w-2/5 mx-auto">
               <svg
+                className="mx-auto"
                 width="28"
                 height="32"
                 viewBox="0 0 28 32"
@@ -317,61 +284,10 @@ const Philosophy = () => {
               </p>
             </div>
           </div>
-          <div className="mt-20 flex dark:bg-[#181818] bg-[#FAFAFA] border dark:nx-border-neutral-800 rounded-t-2xl border-b-0">
-            <div className="w-56 lg:w-80 border-r dark:nx-border-neutral-800">
-              <div className="h-[52px]"></div>
-              {table.labels.map((label, i) => {
-                return (
-                  <div
-                    className="border-t dark:nx-border-neutral-800 p-4 font-bold text-left"
-                    title={label}
-                    key={i}
-                  >
-                    <h6 className="line-clamp-1">{label}</h6>
-                  </div>
-                )
-              })}
-            </div>
-            <div className="w-full lg:w-1/2 border-r dark:nx-border-neutral-800 hidden md:block">
-              <h6 className="p-4 mb-0 font-semibold">Status Quo</h6>
-              {table.statusQuo.map((label, i) => {
-                return (
-                  <div
-                    className="border-t dark:nx-border-neutral-800 p-4"
-                    key={i}
-                    title={label}
-                  >
-                    <p className="text-black/60 dark:text-white/60 line-clamp-1">
-                      {label}
-                    </p>
-                  </div>
-                )
-              })}
-            </div>
-            <div className="w-full lg:w-1/2">
-              <div className="flex p-4 items-center gap-x-2 justify-center">
-                <LogoMark />
-                <h6 className="mb-0 font-semibold">Jan</h6>
-              </div>
-              {table.jan.map((label, i) => {
-                return (
-                  <div
-                    className="border-t dark:nx-border-neutral-800 p-4"
-                    key={i}
-                    title={label}
-                  >
-                    <p className="text-black/60 dark:text-white/60 line-clamp-1">
-                      {label}
-                    </p>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
         </div>
       </div>
     </div>
   )
 }
 
-export default Philosophy
+export default Principles
