@@ -64,7 +64,7 @@
           "Chat"
         ],
         "summary": "Create chat completion\n",
-        "description": "Creates a model response for the given chat conversation.  <a  href = \"https://platform.openai.com/docs/api-reference/chat/create\"> Equivalent to OpenAI's create chat completion. </a>\n",
+        "description": "Creates a model response for the given chat conversation. The API limits stop words to a maximum of 4. If more are specified, only the first 4 will be accepted.  <a  href = \"https://platform.openai.com/docs/api-reference/chat/create\"> Equivalent to OpenAI's create chat completion. </a>\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1937,9 +1937,12 @@
             "items": {
               "type": "string"
             },
-            "description": "Defines specific tokens or phrases at which the model will stop generating further output.\n",
+            "description": "Specifies four specific words or phrases that signal the model to stop producing more output.\n",
             "example": [
-              "hello"
+              "hello",
+              "Hello",
+              "HELLO",
+              "hELLO"
             ]
           },
           "frequency_penalty": {
