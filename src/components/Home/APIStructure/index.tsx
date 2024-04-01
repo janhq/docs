@@ -67,17 +67,17 @@ const APIStructure = () => {
         </div>
       </div>
       <div className="flex px-4 flex-col lg:flex-row items-center">
-        <div className="w-full lg:w-1/2 mx-auto text-center my-4">
+        <div className="w-full lg:w-1/2 mx-auto text-center my-8">
           <a
-            className="text-blue-600 dark:text-blue-400 cursor-pointer"
+            className="text-black dark:text-white bg-[#F0F0F0] dark:bg-[#242424] cursor-pointer font-bold py-3 px-5 rounded-lg border border-ragy-200 dark:border-neutral-700"
             href="/api-reference/"
             target="_blank"
           >
-            API Reference <BsArrowRight className="inline-block" />
+            API Reference
           </a>
         </div>
       </div>
-      <div className="bg-[#F0F0F0] dark:bg-[#242424] lg:w-2/5 px-4 py-2 mx-auto rounded-xl mt-4">
+      <div className="bg-[#fff] shadow-xl dark:shadow-none dark:bg-[#242424] lg:w-2/5 px-4 py-2 mx-auto rounded-xl mt-4">
         {endpoints.map((item, i) => {
           return (
             <div
