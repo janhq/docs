@@ -52,5 +52,11 @@
   "post": {
     "type": "page",
     "display": "hidden"
+  },
+  "download": {
+    "type": "page",
+    "theme": {
+      "layout": "raw"
+    }
   }
 }

@@ -32,16 +32,6 @@ const nextConfig = {
     GTM_ID: process.env.GTM_ID,
   },
   transpilePackages: ['@scalar', 'react-tweet'],
-  // Example Redirect @TODO: arista and irvan will be work on this after Hien move deployment not using static or next export
-  async redirects() {
-    return [
-      {
-        source: '/team',
-        destination: '/about/teams',
-        permanent: true,
-      },
-    ]
-  },
 }
 
 export default withNextra(nextConfig)
