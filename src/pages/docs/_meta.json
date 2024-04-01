@@ -4,6 +4,9 @@
     "type": "separator"
   },
   "index": "Overview",
+  "quickstart": {
+    "title": "Quickstart"
+  },
   "desktop": {
     "title": "Desktop Installation"
   },
@@ -14,15 +17,17 @@
     "title": "User Guides",
     "type": "separator"
   },
+  "models": "",
+  "assistants": "",
   "threads": "",
+  "use-tools": "",
   "local-api": "",
   "advanced": "",
   "inference-engines": {
     "title": "Inference Engines",
     "type": "separator"
   },
-  "engines-local": "",
-  "engines-remote": "",
+  "inferences": "Inferences",
   "extensions-separator": {
     "title": "Extensions",
     "type": "separator"
