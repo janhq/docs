@@ -8,6 +8,7 @@ import Principles from './Principles'
 import CTANewsletter from './CTANewsletter'
 import Statistic from './Statistic'
 import CTADownload from './CTADownload'
+import APIStructure from './APIStructure'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Hero />
       <BuiltWithLove />
       <Feature />
+      <APIStructure />
       <WallOfLove />
       <Principles />
       <CTANewsletter />
