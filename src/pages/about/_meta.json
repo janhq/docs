@@ -6,7 +6,12 @@
   "index": "What is Jan?",
   "community": "",
   "teams": "Who we are",
-  "wall-of-love": "",
+  "wall-of-love": {
+    "theme": {
+      "toc": false,
+      "layout": "full"
+    }
+  },
   "how-we-work": "",
   "acknowledgements": "",
   "faq-separator": {
