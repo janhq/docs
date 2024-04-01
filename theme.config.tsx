@@ -37,7 +37,7 @@ const config: DocsThemeConfig = {
     const { asPath } = useRouter()
     if (asPath !== '/') {
       return {
-        titleTemplate: '%s | Customizable Intelligence, LLM',
+        titleTemplate: 'Jan - %s',
         canonical: defaultUrl,
         twitter: {
           cardType: 'summary_large_image',
