@@ -22,7 +22,7 @@
     "href": "/api-reference",
     "theme": {
       "layout": "raw",
-      "footer": true
+      "footer": false
     }
   },
   "product": {
