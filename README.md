@@ -1,40 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Website & Docs
 
-## Getting Started
+This website is built using [Nextra](https://nextra.site/), a modern static website generator.
 
-First, run the development server:
+### Information Architecture
+
+We try to **keep routes consistent** to maintain SEO.
+
+- **`/guides/`**: Guides on how to use the Jan application. For end users who are directly using Jan.
+
+- **`/developer/`**: Developer docs on how to extend Jan. These pages are about what people can build with our software.
+
+- **`/api-reference/`**: Reference documentation for the Jan API server, written in Swagger/OpenAPI format.
+
+- **`/changelog/`**: A list of changes made to the Jan application with each release.
+
+- **`/blog/`**: A blog for the Jan application.
+
+## How to Contribute
+
+Refer to the [Contributing Guide](https://github.com/janhq/jan/blob/main/CONTRIBUTING.md) for more comprehensive information on how to contribute to the Jan project.
+
+### Pre-requisites and Installation
+
+- [Node.js](https://nodejs.org/en/) (version 20.0.0 or higher)
+- [yarn](https://yarnpkg.com/) (version 1.22.0 or higher)
+
+#### Installation
 
 ```bash
-npm run dev
-# or
+cd jan/docs
+yarn install
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+#### Build
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+yarn build
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Deployment
 
-## Learn More
+Using SSH:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+USE_SSH=true yarn deploy
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Not using SSH:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+GIT_USER=<Your GitHub username> yarn deploy
+```
 
-## Deploy on Vercel
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Preview URL, Pre-release and Publishing Documentation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- When a pull request is created, the preview URL will be automatically commented on the pull request.
+
+- The documentation will then be published to [https://jan.ai/](https://jan.ai/) when the pull request is merged to `main`.
