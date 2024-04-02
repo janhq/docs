@@ -205,8 +205,9 @@ const sidebars = {
         // "guides/user-guides/overview-guides",
         // "guides/user-guides/jan-data-folder",
         "guides/user-guides/manage-models",
-        // "guides/user-guides/manage-assistants",
+        "guides/user-guides/manage-assistants",
         "guides/user-guides/manage-threads",
+        "guides/user-guides/use-tools",
         "guides/user-guides/local-server",
         "guides/user-guides/advanced-settings"
       ]
