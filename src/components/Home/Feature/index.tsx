@@ -1,6 +1,6 @@
 import ThemeVideo from '@/components/ThemeVideo'
 import { useState } from 'react'
-import { BsArrowRight } from 'react-icons/bs'
+// import { BsArrowRight } from 'react-icons/bs'
 import { twMerge } from 'tailwind-merge'
 
 const features = [
@@ -41,13 +41,14 @@ const Feature = () => {
               </h1>
             </div>
             <div className="w-full lg:w-1/2 mr-auto text-center mt-4 lg:mt-0 lg:text-right">
-              <a
+              {/* Temporary hidden since doesn't have docs for feature */}
+              {/* <a
                 className="text-blue-600 dark:text-blue-400 cursor-pointer"
                 href="/features/"
                 target="_blank"
               >
                 View Our Features <BsArrowRight className="inline-block" />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -87,14 +88,14 @@ const Feature = () => {
               })}
             </div>
 
-            <div className="relative w-full rounded-l-3xl overflow-hidden block">
+            <div className="relative w-full overflow-hidden block">
               {activeFeature === 0 && (
                 <ThemeVideo
                   width={960}
                   height={960}
                   source={{
-                    light: '/assets/images/homepage/testing.mp4',
-                    dark: '/assets/images/homepage/testing.mp4',
+                    light: '/assets/images/homepage/feature-01-light.mp4',
+                    dark: '/assets/images/homepage/feature-01-light.mp4',
                   }}
                 />
               )}
@@ -103,8 +104,8 @@ const Feature = () => {
                   width={960}
                   height={960}
                   source={{
-                    light: '/assets/images/homepage/testing.mp4',
-                    dark: '/assets/images/homepage/testing.mp4',
+                    light: '/assets/images/homepage/feature-01-light.mp4',
+                    dark: '/assets/images/homepage/feature-01-light.mp4',
                   }}
                 />
               )}
@@ -113,8 +114,8 @@ const Feature = () => {
                   width={960}
                   height={960}
                   source={{
-                    light: '/assets/images/homepage/testing.mp4',
-                    dark: '/assets/images/homepage/testing.mp4',
+                    light: '/assets/images/homepage/feature-01-light.mp4',
+                    dark: '/assets/images/homepage/feature-01-light.mp4',
                   }}
                 />
               )}
@@ -123,8 +124,8 @@ const Feature = () => {
                   width={960}
                   height={960}
                   source={{
-                    light: '/assets/images/homepage/testing.mp4',
-                    dark: '/assets/images/homepage/testing.mp4',
+                    light: '/assets/images/homepage/feature-01-light.mp4',
+                    dark: '/assets/images/homepage/feature-01-light.mp4',
                   }}
                 />
               )}
@@ -133,8 +134,8 @@ const Feature = () => {
                   width={960}
                   height={960}
                   source={{
-                    light: '/assets/images/homepage/testing.mp4',
-                    dark: '/assets/images/homepage/testing.mp4',
+                    light: '/assets/images/homepage/feature-01-light.mp4',
+                    dark: '/assets/images/homepage/feature-01-light.mp4',
                   }}
                 />
               )}

@@ -119,7 +119,7 @@ const config: DocsThemeConfig = {
     text: <FooterMenu />,
   },
   nextThemes: {
-    defaultTheme: 'system',
+    defaultTheme: 'light',
   },
 }
 
