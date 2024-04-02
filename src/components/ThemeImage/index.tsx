@@ -13,7 +13,7 @@ type Props = Omit<ImageProps, 'src' | 'priority' | 'loading'> & {
   priority?: boolean
 }
 
-export const ThemeImage = (props: Props) => {
+const ThemeImage = (props: Props) => {
   const { source, className, alt, width, height, priority } = props
 
   return (
@@ -37,3 +37,5 @@ export const ThemeImage = (props: Props) => {
     </>
   )
 }
+
+export default ThemeImage

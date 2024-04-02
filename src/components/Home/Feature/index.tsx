@@ -1,4 +1,4 @@
-import { ThemeImage } from '@/components/ThemeImage'
+import ThemeVideo from '@/components/ThemeVideo'
 import { useState } from 'react'
 import { BsArrowRight } from 'react-icons/bs'
 import { twMerge } from 'tailwind-merge'
@@ -89,46 +89,52 @@ const Feature = () => {
 
             <div className="relative w-full rounded-l-3xl overflow-hidden block">
               {activeFeature === 0 && (
-                <video width="960" height="960" controls autoPlay>
-                  <source
-                    src="/assets/images/homepage/testing.mp4"
-                    type="video/mp4"
-                  />
-                </video>
+                <ThemeVideo
+                  width={960}
+                  height={960}
+                  source={{
+                    light: '/assets/images/homepage/testing.mp4',
+                    dark: '/assets/images/homepage/testing.mp4',
+                  }}
+                />
               )}
               {activeFeature === 1 && (
-                <ThemeImage
-                  alt="App screenshots"
-                  width={800}
-                  height={800}
-                  className="w-full"
+                <ThemeVideo
+                  width={960}
+                  height={960}
                   source={{
-                    light: '/assets/images/homepage/features02.webp',
-                    dark: '/assets/images/homepage/features02dark.webp',
+                    light: '/assets/images/homepage/testing.mp4',
+                    dark: '/assets/images/homepage/testing.mp4',
                   }}
                 />
               )}
               {activeFeature === 2 && (
-                <ThemeImage
-                  alt="App screenshots"
-                  width={800}
-                  height={800}
-                  className="w-full"
+                <ThemeVideo
+                  width={960}
+                  height={960}
                   source={{
-                    light: '/assets/images/homepage/features03.webp',
-                    dark: '/assets/images/homepage/features03dark.webp',
+                    light: '/assets/images/homepage/testing.mp4',
+                    dark: '/assets/images/homepage/testing.mp4',
                   }}
                 />
               )}
               {activeFeature === 3 && (
-                <ThemeImage
-                  alt="App screenshots"
-                  width={800}
-                  height={800}
-                  className="w-full"
+                <ThemeVideo
+                  width={960}
+                  height={960}
                   source={{
-                    light: '/assets/images/homepage/features04.webp',
-                    dark: '/assets/images/homepage/features04dark.webp',
+                    light: '/assets/images/homepage/testing.mp4',
+                    dark: '/assets/images/homepage/testing.mp4',
+                  }}
+                />
+              )}
+              {activeFeature === 4 && (
+                <ThemeVideo
+                  width={960}
+                  height={960}
+                  source={{
+                    light: '/assets/images/homepage/testing.mp4',
+                    dark: '/assets/images/homepage/testing.mp4',
                   }}
                 />
               )}

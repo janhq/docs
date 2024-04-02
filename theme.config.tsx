@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import { useConfig, DocsThemeConfig } from 'nextra-theme-docs'
 import LogoMark from '@/components/LogoMark'
 import FooterMenu from '@/components/FooterMenu'
-import { useRouter } from 'next/router'
 import JSONLD from '@/components/JSONLD'
 
 const defaultUrl = 'https://jan.ai'
@@ -34,28 +33,25 @@ const config: DocsThemeConfig = {
     text: 'Edit this page on GitHub →',
   },
   useNextSeoProps() {
-    const { asPath } = useRouter()
-    if (asPath !== '/') {
-      return {
-        titleTemplate: 'Jan - %s',
-        canonical: defaultUrl,
-        twitter: {
-          cardType: 'summary_large_image',
-          site: '@janframework',
-        },
-        openGraph: {
-          type: 'website',
-          url: defaultUrl,
-          images: [
-            {
-              url: `${defaultImage}`,
-              width: 800,
-              height: 600,
-              alt: 'Jan-OGImage',
-            },
-          ],
-        },
-      }
+    return {
+      titleTemplate: 'Jan - %s',
+      canonical: defaultUrl,
+      twitter: {
+        cardType: 'summary_large_image',
+        site: '@janframework',
+      },
+      openGraph: {
+        type: 'website',
+        url: defaultUrl,
+        images: [
+          {
+            url: `${defaultImage}`,
+            width: 800,
+            height: 600,
+            alt: 'Jan-OGImage',
+          },
+        ],
+      },
     }
   },
   sidebar: {

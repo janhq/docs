@@ -1,4 +1,4 @@
-import { ThemeImage } from '@/components/ThemeImage'
+import ThemeImage from '@/components/ThemeImage'
 
 const Statistic = () => {
   return (

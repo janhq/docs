@@ -1,19 +1,16 @@
-import Image, { ImageProps } from 'next/image'
 import { twMerge } from 'tailwind-merge'
 
-type Props = Omit<ImageProps, 'src' | 'priority' | 'loading'> & {
+type Props = {
   source: {
     light: string
     dark: string
   }
   className?: string
-  alt: string
   width: number
   height: number
-  priority?: boolean
 }
 
-export const ThemeImage = (props: Props) => {
+const ThemeVideo = (props: Props) => {
   const { source, className, width, height } = props
 
   return (
@@ -40,3 +37,5 @@ export const ThemeImage = (props: Props) => {
     </>
   )
 }
+
+export default ThemeVideo

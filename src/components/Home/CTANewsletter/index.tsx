@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form'
-import { ThemeImage } from '@/components/ThemeImage'
+import ThemeImage from '@/components/ThemeImage'
 import { useState } from 'react'
 
 const CTANewsletter = () => {
