@@ -20,7 +20,7 @@
   ],
   "tags": [
     {
-      "name": "Models",
+      "name": "Model",
       "description": "List and describe the various models available in the API."
     },
     {
@@ -43,7 +43,7 @@
     {
       "name": "Endpoints",
       "tags": [
-        "Models",
+        "Model",
         "Chat"
       ]
     },
@@ -64,7 +64,7 @@
           "Chat"
         ],
         "summary": "Create chat completion\n",
-        "description": "Creates a model response for the given chat conversation.  <a  href = \"https://platform.openai.com/docs/api-reference/chat/create\"> Equivalent to OpenAI's create chat completion. </a>\n",
+        "description": "Creates a model response for the given chat conversation. The API limits stop words to a maximum of 4. If more are specified, only the first 4 will be accepted.  <a  href = \"https://platform.openai.com/docs/api-reference/chat/create\"> Equivalent to OpenAI's create chat completion. </a>\n",
         "requestBody": {
           "content": {
             "application/json": {
@@ -92,7 +92,7 @@
       "get": {
         "operationId": "listModels",
         "tags": [
-          "Models"
+          "Model"
         ],
         "summary": "List models",
         "description": "Lists the currently available models, and provides basic information about each one such as the owner and availability.  <a  href = \"https://platform.openai.com/docs/api-reference/models/list\"> Equivalent to OpenAI's list model. </a>\n",
@@ -114,7 +114,7 @@
       "get": {
         "operationId": "downloadModel",
         "tags": [
-          "Models"
+          "Model"
         ],
         "summary": "Download a specific model.",
         "description": "Download a model.\n",
@@ -148,7 +148,7 @@
       "get": {
         "operationId": "retrieveModel",
         "tags": [
-          "Models"
+          "Model"
         ],
         "summary": "Retrieve model",
         "description": "Get a model instance, providing basic information about the model such as the owner and permissioning.  <a  href = \"https://platform.openai.com/docs/api-reference/models/retrieve\"> Equivalent to OpenAI's retrieve model. </a>\n",
@@ -180,7 +180,7 @@
       "delete": {
         "operationId": "deleteModel",
         "tags": [
-          "Models"
+          "Model"
         ],
         "summary": "Delete model",
         "description": "Delete a model. <a  href = \"https://platform.openai.com/docs/api-reference/models/delete\"> Equivalent to OpenAI's delete model. </a>\n",
@@ -715,7 +715,7 @@
         "description": "Describe a model offering that can be used with the API. <a  href = \"https://platform.openai.com/docs/api-reference/models/object\"> Equivalent to OpenAI's model object. </a>\n",
         "operationId": "ModelObject",
         "tags": [
-          "Models"
+          "Model"
         ],
         "requestBody": {
           "content": {
@@ -1937,9 +1937,12 @@
             "items": {
               "type": "string"
             },
-            "description": "Defines specific tokens or phrases at which the model will stop generating further output.\n",
+            "description": "Specifies four specific words or phrases that signal the model to stop producing more output.\n",
             "example": [
-              "hello"
+              "hello",
+              "Hello",
+              "HELLO",
+              "hELLO"
             ]
           },
           "frequency_penalty": {
