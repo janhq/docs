@@ -1,4 +1,4 @@
-import ThemeVideo from '@/components/ThemeVideo'
+import ThemeImage from '@/components/ThemeImage'
 import { useState } from 'react'
 // import { BsArrowRight } from 'react-icons/bs'
 import { twMerge } from 'tailwind-merge'
@@ -90,52 +90,67 @@ const Feature = () => {
 
             <div className="relative w-full overflow-hidden block">
               {activeFeature === 0 && (
-                <ThemeVideo
-                  width={960}
-                  height={960}
+                <ThemeImage
+                  alt="App Screenshot Feature"
+                  width={800}
+                  height={800}
+                  className="w-full"
+                  priority
                   source={{
-                    light: '/assets/images/homepage/feature-01-light.mp4',
-                    dark: '/assets/images/homepage/feature-01-light.mp4',
+                    light: '/assets/images/homepage/features01.webp',
+                    dark: '/assets/images/homepage/features01dark.webp',
                   }}
                 />
               )}
               {activeFeature === 1 && (
-                <ThemeVideo
-                  width={960}
-                  height={960}
+                <ThemeImage
+                  alt="App Screenshot Feature"
+                  width={800}
+                  height={800}
+                  className="w-full"
+                  priority
                   source={{
-                    light: '/assets/images/homepage/feature-01-light.mp4',
-                    dark: '/assets/images/homepage/feature-01-light.mp4',
+                    light: '/assets/images/homepage/features02.webp',
+                    dark: '/assets/images/homepage/features02dark.webp',
                   }}
                 />
               )}
               {activeFeature === 2 && (
-                <ThemeVideo
-                  width={960}
-                  height={960}
+                <ThemeImage
+                  alt="App Screenshot Feature"
+                  width={800}
+                  height={800}
+                  className="w-full"
+                  priority
                   source={{
-                    light: '/assets/images/homepage/feature-01-light.mp4',
-                    dark: '/assets/images/homepage/feature-01-light.mp4',
+                    light: '/assets/images/homepage/features03.webp',
+                    dark: '/assets/images/homepage/features03dark.webp',
                   }}
                 />
               )}
               {activeFeature === 3 && (
-                <ThemeVideo
-                  width={960}
-                  height={960}
+                <ThemeImage
+                  alt="App Screenshot Feature"
+                  width={800}
+                  height={800}
+                  className="w-full"
+                  priority
                   source={{
-                    light: '/assets/images/homepage/feature-01-light.mp4',
-                    dark: '/assets/images/homepage/feature-01-light.mp4',
+                    light: '/assets/images/homepage/features04.webp',
+                    dark: '/assets/images/homepage/features04dark.webp',
                   }}
                 />
               )}
               {activeFeature === 4 && (
-                <ThemeVideo
-                  width={960}
-                  height={960}
+                <ThemeImage
+                  alt="App Screenshot Feature"
+                  width={800}
+                  height={800}
+                  className="w-full"
+                  priority
                   source={{
-                    light: '/assets/images/homepage/feature-01-light.mp4',
-                    dark: '/assets/images/homepage/feature-01-light.mp4',
+                    light: '/assets/images/homepage/features05.webp',
+                    dark: '/assets/images/homepage/features05dark.webp',
                   }}
                 />
               )}
