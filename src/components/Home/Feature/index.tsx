@@ -5,17 +5,25 @@ import { twMerge } from 'tailwind-merge'
 
 const features = [
   {
-    title: 'Local or Remote AI',
+    title: 'Local',
     description:
-      'Choose between running AI models locally for privacy, like Llama or Mistral, or connect to remote APIs, like ChatGPT or Claude.',
+      'Run AI models like Llama or Mistral directly on your device for enhanced privacy. No need for an internet connection- keep all your data and processing locally.',
+  },
+  {
+    title: 'Remote API',
+    description: `Connect to remote APIs, like ChatGPT, Gemini, or Claude. Access AI capabilities without needing advanced hardware, with all processing handled in the cloud.`,
   },
   {
     title: '100% offline',
-    description: `Conversations, preferences, and model usage stay on your computer. It's secure, exportable and can be deleted at any time.`,
+    description: `Conversations, preferences, and model usage stay on your computer. It's secure, exportable, and can be deleted at any time.`,
+  },
+  {
+    title: 'Cross Platform',
+    description: `Jan is optimized for any device, from PCs to multi-GPU clusters. It's fast on NVIDIA GPUs and Apple M-series, supporting Apple Intel, Linux Debian, and Windows x64.`,
   },
   {
     title: 'Extensions',
-    description: `Tailor Jan exactly to your needs with Extensions, making your experience truly your own.`,
+    description: `Customize Jan with Extensions to meet your specific needs, enhancing your AI experience to be uniquely yours.`,
   },
 ]
 
