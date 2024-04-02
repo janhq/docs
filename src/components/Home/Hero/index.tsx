@@ -1,5 +1,5 @@
 import DropdownDownload from '@/components/DropdownDownload'
-import { ThemeImage } from '@/components/ThemeImage'
+import ThemeImage from '@/components/ThemeImage'
 import Link from 'next/link'
 import { useData } from 'nextra/data'
 import { useEffect, useState } from 'react'
