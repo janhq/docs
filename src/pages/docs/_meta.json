@@ -7,12 +7,7 @@
   "quickstart": {
     "title": "Quickstart"
   },
-  "desktop": {
-    "title": "Desktop Installation"
-  },
-  "server": {
-    "title": "Server Installation"
-  },
+  "installation": "Installation",
   "user-guides": {
     "title": "User Guides",
     "type": "separator"
