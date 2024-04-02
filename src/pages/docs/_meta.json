@@ -8,6 +8,11 @@
     "title": "Quickstart"
   },
   "installation": "Installation",
+  "capability": {
+    "title": "Capabilities",
+    "type": "separator"
+  },
+  "capabilities": "Capabilities",
   "user-guides": {
     "title": "User Guides",
     "type": "separator"

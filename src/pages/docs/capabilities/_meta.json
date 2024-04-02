@@ -1,0 +1,11 @@
+{
+  "text-completion": "Text Completions",
+  "function-calling": "Function calling",
+  "embeddings": "Embeddings",
+  "fine-tuning": "Fine tuning",
+  "image-generation": "Image Generation",
+  "vision": "Vision",
+  "text-to-speech": "Text to Speech",
+  "speech-to-text": "Speech to Text",
+  "moderation": "Moderation"
+}
