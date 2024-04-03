@@ -1,7 +1,7 @@
 {
   "groq": { "title": "Groq API", "href": "/docs/remote-inference/groq" },
   "mistralai": {
-    "title": "Mistral API",
+    "title": "Mistral AI API",
     "href": "/docs/remote-inference/mistralai"
   },
   "openai": {
