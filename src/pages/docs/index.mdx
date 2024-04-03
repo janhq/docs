@@ -1,16 +1,19 @@
 ---
 title: Overview
-description: Jan Docs | Jan is a ChatGPT-alternative that runs on your own computer, with a local API server.
+description: Jan is an open-source, self-hosted alternative to OpenAI's platform - build and run AI on your own desktop or server.
 keywords:
   [
-    Jan AI,
     Jan,
+    Jan AI,
     ChatGPT alternative,
+    OpenAI platform alternative,
+    local API,
     local AI,
     private AI,
     conversational AI,
     no-subscription fee,
     large language model,
+    LLM,
   ]
 ---
 
@@ -18,33 +21,38 @@ import { Callout } from 'nextra/components'
 
 # Overview
 
-## What is Jan Application
+Jan is an open-source, self-hosted alternative to OpenAI's platform. It allows you to build, run, and fine-tune (coming soon) on your own desktop or server. Featuring a local API server that mirrors OpenAI's, Jan operates directly from your device (localhost:1337), enabling immediate access to AI capabilities with full control over your data.
 
-Jan application is an open-source platform designed to run AI on your computer locally. It is highly customizable and uses open-source AI models, allowing you to do the following:
+To use Jan, please refer to the quick start guide [here](https://jan.ai/docs/quickstart).
 
-- Run open-source Large Language Models (LLMs) locally.
-- Connect to cloud AIs like ChatGPT or Google.
-- Customize AI with a specific knowledge.
-- Integrate the AI with everyday tools.
+## Jan's Basics
 
-## How to Use Jan
+### Models
+Jan lets you run and manage different AI models on your own device. Choose between running AI models locally for privacy, like `Llama` or `Mistral`, or connect to remote APIs, like `ChatGPT` or `Claude`. This feature supports customizing and optimizing AI to meet the needs of your projects directly, with a focus on maintaining speed and privacy. You can download and import models directly through Jan Hub, making it easy to expand your AI capabilities.
 
-Jan is available on both `Destkop` and `Web` platforms. To use Jan, please refer to the quick start guide [here](/docs/quickstart.mdx).
+### Threads
+Jan offers a simple and secure way to manage your AI interaction threads directly on your device. Every interaction with AI through Jan is saved as a thread, allowing you to keep a record of your exchanges. Jan provides tools that let you efficiently sort, remove, or review these threads. This ensures that your AI interaction history is easily accessible, while also being kept private and well-managed.
 
-## Jan Extensions
+### Local API Server
+Jan’s local API server acts as a `drop-in replacement for OpenAI's API`, allowing you to run AI models on your own server. This setup offers AI functionality on your local machine, giving you complete control over your data and privacy.
 
-Extensions serve as plugins or add-ons that augment the capabilities of the Jan application. These extensions offer a range of enhancements, including adding new functionalities, better integration with external tools, and customizable options for the models within Jan. Jan application currently includes 9 built-in extensions to improve the user experience. Additionally, users can create and add extensions from third parties.
+### Inferences
+Jan supports multiple inferences, including `Llama.cpp`, `TensorRT-LLM`, `Mistral API`, `OpenAI API`, `Groq API`, `LM Studio`, `Ollama`, and other `OAI-compatible servers`.
 
-<Callout type="info">
-  For more information regarding the extensions, please see
-  [here](/docs/extensions/).
-</Callout>
+### Extensions
+Jan’s architecture supports a variety of extensions, enabling enhanced functionality and inference options. Each extension is designed to meet specific needs, ensuring that Jan can be tailored to the unique demands of your projects.
 
-## Jan Supported Integrations
+### Integrations
+Jan integrates with an array of tools and platforms to streamline your workflow. This includes seamless connections with services like `Discord`, `Open Interpreter`, `Raycast`, and `OpenRouter`. 
 
-Jan is a versatile tool that supports a wide range of integrations, enhancing its utility for users. Its unique capability to operate fully offline, along with seamless connectivity with daily tools and platforms, facilitates direct interactions with databases, web services, and various software applications from within Jan. Currently, Jan compatible with 7 integration systems, with plans to expand and update these integrations over time, ensuring continuous improvement and adaptability to user needs.
+### Assistants (Coming soon)
+Jan will soon enable the creation of AI assistants for task automation and response generation. These assistants will be customizable, allowing for a range of interactions from simple commands to complex conversations.
 
-<Callout type="info">
-  For more information regarding the integration, please see
-  [here](/docs/integrations/).
-</Callout>
+## Quick Guides
+
+- **[Models](https://jan.ai/docs/models):** Manage and deploy AI models effectively.
+- **[Threads](https://jan.ai/docs/threads):** Handle multiple operations and tasks with ease.
+- **[Local Server](https://jan.ai/docs/local-api):** Utilize Jan's OpenAI-Equivalent API for your applications.
+- **[Advanced Settings](https://jan.ai/docs/advanced):** Navigate through Jan's advanced settings for optimal customization.
+- **[Extensions](https://jan.aidocs/extensions):** Expand Jan's capabilities with multi-inferences and specific settings for each extension.
+- **[Integration](https://jan.aidocs/integrations):** Integrate Jan with key tools and platforms to enhance your development environment.
