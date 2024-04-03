@@ -58,5 +58,13 @@
     "theme": {
       "layout": "raw"
     }
+  },
+  "privacy": {
+    "title": "Privacy",
+    "display": "hidden"
+  },
+  "support": {
+    "title": "Support",
+    "display": "hidden"
   }
 }
