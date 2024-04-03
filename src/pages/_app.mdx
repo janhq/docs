@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }) {
   return (
     <Fragment>
       <Component {...pageProps} />
-      <GoogleTagManager gtmId={`GTM-${process.env.GTM_ID}`} />
+      <GoogleTagManager gtmId={`${process.env.GTM_ID}`} />
     </Fragment>
   )
 }
