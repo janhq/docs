@@ -30,14 +30,6 @@
     "title": "Product",
     "display": "hidden"
   },
-  "changelog": {
-    "type": "page",
-    "display": "hidden",
-    "title": "Changelog",
-    "theme": {
-      "layout": "raw"
-    }
-  },
   "about": {
     "type": "page",
     "title": "About"
@@ -52,6 +44,13 @@
   "post": {
     "type": "page",
     "display": "hidden"
+  },
+  "changelog": {
+    "type": "page",
+    "title": "Changelog",
+    "theme": {
+      "layout": "raw"
+    }
   },
   "download": {
     "type": "page",
