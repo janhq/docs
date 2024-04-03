@@ -35,11 +35,6 @@
     "type": "separator"
   },
   "extensions": "Overview",
-  "framework-separator": {
-    "title": "Framework",
-    "type": "separator"
-  },
-  "engineering-specs": "Engineering Specs",
   "troubleshooting-separator": {
     "title": "Troubleshooting",
     "type": "separator"
