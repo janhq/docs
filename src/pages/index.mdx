@@ -1,0 +1,39 @@
+---
+title: Turn your computer into an AI computer
+description: Run LLMs like Mistral or Llama2 locally and offline on your computer, or connect to remote AI APIs like OpenAI’s GPT-4 or Groq.
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    architecture,
+  ]
+---
+
+import Home from "@/components/Home"
+
+export const getStaticProps = async() => {
+  const resRelease = await fetch('https://api.github.com/repos/janhq/jan/releases/latest')  
+  const resRepo = await fetch('https://api.github.com/repos/janhq/jan')
+  const repo = await resRepo.json()
+  const release = await resRelease.json()
+
+  return {
+    props: {
+      ssg: {
+        stars: repo.stargazers_count || 2000,
+        lastRelease: release,
+        lastVersion: release.tag_name || 'v.0.0.1'
+      },
+    revalidated: 21600
+    },
+  }
+}
+
+<Home />

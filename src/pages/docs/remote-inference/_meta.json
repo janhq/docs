@@ -1,0 +1,13 @@
+{
+  "groq": { "title": "Groq API", "href": "/docs/remote-inference/groq" },
+  "mistralai": {
+    "title": "Mistral AI API",
+    "href": "/docs/remote-inference/mistralai"
+  },
+  "openai": {
+    "title": "OpenAI API",
+    "href": "/docs/remote-inference/openai"
+  },
+  "router": { "title": "OpenRouter", "href": "/docs/remote-inference/router" },
+  "generic-openai": { "title": "Generic OpenAI-compatible API", "href": "/docs/remote-inference/generic-openai" }
+}

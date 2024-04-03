@@ -1,0 +1,61 @@
+{
+  "index": {
+    "type": "page",
+    "title": "Homepage",
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "docs": {
+    "type": "page",
+    "title": "Documentation"
+  },
+  "developer": {
+    "type": "page",
+    "title": "Developer",
+    "display": "hidden"
+  },
+  "api-reference": {
+    "type": "page",
+    "title": "API Reference",
+    "href": "/api-reference",
+    "theme": {
+      "layout": "raw",
+      "footer": false
+    }
+  },
+  "product": {
+    "type": "page",
+    "title": "Product",
+    "display": "hidden"
+  },
+  "about": {
+    "type": "page",
+    "title": "About"
+  },
+  "blog": {
+    "type": "page",
+    "title": "Blog",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "post": {
+    "type": "page",
+    "display": "hidden"
+  },
+  "changelog": {
+    "type": "page",
+    "title": "Changelog",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "download": {
+    "type": "page",
+    "theme": {
+      "layout": "raw"
+    }
+  }
+}

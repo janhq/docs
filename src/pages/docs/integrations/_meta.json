@@ -1,0 +1,12 @@
+{
+  "discord": { "title": "Discord", "href": "/docs/integrations/discord" },
+  "interpreter": {
+    "title": "Open Interpreter",
+    "href": "/docs/integrations/interpreter"
+  },
+  "raycast": { "title": "Raycast", "href": "/docs/integrations/raycast" },
+  "vscode": {
+    "title": "Continue.dev",
+    "href": "/docs/integrations/vscode"
+  }
+}

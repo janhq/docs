@@ -1,0 +1,14 @@
+import '@/styles/main.scss'
+import '@code-hike/mdx/styles.css'
+import { GoogleTagManager } from '@next/third-parties/google'
+import { Fragment } from "react"
+
+export default function App({ Component, pageProps }) {
+  return (
+    <Fragment>
+      <Component {...pageProps} />
+      <GoogleTagManager gtmId={`GTM-${process.env.GTM_ID}`} />
+    </Fragment>
+  )
+}
+

@@ -1,0 +1,12 @@
+{
+  "product-separator": {
+    "title": "Platform",
+    "type": "separator"
+  },
+  "index": "Jan Desktop",
+  "home-server": "",
+  "features-separator": {
+    "title": "Features",
+    "type": "separator"
+  }
+}

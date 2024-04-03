@@ -1,0 +1,91 @@
+---
+title: Using Models
+description: Manage your interaction with AI locally.
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    threads,
+    chat history,
+    thread history,
+  ]
+---
+import { Callout } from 'nextra/components' 
+
+# Using Models
+This guide provides comprehensive instructions on adding, customizing, and deleting models within the Jan platform. 
+
+## Add Models
+
+There are various ways to add models to Jan.
+
+Currently, Jan natively supports the following model formats: 
+- GGUF (through a llama.cpp engine)
+- TensorRT (through a TRT-LLM engine)
+
+### Download from Jan Hub
+
+You can choose from a list of popular, recommended models directly from Jan app's Model Hub. 
+These models are preconfigured with optimal runtime parameters. This is the easiest way to get started. 
+
+1. Open the Jan app and navigate to the Hub.
+2. Select models, clicking on the `v` dropdown to see more information. Models with the `Recommended` label are likely to run faster on your computer.
+3. After downloading a model, click **Use** to activate it. Ensure it's selected in the model dropdown for your thread.
+
+### Import or Symlink Local Models
+
+You can also point to existing model binary files on your local filesystem. 
+This is the easiest and most space efficient way if you already use other local AI applications.
+
+1. Navigate to the Hub.
+2. Click on `Import Model` at the top.
+3. Select the model or the folder containing multiple models.
+4. Optionally, check the box to symlink the model files instead of copying them over the Jan Data Folder. This saves disk space.
+
+<Callout type="warning">
+Windows users should drag and drop the model file, as using **Click to Upload** might not show the model files in Folder Preview.
+</Callout>
+
+### Download with HuggingFace URL
+
+<Callout type="info">
+Coming soon
+</Callout>
+
+### Download with Nvidia NGC
+
+<Callout type="info">
+Coming soon
+</Callout>
+
+## Customize Models
+
+Adjust model settings for a specific conversation or across all conversations:
+
+
+### A Specific Conversation
+To customize model settings for a specific conversation only: 
+1. Create a new thread.
+2. Expand the right panel.
+3. Change settings under the `model` dropdown.
+
+### All Conversations
+To customize default model settings for all conversations:
+1. Open any thread .
+2. Select on the 3 dots next to the `model` dropdown.
+3. Select `Edit global defaults for [model]`.
+4. Edit the default settings directly in the `model.json`.
+5. Save the file and refresh the app.
+
+## Delete Models
+To delete a model:
+1. Go to **Settings**.
+2. Go to **My Models**.
+3. Select the 3 dots next and select `Delete model`.

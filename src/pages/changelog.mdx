@@ -1,0 +1,34 @@
+---
+title: Changelog
+description: Jan is a ChatGPT-alternative that runs on your own computer, with a local API server.
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    architecture,
+  ]
+---
+
+import Changelog from "@/components/Changelog"
+
+export const getStaticProps = async() => {
+  const res = await fetch('https://api.github.com/repos/janhq/jan/releases')  
+  const releases = await res.json()
+
+  return {
+    props: {
+      ssg: {
+        releases: releases?.message ? [{published_at: "2023/8/20", tag_name:'v.4.0.0' }] : releases
+      }
+    },  
+  }
+}
+
+<Changelog />
