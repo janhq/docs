@@ -103,7 +103,7 @@
 /guides/integration/openinterpreter/ /docs/integrations/interpreter 302
 /developer/build-assistant/ /docs/assistants 302
 /guides/integrations/ /docs/integrations 302
-/specs/hub/ /docs/engineering-specs/hub 302
+/specs/hub/ /docs 302
 /install/windows/ /docs/installation/desktop 302
 /install/linux/ /docs/installation/desktop 302
 /install/nightly/ /docs/installation/desktop 302
@@ -135,7 +135,7 @@
 /docs/integrations/ollama/ /docs/local-inference/ollama 302
 /api/overview/ /api-reference 302
 /docs/extension-guides/ /docs/extensions 302
-/specs/settings/ /docs/engineering-specs/settings 302
+/specs/settings/ /docs 302
 /docs/UI/ /docs 302
 /guides/using-models/import-models-using-absolute-filepath/ /docs/models 302
 /install/docker/ /docs/installation/server 302
@@ -205,8 +205,8 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned /docs 302
 /guides/linux /docs/installation/desktop 302
 /developer/build-engine/engine-anatomy/ /docs 302
 /developer/engine/ /docs 302
-/docs/product/system-monitor/ /docs/engineering-specs/system-monitor 302
-/docs/product/settings/ /docs/engineering-specs/settings 302
+/docs/product/system-monitor/ /docs 302
+/docs/product/settings/ /docs 302
 /developer/build-assistant/your-first-assistant/ /docs 302
 /engineering/research/ /docs 302
 /guides/troubleshooting/gpu-not-used/ /docs/troubleshooting#troubleshooting-nvidia-gpu 302
