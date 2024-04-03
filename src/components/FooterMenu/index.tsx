@@ -149,7 +149,7 @@ export default function Footer() {
   }
 
   return (
-    <div className="flex-shrink-0 relative overflow-hidden w-full text-sm">
+    <div className="flex-shrink-0 relative overflow-hidden w-full">
       <div className="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-6">
         <div className="col-span-2">
           <div className="flex items-center space-x-2 mb-3">
