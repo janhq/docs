@@ -12,7 +12,9 @@
       "layout": "full"
     }
   },
-  "how-we-work": "",
+  "how-we-work": {
+    "display": "hidden"
+  },
   "acknowledgements": "",
   "faq-separator": {
     "title": "Frequently Asked Questions",
