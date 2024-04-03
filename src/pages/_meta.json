@@ -42,7 +42,7 @@
     }
   },
   "post": {
-    "type": "page",
+    "title": "Blog Post",
     "display": "hidden"
   },
   "changelog": {
