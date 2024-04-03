@@ -126,10 +126,10 @@ const Blog = () => {
                     <h6 className="text-lg line-clamp-1 font-bold">
                       {post.title}
                     </h6>
-                    <p className="text-sm my-2 text-black/60 dark:text-white/60 line-clamp-2 leading-relaxed">
+                    <p className="my-2 text-black/60 dark:text-white/60 line-clamp-2 leading-relaxed">
                       {post.description}
                     </p>
-                    <p className="dark:text-blue-400 text-blue-600 line-clamp-2 text-sm font-medium">
+                    <p className="dark:text-blue-400 text-blue-600 line-clamp-2 font-medium">
                       Read more...
                     </p>
                   </div>

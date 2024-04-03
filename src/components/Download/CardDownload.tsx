@@ -121,7 +121,7 @@ export default function CardDownload({ lastRelease }: Props) {
                   'inline-flex text-lg my-2 font-semibold cursor-pointer justify-center items-center space-x-2] text-blue-500 hover:text-blue-500 gap-2'
                 )}
               >
-                <span className="text-sm">{system.label}</span>
+                <span>{system.label}</span>
                 <DownloadIcon size={16} />
               </a>
             </div>

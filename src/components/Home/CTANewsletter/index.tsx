@@ -42,7 +42,7 @@ const CTANewsletter = () => {
   }
 
   return (
-    <div className="bg-[#F0F0F0] dark:bg-[#242424] text-center py-16 text-sm">
+    <div className="bg-[#F0F0F0] dark:bg-[#242424] text-center py-16">
       <div className="nextra-wrap-container">
         <div className="w-full xl:w-10/12 mx-auto relative">
           <div className="flex p-4 lg:justify-between flex-col lg:flex-row items-end">
