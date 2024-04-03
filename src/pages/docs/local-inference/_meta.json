@@ -9,7 +9,7 @@
   },
   "lmstudio": {
     "title": "LM Studio",
-    "href": "/docs/ocal-inference/lmstudio"
+    "href": "/docs/local-inference/lmstudio"
   },
   "ollama": {
     "title": "Ollama",
