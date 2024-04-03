@@ -35,14 +35,14 @@ const Blog = () => {
         </h1>
         <div className="text-black/60 dark:text-white/60">
           <p className="text-base mt-2 leading-relaxed">
-            The latest updates from Jan. See updates.&nbsp;
+            The latest updates from Jan. See&nbsp;
             <a
               href="/changelog"
               className="text-blue-600 dark:text-blue-400 cursor-pointer"
             >
               Changelog
             </a>
-            &nbsp;for more product
+            &nbsp;for more product updates.
           </p>
         </div>
 
