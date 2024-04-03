@@ -3,18 +3,20 @@
     "title": "About Us",
     "type": "separator"
   },
-  "index": "What is Jan?",
-  "community": "",
-  "teams": "Who we are",
+  "index": "About",
+  "community": "Community Links",
+  "teams": {
+    "title": "Who we are",
+    "display": "hidden"
+  },
+  "vision": "Vision",
   "wall-of-love": {
     "theme": {
       "toc": false,
       "layout": "full"
     }
   },
-  "how-we-work": {
-    "display": "hidden"
-  },
+  "how-we-work": {},
   "acknowledgements": "",
   "faq-separator": {
     "title": "Frequently Asked Questions",
