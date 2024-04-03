@@ -11,11 +11,6 @@
     "type": "page",
     "title": "Documentation"
   },
-  "developer": {
-    "type": "page",
-    "title": "Developer",
-    "display": "hidden"
-  },
   "api-reference": {
     "type": "page",
     "title": "API Reference",
