@@ -1,5 +1,5 @@
 ---
-title: Integrations
+title: System Monitor
 description: Jan is a ChatGPT-alternative that runs on your own computer, with a local API server.
 keywords:
   [
@@ -12,23 +12,18 @@ keywords:
     conversational AI,
     no-subscription fee,
     large language models,
-    integrations,
   ]
 ---
 
-import { Cards, Card } from 'nextra/components'
-import childPages from './integrations/_meta.json';
+# System Monitor
 
-# Integrations
+## Overview
 
-<br/>
+An activity screen to monitor system health and running models.
 
-<Cards
-  children={Object.keys(childPages).map((key, i) => (
-    <Card
-      key={i}
-      title={childPages[key].title}
-      href={childPages[key].href}
-    />
-  ))}
-/>
+![System Screen](./_assets//system-screen.png)
+
+## User Stories
+
+- Users can see disk and ram utilization
+- Users can start and stop models based on system health

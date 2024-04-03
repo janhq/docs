@@ -8,31 +8,38 @@
     "title": "Quickstart"
   },
   "installation": "Installation",
+  "architecture": "",
+  "local-api": "",
   "user-guides": {
-    "title": "User Guides",
+    "title": "Basic Usage",
     "type": "separator"
   },
   "models": "",
   "assistants": "",
-  "threads": "",
   "use-tools": "",
-  "local-api": "",
+  "threads": "",
   "advanced": "",
   "inference-engines": {
     "title": "Inference Engines",
     "type": "separator"
   },
-  "inferences": "Inferences",
-  "extensions-separator": {
-    "title": "Extensions",
-    "type": "separator"
-  },
-  "extensions": "What are Jan Extensions?",
+  "local-inference": "Local Engines",
+  "remote-inference": "Remote Engines",
   "integrations-separator": {
     "title": "Integrations",
     "type": "separator"
   },
   "integrations": "",
+  "extensions-separator": {
+    "title": "Extensions",
+    "type": "separator"
+  },
+  "extensions": "Overview",
+  "framework-separator": {
+    "title": "Framework",
+    "type": "separator"
+  },
+  "engineering-specs": "Engineering Specs",
   "troubleshooting-separator": {
     "title": "Troubleshooting",
     "type": "separator"

@@ -5,9 +5,8 @@
     "href": "/docs/integrations/interpreter"
   },
   "raycast": { "title": "Raycast", "href": "/docs/integrations/raycast" },
-  "router": { "title": "OpenRouter", "href": "/docs/integrations/router" },
   "vscode": {
-    "title": "Continue Intergration",
+    "title": "Continue.dev",
     "href": "/docs/integrations/vscode"
   }
 }
