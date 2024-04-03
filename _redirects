@@ -1,7 +1,7 @@
 /team /about/teams 302
 /docs/troubleshooting/failed-to-fetch /docs/troubleshooting 302
 /guides/troubleshooting/gpu-not-used /docs/troubleshooting 302
-/guides/troubleshooting /docs/troubleshootin 302
+/guides/troubleshooting /docs/troubleshooting 302
 /docs/troubleshooting/stuck-on-broken-build /docs/troubleshooting 302
 /docs/troubleshooting/somethings-amiss /docs/troubleshooting 302
 /docs/troubleshooting/how-to-get-error-logs /docs/troubleshooting 302
@@ -273,3 +273,4 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned /docs 302
 /ai/been-you /about 302
 /tokenizer?view=bpe /docs 302
 /docs/engineering/ /docs 302
+/developer/install-and-prerequisites#system-requirements /docs/installation/desktop 302
