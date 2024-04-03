@@ -9,7 +9,7 @@ const BuiltWithLove = () => {
   const { stars } = useData()
 
   return (
-    <div className="nextra-wrap-container mt-10 text-sm">
+    <div className="nextra-wrap-container mt-10">
       <div className="w-full px-4 xl:w-3/4 mx-auto relative py-8">
         <div className="text-center">
           <h1 className="text-5xl !font-normal leading-tight lg:leading-tight mt-2 font-serif">
@@ -31,7 +31,7 @@ const BuiltWithLove = () => {
             </span>
             <div className="text-white dark:text-black">
               <h6 className="text-base font-semibold">Github</h6>
-              <div className="text-sm text-black/60 dark:text-white/60 flex items-center space-x-1">
+              <div className="text-black/60 dark:text-white/60 flex items-center space-x-1">
                 <RiStarSFill className="text-lg text-[#CA8A04]" />
                 <span className="font-semibold text-white dark:text-black">
                   {stars} stars
@@ -49,7 +49,7 @@ const BuiltWithLove = () => {
             </span>
             <div>
               <h6 className="text-base font-bold">Discord</h6>
-              <div className="text-sm text-black/60 dark:text-white/60 flex items-center space-x-1">
+              <div className="text-black/60 dark:text-white/60 flex items-center space-x-1">
                 <div className="w-2 h-2 bg-green-500 rounded-full" />
                 <span className="font-semibold text-white">
                   {discordWidget.presence_count} online
@@ -105,7 +105,7 @@ const BuiltWithLove = () => {
             </span>
             <div className="">
               <h6 className="text-base font-bold">Hugging Face</h6>
-              <div className="text-sm text-black/60 dark:text-white/60 flex items-center space-x-1 ">
+              <div className="text-black/60 dark:text-white/60 flex items-center space-x-1 ">
                 <svg
                   width="16"
                   height="16"

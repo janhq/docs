@@ -38,7 +38,7 @@
   },
   "post": {
     "type": "page",
-    "title": "Blog",
+    "title": "Post Categories",
     "display": "hidden"
   },
   "changelog": {

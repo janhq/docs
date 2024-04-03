@@ -59,7 +59,10 @@ const Feature = () => {
                 return (
                   <div
                     key={i}
-                    className="mb-4 dark:bg-[#1F1F1F] bg-[#F5F5F5] p-6 rounded-xl cursor-pointer"
+                    className={twMerge(
+                      'mb-4 p-6 rounded-xl cursor-pointer',
+                      isActive && 'dark:bg-[#1F1F1F] bg-[#F5F5F5]'
+                    )}
                     onClick={() => setActiveFeature(i)}
                   >
                     <div
@@ -75,7 +78,7 @@ const Feature = () => {
                         <h6 className="text-xl font-bold">{feature.title}</h6>
                         <p
                           className={twMerge(
-                            'mt-1 text-sm leading-relaxed text-black/60 dark:text-white/60 hidden',
+                            'mt-1 leading-relaxed text-black/60 dark:text-white/60 hidden',
                             isActive && 'block'
                           )}
                         >

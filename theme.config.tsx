@@ -24,7 +24,7 @@ const config: DocsThemeConfig = {
       </div>
     </span>
   ),
-  docsRepositoryBase: 'https://github.com/janhq/docs',
+  docsRepositoryBase: 'https://github.com/janhq/docs/tree/main',
   feedback: {
     content: 'Question? Give us feedback →',
     labels: 'feedback',
