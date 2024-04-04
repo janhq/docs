@@ -5,17 +5,22 @@ import { useTheme } from 'nextra-theme-docs'
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 
 export const APIReference = () => {
-  const { theme } = useTheme()
+  const { theme, resolvedTheme } = useTheme()
 
   useIsomorphicLayoutEffect(() => {
-    if (theme === 'dark' || theme === 'system') {
+    if (theme === 'dark') {
       localStorage.setItem('isDark', 'true')
     } else {
       localStorage.setItem('isDark', 'false')
     }
 
+    if (resolvedTheme === 'dark') {
+      localStorage.setItem('isDark', 'true')
+    } else {
+      localStorage.setItem('isDark', 'false')
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [theme])
+  }, [theme, resolvedTheme])
 
   return (
     <>
