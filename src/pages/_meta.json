@@ -20,11 +20,6 @@
       "footer": false
     }
   },
-  "product": {
-    "type": "page",
-    "title": "Product",
-    "display": "hidden"
-  },
   "about": {
     "type": "page",
     "title": "About"
