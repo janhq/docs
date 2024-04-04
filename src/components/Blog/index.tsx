@@ -47,7 +47,7 @@ const Blog = () => {
         </div>
 
         <div className="mt-10">
-          <ul className="flex lg:gap-4 gap-1 whitespace-nowrap overflow-scroll lg:whitespace-normal">
+          <ul className="flex lg:gap-4 gap-1 whitespace-nowrap overflow-auto lg:overflow-hidden lg:whitespace-normal">
             <li
               onClick={() => {
                 router.push(`blog/`)
