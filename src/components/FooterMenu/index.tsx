@@ -53,10 +53,6 @@ const menus = [
         path: '/guides',
       },
       {
-        menu: 'Product',
-        path: '/product',
-      },
-      {
         menu: 'API Reference',
         path: '/api-reference',
       },
