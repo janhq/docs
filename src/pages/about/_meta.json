@@ -4,19 +4,19 @@
     "type": "separator"
   },
   "index": "About",
-  "community": "Community Links",
+  "vision": "Vision",
+  "how-we-work": {},
   "teams": {
     "title": "Who we are",
     "display": "hidden"
+  "community": "Community Links",
   },
-  "vision": "Vision",
   "wall-of-love": {
     "theme": {
       "toc": false,
       "layout": "full"
     }
   },
-  "how-we-work": {},
   "acknowledgements": "",
   "faq-separator": {
     "title": "Frequently Asked Questions",
