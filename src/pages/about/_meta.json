@@ -9,8 +9,8 @@
   "teams": {
     "title": "Who we are",
     "display": "hidden"
-  "community": "Community Links",
   },
+  "community": "Community Links",
   "wall-of-love": {
     "theme": {
       "toc": false,
