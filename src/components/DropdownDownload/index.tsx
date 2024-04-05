@@ -115,10 +115,13 @@ const DropdownDownload = ({ lastRelease }: Props) => {
 
   return (
     <div className="inline-flex flex-shrink-0 justify-center relative">
-      <button className="dark:border-r-0 dark:nx-bg-neutral-900 dark:text-white bg-black text-white hover:text-white justify-center dark:border dark:border-neutral-800 flex-shrink-0 pl-4 pr-6 py-4 rounded-l-xl inline-flex items-center">
+      <a
+        href={defaultSystem.href}
+        className="dark:border-r-0 dark:nx-bg-neutral-900 dark:text-white bg-black text-white hover:text-white justify-center dark:border dark:border-neutral-800 flex-shrink-0 pl-4 pr-6 py-4 rounded-l-xl inline-flex items-center"
+      >
         <defaultSystem.logo className="h-4 mr-2" />
         {defaultSystem.name}
-      </button>
+      </a>
       <button
         className="dark:nx-bg-neutral-900 dark:text-white bg-black text-white hover:text-white justify-center dark:border border-l border-gray-500 dark:border-neutral-800 flex-shrink-0 p-4 px-3 rounded-r-xl"
         onClick={() => setOpen(!open)}
