@@ -1,0 +1,69 @@
+---
+title: NVIDIA GPU
+description: Metal GPU support on Jan for llama.cpp
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    Llama CPP integration,
+    llama.cpp Extension,
+    Intel CPU,
+    AMD CPU,
+    NVIDIA GPU,
+    AMD GPU Radeon,
+    Apple Silicon,
+    Intel Arc GPU,
+  ]
+---
+
+# NVIDIA GPU
+- Jan supports NVIDIA GPU on Windows and Linux only with Desktop app.
+- Jan uses `llama.cpp` as the default inference engine for local  AI, which supports NVIDIA GPU with CUBLAS backend.
+- In order to use NVIDIA GPU, you need to have a compatible NVIDIA GPU and the latest NVIDIA driver installed.
+##### NVIDIA Driver
+
+- Install an [NVIDIA Driver](https://www.nvidia.com/Download/index.aspx) supporting CUDA 11.7 or higher.
+    - Use the following command to verify the installation:
+
+```bash
+nvidia-smi
+```
+
+##### CUDA Toolkit
+
+- Install a [CUDA toolkit](https://developer.nvidia.com/cuda-downloads) compatible with your NVIDIA driver.
+    - Use the following command to verify the installation:
+
+```bash
+nvcc --version
+```
+##### Linux Specifics
+
+- Ensure that `gcc-11`, `g++-11`, `cpp-11`, or higher is installed.
+    - See [instructions](https://gcc.gnu.org/projects/cxx-status.html#cxx17) for Ubuntu installation.
+
+- **Post-Installation Actions**: Add CUDA libraries to `LD_LIBRARY_PATH`.
+- Follow the [Post-installation Actions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions) instructions.
+
+##### The validated cards that work:
+- GeForce RTX 40 Series
+- GeForce RTX 30 Series
+- GeForce RTX 20 Series
+- GeForce GTX Series
+- NVIDIA Titan Series
+- NVIDIA Quadro Series
+- NVIDIA Tesla Series (Server GPUs)
+
+## Steps to enable NVIDIA GPU:
+- Open Jan application
+- Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the NVIDIA GPU you want.
+- Select a model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub. Expect the following outcomes:
+    - High time to first token (ms)
+    - Low throughput (tokens/sec)
