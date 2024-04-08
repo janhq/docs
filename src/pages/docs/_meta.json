@@ -36,6 +36,11 @@
     "type": "separator"
   },
   "extensions": "Overview",
+  "hardware-guide": {
+    "title": "Hardware guide",
+    "type": "separator"
+  },
+  "hardware": "Hardware guide",
   "troubleshooting-separator": {
     "title": "Troubleshooting",
     "type": "separator"
