@@ -48,7 +48,7 @@ const Hero = () => {
           )}
         </div>
         <p className="mt-6 text-black/60 dark:text-white/60">
-          600K+ Downloads | Free & Open Source
+          700K+ Downloads | Free & Open Source
         </p>
         <div className="w-4/5 mx-auto mt-10">
           <ThemeImage

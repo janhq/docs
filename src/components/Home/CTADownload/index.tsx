@@ -19,7 +19,7 @@ const CTADownload = () => {
               <DropdownDownload lastRelease={lastRelease} />
             </div>
             <p className="mt-6 text-zinc-text-black/60 dark:text-white/60">
-              600K+ Downloads | Free & Open Source
+              700K+ Downloads | Free & Open Source
             </p>
           </div>
         </div>
