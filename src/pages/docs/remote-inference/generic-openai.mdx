@@ -30,8 +30,8 @@ This guide outlines the process for configuring Jan as a client for both remote 
 <Steps>
 ### Step 1: Configure a Client Connection
 
-1. Navigate to the `~/jan/engines` folder.
-2. Modify the `openai.json file`.
+1. Navigate to the `~jan/settings/@janhq/inference-openai-extension` folder.
+2. Modify the `settings.json` file.
 
 <Callout type='info'>
   Please note that currently, the code that supports any OpenAI-compatible endpoint only reads `engine/openai.json` file. Thus, it will not search any other files in this directory.
@@ -39,7 +39,7 @@ This guide outlines the process for configuring Jan as a client for both remote 
 
 3. Configure `full_url` properties with the endpoint server that you want to connect. For example, if you're going to communicate to Jan's API server, you can configure it as follows:
 
-```json ~/jan/engines/openai.json
+```json ~jan/settings/@janhq/inference-openai-extension/settings.json
 {
   // "full_url": "https://<server-ip-address>:<port>/v1/chat/completions"
   "full_url": "https://<server-ip-address>:1337/v1/chat/completions"
