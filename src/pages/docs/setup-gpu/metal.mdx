@@ -22,8 +22,18 @@ keywords:
     Intel Arc GPU,
   ]
 ---
+import { Callout, Steps } from 'nextra/components'
 
 # Mac Metal GPU
-- Jan with `llama.cpp` as default supported inference engine on Mac Silicon is enabled to run with `Metal 3` by default. Mac Intel currently does not support it.
-- Users need to have MacOS Ventura or beyond in order to use.
-- As Mac Silicon uses `unified memory`, the performance gain is great
+Jan is optimized for Mac Silicon, utilizing `llama.cpp` as its default supported inference engine and leveraging `Metal 3` by default.
+<Callout type='info'>
+This setup is not supported on Mac Intel.
+</Callout>
+
+## Pre-requisites
+To utilize Jan on Mac Silicon, users must have:
+- macOS Ventura or later versions
+
+<Callout type='info'>
+The use of `unified memory` in Mac Silicon significantly enhances performance, providing substantial performance gains.
+</Callout>

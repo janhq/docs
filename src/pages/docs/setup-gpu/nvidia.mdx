@@ -22,12 +22,14 @@ keywords:
     Intel Arc GPU,
   ]
 ---
+import { Callout, Steps } from 'nextra/components'
 
 # NVIDIA GPU
-- Jan supports NVIDIA GPU on Windows and Linux only with Desktop app.
-- Jan uses `llama.cpp` as the default inference engine for local  AI, which supports NVIDIA GPU with CUBLAS backend.
-- In order to use NVIDIA GPU, you need to have a compatible NVIDIA GPU and the latest NVIDIA driver installed.
-##### NVIDIA Driver
+
+Jan supports NVIDIA GPUs exclusively on Windows and Linux through its Desktop app. The default local AI inference engine, `llama.cpp`, is equipped with a CUBLAS backend to ensure optimal performance and compatibility with NVIDIA GPUs.
+## Pre-requisites
+In order to use NVIDIA GPU, you need to have a compatible NVIDIA GPU and the latest NVIDIA driver installed.
+### NVIDIA Driver
 
 - Install an [NVIDIA Driver](https://www.nvidia.com/Download/index.aspx) supporting CUDA 11.7 or higher.
     - Use the following command to verify the installation:
@@ -36,7 +38,7 @@ keywords:
 nvidia-smi
 ```
 
-##### CUDA Toolkit
+### CUDA Toolkit
 
 - Install a [CUDA toolkit](https://developer.nvidia.com/cuda-downloads) compatible with your NVIDIA driver.
     - Use the following command to verify the installation:
@@ -44,26 +46,32 @@ nvidia-smi
 ```bash
 nvcc --version
 ```
-##### Linux Specifics
+### Linux Specifics
 
-- Ensure that `gcc-11`, `g++-11`, `cpp-11`, or higher is installed.
-    - See [instructions](https://gcc.gnu.org/projects/cxx-status.html#cxx17) for Ubuntu installation.
+- Ensure that `gcc-11`, `g++-11`, `cpp-11`, or higher is installed. To install, please see [here](https://gcc.gnu.org/projects/cxx-status.html#cxx17) for Ubuntu installation.
 
-- **Post-Installation Actions**: Add CUDA libraries to `LD_LIBRARY_PATH`.
-- Follow the [Post-installation Actions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions) instructions.
+- **Post-Installation Actions**: Add CUDA libraries to `LD_LIBRARY_PATH`. To install, follow the [Post-installation Actions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions) instructions.
 
-##### The validated cards that work:
-- GeForce RTX 40 Series
-- GeForce RTX 30 Series
-- GeForce RTX 20 Series
-- GeForce GTX Series
-- NVIDIA Titan Series
-- NVIDIA Quadro Series
-- NVIDIA Tesla Series (Server GPUs)
+### Validated NVIDIA Cards
+The following NVIDIA cards are confirmed to work effectively:
 
-## Steps to enable NVIDIA GPU:
-- Open Jan application
-- Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the NVIDIA GPU you want.
-- Select a model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub. Expect the following outcomes:
+| NVIDIA GPU      |
+|--------------------------|
+| GeForce RTX 40 Series    |
+| GeForce RTX 30 Series    |
+| GeForce RTX 20 Series    |
+| GeForce GTX Series       |
+| NVIDIA Titan Series      |
+| NVIDIA Quadro Series     |
+| NVIDIA Tesla Series (Server GPUs) |
+
+
+## Enable NVIDIA GPU
+To enable the use of NVIDIA GPU in Jan app, follow the steps below:
+<Steps>
+1.  Open Jan application
+2.  Go to **Settings** -> **Advanced Settings** -> **Accelerator** -> Enable and choose the NVIDIA GPU you want.
+3.  Select a model size based on your hardware based on the **Recommended** tag for **VRAM** in the Hub. Expect the following outcomes:
     - High time to first token (ms)
     - Low throughput (tokens/sec)
+</Steps>
