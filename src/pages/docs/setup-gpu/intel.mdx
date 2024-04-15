@@ -1,0 +1,45 @@
+---
+title: Intel Arc GPU
+description: Metal GPU support on Jan for llama.cpp
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    Llama CPP integration,
+    llama.cpp Extension,
+    Intel CPU,
+    AMD CPU,
+    NVIDIA GPU,
+    AMD GPU Radeon,
+    Apple Silicon,
+    Intel Arc GPU,
+  ]
+---
+
+# Intel Arc GPU
+- Jan supports Intel Arc GPU on Windows and Linux only with Desktop app.
+- Jan uses `llama.cpp` as the default inference engine for local  AI, which supports Intel Arc GPU with Vulkan backend.
+- You do not need to install any additional drivers or software for Intel Arc GPU as it's supported by default with Vulkan.
+- You can find more information about Intel Arc GPU for Desktop/ Laptop as dGPU in [here](https://www.intel.com/content/www/us/en/products/details/discrete-gpus/arc.html)
+
+## Steps to enable Intel Arc GPU
+- Open Jan application
+- Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the Intel Arc GPU you want.
+- Select a model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub. Expect the following outcomes:
+    - High time to first token (ms)
+    - Low throughput (tokens/sec)
+
+## Troubleshooting
+
+## WIP
+There are several `backend` support from Intel that we are still monitoring and testing for Jan before releasing
+  - [Intel IPEX-LLM](https://github.com/intel-analytics/ipex-llm)
+  - [Intel sycl](https://github.com/ggerganov/llama.cpp/blob/master/README-sycl.md)
+  - [Intel Extensions for Transformer](https://github.com/intel/intel-extension-for-transformers)

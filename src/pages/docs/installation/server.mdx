@@ -65,7 +65,7 @@ To install Jan Server, follow the steps below:
 
 ### Step 2: Get Jan Server
 
-<Tabs items={['Linux', 'Windows WSL2']}>
+<Tabs items={['Linux Docker', 'Windows WSL2 Docker', 'Kubernetes - Helm']}>
   <Tabs.Tab>
     **Pre-requisites**
 
@@ -286,6 +286,38 @@ To install Jan Server, follow the steps below:
 
     To enable the experimental mode, go to **Settings** > **Advanced Settings** and toggle the **Experimental Mode**
 
+  </Tabs.Tab>
+  <Tabs.Tab>
+    Jan can be installed on Kubernetes by using Helm.
+    **Pre-requisites**
+    Docker Engine are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to get started with Docker Engine on Ubuntu.
+      ```bash
+      curl -fsSL https://get.docker.com -o get-docker.sh
+      sudo sh ./get-docker.sh --dry-run
+      ```
+      - Download Jan `docker-compose.yml` file using the following command:
+      ```bash
+      curl https://raw.githubusercontent.com/janhq/jan/dev/docker-compose.yml -o docker-compose.yml
+      ```
+    Kubernetes with version of 1.23 and beyond
+    
+    To enable GPU support, you will need:
+      - NVIDIA GPU with CUDA Toolkit 11.7 or higher
+      - NVIDIA driver 470.63.01 or higher
+      - `NVIDIA Container Toolkit` - [Link](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+      - Install [NVIDIA Device Plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin)
+
+    **Installation steps**
+    - Get Helm chart from Jan repository
+    ```bash
+      git clone https://github.com/janhq/jan.git
+      cd jan/charts/server/
+      helm install jan-server .
+    ```
+    - Please check for the `values.yaml` file for the configuration options at [link](https://github.com/janhq/jan/blob/dev/charts/server/values.yaml) and modify it as per your requirement.
+    - This is the resources created by Jan helm chart
+    ![Jan server helm argo](./_assets/helm_resources.png)
+    - You can access Jan at `http://jan-server-service-web:1337`.
   </Tabs.Tab>
 </Tabs>
 </Steps>
