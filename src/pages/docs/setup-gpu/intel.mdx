@@ -22,24 +22,36 @@ keywords:
     Intel Arc GPU,
   ]
 ---
+import { Callout, Steps } from 'nextra/components'
 
 # Intel Arc GPU
-- Jan supports Intel Arc GPU on Windows and Linux only with Desktop app.
-- Jan uses `llama.cpp` as the default inference engine for local  AI, which supports Intel Arc GPU with Vulkan backend.
-- You do not need to install any additional drivers or software for Intel Arc GPU as it's supported by default with Vulkan.
-- You can find more information about Intel Arc GPU for Desktop/ Laptop as dGPU in [here](https://www.intel.com/content/www/us/en/products/details/discrete-gpus/arc.html)
+
+Jan exclusively supports Intel Arc on Windows and Linux via its Desktop app, functioning similarly to its AMD GPU support. The default local AI inference engine, `llama.cpp`, uses a Vulkan backend to optimize performance and ensure compatibility with Intel Arc.
+
+## Pre-requisites
+You do not need to install any additional drivers or software for Intel Arc GPU as it's supported by default with Vulkan.
+
+<Callout type='info'>
+You can find more information about Intel Arc GPU for Desktop/ Laptop as dGPU [here](https://www.intel.com/content/www/us/en/products/details/discrete-gpus/arc.html)
+</Callout>
 
 ## Steps to enable Intel Arc GPU
-- Open Jan application
-- Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the Intel Arc GPU you want.
-- Select a model size based on your hardware based on the `Recommended` tag for `VRAM` in the Hub. Expect the following outcomes:
+To enable the use of Intel Arc GPU in Jan app, follow the steps below:
+<Steps>
+1. Open Jan application
+2. Go to **Settings** -> **Advanced Settings** -> **Accelerator** -> Enable and choose the Intel Arc GPU you want.
+3. Select a model size based on your hardware based on the **Recommended** tag for **VRAM** in the Hub. Expect the following outcomes:
     - High time to first token (ms)
     - Low throughput (tokens/sec)
+</Steps>
 
 ## Troubleshooting
+<Callout type='info'>
+Coming Soon
+</Callout>
 
 ## WIP
-There are several `backend` support from Intel that we are still monitoring and testing for Jan before releasing
+We are actively evaluating several Intel backend supports for the Jan application, which are still under development and testing prior to their release. These include:
   - [Intel IPEX-LLM](https://github.com/intel-analytics/ipex-llm)
   - [Intel sycl](https://github.com/ggerganov/llama.cpp/blob/master/README-sycl.md)
   - [Intel Extensions for Transformer](https://github.com/intel/intel-extension-for-transformers)
