@@ -5,7 +5,7 @@ import FooterMenu from '@/components/FooterMenu'
 import JSONLD from '@/components/JSONLD'
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { FileCode, LibraryBig, BrainCircuit } from "lucide-react";
+import { FileCode, LibraryBig, BrainCircuit, Computer } from "lucide-react";
 
 const defaultUrl = 'https://jan.ai'
 const defaultImage = 'https://jan.ai/assets/images/general/og-image.png'
@@ -70,7 +70,7 @@ const config: DocsThemeConfig = {
             {[
               { title: "Docs", path: "/docs", Icon: LibraryBig },
               { title: "Cortex", path: "/cortex", Icon: BrainCircuit },
-              { title: "Custom", path: "/custom", Icon: FileCode },
+              { title: "Hub", path: "/hub", Icon: Computer },
             ].map((item) =>
               asPath.startsWith(item.path) ? (
                 <div

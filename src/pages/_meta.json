@@ -16,9 +16,9 @@
     "title": "Cortex",
     "display": "hidden"
   },
-  "custom": {
+  "hub": {
     "type": "page",
-    "title": "Custom",
+    "title": "Hub",
     "display": "hidden"
   },
   "api-reference": {
