@@ -19,25 +19,36 @@ keywords:
   ]
 ---
 
-import { Callout } from 'nextra/components' 
+import { Callout, Steps } from 'nextra/components' 
 
 # Using Tools
 This article lists the capabilities of the Jan platform and guides you through using RAG to chat with PDF documents, web and desktop searches.
+<Callout type="warning">
+To access this feature, please enable Experimental mode in the [Advanced Settings](/guides/advanced/#enable-the-experimental-mode).
+</Callout>
 
 ## Retrieval
 
 To chat with PDFs using RAG in Jan, follow these steps:
-
-<Callout type="warning">
-Please turn on Experimental mode in Settings to use this feature. [Read more](/guides/advanced/#enable-the-experimental-mode).
-</Callout>
-
+<Steps>
 1. Create a **new thread**.
 2. Click the **Tools** dropdown menu.
 3. Ensure that **Retrieval** is toggled on.
-4. Click on the 📎 icon in the chat input field.
-5. Upload your PDF.
-6. Chat with your PDF.
+4. Adjust the **Retrieval** settings as needed. These settings include the following:
+
+| Feature               | Description                                                                                                                                                   |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Retrieval**         | Utilizes information from uploaded files, automatically retrieving content relevant to your queries for enhanced interaction.                                  |
+| **Embedding Model**   | Converts text into numerical representations for machine understanding. Selection depends on your specific requirements and available resources.              |
+| **Vector Database**   | Facilitates quick searches through stored numerical text representations to find relevant information efficiently.                                            |
+| **Top K**             | Determines the number of top-ranked documents to retrieve, allowing control over search result relevance.                                                     |
+| **Chunk Size**        | Sets the maximum number of tokens per data chunk, crucial for managing processing load and maintaining performance.                                           |
+| **Chunk Overlap**     | Specifies the overlap in tokens between adjacent chunks to ensure continuous context in split text segments.                                                  |
+| **Retrieval Template**| Defines the query structure using variables like `{CONTEXT}` and `{QUESTION}` to tailor searches to specific needs.                                                |
+5. Click on the 📎 icon in the chat input field.
+6. Upload your PDF.
+7. Chat with your PDF.
+</Steps>
 
 ## Web Search
 

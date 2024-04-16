@@ -7,8 +7,8 @@
   "quickstart": {
     "title": "Quickstart"
   },
-  "setup-gpu": "Supported GPU",
   "installation": "Installation",
+  "hardware-setup": "Hardware Setup",
   "architecture": "",
   "local-api": "",
   "user-guides": {
