@@ -1,5 +1,8 @@
-type Release = {
-  tag_name: string
-  published_at: string
-  body: string
+type Changelog = {
+  title: string
+  description: string
+  date: string
+  ogImage: string
+  version: string
+  url: string
 }
