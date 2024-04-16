@@ -1,7 +1,7 @@
 {
-  "get-started": {
-    "title": "Get Started",
-    "type": "separator"
+  "-- Switcher": {
+    "type": "separator",
+    "title": "Switcher"
   },
   "index": "Overview",
   "quickstart": {
