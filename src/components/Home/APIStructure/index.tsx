@@ -24,21 +24,21 @@ const endpoints = [
   },
   {
     name: '/fine-tuning',
-    status: 'comming soon',
+    status: 'Coming soon',
   },
   {
     name: '/files',
-    status: 'comming soon',
+    status: 'Coming soon',
   },
   {
     name: '/...',
-    status: 'comming soon',
+    status: 'Coming soon',
   },
 ]
 
 const renderDot = (status: string) => {
   switch (status) {
-    case 'comming soon':
+    case 'Coming soon':
       return <div className="w-2 h-2 bg-gray-400 rounded-full" />
 
     case '100% complete':
