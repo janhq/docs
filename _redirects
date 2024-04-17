@@ -590,3 +590,12 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /guides/providers/tensorrt-llm/ /docs/local-inference/tensorrtllm#tensortrt-llm 302
 /hardware/recommendations/by-model/ /docs 302
 /hardware/recommendations/by-hardware/ /docs 302
+/product /docs 302
+/product/features /docs 302
+/product/features/agents-framework /docs 302
+/product/features/api-server /docs/local-api 302
+/product/features/data-security /docs 302
+/product/features/extensions-framework /docs/extensions 302
+/product/features/local /docs 302
+/product/features/remote /docs 302
+/product/home-server /docs/local-api 302
