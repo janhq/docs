@@ -26,11 +26,11 @@ import { Callout, Steps } from 'nextra/components'
 
 # AMD GPU
 
-Jan is designed to support AMD GPUs on Windows and Linux exclusively through its Desktop app. The default inference engine for local AI, `llama.cpp`, utilizes a Vulkan backend to ensure compatibility with AMD GPUs, enhancing its performance and reliability for these platforms.
+Jan is designed to support AMD GPUs on Windows and Linux through its Desktop app. The default inference engine for local AI is `llama.cpp`, utilizes a Vulkan backend to ensure compatibility with AMD GPUs.
 
 ## Pre-requisites
-- You do not need to install any additional drivers or software for AMD GPU as it's supported by default with Vulkan.
-- The following AMD Radeon cards are confirmed to work effectively:
+- You do not need to install additional drivers or software for AMD GPU as it's supported by default with Vulkan.
+- The following AMD Radeon cards are confirmed to work:
 
 | AMD GPU                |
 |-----------------------|
@@ -46,20 +46,14 @@ Jan is designed to support AMD GPUs on Windows and Linux exclusively through its
 | Radeon 200 series     |
 
 <Callout type='info'>
-You can find more information about AMD GPU as dGPU [here](https://en.wikipedia.org/wiki/Category:AMD_graphics_cards).
+You can find more information about AMD GPUs, such as dGPUs [here](https://en.wikipedia.org/wiki/Category:AMD_graphics_cards).
 </Callout>
 
 
 ## Enable AMD Radeon RX GPU
-To enable the use of AMD GPU in Jan app, follow the steps below:
-<Steps>
+To enable the use of AMD GPU in the Jan app, follow the steps below:
 1. Open Jan application.
-2. Go to **Settings** -> **Advanced Settings** -> **Accelerator** -> Enable and choose the Radeon RX GPU that you want.
-3. Select a model size based on your hardware based on the **Recommended** tag for **VRAM** in the Hub. Expect the following outcomes:
+2. Go to **Settings** -> **Advanced Settings** -> **Accelerator** -> Enable and choose the Radeon RX GPU you want.
+3. Select a model size based on your hardware and the **recommended** tag for **VRAM** in the Hub. Expect the following outcomes:
     - High time to first token (ms)
     - Low throughput (tokens/sec)
-</Steps>
-
-## WIP
-We are actively monitoring and testing several backend supports from AMD for the Jan application before their official release. Currently, one of the significant features under evaluation includes:
-  - **Blas Support on HIP-Supported AMD GPUs with RoCM**: This feature is still in the testing phase. For more details, visit the [Blas support documentation](https://github.com/ggerganov/llama.cpp?tab=readme-ov-file#hipblas) on GitHub.

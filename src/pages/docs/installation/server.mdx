@@ -31,7 +31,7 @@ To install Jan Server, follow the steps below:
 ### Step 1: Prepare environment
 <Tabs items={['On premise', 'AWS', 'GCP', 'Azure']}>
   <Tabs.Tab>
-    - Choose a machine with a minimum of 16GB RAM, 8 CPU cores and 100GB storage.
+    - Choose a machine with at least 16GB RAM, 8 CPU cores, and 100GB storage.
     - For better performance, you can use NVIDIA GPU.
     <Callout type="info">
     AMD GPU/ Intel Arc GPU are not supported yet.
@@ -39,7 +39,7 @@ To install Jan Server, follow the steps below:
   </Tabs.Tab>
   <Tabs.Tab>
     1. Go to AWS console -> `EC2`.
-    2. Choose instance with at least `c5.2xlarge` for CPU only or `g5.2xlarge` for NVIDIA GPU support.
+    2. Choose an instance with at least `c5.2xlarge` for CPU only or `g5.2xlarge` for NVIDIA GPU support.
     3. Add EBS volume with at least **100GB**.
     <Callout type="info">
     Access to additional features may vary based on your Virtual Private Cloud (VPC) and security group configurations. To enable these features, please configure your settings to allow inbound traffic on port 1377.
@@ -47,7 +47,7 @@ To install Jan Server, follow the steps below:
   </Tabs.Tab>
   <Tabs.Tab>
     1. Go to GCP console -> `Compute instance`.
-    2. Choose instance with at least `c2-standard-8` for CPU only or `g2-standard-4` for NVIDIA GPU support.
+    2. Choose an instance with at least `c2-standard-8` for CPU only or `g2-standard-4` for NVIDIA GPU support.
     3. Add EBS volume with at least **100GB**.
     <Callout type="info">
     Access to additional features may vary based on your Virtual Private Cloud (VPC) and security group configurations. To enable these features, please configure your settings to allow inbound traffic on port 1377.
@@ -55,7 +55,7 @@ To install Jan Server, follow the steps below:
   </Tabs.Tab>
   <Tabs.Tab>
     1. Go to Azure console -> `Service` -> `Virtual machines`.
-    2. Choose instance with at least `Standard_F8s_v2` for CPU only or `Standard_NC4as_T4_v3` for NVIDIA GPU support.
+    2. Choose an instance with at least `Standard_F8s_v2` for CPU only or `Standard_NC4as_T4_v3` for NVIDIA GPU support.
     3. Add EBS volume with at least **100GB**.
     <Callout type="info">
     Access to additional features may vary based on your Virtual Private Cloud (VPC) and security group configurations. To enable these features, please configure your settings to allow inbound traffic on port 1377.
@@ -74,7 +74,7 @@ To install Jan Server, follow the steps below:
       - NVIDIA driver 470.63.01 or higher
 
     Jan runs in Docker mode on Linux:      
-      - Docker Engine and Docker Compose are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to get started with Docker Engine on Ubuntu.
+      - Docker Engine and Docker Compose are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to start with Docker Engine on Ubuntu.
       ```bash
       curl -fsSL https://get.docker.com -o get-docker.sh
       sudo sh ./get-docker.sh --dry-run
@@ -83,16 +83,16 @@ To install Jan Server, follow the steps below:
       ```bash
       curl https://raw.githubusercontent.com/janhq/jan/dev/docker-compose.yml -o docker-compose.yml
       ```
-  - If you intend to run Jan in GPU mode, you need to install `nvidia-driver` and `nvidia-docker2`. Follow the instruction [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for installation.
+  - If you intend to run Jan in GPU mode, install `nvidia-driver` and `nvidia-docker2`. Follow the instructions [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for installation.
 
   **Docker Configuration**
 
-  The available Docker Compose profile and the environment variables listed below:
+  The available Docker Compose profile and the environment variables are listed below:
 | Docker compose Profile | Description                                  |
 | ---------------------- | -------------------------------------------- |
-| `cpu-fs`               | Run Jan in CPU mode with default file system |
+| `cpu-fs`               | Run Jan in CPU mode with the default file system |
 | `cpu-s3fs`             | Run Jan in CPU mode with S3 file system      |
-| `gpu-fs`               | Run Jan in GPU mode with default file system |
+| `gpu-fs`               | Run Jan in GPU mode with the default file system |
 | `gpu-s3fs`             | Run Jan in GPU mode with S3 file system      |
 
 | Environment Variable    | Description                                                                                             |
@@ -102,7 +102,7 @@ To install Jan Server, follow the steps below:
 | `AWS_SECRET_ACCESS_KEY` | AWS secret access key - leave blank for default file system                                             |
 | `AWS_ENDPOINT`          | AWS endpoint URL - leave blank for default file system                                                  |
 | `AWS_REGION`            | AWS region - leave blank for default file system                                                        |
-| `API_BASE_URL`          | Jan Server URL, please modify it as your public ip address or domain name default http://localhost:1377 |
+| `API_BASE_URL`          | Jan Server URL, please modify it as your public IP address or domain name default http://localhost:1377 |
 
 - **Option 1**: Run Jan in CPU mode
 
@@ -149,9 +149,9 @@ To install Jan Server, follow the steps below:
     |=======================================================================================|
     ```
 
-  - **Step 2**: Visit [NVIDIA NGC Catalog ](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda/tags) and find the smallest minor version of image tag that matches your CUDA version (e.g., 12.1 -> 12.1.0)
+  - **Step 2**: Visit [NVIDIA NGC Catalog ](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda/tags) and find the smallest minor version of the image tag that matches your CUDA version (e.g., 12.1 -> 12.1.0)
 
-  - **Step 3**: Update the `Dockerfile.gpu` line number 5 with the latest minor version of the image tag from step 2 (e.g. change `FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04 AS base` to `FROM nvidia/cuda:12.1.0-runtime-ubuntu22.04 AS base`)
+  - **Step 3**: Update the `Dockerfile.gpu` line number 5 with the latest minor version of the image tag from step 2 (e.g., change `FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04 AS base` to `FROM nvidia/cuda:12.1.0-runtime-ubuntu22.04 AS base`)
 
   - **Step 4**: Run command to start Jan in GPU mode
 
@@ -163,10 +163,10 @@ To install Jan Server, follow the steps below:
     docker compose --profile gpu-s3fs up -d
     ```
 
-  - **Step 5**: This will start the web server and you can access Jan at `http://localhost:3000`.
+  - **Step 5**: This will start the web server, and you can access it in Jan at http://localhost:3000.
 
 <Callout type="info"> 
-**RAG** feature is not supported in Docker mode with `s3fs` yet.
+**RAG** feature is not yet supported in Docker mode with `s3fs`.
 </Callout>
 
     #### Experimental Mode
@@ -180,14 +180,14 @@ To install Jan Server, follow the steps below:
 
     Ensure that your system meets the following requirements:
       - Windows 10 or higher is required to run Jan.
-      - WSL2 is required to run Jan in Windows, follow this [instruction](https://learn.microsoft.com/en-us/windows/wsl/install) to install.
+      - WSL2 is required to run in Windows in Jan. Follow the instructions [here](https://learn.microsoft.com/en-us/windows/wsl/install) to install it.
 
     To enable GPU support, you will need:
       - NVIDIA GPU with CUDA Toolkit 11.7 or higher
       - NVIDIA driver 470.63.01 or higher
 
     Jan runs in Docker mode on Windows WSL2:
-    - Docker Engine and Docker Compose are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to get started with Docker Engine on Ubuntu.
+    - Docker Engine and Docker Compose are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to start with Docker Engine on Ubuntu.
     ```bash
     curl -fsSL https://get.docker.com -o get-docker.sh
     sudo sh ./get-docker.sh --dry-run
@@ -196,16 +196,16 @@ To install Jan Server, follow the steps below:
     ```bash
     curl https://raw.githubusercontent.com/janhq/jan/dev/docker-compose.yml -o docker-compose.yml
     ```
-  - If you intend to run Jan in GPU mode, you need to install `nvidia-driver` and `nvidia-docker2`. Follow the instruction [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for installation.
+  - If you intend to run Jan in GPU mode, install `nvidia-driver` and `nvidia-docker2`. Follow the instructions [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for installation.
 
 **Docker Configuration**
 
-  The available Docker Compose profile and the environment variables listed below:
+  The available Docker Compose profile and the environment variables are listed below:
 | Docker compose Profile | Description                                  |
 | ---------------------- | -------------------------------------------- |
-| `cpu-fs`               | Run Jan in CPU mode with default file system |
+| `cpu-fs`               | Run Jan in CPU mode with the default file system |
 | `cpu-s3fs`             | Run Jan in CPU mode with S3 file system      |
-| `gpu-fs`               | Run Jan in GPU mode with default file system |
+| `gpu-fs`               | Run Jan in GPU mode with the default file system |
 | `gpu-s3fs`             | Run Jan in GPU mode with S3 file system      |
 
 | Environment Variable    | Description                                                                                             |
@@ -215,7 +215,7 @@ To install Jan Server, follow the steps below:
 | `AWS_SECRET_ACCESS_KEY` | AWS secret access key - leave blank for default file system                                             |
 | `AWS_ENDPOINT`          | AWS endpoint URL - leave blank for default file system                                                  |
 | `AWS_REGION`            | AWS region - leave blank for default file system                                                        |
-| `API_BASE_URL`          | Jan Server URL, please modify it as your public ip address or domain name default http://localhost:1377 |
+| `API_BASE_URL`          | Jan Server URL, please modify it as your public IP address or domain name default http://localhost:1377 |
 
 - **Option 1**: Run Jan in CPU mode
 
@@ -262,7 +262,7 @@ To install Jan Server, follow the steps below:
     |=======================================================================================|
     ```
 
-  - **Step 2**: Visit [NVIDIA NGC Catalog ](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda/tags) and find the smallest minor version of image tag that matches your CUDA version (e.g., 12.1 -> 12.1.0)
+  - **Step 2**: Visit [NVIDIA NGC Catalog ](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda/tags) and find the smallest minor version of the image tag that matches your CUDA version (e.g., 12.1 -> 12.1.0)
 
   - **Step 3**: Update the `Dockerfile.gpu` line number 5 with the latest minor version of the image tag from step 2 (e.g. change `FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04 AS base` to `FROM nvidia/cuda:12.1.0-runtime-ubuntu22.04 AS base`)
 
@@ -276,10 +276,10 @@ To install Jan Server, follow the steps below:
     docker compose --profile gpu-s3fs up -d
     ```
 
-- **Step 5**: This will start the web server and you can access Jan at `http://localhost:3000`.
+- **Step 5**: This will start the web server, and you can access it in Jan at http://localhost:3000.
 
 <Callout type="info"> 
-**RAG** feature is not supported in Docker mode with `s3fs` yet.
+**RAG** feature is not yet supported in Docker mode with `s3fs`.
 </Callout>
 
     #### Experimental Mode
@@ -292,7 +292,7 @@ To install Jan Server, follow the steps below:
 
     **Pre-requisites**
     
-    - Docker Engine are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to get started with Docker Engine on Ubuntu.
+    - Docker Engine are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to start with Docker Engine on Ubuntu.
       ```bash
       curl -fsSL https://get.docker.com -o get-docker.sh
       sudo sh ./get-docker.sh --dry-run
@@ -301,7 +301,7 @@ To install Jan Server, follow the steps below:
       ```bash
       curl https://raw.githubusercontent.com/janhq/jan/dev/docker-compose.yml -o docker-compose.yml
       ```
-    - Kubernetes with version of 1.23 and beyond.
+    - Kubernetes with version 1.23 and beyond.
     
     - To enable GPU support, you will need:
       - NVIDIA GPU with CUDA Toolkit 11.7 or higher
@@ -318,7 +318,7 @@ To install Jan Server, follow the steps below:
       cd jan/charts/server/
       helm install jan-server .
     ```
-    - **Step 2**: Verify and modify the configuration options by accessing the `values.yaml` file available at [link](https://github.com/janhq/jan/blob/dev/charts/server/values.yaml) as per your requirements. The following is the example resources created by Jan helm chart:
+    - **Step 2**: Verify and modify the configuration options by accessing the `values.yaml` file available at `/jan/charts/server`. The following is the example resource created by Jan helm chart:
     ![Jan server helm argo](./_assets/helm_resources.png)
     - **Step 3**: You can access Jan at `http://jan-server-service-web:1337`.
   </Tabs.Tab>

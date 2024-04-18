@@ -35,7 +35,7 @@ Jan has a default [C++ inference server](https://github.com/janhq/nitro) built o
 ## llama.cpp Extension
 
 <Callout type='info'>
-  Nitro is the default AI engine downloaded with Jan. There is no additional setup needed.
+  Nitro is the default AI engine downloaded in Jan. No additional setup is needed.
 </Callout>
 
 In this guide, we'll walk you through the process of customizing your engine settings by configuring the `nitro.json` file
@@ -45,10 +45,10 @@ In this guide, we'll walk you through the process of customizing your engine set
     <Tabs.Tab >
       <Tabs items={['Mac Intel', 'Mac Silicon']}>
         <Tabs.Tab >
-          Make sure you're using an Intel-based Mac. For a full list of supported Intel CPUs, please see [here](https://en.wikipedia.org/wiki/MacBook_Pro_(Intel-based)).
+          Make sure you're using an Intel-based Mac. For a complete list of supported Intel CPUs, please see [here](https://en.wikipedia.org/wiki/MacBook_Pro_(Intel-based)).
           
           <Callout type="info">
-            This uses CPU by default and there is no acceleration option available. 
+            This uses CPU by default, and no acceleration option is available. 
           </Callout>
           
           For Mac Intel, it is recommended to utilize smaller models. Expect the following outcomes:
@@ -57,13 +57,13 @@ In this guide, we'll walk you through the process of customizing your engine set
         </Tabs.Tab>
 
         <Tabs.Tab >
-          Make sure you're using a Mac Silicon. For a full list of supported Apple Silicon CPUs, please see [here](https://en.wikipedia.org/wiki/Apple_Silicon)
+          Make sure you're using a Mac Silicon. For a complete list of supported Apple Silicon CPUs, please see [here](https://en.wikipedia.org/wiki/Apple_Silicon)
           
           <Callout type="info">
             This can use Apple GPU with Metal by default for acceleration. Apple ANE is not supported yet.
           </Callout>
 
-          For Mac Silicon, it is recommended to use an adequate model size based on your hardware. Expect the following outcomes:
+          Using an adequate model size based on your hardware is recommended for Mac Silicon. Expect the following outcomes:
           - Low time to first token (ms)
           - High throughput (tokens/sec)
         </Tabs.Tab>
@@ -76,10 +76,10 @@ In this guide, we'll walk you through the process of customizing your engine set
       Currently, only Windows with x86_64 architecture is supported by default. 
       
       <Callout type="info">
-        If you do not have any GPU/ NPU, it will use CPU by default.
+        It will use CPU by default if you do not have any GPU/ NPU.
       </Callout>
       
-      For Windows, select a model size suited to your hardware by looking for the `Recommended RAM` tag in the Hub. Expect the following outcomes:
+      Select a model size suited to your Windows hardware by looking for the `Recommended RAM` tag in the Hub. Expect the following outcomes:
         - High time to first token (ms) 
         - Low throughput (tokens/sec)
 
@@ -88,16 +88,16 @@ In this guide, we'll walk you through the process of customizing your engine set
       Available CPU instruction options are:
       <Tabs items={['AVX2', 'AVX', 'AVX-512']}>
         <Tabs.Tab >
-          - Please refer to this [List of CPUs support AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2) for more information.
-          - AVX2 is the default instruction set for Intel CPUs and AMD CPUs in Jan.
+          - For more information, please refer to this [List of CPUs support AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2).
+          - AVX2 is the default instruction set for Intel and AMD CPUs in Jan.
         </Tabs.Tab>
         <Tabs.Tab >
-          - Please refer to this [List of CPUs support AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX) for more information.
-          - Please refer to this [discussion](https://github.com/janhq/jan/issues/2489) for manual fixes, we will update the installer soon.
+          - For more information, please refer to this [List of CPUs support AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX).
+          - Please refer to this [discussion](https://github.com/janhq/jan/issues/2489) for manual fixes. We will update the installer soon.
         </Tabs.Tab>
         <Tabs.Tab >
-          - Please refer to this [List of CPUs support AVX-512](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX-512) for more information.
-          - Please refer to this [discussion](https://github.com/janhq/jan/issues/2489) for manual fixes, we will update the installer soon.
+          - For more information, please refer to this [List of CPUs support AVX-512](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX-512).
+          - Please refer to this [discussion](https://github.com/janhq/jan/issues/2489) for manual fixes. We will update the installer soon.
         </Tabs.Tab>
       </Tabs>
       ### Acceleration Options
@@ -116,7 +116,7 @@ In this guide, we'll walk you through the process of customizing your engine set
         </Tabs.Tab>
         <Tabs.Tab >
           #### Prerequisites
-            - You do not need to install any additional drivers or software for AMD Radeon GPU as it's supported by default with Vulkan.
+            - You do not need to install additional drivers or software for the AMD Radeon GPU, as Vulkan supports it by default.
           #### How to Use
             - This feature is supported by `llama.cpp` with Vulkan build
             - Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the AMD Radeon GPU you want.
@@ -142,10 +142,10 @@ In this guide, we'll walk you through the process of customizing your engine set
         Currently, only Linux with x86_64 architecture is supported.
 
       <Callout type="info">
-        If you do not have any GPU/ NPU, it will use CPU by default.
+        It will use CPU by default if you do not have any GPU/ NPU.
       </Callout>
 
-     For Linux, select a model size suited to your hardware based on the `Recommended` tag for `RAM` in the Hub. Expect the following outcomes:
+     Select a model size suited to your Linux hardware based on the `Recommended` tag for `RAM` in the Hub. Expect the following outcomes:
         - High time to first token (ms) 
         - Low throughput (tokens/sec)
 
@@ -154,16 +154,16 @@ In this guide, we'll walk you through the process of customizing your engine set
       Available CPU instruction options are:
       <Tabs items={['AVX2', 'AVX', 'AVX-512']}>
         <Tabs.Tab >
-          - Please refer to this [List of CPUs support AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2) for more information.
-          - AVX2 is the default instruction set for Intel CPUs and AMD CPUs in Jan.
+          - For more information, please refer to this [List of CPUs support AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2).
+          - AVX2 is the default instruction set for Intel and AMD CPUs in Jan.
         </Tabs.Tab>
         <Tabs.Tab >
-          - Please refer to this [List of CPUs support AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX) for more information.
-          - Please refer to this [discussion](https://github.com/janhq/jan/issues/2489) for manual fixes, we will update the installer soon.
+          - For more information, please refer to this [List of CPUs support AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX).
+          - Please refer to this [discussion](https://github.com/janhq/jan/issues/2489) for manual fixes. We will update the installer soon.
         </Tabs.Tab>
         <Tabs.Tab >
-          - Please refer to this [List of CPUs support AVX-512](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX-512) for more information.
-          - Please refer to this [discussion](https://github.com/janhq/jan/issues/2489) for manual fixes, we will update the installer soon.
+          - For more information, please refer to this [List of CPUs support AVX-512](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX-512).
+          - Please refer to this [discussion](https://github.com/janhq/jan/issues/2489) for manual fixes. We will update the installer soon.
         </Tabs.Tab>
       </Tabs>
       ### Acceleration Options
@@ -182,7 +182,7 @@ In this guide, we'll walk you through the process of customizing your engine set
         </Tabs.Tab>
         <Tabs.Tab >
           #### Prerequisites
-            - You do not need to install any additional drivers or software for AMD Radeon GPU as it's supported by default with Vulkan.
+            - You do not need to install additional drivers or software for the AMD Radeon GPU, as Vulkan supports it by default.
           #### How to Use
             - This feature is supported by `llama.cpp` with Vulkan build
             - Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the AMD Radeon GPU you want.
@@ -192,7 +192,7 @@ In this guide, we'll walk you through the process of customizing your engine set
         </Tabs.Tab>
         <Tabs.Tab >
           #### Prerequisites
-            - You do not need to install any additional drivers or software for AMD Radeon GPU as it's supported by default with Vulkan.
+            - You do not need to install additional drivers or software for the AMD Radeon GPU, as Vulkan supports it by default.
           #### How to Use
             - This feature is supported by `llama.cpp` with Vulkan build
             - Go to `Settings` -> `Advanced Settings` -> `Accelerator` -> Enable and choose the Intel Arc GPU you want.
@@ -236,5 +236,5 @@ The table below describes the parameters in the `nitro.json` file.
 
 
 <Callout type='info'>
-  Assistance and Support, If you have questions, please join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
+  If you have questions, please join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
 </Callout>

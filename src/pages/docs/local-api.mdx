@@ -22,7 +22,7 @@ import { Callout, Steps } from 'nextra/components'
 
 # Local API Server
 
-Jan provides a built-in API server that can be used as a drop-in for OpenAI's API local replacement. This guide will walk you through on how to start the local server and use it to make request to the local server.
+Jan provides a built-in API server to be used as a drop-in for OpenAI's API local replacement. This guide will walk you through how to start the local server and use it to request the local server.
 
 <Steps>
 ### Step 1: Set the Local Server
@@ -36,7 +36,7 @@ To start the local server, follow the steps below:
 
 | Feature                              | Description                                                                                                                                                                                                                                                               | Default Setting                 |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| Local Server Address                 | By default, Jan is only accessible on the same computer it's running on, using the address 127.0.0.1. You can change this to 0.0.0.0 to let other devices on your local network access it. However, this is less secure than just allowing access from the same computer. | `localhost (127.0.0.1)`         |
+| Local Server Address                 | By default, Jan is only accessible on the same computer it's running on, using the address 127.0.0.1. You can change this to 0.0.0.0 to let other devices on your local network access it. However, this is less secure than allowing access from the same computer. | `localhost (127.0.0.1)`         |
 | Port                                 | Jan runs on port 1337 by default. The port can be changed to any other port number as needed.                                                                                                                                                                             | `1337`                          |
 | API Prefix                           | Customizes the base URL of the local API server.                                                                                                                                                                            | /v1                         |
 | Cross-Origin Resource Sharing (CORS) | Manages resource access from external domains. Enabled for security by default but can be disabled if needed.                                                                                                                                                             | Enabled                         |
