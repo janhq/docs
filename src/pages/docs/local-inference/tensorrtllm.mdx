@@ -25,14 +25,14 @@ import { Callout, Steps } from 'nextra/components'
 
 ## Overview
 
-Users with Nvidia GPUs can get **20-40% faster token speeds** than `llama.cpp` engine on their laptop or desktops by using [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM). The more significant implication is that you are running FP16, which is more accurate than quantized models.
+Users with Nvidia GPUs can get **20-40% faster token generation speeds** than `llama.cpp` engine on their laptop or desktops by using [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM). The more significant implication is that you are running FP16, which is more accurate than quantized models.
 
 ## TensortRT-LLM
 
 This guide walks you through installing Jan's official [TensorRT-LLM Extension](https://github.com/janhq/nitro-tensorrt-llm). This extension uses [Nitro-TensorRT-LLM](https://github.com/janhq/nitro-tensorrt-llm) as the AI engine, instead of the default [Nitro-Llama-CPP](https://github.com/janhq/nitro).  It includes an efficient C++ server that executes the [TRT-LLM C++ runtime](https://nvidia.github.io/TensorRT-LLM/gpt_runtime.html) natively. It also includes features and performance improvements like OpenAI compatibility, tokenizer improvements, and queues.
 
 <Callout type='warning' emoji="">
-  - This feature is only available for Windows users. Linux is coming soon.
+  - This feature is only available for Windows users, Linux is coming soon.
 
   - Additionally, we only prebuilt a few demo models. You can always build your desired models directly on your machine. For more information, please see [here](#build-your-own-tensorrt-models).
 </Callout>
@@ -46,6 +46,10 @@ This guide walks you through installing Jan's official [TensorRT-LLM Extension](
 - Nvidia Driver v535+ (For installation guide, please see [here](/docs/troubleshooting#1-ensure-gpu-mode-requirements))
 - CUDA Toolkit v12.2+ (For installation guide, please see [here](/docs/troubleshooting#1-ensure-gpu-mode-requirements))
 
+<Callout type='warning'>
+  If you are using our nightly builds, you may have to reinstall the TensorRT-LLM extension each time you update the app. We're working on better extension lifecycles - stay tuned.
+</Callout>
+
 <Steps>
 
 ### Step 1: Install TensorRT-Extension
@@ -55,7 +59,7 @@ This guide walks you through installing Jan's official [TensorRT-LLM Extension](
 3. Check that files are correctly downloaded.
 
 ```bash
-ls ~\jan\extensions\@janhq\tensorrt-llm-extension\dist\bin
+ls ~/jan/extensions/@janhq/tensorrt-llm-extension/dist/bin
 # Your Extension Folder should now include `nitro.exe`, among other artifacts needed to run TRT-LLM
 ```
 
@@ -78,10 +82,6 @@ We offer a handful of precompiled models for Ampere and Ada cards that you can i
 4. You may need to allow Nitro in your network.
 
 ![Nitro Network](../_assets/nitro-network.png)
-
-<Callout type='warning'>
-  If you are using our nightly builds, you may have to reinstall the TensorRT-LLM extension each time you update the app. We're working on better extension lifecycles - stay tuned.
-</Callout>
 
 ### Step 3: Configure Settings
 

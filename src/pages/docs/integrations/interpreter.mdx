@@ -17,7 +17,7 @@ keywords:
   ]
 ---
 
-import { Steps } from 'nextra/components'
+import { Callout, Steps } from 'nextra/components'
 
 # Open Interpreter
 
@@ -40,6 +40,10 @@ pip install open-interpreter
 ```bash
 sudo apt install rustc
 ```
+
+<Callout type='info' emoji=''>
+ The Rust compiler is necessary for building some native extensions that Open Interpreter requires.
+</Callout>
 
 ### Step 2: Configure Jan's Local API Server
 
