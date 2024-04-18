@@ -292,12 +292,12 @@ To install Jan Server, follow the steps below:
 
     **Pre-requisites**
     
-    - Docker Engine are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to start with Docker Engine on Ubuntu.
+    - Docker Engine are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to start using Docker Engine on Ubuntu.
       ```bash
       curl -fsSL https://get.docker.com -o get-docker.sh
       sudo sh ./get-docker.sh --dry-run
       ```
-    - Download Jan `docker-compose.yml` file using the following command:
+    - Download the Jan `docker-compose.yml` file using the following command:
       ```bash
       curl https://raw.githubusercontent.com/janhq/jan/dev/docker-compose.yml -o docker-compose.yml
       ```
@@ -318,7 +318,7 @@ To install Jan Server, follow the steps below:
       cd jan/charts/server/
       helm install jan-server .
     ```
-    - **Step 2**: Verify and modify the configuration options by accessing the `values.yaml` file available at `/jan/charts/server`. The following is the example resource created by Jan helm chart:
+    - **Step 2**: Verify and modify the configuration options by accessing the `values.yaml` file available on `/jan/charts/server`. The following is the example resource created by Jan helm chart:
     ![Jan server helm argo](./_assets/helm_resources.png)
     - **Step 3**: You can access Jan at `http://jan-server-service-web:1337`.
   </Tabs.Tab>
