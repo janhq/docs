@@ -34,10 +34,10 @@ This guide outlines the process for configuring Jan as a client for both remote 
 2. Modify the `settings.json` file.
 
 <Callout type='info'>
-  Please note that currently, the code that supports any OpenAI-compatible endpoint only reads `engine/openai.json` file. Thus, it will not search any other files in this directory.
+  Please note that currently, the code that supports any OpenAI-compatible endpoint only reads the `engine/openai.json` file. Thus, it will not search any other files in this directory.
 </Callout>
 
-3. Configure `full_url` properties with the endpoint server that you want to connect. For example, if you're going to communicate to Jan's API server, you can configure it as follows:
+3. Configure `full_url` properties with the endpoint server you want to connect. For example, if you're going to communicate to Jan's API server, you can configure it as follows:
 
 ```json ~jan/settings/@janhq/inference-openai-extension/settings.json
 {
@@ -89,5 +89,13 @@ This guide outlines the process for configuring Jan as a client for both remote 
 2. Locate your model and click the **Use** button.
 </Steps>
 <Callout type='info'>
-  Assistance and Support, If you have questions or want more preconfigured GGUF models, please join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
+  If you have questions or want more preconfigured GGUF models, please join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
 </Callout>
+
+## Troubleshooting
+
+If you encounter any issues during the integration process or while using OpenAI with Jan, consider the following troubleshooting steps:
+
+- Double-check your API credentials to ensure they are correct.
+- Check for error messages or logs that may provide insight into the issue.
+- Reach out to their API support for assistance if needed.

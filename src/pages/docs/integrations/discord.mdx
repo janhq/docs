@@ -1,6 +1,6 @@
 ---
 title: Discord
-description: A step-by-step guide on how to integrate Jan with a Discord bot.
+description: A step-by-step guide on integrating Jan with a Discord bot.
 keywords:
   [
     Jan,
@@ -24,7 +24,7 @@ import { Callout, Steps } from 'nextra/components'
 
 ## Integrate Discord Bot with Jan
 
-Discord bot can enhances your discord server interactions. By integrating Jan with it, you can significantly boost responsiveness and user engaggement in your discord server.
+Discord bot can enhance your discord server interactions. Integrating Jan with it can significantly boost responsiveness and user engagement on your Discord server.
 
 To integrate Jan with a Discord bot, follow the steps below:
 
@@ -32,7 +32,10 @@ To integrate Jan with a Discord bot, follow the steps below:
 
 ### Step 1: Clone the repository
 
-To make this integration successful, it is necessary to clone the discord bot's [repository](https://github.com/jakobdylanc/discord-llm-chatbot).
+Clone the discord bot's [repository](https://github.com/jakobdylanc/discord-llm-chatbot) by using the following command:
+```bash
+git clone https://github.com/jakobdylanc/discord-llm-chatbot.git
+```
 
 ### Step 2: Install the Required Libraries
 
@@ -55,11 +58,11 @@ pip install -r requirements.txt
 | `CUSTOM_SYSTEM_PROMPT`  | Adjust the bot's behavior as needed.                                                                                                                                                          |
 | `CUSTOM_DISCORD_STATUS` | Set a custom message for the bot's Discord profile. (Max 128 characters)                                                                                                                      |
 | `ALLOWED_CHANNEL_IDS`   | Enter Discord channel IDs where the bot can send messages, separated by commas. Leave blank to allow all channels.                                                                            |
-| `ALLOWED_ROLE_IDS`      | Enter Discord role IDs allowed to use the bot, separated by commas. Leave blank to allow everyone. Including at least one role also disables DMs.                                             |
+| `ALLOWED_ROLE_IDS`      | Enter Discord role IDs that are allowed to use the bot, separated by commas. Leave blank to allow everyone. This includes at least one role, which also turns off DMs.                                             |
 | `MAX_IMAGES`            | Max number of image attachments allowed per message when using a vision model. (Default: `5`)                                                                                                 |
 | `MAX_MESSAGES`          | Max messages allowed in a reply chain. (Default: `20`)                                                                                                                                        |
 | `LOCAL_SERVER_URL`      | URL of your local API server for LLMs starting with `local/`. (Default: `http://localhost:5000/v1`)                                                                                           |
-| `LOCAL_API_KEY`         | API key for your local API server with LLMs starting with `local/`. Usually safe to leave blank.                                                                                              |
+| `LOCAL_API_KEY`         | API key for your local API server with LLMs starting with `local/`. It is usually safe to leave blank.                                                                                              |
 
 ### Step 4: Insert the Bot
 

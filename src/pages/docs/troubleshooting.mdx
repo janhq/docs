@@ -102,9 +102,9 @@ To resolve the issue where your Jan is stuck in a broken build after installatio
       <Tabs items={['Linux', 'Debian / Ubuntu', 'Others']}>
           <Tabs.Tab >
 
-              To uninstall Jan, you should use your package manager's uninstall or remove option.
+              To uninstall Jan, use your package manager's uninstall or remove option.
 
-              This will return your system to its state before the installation of Jan.
+              This will return your system to its state before installation in Jan.
 
               This method can also reset all settings if you are experiencing any issues with Jan.
 
@@ -118,16 +118,16 @@ To resolve the issue where your Jan is stuck in a broken build after installatio
               # where jan is the name of Jan package
               ```
 
-              This will return your system to its state before the installation of Jan.
+              This will return your system to its state before installation in Jan.
 
-              This method can also be used to reset all settings if you are experiencing any issues with Jan.
+              This method can also reset all settings if you are experiencing any issues with Jan.
 
           </Tabs.Tab>
           <Tabs.Tab value = "other" label = "Others">
 
-              To uninstall Jan, you can uninstall Jan by deleting the `.AppImage` file.
+              You can uninstall Jan by deleting the `.AppImage` file.
 
-              If you wish to completely remove all user data associated with Jan after uninstallation, you can delete the user data at `~/jan`.
+              If you wish to remove all user data associated with Jan after uninstallation, you can delete the user data at `~/jan`.
 
               This method can also reset all settings if you are experiencing any issues with Jan.
 
@@ -161,7 +161,7 @@ To resolve the issue where your Jan is stuck in a broken build after installatio
 By following these steps, you can cleanly uninstall and reinstall Jan, ensuring a smooth and error-free experience with the latest version.
 
 <Callout type="info">
-  Before reinstalling Jan, ensure it's completely removed from all shared spaces if it's installed on multiple user accounts on your device.
+  Before reinstalling Jan, ensure it's completely removed from all shared spaces if installed on multiple user accounts on your device.
 </Callout>
 
 ## Troubleshooting NVIDIA GPU
@@ -224,7 +224,7 @@ To resolve issues when the Jan app does not utilize the NVIDIA GPU on Windows an
 
 #### 2. Switch to GPU Mode
 
-Jan defaults to CPU mode but automatically switches to GPU mode if your system supports it, selecting the GPU with the highest VRAM. Check this setting in `Settings` > `Advanced Settings`.
+If your system supports it, Jan defaults to CPU mode but automatically switches to GPU mode, selecting the GPU with the highest VRAM. Check this setting in `Settings` > `Advanced Settings`.
 
 ##### Troubleshooting Tips
 
@@ -232,14 +232,14 @@ If GPU mode isn't enabled by default:
 
 1. Confirm that you have installed an NVIDIA driver supporting CUDA 11.7 or higher. Refer to [CUDA compatibility](https://docs.nvidia.com/deploy/cuda-compatibility/index.html#binary-compatibility__table-toolkit-driver).
 2. Ensure compatibility of the CUDA toolkit with your NVIDIA driver. Refer to [CUDA compatibility](https://docs.nvidia.com/deploy/cuda-compatibility/index.html#binary-compatibility__table-toolkit-driver).
-3. For Linux, add CUDA's `.so` libraries to the `LD_LIBRARY_PATH`. For Windows, ensure that CUDA's `.dll` libraries are in the PATH. Refer to [Windows setup](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html#environment-setup).
+3. Add CUDA's `.so` libraries to the `LD_LIBRARY_PATH` for Linux. Ensure that CUDA's `.dll` libraries are in the PATH for Windows. Refer to [Windows setup](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html#environment-setup).
 
 
 If you encounter an error message indicating that loading a model requires additional dependencies, follow these steps:
 
 1. Click on **Install Additional Dependencies** in the error message.
 2. You will be redirected to the **Tensor RT LLM Inference Engine** section.
-3. Click the **Install** button to install the required additional dependencies.
+3. Click the **Install** button to install additional dependencies.
 
 #### 3. Check GPU Settings
 
@@ -278,12 +278,12 @@ If you encounter an error message indicating that loading a model requires addit
 
 #### 4. Restart Jan
 
-Restart Jan application to make sure it works.
+Restart the Jan application to make sure it works.
 
 ##### Troubleshooting Tips
 
-- Ensure `nvidia_driver` and `cuda` fields indicate installed software.
-- If `gpus` field is empty or lacks your GPU, check NVIDIA driver and CUDA toolkit installations.
+- Ensure the `nvidia_driver` and `cuda` fields indicate installed software.
+- If `gpus` field is empty or lacks your GPU, check the NVIDIA driver and CUDA toolkit installations.
 - For further assistance, share the `settings.json` file.
 
 #### Tested Configurations
@@ -313,7 +313,7 @@ Restart Jan application to make sure it works.
 
 #### Common Issues and Solutions
 
-1. If the issue persists, try installing the [Nightly version](/guides/quickstart/#nightly-releases).
+1. If the issue persists, install the [Nightly version](/guides/quickstart/#nightly-releases).
 2. Ensure your (V)RAM is accessible; some users with virtual RAM may require additional configuration.
 3. Seek assistance in [Jan Discord](https://discord.gg/mY69SZaMaC).
 
@@ -367,7 +367,7 @@ Error Package /Applications/Jan.app/Contents/Resources/app.asar.unpacked/pre-ins
 Error EACCES: permission denied, mkdtemp '/Users/username/.npm/_cacache/tmp/ueCMn4'
 ```
 
-This error mainly caused by permission problem during installation. To resolve this issue, follow these steps:
+Permission problems mainly cause this error during installation. To resolve this issue, follow these steps:
 
 1. Open your terminal.
 
@@ -378,21 +378,21 @@ sudo chown -R $(whoami) ~/.npm
 ```
 
 <Callout type="info" emoji="">
-  - This command ensures that the necessary permissions are granted for Jan installation, resolving the encountered error.
+  - This command ensures that the necessary permissions are granted for Jan's installation, resolving the encountered error.
   - If you have any questions or are looking for support, please don't hesitate to contact us via our [Discord community](https://discord.gg/Dt7MxDyNNZ) or create a new issue in our [GitHub repository](https://github.com/janhq/jan/issues/new/choose).
 </Callout>
 
 ## Something's Amiss
 
-When you start a chat with a model and encounter with a Something's Amiss error, here's how to resolve it:
+When you start a chat with a model and encounter a Something's Amiss error, here's how to resolve it:
 
 1. Ensure your OS is up to date.
-2. Choose a model smaller than 80% of your hardware's V/RAM. For example, on an 8GB machine, opt for models smaller than 6GB.
+2. Choose a model smaller than 80% of your hardware's V/RAM. For example, on an 8GB machine, opt for models smaller than 6 GB.
 3. Install the latest [Nightly release](/guides/quickstart/#nightly-releases) or [clear the application cache](#broken-build) when reinstalling Jan.
-4. Confirm your V/RAM accessibility, particularly if using virtual RAM.
+4. Confirm your V/RAM accessibility, mainly if using virtual RAM.
 5. Nvidia GPU users should download [CUDA](https://developer.nvidia.com/cuda-downloads).
 6. Linux users, ensure your system meets the requirements of gcc 11, g++ 11, cpp 11, or higher. Refer to this [link](#troubleshooting-nvidia-gpu) for details.
-7. You might use the wrong port when you [check the app logs](#how-to-get-error-logs) and encounter the Bind address failed at 127.0.0.1:3928 error. To check the port status, try use the `netstat` command, like the following:
+7. You might use the wrong port when you [check the app logs](#how-to-get-error-logs) and encounter the Bind address failed at 127.0.0.1:3928 error. To check the port status, try using the `netstat` command, like the following:
 
 <Tabs items={['Mac', 'Windows', 'Linux']}>
     <Tabs.Tab >
@@ -432,9 +432,9 @@ When you start a chat with a model and encounter with a Something's Amiss error,
 
 Encountering an `undefined issue` in Jan is caused by errors related to the Nitro tool or other internal processes. It can be resolved through the following steps:
 
-1. Clearing the Jan folder and then reopen the application to determine if the problem persists
+1. Clear the Jan folder and then reopen the application to determine if the problem persists.
 2. Manually run the nitro tool located at `~/jan/extensions/@janhq/inference-nitro-extensions/dist/bin/(your-os)/nitro` to check for error messages.
-3. Address any nitro error messages that are identified and reassess the persistence of the issue.
+3. Address any identified nitro error messages and reassess the issue's persistence.
 4. Reopen Jan to determine if the problem has been resolved after addressing any identified errors.
 5. If the issue persists, please share the [app logs](#how-to-get-error-logs) via [Jan Discord](https://discord.gg/mY69SZaMaC) for further assistance and troubleshooting.
 
@@ -444,11 +444,11 @@ Encountering an `undefined issue` in Jan is caused by errors related to the Nitr
 
 ## Unexpected Token
 
-Encountering the `Unexpected token` error when initiating a chat with OpenAI models mainly caused by either your OpenAI key or where you access your OpenAI from. This issue can be solved through the following steps:
+Encountering the `Unexpected token` error when initiating a chat with OpenAI models is mainly caused by your OpenAI key or where you access your OpenAI from. This issue can be solved through the following steps:
 
 1. Obtain an OpenAI API key from [OpenAI's developer platform](https://platform.openai.com/) and integrate it into your application.
 
-2. Trying a VPN could potentially solve the issue, especially if it's related to region locking for accessing OpenAI services. By connecting through a VPN, you may bypass such restrictions and successfully initiate chats with OpenAI models.
+2. Using a VPN could potentially solve the issue, especially if it's related to region locking for accessing OpenAI services. Connecting through a VPN may bypass such restrictions and successfully initiate chats with OpenAI models.
 
 <Callout type="info">
   If you have any questions or are looking for support, please don't hesitate to contact us via our [Discord community](https://discord.gg/Dt7MxDyNNZ) or create a new issue in our [GitHub repository](https://github.com/janhq/jan/issues/new/choose).

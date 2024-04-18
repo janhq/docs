@@ -26,12 +26,12 @@ import { Tabs, Steps, Callout } from 'nextra/components'
 
 This guide will show you how to use the advanced settings in Jan.
 
-## Access the Advanced Settings
+## Access Advanced Settings
 
-To access the Jan's advanced settings, follow the steps below:
+To access Jan's advanced settings, follow the steps below:
 
 1. Navigate to the main dashboard.
-2. Click the **gear icon (⚙️)** on the bottom left of your screen.
+2. Click the **Gear Icon (⚙️)** on the bottom left of your screen.
 3. Under the **Settings screen**, click the **Advanced Settings**.
 4. You can configure the following settings:
 
@@ -39,11 +39,11 @@ To access the Jan's advanced settings, follow the steps below:
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Keyboard Shortcuts**                   | Keyboard shortcuts speed up your workflow. For a quick overview of useful keyboard shortcuts, refer to the list [below](advanced#keyboard-shortcuts).                                                       |
 | **Experimental Mode**                    | Enables experimental features that may be unstable.                                                                                                                                                                      |
-| **GPU Acceleration**                     | Enables the boosting of your model performance by using your GPU devices for acceleration.                                                                                                                               |
+| **GPU Acceleration**                     | Enables boosting your model performance by using your GPU devices for acceleration.                                                                                                                               |
 | **Jan Data Folder**                      | Location for messages, model configurations, and user data. Changeable to a different location.                                                                                                                          |
-| **HTTPS Proxy & Ignore SSL Certificate** | Use a proxy server for internet connections and ignore SSL certificates for self-signed certificates. Please check out the guide on how to set up your own HTTPS proxy server [here](advanced#https-proxy). |
+| **HTTPS Proxy & Ignore SSL Certificate** | Use a proxy server for internet connections and ignore SSL certificates for self-signed certificates. Please check out the guide on setting up your HTTPS proxy server [here](advanced#https-proxy). |
 | **Clear Logs**                           | Removes all logs from the Jan application.                                                                                                                                                                               |
-| **Reset To Factory Default**             | Resets the application to its original state, deleting all data including model customizations and conversation history.                                                                                                 |
+| **Reset To Factory Default**             | Resets the application to its original state, deleting all data, including model customizations and conversation history.                                                                                                 |
 
 ## Keyboard Shortcuts
 
@@ -98,19 +98,19 @@ Here are some of the keyboard shortcuts that you can use in Jan.
 
 ## Enable the Experimental Mode
 
-To try out new fetures that are still in testing phase, follow the steps below:
+To try out new features that are still in the testing phase, follow the steps below:
 
 1. Navigate to the main dashboard.
 2. Click the **gear icon (⚙️)** on the bottom left of your screen.
 3. Under the **Settings screen**, click the **Advanced Settings**.
-4. On the **Experimental Mode** click the slider to enable.
+4. On the **Experimental Mode**, click the slider to enable.
 
 ## Enable the GPU Acceleration
 
 To enhance your model performance, follow the steps below:
 
 <Callout type="warning">
-  Ensure that you have read the [troubleshooting
+  Ensure you have read the [troubleshooting
   guide](/docs/troubleshooting#troubleshooting-nvidia-gpu) here for further
   assistance.
 </Callout>
@@ -118,11 +118,11 @@ To enhance your model performance, follow the steps below:
 1. Navigate to the main dashboard.
 2. Click the **gear icon (⚙️)** on the bottom left of your screen.
 3. Under the **Settings screen**, click the **Advanced Settings**.
-4. On the **GPU Acceleration** click the slider to enable.
+4. On the **GPU Acceleration**, click the slider to enable.
 
 ## Access the Jan Data Folder
 
-To access the folder where messages, model configurations and user data are stored, follow the steps below:
+To access the folder where messages, model configurations, and user data are stored, follow the steps below:
 
 1. Navigate to the main dashboard.
 2. Click the **gear icon (⚙️)** on the bottom left of your screen.
@@ -131,15 +131,14 @@ To access the folder where messages, model configurations and user data are stor
 
 ## HTTPS Proxy
 
-HTTPS Proxy encrypts data between your browser and the internet, making it hard for outsiders to intercept or read. It also helps you to maintain your privacy and security while being able to bypass regional restrictions on internet.
+HTTPS Proxy encrypts data between your browser and the internet, making it hard for outsiders to intercept or read. It also helps you maintain your privacy and security while bypassing regional restrictions on the internet.
 
 <Callout type="info" emoji="">
   - When configuring Jan using an HTTPS proxy, the speed of the downloading
-  model may be affected due to the encryption and decryption process. It also
-  depends on the networking of the cloud service provider. 
+  model may be affected by the encryption and decryption process. It also
+  depends on the cloud service provider's networking. 
   
-  - HTTPS Proxy does
-  not affect the remote model usage.
+  - HTTPS Proxy does not affect the remote model usage.
 </Callout>
 
 ### Setting Up Your Own HTTPS Proxy Server
@@ -154,7 +153,7 @@ This guide provides a simple overview of setting up an HTTPS proxy server using 
 
 ### Step 1: Choosing a Server
 
-1. Firstly, you need to choose a server to host your proxy server.
+1. First, you must choose a server to host your proxy server.
 
 <Callout type="info">
   We recommend using a well-known cloud provider service like:
@@ -166,7 +165,7 @@ This guide provides a simple overview of setting up an HTTPS proxy server using 
 </Callout>
 
 
-2. Ensure that your server has a public IP address and is accessible from the internet.
+2. Ensure your server has a public IP address and is accessible from the internet.
 
 ### Step 2: Installing Squid
 
@@ -181,7 +180,7 @@ sudo apt-get install squid
 
 To enable HTTPS, you will need to configure Squid with SSL support.
 
-1. Squid requires an SSL certificate to be able to handle HTTPS traffic. You can generate a self-signed certificate or obtain one from a Certificate Authority (CA). For a self-signed certificate, you can use OpenSSL:
+1. Squid requires an SSL certificate to handle HTTPS traffic. You can generate a self-signed certificate or obtain one from a Certificate Authority (CA). For a self-signed certificate, you can use OpenSSL:
 
 ```bash
 openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 -keyout squid-proxy.pem -out squid-proxy.pem
@@ -195,7 +194,7 @@ ssl_bump server-first all
 ssl_bump bump all
 ```
 
-3. To intercept HTTPS traffic, Squid uses a process called SSL Bumping. This process allows Squid to decrypt and re-encrypt HTTPS traffic. To enable SSL Bumping, ensure the `ssl_bump` directives are configured correctly in your `squid.conf` file.
+3. To intercept HTTPS traffic, Squid uses SSL Bumping. This process allows Squid to decrypt and re-encrypt HTTPS traffic. To enable SSL Bumping, ensure the `ssl_bump` directives are configured correctly in your `squid.conf` file.
 
 ### Step 4 (Optional): Configure ACLs and Authentication
 
@@ -206,7 +205,7 @@ acl allowed_ips src "/etc/squid/allowed_ips.txt"
 http_access allow allowed_ips
 ```
 
-2. If you want to add an authentication layer, Squid supports several authentication schemes. Basic authentication setup might look like this:
+2. If you want to add an authentication layer, Squid supports several authentication schemes. The basic authentication setup might look like this:
 
 ```bash
 auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwords
@@ -228,25 +227,20 @@ sudo systemctl restart squid
 <Callout type="info">
   Tips for Secure Your Proxy:
 
-  - **Firewall rules**: Ensure that only intended users or IP addresses can connect to your proxy server. This can be achieved by setting up appropriate firewall rules.
-  - **Regular updates**: Keep your server and proxy software updated to ensure that you are protected against known vulnerabilities.
+  - **Firewall rules**: Ensure only intended users or IP addresses can connect to your proxy server. This can be achieved by setting up appropriate firewall rules.
+  - **Regular updates**: Keep your server and proxy software updated to protect you against known vulnerabilities.
   - **Monitoring and logging**: Monitor your proxy server for unusual activity and enable logging to keep track of the traffic passing through your proxy.
 </Callout>
 
-</Steps>
+### Step 6: Enable the HTTPS Proxy
 
-
-
-
-
-
-### Setting Up Jan to Use Your HTTPS Proxy
-
-Once you have your HTTPS proxy server set up, you can configure Jan to use it.
+Once you set up your HTTPS proxy server, you can configure it for Jan.
 
 1. Navigate to **Settings** > **Advanced Settings**.
-2. On the **HTTPS Proxy** click the slider to enable.
+2. On the **HTTPS Proxy**, click the slider to enable.
 3. Input your domain in the blank field.
+
+</Steps>
 
 ## Ignore SSL Certificate
 
@@ -255,7 +249,7 @@ To Allow self-signed or unverified certificates, follow the steps below:
 1. Navigate to the main dashboard.
 2. Click the **gear icon (⚙️)** on the bottom left of your screen.
 3. Under the **Settings screen**, click the **Advanced Settings**.
-4. On the **Ignore SSL Certificates** click the slider to enable.
+4. On the **Ignore SSL Certificates**, click the slider to enable.
 
 ## Clear Logs
 

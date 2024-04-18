@@ -1,6 +1,6 @@
 ---
 title: LM Studio
-description: A step-by-step guide on how to integrate Jan with LM Studio.
+description: A step-by-step guide on integrating Jan with LM Studio.
 keywords:
   [
     Jan,
@@ -27,10 +27,10 @@ import { Callout, Steps } from 'nextra/components'
 1. Integrate the LM Studio server with Jan UI
 2. Migrate your downloaded model from LM Studio to Jan.
 
-To integrate LM Studio with Jan follow the steps below:
+To integrate LM Studio with Jan, follow the steps below:
 
 <Callout type="info">
-  In this guide, we're going to show you how to connect Jan to [LM Studio](https://lmstudio.ai/) using the second method. We'll use the [Phi 2 - GGUF](https://huggingface.co/TheBloke/phi-2-GGUF) model from Hugging Face as our example.
+ This guide will demonstrate how to connect Jan to [LM Studio](https://lmstudio.ai/) using the second method. We'll use the [Phi 2 - GGUF](https://huggingface.co/TheBloke/phi-2-GGUF) model from Hugging Face as our example.
 </Callout>
 
 <Steps>
@@ -87,7 +87,7 @@ To integrate LM Studio with Jan follow the steps below:
 ```
 
 <Callout type="info">
-  For more details regarding the `model.json` settings and parameters fields, please see [here](/docs/engines-remote/remote-server-integration#modeljson).
+  For more details regarding the `model.json` settings and parameters fields, please see [here](/docs/models#add-a-model-manually).
 </Callout>
 
 ### Step 3: Starting the Model
@@ -129,7 +129,7 @@ Starting from version 0.4.7, Jan enables direct import of LM Studio models using
 2. Create a folder named `(modelname)` (e.g., `phi-2.Q4_K_S`).
 3. Inside, craft a `model.json` file:
     - Set `id` to match the folder name.
-    - Use the direct binary download link ending in `.gguf` as the `url`. You can now use the absolute filepath of the model file.
+    - Use the direct binary download link ending in `.gguf` as the `url`. You can now use the absolute file path of the model file.
     - Set `engine` as `nitro`.
 
 ```json
@@ -172,7 +172,7 @@ Starting from version 0.4.7, Jan enables direct import of LM Studio models using
 ```
 
 <Callout type="warning">
-  For Windows users, ensure to include double backslashes in the URL property, such as `C:\\Users\\username\\filename.gguf`.
+  For Windows users, include double backslashes in the URL property, such as `C:\\Users\\username\\filename.gguf`.
 </Callout>
 
 ### Step 3: Starting the Model
