@@ -147,6 +147,16 @@ const Changelog = () => {
           </div>
         </div>
       </div>
+
+      <div className="text-center">
+        <Link
+          href="https://github.com/janhq/jan/releases"
+          target="_blank"
+          className="dark:nx-bg-neutral-900 dark:text-white bg-black text-white hover:text-white justify-center dark:border dark:border-neutral-800 flex-shrink-0 px-4 py-3 rounded-xl inline-flex items-center"
+        >
+          View Prior Updates
+        </Link>
+      </div>
     </div>
   )
 }

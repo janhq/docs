@@ -34,7 +34,7 @@ const config: DocsThemeConfig = {
   },
   useNextSeoProps() {
     return {
-      titleTemplate: 'Jan - %s',
+      titleTemplate: '%s - Jan',
       canonical: defaultUrl,
       twitter: {
         cardType: 'summary_large_image',
@@ -69,7 +69,7 @@ const config: DocsThemeConfig = {
   },
   head: function useHead() {
     const { title, frontMatter } = useConfig()
-    const titleTemplate = 'Jan' + ' - ' + (frontMatter?.title || title)
+    const titleTemplate = (frontMatter?.title || title) + ' - ' + 'Jan'
 
     return (
       <Fragment>
