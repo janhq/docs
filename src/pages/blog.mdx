@@ -32,26 +32,20 @@ export const getStaticProps = async() => {
 
   for (const item of blogPosts) {
     const content = fs.readFileSync(path.join(process.cwd(), `src/pages/post/${item}`), "utf8")
-
     const frontmatter = matter(content)
-
-
-
     if(!frontmatter.data.unlisted) {
       allBlogPosts.push({
         title: frontmatter.data?.title || null,
         url: '/post/' + item?.replace(/\.mdx?/, ''),
         description: frontmatter.data?.description || null,
-        date: format(String(frontmatter.data?.date), 'yyyy-M-dd') || null,
+        date: String(frontmatter.data?.date) || null,
         tags: frontmatter.data.tags?.split(', ') || null,
         author: frontmatter.data?.author || null,
         categories: frontmatter.data.categories?.split(', ') || null,
       })
     }
-
-
-    allBlogPosts.sort((a, b) => new Date(b.date) - new Date(a.date))
     
+    allBlogPosts.sort((a, b) => new Date(b.date) - new Date(a.date))    
   }
 
   return {
