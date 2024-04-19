@@ -40,17 +40,14 @@ To install Jan desktop, follow the steps below:
 
         To download stable releases, go to [Jan](https://jan.ai/) > select **Download for Mac**.
 
+        <Callout type='info'>
         The download should be available as a `.dmg`.
-
+        </Callout>
         #### Nightly Releases
 
         We provide the Nightly Release so that you can test new features and see what might be coming in a future stable release. Please be aware that there might be bugs!
 
         You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
-
-        #### Experimental Model
-
-        To enable the experimental mode, go to **Settings** > **Advanced Settings** and toggle the **Experimental Mode**
 
         #### Install with Homebrew
         Install Jan with the following Homebrew command:
@@ -71,24 +68,21 @@ To install Jan desktop, follow the steps below:
          - Windows 10 or higher is required to run Jan.
 
         To enable GPU support, you will need:
-         - NVIDIA GPU with CUDA Toolkit 11.7 or higher
-         - NVIDIA driver 470.63.01 or higher
+         - NVIDIA GPU with CUDA Toolkit 11.7 or higher.
+         - NVIDIA driver 470.63.01 or higher.
 
         #### Stable Releases
 
         To download stable releases, go to [Jan](https://jan.ai/) > select **Download for Windows**.
 
+        <Callout type='info'>
         The download should be available as a `.exe` file.
-
+        </Callout>
         #### Nightly Releases
 
         We provide the Nightly Release so that you can test new features and see what might be coming in a future stable release. Please be aware that there might be bugs!
 
         You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
-
-        #### Experimental Model
-
-        To enable the experimental mode, go to **Settings** > **Advanced Settings** and toggle the **Experimental Mode**
 
         #### Default Installation Directory
 
@@ -110,43 +104,32 @@ To install Jan desktop, follow the steps below:
          - gcc 11, g++ 11, cpp 11, or higher, refer to this link for more information.
 
         To enable GPU support, you will need:
-         - NVIDIA GPU with CUDA Toolkit 11.7 or higher
-         - NVIDIA driver 470.63.01 or higher
+         - NVIDIA GPU with CUDA Toolkit 11.7 or higher.
+         - NVIDIA driver 470.63.01 or higher.
 
         #### Stable Releases
 
-        To download stable releases, go to [Jan](https://jan.ai/) > select **Download for Linux**.
-
-        The download should be available as a `.AppImage` file or a `.deb` file.
-
-        #### Nightly Releases
-
-        We provide the Nightly Release so that you can test new features and see what might be coming in a future stable release. Please be aware that there might be bugs!
-
-        You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
-
-        #### Experimental Model
-
-        To enable the experimental mode, go to **Settings** > **Advanced Settings** and toggle the **Experimental Mode**
-
-        <Tabs items = {['linux_main', 'deb_ub', 'other']}>
-            <Tabs.Tab>
-                You should use your package manager's install or `dpkg` to install Jan.
-            </Tabs.Tab>
+        To download stable releases, go to [Jan](https://jan.ai/) > select **Download for Linux**. You can also install Jan using the following command:
+        <Tabs items = {[ 'dpkg', 'apt-get', 'AppImage']}>
             <Tabs.Tab>
                 To install Jan, run the following command:
 
                 ```sh
                 # Install Jan using dpkg
                 sudo dpkg -i jan-linux-amd64-{version}.deb
+                ```
+            </Tabs.Tab>
+            <Tabs.Tab>
+                To install Jan, run the following command:
 
+                ```sh
                 # Install Jan using apt-get
                 sudo apt-get install ./jan-linux-amd64-{version}.deb
                 # where jan-linux-amd64-{version}.deb is path to the Jan package
                 ```
             </Tabs.Tab>
             <Tabs.Tab>
-                To install Jan, run the following commands:
+                To install Jan, run the following command:
 
                 ```sh
                 # Install Jan using AppImage
@@ -156,6 +139,15 @@ To install Jan desktop, follow the steps below:
                 ```
             </Tabs.Tab>
         </Tabs>
+
+        <Callout type='info'>
+        The download should be available as a `.AppImage` file or a `.deb` file.
+        </Callout>
+        #### Nightly Releases
+
+        We provide the Nightly Release so that you can test new features and see what might be coming in a future stable release. Please be aware that there might be bugs!
+
+        You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
 
         <Callout type="warning" emoji="⚠️">
           If stuck in a broken build, go to the [Broken Build](/docs/troubleshooting#broken-build) section.
