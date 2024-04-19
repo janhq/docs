@@ -224,7 +224,7 @@ export default function Footer() {
       </div>
       <div className="mt-10">
         <div className="flex w-full justify-between items-center">
-          <span>&copy;{getCurrentYear}&nbsp;Jan AI Pte Ltd.</span>
+          <span>&copy;{getCurrentYear}&nbsp;Thinking Machines Pte Ltd.</span>
           <div className="flex items-center gap-x-3">
             {socials.map((social, i) => {
               return (
