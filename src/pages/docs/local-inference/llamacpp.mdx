@@ -84,7 +84,7 @@ This guide walks you through customizing your engine settings by configuring the
     </Tabs.Tab>
 </Tabs>
 ### CPU Instruction
-Prebuilt Nitro with llama.cpp inference engine needs to run using the correct CPU instruction. AVX2 is the standard CPU instruction set in Jan, commonly used in newer Intel and AMD processors. However, older CPUs that support AVX or AVX-512 require customization of the default CPU instruction.
+The prebuilt Nitro with the llama.cpp inference engine requires running with the correct CPU instruction. AVX2 is the standard CPU instruction set in Jan, commonly used in newer Intel and AMD processors. However, older CPUs that support AVX or AVX-512 may require customization of the default CPU instruction.
 <Callout type="info">
     The CPU instruction configuration is only applicable to the Windows and Linux versions.
 </Callout>
@@ -110,7 +110,7 @@ Prebuilt Nitro with llama.cpp inference engine needs to run using the correct CP
 </Tabs>
 
 ### GPU Acceleration Options
-You can enable the GPU acceleration option available within the Jan application. To enable this option, follow the [Hardware Setup](/docs/hardware-setup) guide steps.
+Enable the GPU acceleration option available within the Jan application by following the steps in the [Hardware Setup](/docs/hardware-setup) guide.
 ## Step-by-step Guide
 1. Navigate to the `App Settings` > `Advanced` > `Open App Directory` > `~/jan/engines` folder.
 2. Modify the `nitro.json` file based on your needs. The default settings are shown below.
