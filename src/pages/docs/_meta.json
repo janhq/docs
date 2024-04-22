@@ -1,4 +1,8 @@
 {
+  "-- Switcher": {
+    "type": "separator",
+    "title": "Switcher"
+  },
   "get-started": {
     "title": "Get Started",
     "type": "separator"
@@ -26,11 +30,6 @@
   },
   "local-inference": "Local Engines",
   "remote-inference": "Remote Engines",
-  "integrations-separator": {
-    "title": "Integrations",
-    "type": "separator"
-  },
-  "integrations": "",
   "extensions-separator": {
     "title": "Extensions",
     "type": "separator"
