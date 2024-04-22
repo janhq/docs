@@ -20,6 +20,28 @@
       "footer": false
     }
   },
+  "demo": {
+    "title": "Products",
+    "type": "menu",
+    "items": {
+      "jan": {
+        "title": "Jan",
+        "href": "/docs/"
+      },
+      "cortex": {
+        "title": "Cortex",
+        "href": "/cortex/"
+      },
+      "model": {
+        "title": "Model Hub",
+        "href": "/thinking"
+      },
+      "machines": {
+        "title": "Thinking Machines",
+        "href": "/machines"
+      }
+    }
+  },
   "about": {
     "type": "page",
     "title": "About"
