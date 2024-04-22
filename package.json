@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-export-optimize-images",
-    "start": "next start",
+    "build": "next build",
+    "start": "npx serve@latest out",
     "lint": "next lint",
     "create:blogpost": "plop create-blogpost",
     "postbuild": "next-sitemap"
@@ -52,7 +52,6 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
-    "next-export-optimize-images": "^3.3.0",
     "postcss": "^8",
     "prettier": "^3.2.5",
     "typescript": "^5"

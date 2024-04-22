@@ -2,7 +2,6 @@
 
 import nextra from 'nextra'
 import { remarkCodeHike } from '@code-hike/mdx'
-import withExportImages from 'next-export-optimize-images'
 
 const withNextra = nextra({
   theme: 'nextra-theme-docs',
@@ -32,7 +31,8 @@ const nextConfig = {
   transpilePackages: ['@scalar', 'react-tweet'],
   images: {
     formats: ['image/webp'],
+    unoptimized: true,
   },
 }
 
-export default withExportImages(withNextra(nextConfig))
+export default withNextra(nextConfig)

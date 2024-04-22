@@ -20,6 +20,13 @@
       "footer": false
     }
   },
+  "changelog": {
+    "type": "page",
+    "title": "Changelog",
+    "theme": {
+      "layout": "raw"
+    }
+  },
   "about": {
     "type": "page",
     "title": "About"
@@ -36,13 +43,7 @@
     "title": "Post Categories",
     "display": "hidden"
   },
-  "changelog": {
-    "type": "page",
-    "title": "Changelog",
-    "theme": {
-      "layout": "raw"
-    }
-  },
+
   "download": {
     "type": "page",
     "theme": {
