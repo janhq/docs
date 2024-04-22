@@ -1,0 +1,16 @@
+{
+  "-- Switcher": {
+    "type": "separator",
+    "title": "Switcher"
+  },
+  "index": { "title": "Discord", "href": "/integrations" },
+  "interpreter": {
+    "title": "Open Interpreter",
+    "href": "/integrations/interpreter"
+  },
+  "raycast": { "title": "Raycast", "href": "/integrations/raycast" },
+  "vscode": {
+    "title": "Continue.dev",
+    "href": "/integrations/vscode"
+  }
+}

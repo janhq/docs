@@ -11,6 +11,11 @@
     "type": "page",
     "title": "Documentation"
   },
+  "integrations": {
+    "type": "page",
+    "title": "Integrations",
+    "display": "hidden"
+  },
   "api-reference": {
     "type": "page",
     "title": "API Reference",
