@@ -11,7 +11,7 @@ const features = [
   },
   {
     title: 'Remote API',
-    description: `Connect to remote APIs, like ChatGPT, Gemini, or Claude. Access AI capabilities without needing advanced hardware, with all processing handled in the cloud.`,
+    description: `Connect to remote APIs, like ChatGPT, Groq, or Mistral API. Access AI capabilities without needing advanced hardware, with all processing handled in the cloud.`,
   },
   {
     title: '100% offline',
@@ -39,16 +39,6 @@ const Feature = () => {
               <h1 className="text-5xl lg:text-7xl !font-normal leading-tight lg:leading-tight mt-2 font-serif">
                 Features
               </h1>
-            </div>
-            <div className="w-full lg:w-1/2 mr-auto text-center mt-4 lg:mt-0 lg:text-right">
-              {/* Temporary hidden since doesn't have docs for feature */}
-              {/* <a
-                className="text-blue-600 dark:text-blue-400 cursor-pointer"
-                href="/features/"
-                target="_blank"
-              >
-                View Our Features <BsArrowRight className="inline-block" />
-              </a> */}
             </div>
           </div>
 
