@@ -17,17 +17,37 @@ keywords:
 ---
 
 import Changelog from "@/components/Changelog"
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import { format } from 'date-fns'
 
 export const getStaticProps = async() => {
-  const res = await fetch('https://api.github.com/repos/janhq/jan/releases')  
-  const releases = await res.json()
+  const getChangelog = await fs.readdirSync(path.join(process.cwd(), 'src/pages/changelog')).filter((file) => {
+    return path.extname(file).toLowerCase() === ".mdx" && !file.startsWith('index')
+  })
+  const changelog = []
+
+  for (const item of getChangelog) {
+    const content = fs.readFileSync(path.join(process.cwd(), `src/pages/changelog/${item}`), "utf8")
+    const frontmatter = matter(content)
+    if(!frontmatter.data.unlisted) {
+      changelog.push({
+        url: item.replace('.mdx', ''),
+        title: frontmatter.data?.title || null,
+        ogImage: frontmatter.data?.ogImage || null,
+        version: frontmatter.data?.version || null,
+        description: frontmatter.data?.description || null,
+        date: format(String(frontmatter.data?.date), 'yyyy-M-dd') || null,
+      })
+    }
+    changelog.sort((a, b) => new Date(b.date) - new Date(a.date))
+  }
 
   return {
     props: {
-      ssg: {
-        releases: releases?.message ? [{published_at: "2023/8/20", tag_name:'v.4.0.0' }] : releases
-      }
-    },  
+      ssg: changelog
+    },
   }
 }
 

@@ -49,8 +49,8 @@ const menus = [
     name: 'For Developers',
     child: [
       {
-        menu: 'Guides',
-        path: '/guides',
+        menu: 'Documentation',
+        path: '/docs',
       },
       {
         menu: 'API Reference',

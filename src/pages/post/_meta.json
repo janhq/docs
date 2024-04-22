@@ -11,11 +11,6 @@
     "display": "normal",
     "href": "/blog"
   },
-  "product-update-cat": {
-    "title": "Product Updates",
-    "display": "normal",
-    "href": "/blog?category=product-updates"
-  },
   "building-jan": {
     "title": "Building Jan",
     "display": "normal",
