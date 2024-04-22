@@ -20,7 +20,9 @@ const ThemeImage = (props: Props) => {
     <>
       <Image
         src={source.light}
+        blurDataURL={source.light}
         className={twMerge('block dark:hidden', className)}
+        placeholder="blur"
         alt={alt}
         width={width}
         height={height}
@@ -28,7 +30,9 @@ const ThemeImage = (props: Props) => {
       />
       <Image
         src={source.dark}
+        blurDataURL={source.dark}
         className={twMerge('hidden dark:block', className)}
+        placeholder="blur"
         alt={alt}
         width={width}
         height={height}
