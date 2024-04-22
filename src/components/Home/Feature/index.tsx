@@ -11,7 +11,7 @@ const features = [
   },
   {
     title: 'Remote API',
-    description: `Connect to remote APIs, like ChatGPT, Groq, or Mistral API. Access AI capabilities without needing advanced hardware, with all processing handled in the cloud.`,
+    description: `Connect to remote APIs, like OpenAI, Groq, or Mistral API. Access AI capabilities without needing advanced hardware, with all processing handled in the cloud.`,
   },
   {
     title: '100% offline',
