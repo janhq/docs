@@ -3,9 +3,9 @@ import { useConfig, DocsThemeConfig } from 'nextra-theme-docs'
 import LogoMark from '@/components/LogoMark'
 import FooterMenu from '@/components/FooterMenu'
 import JSONLD from '@/components/JSONLD'
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { FileCode, LibraryBig, BrainCircuit, Computer, Blocks } from "lucide-react";
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { LibraryBig, Blocks } from 'lucide-react'
 
 const defaultUrl = 'https://jan.ai'
 const defaultImage = 'https://jan.ai/assets/images/general/og-image.png'
@@ -46,30 +46,19 @@ const config: DocsThemeConfig = {
       openGraph: {
         type: 'website',
         url: defaultUrl,
-        images: [
-          {
-            url: `${defaultImage}`,
-            width: 800,  "guides": {
-              "type": "page",
-              "title": "Guides",
-              "display": "hidden"
-            },
-            height: 600,
-            alt: 'Jan-OGImage',
-          },
-        ],
       },
     }
   },
   sidebar: {
     titleComponent: ({ type, title, route }) => {
-      const { asPath } = useRouter();
-      if (type === "separator" && title === "Switcher") {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const { asPath } = useRouter()
+      if (type === 'separator' && title === 'Switcher') {
         return (
           <div className="-mx-2 hidden md:block">
             {[
-              { title: "Jan", path: "/docs", Icon: LibraryBig },
-              { title: "Integrations", path: "/integrations", Icon: Blocks }
+              { title: 'Jan', path: '/docs', Icon: LibraryBig },
+              { title: 'Integrations', path: '/integrations', Icon: Blocks },
             ].map((item) =>
               asPath.startsWith(item.path) ? (
                 <div
@@ -91,9 +80,9 @@ const config: DocsThemeConfig = {
               )
             )}
           </div>
-        );
+        )
       }
-      return title;
+      return title
     },
     defaultMenuCollapseLevel: 1,
     toggleButton: true,
@@ -105,6 +94,8 @@ const config: DocsThemeConfig = {
     const { title, frontMatter } = useConfig()
     const titleTemplate = (frontMatter?.title || title) + ' - ' + 'Jan'
 
+    const origin = typeof window !== 'undefined' && window.location.origin
+
     return (
       <Fragment>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -112,6 +103,7 @@ const config: DocsThemeConfig = {
         {/* Dynamic meta title, description and keyword */}
         <title>{titleTemplate}</title>
         <meta name="og:title" content={titleTemplate} />
+
         <meta
           name="description"
           content={
@@ -126,6 +118,15 @@ const config: DocsThemeConfig = {
             `Run LLMs like Mistral or Llama2 locally and offline on your computer, or connect to remote AI APIs like OpenAI’s GPT-4 or Groq.`
           }
         />
+        <meta
+          property="og:image"
+          content={
+            frontMatter?.ogImage
+              ? origin + '/' + frontMatter?.ogImage
+              : 'https://jan.ai/assets/images/general/og-image.png'
+          }
+        />
+        <meta property="og:image:alt" content="Jan-OGImage" />
         <meta
           name="keywords"
           content={
