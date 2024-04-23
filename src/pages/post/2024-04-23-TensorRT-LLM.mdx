@@ -1,5 +1,5 @@
 ---
-title: Benchmarking With NVIDIA TensorRT-LLM
+title: Benchmarking with NVIDIA TensorRT-LLM
 description: This post compares the performance of TensorRT-LLM and llama.cpp on Nvidia GPUs, highlighting the trade-offs between speed and resource usage.
 tags: [Nvidia, TensorRT-LLM, llama.cpp, 3090, 4090, "inference engine"]
 unlisted: true
@@ -8,9 +8,9 @@ unlisted: true
 import { Callout } from 'nextra/components'
 
 
-# Benchmarking With NVIDIA TensorRT-LLM
+# Benchmarking with NVIDIA TensorRT-LLM
 
-Jan now supports TensorRT-LLM in addition to llama.cpp, which is available in Release [v0.4.9+](https://github.com/janhq/jan/releases/tag/v0.4.9). 
+Jan now supports NVIDIA TensorRT-LLM in addition to llama.cpp, which is available in Release [v0.4.9+](https://github.com/janhq/jan/releases/tag/v0.4.9). 
 
 Please read the [TensorRT-LLM Guide](/guides/engines/tensorrt-llm) to activate and use the TensorRT-LLM extension. We have a few pre-built TensorRT-LLM models for you to try:
 
@@ -19,11 +19,11 @@ Please read the [TensorRT-LLM Guide](/guides/engines/tensorrt-llm) to activate a
 - TinyJensen-1.1b 😂
 
 <Callout type="info" >
-  Bugs or feedback? Let us know in [Github](https://github.com/janhq/jan) or via Discord [#tensorrt-llm channels](https://discord.com/channels/1107178041848909847/1201832734704795688). 
+  Bugs or feedback? Let us know on [GitHub](https://github.com/janhq/jan) or via [Discord #tensorrt-llm channel](https://discord.com/channels/1107178041848909847/1201832734704795688).
 </Callout>
 
 
-## Why TensorRT-LLM?
+## Why NVIDIA TensorRT-LLM?
 
 NVIDIA TensorRT-LLM is an open-source inference library that is optimized for performance on NVIDIA GPUs. TensorRT-LLM leverages NVIDIA’s optimizations on top of its own hardware, beyond the open-source [NVIDIA cuBLAS](https://developer.nvidia.com/cublas) libraries that are used in llama.cpp.
 TensorRT-LLM works by compiling models into a [GPU-specific execution graph](https://www.baseten.co/blog/high-performance-ml-inference-with-nvidia-tensorrt/) that optimizes for NVIDIA GPU Tensor Cores and CUDA cores and VRAM. We at Jan  were familiar with TensorRT-LLM being used in datacenter-grade GPUs where it produces a whopping [10,000 tokens/s](https://nvidia.github.io/TensorRT-LLM/blogs/H100vsA100.html) on [NVIDIA H100 Tensor Core GPUs](https://www.nvidia.com/en-us/data-center/h100/).
@@ -43,7 +43,7 @@ TensorRT-LLM was:
 - **Consumes less memory on consecutive runs** and **marginally more GPU VRAM utilization** than llama.cpp
 - **20%+ smaller compiled model sizes** than llama.cpp
 - **Less convenient** as models have to be compiled for a specific OS and GPU architecture, vs. llama.cpp's "Compile once, run everywhere" portability
-- **Less accessible** as it does not support older GPUs (e.g. 20XX Turing series)
+- **Less accessible** as it does not support older-generation NVIDIA GPUs
 
 Raw stats can be found [here](https://drive.google.com/file/d/1rDwd8XD8erKt0EgIKqOBidv8LsCO6lef/view?usp=sharing).
 
@@ -60,7 +60,7 @@ We ran the experiment using standardized inference requests in a sandboxed envir
   - Note: We discovered that `nvidia-smi` on Windows yielded huge differences compared to Windows Task Manager resource monitor for NVIDIA GPUs. However, we decided to use `nvidia-smi`
 
 ### Hardware Selection
-We chose the following popular GPUs architectures based on our users' preferences:
+We chose the following NVIDIA GPUs based on our users' preferences:
 
 | NVIDIA GPU        | VRAM (GB) | CUDA Cores | Tensor Cores | Memory Bus Width (bit) | Memory Bandwidth (GB/s) |
 | ----------------- | --------- | ---------- | ------------ | ---------------------- | ----------------------- |
@@ -115,7 +115,7 @@ The NVIDIA GeForce RTX 4090 is the latest top-of-the-line desktop GPU, with an M
 TensorRT-LLM was almost 70% faster than llama.cpp by building the model for the GeForce RTX 4090 GPU’s Ada architecture for optimal graph execution, fully utilizing the 512 Tensor Cores, 16,384 CUDA cores, and 1,000 gbps of memory bandwidth.
 The intuition for why llama.cpp is slower is because it compiles a model into a [single, generalizable CUDA “backend”](https://github.com/ggerganov/llama.cpp/blob/master/ggml-cuda.cu) that can run on many NVIDIA GPUs. Doing so requires llama.cpp to sacrifice all the optimizations that TensorRT-LLM makes with its compilation to a GPU-specific execution graph.
 
-| Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | How TRT-LLM Compares |
+| Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | How TensorRT-LLM Compares |
 | -------------------- | ---------------- | ---------------- | ------------ | -------------------- |
 | Throughput (token/s) | 14.0             | 100.43            | 170.63        | ✅ 69.89% faster|
 | Max GPU Utilization (%)       | N/A                |83.50          | 88.50   | 5.99% more       |
@@ -141,7 +141,7 @@ The intuition for why llama.cpp is slower is because it compiles a model into a 
 The [NVIDIA's GeForce RTX 3090](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/) is a popular desktop GPU, and retails for approximately $1,500 (as of April 24). It uses the NVIDIA Ampere architecture. As compared to its successor GeForce RTX 4090, it has 33% fewer CUDA cores (10,496) and Tensor Cores (328) and 7% less memory bandwidth (~930gbps).
 Interestingly, the GeForce RTX 3090 was only 16.6% slower compared with the GeForce RTX 4090. On TPS, TensorRT-LLM outperformed llama.cpp by 62.57%. Curiously, it also used negligible RAM for subsequent inference requests after the initial model warmup.
 
-| Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | How TRT-LLM Compares |
+| Metrics              | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | How TensorRT-LLM Compares |
 | -------------------- | ---------------- | ---------------- | ------------ | -------------------- |
 | Throughput (token/s) | 11.42            | 88.70               | 144.19       | ✅ 62.57% faster        |
 | Max GPU Utilization (%)       | N/A                |80.40 | 89.10          | 10.82% more        |
@@ -153,7 +153,8 @@ Interestingly, the GeForce RTX 3090 was only 16.6% slower compared with the GeFo
 
 <Callout type="info" >
   **Hardware Details**
-- CPU: AMD Ryzen 7
+- Laptop: Razer Blade 15 (2023)
+- CPU: i7 13800H
 - GPU: NVIDIA GeForce RTX 4070 Laptop GPU (Ada - sm 89) on PCIE 4.0 (100gbps)
 - RAM: 32GB
 - OS: Windows 11 Pro
@@ -180,7 +181,9 @@ The GeForce RTX 4070 Laptop GPU is also ~70% slower than the GeForce RTX 4090 de
 
 <Callout type="info" >
   **Hardware Details**
-- CPU: AMD Ryzen 7
+- Laptop: Razer Blade 15 (2023)
+- eGPU box: AORUS RTX 4090 GAMING BOX
+- CPU: i7 13800H
 - GPU: NVIDIA GeForce RTX 4090 (Ada - sm 89) on eGPU with Thunderbolt 3 connection
 - RAM: 32GB
 - OS: Windows 11 Pro
@@ -212,15 +215,15 @@ Interestingly, the VRAM used with the eGPU was variably higher. Our hypothesis i
 - TensorRT-LLM is up to **70% faster** than llama.cpp on desktop GPUs (e.g. 3090 GPU, 4090 GPUs) while using less RAM & CPU (but more fully utilizing VRAM)
 - TensorRT-LLM is up to **30% faster** on laptop GPUs (e.g. 4070 GPUs) with smaller VRAM
 
-![image](./_assets/throughput_benchmark.png)
+![image](./_assets/throughput_Comparison.png)
 
 | Throughput (Higher is Better)                           | TensorRT-LLM    | Llama.cpp    | % Difference    |
 | -------------------------- | --------------- | ------------ | --- |
 | GeForce RTX 4090 desktop GPU           | ✅ 170.63t/s     | 100.43t/s     | 69.89% faster    |
-| GeForce RTX 3090 desktop GPU           | ✅ 144.9t/s    | 88.67t/s        | 62.57% faster   |
-| GeForce RTX 4070 Laptop GPU           | ✅ 51.57t/s     | 39.7t/s     | 29.9% faster   |
+| GeForce RTX 3090 desktop GPU           | ✅ 144.19t/s    | 88.70t/s        | 62.57% faster   |
+| GeForce RTX 4070 Laptop GPU           | ✅ 51.57t/s     | 39.70t/s     | 29.90% faster   |
 | GeForce RTX 4090 eGPU           | ✅ 104.95t/s    | 62.22t/s     | 68.66% faster   |
-| Laptop Intel i7 13800H CPU | (Not supported) | ✅ 11.566t/s |     |
+| Laptop Intel i7 13800H CPU | (Not supported) | ✅ 11.57t/s |     |
 
 ### Max VRAM Utilization
 - TensorRT-LLM used marginally more average VRAM utilization at peak utilization vs. llama.cpp (up to 14%). Though this could have interesting implications on consuming more electricity over time.
@@ -243,11 +246,12 @@ TensorRT-LLM uses a lot less Max RAM vs. llama.cpp on slower connection (PCIe 3.
 | GeForce RTX 4070 Laptop GPU          |   ✅ 1.04    |  4.44    | ✅  76.55%% less     |
 | GeForce RTX 4090 eGPU           | ✅ 4.11    |  5.38    | ✅ 23.61% less    |
 
-### Compiled Model Size and Number of files
+### Compiled Model Size and Number of Files
 - Contrary to popular belief, TensorRT-LLM prebuilt models turned out to not be that huge
 Mistral 7b int4 was actually **25% smaller** in TensorRT-LLM, at 3.05gb vs. 4.06gb
 - Note: These are approximate comparisons, as TensorRT-LLM’s `AWQ INT4` is implemented differently from llama.cpp’s `q4_k_m`
-- The bigger takeaway is that the compiled model sizes are roughly in the same ballpark, while the number of files for TensorRT-LLM is 7x the GGUF number of files.
+- The bigger takeaway is that the Compiled model sizes are roughly in the same ballpark, while the number of files for TensorRT-LLM is 7x the GGUF number of files.
+
 
 |  Model size (Lower is better)                          | TensorRT-LLM AWQ int4   | Llama.cpp GGUF Q4   | % Difference    |
 | -------------------------- | --------------- | ------------ | --- |
@@ -270,6 +274,3 @@ Mistral 7b int4 was actually **25% smaller** in TensorRT-LLM, at 3.05gb vs. 4.06
 ## Appendix
 
 Lastly, it’s important to note that our benchmarking is not perfect. Over the course of the benchmarking, we evaluated over a dozen tools (llmperf, psutil, gpustat, native utilities, and more) and found that everyone measured TPS, common metrics differently. We eventually settled on using our own tools in Jan, which are consistent across any inference engine. The runtime parameters were also not 100% optimized, as we chose what was more probable among users, usually going with default settings.
-
-You can find [Lastest run result here](https://drive.google.com/file/d/1rDwd8XD8erKt0EgIKqOBidv8LsCO6lef/view?usp=sharing.)
-
