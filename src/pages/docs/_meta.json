@@ -24,6 +24,7 @@
   "tools": "Tools",
   "threads": "Threads",
   "settings": "Settings",
+  "shortcuts": "Keyboard Shortcuts",
   "local-api": "",
   "inference-engines": {
     "title": "INFERENCE ENGINES",
