@@ -3,14 +3,9 @@
     "type": "separator",
     "title": "Switcher"
   },
-  "index": { "title": "Discord", "href": "/integrations" },
-  "interpreter": {
-    "title": "Open Interpreter",
-    "href": "/integrations/interpreter"
-  },
-  "raycast": { "title": "Raycast", "href": "/integrations/raycast" },
-  "vscode": {
-    "title": "Continue.dev",
-    "href": "/integrations/vscode"
-  }
+  "index": { "title": "Overview", "href": "/integrations" },
+  "coding": "Coding",
+  "function-calling": "Function Calling",
+  "messaging": "Messaging",
+  "workflow-automation": "Workflow Automation"
 }

@@ -1,12 +1,12 @@
 {
-  "nvidia-gpu": { "title": "Nvidia GPUs", "href": "/docs/gpu-setup/nvidia-gpu" },
-  "mac-gpu": {
+  "nvidia": { "title": "Nvidia GPUs", "href": "/docs/gpu-setup/nvidia" },
+  "mac": {
     "title": "Mac Metal (Apple Silicon)",
-    "href": "/docs/gpu-setup/mac-gpu"
+    "href": "/docs/gpu-setup/mac"
   },
-  "amd-gpu": { "title": "AMD GPUs", "href": "/docs/gpu-setup/amd-gpu" },
-  "intel-gpu": {
+  "amd": { "title": "AMD GPUs", "href": "/docs/gpu-setup/amd" },
+  "intel": {
     "title": "Intel ARC GPUs",
-    "href": "/docs/gpu-setup/intel-gpu"
+    "href": "/docs/gpu-setup/intel"
   }
 }
