@@ -94,16 +94,12 @@ const config: DocsThemeConfig = {
     const { title, frontMatter } = useConfig()
     const titleTemplate = (frontMatter?.title || title) + ' - ' + 'Jan'
 
-    const origin = typeof window !== 'undefined' && window.location.origin
-
     return (
       <Fragment>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Language" content="en" />
-        {/* Dynamic meta title, description and keyword */}
         <title>{titleTemplate}</title>
         <meta name="og:title" content={titleTemplate} />
-
         <meta
           name="description"
           content={
@@ -122,7 +118,7 @@ const config: DocsThemeConfig = {
           property="og:image"
           content={
             frontMatter?.ogImage
-              ? origin + '/' + frontMatter?.ogImage
+              ? 'https://jan.ai/' + frontMatter?.ogImage
               : 'https://jan.ai/assets/images/general/og-image.png'
           }
         />
