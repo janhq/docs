@@ -1,5 +1,5 @@
 ---
-title: Advanced Settings
+title: Settings
 description: Jan Docs | Jan is a ChatGPT-alternative that runs on your own computer, with a local API server.
 keywords:
   [
@@ -22,7 +22,7 @@ keywords:
 
 import { Tabs, Steps, Callout } from 'nextra/components'
 
-# Advanced Settings
+# Settings
 
 This guide will show you how to use the advanced settings in Jan.
 
@@ -37,11 +37,11 @@ To access Jan's advanced settings, follow the steps below:
 
 | Feature                                  | Description                                                                                                                                                                                                              |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Keyboard Shortcuts**                   | Keyboard shortcuts speed up your workflow. For a quick overview of useful keyboard shortcuts, refer to the list [below](advanced#keyboard-shortcuts).                                                       |
+| **Keyboard Shortcuts**                   | Keyboard shortcuts speed up your workflow. For a quick overview of useful keyboard shortcuts, refer to the list [below](settings#keyboard-shortcuts).                                                       |
 | **Experimental Mode**                    | Enables experimental features that may be unstable.                                                                                                                                                                      |
 | **GPU Acceleration**                     | Enables boosting your model performance by using your GPU devices for acceleration.                                                                                                                               |
 | **Jan Data Folder**                      | Location for messages, model configurations, and user data. Changeable to a different location.                                                                                                                          |
-| **HTTPS Proxy & Ignore SSL Certificate** | Use a proxy server for internet connections and ignore SSL certificates for self-signed certificates. Please check out the guide on setting up your HTTPS proxy server [here](advanced#https-proxy). |
+| **HTTPS Proxy & Ignore SSL Certificate** | Use a proxy server for internet connections and ignore SSL certificates for self-signed certificates. Please check out the guide on setting up your HTTPS proxy server [here](settings#https-proxy). |
 | **Clear Logs**                           | Removes all logs from the Jan application.                                                                                                                                                                               |
 | **Reset To Factory Default**             | Resets the application to its original state, deleting all data, including model customizations and conversation history.                                                                                                 |
 
@@ -128,6 +128,12 @@ To access the folder where messages, model configurations, and user data are sto
 2. Click the **gear icon (⚙️)** on the bottom left of your screen.
 3. Under the **Settings screen**, click the **Advanced Settings**.
 4. On the **Jan Data Folder** click the **folder icon (📂)** to access the data or the **pencil icon (✏️)** to change the folder where you keep your data.
+<Callout type="warning">
+- Uninstalling Jan will delete the default Jan Data Folder.
+- If you have moved the Jan Data Folder from its original location, this relocated folder will remain intact while the default folder is deleted upon uninstallation.
+- Reinstalling Jan requires manually setting your previously relocated Jan Data Folder as the default.
+</Callout>
+
 
 ## HTTPS Proxy
 

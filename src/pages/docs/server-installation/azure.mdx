@@ -1,0 +1,285 @@
+---
+title: Azure
+description: Get started quickly with Jan, a ChatGPT-alternative that runs on your own computer, with a local API server. Learn how to install Jan and select an AI model to start chatting.
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    quickstart,
+    getting started,
+    using AI model,
+    installation,
+    "server",
+    "web"
+  ]
+---
+
+import { Tabs, Callout, Steps } from 'nextra/components'
+
+# Azure Installation
+To install Jan Server, follow the steps below:
+<Steps>
+### Step 1: Prepare Environment
+1. Go to Azure console -> `Service` -> `Virtual machines`.
+2. Choose an instance with at least `Standard_F8s_v2` for CPU only or `Standard_NC4as_T4_v3` for NVIDIA GPU support.
+3. Add EBS volume with at least **100GB**.
+<Callout type="info">
+Access to additional features may vary based on your Virtual Private Cloud (VPC) and security group configurations. To enable these features, please configure your settings to allow inbound traffic on port 1377.
+</Callout>
+### Step 2: Get Jan Server
+<Tabs items={['Linux Docker', 'Windows WSL2 Docker', 'Kubernetes - Helm']}>
+  <Tabs.Tab>
+    **Pre-requisites**
+
+    To enable GPU support, you will need:
+      - NVIDIA GPU with CUDA Toolkit 11.7 or higher
+      - NVIDIA driver 470.63.01 or higher
+
+    Jan runs in Docker mode on Linux:      
+      - Docker Engine and Docker Compose are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to start with Docker Engine on Ubuntu.
+      ```bash
+      curl -fsSL https://get.docker.com -o get-docker.sh
+      sudo sh ./get-docker.sh --dry-run
+      ```
+      - Download Jan `docker-compose.yml` file using the following command:
+      ```bash
+      curl https://raw.githubusercontent.com/janhq/jan/dev/docker-compose.yml -o docker-compose.yml
+      ```
+  - If you intend to run Jan in GPU mode, install `nvidia-driver` and `nvidia-docker2`. Follow the instructions [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for installation.
+
+  **Docker Configuration**
+
+  The available Docker Compose profile and the environment variables are listed below:
+| Docker compose Profile | Description                                  |
+| ---------------------- | -------------------------------------------- |
+| `cpu-fs`               | Run Jan in CPU mode with the default file system |
+| `cpu-s3fs`             | Run Jan in CPU mode with S3 file system      |
+| `gpu-fs`               | Run Jan in GPU mode with the default file system |
+| `gpu-s3fs`             | Run Jan in GPU mode with S3 file system      |
+
+| Environment Variable    | Description                                                                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------- |
+| `S3_BUCKET_NAME`        | S3 bucket name - leave blank for default file system                                                    |
+| `AWS_ACCESS_KEY_ID`     | AWS access key ID - leave blank for default file system                                                 |
+| `AWS_SECRET_ACCESS_KEY` | AWS secret access key - leave blank for default file system                                             |
+| `AWS_ENDPOINT`          | AWS endpoint URL - leave blank for default file system                                                  |
+| `AWS_REGION`            | AWS region - leave blank for default file system                                                        |
+| `API_BASE_URL`          | Jan Server URL, please modify it as your public IP address or domain name default http://localhost:1377 |
+
+- **Option 1**: Run Jan in CPU mode
+
+  ```bash
+  # cpu mode with default file system
+  docker compose --profile cpu-fs up -d
+
+  # cpu mode with S3 file system
+  docker compose --profile cpu-s3fs up -d
+  ```
+
+- **Option 2**: Run Jan in GPU mode
+
+  - **Step 1**: Check CUDA compatibility with your NVIDIA driver by running `nvidia-smi` and check the CUDA version in the output
+
+    ```bash
+    nvidia-smi
+
+    # Output
+    +---------------------------------------------------------------------------------------+
+    | NVIDIA-SMI 531.18                 Driver Version: 531.18       CUDA Version: 12.1     |
+    |-----------------------------------------+----------------------+----------------------+
+    | GPU  Name                      TCC/WDDM | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+    | Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+    |                                         |                      |               MIG M. |
+    |=========================================+======================+======================|
+    |   0  NVIDIA GeForce RTX 4070 Ti    WDDM | 00000000:01:00.0  On |                  N/A |
+    |  0%   44C    P8               16W / 285W|   1481MiB / 12282MiB |      2%      Default |
+    |                                         |                      |                  N/A |
+    +-----------------------------------------+----------------------+----------------------+
+    |   1  NVIDIA GeForce GTX 1660 Ti    WDDM | 00000000:02:00.0 Off |                  N/A |
+    |  0%   49C    P8               14W / 120W|      0MiB /  6144MiB |      0%      Default |
+    |                                         |                      |                  N/A |
+    +-----------------------------------------+----------------------+----------------------+
+    |   2  NVIDIA GeForce GTX 1660 Ti    WDDM | 00000000:05:00.0 Off |                  N/A |
+    | 29%   38C    P8               11W / 120W|      0MiB /  6144MiB |      0%      Default |
+    |                                         |                      |                  N/A |
+    +-----------------------------------------+----------------------+----------------------+
+
+    +---------------------------------------------------------------------------------------+
+    | Processes:                                                                            |
+    |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+    |        ID   ID                                                             Usage      |
+    |=======================================================================================|
+    ```
+
+  - **Step 2**: Visit [NVIDIA NGC Catalog ](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda/tags) and find the smallest minor version of the image tag that matches your CUDA version (e.g., 12.1 -> 12.1.0)
+
+  - **Step 3**: Update the `Dockerfile.gpu` line number 5 with the latest minor version of the image tag from step 2 (e.g., change `FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04 AS base` to `FROM nvidia/cuda:12.1.0-runtime-ubuntu22.04 AS base`)
+
+  - **Step 4**: Run command to start Jan in GPU mode
+
+    ```bash
+    # GPU mode with default file system
+    docker compose --profile gpu-fs up -d
+
+    # GPU mode with S3 file system
+    docker compose --profile gpu-s3fs up -d
+    ```
+
+  - **Step 5**: This will start the web server, and you can access it in Jan at http://localhost:3000.
+
+<Callout type="info"> 
+**RAG** feature is not yet supported in Docker mode with `s3fs`.
+</Callout>
+
+  </Tabs.Tab>
+
+  <Tabs.Tab>
+    **Pre-requisites**
+
+    Ensure that your system meets the following requirements:
+      - Windows 10 or higher is required to run Jan.
+      - WSL2 is required to run in Windows in Jan. Follow the instructions [here](https://learn.microsoft.com/en-us/windows/wsl/install) to install it.
+
+    To enable GPU support, you will need:
+      - NVIDIA GPU with CUDA Toolkit 11.7 or higher
+      - NVIDIA driver 470.63.01 or higher
+
+    Jan runs in Docker mode on Windows WSL2:
+    - Docker Engine and Docker Compose are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to start with Docker Engine on Ubuntu.
+    ```bash
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sudo sh ./get-docker.sh --dry-run
+    ```
+    - Download Jan `docker-compose.yml` file
+    ```bash
+    curl https://raw.githubusercontent.com/janhq/jan/dev/docker-compose.yml -o docker-compose.yml
+    ```
+  - If you intend to run Jan in GPU mode, install `nvidia-driver` and `nvidia-docker2`. Follow the instructions [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for installation.
+
+**Docker Configuration**
+
+  The available Docker Compose profile and the environment variables are listed below:
+| Docker compose Profile | Description                                  |
+| ---------------------- | -------------------------------------------- |
+| `cpu-fs`               | Run Jan in CPU mode with the default file system |
+| `cpu-s3fs`             | Run Jan in CPU mode with S3 file system      |
+| `gpu-fs`               | Run Jan in GPU mode with the default file system |
+| `gpu-s3fs`             | Run Jan in GPU mode with S3 file system      |
+
+| Environment Variable    | Description                                                                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------- |
+| `S3_BUCKET_NAME`        | S3 bucket name - leave blank for default file system                                                    |
+| `AWS_ACCESS_KEY_ID`     | AWS access key ID - leave blank for default file system                                                 |
+| `AWS_SECRET_ACCESS_KEY` | AWS secret access key - leave blank for default file system                                             |
+| `AWS_ENDPOINT`          | AWS endpoint URL - leave blank for default file system                                                  |
+| `AWS_REGION`            | AWS region - leave blank for default file system                                                        |
+| `API_BASE_URL`          | Jan Server URL, please modify it as your public IP address or domain name default http://localhost:1377 |
+
+- **Option 1**: Run Jan in CPU mode
+
+  ```bash
+  # cpu mode with default file system
+  docker compose --profile cpu-fs up -d
+
+  # cpu mode with S3 file system
+  docker compose --profile cpu-s3fs up -d
+  ```
+
+- **Option 2**: Run Jan in GPU mode
+
+  - **Step 1**: Check CUDA compatibility with your NVIDIA driver by running `nvidia-smi` and check the CUDA version in the output
+
+    ```bash
+    nvidia-smi
+
+    # Output
+    +---------------------------------------------------------------------------------------+
+    | NVIDIA-SMI 531.18                 Driver Version: 531.18       CUDA Version: 12.1     |
+    |-----------------------------------------+----------------------+----------------------+
+    | GPU  Name                      TCC/WDDM | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+    | Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+    |                                         |                      |               MIG M. |
+    |=========================================+======================+======================|
+    |   0  NVIDIA GeForce RTX 4070 Ti    WDDM | 00000000:01:00.0  On |                  N/A |
+    |  0%   44C    P8               16W / 285W|   1481MiB / 12282MiB |      2%      Default |
+    |                                         |                      |                  N/A |
+    +-----------------------------------------+----------------------+----------------------+
+    |   1  NVIDIA GeForce GTX 1660 Ti    WDDM | 00000000:02:00.0 Off |                  N/A |
+    |  0%   49C    P8               14W / 120W|      0MiB /  6144MiB |      0%      Default |
+    |                                         |                      |                  N/A |
+    +-----------------------------------------+----------------------+----------------------+
+    |   2  NVIDIA GeForce GTX 1660 Ti    WDDM | 00000000:05:00.0 Off |                  N/A |
+    | 29%   38C    P8               11W / 120W|      0MiB /  6144MiB |      0%      Default |
+    |                                         |                      |                  N/A |
+    +-----------------------------------------+----------------------+----------------------+
+
+    +---------------------------------------------------------------------------------------+
+    | Processes:                                                                            |
+    |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+    |        ID   ID                                                             Usage      |
+    |=======================================================================================|
+    ```
+
+  - **Step 2**: Visit [NVIDIA NGC Catalog ](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda/tags) and find the smallest minor version of the image tag that matches your CUDA version (e.g., 12.1 -> 12.1.0)
+
+  - **Step 3**: Update the `Dockerfile.gpu` line number 5 with the latest minor version of the image tag from step 2 (e.g. change `FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04 AS base` to `FROM nvidia/cuda:12.1.0-runtime-ubuntu22.04 AS base`)
+
+  - **Step 4**: Run command to start Jan in GPU mode
+
+    ```bash
+    # GPU mode with default file system
+    docker compose --profile gpu-fs up -d
+
+    # GPU mode with S3 file system
+    docker compose --profile gpu-s3fs up -d
+    ```
+
+- **Step 5**: This will start the web server, and you can access it in Jan at http://localhost:3000.
+
+<Callout type="info"> 
+**RAG** feature is not yet supported in Docker mode with `s3fs`.
+</Callout>
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    **Pre-requisites**
+    
+    - Docker Engine are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to start using Docker Engine on Ubuntu.
+      ```bash
+      curl -fsSL https://get.docker.com -o get-docker.sh
+      sudo sh ./get-docker.sh --dry-run
+      ```
+    - Download the Jan `docker-compose.yml` file using the following command:
+      ```bash
+      curl https://raw.githubusercontent.com/janhq/jan/dev/docker-compose.yml -o docker-compose.yml
+      ```
+    - Kubernetes with version 1.23 and beyond.
+    
+    - To enable GPU support, you will need:
+      - NVIDIA GPU with CUDA Toolkit 11.7 or higher
+      - NVIDIA driver 470.63.01 or higher
+      - `NVIDIA Container Toolkit` - [Link](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+      - Install [NVIDIA Device Plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin)
+
+    **Installation steps**
+
+    To install Jan on Kubernetes using Helm, follow the steps below:
+    - **Step 1**: Get Helm chart from Jan repository by using the following command:
+    ```bash
+      git clone https://github.com/janhq/jan.git
+      cd jan/charts/server/
+      helm install jan-server .
+    ```
+    - **Step 2**: Verify and modify the configuration options by accessing the `values.yaml` file available on `/jan/charts/server`. The following is the example resource created by Jan helm chart:
+    ![Jan server helm argo](./_assets/helm_resources.png)
+    - **Step 3**: You can access Jan at `http://jan-server-service-web:1337`.
+  </Tabs.Tab>
+</Tabs>
+</Steps>
