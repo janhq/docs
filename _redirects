@@ -17,9 +17,9 @@
 /guides/using-extensions /docs/extensions 302
 /docs/extension-guides /docs/extensions 302
 /features/extensions /docs/extensions 302
-/integrations/tensorrt /docs/engines-localensorrt 302
+/integrations/tensorrt /docs/built-in/tensorrt-llm 302
 /guides/using-models/integrate-with-remote-server /docs/remote-inference/generic-openai 302
-/guides/using-models/customize-engine-settings /docs/local-inference/llamacpp 302
+/guides/using-models/customize-engine-settings /docs/built-in/llama-cpp 302
 /developers/plugins/azure-openai /docs/remote-inference/openai 302
 /docs/api-reference/assistants /api-reference#tag/assistants 302
 /docs/api-reference/models/list /api-reference#tag/models 302
@@ -48,9 +48,9 @@
 /guides/local-api/ /docs/local-api 302
 /guides/advanced/ /docs/settings 302
 /guides/engines/llamacpp/ /docs/built-in/llama-cpp 302
-/guides/engines/tensorrt-llm/ http://localhost:3000/docs/built-in/tensorrt-llm 302
+/guides/engines/tensorrt-llm/ /docs/built-in/tensorrt-llm 302
 /guides/engines/lmstudio/ /docs/local-inference/lmstudio 302
-/guides/engines/ollama/ /docs/local-inference/ollama 302
+/guides/engines/ollama/ /docs/built-in/llama-cpp 302
 /guides/engines/groq/ /docs/remote-inference/groq 302
 /guides/engines/mistral/ /docs/remote-inference/mistralai 302
 /guides/engines/openai/ /docs/remote-inference/openai 302
@@ -174,7 +174,7 @@
 /features/ai-models/ /docs/models 302
 /reference/store/ /api-reference 302
 /tutorials/build-chat-app /docs/quickstart 302
-/features/acceleration /docs/local-inference/llamacpp 302
+/features/acceleration /docs/built-in/llama-cpp 302
 /getting-started/install/mac /docs/desktop-installation/mac 302
 docs/guides/fine-tuning/what-models-can-be-fine-tuned /docs 302
 /docs/specs/threads /docs/threads 302
@@ -275,7 +275,7 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned /docs 302
 /guides/local-api /docs/local-api 302
 /guides/advanced /docs/settings 302
 /guides/engines/llamacpp /docs/built-in/llama-cpp 302
-/guides/engines/tensorrt-llm http://localhost:3000/docs/built-in/tensorrt-llm 302
+/guides/engines/tensorrt-llm /docs/built-in/tensorrt-llm 302
 /guides/engines/lmstudio /docs/local-inference/lmstudio 302
 /guides/engines/ollama /docs/local-inference/ollama 302
 /guides/engines/groq /docs/remote-inference/groq 302
@@ -321,10 +321,10 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned /docs 302
 /guides/integrations/continue/ /docs/integrations/vscode 302
 /guides/using-extensions/ /docs/extensions 302
 /features/extensions/ /docs/extensions 302
-/integrations/tensorrt http://localhost:3000/docs/built-in/tensorrt-llm 302
-/integrations/tensorrt/ http://localhost:3000/docs/built-in/tensorrt-llm 302
+/integrations/tensorrt /docs/built-in/tensorrt-llm 302
+/integrations/tensorrt/ /docs/built-in/tensorrt-llm 302
 /guides/using-models/integrate-with-remote-server/ /docs/remote-inference/generic-openai 302
-/guides/using-models/customize-engine-settings/ /docs/local-inference/llamacpp 302
+/guides/using-models/customize-engine-settings/ /docs/built-in/llama-cpp 302
 /developers/plugins/azure-openai/ /docs/remote-inference/openai 302
 /docs/api-reference/assistants/ /api-reference#tag/assistants 302
 /docs/api-reference/models/list/ /api-reference#tag/models 302
@@ -427,7 +427,7 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned /docs 302
 /features/ai-models /docs/models 302
 /reference/store /api-reference 302
 /tutorials/build-chat-app/ /docs/quickstart 302
-/features/acceleration/ /docs/local-inference/llamacpp 302
+/features/acceleration/ /docs/built-in/llama-cpp 302
 /getting-started/install/mac/ /docs/desktop-installation/mac 302
 docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /docs/specs/threads/ /docs/threads 302
@@ -564,8 +564,8 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /docs/desktop/ /docs/desktop-installation/windows 302
 /docs/inferences/groq /docs/remote-inference/groq 302
 /docs/inferences/groq/ /docs/remote-inference/groq 302
-/docs/inferences/llamacpp /docs/local-inference/llamacpp 302
-/docs/inferences/llamacpp/ /docs/local-inference/llamacpp 302
+/docs/inferences/llamacpp /docs/built-in/llama-cpp 302
+/docs/inferences/llamacpp/ /docs/built-in/llama-cpp 302
 /docs/inferences/lmstudio /docs/local-inference/lmstudio 302
 /docs/inferences/lmstudio/ /docs/local-inference/lmstudio 302
 /docs/inferences/mistralai /docs/remote-inference/mistralai 302
@@ -576,8 +576,8 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /docs/inferences/openai/ /docs/remote-inference/openai 302
 /docs/inferences/remote-server-integration /docs/remote-inference/generic-openai 302
 /docs/inferences/remote-server-integration/ /docs/remote-inference/generic-openai 302
-/docs/inferences/tensorrtllm http://localhost:3000/docs/built-in/tensorrt-llm 302
-/docs/inferences/tensorrtllm/ http://localhost:3000/docs/built-in/tensorrt-llm 302
+/docs/inferences/tensorrtllm /docs/built-in/tensorrt-llm 302
+/docs/inferences/tensorrtllm/ /docs/built-in/tensorrt-llm 302
 /docs/integrations/router /docs/remote-inference/openrouter 302
 /docs/integrations/router/ /docs/remote-inference/openrouter 302
 /docs/server /docs/local-api 302
@@ -586,8 +586,8 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /features /docs 302
 /features/local/ /docs/local-api 302
 /features/local /docs/local-api 302
-/guides/providers/tensorrt-llm http://localhost:3000/docs/built-in/tensorrt-llm#tensortrt-llm 302
-/guides/providers/tensorrt-llm/ http://localhost:3000/docs/built-in/tensorrt-llm#tensortrt-llm 302
+/guides/providers/tensorrt-llm /docs/built-in/tensorrt-llm 302
+/guides/providers/tensorrt-llm/ /docs/built-in/tensorrt-llm 302
 /hardware/recommendations/by-model/ /docs 302
 /hardware/recommendations/by-hardware/ /docs 302
 /product /docs 302
@@ -599,3 +599,4 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /product/features/local /docs 302
 /product/features/remote /docs 302
 /product/home-server /docs/local-api 302
+/guides/providers/tensorrt-llm/ /docs/built-in/tensorrt-llm 302
