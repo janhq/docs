@@ -8,6 +8,6 @@
     "title": "OpenAI API",
     "href": "/docs/remote-inference/openai"
   },
-  "router": { "title": "OpenRouter", "href": "/docs/remote-inference/router" },
+  "router": { "title": "OpenRouter", "href": "/docs/remote-inference/openrouter" },
   "generic-openai": { "title": "Generic OpenAI-compatible API", "href": "/docs/remote-inference/generic-openai" }
 }

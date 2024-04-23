@@ -4,39 +4,41 @@
     "title": "Switcher"
   },
   "get-started": {
-    "title": "Get Started",
+    "title": "GET STARTED",
     "type": "separator"
   },
   "index": "Overview",
   "quickstart": {
     "title": "Quickstart"
   },
-  "installation": "Installation",
-  "hardware-setup": "",
+  "desktop-installation": "Desktop Installation",
+  "server-installation": "Server Installation",
+  "gpu-setup": "GPU Setup",
   "architecture": "",
-  "local-api": "",
   "user-guides": {
-    "title": "Basic Usage",
+    "title": "BASIC USAGE",
     "type": "separator"
   },
-  "models": "",
-  "assistants": "",
-  "use-tools": "",
-  "threads": "",
-  "advanced": "",
+  "models": "Models",
+  "assistants": "Assistants",
+  "tools": "Tools",
+  "threads": "Threads",
+  "settings": "Settings",
+  "local-api": "",
   "inference-engines": {
-    "title": "Inference Engines",
+    "title": "INFERENCE ENGINES",
     "type": "separator"
   },
+  "built-in": "Built-in Engines",
   "local-inference": "Local Engines",
-  "remote-inference": "Remote Engines",
+  "remote-inference": "Remote APIs",
   "extensions-separator": {
-    "title": "Extensions",
+    "title": "EXTENSIONS",
     "type": "separator"
   },
   "extensions": "Overview",
   "troubleshooting-separator": {
-    "title": "Troubleshooting",
+    "title": "TROUBLESHOOTING",
     "type": "separator"
   },
   "troubleshooting": "Troubleshooting"

@@ -1,5 +1,5 @@
 ---
-title: Server
+title: On Premise
 description: Get started quickly with Jan, a ChatGPT-alternative that runs on your own computer, with a local API server. Learn how to install Jan and select an AI model to start chatting.
 keywords:
   [
@@ -23,48 +23,16 @@ keywords:
 
 import { Tabs, Callout, Steps } from 'nextra/components'
 
-# Server Installation
-
+# On Premise Installation
 To install Jan Server, follow the steps below:
-
 <Steps>
 ### Step 1: Prepare Environment
-<Tabs items={['On premise', 'AWS', 'GCP', 'Azure']}>
-  <Tabs.Tab>
-    - Choose a machine with at least 16GB RAM, 8 CPU cores, and 100GB storage.
-    - For better performance, you can use NVIDIA GPU.
-    <Callout type="info">
-    AMD GPU/ Intel Arc GPU are not supported yet.
-    </Callout>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    1. Go to AWS console -> `EC2`.
-    2. Choose an instance with at least `c5.2xlarge` for CPU only or `g5.2xlarge` for NVIDIA GPU support.
-    3. Add EBS volume with at least **100GB**.
-    <Callout type="info">
-    Access to additional features may vary based on your Virtual Private Cloud (VPC) and security group configurations. To enable these features, please configure your settings to allow inbound traffic on port 1377.
-    </Callout>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    1. Go to GCP console -> `Compute instance`.
-    2. Choose an instance with at least `c2-standard-8` for CPU only or `g2-standard-4` for NVIDIA GPU support.
-    3. Add EBS volume with at least **100GB**.
-    <Callout type="info">
-    Access to additional features may vary based on your Virtual Private Cloud (VPC) and security group configurations. To enable these features, please configure your settings to allow inbound traffic on port 1377.
-    </Callout>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    1. Go to Azure console -> `Service` -> `Virtual machines`.
-    2. Choose an instance with at least `Standard_F8s_v2` for CPU only or `Standard_NC4as_T4_v3` for NVIDIA GPU support.
-    3. Add EBS volume with at least **100GB**.
-    <Callout type="info">
-    Access to additional features may vary based on your Virtual Private Cloud (VPC) and security group configurations. To enable these features, please configure your settings to allow inbound traffic on port 1377.
-    </Callout>
-  </Tabs.Tab>
-</Tabs>
-
+- Choose a machine with at least 16GB RAM, 8 CPU cores, and 100GB storage.
+- For better performance, you can use NVIDIA GPU.
+<Callout type="info">
+AMD GPU/ Intel Arc GPU are not supported yet.
+</Callout>
 ### Step 2: Get Jan Server
-
 <Tabs items={['Linux Docker', 'Windows WSL2 Docker', 'Kubernetes - Helm']}>
   <Tabs.Tab>
     **Pre-requisites**
@@ -280,8 +248,6 @@ To install Jan Server, follow the steps below:
 
   </Tabs.Tab>
   <Tabs.Tab>
-    Jan can be installed on Kubernetes by using Helm.
-
     **Pre-requisites**
     
     - Docker Engine are required to run Jan in Docker mode. Follow the [instructions](https://docs.docker.com/engine/install/ubuntu/) below to start using Docker Engine on Ubuntu.

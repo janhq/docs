@@ -1,0 +1,14 @@
+{
+  "mac": {
+    "title": "Mac",
+    "href": "/docs/desktop-installation/mac"
+  },
+  "windows": {
+    "title": "Windows",
+    "href": "/docs/desktop-installation/windows"
+  },
+  "linux": {
+    "title": "Linux",
+    "href": "/docs/desktop-installation/linux"
+  }
+}
