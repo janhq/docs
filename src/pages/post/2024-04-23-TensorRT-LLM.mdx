@@ -5,6 +5,11 @@ tags: [Nvidia, TensorRT-LLM, llama.cpp, 3090, 4090, "inference engine"]
 unlisted: true
 ---
 
+import { Callout } from 'nextra/components'
+
+
+# Benchmarking With NVIDIA TensorRT-LLM
+
 Jan now supports TensorRT-LLM in addition to llama.cpp, which is available in Release [v0.4.9+](https://github.com/janhq/jan/releases/tag/v0.4.9). 
 
 Please read the [TensorRT-LLM Guide](/guides/engines/tensorrt-llm) to activate and use the TensorRT-LLM extension. We have a few pre-built TensorRT-LLM models for you to try:
@@ -13,11 +18,10 @@ Please read the [TensorRT-LLM Guide](/guides/engines/tensorrt-llm) to activate a
 - TinyLlama-1.1b
 - TinyJensen-1.1b 😂
 
-:::info
+<Callout type="info" >
+  Bugs or feedback? Let us know in [Github](https://github.com/janhq/jan) or via Discord [#tensorrt-llm channels](https://discord.com/channels/1107178041848909847/1201832734704795688). 
+</Callout>
 
-Bugs or feedback? Let us know in [Github](https://github.com/janhq/jan) or via Discord [#tensorrt-llm channels](https://discord.com/channels/1107178041848909847/1201832734704795688). 
-
-:::
 
 ## Why TensorRT-LLM?
 
@@ -26,11 +30,10 @@ TensorRT-LLM works by compiling models into a [GPU-specific execution graph](htt
 We were very curious as to how TensorRT-LLM performed on desktop GPUs. Desktop AI has more or less been dominated by [llama.cpp](https://github.com/ggerganov/llama.cpp), due to its cross-platform versatility and convenience of prebuilt models. 
 We got TensorRT-LLM working on our desktops and benchmarked its performance on the most common hardware we see among Jan AI users:  [NVIDIA GeForce RTX 40 Series](https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/) ([NVIDIA Ada Lovelace architecture](https://www.nvidia.com/en-us/geforce/ada-lovelace-architecture/)) and [RTX 30 Series](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/) ([NVIDIA Ampere architecture](https://www.nvidia.com/en-us/data-center/ampere-architecture/)) desktop and laptop GPUs. We threw in an [NVIDIA GeForce RTX 4090 GPU](https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/) for good measure, too.
 
-:::info
+<Callout type="info" >
+  An interesting aside: Jan actually started out in June 2023 building on [NVIDIA FastTransformer](https://github.com/NVIDIA/FasterTransformer), the precursor library to TensorRT-LLM. TensorRT-LLM was released in September 2023, making it a very young library. We’re excited to see its roadmap develop!
+</Callout>
 
-An interesting aside: Jan actually started out in June 2023 building on [NVIDIA FastTransformer](https://github.com/NVIDIA/FasterTransformer), the precursor library to TensorRT-LLM. TensorRT-LLM was released in September 2023, making it a very young library. We’re excited to see its roadmap develop!
-
-:::
 
 ## Key Findings
 
@@ -67,13 +70,11 @@ We chose the following popular GPUs architectures based on our users' preference
 
 Both desktop GPUs utilize PCIe 4.0, offering substantial bandwidth at 100 Gbps, in contrast to the [NVIDIA GeForce RTX 4070 Laptop GPU’s](https://www.nvidia.com/en-us/geforce/laptops/) more limited capabilities due to power and thermal restrictions.
 
-:::info
-
-We focused on mid- to high-end NVIDIA desktop GPUs for our tests, as TensorRT-LLM’s performance enhancements are most apparent on these devices. For users with lower-spec machines, llama.cpp remains the de-facto solution.
+<Callout type="info" >
+  We focused on mid- to high-end NVIDIA desktop GPUs for our tests, as TensorRT-LLM’s performance enhancements are most apparent on these devices. For users with lower-spec machines, llama.cpp remains the de-facto solution.
 TensorRT-LLM provides blazing fast performance at the cost of memory usage. This means that performance improvements only show up in higher-range GPUs with larger VRAMs.
 It is important to mention, though, that llama.cpp democratizes inference to those with only CPUs or lower-range GPUs.
-
-:::
+</Callout>
 
 ### llama.cpp Setup
 
@@ -88,21 +89,18 @@ It is important to mention, though, that llama.cpp democratizes inference to tho
 - We ran TensorRT-LLM with `free_gpu_memory_fraction` to test it with the lowest VRAM consumption
 - Note: We picked AWQ for TensorRT-LLM to be a closer comparison to GGUF's Q4.
 
-:::info
-
-**Tip:** We found an additional **15% increase in performance** with TensorRT-LLM by:
+<Callout type="info" >
+  **Tip:** We found an additional **15% increase in performance** with TensorRT-LLM by:
 - Enabling [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html)
 - Overclocking RAM bus speed in BIOS from `3600` to `5600`. However, **this benchmark was not conducted with overclocking**, as it is not a default setting for most users. However, it's awesome that TensorRT-LLM can go even faster with these tweaks. 
-
-:::
+</Callout>
 
 ## Results
 
 ### NVIDIA GeForce RTX 4090 GPU
 
-:::info
-
-**Hardware Details**
+<Callout type="info" >
+  **Hardware Details**
 - CPU: Intel 13th series
 - GPU: NVIDIA GeForce RTX 4090 (Ada - sm 89)
 - RAM: 32GB
@@ -111,8 +109,7 @@ It is important to mention, though, that llama.cpp democratizes inference to tho
 **Model Details**
 - llama.cpp model: Mistral 7B v0.2 GGUF Q4_K_M
 - TensorRT-LLM model: Mistral 7B v0.2 AWQ, quantized for single GPU (Ada)
-
-:::
+</Callout>
 
 The NVIDIA GeForce RTX 4090 is the latest top-of-the-line desktop GPU, with an MSRP of $1,599, and uses the Ada architecture. It has a ~1000 gbps memory bandwidth within VRAM, and a PCIe4 lane (~125 gbps) between the GPU and the CPU.
 TensorRT-LLM was almost 70% faster than llama.cpp by building the model for the GeForce RTX 4090 GPU’s Ada architecture for optimal graph execution, fully utilizing the 512 Tensor Cores, 16,384 CUDA cores, and 1,000 gbps of memory bandwidth.
@@ -128,9 +125,8 @@ The intuition for why llama.cpp is slower is because it compiles a model into a 
 
 ### NVIDIA GeForce RTX 3090 GPU
 
-:::info
-
-**Hardware Details**
+<Callout type="info" >
+  **Hardware Details**
 - CPU: Intel 13th series
 - GPU: NVIDIA GeForce RTX 3090 (Ampere - sm 86)
 - RAM: 64GB
@@ -139,8 +135,8 @@ The intuition for why llama.cpp is slower is because it compiles a model into a 
 **Model Details**
 - llama.cpp model: Mistral 7B v0.2 GGUF Q4_K_M
 - TensorRT-LLM model: Mistral 7B v0.2 AWQ, quantized for single GPU (Ampere)
+</Callout>
 
-:::
 
 The [NVIDIA's GeForce RTX 3090](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/) is a popular desktop GPU, and retails for approximately $1,500 (as of April 24). It uses the NVIDIA Ampere architecture. As compared to its successor GeForce RTX 4090, it has 33% fewer CUDA cores (10,496) and Tensor Cores (328) and 7% less memory bandwidth (~930gbps).
 Interestingly, the GeForce RTX 3090 was only 16.6% slower compared with the GeForce RTX 4090. On TPS, TensorRT-LLM outperformed llama.cpp by 62.57%. Curiously, it also used negligible RAM for subsequent inference requests after the initial model warmup.
@@ -155,9 +151,8 @@ Interestingly, the GeForce RTX 3090 was only 16.6% slower compared with the GeFo
 
 ### NVIDIA GeForce RTX 4070 Laptop GPU
 
-:::info
-
-**Hardware Details**
+<Callout type="info" >
+  **Hardware Details**
 - CPU: AMD Ryzen 7
 - GPU: NVIDIA GeForce RTX 4070 Laptop GPU (Ada - sm 89) on PCIE 4.0 (100gbps)
 - RAM: 32GB
@@ -166,8 +161,7 @@ Interestingly, the GeForce RTX 3090 was only 16.6% slower compared with the GeFo
 **Model Details**
 - llama.cpp model: Mistral 7B v0.2 GGUF `Q4_K_M`
 - TensorRT-LLM model: Mistral 7B v0.2 AWQ, quantized for single GPU (Ada)
-
-:::
+</Callout>
 
 We also benchmarked an NVIDIA GeForce RTX 4070 Laptop GPU with 8gb of VRAM, which is a popular configuration among Jan users. Laptop GPUs are less powerful than their desktop counterparts, as they trade portability for reduced energy consumption and thermal constraints.
 TensorRT-LLM was 29.9% faster in tokens per second throughput than llama.cpp.
@@ -184,9 +178,8 @@ The GeForce RTX 4070 Laptop GPU is also ~70% slower than the GeForce RTX 4090 de
 
 ### Laptop with NVIDIA GeForce RTX 4090 eGPU
 
-:::info
-
-**Hardware Details**
+<Callout type="info" >
+  **Hardware Details**
 - CPU: AMD Ryzen 7
 - GPU: NVIDIA GeForce RTX 4090 (Ada - sm 89) on eGPU with Thunderbolt 3 connection
 - RAM: 32GB
@@ -195,8 +188,7 @@ The GeForce RTX 4070 Laptop GPU is also ~70% slower than the GeForce RTX 4090 de
 **Model Details**
 - llama.cpp model: Mistral 7B v0.2 GGUF `Q4_K_M`
 - TensorRT-LLM model: Mistral 7B v0.2 AWQ, quantized for single GPU (Ampere)
- 
-:::
+</Callout>
 
 Our last benchmark was to experiment with an external GeForce RTX 4090 eGPU, that was connected via a Thunderbolt 3 connection. Theoretically, the results should be fairly similar to the GeForce RTX 4090 desktop GPU as they have identical underlying hardware.
 We thought this would be an interesting test of how TensorRT-LLM would react to the impact of a 68.4% reduction in communication bandwidth between the CPU and GPU:
@@ -279,5 +271,5 @@ Mistral 7b int4 was actually **25% smaller** in TensorRT-LLM, at 3.05gb vs. 4.06
 
 Lastly, it’s important to note that our benchmarking is not perfect. Over the course of the benchmarking, we evaluated over a dozen tools (llmperf, psutil, gpustat, native utilities, and more) and found that everyone measured TPS, common metrics differently. We eventually settled on using our own tools in Jan, which are consistent across any inference engine. The runtime parameters were also not 100% optimized, as we chose what was more probable among users, usually going with default settings.
 
-[Lastest run result](https://drive.google.com/file/d/1rDwd8XD8erKt0EgIKqOBidv8LsCO6lef/view?usp=sharing.)
+You can find [Lastest run result here](https://drive.google.com/file/d/1rDwd8XD8erKt0EgIKqOBidv8LsCO6lef/view?usp=sharing.)
 
