@@ -13,8 +13,6 @@
   },
   "desktop-installation": "Desktop Installation",
   "server-installation": "Server Installation",
-  "gpu-setup": "GPU Setup",
-  "architecture": "",
   "user-guides": {
     "title": "BASIC USAGE",
     "type": "separator"

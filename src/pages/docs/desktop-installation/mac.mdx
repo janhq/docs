@@ -27,31 +27,39 @@ import { Callout } from 'nextra/components'
 # Mac Installation
 To install Jan desktop on Mac, follow the steps below:
 #### Pre-requisites
-        Before installing Jan, ensure :
-        - You have a Mac with an Apple Silicon Processor.
-        - Homebrew and its dependencies are installed for installing Jan with the Homebrew package.
-        - Your macOS version is 10.15 or higher.
+Before installing Jan, ensure :
+- You have a Mac with an Apple Silicon Processor.
+<Callout type='info'>
+This setup is not supported on Mac Intel.
+</Callout>
+- Homebrew and its dependencies are installed for installing Jan with the Homebrew package.
+- Your macOS Ventura or higher.
 
-        #### Stable Releases
+#### Stable Releases
 
-        To download stable releases, go to [Jan](https://jan.ai/) > select **Download for Mac**.
+To download stable releases, go to [Jan](https://jan.ai/) > select **Download for Mac**.
 
-        <Callout type='info'>
-        The download should be available as a `.dmg`.
-        </Callout>
-        #### Nightly Releases
+<Callout type='info'>
+The download should be available as a `.dmg`.
+</Callout>
+#### Nightly Releases
 
-        We provide the Nightly Release so that you can test new features and see what might be coming in a future stable release. Please be aware that there might be bugs!
+We provide the Nightly Release so that you can test new features and see what might be coming in a future stable release. Please be aware that there might be bugs!
 
-        You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
+You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
 
-        #### Install with Homebrew
-        Install Jan with the following Homebrew command:
+#### Install with Homebrew
+Install Jan with the following Homebrew command:
 
-        ```bash
-        brew install --cask jan
-        ```
+```bash
+brew install --cask jan
+```
 
-        <Callout type="warning" emoji="⚠️">
-          Homebrew package installation is currently limited to **Apple Silicon Macs**, with upcoming support for Windows and Linux.
-        </Callout>
+<Callout type="warning" emoji="⚠️">
+  Homebrew package installation is currently limited to **Apple Silicon Macs**, with upcoming support for Windows and Linux.
+</Callout>
+## Enable GPU
+Once Jan is installed and you have a GPU, you can configure your GPU to accelerate the model's performance. To enable the use of your GPU in the Jan app, follow the steps below:
+1. Open Jan application.
+2. Go to **Settings** -> **Advanced Settings** -> **Accelerator** -> Enable and choose the GPU you want.
+3. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
