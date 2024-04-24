@@ -26,29 +26,30 @@ import { Callout } from 'nextra/components'
 
 # Mac Installation
 To install Jan desktop on Mac, follow the steps below:
-#### Pre-requisites
+## Pre-requisites
 Before installing Jan, ensure :
-- You have a Mac with an Apple Silicon Processor.
+- Mac with an Apple Silicon Processor.
+- Mac with an Intel Processor.
 <Callout type='info'>
-This setup is not supported on Mac Intel.
+Users may experience slow performance with Jan on Macs that have Intel processors.
 </Callout>
 - Homebrew and its dependencies are installed for installing Jan with the Homebrew package.
 - Your macOS Ventura or higher.
 
-#### Stable Releases
+## Stable Releases
 
 To download stable releases, go to [Jan](https://jan.ai/) > select **Download for Mac**.
 
 <Callout type='info'>
 The download should be available as a `.dmg`.
 </Callout>
-#### Nightly Releases
+## Nightly Releases
 
 We provide the Nightly Release so that you can test new features and see what might be coming in a future stable release. Please be aware that there might be bugs!
 
 You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
 
-#### Install with Homebrew
+## Install with Homebrew
 Install Jan with the following Homebrew command:
 
 ```bash
@@ -60,6 +61,9 @@ brew install --cask jan
 </Callout>
 ## Enable GPU
 Once Jan is installed and you have a GPU, you can configure your GPU to accelerate the model's performance. To enable the use of your GPU in the Jan app, follow the steps below:
+<Callout type='info'>
+This feature is not supported on Mac Intel.
+</Callout>
 1. Open Jan application.
 2. Go to **Settings** -> **Advanced Settings** -> **Accelerator** -> Enable and choose the GPU you want.
 3. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
