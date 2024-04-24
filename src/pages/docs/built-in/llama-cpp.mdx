@@ -1,0 +1,150 @@
+---
+title: llama.cpp
+description: A step-by-step guide on how to customize the llama.cpp extension.
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    Llama CPP integration,
+    llama.cpp Extension,
+    Intel CPU,
+    AMD CPU,
+    NVIDIA GPU,
+    AMD GPU Radeon,
+    Apple Silicon,
+    Intel Arc GPU,
+  ]
+---
+
+import { Tabs } from 'nextra/components'
+import { Callout } from 'nextra/components'
+
+# llama.cpp (Default)
+
+## Overview
+
+Jan has a default [C++ inference server](https://github.com/janhq/nitro) built on top of [llama.cpp](https://github.com/ggerganov/llama.cpp). This server provides an OpenAI-compatible API, queues, scaling, and additional features on top of the wide capabilities of llama.cpp.
+
+## llama.cpp Extension
+
+<Callout type='info'>
+  Nitro is the default AI engine downloaded in Jan. No additional setup is needed.
+</Callout>
+
+This guide walks you through customizing your engine settings by configuring the `nitro.json` file.
+
+## Prerequisites
+<Tabs items={['Mac', 'Windows', 'Linux']}>
+    <Tabs.Tab >
+      <Tabs items={['Mac Intel', 'Mac Silicon']}>
+        <Tabs.Tab >
+          - Make sure you're using an Intel-based Mac. For a complete list of supported Intel CPUs, please see [here](https://en.wikipedia.org/wiki/MacBook_Pro_(Intel-based)).
+          - For Mac Intel, it is recommended to utilize smaller models.
+          <Callout type="info">
+            This uses CPU by default, and no acceleration option is available. 
+          </Callout>
+
+        </Tabs.Tab>
+
+        <Tabs.Tab >
+          - Make sure you're using a Mac Silicon. For a complete list of supported Apple Silicon CPUs, please see [here](https://en.wikipedia.org/wiki/Apple_Silicon).
+          - Using an adequate model size based on your hardware is recommended for Mac Silicon.
+          <Callout type="info">
+            This can use Apple GPU with Metal by default for acceleration. Apple ANE is not supported yet.
+          </Callout>
+        </Tabs.Tab>
+        
+      </Tabs>
+    </Tabs.Tab>
+    <Tabs.Tab >
+      - Ensure that you have **Windows with x86_64** architecture.
+      - Select a model size suited to your Windows hardware by looking for the `Recommended RAM` tag in the Hub.
+      
+      <Callout type="info">
+        It will use CPU by default if you do not have any GPU/ NPU.
+      </Callout>
+      
+      
+    </Tabs.Tab>
+    <Tabs.Tab >
+        - Ensure that you have **Linux with x86_64** architecture.
+        - Select a model size suited to your Linux hardware based on the `Recommended` tag for `RAM` in the Hub.
+
+      <Callout type="info">
+        It will use CPU by default if you do not have any GPU/ NPU.
+      </Callout>
+
+    </Tabs.Tab>
+</Tabs>
+### CPU Instruction
+The prebuilt Nitro with the llama.cpp inference engine requires running with the correct CPU instruction. AVX2 is the standard CPU instruction set in Jan, commonly used in newer Intel and AMD processors. However, older CPUs that support AVX or AVX-512 may require customization of the default CPU instruction.
+<Callout type="info">
+    The CPU instruction configuration is only applicable to the Windows and Linux versions.
+</Callout>
+<Tabs items={['AVX', 'AVX-512']}>
+  <Tabs.Tab >
+    To Update CPU Instructions for Jan Applications Using AVX, follow these steps:
+    1. Check what your CPU uses for processing. For AVX, please see the list of CPUs [here](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX).
+    2. Navigate to your Jan Data folder, which is usually found at `C:/Users/<name>/jan`(Windows) or `~/jan`(Linux)
+    3. Download the appropriate Nitro version based on your CPU, GPU, and system specifications from [here](https://github.com/janhq/nitro/releases/tag/v0.3.15).
+    4. Unzip the downloaded Nitro file.
+    5. Move the new Nitro files to the correct location in your Jan folder. Make sure it's not nested in another folder.
+    6. Restart the Jan app.
+  </Tabs.Tab>
+  <Tabs.Tab >
+    To Update CPU Instructions for Jan Applications Using AVX-512, follow these steps:
+    1. Check what your CPU uses for processing. For AVX-512, please see the list of CPUs [here](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX-512).
+    2. Navigate to your Jan Data folder, which is usually found at `C:/Users/<name>/jan`(Windows) or `~/jan`(Linux)
+    3. Download the appropriate Nitro version based on your CPU, GPU, and system specifications from [here](https://github.com/janhq/nitro/releases/tag/v0.3.15).
+    4. Unzip the downloaded Nitro file.
+    5. Move the new Nitro files to the correct location in your Jan folder. Make sure it's not nested in another folder.
+    6. Restart the Jan app.
+  </Tabs.Tab>
+</Tabs>
+
+### GPU Acceleration Options
+Enable the GPU acceleration option available within the Jan application by following the steps in the [Hardware Setup](/docs/hardware-setup) guide.
+## Step-by-step Guide
+1. Navigate to the `App Settings` > `Advanced` > `Open App Directory` > `~/jan/engines` folder.
+2. Modify the `nitro.json` file based on your needs. The default settings are shown below.
+<Callout type='info'>
+  You can also edit the `model.json` file in the model folder, which overwrites the `nitro.json` settings.
+</Callout>
+
+```json title="~/jan/engines/nitro.json"
+{
+  "ctx_len": 2048,
+  "ngl": 100,
+  "cpu_threads": 1,
+  "cont_batching": false,
+  "embedding": false
+}
+```
+
+The table below describes the parameters in the `nitro.json` file.
+
+| Parameter       | Type        | Description                                                                                                                        |
+| --------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx_len`       | **Integer** | Typically set at `2048`, `ctx_len` provides ample context for model operations like `GPT-3.5`. (_Maximum_: `4096`, _Minimum_: `1`) |
+| `ngl`           | **Integer** | Defaulted at `100`, `ngl` determines GPU layer usage.                                                                              |
+| `cpu_threads`   | **Integer** | Determines CPU inference threads, limited by hardware and OS. (_Maximum_ determined by system)                                     |
+| `cont_batching` | **Integer** | Controls continuous batching, enhancing throughput for LLM inference.                                                              |
+| `embedding`     | **Integer** | Enables embedding utilization for tasks like document-enhanced chat in RAG-based applications.                                     |
+
+<Callout emoji="">
+  - By default, the value of `ngl` is set to 100, which indicates that it will offload all. If you wish to offload only 50% of the GPU, you can set `ngl` to 15 because most models on Mistral or llama.cpp are around ~ 30 layers.
+  - To utilize the embedding feature, include the JSON parameter `"embedding": true`. It will enable Nitro to process inferences with embedding capabilities. Please refer to the [Embedding in the Nitro documentation](https://nitro.jan.ai/features/embed) for a more detailed explanation.
+  - To utilize the continuous batching feature for boosting throughput and minimizing latency in large language model (LLM) inference, include `cont_batching: true`. For details, please refer to the [Continuous Batching in the Nitro documentation](https://nitro.jan.ai/features/cont-batch).
+</Callout>
+
+
+<Callout type='info'>
+  If you have questions, please join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
+</Callout>

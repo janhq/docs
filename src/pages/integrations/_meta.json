@@ -1,0 +1,11 @@
+{
+  "-- Switcher": {
+    "type": "separator",
+    "title": "Switcher"
+  },
+  "index": { "title": "Overview", "href": "/integrations" },
+  "coding": "Coding",
+  "function-calling": "Function Calling",
+  "messaging": "Messaging",
+  "workflow-automation": "Workflow Automation"
+}

@@ -1,0 +1,39 @@
+---
+title: Mac Metal (Apple Silicon)
+description: Metal GPU support on Jan for llama.cpp
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    Llama CPP integration,
+    llama.cpp Extension,
+    Intel CPU,
+    AMD CPU,
+    NVIDIA GPU,
+    AMD GPU Radeon,
+    Apple Silicon,
+    Intel Arc GPU,
+  ]
+---
+import { Callout, Steps } from 'nextra/components'
+
+# Mac Metal (Apple Silicon)
+Jan is optimized for Mac Silicon, utilizing `llama.cpp` as its default supported inference engine and leveraging `Metal 3` by default.
+<Callout type='info'>
+This setup is not supported on Mac Intel.
+</Callout>
+
+## Pre-requisites
+To utilize Jan on Mac Silicon, users must have:
+- macOS Ventura or later versions
+
+<Callout type='info'>
+The use of `unified memory` in Mac Silicon significantly enhances performance, providing substantial performance gains.
+</Callout>

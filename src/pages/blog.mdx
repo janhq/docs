@@ -44,13 +44,12 @@ export const getStaticProps = async() => {
         categories: frontmatter.data.categories?.split(', ') || null,
       })
     }
-    
     allBlogPosts.sort((a, b) => new Date(b.date) - new Date(a.date))    
   }
 
   return {
     props: {
-        ssg: allBlogPosts
-      },
+      ssg: allBlogPosts
+    },
   }
 }

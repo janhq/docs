@@ -14,10 +14,6 @@ const Blog = () => {
 
   const staticCategories = [
     {
-      name: 'Product Updates',
-      id: 'product-updates',
-    },
-    {
       name: 'Building Jan',
       id: 'building-jan',
     },

@@ -11,6 +11,11 @@
     "type": "page",
     "title": "Documentation"
   },
+  "integrations": {
+    "type": "page",
+    "title": "Integrations",
+    "display": "hidden"
+  },
   "api-reference": {
     "type": "page",
     "title": "API Reference",
@@ -18,6 +23,13 @@
     "theme": {
       "layout": "raw",
       "footer": false
+    }
+  },
+  "changelog": {
+    "type": "page",
+    "title": "Changelog",
+    "theme": {
+      "layout": "raw"
     }
   },
   "about": {
@@ -36,13 +48,7 @@
     "title": "Post Categories",
     "display": "hidden"
   },
-  "changelog": {
-    "type": "page",
-    "title": "Changelog",
-    "theme": {
-      "layout": "raw"
-    }
-  },
+
   "download": {
     "type": "page",
     "theme": {

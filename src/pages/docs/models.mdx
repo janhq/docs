@@ -1,6 +1,6 @@
 ---
-title: Using Models
-description: Manage your interaction with AI locally.
+title: Models
+description: Jan is a ChatGPT-alternative that runs on your computer, with a local API server.
 keywords:
   [
     Jan,
@@ -12,123 +12,24 @@ keywords:
     conversational AI,
     no-subscription fee,
     large language models,
-    threads,
-    chat history,
-    thread history,
+    Hardware Setup,
+    GPU,
   ]
 ---
-import { Callout, Steps } from 'nextra/components' 
 
-# Using Models
-This guide provides comprehensive instructions on adding, customizing, and deleting models within the Jan platform. 
+import { Cards, Card } from 'nextra/components'
+import childPages from './models/_meta.json';
 
-## Add Models
+# Hardware Setup
 
-There are various ways to add models to Jan.
+<br/>
 
-Currently, Jan natively supports the following model formats: 
-- GGUF (through a llama.cpp engine)
-- TensorRT (through a TRT-LLM engine)
-
-### Download from Jan Hub
-
-You can choose from a list of popular, recommended models directly from Jan app's Model Hub. 
-These models are preconfigured with optimal runtime parameters. This is the easiest way to get started. 
-
-<Steps>
-1. Open the Jan app and navigate to the Hub.
-2. Select models, clicking on the `v` dropdown to see more information. Models with the `Recommended` label are likely to run faster on your computer.
-3. After downloading a model, click **Use** to activate it. Ensure it's selected in the model dropdown for your thread.
-</Steps>
-### Import or Symlink Local Models
-
-You can also point to existing model binary files on your local filesystem. 
-This is the easiest and most space efficient way if you already use other local AI applications.
-
-<Steps>
-1. Navigate to the Hub.
-2. Click on `Import Model` at the top.
-3. Select the model or the folder containing multiple models.
-4. Optionally, check the box to symlink the model files instead of copying them over the Jan Data Folder. This saves disk space.
-</Steps>
-
-<Callout type="warning">
-Windows users should drag and drop the model file, as using **Click to Upload** might not show the model files in Folder Preview.
-</Callout>
-
-### Download with HuggingFace URL
-
-<Callout type="info">
-Coming soon
-</Callout>
-
-### Download with Nvidia NGC
-
-<Callout type="info">
-Coming soon
-</Callout>
-
-## Model Parameters
-A model has three main parameters to configure:
-- Inference Parameters
-- Model Parameters
-- Engine Parameters
-
-### Inference Parameters
-Inference parameters are settings that control how an AI model generates outputs. These parameters include the following:
-| Parameter           | Description                                                                                                                                                                  |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Temperature**     | Influences the randomness of the model's output. A higher temperature leads to more random and diverse responses, while a lower temperature results in more predictable outputs. |
-| **Top P** | Sets a probability threshold, allowing only the most likely tokens whose cumulative probability exceeds the threshold to be considered for generation. Enhances output quality and relevance. |
-| **Stream**          | Enables real-time data processing, useful for applications needing immediate responses, like live interactions. It accelerates predictions by processing data as it becomes available. |
-| **Max Tokens**      | Sets the upper limit on the number of tokens the model can generate in a single output. Manages output length and computational demands.                                         |
-| **Stop Sequences**  | Defines specific tokens or phrases that signal the model to stop producing further output. Useful for controlling output size and ending generation at logical points.        |
-| **Frequency Penalty** | Modifies the likelihood of the model repeating the same words or phrases within a single output, reducing redundancy in generated text.                                        |
-| **Presence Penalty** | Encourages the generation of new and varied concepts by penalizing tokens that have already appeared, promoting diversity and novelty in the output.                           |
-
-### Model Parameter
-Model parameters are the settings that define and configure the behavior of the model. These parameters include the following:
-| Parameter           | Description                                                                                                                                                                  |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Prompt Template**     | This is a predefined text or framework used as the basis for generating responses or predictions. It serves as a structured guide that the AI model fills in or expands upon during the generation process. For example, a prompt template might include placeholders or specific instructions that direct how the model should formulate its outputs. |
-
-### Engine Parameters
-Engine parameters are the settings that define how the model processes input data and generates output. These parameters include the following:
-| Parameter           | Description                                                                                                                                                                  |
-|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Context Length**     | This parameter determines the maximum amount of input the model can use to generate responses. The maximum context length varies with the model used. This setting is crucial for the model’s ability to produce coherent and contextually appropriate outputs. |
-
-<Callout type="info">
-By default, Jan sets the **Context Length** to the maximum supported by your model, which may slow down response times. For lower-spec devices, reduce **Context Length** to **1024** or **2048**, depending on your device's specifications, to improve speed.
-</Callout>
-
-## Customize the Model Settings
-Adjust model settings for a specific conversation or across all conversations:
-
-### A Specific Conversation
-To customize model settings for a specific conversation only:
-
-<Steps> 
-1. Create a new thread.
-2. Expand the right panel.
-3. Change settings under the `model` dropdown.
-</Steps>
-
-### All Conversations
-To customize default model settings for all conversations:
-
-<Steps>
-1. Open any thread .
-2. Select on the 3 dots next to the `model` dropdown.
-3. Select `Edit global defaults for [model]`.
-4. Edit the default settings directly in the `model.json`.
-5. Save the file and refresh the app.
-</Steps>
-
-## Delete Models
-To delete a model:
-<Steps>
-1. Go to **Settings**.
-2. Go to **My Models**.
-3. Select the 3 dots next and select `Delete model`.
-</Steps>
+<Cards
+  children={Object.keys(childPages).map((key, i) => (
+    <Card
+      key={i}
+      title={childPages[key].title}
+      href={childPages[key].href}
+    />
+  ))}
+/>

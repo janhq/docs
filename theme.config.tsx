@@ -3,6 +3,9 @@ import { useConfig, DocsThemeConfig } from 'nextra-theme-docs'
 import LogoMark from '@/components/LogoMark'
 import FooterMenu from '@/components/FooterMenu'
 import JSONLD from '@/components/JSONLD'
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { FileCode, LibraryBig, BrainCircuit, Computer, Blocks } from "lucide-react";
 
 const defaultUrl = 'https://jan.ai'
 const defaultImage = 'https://jan.ai/assets/images/general/og-image.png'
@@ -34,7 +37,7 @@ const config: DocsThemeConfig = {
   },
   useNextSeoProps() {
     return {
-      titleTemplate: 'Jan - %s',
+      titleTemplate: '%s - Jan',
       canonical: defaultUrl,
       twitter: {
         cardType: 'summary_large_image',
@@ -46,7 +49,11 @@ const config: DocsThemeConfig = {
         images: [
           {
             url: `${defaultImage}`,
-            width: 800,
+            width: 800,  "guides": {
+              "type": "page",
+              "title": "Guides",
+              "display": "hidden"
+            },
             height: 600,
             alt: 'Jan-OGImage',
           },
@@ -55,21 +62,48 @@ const config: DocsThemeConfig = {
     }
   },
   sidebar: {
-    titleComponent({ title, type }) {
-      if (type === 'separator') {
-        return <span className="cursor-default">{title}</span>
+    titleComponent: ({ type, title, route }) => {
+      const { asPath } = useRouter();
+      if (type === "separator" && title === "Switcher") {
+        return (
+          <div className="-mx-2 hidden md:block">
+            {[
+              { title: "Jan", path: "/docs", Icon: LibraryBig },
+              { title: "Integrations", path: "/integrations", Icon: Blocks }
+            ].map((item) =>
+              asPath.startsWith(item.path) ? (
+                <div
+                  key={item.path}
+                  className="group mb-3 flex flex-row items-center gap-3 nx-text-primary-800 dark:nx-text-primary-600"
+                >
+                  <item.Icon className="w-7 h-7 p-1 border rounded nx-bg-primary-100 dark:nx-bg-primary-400/10" />
+                  {item.title}
+                </div>
+              ) : (
+                <Link
+                  href={item.path}
+                  key={item.path}
+                  className="group mb-3 flex flex-row items-center gap-3 text-gray-500 hover:text-primary/100"
+                >
+                  <item.Icon className="w-7 h-7 p-1 border rounded group-hover:bg-border/30" />
+                  {item.title}
+                </Link>
+              )
+            )}
+          </div>
+        );
       }
-      return <>{title}</>
+      return title;
     },
     defaultMenuCollapseLevel: 1,
-    toggleButton: false,
+    toggleButton: true,
   },
   toc: {
     backToTop: true,
   },
   head: function useHead() {
     const { title, frontMatter } = useConfig()
-    const titleTemplate = 'Jan' + ' - ' + (frontMatter?.title || title)
+    const titleTemplate = (frontMatter?.title || title) + ' - ' + 'Jan'
 
     return (
       <Fragment>

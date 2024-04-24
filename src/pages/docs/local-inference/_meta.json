@@ -1,12 +1,4 @@
 {
-  "llamacpp": {
-    "title": "llama.cpp",
-    "href": "/docs/local-inference/llamacpp"
-  },
-  "tensorrtllm": {
-    "title": "TensorRT-LLM",
-    "href": "/docs/local-inference/tensorrtllm"
-  },
   "lmstudio": {
     "title": "LM Studio",
     "href": "/docs/local-inference/lmstudio"

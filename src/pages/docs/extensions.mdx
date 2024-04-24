@@ -22,11 +22,11 @@ import { Callout } from 'nextra/components'
 
 # Extensions Overview
 
-The current Jan Desktop Client has some default extensions built on top of this framework to enhance the user experience. In this guide, we will show you the list of default extensions and how to configure extension settings.
+The current Jan Desktop Client has some default extensions built on this framework to enhance the user experience. This guide will show you the list of default extensions and how to configure extension settings.
 
 ## Default Extensions
 
-You can find the default extensions in the `Settings` > `Extensions`.
+The default extensions are in the `Settings` > `Extensions`.
 
 ## List of Default Extensions
 
@@ -34,10 +34,10 @@ You can find the default extensions in the `Settings` > `Extensions`.
 | ---------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | Assistant Extension                | `v1.0.0`  | This extension enables assistants, including Jan, a default assistant that can call all downloaded models. | [Source](https://github.com/janhq/jan/tree/dev/extensions/assistant-extension)               |
 | Conversational Extension           | `v1.0.0`  | This extension enables conversations and state persistence via your filesystem.                            | [Source](https://github.com/janhq/jan/tree/dev/extensions/conversational-extension)          |
-| Inference Engine Nitro Extension   | `v1.0.0`  | This extension embeds Nitro, a lightweight (3 MB) inference engine in C++. See nitro.jan.ai.               | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-nitro-extension)         |
+| Inference Engine Nitro Extension   | `v1.0.0`  | This extension embeds Nitro, a lightweight (3 MB) inference engine in C++. See https://nitro.jan.ai.               | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-nitro-extension)         |
 | Inference Engine OpenAI Extension  | `v1.0.0`  | This extension enables OpenAI chat completion API calls.                                                   | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-openai-extension)        |
-| Inference Engine Triton Trt Llm Extension | `v1.0.0`  | This extension enables Nvidia's TensorRT-LLM as an inference engine option.                                | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-triton-trtllm-extension) |
-| Inference Engine Tensor RT Llm Extension | `v.0.0.3`  | This extension enables Nvidia's TensorRT-LLM for the fastest GPU acceleration.                                | [Source](https://github.com/janhq/jan/tree/dev/extensions/tensorrt-llm-extension) |
+| Inference Engine Triton TRT-LLM Extension | `v1.0.0`  | This extension enables Nvidia's TensorRT-LLM as an inference engine option.                                | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-triton-trtllm-extension) |
+| Inference Engine Tensor RT Llm Extension | `v0.0.3`  | This extension enables Nvidia's TensorRT-LLM for the fastest GPU acceleration.                                | [Source](https://github.com/janhq/jan/tree/dev/extensions/tensorrt-llm-extension) |
 | Inference Engine MistralAI Extension   | `v1.0.0`  |This extension enables Mistral chat completion API calls.               | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-mistral-extension)         |
 | Inference Engine Groq Extension   | `v1.0.0`  |This extension enables Groq chat completion API calls.               | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-groq-extension)         |
 | HuggingFace Extension   | `v1.0.0`  |This extension converts HF models to GGUF.               | [Source](https://github.com/janhq/jan/tree/dev/extensions/huggingface-extension)         |
@@ -235,7 +235,7 @@ To configure extension default settings:
 }
 ```
 ## Specific Extension Settings
-Jan offers an Extensions settings menu for configuring extensions that have registered their own settings within the application. Here, you can directly integrate Remote Inference Engines with Jan, without have to insert the URL and API Key directly in the `JSON` file. Additionally, you can enable or disable Logging extensions available in Jan. To access the Extension settings, follow the steps below:
+Jan offers an Extensions settings menu for configuring extensions that have registered their settings within the application. Here, you can directly integrate Remote Inference Engines with Jan without inserting the URL and API Key directly in the `JSON` file. Additionally, you can turn the Logging extensions available on or off in Jan. To access the Extension settings, follow the steps below:
 1. Navigate to the main dashboard.
 2. Click the **gear icon (⚙️)** on the bottom left of your screen.
 3. The registered extension settings can be customized under the **Extensions** section.
@@ -243,9 +243,9 @@ Jan offers an Extensions settings menu for configuring extensions that have regi
 ## System Monitor Extension Feature
 The System Monitor extension now offers enhanced customization for app logging. Users can toggle the application logging feature on or off and set a custom interval for clearing the app logs. To configure the app log feature, follow these steps:
 1. Navigate to the main dashboard.
-2. Click the **gear icon (⚙️)** on the bottom left of your screen.
+2. Click the **Gear Icon (⚙️)** on the bottom left of your screen.
 3. Under the **Extensions** section, select the **System Monitoring extension**.
-4. Use the **slider** to enable or disable the app logging feature.
+4. Use the **slider** to turn the app logging feature on or off.
 5. Specify the log cleaning interval in milliseconds.
 <Callout type='info'>
   - You can clear the app logs manually by clicking the **Clear logs** button in the advanced settings.
@@ -254,18 +254,18 @@ The System Monitor extension now offers enhanced customization for app logging. 
 
 ## Import Custom Extension
 <Callout type='info'>
-  Currently, Jan only supports official extensions, which can be directly downloaded in Extension Settings. We plan to support 3rd party Extensions in the future.
+  Jan only supports official extensions, which can be directly downloaded in Extension Settings. We plan to support 3rd party Extensions in the future.
 </Callout>
 
-For now you can always import a third party extension at your own risk by following the steps below:
+For now, you can always import a third-party extension at your own risk by following the steps below:
 
 1. Navigate to **Settings** > **Extensions** > Click Select under **Manual Installation**.
-2. Then, the ~/jan/extensions/extensions.json file will be updated automatically.
+2. Then, the `~/jan/extensions/extensions.json` file will be updated automatically.
 
 <Callout type='warning'>
-  You need to prepare the extension file in .tgz format to install the **non-default** extension.
+  You must prepare the extension file in .tgz format to install the **non-default** extension.
 </Callout>
 
 <Callout type='info'>
-  Assistance and Support, If you have questions, please join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
+  If you have questions, please join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
 </Callout>
