@@ -20,41 +20,58 @@ keywords:
   ]
 ---
 
-import { Tabs } from 'nextra/components'
-import { Callout } from 'nextra/components' 
+import { Tabs, Callout, Steps } from 'nextra/components'
 
 
 # Windows Installation
 To install Jan desktop on Windows, follow the steps below:
-#### Pre-requisites
-        Ensure that your system meets the following requirements:
-         - Windows 10 or higher is required to run Jan.
+## Pre-requisites
+Ensure that your system meets the following requirements:
+  - Windows 10 or higher is required to run Jan.
 
-        To enable GPU support, you will need:
-         - NVIDIA GPU with CUDA Toolkit 11.7 or higher.
-         - NVIDIA driver 470.63.01 or higher.
+To enable GPU support, you will need:
+- Install an [NVIDIA Driver](https://www.nvidia.com/Download/index.aspx) supporting CUDA 11.7 or higher.
+    - Use the following command to verify the installation:
 
-        #### Stable Releases
+```bash
+nvidia-smi
+```
+- Install a [CUDA toolkit](https://developer.nvidia.com/cuda-downloads) that is compatible with your NVIDIA driver.
+    - Use the following command to verify the installation:
 
-        To download stable releases, go to [Jan](https://jan.ai/) > select **Download for Windows**.
+```bash
+nvcc --version
+```
 
-        <Callout type='info'>
-        The download should be available as a `.exe` file.
-        </Callout>
-        #### Nightly Releases
+## Stable Releases
 
-        We provide the Nightly Release so that you can test new features and see what might be coming in a future stable release. Please be aware that there might be bugs!
+To download stable releases, go to [Jan](https://jan.ai/) > select **Download for Windows**.
 
-        You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
+<Callout type='info'>
+The download should be available as a `.exe` file.
+</Callout>
+## Nightly Releases
 
-        #### Default Installation Directory
+We provide the Nightly Release so that you can test new features and see what might be coming in a future stable release. Please be aware that there might be bugs!
 
-        By default, Jan is installed in the following directory:
+You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
 
-        ```sh
-        # Default installation directory
-        C:\Users\{username}\AppData\Local\Programs\Jan
-        ```
-        <Callout type="warning" emoji="⚠️">
-          If stuck in a broken build, go to the [Broken Build](/docs/troubleshooting#broken-build) section.
-        </Callout>
+
+## Enable GPU
+Once Jan is installed and you have a GPU, you can configure your GPU to accelerate the model's performance. To enable the use of your GPU in the Jan app, follow the steps below:
+1. Open Jan application.
+2. Go to **Settings** -> **Advanced Settings** -> **Accelerator** -> Enable and choose the GPU you want.
+3. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
+
+  
+## Default Installation Directory
+
+By default, Jan is installed in the following directory:
+
+```sh
+# Default installation directory
+C:\Users\{username}\AppData\Local\Programs\Jan
+```
+<Callout type="warning" emoji="⚠️">
+  If stuck in a broken build, go to the [Broken Build](/docs/troubleshooting#broken-build) section.
+</Callout>
