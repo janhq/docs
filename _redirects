@@ -600,3 +600,6 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /product/features/remote /docs 302
 /product/home-server /docs/local-api 302
 /guides/providers/tensorrt-llm/ /docs/built-in/tensorrt-llm 302
+/docs/tools /docs/tools/retrieval 302
+/docs/local-inference/llamacpp /docs/built-in/llama-cpp 302
+/docs/local-inference/tensorrtllm /docs/built-in/tensorrt-llm 302

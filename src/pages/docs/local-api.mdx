@@ -30,8 +30,10 @@ Jan provides a built-in API server to be used as a drop-in for OpenAI's API loca
 To start the local server, follow the steps below:
 
 1. Navigate to the Jan main menu dashboard.
-2. Click the corresponding icon on the bottom left side of your screen.
+2. Click the **Local API Server** button on the bottom left side of your screen.
+![Local API Server](./_assets/local-api1.png)
 3. Select the model you want to use under the Model Settings screen to set the LLM for your local server.
+![Local API Server](./_assets/local-api2.png)
 4. Configure the server settings as follows:
 
 | Feature                              | Description                                                                                                                                                                                                                                                               | Default Setting                 |
@@ -53,12 +55,14 @@ Once you have set the server settings, you can start the server by following the
   http://127.0.0.1:1337`, and the **Start Server** button will turn into a red
   **Stop Server** button.
 </Callout>
-
-2. You will be redirected to the API reference server in your browser.
-3. Select the available endpoints and try them out by executing the example request.
-4. In this example, we will show you how it works using the `Chat` endpoint.
-5. Click the **Try it out** button.
-6. The Chat endpoint has the following `cURL request example` when running using a `tinyllama-1.1b` model local server:
+![Local API Server](./_assets/local-api3.png)
+2. Click the **API Reference** under the **Stop Server** button. 
+![Local API Server](./_assets/local-api4.png)
+3. You will be redirected to the API reference server in your browser.
+4. Select the available endpoints and try them out by executing the example request.
+5. In this example, we will show you how it works using the `Chat` endpoint.
+6. Click the **Try it out** button.
+7. The Chat endpoint has the following `cURL request example` when running using a `tinyllama-1.1b` model local server:
 
 ```json
 {
@@ -83,7 +87,7 @@ Once you have set the server settings, you can start the server by following the
 }
 ```
 
-7. The endpoint returns the following `JSON response body`:
+8. The endpoint returns the following `JSON response body`:
 
 ```json
 {
