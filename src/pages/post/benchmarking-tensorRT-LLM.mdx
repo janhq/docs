@@ -57,14 +57,13 @@ We were curious as to how TensorRT-LLM performed on desktop GPUs. Desktop AI has
 ## Experiment Setup
 
 We ran the experiment using standardized inference requests in a sandboxed environment:
-- We used a Mistral 7b model that was compiled and quantized for each inference engine, at an approximately comparable `int4` quantization
-- Each test was run 10 times per inference engine, on a bare metal PC with no other applications.
-- Each inference request was of `batch_size 1`, `input_len 2048` and `output_len 512` as a realistic test case
-- Measurements:
-  - CPU, memory from Jan app system monitor
-  - GPU VRAM metrics from `nvidia-smi` for utilization in 14 seconds
-  - Throughput (token/sec) using this [Jan code](https://github.com/search?q=repo%3Ajanhq%2Fjan%20timeDiffInSeconds&type=code).
-  - Note: We discovered that `nvidia-smi` on Windows yielded huge differences compared to Windows Task Manager resource monitor for NVIDIA GPUs. However, we decided to use `nvidia-smi`
+- **Model**: Mistral 7b model, compiled and quantized at a comparable `int4` quantization.
+- **Test runs**: 5 batches of 10 runs each, per inference engine, on a bare metal PC with no other applications.
+- **Parameters**: User defaults, i.e. `batch_size 1`, `input_len 2048` and `output_len 512`
+- **Measurements**:
+  - CPU, memory from Jan system monitor
+  - GPU VRAM utilization metrics from `nvidia-smi` over 14 seconds. _We discovered that `nvidia-smi` on Windows yielded huge differences compared to Windows Task Manager resource monitor for NVIDIA GPUs. However, we decided to use `nvidia-smi`_
+  - Throughput (token/sec) using this [Jan snippet](https://github.com/search?q=repo%3Ajanhq%2Fjan%20timeDiffInSeconds&type=code).
 
 ### Hardware Selection
 
@@ -79,6 +78,7 @@ We chose the following GPUs based on our users' preferences:
 Both desktop GPUs utilize PCIe 4.0, offering substantial bandwidth at 100 Gbps, in contrast to the [NVIDIA GeForce RTX 4070 Laptop GPU’s](https://www.nvidia.com/en-us/geforce/laptops/) more limited capabilities due to power and thermal restrictions.
 
 **GeForce RTX 4090 (Ada)**
+
 ![image](./_assets/4090s.png)
 
 <Callout type="info" >
@@ -93,7 +93,10 @@ Both desktop GPUs utilize PCIe 4.0, offering substantial bandwidth at 100 Gbps, 
 - TensorRT-LLM model: Mistral 7B v0.2 AWQ, quantized for single GPU (Ada)
 </Callout>
 
+The NVIDIA GeForce RTX 4090 is the latest top-of-the-line desktop GPU, with an MSRP of $1,599, and uses the Ada architecture. It has a ~1000 gbps memory bandwidth within VRAM, and a PCIe4 lane (~125 gbps) between the GPU and the CPU.
+
 **GeForce RTX 3090 (Ampere)**
+
 ![image](./_assets/3090s.jpg)
 
 <Callout type="info" >
@@ -108,7 +111,10 @@ Both desktop GPUs utilize PCIe 4.0, offering substantial bandwidth at 100 Gbps, 
 - TensorRT-LLM model: Mistral 7B v0.2 AWQ, quantized for single GPU (Ampere)
 </Callout>
 
+The [NVIDIA's GeForce RTX 3090](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/) is a popular desktop GPU, and retails for approximately $1,500 (as of April 24). It uses the NVIDIA Ampere architecture. As compared to its successor GeForce RTX 4090, it has 33% fewer CUDA cores (10,496) and Tensor Cores (328) and 7% less memory bandwidth (~930gbps).
+
 **GeForce RTX 4070 Laptop**
+
 ![image](./_assets/4070s.jpg)
 
 <Callout type="info" >
@@ -123,6 +129,8 @@ Both desktop GPUs utilize PCIe 4.0, offering substantial bandwidth at 100 Gbps, 
 - llama.cpp model: Mistral 7B v0.2 GGUF `Q4_K_M`
 - TensorRT-LLM model: Mistral 7B v0.2 AWQ, quantized for single GPU (Ada)
 </Callout>
+
+We also benchmarked an NVIDIA GeForce RTX 4070 Laptop GPU with 8gb of VRAM, which is a popular configuration among Jan users. Laptop GPUs are less powerful than their desktop counterparts, as they trade portability for reduced energy consumption and thermal constraints.
 
 **GeForce RTX 4090 eGPU**
 
@@ -142,7 +150,13 @@ Both desktop GPUs utilize PCIe 4.0, offering substantial bandwidth at 100 Gbps, 
 - TensorRT-LLM model: Mistral 7B v0.2 AWQ, quantized for single GPU (Ampere)
 </Callout>
 
-We focused on mid-to-high-end NVIDIA desktop GPUs for our tests, as TensorRT-LLM’s performance enhancements are most apparent on these devices. For users with lower-spec machines, llama.cpp remains the de-facto solution.
+Our last benchmark was to experiment with an external GeForce RTX 4090 eGPU, that was connected via a Thunderbolt 3 connection. Theoretically, the results should be fairly similar to the GeForce RTX 4090 desktop GPU as they have identical underlying hardware. 
+
+We thought it would be an interesting to see how TensorRT-LLM handles a 68.4% reduction in communication bandwidth between the CPU and GPU:
+- Thunderbolt 3 connection (40gbps) for eGPUs
+- PCI 4.0 (126.44gbps) for "on device" desktops
+
+Overall, we used mid-to-high-end NVIDIA desktop GPUs for our tests, as TensorRT-LLM’s performance enhancements are most apparent on bigger VRAMs. For users with lower-spec machines, llama.cpp is better.
 
 ### llama.cpp Setup
 
@@ -157,12 +171,6 @@ We focused on mid-to-high-end NVIDIA desktop GPUs for our tests, as TensorRT-LLM
 - We ran TensorRT-LLM with `free_gpu_memory_fraction` to test it with the lowest VRAM consumption
 - Note: We picked AWQ for TensorRT-LLM to be a closer comparison to GGUF's Q4.
 
-<Callout type="info" >
-  **Tip:** We found an additional **15% increase in performance** with TensorRT-LLM by:
-- Enabling [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html)
-- Overclocking RAM bus speed in BIOS from `3600` to `5600`. However, **this benchmark was not conducted with overclocking**, as it is not a default setting for most users. However, it's awesome that TensorRT-LLM can go even faster with these tweaks. 
-</Callout>
-
 ## Results
 
 ### NVIDIA GeForce RTX 4090 GPU
@@ -174,8 +182,6 @@ We focused on mid-to-high-end NVIDIA desktop GPUs for our tests, as TensorRT-LLM
 | Max VRAM Utilization (%)       | N/A                |64 | 72.1          | 12.66% more             |
 | Avg RAM Used (GB)        | 0.611            | 7.105             | 4.98         | ✅ 29.88% less   |
 | Disk Size (GB)       | 4.07             | 4.06             | 3.05         | ✅ 24.88% smaller |
-
-The NVIDIA GeForce RTX 4090 is the latest top-of-the-line desktop GPU, with an MSRP of $1,599, and uses the Ada architecture. It has a ~1000 gbps memory bandwidth within VRAM, and a PCIe4 lane (~125 gbps) between the GPU and the CPU.
 
 TensorRT-LLM was almost 70% faster than llama.cpp by building the model for the GeForce RTX 4090 GPU’s Ada architecture for optimal graph execution, fully utilizing the 512 Tensor Cores, 16,384 CUDA cores, and 1,000 gbps of memory bandwidth.
 
@@ -191,8 +197,6 @@ The intuition for why llama.cpp is slower is because it compiles a model into a 
 | Avg RAM Used (GB)        | 0.611            | 2.60             | 0.98         | 62.41%% less        |
 | Disk Size (GB)       | 4.07             | 4.06             | 3.05         | ✅ 24.88% smaller  |
 
-The [NVIDIA's GeForce RTX 3090](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/) is a popular desktop GPU, and retails for approximately $1,500 (as of April 24). It uses the NVIDIA Ampere architecture. As compared to its successor GeForce RTX 4090, it has 33% fewer CUDA cores (10,496) and Tensor Cores (328) and 7% less memory bandwidth (~930gbps).
-
 Interestingly, the GeForce RTX 3090 was only 16.6% slower compared with the GeForce RTX 4090. On TPS, TensorRT-LLM outperformed llama.cpp by 62.57%. Curiously, it also used negligible RAM for subsequent inference requests after the initial model warmup.
 
 ### NVIDIA GeForce RTX 4070 Laptop GPU
@@ -204,8 +208,6 @@ Interestingly, the GeForce RTX 3090 was only 16.6% slower compared with the GeFo
 | Max VRAM Utilization (%)       | N/A                |72.78          | 81.22   | 11.60% more       |
 | Avg RAM Used (GB)        | 4.49            | 4.44             | 1.04         | ✅ 76.55%% less        |
 | Disk Size (GB)       | 4.07             | 4.06             | 3.05         | ✅ 24.88% smaller       |
-
-We also benchmarked an NVIDIA GeForce RTX 4070 Laptop GPU with 8gb of VRAM, which is a popular configuration among Jan users. Laptop GPUs are less powerful than their desktop counterparts, as they trade portability for reduced energy consumption and thermal constraints.
 
 TensorRT-LLM was 29.9% faster in tokens per second throughput than llama.cpp.
 
@@ -222,13 +224,9 @@ The GeForce RTX 4070 Laptop GPU is also ~70% slower than the GeForce RTX 4090 de
 | RAM Used (GB)        | 0.611            | 5.38             |  4.11        | ✅ 23.61% less     |
 | Disk Size (GB)       | 4.07             | 4.06             | 3.05         | ✅ 24.88% smaller  |
 
-Our last benchmark was to experiment with an external GeForce RTX 4090 eGPU, that was connected via a Thunderbolt 3 connection. Theoretically, the results should be fairly similar to the GeForce RTX 4090 desktop GPU as they have identical underlying hardware.
-We thought this would be an interesting test of how TensorRT-LLM would react to the impact of a 68.4% reduction in communication bandwidth between the CPU and GPU:
-- Thunderbolt 3 connection (40gbps)
-- PCIe4.0 (126.44gbps)
 The Thunderbolt 3 eGPU had a 38.5% lower tokens/s as compared to the PCIe4.0 connected GPU. But the % speedup vs. llama.cpp was similar, at around 69%.
-Interestingly, the VRAM used with the eGPU was variably higher. Our hypothesis is that the slower communication bandwidth results in more VRAM being allocated, as memory is released mostly slowly as well.
 
+Interestingly, the VRAM used with the eGPU was variably higher. Our hypothesis is that the slower communication bandwidth results in more VRAM being allocated, as memory is released mostly slowly as well.
 
 ## Conclusion
 
@@ -299,5 +297,13 @@ Mistral 7b int4 was actually **25% smaller** in TensorRT-LLM, at 3.05gb vs. 4.06
 
 Our benchmarking is not perfect. We evaluated over a dozen tools (llmperf, psutil, gpustat, native utilities, and more) and found that everyone measured TPS, common metrics differently. We eventually settled on using our own tools in Jan, which are consistent across any inference engine. As for runtime parameters, we went with default settings, likely representing the typical user experience.
 
-Results from the latest test run:
+<Callout type="info" >
+  **Pro Tip:** We found an additional **15% increase in performance** with TensorRT-LLM by:
+- Enabling [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html)
+- Overclocking RAM bus speed in BIOS from `3600` to `5600`. 
+
+Note, this benchmark was not conducted with overclocking, as it is not a default setting for most users. But it's awesome that TensorRT-LLM can go even faster with these tweaks.
+</Callout>
+
+Raw data results from the latest test run:
 https://drive.google.com/file/d/1rDwd8XD8erKt0EgIKqOBidv8LsCO6lef/view?usp=sharing.
