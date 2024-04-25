@@ -65,7 +65,7 @@ const config: DocsThemeConfig = {
                   key={item.path}
                   className="group mb-3 flex flex-row items-center gap-3 nx-text-primary-800 dark:nx-text-primary-600"
                 >
-                  <item.Icon className="w-7 h-7 p-1 border rounded nx-bg-primary-100 dark:nx-bg-primary-400/10" />
+                  <item.Icon className="w-7 h-7 p-1 border  border-gray-200 dark:border-gray-700 rounded nx-bg-primary-100 dark:nx-bg-primary-400/10" />
                   {item.title}
                 </div>
               ) : (
@@ -74,7 +74,7 @@ const config: DocsThemeConfig = {
                   key={item.path}
                   className="group mb-3 flex flex-row items-center gap-3 text-gray-500 hover:text-primary/100"
                 >
-                  <item.Icon className="w-7 h-7 p-1 border rounded group-hover:bg-border/30" />
+                  <item.Icon className="w-7 h-7 p-1 border rounded border-gray-200 dark:border-gray-700" />
                   {item.title}
                 </Link>
               )
