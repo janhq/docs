@@ -1,5 +1,5 @@
 ---
-title: Benchmarking with NVIDIA TensorRT-LLM
+title: Benchmarking with NVIDIA TensorRT-LLM and llama.cpp
 description: This post compares the performance of TensorRT-LLM and llama.cpp on Nvidia GPUs, highlighting the trade-offs between speed and resource usage.
 tags: Nvidia, TensorRT-LLM, llama.cpp, 3090, 4090, "inference engine"
 categories: research
@@ -9,10 +9,9 @@ date: 2024-04-23
 
 import { Callout } from 'nextra/components'
 
-
 # Benchmarking with NVIDIA TensorRT-LLM and llama.cpp
 
-Jan now supports NVIDIA TensorRT-LLM in addition to llama.cpp, making the backend multi-engine and performant across more hardware.
+Jan now supports NVIDIA TensorRT-LLM in addition to llama.cpp, making the backend multi-engine and performant for users with Nvidia GPUs.
 
 This post benchmarks TensorRT-LLM with llama.cpp across common consumer laptops and desktops among Jan users:
 - [NVIDIA GeForce RTX 40 Series](https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/) ([Ada Lovelace architecture](https://www.nvidia.com/en-us/geforce/ada-lovelace-architecture/))
@@ -108,6 +107,8 @@ It is important to mention, though, that llama.cpp democratizes inference to tho
 
 ### NVIDIA GeForce RTX 4090 GPU
 
+![image](./_assets/4090s.png)
+
 <Callout type="info" >
   **Hardware Details**
 - CPU: Intel 13th series
@@ -136,6 +137,8 @@ The intuition for why llama.cpp is slower is because it compiles a model into a 
 
 ### NVIDIA GeForce RTX 3090 GPU
 
+![image](./_assets/3090s.jpg)
+
 <Callout type="info" >
   **Hardware Details**
 - CPU: Intel 13th series
@@ -163,9 +166,11 @@ Interestingly, the GeForce RTX 3090 was only 16.6% slower compared with the GeFo
 
 ### NVIDIA GeForce RTX 4070 Laptop GPU
 
+![image](./_assets/4070s.jpg)
+
 <Callout type="info" >
   **Hardware Details**
-- Laptop: Razer Blade 15 (2024)
+- Laptop: Razer Blade 14
 - CPU: AMD Ryzen™ 9 8945HS, 8C/16T
 - GPU: NVIDIA GeForce RTX 4070 Laptop GPU (Ada - sm 89) on PCIE 4.0 (100gbps)
 - RAM: 32GB
@@ -194,9 +199,11 @@ The GeForce RTX 4070 Laptop GPU is also ~70% slower than the GeForce RTX 4090 de
 
 ### Laptop with NVIDIA GeForce RTX 4090 eGPU
 
+![image](./_assets/egpu.jpg)
+
 <Callout type="info" >
   **Hardware Details**
-- Laptop: Razer Blade 15 (2024)
+- Laptop: Razer Blade 14
 - eGPU box: AORUS RTX 4090 GAMING BOX
 - CPU: AMD Ryzen™ 9 8945HS, 8C/16T
 - GPU: NVIDIA GeForce RTX 4090 (Ada - sm 89) on eGPU with Thunderbolt 3 connection
