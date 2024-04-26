@@ -40,143 +40,33 @@ To integrate LM Studio with Jan, follow the steps below:
 1. Access the `Local Inference Server` within LM Studio.
 2. Select your desired model.
 3. Start the server after configuring the port and options.
-4. Update the `openai.json` file in `~/jan/engines` to include the LM Studio server's full URL.
-
-```json ~/jan/engines/openai.json
-{
-  "full_url": "http://localhost:<port>/v1/chat/completions"
-}
-```
+4. Navigate back to Jan.
+5. Navigate to the **Settings** > **Extensions**.
+6. In the **OpenAI Inference Engine** section, add the full web address of the LM Studio server.
+<br/>
+![Server Setup](../_assets/server-phi.gif)
 
 <Callout type="info">
-  Replace `(port)` with your chosen port number. The default is 1234.
+  - Replace `(port)` with your chosen port number. The default is 1234.
+  - Leave the API Key field blank.
 </Callout>
 
 
 ### Step 2: Model Configuration
 
-1. Navigate to `~/jan/models`.
-2. Create a folder named `lmstudio-(modelname)`, like `lmstudio-phi-2`.
-3. Inside, create a `model.json` file with these options:
-    - Set `format` to `api`.
-    - Specify `engine` as `openai`.
-    - Set `state` to `ready`.
+1. Navigate to the **Hub**.
+2. we will use the `phi-2` model in this example. Insert the `https://huggingface.co/TheBloke/phi-2-GGUF` link into the search bar.
+3. Select and download the model you want to use.
+<br/>
+![Download Model](../_assets/download-phi.gif)
 
-```json ~/jan/models/lmstudio-phi-2/model.json
-{
-  "sources": [
-    {
-      "filename": "phi-2-GGUF",
-      "url": "https://huggingface.co/TheBloke/phi-2-GGUF"
-    }
-  ],
-  "id": "lmstudio-phi-2",
-  "object": "model",
-  "name": "LM Studio - Phi 2 - GGUF",
-  "version": "1.0",
-  "description": "TheBloke/phi-2-GGUF",
-  "format": "api",
-  "settings": {},
-  "parameters": {},
-  "metadata": {
-    "author": "Microsoft",
-    "tags": ["General", "Big Context Length"]
-  },
-  "engine": "openai"
-}
-```
 
-<Callout type="info">
-  For more details regarding the `model.json` settings and parameters fields, please see [here](/docs/models#add-a-model-manually).
-</Callout>
+### Step 3: Start the Model
 
-### Step 3: Starting the Model
+1. Proceed to the **Threads**.
+2. Select the `phi-2` model and configure the model parameters.
+3. Start chatting with the model.
+<br/>
+![Start Model](../_assets/phi.gif)
 
-1. Restart Jan and proceed to the **Hub**.
-2. Locate your model and click **Use** to activate it.
-
-</Steps>
-
-## Migrating Models from LM Studio to Jan (version 0.4.6 and older)
-
-<Steps>
-### Step 1: Model Migration
-
-1. In LM Studio, navigate to `My Models` and access your model folder.
-2. Copy the model folder to `~/jan/models`.
-3. Ensure the folder name matches the model name in the `.gguf` filename. Rename as necessary.
-
-### Step 2: Activating the Model
-
-1. Restart Jan and navigate to the **Hub**, where the model will be automatically detected.
-2. Click **Use** to use the model.
-
-</Steps>
-
-## Direct Access to LM Studio Models from Jan (version 0.4.7+)
-
-Starting from version 0.4.7, Jan enables direct import of LM Studio models using absolute file paths.
-
-<Steps>
-### Step 1: Locating the Model Path
-
-1. Access `My Models` in LM Studio and locate your model folder.
-2. Obtain the absolute path of your model.
-
-### Step 2: Model Configuration
-
-1. Go to `~/jan/models`.
-2. Create a folder named `(modelname)` (e.g., `phi-2.Q4_K_S`).
-3. Inside, craft a `model.json` file:
-    - Set `id` to match the folder name.
-    - Use the direct binary download link ending in `.gguf` as the `url`. You can now use the absolute file path of the model file.
-    - Set `engine` as `nitro`.
-
-```json
-{
-  "object": "model",
-  "version": 1,
-  "format": "gguf",
-  "sources": [
-    {
-      "filename": "phi-2.Q4_K_S.gguf",
-      "url": "<absolute-path-of-model-file>"
-    }
-  ],
-  "id": "phi-2.Q4_K_S",
-  "name": "phi-2.Q4_K_S",
-  "created": 1708308111506,
-  "description": "phi-2.Q4_K_S - user self import model",
-  "settings": {
-    "ctx_len": 4096,
-    "embedding": false,
-    "prompt_template": "{system_message}\n### Instruction: {prompt}\n### Response:",
-    "llama_model_path": "phi-2.Q4_K_S.gguf"
-  },
-  "parameters": {
-    "temperature": 0.7,
-    "top_p": 0.95,
-    "stream": true,
-    "max_tokens": 2048,
-    "stop": ["<endofstring>"],
-    "frequency_penalty": 0,
-    "presence_penalty": 0
-  },
-  "metadata": {
-    "size": 1615568736,
-    "author": "User",
-    "tags": []
-  },
-  "engine": "nitro"
-}
-```
-
-<Callout type="warning">
-  For Windows users, include double backslashes in the URL property, such as `C:\\Users\\username\\filename.gguf`.
-</Callout>
-
-### Step 3: Starting the Model
-
-1. Restart Jan and proceed to the **Hub**.
-2. Locate your model and click **Use** to activate it.
 </Steps>

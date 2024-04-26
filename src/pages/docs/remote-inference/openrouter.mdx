@@ -31,7 +31,12 @@ To connect Jan with OpenRouter for accessing remote Large Language Models (LLMs)
 ### Step 1: Configure OpenRouter API Key
 
 1. Find your API Key in the [OpenRouter API Key](https://openrouter.ai/keys).
-2. Set the OpenRouter API Key in the `~jan/settings/@janhq/inference-openai-extension/settings.json` file.
+. Copy your OpenAI Key and the endpoint URL you want to use.
+3. Navigate to the **Jan app** > **Settings**.
+4. Select the **OpenAI Inference Engine**.
+5. Insert the **API Key** and the **endpoint URL** into their respective fields.
+<br/>
+![Server Setup](../_assets/server-openai.gif)
 
 ### Step 2: Model Configuration
 
@@ -68,14 +73,16 @@ To connect Jan with OpenRouter for accessing remote Large Language Models (LLMs)
 ```
 
 <Callout type='info'>
-  For more details regarding the `model.json` settings and parameters fields, please see [here](/docs/engines-remote/remote-server-integration#modeljson).
+  For more details regarding the `model.json` settings and parameters fields, please see [here](/docs/models).
 </Callout>
 
 ### Step 3: Start the Model
 
 1. Restart Jan and go to the **Hub**.
-2. Find your model and click on the **Use** button.
-
+2. Under the **Model** section, click **Remote**.
+3. Select the OpenRouter model you want to use.
+<br/>
+![Start Model](../_assets/start-router.gif)
 </Steps>
 
 ## Troubleshooting
