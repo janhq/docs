@@ -30,23 +30,17 @@ This guide outlines the process for configuring Jan as a client for both remote 
 <Steps>
 ### Step 1: Configure a Client Connection
 
-1. Navigate to the `~jan/settings/@janhq/inference-openai-extension` folder.
-2. Modify the `settings.json` file.
-
-<Callout type='info'>
-  Please note that currently, the code that supports any OpenAI-compatible endpoint only reads the `engine/openai.json` file. Thus, it will not search any other files in this directory.
-</Callout>
-
-3. Configure `full_url` properties with the endpoint server you want to connect. For example, if you're going to communicate to Jan's API server, you can configure it as follows:
-
-```json ~jan/settings/@janhq/inference-openai-extension/settings.json
-{
-  // "full_url": "https://<server-ip-address>:<port>/v1/chat/completions"
-  "full_url": "https://<server-ip-address>:1337/v1/chat/completions"
-  // Skip api_key if your local server does not require authentication
-  // "api_key": "sk-<your key here>"
-}
+1. Navigate to the **Jan app** > **Settings**.
+2. Select the **OpenAI Inference Engine**.
+3. Insert the **API Key** and the **endpoint URL** into their respective fields. For example, if you're going to communicate to Jan's API server, you can configure it as follows:
+```json
+"full_url": "https://<server-ip-address>:1337/v1/chat/completions"
 ```
+<Callout type='info'>
+  Please note that currently, the code that supports any OpenAI-compatible endpoint only reads the `engine/openai.json` file, which is OpenAI Inference Engines in the extensions page. Thus, it will not search any other files in this directory.
+</Callout>
+<br/>
+![Server Setup](../_assets/server-openai.gif)
 
 ### Step 2: Create a Model JSON
 
@@ -67,9 +61,9 @@ This guide outlines the process for configuring Jan as a client for both remote 
       "url": "https://jan.ai"
     }
   ],
-  "id": "mistral-ins-7b-q4",
+  "id": "mistral-small-latest",
   "object": "model",
-  "name": "Mistral Instruct 7B Q4 on Jan API Server",
+  "name": "Mistral Small",
   "version": "1.0",
   "description": "Jan integration with remote Jan API server",
   "format": "api",
@@ -85,8 +79,11 @@ This guide outlines the process for configuring Jan as a client for both remote 
 
 ### Step 3: Start the Model
 
-1. Restart Jan and navigate to the **Hub**.
-2. Locate your model and click the **Use** button.
+1. Restart Jan and go to the **Hub**.
+2. Under the **Model** section, click **Remote**.
+3. Select the model you want to use.
+<br/>
+![Start Model](../_assets/start-mistral.gif)
 </Steps>
 <Callout type='info'>
   If you have questions or want more preconfigured GGUF models, please join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
