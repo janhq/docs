@@ -13,19 +13,19 @@ const Statistic = () => {
               </p>
             </div>
             <div className="text-center">
-              <h1 className="text-4xl font-bold">39+</h1>
+              <h1 className="text-4xl font-bold">46+</h1>
               <p className="font-medium text-black/60 dark:text-white/60">
                 Contributors
               </p>
             </div>
             <div className="text-center">
-              <h1 className="text-4xl font-bold">2706+</h1>
+              <h1 className="text-4xl font-bold">2800+</h1>
               <p className="font-medium text-black/60 dark:text-white/60">
                 Pull Requests
               </p>
             </div>
             <div className="text-center">
-              <h1 className="text-4xl font-bold">700K+</h1>
+              <h1 className="text-4xl font-bold">800K+</h1>
               <p className="font-medium text-black/60 dark:text-white/60">
                 Downloads
               </p>
