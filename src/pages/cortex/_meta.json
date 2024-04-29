@@ -1,0 +1,16 @@
+{
+  "-- Switcher": {
+    "type": "separator",
+    "title": "Switcher"
+  },
+  "get-started": {
+    "title": "GET STARTED",
+    "type": "separator"
+  },
+  "index": { "title": "Overview", "href": "/cortex" },
+  "inference-engines": {
+    "title": "INFERENCE ENGINES",
+    "type": "separator"
+  },
+  "built-in": "Built-in Engines"
+}
