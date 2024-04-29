@@ -9,18 +9,21 @@
     "display": "hidden"
   },
   "team": "Team",
+  "investors": "Investors",
   "wall-of-love": {
     "theme": {
       "toc": false,
       "layout": "full"
     }
   },
-  "acknowledgements": "",
+  "acknowledgements": {
+    "display": "hidden"
+  },
   "handbook-separator": {
     "title": "Handbook",
     "type": "separator"
   },
-  "how-we-work": {},
+  "handbook": {},
   "faq-separator": {
     "title": "Frequently Asked Questions",
     "type": "separator"
