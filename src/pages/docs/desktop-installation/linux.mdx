@@ -38,10 +38,19 @@ To enable GPU support, you will need:
 
 ## Stable Releases
 
-To download stable releases, go to [Jan](https://jan.ai/) > select **Download for Linux**. You can also install Jan using the following command:
+To download stable releases:
+1. Go to [Jan](https://jan.ai/).
+2. Click the **Download** tab.
+<br/>
+![Linux Installation](../_assets/download.png)
+<br/>
+3. Under the **Linux** section, click the preferred file you want to download.
+<br/>
+![Linux Installation](../_assets/linux.png)
+### Install Command
+You can also install Jan using the following command:
 <Tabs items = {[ 'dpkg', 'apt-get', 'AppImage']}>
     <Tabs.Tab>
-        To install Jan, run the following command:
 
         ```sh
         # Install Jan using dpkg
@@ -49,7 +58,6 @@ To download stable releases, go to [Jan](https://jan.ai/) > select **Download fo
         ```
     </Tabs.Tab>
     <Tabs.Tab>
-        To install Jan, run the following command:
 
         ```sh
         # Install Jan using apt-get
@@ -58,7 +66,6 @@ To download stable releases, go to [Jan](https://jan.ai/) > select **Download fo
         ```
     </Tabs.Tab>
     <Tabs.Tab>
-        To install Jan, run the following command:
 
         ```sh
         # Install Jan using AppImage
@@ -86,3 +93,5 @@ Once Jan is installed and you have a GPU, you can configure your GPU to accelera
 1. Open Jan application.
 2. Go to **Settings** -> **Advanced Settings** -> **Accelerator** -> Enable and choose the GPU you want.
 3. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
+<br/>
+![Enable GPU](../_assets/gpu.gif)

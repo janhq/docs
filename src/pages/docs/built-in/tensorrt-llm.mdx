@@ -25,10 +25,6 @@ import { Callout, Steps } from 'nextra/components'
 
 ## Overview
 
-Users with Nvidia GPUs can get **20-40% faster token generation speeds** than `llama.cpp` engine on their laptop or desktops by using [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM). The more significant implication is that you are running FP16, which is more accurate than quantized models.
-
-## TensortRT-LLM
-
 This guide walks you through installing Jan's official [TensorRT-LLM Extension](https://github.com/janhq/nitro-tensorrt-llm). This extension uses [Nitro-TensorRT-LLM](https://github.com/janhq/nitro-tensorrt-llm) as the AI engine, instead of the default [Nitro-Llama-CPP](https://github.com/janhq/nitro).  It includes an efficient C++ server that executes the [TRT-LLM C++ runtime](https://nvidia.github.io/TensorRT-LLM/gpt_runtime.html) natively. It also includes features and performance improvements like OpenAI compatibility, tokenizer improvements, and queues.
 
 <Callout type='warning' emoji="">
@@ -55,7 +51,10 @@ This guide walks you through installing Jan's official [TensorRT-LLM Extension](
 ### Step 1: Install TensorRT-Extension
 
 1. Go to **Settings** > **Extensions**.
-2. Click **Install** next to the TensorRT-LLM Extension.
+2. Select the TensorRT-LLM Extension and click the **Install** button.
+<br/>
+![Install Extension](../_assets/install-tensor.gif)
+<br/>
 3. Check that files are correctly downloaded.
 
 ```bash
@@ -85,25 +84,13 @@ We offer a handful of precompiled models for Ampere and Ada cards that you can i
 
 ### Step 3: Configure Settings
 
-You can customize the default parameters for how Jan runs TensorRT-LLM.
+1. Navigate to the Thread section.
+2. Select the model that you have downloaded.
+3. Customize the default parameters of the model for how Jan runs TensorRT-LLM.
+<Callout type='info'>
+  Please see [here](/docs/models/model-parameters) for more detailed model parameters.
+</Callout>
+<br/>
+![Configure Model](../_assets/set-tensor.gif)
 
 </Steps>
-
-## Troubleshooting
-
-### Incompatible Extension vs Engine versions
-
-For now, the model versions are pinned to the extension versions.
-
-### Uninstall Extension
-
-To uninstall the extension, follow the steps below:
-
-1. Quit the app.
-2. Go to **Settings** > **Extensions**.
-3. Delete the entire Extensions folder.
-4. Reopen the app. Only the default extensions should be restored.
-
-### Install Nitro-TensorRT-LLM Manually
-
-You can reference the source code to manually build the artifacts needed to run the server and TensorRT-LLM. [Read here](https://github.com/janhq/nitro-tensorrt-llm?tab=readme-ov-file#quickstart).

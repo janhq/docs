@@ -32,14 +32,16 @@ Before proceeding, ensure you have the following:
 
 ### Step 1: Configure Mistral API Key
 
-1. Obtain Mistral API Key from your [Mistral](https://console.mistral.ai/user/api-keys/) dashboard.
+1. Obtain the Mistral API Key from your [Mistral](https://console.mistral.ai/user/api-keys/) dashboard.
 2. Copy your Mistral API Key and the endpoint URL you want.
 3. Navigate to the **Jan app** > **Settings**.
 4. Select the **MistralAI Inference Engine**.
 5. Insert the **API Key** and the **endpoint URL** into their respective fields.
+<br/>
+![Start Server](../_assets/server-mistral.gif)
 
 <Callout type='info'>
-  - You can also manually edit the JSON file in `~/jan/settings/@janhq`.
+  - You can also manually edit the JSON file in `~/jan/engines`.
   - Mistral AI offers various endpoints. Refer to their [endpoint documentation](https://docs.mistral.ai/platform/endpoints/) to select the one that fits your requirements.
 </Callout>
 
@@ -47,6 +49,7 @@ Before proceeding, ensure you have the following:
 
 1. Navigate to the **Hub** section.
 2. Ensure you have downloaded the Mistral model you want to use.
+![Select Model](../_assets/model-mistral.gif)
 
 <Callout type='info'>
   The MistralAI Inference Engine is the default extension for the Jan application. All Mistral models should be installed automatically when you install the Jan application.
@@ -55,8 +58,11 @@ Before proceeding, ensure you have the following:
 ### Step 3: Start the Model
 
 1. Navigate to the **Thread** section.
-2. Under the **Model** section, select the Mistral model you want to use.
+2. Under the **Model** section, click **Remote**.
+3. Select the Mistral model you want to use.
 3. Start the conversation with the Mistral API.
+<br/>
+![Start Model](../_assets/start-mistral.gif)
 
 </Steps>
 
