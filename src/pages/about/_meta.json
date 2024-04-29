@@ -4,13 +4,11 @@
     "type": "separator"
   },
   "index": "About",
-  "vision": "Vision",
-  "how-we-work": {},
-  "teams": {
-    "title": "Who we are",
+  "vision": {
+    "title": "Vision",
     "display": "hidden"
   },
-  "community": "Community Links",
+  "team": "Team",
   "wall-of-love": {
     "theme": {
       "toc": false,
@@ -18,6 +16,11 @@
     }
   },
   "acknowledgements": "",
+  "handbook-separator": {
+    "title": "Handbook",
+    "type": "separator"
+  },
+  "how-we-work": {},
   "faq-separator": {
     "title": "Frequently Asked Questions",
     "type": "separator"
