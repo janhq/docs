@@ -68,7 +68,8 @@ This guide walks you through customizing your engine settings by configuring the
       - Select a model size suited to your Windows hardware by looking for the `Recommended RAM` tag in the Hub.
       
       <Callout type="info">
-        It will use CPU by default if you do not have any GPU/ NPU.
+        - It will use CPU by default if you do not have any GPU/ NPU.
+        - Ensure that you have also installed the correct CPU instruction. Please see [here](/cortex/built-in/llama-cpp) on installing the correct CPU instruction.
       </Callout>
       
       
@@ -78,35 +79,11 @@ This guide walks you through customizing your engine settings by configuring the
         - Select a model size suited to your Linux hardware based on the `Recommended` tag for `RAM` in the Hub.
 
       <Callout type="info">
-        It will use CPU by default if you do not have any GPU/ NPU.
+        - It will use CPU by default if you do not have any GPU/ NPU.
+        - Ensure that you have also installed the correct CPU instruction. Please see [here](/cortex/built-in/llama-cpp) on installing the correct CPU instruction.
       </Callout>
 
     </Tabs.Tab>
-</Tabs>
-### CPU Instruction
-The prebuilt Nitro with the llama.cpp inference engine requires running with the correct CPU instruction. AVX2 is the standard CPU instruction set in Jan, commonly used in newer Intel and AMD processors. However, older CPUs that support AVX or AVX-512 may require customization of the default CPU instruction.
-<Callout type="info">
-    The CPU instruction configuration is only applicable to the Windows and Linux versions.
-</Callout>
-<Tabs items={['AVX', 'AVX-512']}>
-  <Tabs.Tab >
-    To Update CPU Instructions for Jan Applications Using AVX, follow these steps:
-    1. Check what your CPU uses for processing. For AVX, please see the list of CPUs [here](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX).
-    2. Navigate to your Jan Data folder, which is usually found at `C:/Users/<name>/jan`(Windows) or `~/jan`(Linux)
-    3. Download the appropriate Nitro version based on your CPU, GPU, and system specifications from [here](https://github.com/janhq/nitro/releases/tag/v0.3.15).
-    4. Unzip the downloaded Nitro file.
-    5. Move the new Nitro files to the correct location in your Jan folder. Make sure it's not nested in another folder.
-    6. Restart the Jan app.
-  </Tabs.Tab>
-  <Tabs.Tab >
-    To Update CPU Instructions for Jan Applications Using AVX-512, follow these steps:
-    1. Check what your CPU uses for processing. For AVX-512, please see the list of CPUs [here](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX-512).
-    2. Navigate to your Jan Data folder, which is usually found at `C:/Users/<name>/jan`(Windows) or `~/jan`(Linux)
-    3. Download the appropriate Nitro version based on your CPU, GPU, and system specifications from [here](https://github.com/janhq/nitro/releases/tag/v0.3.15).
-    4. Unzip the downloaded Nitro file.
-    5. Move the new Nitro files to the correct location in your Jan folder. Make sure it's not nested in another folder.
-    6. Restart the Jan app.
-  </Tabs.Tab>
 </Tabs>
 
 ### GPU Acceleration Options

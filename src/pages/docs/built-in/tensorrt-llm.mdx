@@ -25,10 +25,6 @@ import { Callout, Steps } from 'nextra/components'
 
 ## Overview
 
-Users with Nvidia GPUs can get **20-40% faster token generation speeds** than `llama.cpp` engine on their laptop or desktops by using [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM). The more significant implication is that you are running FP16, which is more accurate than quantized models.
-
-## TensortRT-LLM
-
 This guide walks you through installing Jan's official [TensorRT-LLM Extension](https://github.com/janhq/nitro-tensorrt-llm). This extension uses [Nitro-TensorRT-LLM](https://github.com/janhq/nitro-tensorrt-llm) as the AI engine, instead of the default [Nitro-Llama-CPP](https://github.com/janhq/nitro).  It includes an efficient C++ server that executes the [TRT-LLM C++ runtime](https://nvidia.github.io/TensorRT-LLM/gpt_runtime.html) natively. It also includes features and performance improvements like OpenAI compatibility, tokenizer improvements, and queues.
 
 <Callout type='warning' emoji="">
@@ -98,39 +94,3 @@ We offer a handful of precompiled models for Ampere and Ada cards that you can i
 ![Configure Model](../_assets/set-tensor.gif)
 
 </Steps>
-
-## Disable Extension
-
-To disable the extension, follow the steps below:
-
-1. Navigate to the **Settings** > **Advanced Settings**.
-2. On the **Jan Data Folder** click the **folder icon (📂)** to access the data folder.
-3. Navigate to the `~/jan/extensions` folder.
-4. Open the `extensions.json` and change the `_active` value of the TensorRT-LLM to `false`
-5. Restart the app to see that the TensorRT-LLM settings page has been removed.
-<br/>
-![Disable Extension](../_assets/disable-tensor.gif)
-
-
-## Uninstall Extension
-
-To uninstall the extension, follow the steps below:
-
-1. Quit the app.
-2. Navigate to the **Settings** > **Advanced Settings**.
-3. On the **Jan Data Folder** click the **folder icon (📂)** to access the data folder.
-4. Navigate to the `~/jan/extensions/@janhq` folder.
-5. Delete the **tensorrt-llm-extension** folder.
-4. Reopen the app.
-<br/>
-![Delete Extension](../_assets/delete-tensor.gif)
-
-## Troubleshooting
-
-### Incompatible Extension vs Engine versions
-
-For now, the model versions are pinned to the extension versions.
-
-### Install Nitro-TensorRT-LLM Manually
-
-You can reference the source code to manually build the artifacts needed to run the server and TensorRT-LLM. [Read here](https://github.com/janhq/nitro-tensorrt-llm?tab=readme-ov-file#quickstart).
