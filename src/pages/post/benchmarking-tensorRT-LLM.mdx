@@ -1,16 +1,16 @@
 ---
-title: Benchmarking with NVIDIA TensorRT-LLM and llama.cpp
-description: This post compares the performance of TensorRT-LLM and llama.cpp on Nvidia GPUs, highlighting the trade-offs between speed and resource usage.
-tags: Nvidia, TensorRT-LLM, llama.cpp, 3090, 4090, "inference engine"
+title: Benchmarking NVIDIA TensorRT-LLM
+description: This post compares the performance of TensorRT-LLM and llama.cpp on consumer NVIDIA GPUs, highlighting the trade-offs among speed, resource usage, and convenience.
+tags: Nvidia, TensorRT-LLM, llama.cpp, rtx3090, rtx4090, "inference engine"
 categories: research
 ogImage: assets/images/general/og-throughput-benchmark.png
-date: 2024-04-23
+date: 2024-04-29
 ---
 
 import { Callout } from 'nextra/components'
 import CTABlog from '@/components/Blog/CTA'
 
-# Benchmarking with NVIDIA TensorRT-LLM and llama.cpp
+# Benchmarking NVIDIA TensorRT-LLM
 
 Jan now supports NVIDIA TensorRT-LLM in addition to llama.cpp, making the backend multi-engine and performant for users with Nvidia GPUs.
 
@@ -298,6 +298,9 @@ Mistral 7b int4 was actually **25% smaller** in TensorRT-LLM, at 3.05gb vs. 4.06
 
 Our benchmarking is not perfect. We evaluated over a dozen tools (llmperf, psutil, gpustat, native utilities, and more) and found that everyone measured TPS, common metrics differently. We eventually settled on using our own tools in Jan, which are consistent across any inference engine. As for runtime parameters, we went with default settings, likely representing the typical user experience.
 
+Raw data results from the latest test run:
+https://drive.google.com/file/d/1rDwd8XD8erKt0EgIKqOBidv8LsCO6lef/view?usp=sharing.
+
 <Callout type="info" >
   **Pro Tip:** We found an additional **15% increase in performance** with TensorRT-LLM by:
 - Enabling [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html)
@@ -306,7 +309,8 @@ Our benchmarking is not perfect. We evaluated over a dozen tools (llmperf, psuti
 Note, this benchmark was not conducted with overclocking, as it is not a default setting for most users. But it's awesome that TensorRT-LLM can go even faster with these tweaks.
 </Callout>
 
-Raw data results from the latest test run:
-https://drive.google.com/file/d/1rDwd8XD8erKt0EgIKqOBidv8LsCO6lef/view?usp=sharing.
+Finally, many thanks to the NVIDIA team who helped with this, including Asli Sabanci Demiroz, Annamalai Chockalingam, Jordan Dodge. 
+
+And thanks to Georgi Gerganov for creating llama.cpp and the quick fact check.
 
 <CTABlog />
