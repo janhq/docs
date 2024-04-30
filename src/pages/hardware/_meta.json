@@ -7,6 +7,5 @@
     "title": "GET STARTED",
     "type": "separator"
   },
-  "index": { "title": "Overview", "href": "/hardware" },
-  "ai-computer": "What Makes Thinking Machine"
+  "index": { "title": "Overview", "href": "/hardware" }
 }
