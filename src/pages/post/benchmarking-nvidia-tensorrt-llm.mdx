@@ -38,8 +38,6 @@ TensorRT-LLM was:
 - **Less convenient** as models have to be compiled for a specific OS and GPU architecture, vs. llama.cpp's "Compile once, run everywhere" portability
 - **Less accessible** as it does not support older-generation NVIDIA GPUs
 
-We are also making the [raw experimental data](https://drive.google.com/file/d/1rDwd8XD8erKt0EgIKqOBidv8LsCO6lef/view?usp=sharing) public.
-
 ## Why TensorRT-LLM?
 
 [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM) is Nvidia's open-source inference library that incorporates Nvidia's proprietary optimizations beyond the open-source [cuBLAS](https://developer.nvidia.com/cublas) library. 
@@ -309,14 +307,10 @@ Mistral 7b int4 was actually **25% smaller** in TensorRT-LLM, at 3.05gb vs. 4.06
 ### Accessibility
 - Llama.cpp unsurprisingly beats TensorRT-LLM in terms of accessibility
 - TensorRT-LLM does not support older NVIDIA GPUs and won’t work well on smaller VRAM cards (e.g. 2-4gb VRAM)
-- Llama.cpp provides better ROI price-wise but hits a performance asymptote, by which you’d then need to switch to TensorRT-LLM
 
 ## Final Notes
 
 Our benchmarking is not perfect. We evaluated over a dozen tools ([llmperf](https://github.com/ray-project/llmperf), [psutil](https://pypi.org/project/psutil/), [gpustat](https://github.com/wookayin/gpustat), native utilities, and more) and found that everyone measures TPS, common metrics differently. We eventually settled on using our own tools in Jan, which are consistent across any inference engine and hardware. As for runtime parameters, we went with default settings, likely representing the typical user experience.
-
-Raw data results from the latest test run:
-https://drive.google.com/file/d/1rDwd8XD8erKt0EgIKqOBidv8LsCO6lef/view?usp=sharing.
 
 We also did not overclock for this benchmark , as it is not a default setting for most users. But we've measured in our tests that TensorRT-LLM can go even faster with a few tweaks. We see this as a pretty exciting future direction. 
 
@@ -325,6 +319,8 @@ We also did not overclock for this benchmark , as it is not a default setting fo
 - Enabling [XMP](https://www.intel.com/content/www/us/en/gaming/extreme-memory-profile-xmp.html)
 - Overclocking RAM bus speed in BIOS from `3600` to `5600`. 
 </Callout>
+
+We're also publishing the underlying [raw experimental data](https://drive.google.com/file/d/1rDwd8XD8erKt0EgIKqOBidv8LsCO6lef/view?usp=sharing), and would encourage the community to scrutinize and help us improve.
 
 Special thanks to Asli Sabanci Demiroz, Annamalai Chockalingam, Jordan Dodge from Nvidia, and Georgi Gerganov from llama.cpp for feedback, review and suggestions. 
 
