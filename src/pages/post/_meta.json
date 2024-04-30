@@ -20,9 +20,5 @@
     "title": "Research",
     "display": "normal",
     "href": "/blog?category=research"
-  },
-  "benchmarking-tensorrt-llm": {
-    "title": "Benchmarking NVIDIA TensorRT-LLM",
-    "href": "/post/benchmarking-tensorrt-llm"
   }
 }
