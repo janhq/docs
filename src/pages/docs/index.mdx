@@ -21,353 +21,42 @@ import { Callout } from 'nextra/components'
 
 # Jan
 
-Turns your computer or server into an self-hosted ChatGPT alternative, complete with a OpenAI-equivalent API. 
-- Runs Local AI or connects to Remote APIs
-- Download and run popular open-source models, fully offline
-- Local API Server
+![Jan's Cover Image](./_assets/jan-display.png)
 
-Software that you own
-- [ ] Take inspiration from Twenty's writeup: https://twenty.com/story. 
-  - Jan is AGPLv3 licensed. You own, not rent the software
-  - You get the simplicity of SaaS, with the freedom and cost savings of Open Source
-- Features 
-  - Thriving Community
-    - Welcoming community of hundreds of developers that share expertise and support
-  - Open Roadmap
-    - Missing a feature? Start a discussion, report an issue, contribute code or fork the repo
-  - Secure by Design
-    - Benefit from the collective oversight of a global community that quickly identifies and resolves issues
+Jan is a ChatGPT-alternative that runs 100% offline on your [Desktop](/docs/desktop-installation) (or [Server](/docs/server-installation)). Our goal is to make it easy for a layperson[^1] to download and run LLMs, and use AI with full control and [privacy](https://www.reuters.com/legal/legalindustry/privacy-paradox-with-ai-2023-10-31/).
 
-Jan is an open-source, self-hosted alternative to OpenAI's platform. It allows you to build, run, and fine-tune (coming soon) on your own desktop or server. Featuring a local API server that mirrors OpenAI's, Jan operates directly from your device (localhost:1337), enabling immediate access to AI capabilities with complete control over your data.
+Jan is powered by [Cortex](/cortex/docs), our embeddable local AI engine. 
 
-To use Jan, please refer to the quick start guide [here](https://jan.ai/docs/quickstart).
+<Callout>
+**OpenAI-equivalent API:** Jan runs a Cortex Server in the background, which provides an OpenAI-equivalent API at https://localhost:1337. 
 
-## Why Jan?
-
-We believe in the need for an open source AI ecosystem.
-
-We're focused on building infra, tooling and [custom models](https://huggingface.co/janhq) to allow open source AIs to compete on a level playing field with proprietary offerings.
-
-Read more about our mission and culture [here](/about).
-
-### 💻 Self-hosted AI
-
-Jan runs 100% on your own machine, predictably, privately and offline. No one else can see your conversations, not even us.
-
-### 🏗️ Extensions
-
-Jan ships with a local-first, AI-native, and cross platform [extensions framework](/developer/build-extension). Developers can extend and customize everything from functionality to UI to branding. In fact, Jan's current main features are actually built as extensions on top of this framework.
-
-### 🗂️ Open File Formats
-
-Jan stores data in your [local filesystem](/developer/file-based). Your data never leaves your computer. You are free to delete, export, migrate your data, even to a different platform.
-
-### 🌍 Open Source
-
-Both Jan and [Nitro](https://nitro.jan.ai), our lightweight inference engine, are licensed via the open source [AGPLv3 license](https://github.com/janhq/jan/blob/main/LICENSE).
-
-## Features
-
-```markdown
-# Legacy
-- Compatible with [open-source models](/guides/using-models) (GGUF via [llama.cpp](https://github.com/ggerganov/llama.cpp), TensorRT via [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM), and [remote APIs](https://platform.openai.com/docs/api-reference))
-- Compatible with most OSes: [Windows](/install/windows/), [Mac](/install/mac), [Linux](/install/linux), with GPU acceleration through [llama.cpp](https://github.com/ggerganov/llama.cpp)
-- Stores data in [open file formats](/developer/file-based)
-- Local API [server mode](/guides/using-server)
-- Customizable via [extensions](/developer/build-extension)
-- And more in the [roadmap](https://github.com/orgs/janhq/projects/5/views/16). Join us on [Discord](https://discord.gg/5rQ2zTv3be) and tell us what you want to see!
-```
-
-## Design Principles
-
-- [ ] Website's Principles Section
-
-```markdown
-
-
-
-```
-
-## Architecture
-
-## Roadmap
-
-## Quick Guides
-
-- **[Models](/docs/models):** Manage and deploy AI models effectively.
-- **[Threads](/docs/threads):** Handle multiple operations and tasks with ease.
-- **[Local Server](/docs/local-api):** Utilize Jan's OpenAI-Equivalent API for your applications.
-- **[Advanced Settings](/docs/settings):** Navigate through Jan's advanced settings for optimal customization.
-- **[Extensions](/docs/extensions):** Expand Jan's capabilities with multi-inferences and specific settings for each extension.
-- **[Integrations](/integrations):** Integrate Jan with key tools and platforms to enhance your development environment.
-
-
-
-## Legacy: About Page
-
-Jan is a [open-source](https://en.wikipedia.org/wiki/Open_source), [local-first](https://www.inkandswitch.com/local-first/) tool to [create, customize and use AI](https://www.gatesnotes.com/AI-agents) for everyday tasks. 
-
-You can: 
-- Run locally using [open-source LLMs](https://huggingface.co/models?pipeline_tag=text-generation) or connect to cloud AIs like [ChatGPT](https://openai.com/blog/openai-api) or [Google](https://ai.google.dev/)
-- Fine-tune AI with specific knowledge
-- Search the web and other databases
-- Connect AI to your everyday tools and (with your permission) do work on your behalf
-
-Longer-term, Jan is building a cognitive framework for future robots. We envision a world where we have personal or company robots that we continually improve and customize, growing together with us. 
-
-![Human repairing a Droid](/img/star-wars-droids.png)
-
-### Why do we exist
-
-At Jan, our mission is to advance human-machine collaboration. We achieve this through delivering the best open-source, local-first tools to allow users to run, customize and tinker with AI. 
-
-### What's different about it?
-
-|                                                            | Status Quo                                                                 | Jan                                                                                                                           |
-| ---------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Ownership                                                  | AI Monopolies owned by Big Tech                                            | AI that you own and control                                                                                                   |
-| Openness?                                                  | Closed-source                                                              | [Open-source (AGPLv3)](https://github.com/janhq/jan/blob/main/LICENSE)                                                        |
-| Your role                                                  | Consume                                                                    | Create, Tinker and Customize                                                                                                  |
-| Approach                                                   | Cloud                                                                      | [Local-first](https://www.inkandswitch.com/local-first/), running 100% on your computer                                       |
-| Data                                                       | Data stored on their servers                                               | Data stored in your local filesystem in open, non-proprietary file formats                                                    |
-| Privacy                                                    | Privacy?                                                                   | Runs 100% on your own machine, predictably, privately and offline                                                             |
-| Transparency                                               | "Black Box"                                                                | Runs predictability with code available to tinker and customize                                                               |
-| What happens if there's an outage or goes out of business? | Your life's work held hostage in the cloud in proprietary data formats[^1] | Continues to run 100% on your computer, your data is safe in your local folder                                                |
-| Driving Philosophy                                         | Monetize your users                                                        | [Privacy as a human right](https://en.wikipedia.org/wiki/Right_to_privacy) and the [Right to Repair](https://www.repair.org/) |
-
-### How do I get it?
-
-You can install and start using Jan in less than 5 minutes, from [jan.ai](https://jan.ai) or our [Github repo](https://github.com/janhq/jan). 
-
-You can read the [User Guide](/docs/user-guide) if you need some help to get started. 
-
-### What license is the code under?
-
-Jan is licensed under the [AGPLv3 License](https://github.com/janhq/jan/blob/main/LICENSE). 
-
-We happily accept pull requests, however we do ask that you sign a [Contributor License Agreement](https://en.wikipedia.org/wiki/Contributor_License_Agreement) so that we have the right to relicense your contributions[^2]. 
-
-We also have a [Contributor Program](/docs/team/contributor-program) to provide ownership and upside to contributors who have made significant contributions to the project.
-
-### What was it built with?
-
-Jan is pragmatically built using Javascript at the application level, and C++ at the Inference level (which we have refactored into [Nitro](https://nitro.jan.ai)). We use [Electron](https://www.electronjs.org/) to build the desktop client. 
-
-We have made similar choices to the [Next.js Enterprise Javascript Stack](https://vercel.com/templates/next.js/nextjs-enterprise-boilerplate), which is a [battle-tested](https://nextjs.org/showcase/enterprise) framework for building enterprise-grade applications.
-
-### Contact
-
-Drop us a message in our [Discord](https://discord.gg/af6SaTdzpx) and we'll get back to you.
-
-- `#general`: for general discussion
-- `#get-help`: for bug reports and troubleshooting
-- `#roadmap`: for feature requests and ideas
-
-### Footnotes
-
-[^1]: Credit to Obsidian's original website
-[^2]: Credit to [Discourse's About Page](https://www.discourse.org/about)
-
-
-## Legacy: About Page
-
-he following low-level docs are aimed at core contributors.
-
-We cover how to contribute to the core framework (aka the `Core SDK`).
-
-:::tip
-If you are interested to **build on top of the framework**, like creating assistants or adding app level extensions, please refer to [developer docs](/developer) instead.
-:::
-
-### Jan Framework
-
-At its core, Jan is a **cross-platform, local-first and AI native framework** that can be used to build anything.
-
-#### Extensions
-
-Ultimately, we aim for a `VSCode` or `Obsidian` like SDK that allows **devs to build and customize complex and ethical AI applications for any use case**, in less than 30 minutes.
-
-In fact, the current Jan [Desktop Client](https://jan.ai/) is actually just a specific set of extensions & integrations built on top of this framework.
-
-:::tip
-We encourage devs to fork, customize, and open source your improvements for the greater community.
-:::
-
-#### Cross Platform
-
-Jan follows [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) to the best of our ability. Though leaky abstractions remain (we're a fast moving, open source codebase), we do our best to build an SDK that allows devs to **build once, deploy everywhere.**
-
-**Supported Runtimes:**
-
-- `Node Native Runtime`, good for server side apps
-- `Electron Chromium`, good for Desktop Native apps
-- `Capacitor`, good for Mobile apps (planned, not built yet)
-- `Python Runtime`, good for MLOps workflows (planned, not built yet)
-
-**Supported OS & Architectures:**
-
-- Mac Intel & Silicon
-- Windows
-- Linux (through AppImage)
-- Nvidia GPUs
-- AMD ROCm (coming soon)
-
-Read more:
-
-- [Code Entrypoint](https://github.com/janhq/jan/tree/main/core)
-- [Dependency Inversion](https://en.wikipedia.org/wiki/Dependency_inversion_principle)
-
-#### Local First
-
-Jan's data persistence happens on the user's local filesystem.
-
-We implemented abstractions on top of `fs` and other core modules in an opinionated way, s.t. user data is saved in a folder-based framework that lets users easily package, export, and manage their data.
-
-Future endeavors on this front include cross device syncing, multi user experience, and more.
-
-Long term, we want to integrate with folks working on [CRDTs](https://www.inkandswitch.com/local-first/), e.g. [Socket Runtime](https://www.theregister.com/2023/04/11/socket_runtime/) to deeply enable local-first software.
-
-Read more:
-
-- [Folder-based wrappers entrypoint](https://github.com/janhq/jan/blob/main/core/src/fs.ts)
-- [Piping Node modules across infrastructures](https://github.com/janhq/jan/tree/main/core/src/node)
-
-:::caution
-Our local first approach at the moment needs a lot of work. Please don't hesitate to refactor as you make your way through the codebase.
-:::
-
-#### AI Native
-
-We believe all software applications can be natively supercharged with AI primitives and embedded AI servers.
-
-Including:
-
-- OpenAI Compatible AI [types](https://github.com/janhq/jan/tree/main/core/src/types) and [core extensions](https://github.com/janhq/jan/tree/main/core/src/extensions) to support common functionality like making an inference call.
-- Multiple inference engines through [extensions, integrations & wrappers](https://github.com/janhq/jan/tree/main/extensions/inference-nitro-extension) _On this, we'd like to appreciate the folks at [llamacpp](https://github.com/ggerganov/llama.cpp) and [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM) for. To which we'll continue to make commits & fixes back upstream._
-
-- [Code Entrypoint](https://github.com/janhq/jan/tree/main/core/src/api)
-
-##### Fun Project Ideas
-
-Beyond the current Jan client and UX, the Core SDK can be used to build many other AI-powered and privacy preserving applications.
-
-- `Game engine`: For AI enabled character games, procedural generation games
-- `Health app`: For a personal healthcare app that improves habits
-- Got ideas? Make a PR into this docs page!
-
-If you are interested to tackle these issues, or have suggestions for integrations and other OSS tools we can use, please hit us up in [Discord](https://discord.gg/5rQ2zTv3be).
-
-:::caution
-Our open source license is copy left, which means we encourage forks to stay open source, and allow core contributors to merge things upstream.
-:::
-
-## Legacy: About Page
-
-
-The following docs are aimed at end users who want to troubleshoot or learn how to use the **Jan Desktop** application better.
-
-:::tip
-If you are interested to build extensions, please refer to [developer docs](/developer) instead (WIP).
-
-If you are interested to contribute to the underlying framework, please refer to [framework docs](/docs) instead.
-:::
-
-### Jan Desktop
-
-The desktop client is a ChatGPT alternative that runs on your own computer, with a [local API server](/guides/using-server).
+You'll be able to use it with [Continue.dev](https://jan.ai/integrations/coding/vscode), [Open Interpreter](https://jan.ai/integrations/function-calling/interpreter), or any OpenAI-compatible app.
+</Callout>
 
 ### Features
 
-- Compatible with [open-source models](/guides/using-models) (GGUF via [llama.cpp](https://github.com/ggerganov/llama.cpp), TensorRT via [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM), and [remote APIs](https://platform.openai.com/docs/api-reference))
-- Compatible with most OSes: [Windows](/install/windows/), [Mac](/install/mac), [Linux](/install/linux), with GPU acceleration through [llama.cpp](https://github.com/ggerganov/llama.cpp)
-- Stores data in [open file formats](/developer/file-based)
-- Local API [server mode](/guides/using-server)
-- Customizable via [extensions](/developer/build-extension)
-- And more in the [roadmap](https://github.com/orgs/janhq/projects/5/views/16). Join us on [Discord](https://discord.gg/5rQ2zTv3be) and tell us what you want to see!
+- [Model Library](https://jan.ai/docs/models/manage-models#add-models) with popular LLMs like Llama3, Gemma or Mistral
+- Connect to [Remote AI APIs](https://jan.ai/docs/remote-inference/openai) like Groq and OpenRouter
+- [Local API Server](https://jan.ai/api-reference) with OpenAI-equivalent API
+- [Extensions](https://jan.ai/docs/extensions) for customizing Jan
+
+### Philosophy
+
+Jan is built to be [user-owned](about#-user-owned):
+- Open source via the [AGPLv3 license](https://github.com/janhq/jan/blob/dev/LICENSE)
+- Privacy as default
+- [Local-first](https://www.inkandswitch.com/local-first/) approach to data
+- We do not [collect or sell user data](/privacy)
+
+<Callout>
+  You can read more about our [philosophy](/about#philosophy) here. 
+</Callout>
+
+### Inspirations
+
+Jan's design is inspired by the concepts of [Calm Computing](https://en.wikipedia.org/wiki/Calm_technology), and the Disappearing Computer. 
 
 
-### Models
-Jan lets you run and manage different AI models on your own device. Choose between running AI models locally for privacy, like `Llama` or `Mistral`, or connecting to remote APIs, like `ChatGPT` or `Claude`. This feature supports customizing and optimizing AI to meet the needs of your projects directly, with a focus on maintaining speed and privacy. You can download and import models directly through Jan Hub, making it easy to expand your AI capabilities.
+## Footnotes 
 
-### Threads
-Jan offers a simple and secure way to manage your AI interaction threads directly on your device. Every interaction with AI through Jan is saved as a thread, allowing you to keep a record of your exchanges. Jan provides tools to sort, remove, or review these threads efficiently. This ensures your AI interaction history is easily accessible, kept private, and well-managed.
-
-### Local API Server
-Jan’s local API server acts as a `drop-in replacement for OpenAI's API`, allowing you to run AI models on your own server. This setup offers AI functionality on your local machine, giving you complete control over your data and privacy.
-
-### Inferences
-Jan supports multiple inferences, including `Llama.cpp`, `TensorRT-LLM`, `Mistral API`, `OpenAI API`, `Groq API`, `LM Studio`, `Ollama`, and other `OAI-compatible servers`.
-
-### Extensions
-Jan’s architecture supports a variety of extensions, enabling enhanced functionality and inference options. Each extension is designed to meet specific needs, ensuring that Jan can be tailored to the unique demands of your projects.
-
-### Integrations
-Jan integrates with an array of tools and platforms to streamline your workflow. This includes seamless connections with services like `Discord`, `Open Interpreter`, `Raycast`, and `OpenRouter`. 
-
-### Assistants (Coming soon)
-Jan will soon enable the creation of AI assistants for task automation and response generation. These assistants will be customizable, allowing for various interactions, from simple commands to complex conversations.
-
-
-
-## Old About Page
-
-
-### Open Source
-
-We believe that the future of AI should be built on open-source foundations. Jan and Cortex are copy-left (AGPLv3).
-
-We build on the shoulders of open source giants: [llama.cpp](https://jan.ai/docs/local-inference/llamacpp), [tensorrt-llm](https://jan.ai/docs/local-inference/tensorrtllm).
-
-### Local & Private
-
-By default, Jan runs AI locally on your device. Your data, models, and training dataset are stored on your local filesystem. No data leaves your computer. You own the underlying data, models & infrastructure.
-
-### Build in Public
-
-We openly share our roadmap, metrics, and strategy.
-
-- [Jan's Kanban](https://github.com/orgs/janhq/projects/5)
-- [Jan's Roadmap](https://github.com/orgs/janhq/projects/5/views/29)
-- [Engineering Discussions (Discord)](https://discord.gg/AAGQNpJQtH)
-
-### Sustainable
-
-Jan is currently a bootstrapped startup. We balance technical invention with the search for a sustainable business model, by creating real value for our community.
-
-We welcome business inquiries: hello@jan.ai
-
-## Comparisons
-
-> "I do not fear computers. I fear the lack of them." - Isaac Asimov
-
-Jan was founded on the belief that AI should coexist with humans, not replace them.
-
-We are committed to creating open, local-first products that give back human control, reject dark patterns & ecosystem lock-ins, while providing a comprehensive solution for advanced applications.
-
-|                   | Alternatives                       | Jan                                           |
-| ----------------- | ---------------------------------- | --------------------------------------------- |
-| Privacy           | Questionable                       | Private, with enhanced data protection        |
-| Transparency      | Closed source                      | Open source, and customizable                 |
-| Ownership         | Give away your IP                  | You own the AI (the IP)                       |
-| Standardization   | Custom APIs                        | 100% OpenAI Compatible                        |
-| Customization     | Infrastructure lock-in             | Plug & play                                   |
-| Hosting           | Monthly cloud bills                | Self-hosted                                   |
-| Data              | Cloud-based                        | Local filesystem based, with database options |
-| Outage Resilience | Potential hostage & API throttling | Works offline                                 |
-
-Read more on our vision [here](https://jan.ai/about/vision).
-
-
-```
-|                                                            | Thinking Machines                                                                                                     | Status Quo                                                                 |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| Ownership                                                  | Give users ownership and control                                                                                                  | AI Monopolies owned by Big Tech                                            |
-| Openness?                                                  | Open Source [(Copyleft)](https://en.wikipedia.org/wiki/Copyleft#:~:text=Copyleft%20is%20the%20legal%20technique,be%20preserved%20in%20derivative%20works.)                                                        | Closed-source                                                              |
-| Your role                                                  | Encourage users to Create, Tinker and Customize                                                                                                  | Consume                                                                    |
-| Approach                                                   | [Local-first](https://www.inkandswitch.com/local-first/), running 100% on your computer                                       | Cloud                                                                      |
-| Data                                                       | Data stored in your local filesystem in open, non-proprietary file formats                                                    | Data stored on their servers                                               |
-| Privacy                                                    | Runs 100% on your own machine, predictably, privately and offline                                                             | Privacy?                                                                   |
-| Transparency                                               | Runs predictability with code available to tinker and customize                                                               | "Black Box"                                                                |
-| What happens if there's an outage or goes out of business? | Continues to run 100% on your computer, your data is safe in your local folder                                                | Your life's work held hostage in the cloud in proprietary data formats[^1] |
-| Driving Philosophy                                         | [Privacy as a human right](https://en.wikipedia.org/wiki/Right_to_privacy) and the [Right to Repair](https://www.repair.org/) | Monetize your users                                                        |
-```
+[^1]: Our definition of "Non-technical" == don't need to know how to use Command Line

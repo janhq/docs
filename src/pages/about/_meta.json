@@ -21,12 +21,19 @@
   },
   "handbook-separator": {
     "title": "Handbook",
-    "type": "separator"
+    "type": "separator",
+    "display": "hidden"
   },
-  "handbook": {},
+  "handbook": {
+    "display": "hidden"
+  },
   "faq-separator": {
     "title": "Frequently Asked Questions",
-    "type": "separator"
+    "type": "separator",
+    "display": "hidden"
   },
-  "faq": "FAQ"
+  "faq": {
+    "title": "FAQ",
+    "display": "hidden"
+  }
 }
