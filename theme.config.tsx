@@ -3,9 +3,9 @@ import { useConfig, DocsThemeConfig } from 'nextra-theme-docs'
 import LogoMark from '@/components/LogoMark'
 import FooterMenu from '@/components/FooterMenu'
 import JSONLD from '@/components/JSONLD'
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { FileCode, LibraryBig, BrainCircuit, Computer, Blocks } from "lucide-react";
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { LibraryBig, Blocks, BrainCircuit, Computer } from 'lucide-react'
 
 const defaultUrl = 'https://jan.ai'
 const defaultImage = 'https://jan.ai/assets/images/general/og-image.png'
@@ -46,25 +46,14 @@ const config: DocsThemeConfig = {
       openGraph: {
         type: 'website',
         url: defaultUrl,
-        images: [
-          {
-            url: `${defaultImage}`,
-            width: 800,  "guides": {
-              "type": "page",
-              "title": "Guides",
-              "display": "hidden"
-            },
-            height: 600,
-            alt: 'Jan-OGImage',
-          },
-        ],
       },
     }
   },
   sidebar: {
     titleComponent: ({ type, title, route }) => {
-      const { asPath } = useRouter();
-      if (type === "separator" && title === "Switcher") {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const { asPath } = useRouter()
+      if (type === 'separator' && title === 'Switcher') {
         return (
           <div className="-mx-2 hidden md:block">
             {[
@@ -76,7 +65,7 @@ const config: DocsThemeConfig = {
                   key={item.path}
                   className="group mb-3 flex flex-row items-center gap-3 nx-text-primary-800 dark:nx-text-primary-600"
                 >
-                  <item.Icon className="w-7 h-7 p-1 border rounded nx-bg-primary-100 dark:nx-bg-primary-400/10" />
+                  <item.Icon className="w-7 h-7 p-1 border  border-gray-200 dark:border-gray-700 rounded nx-bg-primary-100 dark:nx-bg-primary-400/10" />
                   {item.title}
                 </div>
               ) : (
@@ -85,15 +74,15 @@ const config: DocsThemeConfig = {
                   key={item.path}
                   className="group mb-3 flex flex-row items-center gap-3 text-gray-500 hover:text-primary/100"
                 >
-                  <item.Icon className="w-7 h-7 p-1 border rounded group-hover:bg-border/30" />
+                  <item.Icon className="w-7 h-7 p-1 border rounded border-gray-200 dark:border-gray-700" />
                   {item.title}
                 </Link>
               )
             )}
           </div>
-        );
+        )
       }
-      return title;
+      return title
     },
     defaultMenuCollapseLevel: 1,
     toggleButton: true,
@@ -109,7 +98,6 @@ const config: DocsThemeConfig = {
       <Fragment>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Language" content="en" />
-        {/* Dynamic meta title, description and keyword */}
         <title>{titleTemplate}</title>
         <meta name="og:title" content={titleTemplate} />
         <meta
@@ -126,6 +114,15 @@ const config: DocsThemeConfig = {
             `Run LLMs like Mistral or Llama2 locally and offline on your computer, or connect to remote AI APIs like OpenAI’s GPT-4 or Groq.`
           }
         />
+        <meta
+          property="og:image"
+          content={
+            frontMatter?.ogImage
+              ? 'https://jan.ai/' + frontMatter?.ogImage
+              : 'https://jan.ai/assets/images/general/og-image.png'
+          }
+        />
+        <meta property="og:image:alt" content="Jan-OGImage" />
         <meta
           name="keywords"
           content={
