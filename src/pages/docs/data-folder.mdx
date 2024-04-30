@@ -24,7 +24,7 @@ import { Callout, Steps } from 'nextra/components'
 
 # Jan Data Folder
 
-After installing Jan, a structured data folder is created on the local filesystem. This setup promotes an organized approach to data management, allowing for straightforward configuration, extension, and interaction with Jan's functionalities. Below is a guide to understanding how files, conversations, and settings are organized post-installation, enabling users to verify and navigate the installation effectively.
+After installing Jan, a structured data folder is created on the local filesystem. This setup promotes an organized approach to data management. Below is a guide to understanding how files are organized within Jan data folder.
 
 ## Folder Structure
 Jan app data folder should have the following folder structure:
@@ -43,7 +43,7 @@ jan/
 This is the primary directory where all files related to Jan are stored. It typically resides in the user's home directory.
 
 ### `assistants/`
-Stores configuration files for various AI assistants. Each assistant within this directory can have different settings and capabilities.
+Stores configuration files for various AI assistants. Each assistant within this directory can have different settings.
 
 ### `engines/`
 Contains configuration files for different inference engines.
@@ -58,7 +58,7 @@ Stores the AI models that the assistants use to process requests and generate re
 General settings for the application are stored here, separate from individual assistant or engine configurations.
 
 ### `threads/`
-Conversation history is kept in this directory. Each session or thread is stored in a way that makes it easy to review past interactions.
+Threads history is kept in this directory. Each session or thread is stored in a way that makes it easy to review past interactions.
 
 ### `extensions/`
 Extensions enhance Jan's functionality by adding new capabilities or integrating external services.
@@ -100,11 +100,11 @@ Each of the primary folder structures should have the following detailed structu
 - **Custom Assistant Example**: The `/assistants/shakespeare/` shows a custom setup, also with its own `assistant.json`.
 
 ### Engines
-- **Engine Configurations**: Files like `groq.json`, `nitro.json`, `openai.json`, and `triton_trtllm.json` in the `/engines/` folder configure how Jan interacts with various AI engines.
+- **Engine Configurations**: Files like `engine_A.json` in the `/engines/` folder configure how Jan can interact with the respective inference engines.
 
 ### Extensions
 - **Extension Configuration**: The `extensions.json` in the `/extensions/` directory provides settings for all installed extensions.
-- **Specific Extensions**: Subdirectories like `/@janhq/assistant-extension/` contain `package.json` files which import necessary modules for each extension.
+- **Specific Extensions**: Subdirectories like `/@janhq/extension_A/` contain `package.json` files which import necessary modules for each extension.
 
 ### Logs
 - **Application Logs**: The file `/logs/app.txt` captures general application activity.
@@ -117,7 +117,7 @@ Each of the primary folder structures should have the following detailed structu
 - **Extension-specific Settings**: Additional settings for extensions are stored in respective subdirectories under `/settings/@janhq/`.
 
 ### Threads
-- **Conversation History**: Each thread is logged in its subdirectory, such as `/threads/jan_unixstamp/`, with files like `messages.jsonl` and `thread.json` detailing the conversation flow and settings.
+- **Threads History**: Each thread is stored in its subdirectory, such as `/threads/jan_unixstamp/`, with files like `messages.jsonl` and `thread.json` detailing the thread settings.
 
 ## Verify Installation
 To confirm that Jan has been installed correctly, follow these steps:
