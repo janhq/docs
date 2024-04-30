@@ -58,6 +58,7 @@ const config: DocsThemeConfig = {
           <div className="-mx-2 hidden md:block">
             {[
               { title: "Jan", path: "/docs", Icon: LibraryBig },
+              { title: "Cortex", path: "/cortex", Icon: BrainCircuit },
               { title: "Integrations", path: "/integrations", Icon: Blocks }
             ].map((item) =>
               asPath.startsWith(item.path) ? (
