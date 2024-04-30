@@ -11,19 +11,9 @@
     "type": "page",
     "title": "Documentation"
   },
-  "cortex": {
-    "type": "page",
-    "title": "Cortex",
-    "display": "hidden"
-  },
   "integrations": {
     "type": "page",
     "title": "Integrations",
-    "display": "hidden"
-  },
-  "hardware": {
-    "type": "page",
-    "title": "Hardware Guide",
     "display": "hidden"
   },
   "api-reference": {
