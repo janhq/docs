@@ -1,0 +1,11 @@
+{
+  "-- Switcher": {
+    "type": "separator",
+    "title": "Switcher"
+  },
+  "get-started": {
+    "title": "GET STARTED",
+    "type": "separator"
+  },
+  "index": { "title": "Overview", "href": "/cortex" }
+}
