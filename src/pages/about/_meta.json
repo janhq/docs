@@ -26,14 +26,5 @@
   },
   "handbook": {
     "display": "hidden"
-  },
-  "faq-separator": {
-    "title": "Frequently Asked Questions",
-    "type": "separator",
-    "display": "hidden"
-  },
-  "faq": {
-    "title": "FAQ",
-    "display": "hidden"
   }
 }
