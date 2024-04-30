@@ -5,7 +5,7 @@ import FooterMenu from '@/components/FooterMenu'
 import JSONLD from '@/components/JSONLD'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { LibraryBig, Blocks } from 'lucide-react'
+import { LibraryBig, Blocks, BrainCircuit, Computer } from 'lucide-react'
 
 const defaultUrl = 'https://jan.ai'
 const defaultImage = 'https://jan.ai/assets/images/general/og-image.png'
