@@ -186,7 +186,7 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned /docs 302
 /docs/modules/chats /docs/threads 302
 /docs/specs/chats /docs/threads 302
 /docs/modules/files /docs 302
-/tutorials/build-rag-app /docs/tools 302
+/tutorials/build-rag-app /docs/tools/retrieval 302
 /docs/models/model-endpoint-compatibility /docs/models 302
 /docs/guides/legacy-fine-tuning/creating-training-data /docs 302
 /docs/specs/models /docs/models 302
@@ -438,7 +438,7 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /docs/modules/chats/ /docs/threads 302
 /docs/specs/chats/ /docs/threads 302
 /docs/modules/files/ /docs 302
-/tutorials/build-rag-app/ /docs/tools 302
+/tutorials/build-rag-app/ /docs/tools/retrieval 302
 /docs/models/model-endpoint-compatibility/ /docs/models 302
 /docs/guides/legacy-fine-tuning/creating-training-data/ /docs 302
 /docs/specs/models/ /docs/models 302
@@ -600,3 +600,6 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /product/features/remote /docs 302
 /product/home-server /docs/local-api 302
 /guides/providers/tensorrt-llm/ /docs/built-in/tensorrt-llm 302
+/docs/tools /docs/tools/retrieval 302
+/docs/local-inference/llamacpp /docs/built-in/llama-cpp 302
+/docs/local-inference/tensorrtllm /docs/built-in/tensorrt-llm 302

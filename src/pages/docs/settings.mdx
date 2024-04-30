@@ -24,11 +24,16 @@ import { Tabs, Steps, Callout } from 'nextra/components'
 
 # Settings
 
-This guide will show you how to use the advanced settings in Jan.
+This guide will show you how to customize your Jan application settings.
+
+## Settings File
+Settings for the Jan application are stored in a `settings.json` file located at `jan/settings/`, ensuring they persist across sessions. This file contains all user preferences and configurations and can be manually edited with a text editor for advanced customization.
 
 ## Access Advanced Settings
-
-To access Jan's advanced settings, follow the steps below:
+Advanced Settings is the GUI version of the `settings.json`. To access Jan's advanced settings, follow the steps below:
+<Callout type="info">
+Whenever you make changes in the Jan application's Settings screen, they are automatically saved to the `settings.json` file. This ensures your customizations are kept and applied every time the application starts.
+</Callout>
 
 1. Navigate to the main dashboard.
 2. Click the **Gear Icon (⚙️)** on the bottom left of your screen.
@@ -53,6 +58,8 @@ To try out new features that are still in the testing phase, follow the steps be
 2. Click the **gear icon (⚙️)** on the bottom left of your screen.
 3. Under the **Settings screen**, click the **Advanced Settings**.
 4. On the **Experimental Mode**, click the slider to enable.
+<br/>
+![Experimental](./_assets/experimental.gif)
 
 ## Enable the GPU Acceleration
 
@@ -68,6 +75,8 @@ To enhance your model performance, follow the steps below:
 2. Click the **gear icon (⚙️)** on the bottom left of your screen.
 3. Under the **Settings screen**, click the **Advanced Settings**.
 4. On the **GPU Acceleration**, click the slider to enable.
+<br/>
+![Enable GPU](./_assets/gpu.gif)
 
 ## Access the Jan Data Folder
 
@@ -77,6 +86,8 @@ To access the folder where messages, model configurations, and user data are sto
 2. Click the **gear icon (⚙️)** on the bottom left of your screen.
 3. Under the **Settings screen**, click the **Advanced Settings**.
 4. On the **Jan Data Folder** click the **folder icon (📂)** to access the data or the **pencil icon (✏️)** to change the folder where you keep your data.
+<br/>
+![Jan Data Folder](./_assets/data-folder.gif)
 <Callout type="warning">
 - Uninstalling Jan will delete the default Jan Data Folder.
 - If you have moved the Jan Data Folder from its original location, this relocated folder will remain intact while the default folder is deleted upon uninstallation.
@@ -194,6 +205,8 @@ Once you set up your HTTPS proxy server, you can configure it for Jan.
 1. Navigate to **Settings** > **Advanced Settings**.
 2. On the **HTTPS Proxy**, click the slider to enable.
 3. Input your domain in the blank field.
+<br/>
+![HTTPS Proxy](./_assets/https.gif)
 
 </Steps>
 
@@ -205,6 +218,20 @@ To Allow self-signed or unverified certificates, follow the steps below:
 2. Click the **gear icon (⚙️)** on the bottom left of your screen.
 3. Under the **Settings screen**, click the **Advanced Settings**.
 4. On the **Ignore SSL Certificates**, click the slider to enable.
+<br/>
+![Ignore SSL](./_assets/ssl.gif)
+
+## Enable Quick Ask
+
+To enable the Jan quick ask feature, follow the steps below:
+
+
+1. Navigate to the main dashboard.
+2. Click the **gear icon (⚙️)** on the bottom left of your screen.
+3. Under the **Settings screen**, click the **Advanced Settings**.
+4. On the **Jan Quick Ask**, click the slider to enable.
+<br/>
+![Jan Quick Ask](./_assets/quick-ask.gif)
 
 ## Clear Logs
 
@@ -218,6 +245,8 @@ To clear all logs on your Jan app, follow the steps below:
 2. Click the **gear icon (⚙️)** on the bottom left of your screen.
 3. Under the **Settings screen**, click the **Advanced Settings**.
 4. On the **Clear Logs** click the the **Clear** button.
+<br/>
+![Clear Logs](./_assets/clear.gif)
 
 ## Reset To Factory Default
 
@@ -232,3 +261,5 @@ To reset the Jan app to its original state, follow the steps below:
 2. Click the **gear icon (⚙️)** on the bottom left of your screen.
 3. Under the **Settings screen**, click the **Advanced Settings**.
 4. On the **Reset To Factory Default** click the the **Reset** button.
+<br/>
+![Reset](./_assets/reset.gif)

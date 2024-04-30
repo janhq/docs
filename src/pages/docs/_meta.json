@@ -13,8 +13,6 @@
   },
   "desktop-installation": "Desktop Installation",
   "server-installation": "Server Installation",
-  "gpu-setup": "GPU Setup",
-  "architecture": "",
   "user-guides": {
     "title": "BASIC USAGE",
     "type": "separator"
@@ -38,9 +36,11 @@
     "type": "separator"
   },
   "extensions": "Overview",
+  "installing-extension": "Installing an Extension",
   "troubleshooting-separator": {
     "title": "TROUBLESHOOTING",
     "type": "separator"
   },
-  "troubleshooting": "Troubleshooting"
+  "troubleshooting": "Troubleshooting",
+  "error-codes": "Error Codes"
 }

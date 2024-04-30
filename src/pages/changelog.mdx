@@ -38,7 +38,7 @@ export const getStaticProps = async() => {
         ogImage: frontmatter.data?.ogImage || null,
         version: frontmatter.data?.version || null,
         description: frontmatter.data?.description || null,
-        date: format(String(frontmatter.data?.date), 'yyyy-M-dd') || null,
+        date: String(frontmatter.data?.date) || null,
       })
     }
     changelog.sort((a, b) => new Date(b.date) - new Date(a.date))
