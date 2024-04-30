@@ -13,6 +13,7 @@
   },
   "desktop-installation": "Desktop Installation",
   "server-installation": "Server Installation",
+  "data-folder": "Jan Data Folder",
   "user-guides": {
     "title": "BASIC USAGE",
     "type": "separator"
