@@ -286,19 +286,13 @@ TensorRT-LLM uses a lot less Max RAM vs. llama.cpp on slower connection (PCIe 3.
 
 ### Compiled Model Size and Number of Files
 - Contrary to popular belief, TensorRT-LLM prebuilt models turned out to not be that huge
-Mistral 7b int4 was actually **25% smaller** in TensorRT-LLM, at 3.05gb vs. 4.06gb
-- Note: These are approximate comparisons, as TensorRT-LLM’s `AWQ INT4` is implemented differently from llama.cpp’s `q4_k_m`
+- Mistral 7b int4 was actually 25% smaller in TensorRT-LLM, at 3.05gb vs. 4.06gb
+- Note: These are approximate comparisons, as TensorRT-LLM’s AWQ INT4 is implemented differently from llama.cpp’s q4_k_m
 - The bigger takeaway is that the Compiled model sizes are roughly in the same ballpark, while the number of files for TensorRT-LLM is 7x the GGUF number of files.
-
 
 | Model size (Lower is better) | TensorRT-LLM AWQ int4 | Llama.cpp GGUF Q4 | % Difference      |
 | ---------------------------- | --------------------- | ----------------- | ----------------- |
 | Mistral 7B                   | ✅ 3.05               | 4.06              | ✅ 24.88% smaller |
-
-| # model files (Lower is better) | TensorRT-LLM AWQ int4 | Llama.cpp GGUF Q4 | % Difference |
-| ------------------------------- | --------------------- | ----------------- | ------------ |
-| Mistral 7B                      | 8                     | ✅ 1              | 700%         |
-
 
 ### Convenience
 - Llama.cpp still wins on cross-platform versatility and convenience of a “compile once, run everywhere” approach
