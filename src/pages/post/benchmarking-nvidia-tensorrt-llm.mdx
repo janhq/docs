@@ -176,7 +176,7 @@ Interestingly, the GeForce RTX 3090 was only 16.6% slower compared with the GeFo
   **Hardware Details**
 - Laptop: Razer Blade 14
 - CPU: AMD Ryzen™ 9 8945HS, 8C/16T
-- GPU: NVIDIA GeForce RTX 4070 Laptop GPU (Ada - sm 89) on PCIE 4.0 (32 GB/s)
+- GPU: NVIDIA GeForce RTX 4070 Laptop GPU (Ada - sm 89) on PCIe 4.0 x16 (32 GB/s)
 - RAM: 32GB
 - OS: Windows 11 Pro
 
@@ -223,7 +223,7 @@ Our last benchmark was to experiment with an [Asus RTX 4090 eGPU](https://www.gi
 
 We thought it would be an interesting to see how TensorRT-LLM handles a 68.4% reduction in communication bandwidth between the CPU and GPU:
 - Thunderbolt 3 connection (1.25-5 GB/s?) for eGPUs
-- PCI 4.0 (~32 GB/s) for "on device" desktops
+- PCIe 4.0 x4 (~8 GB/s) for "on device" desktops
 
 <Callout>
 **Help Needed:** We are actually not 100% sure what the actual Connection Speed is [between Thunderbolt 3 to USB4](https://www.cablematters.com/Blog/Thunderbolt/usb4-vs-thunderbolt-3), as the actual speed seems different from the advertised speed of 5 GB/s. There seem to be a lot of factors involved, including the actual cable itself. We'd love if someone in the community can guide us!
@@ -238,7 +238,7 @@ Overall, we used mid-to-high-end NVIDIA desktop GPUs for our tests, as TensorRT-
 | RAM Used (GB)            | 0.611            | 5.38             | 4.11         | ✅ 23.61% less    |
 | Disk Size (GB)           | 4.07             | 4.06             | 3.05         | ✅ 24.88% smaller |
 
-The Thunderbolt 3 eGPU had a 38.5% lower tokens/s as compared to the PCIe4.0 connected GPU. But the % speedup vs. llama.cpp was similar, at around 69%.
+The Thunderbolt 3 eGPU had a 38.5% lower tokens/s as compared to the PCIe4.0 x16 connected GPU. But the % speedup vs. llama.cpp was similar, at around 69%.
 
 Interestingly, the VRAM used with the eGPU was variably higher. Our hypothesis is that the slower communication bandwidth results in more VRAM being allocated, as memory is released mostly slowly as well.
 
