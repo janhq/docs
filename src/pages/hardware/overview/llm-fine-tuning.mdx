@@ -17,3 +17,26 @@ keywords:
     bot,
   ]
 ---
+
+# What is LLM fine tuning
+![image](../_assets/overview-fine_tuning_1.png)
+![image](../_assets/overview-fine_tuning_2.png)
+![image](../_assets/overview-fine_tuning_3.png)
+![image](../_assets/overview-fine_tuning_4.png)
+
+
+# Hardware for LLM fine tuning varies
+- [HF - Methods/ Tools for efficient training on single GPU](https://huggingface.co/docs/transformers/perf_train_gpu_one)
+- [HF - Methods/ Tools for efficient training on multiple GPUs](https://huggingface.co/docs/transformers/perf_train_gpu_many)
+
+## Estimating hardware for fine tuning LLM
+https://medium.com/@dzmitrybahdanau/the-flops-calculus-of-language-model-training-3b19c1f025e4
+https://arxiv.org/html/2404.10933v1
+https://blog.scottlogic.com/2023/11/24/llm-mem.html
+
+- The hard limit is the GPU VRAM
+- The number of TFLOPs (result from the number of CUDA/ TensorCore/ Metal/ etc) only affect the speed
+
+## How NVIDIA NVlink helps
+![image](../_assets/overview-fine_tuning_gpu_1.png)
+![image](../_assets/overview-fine_tuning_gpu_2.png)
