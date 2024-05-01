@@ -38,27 +38,25 @@ const config: DocsThemeConfig = {
   useNextSeoProps() {
     return {
       titleTemplate: '%s - Jan',
-      canonical: defaultUrl,
       twitter: {
         cardType: 'summary_large_image',
         site: '@janframework',
       },
       openGraph: {
         type: 'website',
-        url: defaultUrl,
       },
     }
   },
   sidebar: {
-    titleComponent: ({ type, title, route }) => {
+    titleComponent: ({ type, title }) => {
       // eslint-disable-next-line react-hooks/rules-of-hooks
       const { asPath } = useRouter()
       if (type === 'separator' && title === 'Switcher') {
         return (
           <div className="-mx-2 hidden md:block">
             {[
-              { title: "Jan", path: "/docs", Icon: LibraryBig },
-              { title: "Integrations", path: "/integrations", Icon: Blocks }
+              { title: 'Jan', path: '/docs', Icon: LibraryBig },
+              { title: 'Integrations', path: '/integrations', Icon: Blocks },
             ].map((item) =>
               asPath.startsWith(item.path) ? (
                 <div
@@ -93,6 +91,7 @@ const config: DocsThemeConfig = {
   head: function useHead() {
     const { title, frontMatter } = useConfig()
     const titleTemplate = (frontMatter?.title || title) + ' - ' + 'Jan'
+    const { asPath } = useRouter()
 
     return (
       <Fragment>
@@ -112,6 +111,16 @@ const config: DocsThemeConfig = {
           content={
             frontMatter?.description ||
             `Run LLMs like Mistral or Llama2 locally and offline on your computer, or connect to remote AI APIs like OpenAI’s GPT-4 or Groq.`
+          }
+        />
+        <link
+          rel="canonical"
+          href={frontMatter?.ogImage ? 'https://jan.ai' + asPath : defaultUrl}
+        />
+        <meta
+          property="og:url"
+          content={
+            frontMatter?.ogImage ? 'https://jan.ai' + asPath : defaultUrl
           }
         />
         <meta
