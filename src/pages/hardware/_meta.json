@@ -2,7 +2,10 @@
   "-- Switcher": {
     "type": "separator",
     "title": "Switcher"
-  },  
-  "index": { "title": "Overview", "href": "/hardware" }
-  }
-  
+  },
+  "index": "Introduction",
+  "overview": "Overview",
+  "ai-hardware-ecosystem": "Ecosystem",
+  "certified-build": "Certified Build",
+  "community-build": "Community Build"
+}

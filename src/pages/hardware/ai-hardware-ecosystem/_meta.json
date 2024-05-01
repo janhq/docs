@@ -1,0 +1,14 @@
+{
+    "nvidia": {
+        "title": "NVIDIA"
+    },
+    "intel": {
+        "title": "Intel"
+    },
+    "apple": {
+        "title": "Apple"
+    },
+    "amd": {
+        "title": "AMD"
+    }
+}
