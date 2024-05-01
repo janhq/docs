@@ -1,6 +1,6 @@
 ---
-title: About Thinking Machines, A Robotics Company
-description: We are Thinking Machines, a robotics company. We work on the intersection of humans and machines.
+title: Thinking Machines
+description: We are Thinking Machines, the creators and maintainers of Jan, Cortex and other tools.
 keywords:
   [
     Thinking Machines,
@@ -22,73 +22,84 @@ keywords:
 
 import { Callout } from 'nextra/components'
 
-## About
+# Thinking Machines 
 
-We are **Thinking Machines**, a robotics company. We work on the intersection of humans and machines.
+![Eniac](./_assets/eniac.jpeg)
+_[Eniac](https://www.computerhistory.org/revolution/birth-of-the-computer/4/78), the World's First Computer (Photo courtesy of US Army)_
 
-At present, we are building the layer between AI and hardware, to turn your computer into an AI PC.
+## About 
 
-We like [open-source](https://github.com/janhq). We like [local-first](https://www.inkandswitch.com/local-first/). We love hardware. ❤️
+We're a team of AI researchers and engineers. We are the creators and lead maintainers of a few open-source AI tools: 
 
+- 👋 [Jan](https://jan.ai): ChatGPT-alternative that runs 100% offline
+- 🤖 [Cortex](/cortex): A simple, embeddable library to run LLMs locally
+- More to come! 
 
-## Our Work
+### Mission
 
-- [Jan](https://github.com/janhq/jan) is an open-source & self-hosted alternative to OpenAI's ChatGPT.
-- [Cortex](https://github.com/janhq/cortex) is a C++ backend that powers Jan. It is compatible with OpenAI API and multi-engine (llama.cpp, TensorRT-LLM).
-- [Open Source Models](https://huggingface.co/janhq): finetunes, datasets and more.
+We're a robotics company that focuses on the cognitive framework for future robots. Our long-term mission is to advance human-machine collaboration to enable human civilization to thrive.
 
-## Mission
+<Callout>
+You can read more about our [Vision](/about/vision) here. 
+</Callout>
 
-### Open Source
+### Business Model
 
-We believe that the future of AI should be built on open-source foundations. Jan and Cortex are copy-left (AGPLv3).
+We're currently a bootstrapped startup [^2]. We balance technical invention with the search for a sustainable business model (e.g. consulting, paid support, and custom development).
 
-We build on the shoulders of open source giants: [llama.cpp](https://jan.ai/docs/local-inference/llamacpp), [tensorrt-llm](https://jan.ai/docs/local-inference/tensorrtllm).
+<Callout>
+We welcome business inquiries: 👋 hello@jan.ai 
+</Callout>
 
-### Local & Private
+### Community
 
-By default, Jan runs AI locally on your device. Your data, models, and training dataset are stored on your local filesystem. No data leaves your computer. You own the underlying data, models & infrastructure.
-
-### Build in Public
-
-We openly share our roadmap, metrics, and strategy.
-
-- [Jan's Kanban](https://github.com/orgs/janhq/projects/5)
-- [Jan's Roadmap](https://github.com/orgs/janhq/projects/5/views/29)
-- [Engineering Discussions (Discord)](https://discord.gg/AAGQNpJQtH)
-
-### Sustainable
-
-Jan is currently a bootstrapped startup. We balance technical invention with the search for a sustainable business model, by creating real value for our community.
-
-We welcome business inquiries: hello@jan.ai
-
-## Comparisons
-
-> "I do not fear computers. I fear the lack of them." - Isaac Asimov
-
-Jan was founded on the belief that AI should coexist with humans, not replace them.
-
-We are committed to creating open, local-first products that give back human control, reject dark patterns & ecosystem lock-ins, while providing a comprehensive solution for advanced applications.
-
-|  | Alternatives | Jan |
-| --- | --- | --- |
-| Privacy | Questionable | Private, with enhanced data protection |
-| Transparency | Closed source | Open source, and customizable |
-| Ownership | Give away your IP | You own the AI (the IP) |
-| Standardization | Custom APIs | 100% OpenAI Compatible |
-| Customization | Infrastructure lock-in | Plug & play |
-| Hosting | Monthly cloud bills | Self-hosted |
-| Data | Cloud-based | Local filesystem based, with database options |
-| Outage Resilience | Potential hostage & API throttling | Works offline |
-
-Read more on our vision [here](https://jan.ai/about/vision).
-
-## Contact
-
-Your feedback, questions, and insights drive us forward.
+We have a thriving community built around [Jan](../docs), where we also discuss our other projects.  
 
 - [Discord](https://discord.gg/AAGQNpJQtH)
 - [Twitter](https://twitter.com/janframework)
 - [LinkedIn](http://linkedin.com/company/janframework/)
+- [HuggingFace](https://huggingface.co/janhq)
 - Email: hello@jan.ai
+
+## Philosophy
+
+Thinking Machines is an opinionated company with a clear philosophy for the products we build: 
+
+### 🔑 User Owned
+
+We build tools that are user-owned. Our products are [open-source](https://en.wikipedia.org/wiki/Open_source), designed to run offline or be [self-hosted](https://www.reddit.com/r/selfhosted/). We make no attempt to lock you in, and our tools are free of [user-hostile dark patterns](https://twitter.com/karpathy/status/1761467904737067456?t=yGoUuKC9LsNGJxSAKv3Ubg) [^1].
+
+We adopt [Local-first](https://www.inkandswitch.com/local-first/) principles and store data locally in [universal file formats](https://stephango.com/file-over-app). We build for privacy by default, and we do not [collect or sell your data](/privacy). 
+
+### 🔧 Right to Tinker
+
+We believe in the [Right to Repair](https://en.wikipedia.org/wiki/Right_to_repair). We encourage our users to take it further by [tinkering, extending, and customizing](https://www.popularmechanics.com/technology/gadgets/a4395/pm-remembers-steve-jobs-how-his-philosophy-changed-technology-6507117/) our products to fit their needs. 
+
+Our products are designed with [Extension APIs](/docs/extensions), and we do our best to write good [documentation](/docs) so users understand how things work under the hood. 
+
+### 👫 Build with the Community
+
+We are part of a larger open-source community and are committed to being a good jigsaw puzzle piece. We credit and actively contribute to upstream projects. 
+
+We adopt a public-by-default approach to [Project Management](https://github.com/orgs/janhq/projects/5), [Roadmaps](https://github.com/orgs/janhq/projects/5/views/31), and Helpdesk for our products. 
+
+## Inspirations
+
+> Good artists borrow, great artists steal - Picasso
+
+We are inspired by and actively try to emulate the paths of companies we admire ❤️:
+
+- [Posthog](https://posthog.com/handbook)
+- [Obsidian](https://obsidian.md/)
+- [Discourse](https://www.discourse.org/about)
+- [Gitlab](https://handbook.gitlab.com/handbook/company/history/#2017-gitlab-storytime)
+- [Redhat](https://www.redhat.com/en/about/development-model)
+- [Ghost](https://ghost.org/docs/contributing/)
+- [Lago](https://www.getlago.com/blog/open-source-licensing-and-why-lago-chose-agplv3)
+- [Twenty](https://twenty.com/story)
+
+## Footnotes
+
+[^1]: [Kaparthy's Love Letter to Obsidian](https://twitter.com/karpathy/status/1761467904737067456?t=yGoUuKC9LsNGJxSAKv3Ubg)
+
+[^2]: [The Market for AI Companies](https://www.artfintel.com/p/the-market-for-ai-companies) by Finbarr Timbers

@@ -4,23 +4,27 @@
     "type": "separator"
   },
   "index": "About",
-  "vision": "Vision",
-  "how-we-work": {},
-  "teams": {
-    "title": "Who we are",
+  "vision": {
+    "title": "Vision",
     "display": "hidden"
   },
-  "community": "Community Links",
+  "team": "Team",
+  "investors": "Investors",
   "wall-of-love": {
     "theme": {
       "toc": false,
       "layout": "full"
     }
   },
-  "acknowledgements": "",
-  "faq-separator": {
-    "title": "Frequently Asked Questions",
-    "type": "separator"
+  "acknowledgements": {
+    "display": "hidden"
   },
-  "faq": "FAQ"
+  "handbook-separator": {
+    "title": "Handbook",
+    "type": "separator",
+    "display": "hidden"
+  },
+  "handbook": {
+    "display": "hidden"
+  }
 }

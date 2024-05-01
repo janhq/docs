@@ -1,4 +1,7 @@
 /team /about/teams 302
+/about/faq /docs 302
+/about/acknowledgements /docs 302
+/about/community /about 302
 /guides /docs 302
 /docs/troubleshooting/failed-to-fetch /docs/troubleshooting 302
 /guides/troubleshooting/gpu-not-used /docs/troubleshooting#troubleshooting-nvidia-gpu 302
