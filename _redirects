@@ -1,4 +1,7 @@
 /team /about/teams 302
+/about/faq /docs 302
+/about/acknowledgements /docs 302
+/about/community /about 302
 /guides /docs 302
 /docs/troubleshooting/failed-to-fetch /docs/troubleshooting 302
 /guides/troubleshooting/gpu-not-used /docs/troubleshooting#troubleshooting-nvidia-gpu 302
@@ -603,3 +606,4 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /docs/tools /docs/tools/retrieval 302
 /docs/local-inference/llamacpp /docs/built-in/llama-cpp 302
 /docs/local-inference/tensorrtllm /docs/built-in/tensorrt-llm 302
+/guides/using-server/server/ /docs/local-api 302

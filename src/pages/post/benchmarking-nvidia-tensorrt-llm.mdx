@@ -42,7 +42,7 @@ TensorRT-LLM was:
 
 [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM) is Nvidia's open-source inference library that incorporates Nvidia's proprietary optimizations beyond the open-source [cuBLAS](https://developer.nvidia.com/cublas) library. 
 
-As compared to [llama.cpp](https://github.com/ggerganov/llama.cpp), which today dominates Desktop AI as a cross-platform inference engine, TensorRT-LLM is highly optimized for Nvidia GPUs. While llama.cpp compiles models compiles models into a [single, generalizable CUDA "backend"](https://github.com/ggerganov/llama.cpp/blob/master/ggml-cuda.cu)  that can run on a wide range of Nvidia GPUs, TensorRT-LLM compiles models into a [GPU-specific execution graph](https://www.baseten.co/blog/high-performance-ml-inference-with-nvidia-tensorrt/) that is highly optimized for that specific GPU's Tensor Cores, CUDA cores, VRAM and memory bandwidth.
+As compared to [llama.cpp](https://github.com/ggerganov/llama.cpp), which today dominates Desktop AI as a cross-platform inference engine, TensorRT-LLM is highly optimized for Nvidia GPUs. While llama.cpp compiles models into a [single, generalizable CUDA "backend"](https://github.com/ggerganov/llama.cpp/blob/master/ggml-cuda.cu)  that can run on a wide range of Nvidia GPUs, TensorRT-LLM compiles models into a [GPU-specific execution graph](https://www.baseten.co/blog/high-performance-ml-inference-with-nvidia-tensorrt/) that is highly optimized for that specific GPU's Tensor Cores, CUDA cores, VRAM and memory bandwidth.
 
 TensorRT-LLM is typically used in datacenter-grade GPUs, where it produces a [face-melting 10,000 tokens/s](https://nvidia.github.io/TensorRT-LLM/blogs/H100vsA100.html) on [NVIDIA H100 Tensor Core GPUs](https://www.nvidia.com/en-us/data-center/h100/). We were curious for how TensorRT-LLM performs on consumer-grade GPUs, and gave it a spin.
 
@@ -78,12 +78,10 @@ We chose the following GPUs based on our users' preferences:
 
 | NVIDIA GPU                        | VRAM (GB) | CUDA Cores | Tensor Cores | Memory Bus Width (bit) | Memory Bandwidth (GB/s) | Connection (GB/s)                            |
 | --------------------------------- | --------- | ---------- | ------------ | ---------------------- | ----------------------- | -------------------------------------------- |
-| GeForce RTX 4090 (Ada)            | 24        | 16,384     | 512          | 384                    | ~1000                   | PCIe4.0 x16 (~32gbps)                        |
-| GeForce RTX 3090 (Ampere)         | 24        | 10,496     | 328          | 384                    | 935.8                   | PCIe4.0 x16 (~32gbps)                        |
-| GeForce RTX 4070 Laptop GPU (Ada) | 8         | 7680       | 144          | 192                    | 272                     | PCIe4.0 x4 (~32gbps)                         |
-| GeForce RTX 4090 eGPU (Ada)       | 24        | 16,384     | 512          | 384                    | ~1000                   | Thunderbolt 3 connected to a USB4 USB-C port ([~10-20gbps?](https://www.cablematters.com/Blog/Thunderbolt/usb4-vs-thunderbolt-3)) |
-
-Both desktop GPUs utilize PCIe 4.0, offering substantial bandwidth at 100 Gbps, in contrast to the [NVIDIA GeForce RTX 4070 Laptop GPU’s](https://www.nvidia.com/en-us/geforce/laptops/) more limited capabilities due to power and thermal restrictions.
+| GeForce RTX 4090 (Ada)            | 24        | 16,384     | 512          | 384                    | ~1000                   | PCIe4.0 x16 (~32)                        |
+| GeForce RTX 3090 (Ampere)         | 24        | 10,496     | 328          | 384                    | 935.8                   | PCIe4.0 x16 (~32)                        |
+| GeForce RTX 4070 Laptop GPU (Ada) | 8         | 7680       | 144          | 192                    | 272                     | PCIe4.0 x4 (~8)                         |
+| GeForce RTX 4090 eGPU (Ada)       | 24        | 16,384     | 512          | 384                    | ~1000                   | Thunderbolt 3 connected to a USB4 USB-C port ([~1.25-5?](https://www.cablematters.com/Blog/Thunderbolt/usb4-vs-thunderbolt-3)) |
 
 ### llama.cpp Setup
 
@@ -91,7 +89,7 @@ Both desktop GPUs utilize PCIe 4.0, offering substantial bandwidth at 100 Gbps, 
 - We used `Mistral-7b-q4_k_m` in `GGUF` with `ngl` at `100`
 
 <Callout>
-Note: `ngl` is the abbreviation of `Number of GPU Layers` with the range from `0` as no GPU acceleration to `100` as full on GPU
+Note: `ngl` is the abbreviation of `Number of GPU Layers` with the range from `0` as no GPU acceleration to `120` as full on GPU for some big models.
 </Callout>
 
 ### TensorRT-LLM Setup
@@ -125,7 +123,7 @@ Note: `ngl` is the abbreviation of `Number of GPU Layers` with the range from `0
 
 For this test, we used Jan's [Dual-4090 workstation](https://www.reddit.com/r/LocalLLaMA/comments/16lxt6a/case_for_dual_4090s/), which our engineers timeshare to build Jan.
 
-The [NVIDIA GeForce RTX 4090](https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/) is the latest top-of-the-line desktop GPU, with an MSRP of $1,599, and uses the Ada architecture. It has a ~1000 gbps memory bandwidth within VRAM, and a PCIe4 lane (~125 gbps) between the GPU and the CPU. 
+The [NVIDIA GeForce RTX 4090](https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/) is the latest top-of-the-line desktop GPU, with an MSRP of $1,599, and uses the Ada architecture. It has a ~1000 GB/s memory bandwidth within VRAM, and a PCIe4 x16 lane (~32 GB/s) between the GPU and the CPU. 
 
 
 | Metrics                  | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | How TensorRT-LLM Compares |
@@ -136,7 +134,7 @@ The [NVIDIA GeForce RTX 4090](https://www.nvidia.com/en-us/geforce/graphics-card
 | Avg RAM Used (GB)        | 0.611            | 7.105            | 4.98         | ✅ 29.88% less            |
 | Disk Size (GB)           | 4.07             | 4.06             | 3.05         | ✅ 24.88% smaller         |
 
-TensorRT-LLM was almost 70% faster than llama.cpp by building the model for the GeForce RTX 4090 GPU’s Ada architecture for optimal graph execution, fully utilizing the 512 Tensor Cores, 16,384 CUDA cores, and 1,000 gbps of memory bandwidth.
+TensorRT-LLM was almost 70% faster than llama.cpp by building the model for the GeForce RTX 4090 GPU’s Ada architecture for optimal graph execution, fully utilizing the 512 Tensor Cores, 16,384 CUDA cores, and 1,000 GB/s of memory bandwidth.
 
 The intuition for why llama.cpp is slower is because it compiles a model into a [single, generalizable CUDA “backend”](https://github.com/ggerganov/llama.cpp/blob/master/ggml-cuda.cu) that can run on many NVIDIA GPUs. Doing so requires llama.cpp to sacrifice all the optimizations that TensorRT-LLM makes with its compilation to a GPU-specific execution graph.
 
@@ -157,7 +155,7 @@ The intuition for why llama.cpp is slower is because it compiles a model into a 
 - TensorRT-LLM model: Mistral 7B v0.2 AWQ, quantized for single GPU (Ampere)
 </Callout>
 
-The [NVIDIA's GeForce RTX 3090](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/) is a popular desktop GPU, and retails for approximately $1,500 (as of April 24). It uses the NVIDIA Ampere architecture. As compared to its successor GeForce RTX 4090, it has 33% fewer CUDA cores (10,496) and Tensor Cores (328) and 7% less memory bandwidth (~930gbps).
+The [NVIDIA's GeForce RTX 3090](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/) is a popular desktop GPU, and retails for approximately $1,500 (as of April 24). It uses the NVIDIA Ampere architecture. As compared to its successor GeForce RTX 4090, it has 33% fewer CUDA cores (10,496) and Tensor Cores (328) and 7% less memory bandwidth (~930 GB/s).
 
 
 | Metrics                  | GGUF (using CPU) | GGUF (using GPU) | TensorRT-LLM | How TensorRT-LLM Compares |
@@ -178,7 +176,7 @@ Interestingly, the GeForce RTX 3090 was only 16.6% slower compared with the GeFo
   **Hardware Details**
 - Laptop: Razer Blade 14
 - CPU: AMD Ryzen™ 9 8945HS, 8C/16T
-- GPU: NVIDIA GeForce RTX 4070 Laptop GPU (Ada - sm 89) on PCIE 4.0 (100gbps)
+- GPU: NVIDIA GeForce RTX 4070 Laptop GPU (Ada - sm 89) on PCIe 4.0 x16 (32 GB/s)
 - RAM: 32GB
 - OS: Windows 11 Pro
 
@@ -224,11 +222,11 @@ The GeForce RTX 4070 Laptop GPU is also ~70% slower than the GeForce RTX 4090 de
 Our last benchmark was to experiment with an [Asus RTX 4090 eGPU](https://www.gigabyte.com/Graphics-Card/GV-N4090IXEB-24GD), that was connected via a [Thunderbolt 3 port](https://www.gigabyte.com/Graphics-Card/GV-N4090IXEB-24GD) to the [Razer Blade 14's USB4 port](https://www.razer.com/sg-en/gaming-laptops/razer-blade-14). Theoretically, the results should be fairly similar to the GeForce RTX 4090 desktop GPU as they have identical underlying GPUs, but with very different connection speeds.
 
 We thought it would be an interesting to see how TensorRT-LLM handles a 68.4% reduction in communication bandwidth between the CPU and GPU:
-- Thunderbolt 3 connection (10-20gbps?) for eGPUs
-- PCI 4.0 (~32gbps) for "on device" desktops
+- Thunderbolt 3 connection (1.25-5 GB/s?) for eGPUs
+- PCIe 4.0 x4 (~8 GB/s) for "on device" desktops
 
 <Callout>
-**Help Needed:** We are actually not 100% sure what the actual Connection Speed is [between Thunderbolt 3 to USB4](https://www.cablematters.com/Blog/Thunderbolt/usb4-vs-thunderbolt-3), as the actual speed seems different from the advertised speed of 20gbps. There seem to be a lot of factors involved, including the actual cable itself. We'd love if someone in the community can guide us!
+**Help Needed:** We are actually not 100% sure what the actual Connection Speed is [between Thunderbolt 3 to USB4](https://www.cablematters.com/Blog/Thunderbolt/usb4-vs-thunderbolt-3), as the actual speed seems different from the advertised speed of 5 GB/s. There seem to be a lot of factors involved, including the actual cable itself. We'd love if someone in the community can guide us!
 </Callout>
 
 Overall, we used mid-to-high-end NVIDIA desktop GPUs for our tests, as TensorRT-LLM’s performance enhancements are most apparent on bigger VRAMs. For users with lower-spec machines, llama.cpp is better.
@@ -240,7 +238,7 @@ Overall, we used mid-to-high-end NVIDIA desktop GPUs for our tests, as TensorRT-
 | RAM Used (GB)            | 0.611            | 5.38             | 4.11         | ✅ 23.61% less    |
 | Disk Size (GB)           | 4.07             | 4.06             | 3.05         | ✅ 24.88% smaller |
 
-The Thunderbolt 3 eGPU had a 38.5% lower tokens/s as compared to the PCIe4.0 connected GPU. But the % speedup vs. llama.cpp was similar, at around 69%.
+The Thunderbolt 3 eGPU had a 38.5% lower tokens/s as compared to the PCIe4.0 x16 connected GPU. But the % speedup vs. llama.cpp was similar, at around 69%.
 
 Interestingly, the VRAM used with the eGPU was variably higher. Our hypothesis is that the slower communication bandwidth results in more VRAM being allocated, as memory is released mostly slowly as well.
 
@@ -286,19 +284,13 @@ TensorRT-LLM uses a lot less Max RAM vs. llama.cpp on slower connection (PCIe 3.
 
 ### Compiled Model Size and Number of Files
 - Contrary to popular belief, TensorRT-LLM prebuilt models turned out to not be that huge
-Mistral 7b int4 was actually **25% smaller** in TensorRT-LLM, at 3.05gb vs. 4.06gb
-- Note: These are approximate comparisons, as TensorRT-LLM’s `AWQ INT4` is implemented differently from llama.cpp’s `q4_k_m`
+- Mistral 7b int4 was actually 25% smaller in TensorRT-LLM, at 3.05gb vs. 4.06gb
+- Note: These are approximate comparisons, as TensorRT-LLM’s AWQ INT4 is implemented differently from llama.cpp’s q4_k_m
 - The bigger takeaway is that the Compiled model sizes are roughly in the same ballpark, while the number of files for TensorRT-LLM is 7x the GGUF number of files.
-
 
 | Model size (Lower is better) | TensorRT-LLM AWQ int4 | Llama.cpp GGUF Q4 | % Difference      |
 | ---------------------------- | --------------------- | ----------------- | ----------------- |
-| Mistral 7B                   | ✅ 3.05               | 4.06              | ✅ 24.88% smaller |
-
-| # model files (Lower is better) | TensorRT-LLM AWQ int4 | Llama.cpp GGUF Q4 | % Difference |
-| ------------------------------- | --------------------- | ----------------- | ------------ |
-| Mistral 7B                      | 8                     | ✅ 1              | 700%         |
-
+| Mistral 7B                   | ✅ 3.05GB               | 4.06GB              | ✅ 24.88% smaller |
 
 ### Convenience
 - Llama.cpp still wins on cross-platform versatility and convenience of a “compile once, run everywhere” approach
