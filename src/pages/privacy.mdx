@@ -2,15 +2,38 @@
 title: Privacy
 ---
 
+import { Callout } from 'nextra/components'
+
 # Privacy
 
 Thinking Machines is committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible way. This policy outlines how we collect, store, and use your personal information when you use any of our products.
 
 ## Data Collection
 
-Jan, Cortex, and all Thinking Machines products do not collect personally identifying information. Your conversation history and usage data stays on your own computer.
+Jan, Cortex, and all Thinking Machines products do not collect personally identifying information. You can read about [our philosophy](/about#philosophy) here, and audit our open-source codebases. 
 
-For troubleshooting, you can opt-in to send Jan non-personal information, such as your device type, operating system, and application telemetry, which do not contain personally identifying information. This information is used to improve our app and to provide you with a better user experience.
+### When you voluntarily provide data
+
+We -do- collect personal information that you voluntarily provide to us, e.g. when you sign up for our newsletter, join our Discord, or contact us via email. 
+
+### Jan 
+
+Jan runs with privacy-by-default, and is used 100% offline on your own computer. Your data (e.g. conversation history, usage logs) are stored locally, and never leave your computer. 
+
+<Callout>
+Note: If you use a Remote AI API (e.g. OpenAI API, Groq API), your data will naturally travel to their servers, and will be subject to the privacy policy of the respective API provider.
+</Callout>
+
+Jan uses [Umami](https://umami.is/) for analytics, which is a privacy-focused, GDPR-compliant analytics tool that does not track personal information. We use this to get aggregate stats on OS and hardware types our userbase is on, to prioritize our engineering roadmap. As per [Umami's Privacy Policy](https://umami.is/privacy), Umami maintains visitor privacy by not using cookies, and only collecting the following aggregate data points: 
+
+- OS and device characteristics
+- IP address
+
+We are actively looking into more privacy-respecting ways to handle analytics, crash reports and telemetry, and would love to work with the community on this. 
+
+### Cortex
+
+Cortex is a library that runs large language models (LLMs) locally on your computer. Cortex does not collect any personal information.
 
 ## Data Sharing
 
