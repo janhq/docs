@@ -24,10 +24,10 @@ keywords:
 
 - TODO: Add data from: https://www.techpowerup.com/gpu-specs/ for user to see GPU data
 
-NVIDIA has a wide range of hardware support for HPC and AI/ML
-- Computation: Cuda Cores, Tensor Core
-- Network:
-  - Inter-GPU: NVLink which is better than PCIe
+### NVIDIA has a wide range of hardware support for HPC and AI/ML
+- **Computation**: Cuda Cores, Tensor Core
+- **Network**:
+  - **Inter-GPU with NVLink** which is better than PCIe
     - In multi-GPU environment, NVIDIA CUDA provides a way for peer-to-peer memory access between GPU. Without NVlink, CPU and PCIe is the bottleneck to transfer data back and forth
     ![image](../_assets/ecosystem-nvidia-2.png)
     ![image](../_assets/ecosystem-nvidia-3.png)
@@ -35,11 +35,11 @@ NVIDIA has a wide range of hardware support for HPC and AI/ML
     ![image](../_assets/ecosystem-nvidia-1.png)
     - With NVLink, we have a virtual bigger GPU
     ![image](../_assets/ecosystem-nvidia-4.png)
-  - Inter-node: InfiniBand
+  - **Inter-node: InfiniBand**
     - Data transfer directly between GPUs inter-node via PCIe without touching CPU
     ![image](../_assets/ecosystem-nvidia-5.png)
     - Illustration of Infiniband Node - Infiniband Switch - Router in 7 network layer
     ![image](../_assets/ecosystem-nvidia-6.png)
 
-- Storage: GPUDirectStorage: For faster data access on disk (M2). Data can go directly between PCIe devices (GPU, M2, InfiniBand)
+- **Storage**: GPUDirectStorage: For faster data access on disk (M2). Data can go directly between PCIe devices (GPU, M2, InfiniBand)
     ![image](../_assets/ecosystem-nvidia-7.png)
