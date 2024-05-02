@@ -21,77 +21,49 @@ keywords:
 import { Tabs } from 'nextra/components'
 
 ## What is LLM Inference
-LLM inference is the process of entering a prompt and generating a response from an LLM. It involves a language model drawing conclusions or making predictions to generate an appropriate output based on the patterns and relationships to which it was exposed during training. 
 
-Firstly, in the prefill phase, the LLM must process the text from a user’s input prompt by converting it into a series of prompt, or input, tokens. A token is a unit of text that represents a word or a portion of a word. For the English language, a token is 0.75 words – or four characters.  The exact mechanism that an LLM uses to divide text into tokens, i.e., its tokenizer, varies between models. Once generated, each token is turned into a vector embedding, a numerical representation that the model can understand and make inferences from. These embeddings are then processed by the LLM in order to generate an appropriate output for the user. 
+![image](../_assets/overview-inference-1.png)
 
-From here, during the decoding phase, the LLM generates a series of vector embeddings that represent its response to the given input prompt. These are then converted into completion, or output, tokens, which are generated output one at a time until it reaches a stopping criterion, such as the token limit number or one of a list of stop words. At which time, it will generate a special end token to signal the end of token generation. As LLMs generate one token per forward propagation, i.e., pass or iteration, the number of propagations that a model requires to complete a response is the same as the number of completion tokens.
+## Overview on LLM Inference hardware
+- Nvidia's dominance in AI isn't accidental; it arises from robust hardware and an established CUDA software toolkit. The A100 and H100 GPUs excel with potent computational power, plentiful memory, and optimizations designed for LLM workloads.
+- Intel is best known for CPUs, but the chip giant is investing heavily in the AI domain.  Recent generations of CPUs offer noticeable progress in handling GenAI workloads. Enhancements like dedicated instructions, support for quantization, and libraries like BigDL-LLM give CPUs a foot in the door for LLM inference. Teams valuing existing hardware or familiar workflows may start their LLM journey with CPUs as a potential entry point.
+Intel's venture into the GPU market signals ambitious aims within AI-focused computation. As their GPU options mature, so will the ability to target hardware tailored for LLM demands.  Their OneAPI software offers developers a comprehensive programming toolchain aimed at mirroring a good deal of CUDA's core functionality.
+- AMD is rapidly earning credibility as a provider of formidable LLM inference solutions, prioritizing performance, availability, and a dedication to open-source tools. Its MI300/MI300A accelerators boast the computational power and memory capacity to address even the largest LLMs.
+At the core of AMD's platform is the ROCm open-source software suite. There's a  strategic parallel to CUDA's core strength here, facilitating a smoother journey for developers steeped in Nvidia's environment. AMD, keenly focused on driving its LLM capabilities, actively engages with AI leaders like OpenAI to optimize software.
+- Apple with their own Mac Silicon and unique design for unified memory ...
+- Some hardware players have come up with specific hardware for transformer-based LLM:
+  - Groq with their LPU - ...
+  - NVIDIA since the new H100 has [TransformerEngine](https://blogs.nvidia.com/blog/h100-transformer-engine/) that is designed for Transformer architecture
 
-## What Are the Most Important LLM Inference Performance Metrics?
-To evaluate the inference capabilities of a large language model, the metrics that we’re most interested in are latency and throughput. 
+## LLM Inference hardware choice based on John Neumann bottleneck
+Computers have always been about computing things faster and faster. While this design made computers ‘automatic’, it introduced new bottlenecks to computing speed. Controller is an interpreter which fetches instructions one by one from memory and executes them on data from memory. This meant the two important components of the design (controller, memory) have to be balanced in terms of speed. Let’s understand what speed for each of these components mean:
+- Controller speed aka TOPS: Number of instructions controller can run per second. Usually this is measured in operations per second. Modern computers quote their speed in TOPS - Tera operations per second or TFLOPS - Tera floating operations per second.
+- Memory speed aka Bandwidth: Number of bits that can be read from memory per second. Usually this is measured in bytes per seconds. Modern computers quote their memory speeds in GB/s - Gigabytes per second.
 
-### Latency
-Latency is a measure of how long it takes for an LLM to generate a response to a user’s prompt. It provides a way to evaluate a language model’s speed and is mainly responsible for forming a user’s impression of how fast or efficient a generative AI application is. Consequently, low latency is important for use cases that involve real-time interactions, such as chatbots and AI copilots, but less so for offline processes. There are several ways to measure a model’s latency, including: 
+If the controller is able to operate way more operations than the memory can cope with or vice versa, the design becomes imbalanced and a bottleneck will be created! This is termed as Von Neumann Bottleneck.
 
-- Time To First Token (TTFT):
-- Time Per Output Token (TPOT)
-- Total generation time
-**TTFT** is the length of time it takes for the user to start receiving a response from a model after entering their prompt. It’s determined by the time it takes to process the user’s input and generate the first completion token. Factors that influence TFTT include:
+Latency per token is minimum of latency from memory and latency from controller. For latency from memory, time to transfer P weights from memory to controller has to be computed. For compute, since we’re essentially doing matrix multiplications we’ll be doing 2 * P operations (one for multiplication and one for adding). If we assume batch size of B, we’ll do 2 * P * B operations while data transfer is the same. In our formula, nbytes
+ represent number of bytes per weight in our representation (for example, nbytes= 0.5 for int4). Here’s the final formula:
 
-- Network speed: a system’s general bandwidth and, similarly, how congested the network is at the time of inference.  
-- Input sequence length: the longer the prompt, the more processing required by the model before it can output the first token.   
-- Model size: conventionally, the larger the model, i.e., the more parameters it has, the more computations it performs to generate a response, which prolongs the TFTT. 
-**TPOT**, alternatively, is the average time it takes to generate a completion token for each user querying the model at a given time. This can also occasionally be referred to as inter-token latency (ITL). 
+![image](../_assets/overview-inference-2.png)
 
-Total generation time refers to the end-to-end latency of an LLM: from when a prompt is originally entered by the user to when they receive the completed output from the model; often, when people refer to latency, they’re actually referring to total generation time. It can be calculated as follows:
+For optimal hardware design, we will want to chose the hardware for which compute latency and transfer `latencycompute=latencymemory` . If we use int8 representation and batch size of 1, which are very reasonable assumptions, this simplifies into nflops=nmemory bandwidth
+. I plotted estimated toks/s for different memory and controller speeds and marked the optimal configuration.
 
-**Total generation time =  TTFT + (TPOT x number of generated tokens)**
-An LLM’s total generation time varies according to a number of key factors:
+![image](../_assets/overview-inference-3.png)
 
-- Output Length: this is the most important factor because models generate output a token at a time. This is also why the LLM’s TPOT should also be measured. 
-- Prefill Time:  the time it takes for the model to complete the prefill stage, i.e., how long it takes the model to process all the input tokens from the user’s entered prompt and can generate the first completion token. 
-- Queuing Time: there may be times when an LLM can’t keep up with user requests because of its hardware constraints – namely a lack of GPU memory. This means some input requests will be placed in a queue before they’re processed. This is the reason behind TTFT being such a commonly recorded metric, as it offers insight into how well the model’s server can handle varying numbers of user requests and, subsequently, how it might perform in a real-world setting.
-Something else to be considered when measuring latency is the concept of a cold start. When an LLM is invoked after previously being inactive, i.e., scaled to zero, it causes a “cold” start as the model’s server must create an instance to process the request. This has a considerable effect on latency measurements – particularly TFTT and total generation time, so it’s crucial to note whether the published inference monitoring results for a model specify whether they include a cold start time or not.
+For best AI inference oriented hardware design, you need to spend most of your money around getting the best memory out there. Compute itself is pretty cheap! People have gotten used to measuring computers by TOPS or FLOPS that they optimized heavily for it. However, if you strive to be a AI focussed hardware, you should instead measure your performance in GB/s.
 
-**Throughput**
-An LLM’s throughput provides a measure of how many requests it can process or how much output it can produce in a given time span. Throughput is typically measured in two ways: requests per second or tokens per second.
+## How is LLM inference on different hardware
+| Model | Token/s | Hardware | Cost 
+|-------|---------|----------|------
+| llama2 7b  | 138 t/s | [RTX 4090](https://www.hardware-corner.net/guides/computer-to-run-llama-ai-model/) | $5000 complete system
+| llama2 7b | 714.33 t/s | [Nvidia A100](https://github.com/vllm-project/vllm/discussions/275) | $10,000 1U System (Estimated)
+| llama2 70B | 41.2 t/s | [2 x A10G](https://octoml.ai/blog/making-the-llama-2-herd-work-for-you-on-octoai/) | $15,000 1U System (Estimated)
+| llama2 70B | 13.77 | [Mac Studio 192GB](https://blog.gopenai.com/how-to-deploy-llama-2-as-api-on-mac-studio-m2-ultra-and-enable-remote-api-access-7c4e6423b2dd) | $5599
 
-- Requests per second: this metric is dependent on the model’s total generation time and how many requests are being made at the same time, i.e., how well the model handles concurrency. However, total generation time varies based on how long the model’s input and output are.
-- Tokens per second: because requests per second are influenced by total generation time, which itself depends on the length of the model’s output and, to a lesser extent, its input, tokens per second is a more commonly used metric for measuring throughput. Much like TFTT, the tokens per second metric is integral to the perceived speed of an LLM.
-Additionally, tokens per second could refer to:
 
-- Total tokens per second: both input and output tokens
-- Output tokens per second: only generated completion tokens
-Typically, total tokens per second is considered the more definitive measure of model throughput, while output tokens per second is applicable to measuring the performance of LLMs for use in real-time applications. 
-
-**Request Batching**
-One of the most effective and increasingly employed methods for increasing an LLM’s throughput is batching. Instead of loading the model’s parameters for each user prompt, batching involves collecting as many inputs as possible to process at once – so parameters have to be loaded less frequently. However, while this makes the most efficient use of a GPU and improves throughput, it does so at the expense of latency – as users that made the initial requests that comprise a batch will have to wait until it’s processed to receive a response. What’s more, the larger the batch size, the bigger the drop-off in latency, although there are limits on the maximum size of a batch before causing memory overflow. 
-
-Types of batching techniques include:  
-
-- Static batching: also called naïve batching, this is the default batching method with which multiple prompts are gathered and responses are only generated when all the requests in the batch are complete.
-- Continuous batching: also known as in-flight batching; as opposed to waiting for all the prompts within a batch to be completed, this form of batching groups requests at the iteration level. As a result, once a request has been completed, a new one can replace it, making it more compute-efficient.  
-
-## How is the hosted LLM performance
-The site GTP For Work features a latency tracker that continually monitors the performance of the APIs for several models from OpenAI and Azure OpenAI (GPT-4 and GPT-3.5 and Anthropic (Claude 1.0 and 2.0). They publish the average latency of each model over a 48-hour period, based on:
-
-- Generating a maximum of 512 tokens
-- A temperature of 0.7 
-- 10 minute intervals
-- Data from three locations
-
-| Model            | Throughput (tokens per second) | Latency (TRT) (seconds) | Latency (TFCR) (seconds) |
-|------------------|--------------------------------|--------------------------|---------------------------|
-| Mixtral 8x7B     | 95                             | 2.66                     | 0.6                       |
-| GPT-3.5 Turbo    | 92                             | 1.85                     | 0.65                      |
-| Gemini Pro       | 86                             | 3.6                      | 2.6                       |
-| Llama 2 Chat (70B) | 82                           | 3.16                     | 0.88                      |
-| Claude 2.0       | 27                             | 4.8                      | 0.9                       |
-| GPT-4            | 22                             | 7.35                     | 1.9                       |
-| GPT-4 Turbo      | 20                             | 7.05                     | 1.05                      |
-| Mistral Medium   | 19                             | 6.2                      | 0.3                       |
-
-## How is local LLM performance
+## How is LLM inference on NVIDIA Datacenter Grade GPU
 <Tabs items={['1 x L4 GPU', '2 x L4 GPUs', '4 x L4 GPUs', '8 x L4 GPUs']}>
   <Tabs.Tab>
   | Model                 | Throughput (tokens per second) | Throughput (requests per second) | Average latency (seconds) | Average latency per token (seconds) | Average latency per output token (seconds) | Total time (seconds) |
@@ -119,11 +91,3 @@ The site GTP For Work features a latency tracker that continually monitors the p
   | Llama2-70B |	– |	1.00 |	475.59 |	1.62 |	9.21 |	996.86 |
   </Tabs.Tab>
 </Tabs>
-
-## What determines hardware for LLM Inference:
-- Possible bottlenecks
-  - Motherboard extension for GPU - CPU: PCIe version and lane. Choose PCIe 4.0 x16 lanes or 5.0
-  - DIMM memory: DDR4 or DDR5
-  - GPU: Number of CUDA/ TensorCore with VRAM bandwidth
-  - PSU
-  - Thermal condition: Hot temperature -> GPU/ CPU throttle
