@@ -1,6 +1,6 @@
 ---
 title: Knowledge Retrieval
-description: Jan Docs | Jan is a ChatGPT-alternative that runs on your own computer, with a local API server.
+description: A step-by-step guide to chat with PDF documents.
 keywords:
   [
     Jan,
@@ -44,7 +44,7 @@ To chat with PDFs using RAG in Jan, follow these steps:
 | **Top K**             | - Determines the number of top-ranked documents to retrieve, allowing control over search result relevance.<br></br>- Adjust this setting based on the precision needed. A lower value for more precise, focused searches and a higher value for broader, more comprehensive searches.                                                     |
 | **Chunk Size**        | - Sets the maximum number of tokens per data chunk, which is crucial for managing processing load and maintaining performance.<br></br>- Increase the chunk size for processing large blocks of text efficiently, or decrease it when dealing with smaller, more manageable texts to optimize memory usage.                                           |
 | **Chunk Overlap**     | - Specifies the overlap in tokens between adjacent chunks to ensure continuous context in split text segments.<br></br>- Adjust the overlap to ensure smooth transitions in text analysis, with higher overlap for complex texts where context is critical.                                                  |
-| **Retrieval Template**| - Defines the query structure using variables like `{CONTEXT}` and `{QUESTION}` to tailor searches to specific needs.<br></br>- Customize templates to closely align with the structure of your data and the nature of the queries, ensuring that retrievals are as relevant as possible.                                               |
+| **Retrieval Template**| - Defines the query structure using variables like `{CONTEXT}` and `{QUESTION}` to tailor searches to specific needs.<br></br>- Customize templates to closely align with your data's structure and the queries' nature, ensuring that retrievals are as relevant as possible.                                               |
 5. Select the model you want to use.
 <Callout type="info">
 To upload an image or GIF, ensure that you are using a multimodal model. If not, you are limited to uploading documents only.
