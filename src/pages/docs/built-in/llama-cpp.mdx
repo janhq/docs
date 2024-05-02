@@ -87,7 +87,7 @@ This guide walks you through customizing your engine settings by configuring the
 </Tabs>
 
 ### GPU Acceleration Options
-Enable the GPU acceleration option available within the Jan application by following the [Installation Setup](/docs/desktop-installation) guide.
+Enable the GPU acceleration option within the Jan application by following the [Installation Setup](/docs/desktop-installation) guide.
 ## Step-by-step Guide
 1. Navigate to the **Settings** > **Advanced Settings**.
 2. On the **Jan Data Folder** click the **folder icon (📂)** to access the data folder.
@@ -111,8 +111,8 @@ The table below describes the parameters in the `nitro.json` file.
 
 | Parameter       | Type        | Description                                                                                                                        |
 | --------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx_len`       | **Integer** | Typically set at `2048`, `ctx_len` provides ample context for model operations like `GPT-3.5`. (_Maximum_: `4096`, _Minimum_: `1`) |
-| `ngl`           | **Integer** | Defaulted at `100`, `ngl` determines GPU layer usage.                                                                              |
+| `ctx_len`       | **Integer** | Provides ample context for model operations like `GPT-3.5`. The default value is `2048` (_Maximum_: `4096`, _Minimum_: `1`). |
+| `ngl`           | **Integer** | Determines GPU layer usage. The default value is `100`.                                                                             |
 | `cpu_threads`   | **Integer** | Determines CPU inference threads, limited by hardware and OS. (_Maximum_ determined by system)                                     |
 | `cont_batching` | **Integer** | Controls continuous batching, enhancing throughput for LLM inference.                                                              |
 | `embedding`     | **Integer** | Enables embedding utilization for tasks like document-enhanced chat in RAG-based applications.                                     |
