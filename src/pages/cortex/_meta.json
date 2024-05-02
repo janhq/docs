@@ -7,5 +7,48 @@
     "title": "GET STARTED",
     "type": "separator"
   },
-  "index": { "title": "Overview", "href": "/cortex" }
+  "index": { "title": "Overview", "href": "/cortex" },
+  "quickstart": "Quickstart",
+  "install": "Installation",
+  "cli": "Command Line Interface",
+  "clients": "Client Library",
+  "capabilities": {
+    "title": "CAPABILITIES",
+    "type": "separator"
+  },
+  "text-generation": "Text Generation",
+  "function-calling": "Function Calling",
+  "embeddings": "Embeddings",
+  "fine-tuning": "Fine-tuning",
+  "vision": "Vision",
+  "model-operations": "Model Operations",
+  "rag": "RAG",
+  "assistant": {
+    "title": "ASSISTANTS",
+    "type": "separator"
+  },
+  "assistants": "Overview",
+  "inference-engines": {
+    "title": "INFERENCE ENGINES",
+    "type": "separator"
+  },
+  "built-in": "Built-in Engines",
+  "remote-apis": "Remote APIs",
+  "extensions": {
+    "title": "EXTENSIONS",
+    "type": "separator"
+  },
+  "build-extension": "Build an Extension",
+  "architectures": {
+    "title": "ARCHITECTURE",
+    "type": "separator"
+  },
+  "architecture": "Overview",
+  "ext-architecture": "Extensions",
+  "troubleshooting": {
+    "title": "TROUBLESHOOTING",
+    "type": "separator"
+  },
+  "error-codes": "Error Codes"
+
 }
