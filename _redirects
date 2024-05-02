@@ -15,7 +15,7 @@
 /getting-started/troubleshooting /docs/troubleshooting 302
 /docs/troubleshooting/gpu-not-used /docs/troubleshooting 302
 /guides/integrations/openrouter /docs/remote-inference/openrouter 302
-/guides/integrations/continue /docs/integrations/vscode 302
+/guides/integrations/continue /integrations/coding/continue-dev 302
 /docs/extension-capabilities /docs/extensions 302
 /guides/using-extensions /docs/extensions 302
 /docs/extension-guides /docs/extensions 302
@@ -59,11 +59,12 @@
 /guides/engines/openai/ /docs/remote-inference/openai 302
 /guides/engines/remote-server/ /docs/remote-inference/generic-openai 302
 /extensions/ /docs/extensions 302
-/integrations/discord/ /docs/integrations/discord 302
-/integrations/interpreter/ /docs/integrations/interpreter 302
-/integrations/raycast/ /docs/integrations/raycast 302
+/integrations/discord/ /integrations/messaging/llmcord 302
+/integrations/interpreter/ /integrations/function-calling/interpreter 302
+/integrations/raycast/ /integrations/workflow-automation/raycast 302
+/docs/integrations/raycast /integrations/workflow-automation/raycast 302
 /integrations/openrouter/ /docs/remote-inference/openrouter 302
-/integrations/continue/ /docs/integrations/vscode 302
+/integrations/continue/ /integrations/coding/continue-dev 302
 /troubleshooting/ /docs/troubleshooting 302
 /changelog/changelog-v0.4.9/ /changelog 302
 /changelog/changelog-v0.4.8/ /changelog 302
@@ -99,7 +100,7 @@
 /guides/error-codes/something-amiss/ /docs/troubleshooting#somethings-amiss 302
 /guides/error-codes/how-to-get-error-logs/ /docs/troubleshooting#how-to-get-error-logs 302
 /guides/chatting/ /docs/threads 302
-/guides/integration/openinterpreter/ /docs/integrations/interpreter 302
+/guides/integration/openinterpreter/ /integrations/function-calling/interpreter 302
 /developer/build-assistant/ /docs/assistants 302
 /guides/integrations/ /docs/integrations 302
 /specs/hub/ /docs 302
@@ -286,11 +287,12 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned /docs 302
 /guides/engines/openai /docs/remote-inference/openai 302
 /guides/engines/remote-server /docs/remote-inference/generic-openai 302
 /extensions /docs/extensions 302
-/integrations/discord /docs/integrations/discord 302
-/integrations/interpreter /docs/integrations/interpreter 302
-/integrations/raycast /docs/integrations/raycast 302
+/integrations/discord /integrations/messaging/llmcord 302
+/docs/integrations/discord /integrations/messaging/llmcord 302
+/integrations/interpreter /integrations/function-calling/interpreter 302
+/integrations/raycast /integrations/workflow-automation/raycast 302
 /integrations/openrouter /docs/remote-inference/openrouter 302
-/integrations/continue /docs/integrations/vscode 302
+/integrations/continue /integrations/coding/continue-dev 302
 /troubleshooting /docs/troubleshooting 302
 /changelog/changelog-v0.4.9 /changelog 302
 /changelog/changelog-v0.4.8 /changelog 302
@@ -321,7 +323,7 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned /docs 302
 /getting-started/troubleshooting/ /docs/troubleshooting 302
 /docs/troubleshooting/gpu-not-used/ /docs/troubleshooting#troubleshooting-nvidia-gpu 302
 /guides/integrations/openrouter/ /docs/remote-inference/openrouter 302
-/guides/integrations/continue/ /docs/integrations/vscode 302
+/guides/integrations/continue/ /integrations/coding/continue-dev 302
 /guides/using-extensions/ /docs/extensions 302
 /features/extensions/ /docs/extensions 302
 /integrations/tensorrt /docs/built-in/tensorrt-llm 302
@@ -361,7 +363,7 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned /docs 302
 /guides/error-codes/something-amiss /docs/troubleshooting#somethings-amiss 302
 /guides/error-codes/how-to-get-error-logs /docs/troubleshooting#how-to-get-error-logs 302
 /guides/chatting /docs/threads 302
-/guides/integration/openinterpreter /docs/integrations/interpreter 302
+/guides/integration/openinterpreter /integrations/function-calling/interpreter 302
 /developer/build-assistant /docs/assistants 302
 /guides/integrations /docs/integrations 302
 /specs/hub /docs 302
@@ -607,3 +609,5 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /docs/local-inference/llamacpp /docs/built-in/llama-cpp 302
 /docs/local-inference/tensorrtllm /docs/built-in/tensorrt-llm 302
 /guides/using-server/server/ /docs/local-api 302
+/integrations/coding/vscode /integrations/coding/continue-dev 302
+/docs/integrations/interpreter /integrations/function-calling/interpreter 302
