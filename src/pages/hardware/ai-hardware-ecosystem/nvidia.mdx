@@ -16,10 +16,30 @@ keywords:
   ]
 ---
 
+## Why GPU (NVIDIA promo)
+- Todo: Add youtube embed: https://www.youtube.com/watch?v=-P28LKWTzrI&t=91s
+
+## NVIDIA Ecosystem for hardware and software
 ![image](../_assets/ecosystem-nvidia.drawio.svg)
 
-Data from: https://www.techpowerup.com/gpu-specs/
+- TODO: Add data from: https://www.techpowerup.com/gpu-specs/ for user to see GPU data
 
-| Name             | GPU Chip | Released     | Bus        | Memory                | GPU Clock | Memory Clock |
-|------------------|----------|--------------|------------|-----------------------|-----------|--------------|
-| GeForce RTX 4090 | AD102    | Sep 20th, 2022 | PCIe 4.0 x16 | 24 GB, GDDR6X, 384 bit | 2235 MHz  | 1313 MHz     |
+NVIDIA has a wide range of hardware support for HPC and AI/ML
+- Computation: Cuda Cores, Tensor Core
+- Network:
+  - Inter-GPU: NVLink which is better than PCIe
+    - In multi-GPU environment, NVIDIA CUDA provides a way for peer-to-peer memory access between GPU. Without NVlink, CPU and PCIe is the bottleneck to transfer data back and forth
+    ![image](../_assets/ecosystem-nvidia-2.png)
+    ![image](../_assets/ecosystem-nvidia-3.png)
+    - The bandwidth for NVLink is way much better compared to PCIe
+    ![image](../_assets/ecosystem-nvidia-1.png)
+    - With NVLink, we have a virtual bigger GPU
+    ![image](../_assets/ecosystem-nvidia-4.png)
+  - Inter-node: InfiniBand
+    - Data transfer directly between GPUs inter-node via PCIe without touching CPU
+    ![image](../_assets/ecosystem-nvidia-5.png)
+    - Illustration of Infiniband Node - Infiniband Switch - Router in 7 network layer
+    ![image](../_assets/ecosystem-nvidia-6.png)
+
+- Storage: GPUDirectStorage: For faster data access on disk (M2). Data can go directly between PCIe devices (GPU, M2, InfiniBand)
+    ![image](../_assets/ecosystem-nvidia-7.png)
