@@ -611,3 +611,4 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /guides/using-server/server/ /docs/local-api 302
 /integrations/coding/vscode /integrations/coding/continue-dev 302
 /docs/integrations/interpreter /integrations/function-calling/interpreter 302
+/cortex/built-in/llama-cpp /docs 302
