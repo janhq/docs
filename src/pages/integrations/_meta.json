@@ -3,9 +3,14 @@
     "type": "separator",
     "title": "Switcher"
   },
-  "index": { "title": "Overview", "href": "/integrations", "display": "hidden" },
-  "coding": "Coding",
-  "function-calling": "Function Calling",
-  "messaging": "Messaging",
-  "workflow-automation": "Workflow Automation"
+  "index": { "title": "Overview", "href": "/integrations" },
+  "use-cases": "Use Cases",
+  "inference-engines": {
+    "title": "INTEGRATIONS",
+    "type": "separator"
+  },
+  "continue-dev": "Continue.dev",
+  "interpreter": "Open Interpreter",
+  "raycast": "Raycast",
+  "llmcord": "llmcord (Discord)"
 }
