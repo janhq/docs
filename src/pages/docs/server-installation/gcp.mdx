@@ -91,7 +91,7 @@ docker compose --profile cpu-s3fs up -d
 
 #### Run Jan in GPU mode
 
-1. Check CUDA compatibility with your NVIDIA driver by running `nvidia-smi` and check the CUDA version in the output
+1. Check CUDA compatibility with your NVIDIA driver by running `nvidia-smi` and check the CUDA version in the output:
 
 ```bash
 nvidia-smi
@@ -128,7 +128,7 @@ nvidia-smi
 
 3. Update the `Dockerfile.gpu` line number 5 with the latest minor version of the image tag from step 2 (e.g. change `FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04 AS base` to `FROM nvidia/cuda:12.1.0-runtime-ubuntu22.04 AS base`)
 
-4. Run command to start Jan in GPU mode
+4. Run the following command to start Jan in GPU mode:
 
 ```bash
 # GPU mode with default file system
