@@ -20,36 +20,48 @@ keywords:
   ]
 ---
 
-import { Tabs } from 'nextra/components'
-import { Callout } from 'nextra/components' 
+import { Tabs, Callout, Steps } from 'nextra/components'
+import FAQBox from '@/components/FaqBox'
 
 
 # Linux Installation
-To install Jan desktop on Linux, follow the steps below:
-## Pre-requisites
-Ensure that your system meets the following requirements:
+## Compatibility
+Ensure that your system meets the following requirements to use Jan effectively:
+  - **OS**:
+    - Windows 10 or higher is required to run Jan.
+  - **Hardware**:
+    - **CPU**:
+    - **RAM**:
   - glibc 2.27 or higher (check with `ldd --version`)
   - Ensure that `gcc-11`, `g++-11`, `cpp-11`, or higher is installed. To install, please see [here](https://gcc.gnu.org/projects/cxx-status.html#cxx17) for Ubuntu installation.
   - **Post-Installation Actions**: Add CUDA libraries to `LD_LIBRARY_PATH`. To install, follow the [Post-installation Actions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions) instructions.
 
-To enable GPU support, you will need:
-  - NVIDIA GPU with CUDA Toolkit 11.7 or higher.
-  - NVIDIA driver 470.63.01 or higher.
+## Installing Jan
+To install Jan, follow the steps below:
+<Steps>
+### Step 1: Download the Jan Application
+Jan provides two types of releases:
+#### Stable Releases
+The stable release is a stable version of Jan. You can download a stable release Jan app via the following:
+  - Official Website: https://jan.ai
+  - Jan GitHub repository: https://github.com/janhq/jan
+<Callout type="info">
+Make sure to verify the URL to ensure that it's the official Jan website.
+</Callout>
+#### Nightly Releases
+The nightly Release allows you to test out new features and get a sneak peek at what might be included in future stable releases. You can download this version from Jan's GitHub repository at https://github.com/janhq/jan.
+<Callout type="info">
+Keep in mind that this build might crash frequently and may contain bugs!
+</Callout>
 
-## Stable Releases
-
-To download stable releases:
-1. Go to [Jan](https://jan.ai/).
-2. Click the **Download** tab.
-<br/>
-![Linux Installation](../_assets/download.png)
-<br/>
-3. Under the **Linux** section, click the preferred file you want to download.
-<br/>
-![Linux Installation](../_assets/linux.png)
-### Install Command
-You can also install Jan using the following command:
-<Tabs items = {[ 'dpkg', 'apt-get', 'AppImage']}>
+For Linux, Jan provides two types of downloads:
+1. Debian-based distribution: `.deb`
+2. Universal distribution: `.AppImage`
+### Step 2: Install the Jan Application
+Here are the steps to install Jan on Linux based on your Linux distribution:
+#### Ubuntu
+Install Jan using the following command:
+<Tabs items = {[ 'dpkg', 'apt-get']}>
     <Tabs.Tab>
 
         ```sh
@@ -65,33 +77,94 @@ You can also install Jan using the following command:
         # where jan-linux-amd64-{version}.deb is the path to the Jan package
         ```
     </Tabs.Tab>
-    <Tabs.Tab>
-
-        ```sh
-        # Install Jan using AppImage
-        chmod +x jan-linux-x86_64-{version}.AppImage
-        ./jan-linux-x86_64-{version}.AppImage
-        # where jan-linux-x86_64-{version}.AppImage is the path to the Jan package
-        ```
-    </Tabs.Tab>
 </Tabs>
+#### Fedora
+1. Make the AppImage executable using the following command:
+```sh
+  chmod +x jan-linux-x86_64-{version}.AppImage
+```
+2. Run the AppImage file using the following command:
+```sh
+  ./jan-linux-x86_64-{version}.AppImage
+```
+### Step 3: Move the Data Folder (Optional)
+By default, Jan is installed in the following directory:
 
-<Callout type='info'>
-The download should be available as a `.AppImage` file or a `.deb` file.
+```sh
+# Default installation directory
+C:\Users\{username}\Jan
+```
+You can move the Jan data folder by following the steps below:
+1. Open Jan.
+2. Click the **gear icon (⚙️)** on the bottom left of your screen.
+3. Under the **Settings screen**, click the **Advanced Settings**.
+4. On the **Jan Data Folder** click the **pencil icon (✏️)** to change the folder where you keep your data.
+<Callout type="info">
+Please see the Jan Data Folder for more details about the data folder structure.
 </Callout>
-## Nightly Releases
-
-We provide the Nightly Release so that you can test new features and see what might be coming in a future stable release. Please be aware that there might be bugs!
-
-You can download it from [Jan's Discord](https://discord.gg/FTk2MvZwJH) in the [`#nightly-builds`](https://discord.gg/q8szebnxZ7) channel.
-
-<Callout type="warning" emoji="⚠️">
-  If stuck in a broken build, go to the [Broken Build](/docs/troubleshooting#broken-build) section.
+</Steps>
+## GPU Acceleration
+Once Jan is installed and you have a GPU, you can configure your GPU to accelerate the model's performance.
+### NVIDIA GPU
+To enable the use of your NVIDIA GPU in the Jan app, follow the steps below:
+<Callout type="info">
+  Ensure that you have installed the following to use NVIDIA GPU:
+    - NVIDIA GPU with CUDA Toolkit 11.7 or higher.
+    - NVIDIA driver 470.63.01 or higher.
 </Callout>
-## Enable GPU
-Once Jan is installed and you have a GPU, you can configure your GPU to accelerate the model's performance. To enable the use of your GPU in the Jan app, follow the steps below:
 1. Open Jan application.
-2. Go to **Settings** -> **Advanced Settings** -> **Accelerator** -> Enable and choose the GPU you want.
+2. Go to **Settings** -> **Advanced Settings** -> **GPU Acceleration**.
+3. Enable and choose the NVIDIA GPU you want.
 3. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
 <br/>
 ![Enable GPU](../_assets/gpu.gif)
+### AMD or Intel ARC GPU
+To enable the use of your AMD or Intel ARC GPU in the Jan app, you need to activate the Vulkan support first by following the steps below:
+1. Open Jan application.
+2. Go to **Settings** -> **Advanced Settings** -> enable the **Experimental Mode**.
+3. Enable the **Vulkan Support** under the **GPU Acceleration**.
+3. Enable the **GPU Acceleration** and choose the GPU you want to use.
+3. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
+<br/>
+![Enable GPU](../_assets/amd.gif)
+  
+## Uninstalling Jan
+To uninstall Jan, follow the steps below:
+### Ubuntu
+1. Open a terminal.
+2. Run the following command to uninstall Jan:
+```sh
+sudo apt-get remove jan
+```
+### Fedora
+1. Open a terminal.
+2. Run the following command to uninstall Jan:
+```sh
+sudo dnf remove jan
+```
+<Callout type="warning">
+The deleted Data Folder cannot be restored.
+</Callout>
+## FAQs
+<FAQBox title="What are Nightly Releases, and how can I access them?">
+  Nightly Releases allow you to test new features and previews of upcoming stable releases. You can download them from Jan's GitHub repository. However, remember that these builds might contain bugs and crash frequently.
+</FAQBox>
+<FAQBox title="Can I move the Jan data folder to a different location?">
+  Yes, you can move the Jan data folder.
+</FAQBox>
+<FAQBox title="How do I enable GPU acceleration for better performance?">
+  Depending on your GPU type (NVIDIA, AMD, or Intel), follow the respective instructions provided in the [GPU Acceleration](/docs/desktop/windows#gpu-acceleration) section above.
+</FAQBox>
+<FAQBox title="Can I recover the deleted Jan data folder after uninstallation?">
+  No, once you delete the Jan data folder during uninstallation, it cannot be restored. 
+</FAQBox>
+<FAQBox title="Can I use the AppImage in any distribution?">
+  Yes, `.AppImage` is designed to be distribution-agnostic, meaning it can run on various Linux distributions without requiring installation. You can use the Jan AppImage on any Linux distribution that supports the AppImage format.
+</FAQBox>
+<FAQBox title="Can the .deb file be used on distributions other than Debian-based ones?">
+  No, `.deb` files are specifically intended for Debian-based distributions and may not be compatible with other Linux distributions.
+</FAQBox>
+<Callout type="warning">
+If you have any trouble during installation, please see our [Troubleshooting](/docs/troubleshooting) guide to resolve your problem.
+</Callout>
+
