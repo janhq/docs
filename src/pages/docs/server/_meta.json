@@ -1,0 +1,18 @@
+{
+  "onprem": {
+    "title": "On Premise",
+    "href": "/docs/server/onprem"
+  },
+  "aws": {
+    "title": "AWS",
+    "href": "/docs/server/aws"
+  },
+  "gcp": {
+    "title": "GCP",
+    "href": "/docs/server/gcp"
+  },
+  "azure": {
+    "title": "Azure",
+    "href": "/docs/server/azure"
+  }
+}

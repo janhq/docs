@@ -32,9 +32,11 @@ Ensure that your system meets the following requirements to use Jan effectively:
   - **Hardware**:
     - **CPU**:
     - **RAM**:
-  - glibc 2.27 or higher (check with `ldd --version`)
-  - Ensure that `gcc-11`, `g++-11`, `cpp-11`, or higher is installed. To install, please see [here](https://gcc.gnu.org/projects/cxx-status.html#cxx17) for Ubuntu installation.
-  - **Post-Installation Actions**: Add CUDA libraries to `LD_LIBRARY_PATH`. To install, follow the [Post-installation Actions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions) instructions.
+  - **System Libraries**:
+    - glibc 2.27 or higher. You can verify this by running `ldd --version`.
+    - Install gcc-11, g++-11, cpp-11, or later versions. Refer to the [Ubuntu installation guide](https://gcc.gnu.org/projects/cxx-status.html#cxx17) for assistance.
+  - **Post-Installation Actions**:
+    - Add CUDA libraries to the `LD_LIBRARY_PATH` as per the instructions provided in the [Post-installation Actions](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions).
 
 ## Installing Jan
 To install Jan, follow the steps below:
@@ -49,7 +51,8 @@ The stable release is a stable version of Jan. You can download a stable release
 Make sure to verify the URL to ensure that it's the official Jan website and GitHub repository.
 </Callout>
 #### Nightly Releases
-The nightly Release allows you to test out new features and get a sneak peek at what might be included in future stable releases. You can download this version from Jan's GitHub repository at https://github.com/janhq/jan.
+The nightly Release allows you to test out new features and get a sneak peek at what might be included in future stable releases. You can download this version via:
+  - **Jan GitHub repository**: https://github.com/janhq/jan
 <Callout type="info">
 Keep in mind that this build might crash frequently and may contain bugs!
 </Callout>
@@ -104,7 +107,7 @@ Please see the Jan Data Folder for more details about the data folder structure.
 </Callout>
 </Steps>
 ## GPU Acceleration
-Once Jan is installed and you have a GPU, you can configure your GPU to accelerate the model's performance.
+Once Jan is installed and you have a GPU, you can use your GPU to accelerate the model's performance.
 ### NVIDIA GPU
 To enable the use of your NVIDIA GPU in the Jan app, follow the steps below:
 <Callout type="info">

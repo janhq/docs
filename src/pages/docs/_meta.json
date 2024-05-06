@@ -12,7 +12,7 @@
     "title": "Quickstart"
   },
   "desktop": "Desktop",
-  "server-installation": "Server Installation",
+  "server": "Server",
   "user-guides": {
     "title": "BASIC USAGE",
     "type": "separator"
