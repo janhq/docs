@@ -1,0 +1,13 @@
+{
+  "windows": {
+    "title": "Windows",
+    "href": "/docs/desktop/windows"
+  },"mac": {
+    "title": "Mac",
+    "href": "/docs/desktop/mac"
+  },
+  "linux": {
+    "title": "Linux",
+    "href": "/docs/desktop/linux"
+  }
+}

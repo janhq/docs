@@ -612,3 +612,7 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /integrations/coding/vscode /integrations/coding/continue-dev 302
 /docs/integrations/interpreter /integrations/function-calling/interpreter 302
 /cortex/built-in/llama-cpp /docs 302
+/docs/desktop-installation /docs/desktop 302
+/docs/desktop-installation/mac /docs/desktop/mac 302
+/docs/desktop-installation/windows /docs/desktop/windows 302
+/docs/desktop-installation/linux /docs/desktop/linux 302
