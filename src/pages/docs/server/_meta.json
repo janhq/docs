@@ -1,7 +1,11 @@
 {
-  "onprem": {
-    "title": "On Premise",
-    "href": "/docs/server/onprem"
+  "docker": {
+    "title": "Docker",
+    "href": "/docs/server/docker"
+  },
+  "kubernetes": {
+    "title": "Kubernetes",
+    "href": "/docs/server/kubernetes"
   },
   "aws": {
     "title": "AWS",
