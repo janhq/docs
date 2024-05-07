@@ -65,9 +65,9 @@ AMD GPU/ Intel Arc GPU are not supported yet.
 </Steps>
 
 ## Installing Jan
-In this installation section, we'll guide you through installing Jan with GPU mode and the `fs` variable, utilizing the local Data Folder.
+In this installation section, we'll guide you through installing Jan with GPU mode and the `fs` variable, utilizing the local data folder.
 <Callout type="info">
-You can utilize a Remote Data Folder for the autoscaling feature. Refer to the [Advanced Use](/docs/server/azure#advanced-use) section for more details.
+You can utilize a remote data folder for the autoscaling feature. Refer to the [Advanced Use](/docs/server/azure#advanced-use) section for more details.
 </Callout>
 <Steps>
 ### Step 1: Customize the Docker Engine and Compose
@@ -136,7 +136,7 @@ Once the Jan server runs, you can access it in Jan at `http://localhost:3000`.
 </Steps>
 ## Advanced Use
 ### Remote Data Folder
-Utilizing a Remote Data Folder facilitates autoscaling by allowing multiple Docker containers to point to a single Data Folder. This enables seamless data sharing and management across distributed instances.
+Utilizing a remote data folder facilitates autoscaling by allowing multiple Docker containers to point to a single data folder. This enables seamless data sharing and management across distributed instances.
 
 Remote S3 Bucket integration provides an efficient solution for data storage and retrieval. By storing data in an S3 bucket, Jan instances can easily access and manipulate the data without local storage constraints.
 For S3 integration, two options are available:
