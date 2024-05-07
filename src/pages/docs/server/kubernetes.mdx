@@ -37,8 +37,7 @@ Ensure that your system meets the following hardware requirements to use Jan eff
 ## Prerequisites
 <Steps>
 ### Step 1: Install Docker Engine and Compose
-1. Install WSL2 in Windows by following the steps [here](https://learn.microsoft.com/en-us/windows/wsl/install).
-2. Install Docker Engine and Docker Compose in WSL 2 using the following command:
+1. Install Docker Engine and Docker Compose 2 using the following command:
 <Callout type="info">
 To install Docker Engine on Ubuntu, follow the instructions [here](https://docs.docker.com/engine/install/ubuntu/).
 </Callout>
@@ -46,7 +45,7 @@ To install Docker Engine on Ubuntu, follow the instructions [here](https://docs.
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh ./get-docker.sh --dry-run
 ```
-3. Download Jan `docker-compose.yml` file using the following command:
+2. Download Jan `docker-compose.yml` file using the following command:
 ```bash
 curl https://raw.githubusercontent.com/janhq/jan/dev/docker-compose.yml -o docker-compose.yml
 ```
@@ -64,15 +63,12 @@ AMD GPU/ Intel Arc GPU are not supported yet.
 </Steps>
 
 ## Installing Jan
-In this installation section, we'll guide you through installing Jan with GPU mode and the `fs` variable, utilizing the local Data Folder.
-<Callout type="info">
-You can utilize a Remote Data Folder for the autoscaling feature. Refer to the [Advanced Use](/docs/server/kubernetes#advanced-use) section for more details.
-</Callout>
+In this installation section, we'll guide you through installing Jan with GPU mode and the `s3fs` variable, utilizing the remote Data Folder.
 <Steps>
 ### Step 1: Customize the Docker Engine and Compose
 1. Set up the docker profile and environment variables.
 <Callout type="info">
-Please see the [Understanding Jan's Dockerfile](/docs/server/docker#understanding-the-jans-dockerfiles) section below for details on the docker file.
+Please see the [Understanding Jan's Dockerfile](/docs/server/kubernetes#understanding-the-jans-dockerfiles) section below for details on the docker file.
 </Callout>
 2. Check CUDA compatibility with your NVIDIA driver by running `nvidia-smi` and check the CUDA version in the output:
 
@@ -117,23 +113,26 @@ nvidia-smi
       cd jan/charts/server/
       helm install jan-server .
     ```
-2. Verify and modify the configuration options by accessing the `values.yaml` file on `/jan/charts/server`.
+2. Verify and modify the configuration options by accessing the `values.yaml` file on `/jan/charts/server`. See the example of Jan's helm cart [here](/docs/server/kubernetes#understanding-the-jans-helm-chart).
 3. Start the Jan server using the `s3fs` variable. Run Jan with the following command:
+<Tabs items={['GPU Mode (Recommended)', 'CPU Mode']}>
+<Tabs.Tab>
 ```bash
 # GPU mode with S3 file system
 docker compose --profile gpu-s3fs up -d
 ```
+</Tabs.Tab>
+<Tabs.Tab>
+```bash
+# CPU mode with S3 file system
+docker compose --profile cpu-s3fs up -d
+```
+</Tabs.Tab>
+</Tabs>
 #### Code Explanation
 - `docker compose`: Manages multi-container Docker applications with Docker Compose.
 - `--profile s3fs`: Specifies the Docker Compose profile to use. In this case, it indicates GPU mode with the S3 file system.
 - `up -d`: Starts the Docker containers defined in the Docker Compose file in detached mode, meaning they run in the background.
-<Callout type="info">
-While GPU mode is recommended, you can also run Jan in CPU mode using the following command:
-```bash
-# GPU mode with S3 file system
-docker compose --profile cpu-s3fs up -d
-```
-</Callout>
 ### Step 3: Access the Jan Server
 After deploying the Jan server using Helm, you can access it using your public IP address or domain name. Access the Jan Server via the following URL: `http://jan-server-service-web:1337`.
 </Steps>

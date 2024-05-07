@@ -133,21 +133,24 @@ nvidia-smi
 4. Update the `Dockerfile.gpu` line number 5 with the latest minor version of the image tag from step 2 (e.g., change `FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04 AS base` to `FROM nvidia/cuda:12.1.0-runtime-ubuntu22.04 AS base`)
 ### Step 2: Run Jan
 Once you've configured the Dockerfile, you can start the Jan server using the `fs` variable. Run Jan with the following command:
+<Tabs items={['GPU Mode (Recommended)', 'CPU Mode']}>
+<Tabs.Tab>
 ```bash
 # GPU mode with default file system
 docker compose --profile gpu-fs up -d
 ```
+</Tabs.Tab>
+<Tabs.Tab>
+```bash
+# CPU mode with default file system
+docker compose --profile cpu-fs up -d
+```
+</Tabs.Tab>
+</Tabs>
 #### Code Explanation
 - `docker compose`: Manages multi-container Docker applications with Docker Compose.
 - `--profile gpu-fs`: Specifies the Docker Compose profile to use. In this case, it indicates GPU mode with the default file system.
 - `up -d`: Starts the Docker containers defined in the Docker Compose file in detached mode, meaning they run in the background.
-<Callout type="info">
-While GPU mode is recommended, you can also run Jan in CPU mode using the following command:
-```bash
-# GPU mode with default file system
-docker compose --profile cpu-fs up -d
-```
-</Callout>
 ### Step 3: Access the Jan Server
 Once the Jan server runs, you can access it in Jan at `http://localhost:3000`.
 </Steps>
@@ -157,17 +160,17 @@ Utilizing a Remote Data Folder facilitates autoscaling by allowing multiple Dock
 
 Remote S3 Bucket integration provides an efficient solution for data storage and retrieval. By storing data in an S3 bucket, Jan instances can easily access and manipulate the data without local storage constraints.
 For S3 integration, two options are available:
-<Tabs items={['CPU Mode', 'GPU Mode']}>
-<Tabs.Tab>
-Runs Jan in CPU mode with the S3 file system using the following command:
-```bash
-docker compose --profile cpu-s3fs up -d
-```
-</Tabs.Tab>
+<Tabs items={['GPU Mode', 'CPU Mode']}>
 <Tabs.Tab>
 Runs Jan in GPU mode with the S3 file system using the following command:
 ```bash
 docker compose --profile gpu-s3fs up -d
+```
+</Tabs.Tab>
+<Tabs.Tab>
+Runs Jan in CPU mode with the S3 file system using the following command:
+```bash
+docker compose --profile cpu-s3fs up -d
 ```
 </Tabs.Tab>
 </Tabs>
