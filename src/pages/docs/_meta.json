@@ -24,8 +24,8 @@
   "settings": "Settings",
   "shortcuts": "Keyboard Shortcuts",
   "local-api": "",
-  "inference-engines": {
-    "title": "INFERENCE ENGINES",
+  "model-provider": {
+    "title": "MODEL PROVIDER",
     "type": "separator"
   },
   "built-in": "Built-in Engines",
