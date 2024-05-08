@@ -35,8 +35,8 @@
     "title": "EXTENSIONS",
     "type": "separator"
   },
-  "extensions": "Overview",
   "installing-extension": "Installing an Extension",
+  "extension-settings": "Extension Settings",
   "troubleshooting-separator": {
     "title": "TROUBLESHOOTING",
     "type": "separator"

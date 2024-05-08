@@ -1,0 +1,58 @@
+---
+title: Extension Settings
+description: Learn about Jan's default extensions and explore how to configure them.
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    Jan Extensions,
+    Extensions,
+  ]
+---
+
+import { Callout } from 'nextra/components'
+
+
+# Extension Settings
+
+The current Jan Desktop Client has some default extensions built on this framework to enhance the user experience. This guide will show you how to configure extension settings.
+## Specific Extension Settings
+Jan offers an Extensions settings menu for configuring extensions that have registered their settings within the application. Here, you can directly integrate Remote Inference Engines with Jan without inserting the URL and API Key directly in the `JSON` file. Additionally, you can turn the Logging extensions available on or off in Jan. To access the Extension settings, follow the steps below:
+1. Navigate to the main dashboard.
+2. Click the **gear icon (⚙️)** on the bottom left of your screen.
+<br/>
+![Settings](./_assets/settings.png)
+<br/>
+3. The registered extension settings can be customized under the **Extensions** section.
+<br/>
+![Extensions](./_assets/extensions-page.png)
+
+### System Monitor Extension Feature
+The System Monitor extension now offers enhanced customization for app logging. Users can toggle the application logging feature on or off and set a custom interval for clearing the app logs. To configure the app log feature, follow these steps:
+1. Navigate to the main dashboard.
+2. Click the **Gear Icon (⚙️)** on the bottom left of your screen.
+<br/>
+![Settings](./_assets/settings.png)
+<br/>
+3. Under the **Extensions** section, select the **System Monitoring** extension.
+<br/>
+![System Monitoring extension](./_assets/system-monitor.png)
+<br/>
+4. Use the **slider** to turn the app logging feature on or off.
+<br/>
+![System Monitoring Enable](./_assets/system-slider.png)
+<br/>
+5. Specify the log cleaning interval in milliseconds.
+<br/>
+![System Monitoring Interval](./_assets/system-mili.png)
+<br/>
+<Callout type='info'>
+  - You can clear the app logs manually by clicking the **Clear logs** button in the advanced settings.
+  - There are no minimum or maximum intervals for setting the time. However, invalid inputs will default to `120000ms (2 minutes)`.
+</Callout>
