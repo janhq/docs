@@ -1,9 +1,9 @@
 {
-    "llm-fine-tuning": {
-        "title": "Hardware for LLM fine tuning"
-    },
     "llm-inference": {
         "title": "Hardware for LLM inference"
+    },
+    "llm-fine-tuning": {
+        "title": "Hardware for LLM fine tuning"
     }
 }
   
