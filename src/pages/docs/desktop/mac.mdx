@@ -26,10 +26,11 @@ import FAQBox from '@/components/FaqBox'
 
 
 # Mac Installation
+Jan has been developed as a Mac Universal application, allowing it to run natively on both Apple Silicon and Intel-based Macs. By integrating both binaries into a single package, we streamline the complexity and minimize the size of the Jan repository. This ensures efficient performance across different Mac architectures.
 ## Compatibility
 Ensure that your system meets the following requirements to use Jan effectively:
   - **OS**:
-    - Your macOS Ventura or higher.
+    - MacOs version
   - **Hardware**:
     - **Mac IntelCPU**:
     - **Mac Apple Silicon**:
@@ -82,7 +83,7 @@ Applications\Users\{username}\Jan
 ## Metal Acceleration
 Jan is specially designed to work well on Mac Silicon, using `llama.cpp` as its main engine for processing AI tasks efficiently. It automatically uses Metal 3, Apple's latest technology for GPU acceleration. This setup ensures that Jan runs smoothly and quickly on Mac devices, offering a powerful computing experience for users needing to handle demanding tasks like AI without any complicated setup.
 <Callout>
-Metal, which is used for GPU acceleration, is not supported on Mac devices with Intel processors.
+Metal, used for GPU acceleration, is not supported on Intel-based Mac devices.
 </Callout>
 ## Uninstalling Jan
 To uninstall Jan, follow the steps below:
