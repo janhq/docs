@@ -24,35 +24,29 @@ import { Tabs } from 'nextra/components'
 
 ![image](../_assets/overview-inference-1.png)
 
-## Overview on LLM Inference hardware
-- Nvidia's dominance in AI isn't accidental; it arises from robust hardware and an established CUDA software toolkit. The A100 and H100 GPUs excel with potent computational power, plentiful memory, and optimizations designed for LLM workloads.
-- Intel is best known for CPUs, but the chip giant is investing heavily in the AI domain.  Recent generations of CPUs offer noticeable progress in handling GenAI workloads. Enhancements like dedicated instructions, support for quantization, and libraries like BigDL-LLM give CPUs a foot in the door for LLM inference. Teams valuing existing hardware or familiar workflows may start their LLM journey with CPUs as a potential entry point.
-Intel's venture into the GPU market signals ambitious aims within AI-focused computation. As their GPU options mature, so will the ability to target hardware tailored for LLM demands.  Their OneAPI software offers developers a comprehensive programming toolchain aimed at mirroring a good deal of CUDA's core functionality.
-- AMD is rapidly earning credibility as a provider of formidable LLM inference solutions, prioritizing performance, availability, and a dedication to open-source tools. Its MI300/MI300A accelerators boast the computational power and memory capacity to address even the largest LLMs.
-At the core of AMD's platform is the ROCm open-source software suite. There's a  strategic parallel to CUDA's core strength here, facilitating a smoother journey for developers steeped in Nvidia's environment. AMD, keenly focused on driving its LLM capabilities, actively engages with AI leaders like OpenAI to optimize software.
-- Apple with their own Mac Silicon and unique design for unified memory ...
-- Some hardware players have come up with specific hardware for transformer-based LLM:
-  - Groq with their LPU - ...
-  - NVIDIA since the new H100 has [TransformerEngine](https://blogs.nvidia.com/blog/h100-transformer-engine/) that is designed for Transformer architecture
+## LLM Inference hardware
 
-## LLM Inference hardware choice based on John Neumann bottleneck
-Computers have always been about computing things faster and faster. While this design made computers ‘automatic’, it introduced new bottlenecks to computing speed. Controller is an interpreter which fetches instructions one by one from memory and executes them on data from memory. This meant the two important components of the design (controller, memory) have to be balanced in terms of speed. Let’s understand what speed for each of these components mean:
-- Controller speed aka TOPS: Number of instructions controller can run per second. Usually this is measured in operations per second. Modern computers quote their speed in TOPS - Tera operations per second or TFLOPS - Tera floating operations per second.
-- Memory speed aka Bandwidth: Number of bits that can be read from memory per second. Usually this is measured in bytes per seconds. Modern computers quote their memory speeds in GB/s - Gigabytes per second.
-
-If the controller is able to operate way more operations than the memory can cope with or vice versa, the design becomes imbalanced and a bottleneck will be created! This is termed as Von Neumann Bottleneck.
-
-Latency per token is minimum of latency from memory and latency from controller. For latency from memory, time to transfer P weights from memory to controller has to be computed. For compute, since we’re essentially doing matrix multiplications we’ll be doing 2 * P operations (one for multiplication and one for adding). If we assume batch size of B, we’ll do 2 * P * B operations while data transfer is the same. In our formula, nbytes
- represent number of bytes per weight in our representation (for example, nbytes= 0.5 for int4). Here’s the final formula:
-
-![image](../_assets/overview-inference-2.png)
-
-For optimal hardware design, we will want to chose the hardware for which compute latency and transfer `latencycompute=latencymemory` . If we use int8 representation and batch size of 1, which are very reasonable assumptions, this simplifies into nflops=nmemory bandwidth
-. I plotted estimated toks/s for different memory and controller speeds and marked the optimal configuration.
-
-![image](../_assets/overview-inference-3.png)
-
+## LLM Inference hardware choice based on John Neumann bottleneck - [source](https://chsasank.com/llm-system-design.html)
 For best AI inference oriented hardware design, you need to spend most of your money around getting the best memory out there. Compute itself is pretty cheap! People have gotten used to measuring computers by TOPS or FLOPS that they optimized heavily for it. However, if you strive to be a AI focussed hardware, you should instead measure your performance in GB/s.
+
+## Hardware for LLM inference on Single Node
+### Single GPU
+#### Logical
+![image](../_assets/overview-inference-1.drawio.svg)
+#### Physical (NVIDIA)
+![image](../_assets/overview-inference-2.drawio.svg)
+
+### Multiple GPU with Tensor Parallel
+#### Logical
+![image](../_assets/overview-inference-3.drawio.svg)
+#### Physical (NVIDIA)
+![image](../_assets/overview-inference-4.drawio.svg)
+
+
+## Hardware for LLM inference on Multi node
+- [OpenAI ChatGPT](https://chatgpt.com/?oai-dm=1) uses [Ray](https://www.ray.io/) to distribute `single node` process on multiple nodes - [Reference](https://thenewstack.io/openai-chats-about-scaling-llms-at-anyscales-ray-summit/)
+- [AntGroup](https://www.antgroup.com/en) uses [Ray](https://www.ray.io/) to distribute `NVIDIA Triton Inference server` process for LLM on multiple nodes - [Reference](https://www.youtube.com/watch?v=_yu0Rtuetuc)
+
 
 ## How is LLM inference on different hardware
 | Model | Token/s | Hardware | Cost 
