@@ -31,7 +31,7 @@ Currently, Jan natively supports the following model formats:
 - TensorRT (through a TRT-LLM engine)
 
 ### Download from Jan Hub
-Jan Hub offers two easy ways to get your machine learning models. You can either pick from a list of recommended models or download using a model's ID or URL from Hugging Face. Here's a step-by-step guide for both methods.
+Jan Hub offers two easy ways to get your machine learning models. You can either pick from a list of recommended models or download using a model's ID or URL from [Hugging Face](https://huggingface.co/models). Here's a step-by-step guide for both methods.
 
 #### 1. Download from the Recommended List
 The Recommended List is a great starting point if you're looking for popular and pre-configured models that work well and quickly on most computers.
@@ -56,6 +56,38 @@ Only `GGUF` models are supported for this feature.
 7. Click Download for the version you want.
 <br/>
 ![Import Model](../_assets/import-hf.gif)
+
+### Import or Symlink Local Models
+
+You can also point to existing model binary files on your local filesystem. 
+This is the easiest and most space-efficient way if you have already used other local AI applications.
+
+1. Navigate to the Hub.
+2. Click on `Import Model` at the top.
+3. Select to import using `.GGUF` file or a folder.
+3. Select the model or the folder containing multiple models.
+4. Optionally, check the box to symlink the model files instead of copying them over the Jan Data Folder. This saves disk space.
+<br/>
+![Import Folder](../_assets/import-folder.gif)
+
+<Callout type="warning">
+Windows users should drag and drop the model file, as **Click to Upload** might not show the model files in Folder Preview.
+</Callout>
+
+## Delete Models
+To delete a model:
+
+1. Go to **Settings**.
+<br/>
+![Settings](../_assets/settings.png)
+<br/>
+2. Go to **My Models**.
+<br/>
+![My Models](../_assets/mymodels.png)
+<br/>
+3. Select the three dots next and select `Delete model`.
+<br/>
+![Delete Model](../_assets/delete.png)
 
 ### Add a Model Manually
 You can also add a specific model that is not available within the **Hub** section by following the steps below:
@@ -125,35 +157,3 @@ To see the complete list of a model's parameters, please see [below](/docs/model
   "presence_penalty": 0
 }
 ```
-
-### Import or Symlink Local Models
-
-You can also point to existing model binary files on your local filesystem. 
-This is the easiest and most space-efficient way if you have already used other local AI applications.
-
-1. Navigate to the Hub.
-2. Click on `Import Model` at the top.
-3. Select to import using `.GGUF` file or a folder.
-3. Select the model or the folder containing multiple models.
-4. Optionally, check the box to symlink the model files instead of copying them over the Jan Data Folder. This saves disk space.
-<br/>
-![Import Folder](../_assets/import-folder.gif)
-
-<Callout type="warning">
-Windows users should drag and drop the model file, as **Click to Upload** might not show the model files in Folder Preview.
-</Callout>
-
-## Delete Models
-To delete a model:
-
-1. Go to **Settings**.
-<br/>
-![Settings](../_assets/settings.png)
-<br/>
-2. Go to **My Models**.
-<br/>
-![My Models](../_assets/mymodels.png)
-<br/>
-3. Select the three dots next and select `Delete model`.
-<br/>
-![Delete Model](../_assets/delete.png)
