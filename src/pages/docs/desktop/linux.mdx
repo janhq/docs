@@ -91,22 +91,19 @@ Install Jan using the following command:
 ```sh
   ./jan-linux-x86_64-{version}.AppImage
 ```
-### Step 3: Move the Data Folder (Optional)
+</Steps>
+
+## Data Folder
 By default, Jan is installed in the following directory:
 
 ```sh
 # Default installation directory
-C:\Users\{username}\Jan
+Applications\Users\{username}\Jan
 ```
-You can move the Jan data folder by following the steps below:
-1. Open Jan.
-2. Click the **gear icon (⚙️)** on the bottom left of your screen.
-3. Under the **Settings screen**, click the **Advanced Settings**.
-4. On the **Jan Data Folder** click the **pencil icon (✏️)** to change the folder where you keep your data.
 <Callout type="info">
-Please see the Jan Data Folder for more details about the data folder structure.
+- You can move the Jan data folder to a specific folder by following the steps [here](/docs/settings#access-the-jan-data-folder).
+- Please see the Jan Data Folder for more details about the data folder structure.
 </Callout>
-</Steps>
 ## GPU Acceleration
 Once Jan is installed and you have a GPU, you can use your GPU to accelerate the model's performance.
 ### NVIDIA GPU
@@ -122,15 +119,22 @@ To enable the use of your NVIDIA GPU in the Jan app, follow the steps below:
 3. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
 <br/>
 ![Enable GPU](../_assets/gpu.gif)
-### AMD or Intel ARC GPU
-To enable the use of your AMD or Intel ARC GPU in the Jan app, you need to activate the Vulkan support first by following the steps below:
+### AMD GPU
+To enable the use of your AMD GPU in the Jan app, you need to activate the Vulkan support first by following the steps below:
 1. Open Jan application.
 2. Go to **Settings** -> **Advanced Settings** -> enable the **Experimental Mode**.
 3. Enable the **Vulkan Support** under the **GPU Acceleration**.
-3. Enable the **GPU Acceleration** and choose the GPU you want to use.
-3. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
+4. Enable the **GPU Acceleration** and choose the GPU you want to use.
+5. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
 <br/>
 ![Enable GPU](../_assets/amd.gif)
+### Intel Arc GPU
+To enable the use of your Intel Arc GPU in the Jan app, you need to activate the Vulkan support first by following the steps below:
+1. Open Jan application.
+2. Go to **Settings** -> **Advanced Settings** -> enable the **Experimental Mode**.
+3. Enable the **Vulkan Support** under the **GPU Acceleration**.
+4. Enable the **GPU Acceleration** and choose the GPU you want to use.
+5. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
   
 ## Uninstalling Jan
 To uninstall Jan, follow the steps below:

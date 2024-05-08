@@ -66,26 +66,23 @@ brew install --cask jan
   - Ensure that you have installed Homebrew and its dependencies.
   - Homebrew package installation is currently limited to **Apple Silicon Macs**, with upcoming support for Windows and Linux.
 </Callout>
-### Step 3: Move the Data Folder (Optional)
+</Steps>
+
+## Data Folder
 By default, Jan is installed in the following directory:
 
 ```sh
 # Default installation directory
 Applications\Users\{username}\Jan
 ```
-You can move the Jan data folder by following the steps below:
-1. Open Jan.
-2. Click the **gear icon (⚙️)** on the bottom left of your screen.
-3. Under the **Settings screen**, click the **Advanced Settings**.
-4. On the **Jan Data Folder** click the **pencil icon (✏️)** to change the folder where you keep your data.
 <Callout type="info">
-Please see the Jan Data Folder for more details about the data folder structure.
+- You can move the Jan data folder to a specific folder by following the steps [here](/docs/settings#access-the-jan-data-folder).
+- Please see the Jan Data Folder for more details about the data folder structure.
 </Callout>
-</Steps>
 ## Metal Acceleration
-Jan is optimized for Mac Silicon, utilizing `llama.cpp` as its default supported inference engine and leveraging Metal 3 by default. This means that Mac Silicon devices automatically gain the benefits of GPU acceleration.
-<Callout type="info">
-GPU acceleration is not available for Mac Intel devices.
+Jan is specially designed to work well on Mac Silicon, using `llama.cpp` as its main engine for processing AI tasks efficiently. It automatically uses Metal 3, Apple's latest technology for GPU acceleration. This setup ensures that Jan runs smoothly and quickly on Mac devices, offering a powerful computing experience for users needing to handle demanding tasks like AI without any complicated setup.
+<Callout>
+Metal, which is used for GPU acceleration, is not supported on Mac devices with Intel processors.
 </Callout>
 ## Uninstalling Jan
 To uninstall Jan, follow the steps below:

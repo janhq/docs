@@ -138,7 +138,7 @@ After deploying the Jan server using Helm, you can access it using your public I
 </Steps>
 ## Advanced Use
 ### CPU Usage
-Running Jan in CPU mode is not the preferred option due to its slower performance than GPU mode. However, it can still be utilized for specific use cases.
+Running Jan in CPU mode is generally less preferred due to its slower performance than GPU mode. CPUs are optimized for sequential tasks with fewer cores, making them less efficient for parallel processing, which is crucial in AI tasks like neural network training and large dataset handling. With their numerous cores and higher memory bandwidth, GPUs are better suited for these data-intensive tasks and are optimized for AI-specific operations. However, CPU mode can still be used for specific use cases.
 To use the CPU mode, use the following commands:
 ```bash
 # cpu mode with S3 file system
