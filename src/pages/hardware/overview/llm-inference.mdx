@@ -20,28 +20,41 @@ keywords:
 
 import { Tabs } from 'nextra/components'
 
-## What is LLM Inference
+## Overview on how LLM Inference work on software level
 
 ![image](../_assets/overview-inference-1.png)
+| *LLM training - software level - [Source](): TBU* |
 
-## LLM Inference hardware
-
-## LLM Inference hardware choice based on John Neumann bottleneck - [source](https://chsasank.com/llm-system-design.html)
-For best AI inference oriented hardware design, you need to spend most of your money around getting the best memory out there. Compute itself is pretty cheap! People have gotten used to measuring computers by TOPS or FLOPS that they optimized heavily for it. However, if you strive to be a AI focussed hardware, you should instead measure your performance in GB/s.
+## Overview on how LLM Inference work on hardware level
 
 ## Hardware for LLM inference on Single Node
-### Single GPU
-#### Logical
-![image](../_assets/overview-inference-1.drawio.svg)
-#### Physical (NVIDIA)
+### Single NVIDIA GPU
 ![image](../_assets/overview-inference-2.drawio.svg)
+| *LLM Inference with a single GPU* |
 
-### Multiple GPU with Tensor Parallel
-#### Logical
-![image](../_assets/overview-inference-3.drawio.svg)
-#### Physical (NVIDIA)
+The above diagram shows how does it look like in hardware layer for a OpenAI compatible API server.
+- The input and output in HTTP payload are on Ethernet (the best now is at 5GB/s)
+- The CPU (in blue) is in charge of 
+  - Webserver handler.
+  - Tokenizer.
+  - Optional post processing.
+  - Orchestrate the asynchronous task in GPU via PCIe 4.0
+  - In the case without any GPU accelerations, CPU will handle the computation for model (which are currently denoted in green)
+- The GPU (in green) is in charge of running model with `Transformers` and `Self Attentions` layer (there are around 32-80 layers depends on the model architecture). With a single GPU, the data get in and out sequentially but speeded up by GPU.
+
+### Multiple NVIDIA GPU with Tensor Parallel
 ![image](../_assets/overview-inference-4.drawio.svg)
+| *LLM Inference with multiple GPU* |
 
+The above diagram shows how does it look like in hardware layer for a OpenAI compatible API server.
+- The input and output in HTTP payload are on Ethernet (the best now is at 5GB/s)
+- The CPU (in blue) is in charge of 
+  - Webserver handler.
+  - Tokenizer.
+  - Optional post processing.
+  - Orchestrate the asynchronous task in GPU via PCIe 4.0
+  - In the case without any GPU accelerations, CPU will handle the computation for model (which are currently denoted in green)
+- The GPU (in green) is in charge of running model with `Transformers` and `Self Attentions` layer (there are around 32-80 layers depends on the model architecture). As you might notice, once you have 2 GPUs, the computation is splitted and require both GPUs to synchronize via either NVLink or PCIe 4.0.
 
 ## Hardware for LLM inference on Multi node
 - [OpenAI ChatGPT](https://chatgpt.com/?oai-dm=1) uses [Ray](https://www.ray.io/) to distribute `single node` process on multiple nodes - [Reference](https://thenewstack.io/openai-chats-about-scaling-llms-at-anyscales-ray-summit/)

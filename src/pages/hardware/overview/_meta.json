@@ -1,4 +1,7 @@
 {
+    "anatomy": {
+        "title": "Anatomy"
+    },
     "llm-inference": {
         "title": "Hardware for LLM inference"
     },

@@ -1,20 +1,17 @@
 {
-    "overview": {
-        "title": "Overview"
-    },
     "nvidia": {
-        "title": "Computer - NVIDIA"
+        "title": "NVIDIA"
     },
     "intel": {
-        "title": "Computer - Intel"
+        "title": "Intel"
     },
     "apple": {
-        "title": "Computer/Mobile - Apple"
+        "title": "Apple"
     },
     "amd": {
-        "title": "Computer - AMD"
+        "title": "AMD"
     },
     "android-mobile": {
-        "title": "Mobile - Android"
+        "title": "Mobile"
     }
 }
