@@ -42,7 +42,7 @@ Ensure that your system meets the following requirements to use Jan effectively:
             - Ubuntu Cinnamon 
             - Ubuntu Kylin 
             - Ubuntu MATE 
-    - **Pacman-based**
+    - **Pacman-based** (Supports `AppImage` )
         - Arch Linux based
             - Arch Linux 
             - SteamOS 
@@ -58,22 +58,14 @@ Ensure that your system meets the following requirements to use Jan effectively:
         
 - **Hardware**:
     - **CPU**:
-    
-    <Callout type="info">
-    Jan supports a processor that can handle AVX2. For the full list, please see [here](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2).
-    
-    </Callout>
-    
-    - **Intel**:
+      - **Intel**:
         - Haswell processors (Q2 2013) and newer.
         - Tiger Lake (Q3 2020) and newer for Celeron and Pentium processors.
-    
+      - **AMD**:
+        - Excavator processors (Q2 2015) and newer.
     <Callout type="info">
-    We support older processors with AVX and AVX-512, though this is not recommended.
-    
+    Jan mainly supports [AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2) processors. We also support older [AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX) and [AVX-512](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX-512) processors, but we don't recommend it.
     </Callout>
-    
-    - **AMD**: Excavator processors (Q2 2015) and newer.
     - **RAM**:
         - 8GB for running up to 3B models (int4).
         - 16GB for running up to 7B models (int4).
