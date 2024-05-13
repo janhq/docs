@@ -30,7 +30,7 @@ To install Jan Server, follow the steps below:
 1. Go to Azure console -> `Service` -> `Virtual machines`.
 2. Choose an instance with at least `Standard_F8s_v2` for CPU only or `Standard_NC4as_T4_v3` for NVIDIA GPU support.
 3. Add an Azure Disk or Azure Blob Storage volume with at least **100GB**.
-4. Configure network security group rules to allow inbound traffic on port `1377`.
+4. Configure network security group rules to allow inbound traffic on port `1337`.
 ### Step 2: Get Jan Server
 <Tabs items={['Docker', 'Kubernetes - Helm']}>
   <Tabs.Tab>
@@ -72,7 +72,7 @@ The available Docker Compose profile and the environment variables are listed be
 | `AZURE_SECRET_ACCESS_KEY` | AZURE secret access key - leave blank for default file system                                             |
 | `AZURE_ENDPOINT`          | AZURE endpoint URL - leave blank for default file system                                                  |
 | `AZURE_REGION`            | AZURE region - leave blank for default file system                                                        |
-| `API_BASE_URL`          | Jan Server URL, please modify it as your public IP address or domain name default http://localhost:1377 |
+| `API_BASE_URL`          | Jan Server URL, please modify it as your public IP address or domain name default http://localhost:1337 |
 
 ### Step 4: Run Jan Server
 You can run the Jan server in two modes:

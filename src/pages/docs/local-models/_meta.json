@@ -1,10 +1,10 @@
 {
   "lmstudio": {
     "title": "LM Studio",
-    "href": "/docs/local-inference/lmstudio"
+    "href": "/docs/local-models/lmstudio"
   },
   "ollama": {
     "title": "Ollama",
-    "href": "/docs/local-inference/ollama"
+    "href": "/docs/local-models/ollama"
   }
 }

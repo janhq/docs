@@ -30,7 +30,7 @@ To install Jan Server, follow the steps below:
 1. Go to AWS console -> `EC2`.
 2. Choose an instance with at least `c5.2xlarge` for CPU only or `g5.2xlarge` for NVIDIA GPU support.
 3. Add EBS volume with at least **100GB**.
-4. Configure network security group rules to allow inbound traffic on port `1377`.
+4. Configure network security group rules to allow inbound traffic on port `1337`.
 ### Step 2: Get Jan Server
 <Tabs items={['Docker', 'Kubernetes - Helm']}>
   <Tabs.Tab>
@@ -72,7 +72,7 @@ The available Docker Compose profile and the environment variables are listed be
 | `AWS_SECRET_ACCESS_KEY` | AWS secret access key - leave blank for default file system                                             |
 | `AWS_ENDPOINT`          | AWS endpoint URL - leave blank for default file system                                                  |
 | `AWS_REGION`            | AWS region - leave blank for default file system                                                        |
-| `API_BASE_URL`          | Jan Server URL, please modify it as your public IP address or domain name default http://localhost:1377 |
+| `API_BASE_URL`          | Jan Server URL, please modify it as your public IP address or domain name default http://localhost:1337 |
 
 ### Step 4: Run Jan Server
 You can run the Jan server in two modes:
