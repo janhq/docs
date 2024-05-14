@@ -26,7 +26,7 @@ import FAQBox from '@/components/FaqBox'
 
 
 # Mac Installation
-Jan has been developed as a Mac Universal application, allowing it to run natively on both Apple Silicon and Intel-based Macs. By integrating both binaries into a single package, we streamline the complexity and minimize the size of the Jan repository. This ensures efficient performance across different Mac architectures.
+Jan has been developed as a Mac Universal application, allowing it to run natively on both Apple Silicon and Intel-based Macs.
 
 ## Compatibility
 
@@ -50,7 +50,7 @@ Ensure that your system meets the following requirements to use Jan effectively:
     Apple Silicon Macs leverage Metal for GPU acceleration, providing faster performance than Intel Macs, which rely solely on CPU processing.
     </Callout>
     
-    - **Disk**: At least 10GB for app and model download.
+    - **Disk**: At least 10GB for model downloads.
 
 ## Installing Jan
 
@@ -63,10 +63,10 @@ Jan provides two types of releases:
 <Tabs.Tab>
 #### Stable Releases
 
-The stable release is a stable version of Jan. You can download a stable release Jan app via the following:
+Please download Jan from official distributions, or build it from source.
 
 - **Official Website**: [https://jan.ai](https://jan.ai/)
-- **Jan GitHub repository**: https://github.com/janhq/jan
+- **Jan GitHub repository**: [Github](https://github.com/janhq/jan/releases)
 
 <Callout type="info">
 Make sure to verify the URL to ensure that it's the official Jan website and GitHub repository.
@@ -75,7 +75,7 @@ Make sure to verify the URL to ensure that it's the official Jan website and Git
 <Tabs.Tab>
 #### Nightly Releases
 
-The nightly Release allows you to test out new features and get a sneak peek at what might be included in future stable releases. You can download this version via:
+Nightly Releases let you test out new features, which may be buggy:
 
 - **Jan GitHub repository**: https://github.com/janhq/jan
 
@@ -108,10 +108,9 @@ brew install --cask jan
 
 By default, Jan is installed in the following directory:
 
-```
+```sh
 # Default installation directory
-Applications\\Users\\{username}\\Jan
-
+~/jan
 ```
 
 <Callout type="info">
