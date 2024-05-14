@@ -1,0 +1,10 @@
+{
+  "-- Switcher": {
+    "type": "separator",
+    "title": "Switcher"
+  },
+  "overview": "Overview",
+  "ai-hardware-ecosystem": "Ecosystem",
+  "recommended-build": "Recommended Build",
+  "community-build": "Community Build"
+}

@@ -1,0 +1,45 @@
+---
+title: Ecosystem - NVIDIA
+description: NVIDIA hardware ecosystem for A.I
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    Discord integration,
+  ]
+---
+
+## Why A.I computer needs NVIDIA GPU
+https://www.youtube.com/watch?v=-P28LKWTzrI&t=91s
+| *Video to illustrate why GPU with parallel processing is important to A.I versus. CPU with sequential tasks* |
+
+## NVIDIA Ecosystem for hardware and software
+![image](../_assets/ecosystem-nvidia.drawio.svg)
+| *NVIDIA Ecosystem preview* |
+
+### NVIDIA has a wide range of hardware support for HPC and AI/ML
+- **Computation**: Cuda Cores, Tensor Core
+- **Network**:
+  - **Inter-GPU with NVLink** which is better than PCIe
+    - In multi-GPU environment, NVIDIA CUDA provides a way for peer-to-peer memory access between GPU. Without NVlink, CPU and PCIe is the bottleneck to transfer data back and forth
+    ![image](../_assets/ecosystem-nvidia-2.png)
+    ![image](../_assets/ecosystem-nvidia-3.png)
+    - The bandwidth for NVLink is way much better compared to PCIe
+    ![image](../_assets/ecosystem-nvidia-1.png)
+    - With NVLink, we have a virtual bigger GPU
+    ![image](../_assets/ecosystem-nvidia-4.png)
+  - **Inter-node: InfiniBand**
+    - Data transfer directly between GPUs inter-node via PCIe without touching CPU
+    ![image](../_assets/ecosystem-nvidia-5.png)
+    - Illustration of Infiniband Node - Infiniband Switch - Router in 7 network layer
+    ![image](../_assets/ecosystem-nvidia-6.png)
+
+- **Storage**: GPUDirectStorage: For faster data access on disk (M2). Data can go directly between PCIe devices (GPU, M2, InfiniBand)
+    ![image](../_assets/ecosystem-nvidia-7.png)

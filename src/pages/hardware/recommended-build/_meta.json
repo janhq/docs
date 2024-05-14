@@ -1,0 +1,11 @@
+{
+    "desktop": {
+        "title": "Desktop"
+    },
+    "office_lab": {
+        "title": "Office Lab"
+    },
+    "datacenter": {
+        "title": "Datacenter"
+    }
+}

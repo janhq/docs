@@ -16,6 +16,11 @@
     "title": "Integrations",
     "display": "hidden"
   },
+  "hardware": {
+    "type": "page",
+    "title": "Hardware Guide",
+    "display": "hidden"
+  },
   "api-reference": {
     "type": "page",
     "title": "API Reference",
