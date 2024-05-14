@@ -1840,7 +1840,7 @@
             "stream": {
               "type": "boolean",
               "default": null,
-              "description": "Determines the format for output generation.\nIf set to true, the output is generated continuously, allowing for real-time streaming of responses.\nIf set to false, the output is delivered in a single JSON file."
+              "description": "Determines the format for output generation.\nIf set to `true`, the output is generated continuously, allowing for real-time streaming of responses.\nIf set to `false`, the output is delivered in a single JSON file."
             },
             "model": {
               "type": "string",
@@ -1924,8 +1924,8 @@
             },
             "stream": {
               "type": "boolean",
-              "default": true,
-              "description": "Enables continuous output generation, allowing for streaming of model responses.\n"
+              "default": null,
+              "description": "Determines the format for output generation.\nIf set to `true`, the output is generated continuously, allowing for real-time streaming of responses.\nIf set to `false`, the output is delivered in a single JSON file."
             },
             "max_tokens": {
               "type": "number",
