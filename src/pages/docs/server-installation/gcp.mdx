@@ -30,7 +30,7 @@ To install Jan Server, follow the steps below:
 1. Go to GCP console -> `Compute instance`.
 2. Choose an instance with at least `c2-standard-8` for CPU only or `g2-standard-4` for NVIDIA GPU support.
 3. Add a Persistent Disk volume with at least **100GB**.
-4. Configure network security group rules to allow inbound traffic on port `1377`.
+4. Configure network security group rules to allow inbound traffic on port `1337`.
 ### Step 2: Get Jan Server
 <Tabs items={['Docker', 'Kubernetes - Helm']}>
   <Tabs.Tab>
@@ -72,7 +72,7 @@ The available Docker Compose profile and the environment variables are listed be
 | `GCP_SECRET_ACCESS_KEY` | GCP secret access key - leave blank for default file system                                             |
 | `GCP_ENDPOINT`          | GCP endpoint URL - leave blank for default file system                                                  |
 | `GCP_REGION`            | GCP region - leave blank for default file system                                                        |
-| `API_BASE_URL`          | Jan Server URL, please modify it as your public IP address or domain name default http://localhost:1377 |
+| `API_BASE_URL`          | Jan Server URL, please modify it as your public IP address or domain name default http://localhost:1337 |
 
 ### Step 4: Run Jan Server
 You can run the Jan server in two modes:
