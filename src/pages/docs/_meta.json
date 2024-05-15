@@ -11,8 +11,9 @@
   "quickstart": {
     "title": "Quickstart"
   },
-  "desktop-installation": "Desktop Installation",
+  "desktop": "Desktop",
   "server-installation": "Server Installation",
+  "data-folder": "Jan Data Folder",
   "user-guides": {
     "title": "BASIC USAGE",
     "type": "separator"
@@ -25,12 +26,12 @@
   "shortcuts": "Keyboard Shortcuts",
   "local-api": "",
   "inference-engines": {
-    "title": "INFERENCE ENGINES",
+    "title": "MODEL PROVIDER",
     "type": "separator"
   },
-  "built-in": "Built-in Engines",
-  "local-inference": "Local Engines",
-  "remote-inference": "Remote APIs",
+  "built-in": "Built-in Models",
+  "local-models": "Local Models",
+  "remote-models": "Remote APIs",
   "extensions-separator": {
     "title": "EXTENSIONS",
     "type": "separator"

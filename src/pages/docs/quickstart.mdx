@@ -22,46 +22,56 @@ keywords:
 
 import { Tabs } from 'nextra/components'
 import { Callout, Steps } from 'nextra/components'
-import download from './_assets/download.gif'
-import gpt from './_assets/gpt.gif'
-import model from './_assets/model.gif'
 
 # Quickstart
 To quickly get started, follow the steps below:
 <Steps>
 
-### Step 1: Install Jan Desktop
-Before using Jan, you need to install Jan. Jan can be installed through:
-- [Desktop](/docs/desktop.mdx)
-- [Server-side](/docs/server-installation)
+### Step 1: Install Jan
+You can run Jan either on your desktop using the Jan desktop app or on a server by installing the Jan server. To get started, check out these pages:
+- [Desktop](/docs/desktop)
+- [Server](/docs/server)
 
+Once you have installed Jan, you should see the Jan application as shown below without any local model installed:
+<br/>
 
-### Step 2: Download a Model
+![Default State](./_assets/models.gif)
 
-Jan provides a variety of local AI models tailored to different needs and is ready for download. These models are installed and run directly on the user's device.
+<br/>
+
+### Step 2: Turn on the GPU Acceleration (Optional)
+If you have a graphics card, boost model performance by enabling GPU acceleration:
+1. Open Jan application.
+2. Go to **Settings** -> **Advanced Settings** -> **GPU Acceleration**.
+3. Click the Slider and choose your preferred GPU.
+3. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
+<Callout type="info">
+Ensure you have installed your GPU driver. Please see [Desktop](/docs/desktop) for more information on activating the GPU acceleration.
+</Callout>
+
+### Step 3: Download a Model
+
+Jan offers various local AI models tailored to different needs, all ready for download directly to your device:
 
 1. Go to the **Hub**.
 2. Select the models that you would like to install. To see model details, click the **dropdown** button.
-3. Or you can also paste the Hugging Face model's **ID** or **URL** in the search bar.
+3. You can also paste the Hugging Face model's **ID** or **URL** in the search bar.
 <Callout type="info">
 Ensure you select the appropriate model size by balancing performance, cost, and resource considerations in line with your task's specific requirements and hardware specifications.
 </Callout>
-3. Click the **Download** button.
+4. Click the **Download** button.
 <br/>
 
 ![Download a Model](./_assets/download-model.gif)
 
 <br/>
 
-### Step 3: Configure the Model
-
-After downloading, configure the model to fit your requirements and hardware specs by following these steps:
-1. Go to the **Thread** tab.
-2. Click the **Model** dropdown button.
-3. Choose the downloaded model, either **Local** or **Remote**.
-4. Adjust the configurations as needed.
+5. Go to the **Thread** tab.
+6. Click the **Model** dropdown button.
+7. Choose the downloaded model, either **Local** or **Remote**.
+8. Adjust the configurations as needed.
    <Callout type="info">
-    Please see [Using Models](/docs/models#model-parameters) for detailed model configuration.
+    Please see [Model Parameters](/docs/models#model-parameters) for detailed model configuration.
    </Callout>
 
 <br/>
@@ -70,9 +80,19 @@ After downloading, configure the model to fit your requirements and hardware spe
 
 <br/>
 
-### Step 4: Start the Model
+### Step 4: Customize the Assistant Instruction
+Customize Jan's assistant behavior by specifying queries, commands, or requests in the Assistant Instructions field to get the most responses from your assistant. To customize, follow the steps below:
+1. On the **Thread** section, navigate to the right panel.
+2. Select the **Assistant** dropdown menu.
+3. Provide a specific guideline under the **Instructions** field.
+<br/>
 
-After downloading and configuring your model, you can chat with the model.
+![Assistant Instruction](./_assets/instructions.gif)
+
+<br/>
+### Step 5: Start Thread
+
+Once you have downloaded a model and customized your assistant instruction, you can start chatting with the model.
 
 <br/>
 
@@ -80,51 +100,23 @@ After downloading and configuring your model, you can chat with the model.
 
 <br/>
 
-### Step 5: Connect to ChatGPT (Optional)
-
-Jan also provides access to remote models hosted on external servers, requiring an API key for connectivity. For example, to use the ChatGPT model with Jan, you must input your API key by following these steps:
-
-1. Go to the **Thread** tab.
-2. Under the Model dropdown menu, select the ChatGPT model.
-3. Fill in your ChatGPT API Key that you can get in your [OpenAI platform](https://platform.openai.com/account/api-keys).
+### Step 6: Connect to a Remote API
+Jan also offers access to remote models hosted on external servers. You can link up with any Remote AI APIs compatible with OpenAI. Jan comes with numerous extensions that facilitate connections to various remote AI APIs. To explore and connect to Remote APIs, follow these steps:
+1. Click the **Gear Icon (⚙️)** on the bottom left of your screen.
+2. Under the **Settings screen**, click the **Extensions**.
+3. Ensure that you have installed the extensions.
+4. Fill in the API **URL** and **Keys** in the OpenAI Inference Engine section.
 
 <br/>
 
-![Download a Model](./_assets/gpt.gif)
+![Connect Remote API](./_assets/server-openai.gif)
 
 <br/>
 </Steps>
 
-## Best Practices
-
-Optimize your experience with Jan by implementing these best practices, designed for developers, analysts, and AI enthusiasts. These guidelines will enhance the performance of AI models on your local machine.
-
-### Quickstart Guide
-
-Refer to the quickstart guide to set up Jan efficiently. It provides straightforward instructions that help you start quickly, even if you're new to AI.
-
-### Selecting the Right Models
-
-Choose from Jan's pre-configured AI models to match your needs. Consider the model's capabilities, accuracy, and processing speed.
-<Callout type="info">
-Remember, your choice may also depend on your hardware specs (see the Hardware Requirements section).
-</Callout>
-### Setting Up Jan
-
-Get familiar with Jan's application and its advanced settings to fine-tune AI performance. For configuration details, refer to the [Settings](/docs/settings).
-
-### Integrations
-
-Understand the integration capabilities and limitations when connecting Jan with other systems or open-source LLM providers.
-
-### Mastering Prompt Engineering
-
-Enhancing AI responses involves skilled prompt engineering. Here are key tips:
-- Adopt a specific persona for the model.
-- Provide detailed prompts for precise responses.
-- Start with context or examples.
-- Use clear, concise language and specific keywords.
-
-## Pre-configured Models
-
-For a complete list of available AI models, visit our [official GitHub](https://github.com/janhq/jan).
+## What's Next?
+Now that Jan is up and running, explore further:
+1. Learn how to download and manage your [models](/docs/models).
+2. Customize Jan's [application settings](/docs/settings) according to your preferences.
+3. Discover supported [integrations](/integrations) to expand Jan's capabilities.
+4. Find out how to use [Jan as a client and a server](/docs/local-api).
