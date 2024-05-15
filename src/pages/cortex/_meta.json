@@ -7,48 +7,105 @@
     "title": "GET STARTED",
     "type": "separator"
   },
-  "index": { "title": "Overview", "href": "/cortex" },
-  "quickstart": "Quickstart",
-  "install": "Installation",
-  "cli": "Command Line Interface",
-  "clients": "Client Library",
+  "index": {
+    "title": "Overview",
+    "href": "/cortex"
+  },
+  "quickstart": {
+    "display": "hidden",
+    "title": "Quickstart"
+  },
+  "install": {
+    "display": "hidden",
+    "title": "Installation",
+    "href": "/cortex/install"
+  },
+  "cli": {
+    "display": "hidden",
+    "title": "CLI",
+    "href": "/cortex/cli"
+  },
+  "clients": {
+    "display": "hidden",
+    "title": "Client Library"
+  },
   "capabilities": {
+    "display": "hidden",
     "title": "CAPABILITIES",
     "type": "separator"
   },
-  "text-generation": "Text Generation",
-  "function-calling": "Function Calling",
-  "embeddings": "Embeddings",
-  "fine-tuning": "Fine-tuning",
-  "vision": "Vision",
-  "model-operations": "Model Operations",
-  "rag": "RAG",
+  "text-generation": {
+    "display": "hidden",
+    "title": "Text Generation"
+  },
+  "function-calling": {
+    "display": "hidden",
+    "title": "Function Calling"
+  },
+  "embeddings": {
+    "display": "hidden",
+    "title": "Embeddings"
+  },
+  "fine-tuning": {
+    "display": "hidden",
+    "title": "Fine-tuning"
+  },
+  "vision": {
+    "display": "hidden",
+    "title": "Vision"
+  },
+  "model-operations": {
+    "display": "hidden",
+    "title": "Model Operations"
+  },
+  "rag": {
+    "display": "hidden",
+    "title": "RAG"
+  },
   "assistant": {
+    "display": "hidden",
     "title": "ASSISTANTS",
     "type": "separator"
   },
-  "assistants": "Overview",
-  "inference-engines": {
-    "title": "INFERENCE ENGINES",
+  "assistants": {
+    "display": "hidden",
+    "title": "Overview"
+  },
+  "training-engines": {
+    "display": "hidden",
+    "title": "TRAINING ENGINES",
     "type": "separator"
   },
-  "built-in": "Built-in Engines",
-  "remote-apis": "Remote APIs",
   "extensions": {
+    "display": "hidden",
     "title": "EXTENSIONS",
     "type": "separator"
   },
-  "build-extension": "Build an Extension",
+  "build-extension": {
+    "display": "hidden",
+    "title": "Build an Extension"
+  },
   "architectures": {
+    "display": "hidden",
     "title": "ARCHITECTURE",
     "type": "separator"
   },
-  "architecture": "Overview",
-  "ext-architecture": "Extensions",
+  "architecture": {
+    "display": "hidden",
+    "title": "Architecture",
+    "href": "/cortex/architecture"
+  },
+  "ext-architecture": {
+    "display": "hidden",
+    "title": "Extensions"
+  },
   "troubleshooting": {
+    "display": "hidden",
     "title": "TROUBLESHOOTING",
     "type": "separator"
   },
-  "error-codes": "Error Codes"
-
+  "error-codes": {
+    "display": "hidden",
+    "title": "Error Codes"
+  }
 }
