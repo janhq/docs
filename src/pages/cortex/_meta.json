@@ -30,12 +30,10 @@
     "title": "Client Library"
   },
   "capabilities": {
-    "display": "hidden",
     "title": "CAPABILITIES",
     "type": "separator"
   },
   "text-generation": {
-    "display": "hidden",
     "title": "Text Generation"
   },
   "function-calling": {
