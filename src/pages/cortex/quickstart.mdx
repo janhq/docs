@@ -20,3 +20,56 @@ keywords:
 
 import { Callout, Steps } from 'nextra/components'
 import { Cards, Card } from 'nextra/components'
+
+# Quickstart
+
+This guide walks you through how to quickly get started via the Cortex CLI.
+
+### Step 1: Install Cortex
+
+```bash
+npm i -g @janhq/cortex
+
+# In Cortex Early Release, you'll have to run this init step
+cortex init
+```
+
+### Step 2: Download a Model
+
+Let's download the [Llama3 8B chat model](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/tree/main).
+
+```bash
+# Download a GGUF model from Cortex Registry
+cortex pull llama3
+# In Cortex Early Release, this creates a ./models folder
+
+# (Optional) To see your downloaded model
+cortex models list
+```
+
+Depending on your internet speed, it might take a few minutes. 
+
+Alternatively, you can download models directly from Hugging Face using the Model ID, e.g. `QuantFactory/Meta-Llama-3-8B-Instruct-GGUF`. Note: you'll have to configure the model runtime parameters yourself in this case.
+
+### Step 3: Start the Engine
+
+Start the model via the default engine.
+
+```bash
+cortex models start 
+```
+
+### Step 4: Start Chatting
+
+Finally, let's chat with the model using Cortex.
+
+```bash
+cortex chat "Tell me a joke"
+```
+
+That’s it! 
+
+## Best Practices
+
+
+## Model Recipes
