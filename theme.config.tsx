@@ -58,6 +58,7 @@ const config: DocsThemeConfig = {
               { title: 'Jan', path: '/docs', Icon: LibraryBig },
               { title: 'Cortex', path: '/cortex', Icon: BrainCircuit },
               { title: 'Integrations', path: '/integrations', Icon: Blocks },
+              { title: "Guides", path: "/guides", Icon: Computer }
             ].map((item) =>
               asPath.startsWith(item.path) ? (
                 <div

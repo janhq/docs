@@ -1,0 +1,10 @@
+{
+    "-- Switcher": {
+      "type": "separator",
+      "title": "Switcher"
+    },
+    "index": "Overview",
+    "llm": "LLM Guide",
+    "hardware": "Hardware Guide",
+    "glossaries": "Glossaries"
+  }
