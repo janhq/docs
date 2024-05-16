@@ -86,14 +86,11 @@
     "title": "Build an Extension"
   },
   "architectures": {
-    "display": "hidden",
     "title": "ARCHITECTURE",
     "type": "separator"
   },
   "architecture": {
-    "display": "hidden",
-    "title": "Architecture",
-    "href": "/cortex/architecture"
+    "title": "Architecture"
   },
   "ext-architecture": {
     "display": "hidden",
