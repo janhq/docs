@@ -18,7 +18,6 @@
     "title": "Desktop Installation"
   },
   "cli": {
-    "display": "hidden",
     "title": "CLI",
     "href": "/cortex/cli"
   },
