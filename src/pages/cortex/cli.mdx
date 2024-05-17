@@ -103,15 +103,16 @@ Commands:
 
 # Table of CLI
 
-| Endpoints                          | Method  | Description                              | Command Line               | Example                             |
-|------------------------------------|---------|------------------------------------------|----------------------------|-------------------------------------|
-| /models                            | GET     | Model management                         | cortex models              |                                     |
-| /models                            | GET     | Lists all available models.              | list                       | cortex models list                  |
-| /models/download/{model}           | GET     | Downloads a specified model.             | pull                       | cortex models pull llama3:8b        |
-| /models/{model}/start              | POST    | Starts a specified model.                | start                      | cortex models start llama3:8b       |
-| /models/{model}                    | GET     | Retrieves the configuration of a model.  | get                        | cortex models get llama3:8b         |
-| /models/{model}                    | PUT     | Updates the configuration of a model.    | update                     | cortex models update llama3:8b      |
-| /models/{model}/stop               | POST    | Stops a specified model.                 | stop                       | cortex models stop llama3:8b        |
-| /models/{model}                    | DELETE  | Deletes a specified model.               | remove                     | cortex models remove llama3:8b      |
-| /chat                              | OAI     | Inference                                | cortex chat                |                                     |
-| /chat/completions                  | POST    | Creates a model response                 | chat                       | cortex chat                         |
+
+| Endpoints                | Method | Description                             | Command Line          | Example                        |
+|--------------------------|--------|-----------------------------------------|-----------------------|--------------------------------|
+| `/models`                | GET    | Model management                        | `cortex models`       |                                |
+| `/models`                | GET    | Lists all available models.             | `list`                | `cortex models list`           |
+| `/models/download/{model}` | GET    | Downloads a specified model.            | `pull`                | `cortex models pull llama3:8b` |
+| `/models/{model}/start`  | POST   | Starts a specified model.               | `start`               | `cortex models start llama3:8b`|
+| `/models/{model}`        | GET    | Retrieves the configuration of a model. | `get`                 | `cortex models get llama3:8b`  |
+| `/models/{model}`        | PUT    | Updates the configuration of a model.   | `update`              | `cortex models update llama3:8b`|
+| `/models/{model}/stop`   | POST   | Stops a specified model.                | `stop`                | `cortex models stop llama3:8b` |
+| `/models/{model}`        | DELETE | Deletes a specified model.              | `remove`              | `cortex models remove llama3:8b`|
+| `/chat`                  | OAI    | Inference                               | `cortex chat`         |                                |
+| `/chat/completions`      | POST   | Creates a model response                | `chat`                | `cortex chat`                  |
