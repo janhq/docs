@@ -36,7 +36,6 @@ Before installation, ensure that you have installed the following:
 
 - **Node.js**: Required for running the installation.
 - **NPM**: Needed to manage packages.
-- **CPU Instruction Sets**: Available for download from the [Cortex GitHub Releases](https://github.com/janhq/cortex/releases) page.
 
 <Callout type="info">
 The **CPU instruction sets** are not required for the initial installation of Cortex. This dependency will be automatically installed during the Cortex initialization if they are not already on your system.
@@ -135,7 +134,7 @@ Install NPM on your machine before proceeding with this step.
 npm i -g @janhq/cortex
 ```
 
-### **Step 2: Verify the Installation**
+### Step 2: Verify the Installation
 
 After installation, you can verify that Cortex is installed correctly by getting help information.
 
@@ -143,6 +142,28 @@ After installation, you can verify that Cortex is installed correctly by getting
 # Get the help information
 cortex -h
 ```
+### Step 3: Initialize Cortex
+
+Once verified, you need to initialize the Cortex engine.
+1. Initialize the Cortex engine:
+```sh
+cortex init
+```
+2. Select between `CPU` and `GPU` modes.
+```sh
+? Select run mode (Use arrow keys)
+> CPU
+  GPU
+```
+3. Select the instruction sets based on your hardware CPU.
+```sh
+? Select CPU instructions set (Use arrow keys)
+> AVX2
+  AVX
+  AVX-512
+```
+4. Cortex will download the selected CPU instruction file automatically.
+5. Cortex is ready to use!
 </Steps>
 ## Build from Source
 
@@ -167,7 +188,7 @@ chmod +x '[path-to]/cortex/cortex-js/dist/src/command.js'
 ```sh
 npm link
 ```
-
+6. Initialize Cortex by following the steps [here](#step-3-initialize-cortex).
 ## Uninstall Cortex
 
 Run the following command to uninstall Cortex globally on your machine:

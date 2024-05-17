@@ -124,6 +124,28 @@ After installation, you can verify that Cortex is installed correctly by getting
 # Get the help information
 cortex -h
 ```
+### Step 3: Initialize Cortex
+
+Once verified, you need to initialize the Cortex engine.
+1. Initialize the Cortex engine:
+```sh
+cortex init
+```
+2. Select between `CPU` and `GPU` modes.
+```sh
+? Select run mode (Use arrow keys)
+> CPU
+  GPU
+```
+3. Select the instruction sets based on your hardware CPU.
+```sh
+? Select CPU instructions set (Use arrow keys)
+> AVX2
+  AVX
+  AVX-512
+```
+4. Cortex will download the selected CPU instruction file automatically.
+5. Cortex is ready to use!
 </Steps>
 ## Windows Subsystem Linux
 
@@ -155,6 +177,28 @@ After installation, you can verify that Cortex is installed correctly by getting
 # Get the help information
 cortex -h
 ```
+### Step 4: Initialize Cortex
+
+Once verified, you need to initialize the Cortex engine.
+1. Initialize the Cortex engine:
+```sh
+cortex init
+```
+2. Select between `CPU` and `GPU` modes.
+```sh
+? Select run mode (Use arrow keys)
+> CPU
+  GPU
+```
+3. Select the instruction sets based on your hardware CPU.
+```sh
+? Select CPU instructions set (Use arrow keys)
+> AVX2
+  AVX
+  AVX-512
+```
+4. Cortex will download the selected CPU instruction file automatically.
+5. Cortex is ready to use!
 </Steps>
 ## Build from Source
 
@@ -179,6 +223,7 @@ node "[path-to]\cortex\cortex-js\dist\src\command.js"
 ```sh
 npm link
 ```
+6. Initialize Cortex by following the steps [here](#step-3-initialize-cortex).
 
 ## Uninstall Cortex
 
