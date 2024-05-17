@@ -20,3 +20,51 @@ keywords:
 
 import { Callout, Steps } from 'nextra/components'
 import { Cards, Card } from 'nextra/components'
+
+# Quickstart
+
+This guide walks you through how to quickly get started via the Cortex CLI.
+
+```bash
+# 1. Install the NPM package
+npm i -g @janhq/cortex
+
+# 2. Initialize the best engine for your hardware (Early Preview Only)
+cortex init
+
+# 3. Download a GGUF model from the Cortex Registry: URL here
+cortex models pull llama3
+
+# 4. load the model into the inference engine (Early Preview Only)
+cortex models start llama3
+
+# 5. Make a Chat Completion request
+cortex chat --model llama3
+```
+
+You can also run it in server mode
+```bash
+cortex serve
+```
+
+That’s it! 
+
+## Best Practices
+
+### Preconfigured Models
+
+Cortex has a Model Registry, which has preconfigurations for the most popular models and their variants. The underlying model binaries are hosted by Hugging Face, or any Model Hub that hosts models. This is the easiest way to import new models.
+
+See the full Model Registry here. 
+
+### Hugging Face Models
+
+You can also download models directly from Hugging Face. 
+
+In Cortex Early Release, you'll need to configure the runtime parameters yourself.
+
+```bash
+# cortex pull HF_MODEL_ID
+cortex models pull janhq/meta-llama-3-8b-instruct-GGUF
+cortex models list
+```
