@@ -33,13 +33,13 @@ npm i -g @janhq/cortex
 cortex init
 
 # 3. Download a GGUF model from the Cortex Registry: URL here
-cortex pull llama3
+cortex models pull llama3
 
 # 4. load the model into the inference engine (Early Preview Only)
 cortex models start llama3
 
 # 5. Make a Chat Completion request
-cortex chat "Tell me a joke"
+cortex chat --model llama3
 ```
 
 You can also run it in server mode
@@ -65,6 +65,6 @@ In Cortex Early Release, you'll need to configure the runtime parameters yoursel
 
 ```bash
 # cortex pull HF_MODEL_ID
-cortex pull QuantFactory/Meta-Llama-3-8B-Instruct-GGUF
+cortex models pull janhq/meta-llama-3-8b-instruct-GGUF
 cortex models list
 ```
