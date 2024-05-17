@@ -21,7 +21,6 @@
     "href": "/cortex/install"
   },
   "cli": {
-    "display": "hidden",
     "title": "CLI",
     "href": "/cortex/cli"
   },
