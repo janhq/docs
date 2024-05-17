@@ -36,13 +36,13 @@ npm i -g @janhq/cortex
 cortex init
 
 # 3. Download a GGUF model from the Cortex Registry: URL here
-cortex models pull llama3
+cortex models pull janhq/TinyLlama-1.1B-Chat-v1.0-GGUF
 
 # 4. load the model into the inference engine (Early Preview Only)
-cortex models start llama3
+cortex models start janhq/TinyLlama-1.1B-Chat-v1.0-GGUF
 
 # 5. Make a Chat Completion request
-cortex chat --model llama3
+cortex chat --model janhq/TinyLlama-1.1B-Chat-v1.0-GGUF
 ```
 
 You can also run it in server mode
