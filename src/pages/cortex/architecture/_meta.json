@@ -1,0 +1,26 @@
+{
+  "overview": {
+    "title": "Cortex Overview",
+    "href": "/cortex/architecture/overview"
+  },
+  "cortex-cpp": {
+    "title": "Cortex.cpp",
+    "href": "/cortex/architecture/cortex-cpp"
+  },
+  "cortex-llamacpp": {
+    "title": "Cortex.llamacpp",
+    "href": "/cortex/architecture/cortex-llamacpp"
+  },
+  "cortex-tensorrt-llm": {
+    "title": "Cortex.tensorrt-llm",
+    "href": "/cortex/architecture/cortex-tensorrt-llm"
+  },
+  "cortex-python": {
+    "title": "Cortex.python",
+    "href": "/cortex/architecture/cortex-python"
+  },
+  "cortex-openvino": {
+    "title": "Cortex.OpenVino",
+    "href": "/cortex/architecture/cortex-openvino"
+  }
+}
