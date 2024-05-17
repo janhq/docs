@@ -24,7 +24,7 @@ You can also read more about GGUF in [HuggingFace awesome documentation](https:/
 
 ### GGUF Quantization types
 
-<FAQBox title="GGUF Quantization types">
+<FAQBox title="GGUF Quantization types" isOpen={false}>
 
 | Quantization Type | Description | Source URL |
 |-------------------|-------------|------------|
@@ -66,7 +66,7 @@ There are 3 main steps to convert `safetensor` to `gguf`:
 - The converter loads vocabulary in `tokenizer.json` and map to GGUF metadata K-V for `chat_template` and vocab
 - The converter loads weight from `.safetensor` files and map to GGUF BF16. For more information please see `Model layers mapping below`
 
-<FAQBox title="Model layers mapping">
+<FAQBox title="Model layers mapping" isOpen={false}>
 
 | Model layers                      | Shape            | Data format source | Data format destination |
 |-----------------------------------|------------------|--------------------|-------------------------|
@@ -404,7 +404,7 @@ There are 3 main steps to convert `safetensor` to `gguf`:
   - GGUF BF16: 15317.02 MB
   - GGUF Q3_K: 3825.27 MB
 
-<FAQBox title="GGUF BF16 to GGUF Q3_K_M">
+<FAQBox title="GGUF BF16 to GGUF Q3_K_M" isOpen={false}>
 
 
 | Tensor      | Layer                      | Shape                   | Source tensor type| Source layer size | Target tensor type    | Target layer size     | Saving                                                 |
