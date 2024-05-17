@@ -81,13 +81,30 @@
     "title": "Build an Extension"
   },
   "architectures": {
-    "display": "hidden",
     "title": "ARCHITECTURE",
     "type": "separator"
   },
-  "architecture": {
-    "display": "hidden",
-    "title": "Architecture"
+  "overview": {
+    "title": "Cortex Overview"
+  },
+  "cortex-cpp": {
+    "title": "Cortex.cpp"
+  },
+  "cortex-llamacpp": {
+    "title": "Cortex.llamacpp",
+    "display": "hidden"
+  },
+  "cortex-tensorrt-llm": {
+    "title": "Cortex.tensorrt-llm",
+    "display": "hidden"
+  },
+  "cortex-python": {
+    "title": "Cortex.python",
+    "display": "hidden"
+  },
+  "cortex-openvino": {
+    "title": "Cortex.OpenVino",
+    "display": "hidden"
   },
   "ext-architecture": {
     "display": "hidden",

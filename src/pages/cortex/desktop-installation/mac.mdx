@@ -25,6 +25,9 @@ import { Callout } from 'nextra/components'
 import FAQBox from '@/components/FaqBox'
 
 
+<Callout type="warning">
+🚧 Cortex is under construction.
+</Callout>
 # Mac Installation
 ## Prerequisites
 
@@ -44,27 +47,42 @@ The **CPU instruction sets** are not required for the initial installation of Co
 ### Hardware
 
 Ensure that your system meets the following requirements to run Cortex:
-
-- **OS**:
-    - MacOSX 13.6 or higher.
-- **Mac Intel CPU**
-    - Memory:
-        - 8GB for running up to 3B models.
-        - 16GB for running up to 7B models.
-        - 32GB for running up to 13B models.
-- **Mac Apple Silicon**
-    - Memory:
-        - 8GB for running up to 3B models.
-        - 16GB for running up to 7B models.
-        - 32GB for running up to 13B models.
-
+<Tabs items={['Mac Intel CPU', 'Mac Apple Silicon']}>
+<Tabs.Tab>
+<Tabs items={['Operating System', 'Memory', 'Disk']}>
+<Tabs.Tab>
+MacOSX 13.6 or higher.
+</Tabs.Tab>
+<Tabs.Tab>
+- 8GB for running up to 3B models.
+- 16GB for running up to 7B models.
+- 32GB for running up to 13B models.
+</Tabs.Tab>
+<Tabs.Tab>
+At least 10GB for app and model download.
+</Tabs.Tab>
+</Tabs>
+</Tabs.Tab>
+<Tabs.Tab>
+<Tabs items={['Operating System', 'Memory', 'Disk']}>
+<Tabs.Tab>
+MacOSX 13.6 or higher.
+</Tabs.Tab>
+<Tabs.Tab>
+- 8GB for running up to 3B models.
+- 16GB for running up to 7B models.
+- 32GB for running up to 13B models.
 <Callout type="info">
 Apple Silicon Macs leverage Metal for GPU acceleration, providing faster performance than Intel Macs, which rely solely on CPU processing.
 
 </Callout>
-
-- **Disk**: At least 10GB for app and model download.
-
+</Tabs.Tab>
+<Tabs.Tab>
+At least 10GB for app and model download.
+</Tabs.Tab>
+</Tabs>
+</Tabs.Tab>
+</Tabs>
 ## Cortex Installation
 
 To install Cortex, follow the steps below:
