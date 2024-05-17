@@ -30,64 +30,75 @@ To install Jan desktop on Linux, follow the steps below:
 ## Compatibility
 
 Ensure that your system meets the following requirements to use Jan effectively:
+<Tabs items={['OS', 'CPU', 'RAM', 'GPU', 'Disk']}>
+<Tabs.Tab>
+- Debian-based (Supports `.deb` and `AppImage` )
+    - Ubuntu-based
+        - Ubuntu Desktop LTS (official)/ Ubuntu Server LTS (only for server)
+        - Edubuntu (Mainly desktop)
+        - Kubuntu (Desktop only)
+        - Lubuntu (Both desktop and server, though mainly desktop)
+        - Ubuntu Budgie (Mainly desktop)
+        - Ubuntu Cinnamon (Desktop only)
+        - Ubuntu Kylin (Both desktop and server)
+        - Ubuntu MATE (Desktop only)
+- Pacman-based
+    - Arch Linux based
+        - Arch Linux (Mainly desktop)
+        - SteamOS (Desktop only)
+- RPM-based (Supports `.rpm` and `AppImage` )
+- Fedora-based
+    - RHEL-based (Server only)
+- openSUSE (Both desktop and server)
 
-- **OS**:
-    - **Debian-based** (Supports `.deb` and `AppImage` )
-        - Ubuntu-based
-            - Ubuntu Desktop LTS / Ubuntu Server LTS
-            - Edubuntu 
-            - Kubuntu 
-            - Lubuntu 
-            - Ubuntu Budgie
-            - Ubuntu Cinnamon 
-            - Ubuntu Kylin 
-            - Ubuntu MATE 
-    - **Pacman-based** (Supports `AppImage` )
-        - Arch Linux based
-            - Arch Linux 
-            - SteamOS 
-    - **RPM-based** (Supports `.rpm` and `AppImage` )
-        - Fedora-based
-            - RHEL-based
-        - openSUSE
-        
-        <Callout type="info">
-        - Please check whether your Linux distribution supports desktop, server, or both environments.
-        - For server versions, please refer to the [server installation](https://jan.ai/docs/server-installation).
-        </Callout>
-        
-- **Hardware**:
-    - **CPU**:
-      - **Intel**:
-        - Haswell processors (Q2 2013) and newer.
-        - Tiger Lake (Q3 2020) and newer for Celeron and Pentium processors.
-      - **AMD**:
-        - Excavator processors (Q2 2015) and newer.
     <Callout type="info">
-    Jan mainly supports [AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2) processors. We also support older [AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX) and [AVX-512](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX-512) processors, but we don't recommend it.
+    - Please check whether your Linux distribution supports desktop, server, or both environments.
+    - For server versions, please refer to the [server installation](https://jan.ai/docs/server-installation).
     </Callout>
-    - **RAM**:
-        - 8GB for running up to 3B models (int4).
-        - 16GB for running up to 7B models (int4).
-        - 32GB for running up to 13B models (int4).
-        
-        <Callout type="info">
-        We support DDR2 RAM as the minimum requirement but recommend using newer generations of RAM for improved performance.
-        
-        </Callout>
-        
-    - **GPU:**
-        - 6GB can load the 3B model (int4) with `ngl` at 120 ~ full speed on CPU/ GPU.
-        - 8GB can load the 7B model (int4) with `ngl` at 120 ~ full speed on CPU/ GPU.
-        - 12GB can load the 13B model (int4) with `ngl` at 120 ~ full speed on CPU/ GPU.
-        
-        <Callout type="info">
-        Having at least 6GB VRAM when using NVIDIA, AMD, or Intel Arc GPUs is recommended.
-        
-        </Callout>
-        
-    - **Disk:** At least 10GB for app storage and model download.
+</Tabs.Tab>
+<Tabs.Tab>
+<Tabs items={['Intel', 'AMD']}>
+<Tabs.Tab>
+<Callout type="info">
+- Jan supports a processor that can handle AVX2. For the full list, please see [here](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2).
+- We support older processors with AVX and AVX-512, though this is not recommended.
+</Callout>
+- Haswell processors (Q2 2013) and newer.
+- Tiger Lake (Q3 2020) and newer for Celeron and Pentium processors.
+</Tabs.Tab>
+<Tabs.Tab>
+<Callout type="info">
+- Jan supports a processor that can handle AVX2. For the full list, please see [here](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#CPUs_with_AVX2).
+- We support older processors with AVX and AVX-512, though this is not recommended.
+</Callout>
+- Excavator processors (Q2 2015) and newer.
+</Tabs.Tab>
+</Tabs>
+</Tabs.Tab>
+<Tabs.Tab>
+- 8GB for running up to 3B models (int4).
+- 16GB for running up to 7B models (int4).
+- 32GB for running up to 13B models (int4).
 
+<Callout type="info">
+We support DDR2 RAM as the minimum requirement but recommend using newer generations of RAM for improved performance.
+
+</Callout>
+</Tabs.Tab>
+<Tabs.Tab>    
+- 6GB can load the 3B model (int4) with `ngl` at 120 ~ full speed on CPU/ GPU.
+- 8GB can load the 7B model (int4) with `ngl` at 120 ~ full speed on CPU/ GPU.
+- 12GB can load the 13B model (int4) with `ngl` at 120 ~ full speed on CPU/ GPU.
+    
+<Callout type="info">
+Having at least 6GB VRAM when using NVIDIA, AMD, or Intel Arc GPUs is recommended.
+
+</Callout>
+</Tabs.Tab>
+<Tabs.Tab>     
+- At least 10GB for app storage and model download.
+</Tabs.Tab>
+</Tabs>
 ## Prerequisites
 
 - **System Libraries**:

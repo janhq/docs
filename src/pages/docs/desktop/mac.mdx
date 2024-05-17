@@ -31,27 +31,42 @@ Jan has been developed as a Mac Universal application, allowing it to run native
 ## Compatibility
 
 Ensure that your system meets the following requirements to use Jan effectively:
+<Tabs items={['Mac Intel CPU', 'Mac Apple Silicon']}>
+<Tabs.Tab>
+<Tabs items={['Operating System', 'Memory', 'Disk']}>
+<Tabs.Tab>
+MacOSX 13.6 or higher.
+</Tabs.Tab>
+<Tabs.Tab>
+- 8GB for running up to 3B models.
+- 16GB for running up to 7B models.
+- 32GB for running up to 13B models.
+</Tabs.Tab>
+<Tabs.Tab>
+At least 10GB for app and model download.
+</Tabs.Tab>
+</Tabs>
+</Tabs.Tab>
+<Tabs.Tab>
+<Tabs items={['Operating System', 'Memory', 'Disk']}>
+<Tabs.Tab>
+MacOSX 13.6 or higher.
+</Tabs.Tab>
+<Tabs.Tab>
+- 8GB for running up to 3B models.
+- 16GB for running up to 7B models.
+- 32GB for running up to 13B models.
+<Callout type="info">
+Apple Silicon Macs leverage Metal for GPU acceleration, providing faster performance than Intel Macs, which rely solely on CPU processing.
 
-- **OS**:
-    - MacOSX 13.6 or higher.
-- **Hardware**:
-    - **Mac Intel CPU**
-        - Memory:
-            - 8GB for running up to 3B models.
-            - 16GB for running up to 7B models.
-            - 32GB for running up to 13B models.
-    - **Mac Apple Silicon**
-        - Memory:
-            - 8GB for running up to 3B models.
-            - 16GB for running up to 7B models.
-            - 32GB for running up to 13B models.
-    
-    <Callout type="info">
-    Apple Silicon Macs leverage Metal for GPU acceleration, providing faster performance than Intel Macs, which rely solely on CPU processing.
-    </Callout>
-    
-    - **Disk**: At least 10GB for model downloads.
-
+</Callout>
+</Tabs.Tab>
+<Tabs.Tab>
+At least 10GB for app and model download.
+</Tabs.Tab>
+</Tabs>
+</Tabs.Tab>
+</Tabs>
 ## Installing Jan
 
 To install Jan, follow the steps below:
