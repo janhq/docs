@@ -1,7 +1,4 @@
 {
-    "gpt2": {
-        "title": "OpenAI GPT2"
-    },
     "llama3": {
         "title": "Meta Llama3"
     },
@@ -10,5 +7,8 @@
     },
     "mixtral": {
         "title": "Mixtral"
+    },
+    "phi3": {
+        "title": "Phi-3"
     }
 }

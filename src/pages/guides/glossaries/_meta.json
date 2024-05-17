@@ -2,7 +2,7 @@
     "gguf": {
         "title": "GGUF and quantization"
     },
-    "data_format": {
-        "title": "Data format"
+    "data_types": {
+        "title": "Data type"
     }
 }

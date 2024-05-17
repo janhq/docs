@@ -1,0 +1,39 @@
+---
+title: Inference life cycle
+description: AI data types
+keywords:
+  [
+    Jan,
+    inference
+  ]
+---
+
+## Overview
+
+
+## LLM Inference with regard to hardware usage
+![image](../../_assets/hardware_inference_1.drawio.svg)
+Source: llama.cpp with metaai/llama3-8B GGUF model
+
+For LLM inference, there are 2 phase: Model load and Model inference
+
+For hardware, there are 5 components:
+- CPU: CPU handles orchestration tasks in GPU, I/O task with Disk (SSD/ HDD/ NVME)
+- RAM: RAM is essential to any computer, which can be directly accessed by CPU to save model metadata and some model layers. DDR4 has the bandwidth of 25.6 GB/s.
+- Disk: This is where model artifact are stored for long term, which can be directly accessed by CPU to load model weight.
+- GPU: GPU handles computation tasks for deep learning workload, which includes GPU CUDA/ Tensor Cores and GDDR6 VRAM with bandwidth at 768 GB/s.
+- PCiE connection: In this case, PCIe 4.0 with the bandwidth of 32 GB/s is used for CPU-GPU connection.
+
+### Model load phase
+- CPU loads model weight from the disk via Storage bus.
+- CPU extract model metadata and tensors
+- CPU initilize `Tokenizer` and some layers in which specified by `ngl` parameters in order to be running in CPU.
+- CPU offload layers for acceleration to a GPU device via PCIe 4.0 connection. It needs to register with GPU the tensor size, name then will orchestrate with GPU CUDA/ Tensor core to save those layers in GPU VRAM.
+- The model load phase completes.
+
+### Model inference phase
+- Given the fact that model was successfully loaded and initilized in both RAM and GPU VRAM
+- The CPU recieves prompt and run tokenizer to split prompt into chunks of tokens.
+- In the LLM, there are several layers which can be configured to run on either or both CPU/ GPU with `ngl`. `ngl` ranges from 0 (which means everything on CPU) to `32` in `llama3-8B` case (which means all 32 layers on GPU). This process is iterative and be computed in parallel.
+- The transformer and MLP layers return logits with probability, which afterward are converted back to characters using model vocabulary and sampled with `top-p` in order to find the best next token.
+- The LLM returns the best next token. This process stops once the model sees stop word or the number of generated token reaches max allowed token.
