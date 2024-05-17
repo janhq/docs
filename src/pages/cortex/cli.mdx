@@ -20,3 +20,98 @@ keywords:
 
 import { Callout, Steps } from 'nextra/components'
 import { Cards, Card } from 'nextra/components'
+
+# Overview
+
+Cortex is a Docker-inspired CLI that maps to the OpenAI API, providing tools to manage and interact with models efficiently.
+
+# Check CLI setup
+
+## Basic CLI Command
+
+To check if Cortex CLI is set up correctly, run:
+
+```
+cortex -h
+```
+
+This command displays the usage information and available commands for Cortex CLI.
+
+## Usage
+
+```
+Usage: cortex [options] [command]
+
+Cortex CLI
+
+Options:
+  -h, --help       display help for command
+
+Commands:
+  models           Subcommands for managing models
+
+  init|setup       Init settings and download Cortex's dependencies
+                   Example: cortex init
+                   
+  serve [options]  Provide API endpoint for Cortex backend
+                   Example: cortex serve
+
+  chat [options]   Start a chat with a model
+                   Example: cortex chat --model <model_id>
+
+  run [options]    EXPERIMENTAL: Shortcut to start a model and chat
+                   Example: cortex run
+```
+
+## Managing Models
+
+The `models` subcommand allows for managing models. To view the available options, run:
+
+```
+cortex models -h
+```
+
+## Usage
+
+```
+Usage: cortex models [options] [command]
+
+Subcommands for managing models
+
+Options:
+  -h, --help     display help for command
+
+Commands:
+  pull|download  Download a model. Working with HuggingFace model id.
+                 Example: cortex models pull <model_id>
+
+  list           List all models locally.
+                 Example: cortex models list
+  
+  get            Get a model by ID.
+                 Example: cortex models get <model_id>
+
+  start          Start a model by ID.
+                 Example: cortex models start <model_id>
+
+  stop           Stop a model by ID.
+                 Example: cortex models stop <model_id>
+
+  remove         Remove a model by ID locally.
+                 Example: cortex models remove <model_id>
+```
+
+# Table of CLI
+
+| Endpoints                          | Method  | Description                              | Command Line               | Example                             |
+|------------------------------------|---------|------------------------------------------|----------------------------|-------------------------------------|
+| /models                            | GET     | Model management                         | cortex models              |                                     |
+| /models                            | GET     | Lists all available models.              | list                       | cortex models list                  |
+| /models/download/{model}           | GET     | Downloads a specified model.             | pull                       | cortex models pull llama3:8b        |
+| /models/{model}/start              | POST    | Starts a specified model.                | start                      | cortex models start llama3:8b       |
+| /models/{model}                    | GET     | Retrieves the configuration of a model.  | get                        | cortex models get llama3:8b         |
+| /models/{model}                    | PUT     | Updates the configuration of a model.    | update                     | cortex models update llama3:8b      |
+| /models/{model}/stop               | POST    | Stops a specified model.                 | stop                       | cortex models stop llama3:8b        |
+| /models/{model}                    | DELETE  | Deletes a specified model.               | remove                     | cortex models remove llama3:8b      |
+| /chat                              | OAI     | Inference                                | cortex chat                |                                     |
+| /chat/completions                  | POST    | Creates a model response                 | chat                       | cortex chat                         |
