@@ -1,26 +1,32 @@
 {
   "overview": {
     "title": "Cortex Overview",
+    "display": "hidden",
     "href": "/cortex/architecture/overview"
   },
   "cortex-cpp": {
     "title": "Cortex.cpp",
+    "display": "hidden",
     "href": "/cortex/architecture/cortex-cpp"
   },
   "cortex-llamacpp": {
     "title": "Cortex.llamacpp",
+    "display": "hidden",
     "href": "/cortex/architecture/cortex-llamacpp"
   },
   "cortex-tensorrt-llm": {
     "title": "Cortex.tensorrt-llm",
+    "display": "hidden",
     "href": "/cortex/architecture/cortex-tensorrt-llm"
   },
   "cortex-python": {
     "title": "Cortex.python",
+    "display": "hidden",
     "href": "/cortex/architecture/cortex-python"
   },
   "cortex-openvino": {
     "title": "Cortex.OpenVino",
+    "display": "hidden",
     "href": "/cortex/architecture/cortex-openvino"
   }
 }

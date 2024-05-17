@@ -15,10 +15,8 @@
     "display": "hidden",
     "title": "Quickstart"
   },
-  "install": {
-    "display": "hidden",
-    "title": "Installation",
-    "href": "/cortex/install"
+  "desktop-installation": {
+    "title": "Desktop Installation"
   },
   "cli": {
     "display": "hidden",
@@ -86,10 +84,12 @@
     "title": "Build an Extension"
   },
   "architectures": {
+    "display": "hidden",
     "title": "ARCHITECTURE",
     "type": "separator"
   },
   "architecture": {
+    "display": "hidden",
     "title": "Architecture"
   },
   "ext-architecture": {

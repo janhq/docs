@@ -1,0 +1,14 @@
+{
+  "mac": {
+    "title": "Mac",
+    "href": "/cortex/desktop-installation/mac"
+  },
+  "windows": {
+    "title": "Windows",
+    "href": "/cortex/desktop-installation/windows"
+  },
+  "linux": {
+    "title": "Linux",
+    "href": "/cortex/desktop-installation/linux"
+  }
+}
