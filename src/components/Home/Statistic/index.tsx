@@ -25,7 +25,7 @@ const Statistic = () => {
               </p>
             </div>
             <div className="text-center">
-              <h1 className="text-4xl font-bold">800K+</h1>
+              <h1 className="text-4xl font-bold">900K+</h1>
               <p className="font-medium text-black/60 dark:text-white/60">
                 Downloads
               </p>
