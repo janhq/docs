@@ -83,8 +83,8 @@
     "title": "ARCHITECTURE",
     "type": "separator"
   },
-  "overview": {
-    "title": "Cortex Overview"
+  "architecture": {
+    "title": "Cortex Architecture"
   },
   "cortex-cpp": {
     "title": "Cortex.cpp"

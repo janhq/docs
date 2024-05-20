@@ -27,9 +27,9 @@ import { Cards, Card } from 'nextra/components'
 </Callout>
 # Cortex Overview
 
-Cortex is a stateful, Node server that is 100% compatible with OpenAI API (all endpoints). 
+Cortex is a stateful, Node server that is 100% compatible with OpenAI API. 
 
-It includes database integrations, an API gateway, authentication integrations, and observability integrations, and come with the underlying inference engine baked in.
+It includes database integrations, an API gateway and more.
 
 This guide walks you through how Cortex is designed, the codebase structure, and future plans.
 
@@ -39,36 +39,23 @@ See [Quickstart](/cortex/quickstart)
 
 ## Interface
 
-Cortex adopts the OpenAI API standard and is fully compatible with your existing projects. In addition to OpenAI endpoints, Cortex provides more endpoints and parameters for full flexibility.
+Cortex adopts the OpenAI API standard and is fully compatible with your existing projects. In addition to OpenAI endpoints, Cortex provides parameters for full flexibility.
 
 You can find the reference documentation here:
 - Swagger
 - API reference
 
-We track our coverage of the OpenAI API here: 
-[insert burndown]
-
 ## Architecture
 
 ```mermaid
-graph TD;
-subgraph AA [Clients]
-A[CURL];
-B[CLI];
-C[Typescript Client Library];
-end
-
-Z[Cortex API];
-A --> Z;
-B --> Z;
-C --> Z;
+<!-- todo -->
 ```
 
-TODO: Full Diagram Needed
-
-Explain this better: Cortex is built with NestJS and handles all requests through a Node server. At the core, Cortex has a C++ runtime that handles stateless requests.
+Cortex is built with NestJS and handles all requests through a Node server. At the core, Cortex has a C++ runtime that handles stateless requests.
 
 ### Data
+
+Cortex comes with a baked in SQLite database that can be swapped out for any other database.
 
 ## Code Structure
 
