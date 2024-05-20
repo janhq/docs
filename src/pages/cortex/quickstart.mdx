@@ -20,3 +20,58 @@ keywords:
 
 import { Callout, Steps } from 'nextra/components'
 import { Cards, Card } from 'nextra/components'
+
+# Quickstart
+
+<Callout type="warning">
+🚧 Cortex is under construction.
+</Callout>
+
+```bash
+# 1. Install the NPM package
+npm i -g @janhq/cortex
+
+# 2. Initialize the best engine for your hardware
+cortex init
+
+# 3. Download a GGUF model from Hugging Face
+#    Models save to $(npm list -g)/node_modules
+cortex models pull janhq/TinyLlama-1.1B-Chat-v1.0-GGUF
+
+# 4. Load the model into the inference engine
+cortex models start janhq/TinyLlama-1.1B-Chat-v1.0-GGUF
+
+# 5. Make a Chat Completion request
+cortex chat --model janhq/TinyLlama-1.1B-Chat-v1.0-GGUF
+```
+
+You can also run Cortex in server mode
+```bash
+cortex serve
+```
+
+That’s it! 
+
+## Best Practices
+
+### Model Registry
+
+You can download preconfigured models from Cortex's [Model Registry](https://huggingface.co/janhq) on Hugging Face. 
+
+We maintain runtime settings for the most popular models and their variants. This is the easiest way to import new models.
+
+```bash
+# cortex pull MODEL_NAME
+cortex pull llama3
+```
+
+### Hugging Face Hub
+
+You can also download any other model from Hugging Face. 
+
+Depending on the model architecture, you may need to configure the runtime parameters.
+
+```bash
+# cortex pull HUGGING_FACE_MODEL_ID
+cortex models pull janhq/meta-llama-3-8b-instruct-GGUF
+```

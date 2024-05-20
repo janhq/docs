@@ -12,16 +12,12 @@
     "href": "/cortex"
   },
   "quickstart": {
-    "display": "hidden",
     "title": "Quickstart"
   },
-  "install": {
-    "display": "hidden",
-    "title": "Installation",
-    "href": "/cortex/install"
+  "desktop-installation": {
+    "title": "Desktop Installation"
   },
   "cli": {
-    "display": "hidden",
     "title": "CLI",
     "href": "/cortex/cli"
   },
@@ -30,12 +26,10 @@
     "title": "Client Library"
   },
   "capabilities": {
-    "display": "hidden",
     "title": "CAPABILITIES",
     "type": "separator"
   },
   "text-generation": {
-    "display": "hidden",
     "title": "Text Generation"
   },
   "function-calling": {
@@ -86,14 +80,30 @@
     "title": "Build an Extension"
   },
   "architectures": {
-    "display": "hidden",
     "title": "ARCHITECTURE",
     "type": "separator"
   },
   "architecture": {
-    "display": "hidden",
-    "title": "Architecture",
-    "href": "/cortex/architecture"
+    "title": "Cortex Architecture"
+  },
+  "cortex-cpp": {
+    "title": "Cortex.cpp"
+  },
+  "cortex-llamacpp": {
+    "title": "Cortex.llamacpp",
+    "display": "hidden"
+  },
+  "cortex-tensorrt-llm": {
+    "title": "Cortex.tensorrt-llm",
+    "display": "hidden"
+  },
+  "cortex-python": {
+    "title": "Cortex.python",
+    "display": "hidden"
+  },
+  "cortex-openvino": {
+    "title": "Cortex.OpenVino",
+    "display": "hidden"
   },
   "ext-architecture": {
     "display": "hidden",
