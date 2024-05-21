@@ -31,17 +31,17 @@ import { Cards, Card } from 'nextra/components'
 # 1. Install the NPM package
 npm i -g @janhq/cortex
 
-# 2. Initialize the best engine for your hardware
+# 2. Initialize a compatible engine
 cortex init
 
 # 3. Download a GGUF model from Hugging Face
 #    Models save to $(npm list -g)/node_modules
 cortex models pull janhq/TinyLlama-1.1B-Chat-v1.0-GGUF
 
-# 4. Load the model into the inference engine
+# 4. Load the model
 cortex models start janhq/TinyLlama-1.1B-Chat-v1.0-GGUF
 
-# 5. Make a Chat Completion request
+# 5. In a new tab, start chatting
 cortex chat --model janhq/TinyLlama-1.1B-Chat-v1.0-GGUF
 ```
 
