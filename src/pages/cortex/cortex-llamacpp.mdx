@@ -26,17 +26,19 @@ import { Cards, Card } from 'nextra/components'
 </Callout>
 # Cortex.llamacpp
 
-This guide walks you through how Cortex.llamacpp is designed, the codebase structure, and future plans.
+Cortex.llamacpp is a critical component in the Cortex ecosystem, providing powerful functionalities for chat completions and embeddings.
 
-If you use Cortex server, llamacpp is bundled by default and you don’t need this guide. Conversely, if you are interested to use llamacpp directly, here are some unofficial docs that might help.
+This guide walks you through how Cortex.llamacpp is designed, the codebase structure, and future plans.
 
 ## Usage
 
-See [Quickstart](/cortex/quickstart)
+For users of the Cortex server, llamacpp is bundled by default, eliminating the need for separate setup. However, for those interested in using llamacpp directly, this guide offers unofficial documentation to help you get started.
+
+For a quick overview, refer to the [Quickstart Guide](/cortex/quickstart)
 
 ## Interface
 
-Cortex.llamacpp has the following Interfaces:
+Cortex.llamacpp provides several key interfaces, each designed to handle specific tasks related to model interaction:
 
 - **HandleChatCompletion:** Processes chat completion tasks
     
@@ -86,11 +88,9 @@ Cortex.llamacpp has the following Interfaces:
 
 ## Architecture
 
-Interaction between components to provide an API for `embedding` and `inference` tasks using the **`llama.cpp`** library.
+Cortex.llamacpp is designed to facilitate interaction between various components to provide APIs for embedding and inference tasks using the llama.cpp library. Here are the main components:
 
-These are main components:
-
-- `cortex.cpp`: responsible for handling API requests and responses.
+- `cortex.cpp`: handles API requests and responses.
 - `cortex.llamacpp`: makes APIs accessible through an Engine Interface, allowing others to easily use its features.
 - **`enginei` i**mplements detailed logic for all **`llama engine`** APIs, handling endpoint logic and facilitating communication between **`cortex.cpp`** and **`llama engine`**.
 - **`llama engine` :** exposes APIs for embedding and inference. It loads and unloads models and simplifies API calls to **`llama.cpp`**.
@@ -101,9 +101,10 @@ These are main components:
 
 ### Activity architecture
 
-- Cortex.llamacpp has 2 communication methods:
-    - Streaming: When streaming is enabled, the response is processed and returned as chunks of results. This is done by creating tokens through inferencing, one token at a time.
-    - Non-streaming: the response is processed as a whole. After **`llama server context`** completes the entire process, it returns a single result back to **`cortex.cpp`**.
+Cortex.llamacpp supports two communication methods:
+
+- Streaming: Responses are processed and returned as chunks of results by creating tokens through inferencing, one token at a time.
+- Non-streaming: The response is processed as a whole. After the llama server context completes the entire process, it returns a single result back to cortex.cpp.
 
 ![Cortex llamacpp architecture](./_assets/cortex-llamacpp-act.png)
 
@@ -121,7 +122,7 @@ These are main components:
 ├── src                               # Source implementation for llama.cpp
 │   ├── chat_completion_request.h     # OpenAI compatible request handling
 │   ├── llama_client_slot             # Manage vector of slots for parallel processing
-│   ├── llama_engine                  # Implementation llamacpp engine of model loading and inference 
+│   ├── llama_engine                  # Implementation of llamacpp engine for model loading and inference 
 │   ├── llama_server_context          # Context management for chat completion requests
 │   │   ├── slot                      # Struct for slot management
 │   │   └── llama_context             # Struct for llama context management
@@ -134,3 +135,9 @@ These are main components:
 ## Runtime
 
 ## Roadmap
+The future plans for Cortex.llamacpp are focused on enhancing performance and expanding capabilities. Key areas of improvement include:
+
+- Performance Enhancements: Optimizing speed and reducing memory usage to ensure efficient processing of tasks.
+- Multimodal Model Compatibility: Expanding support to include a variety of multimodal models, enabling a broader range of applications and use cases.
+
+Specific milestones and timelines will be shared in upcoming updates. To stay informed about the latest developments, follow the [Cortex Llamacpp GitHub page](https://github.com/janhq/cortex.llamacpp)
