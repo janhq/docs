@@ -90,8 +90,7 @@
     "title": "Cortex.cpp"
   },
   "cortex-llamacpp": {
-    "title": "Cortex.llamacpp",
-    "display": "hidden"
+    "title": "Cortex.llamacpp"
   },
   "cortex-tensorrt-llm": {
     "title": "Cortex.tensorrt-llm",
