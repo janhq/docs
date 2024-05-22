@@ -14,8 +14,8 @@
   "quickstart": {
     "title": "Quickstart"
   },
-  "desktop-installation": {
-    "title": "Desktop Installation"
+  "installation": {
+    "title": "Installation"
   },
   "cli": {
     "title": "CLI",
