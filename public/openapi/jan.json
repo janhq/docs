@@ -160,7 +160,7 @@
           "post": {
               "operationId": "ThreadsController_create",
               "summary": "Create thread",
-              "description": "This endpoint creates a new thread.",
+              "description": "Creates a new thread.",
               "parameters": [],
               "requestBody": {
                   "required": true,
@@ -365,7 +365,7 @@
           "post": {
               "operationId": "ModelsController_startModel",
               "summary": "Start model",
-              "description": "Start a model defined by a model `id`.",
+              "description": "Starts a model opertion defined by a model `id`.",
               "parameters": [
                   {
                       "name": "modelId",
@@ -408,7 +408,7 @@
           "post": {
               "operationId": "ModelsController_stopModel",
               "summary": "Stop model",
-              "description": "Stop a model defined by a model `id`.",
+              "description": "Stops a model operation defined by a model `id`.",
               "parameters": [
                   {
                       "name": "modelId",
@@ -441,7 +441,7 @@
           "get": {
               "operationId": "ModelsController_downloadModel",
               "summary": "Download model",
-              "description": "Download a specific model instance.",
+              "description": "Downloads a specific model instance.",
               "parameters": [
                   {
                       "name": "modelId",
@@ -473,8 +473,8 @@
       "/models/{id}": {
           "get": {
               "operationId": "ModelsController_findOne",
-              "summary": "Retrieve model",
-              "description": "Gets a model instance, providing basic information about the model such as the owner and permissions. [Equivalent to OpenAI's list model](https://platform.openai.com/docs/api-reference/models/retrieve).",
+              "summary": "Get model",
+              "description": "Retrieves a model instance, providing basic information about the model such as the owner and permissions. [Equivalent to OpenAI's list model](https://platform.openai.com/docs/api-reference/models/retrieve).",
               "parameters": [
                   {
                       "name": "id",
@@ -764,7 +764,32 @@
       "version": "1.0",
       "contact": {}
   },
-  "tags": [],
+  "tags": [
+      {
+          "name": "Cortex",
+          "description": "These endpoints control the start and stop operations of the Cortex system."
+      },
+      {
+          "name": "Inference",
+          "description": "This endpoint initiates interaction with a Language Learning Model (LLM)."
+      },
+      {
+          "name": "Assistants",
+          "description": "These endpoints manage the lifecycle of an Assistant within a conversation thread."
+      },
+      {
+          "name": "Models",
+          "description": "These endpoints provide a list and descriptions of all available models within the Cortex framework."
+      },
+      {
+          "name": "Messages",
+          "description": "These endpoints manage the retrieval and storage of conversation content, including responses from LLMs and other metadata related to chat interactions."
+      },
+      {
+          "name": "Threads",
+          "description": "These endpoints handle the creation, retrieval, updating, and deletion of conversation threads."
+      }
+  ],
   "servers": [
       {
           "url": "http://localhost:7331/"
