@@ -792,7 +792,7 @@
   ],
   "servers": [
       {
-          "url": "http://localhost:7331/"
+          "url": "http://localhost:1337/"
       }
   ],
   "components": {
