@@ -235,11 +235,11 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "Ok",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object"
+                                    "$ref": "#/components/schemas/GetThreadResponseDto"
                                 }
                             }
                         }
@@ -340,7 +340,14 @@
                 },
                 "responses": {
                     "201": {
-                        "description": ""
+                        "description": "The model has been successfully created.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StartModelSuccessDto"
+                                }
+                            }
+                        }
                     }
                 },
                 "tags": [
@@ -1432,6 +1439,57 @@
                     "title",
                     "assistants",
                     "createdAt"
+                ]
+            },
+            "GetThreadResponseDto": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": "thread_abc123",
+                        "description": "The identifier of the thread."
+                    },
+                    "object": {
+                        "type": "string",
+                        "example": "thread",
+                        "description": "Type of the object"
+                    },
+                    "created_at": {
+                        "type": "integer",
+                        "example": 1699014083,
+                        "description": "Unix timestamp representing the creation time of the thread."
+                    },
+                    "assistants": {
+                        "example": [
+                            "assistant-001"
+                        ],
+                        "description": "List of assistants involved in the thread.",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "metadata": {
+                        "type": "object",
+                        "example": {},
+                        "description": "Metadata associated with the thread."
+                    },
+                    "messages": {
+                        "example": [],
+                        "description": "List of messages within the thread.",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "id",
+                    "object",
+                    "created_at",
+                    "assistants",
+                    "metadata",
+                    "messages"
                 ]
             },
             "UpdateThreadDto": {
