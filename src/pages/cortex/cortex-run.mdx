@@ -1,0 +1,44 @@
+---
+title: Cortex Run
+description: Cortex run command
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    Cortex,
+    Jan,
+    LLMs
+  ]
+---
+
+import { Callout, Steps } from 'nextra/components'
+import { Cards, Card } from 'nextra/components'
+
+<Callout type="warning">
+🚧 Cortex is under construction.
+</Callout>
+
+# `cortex run`
+
+Starts an interactive chat shell with a model.
+
+## Usage
+
+```bash
+cortex run MODEL_ID
+```
+
+## Command Chain
+
+`cortex run` is actually syntactic sugar that invokes the following command chain. 
+
+1. `cortex start MODEL_ID`
+2. `cortex chat`
+

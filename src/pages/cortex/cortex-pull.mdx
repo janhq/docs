@@ -1,0 +1,101 @@
+---
+title: Cortex Pull
+description: Cortex CLI.
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    Cortex,
+    Jan,
+    LLMs
+  ]
+---
+
+import { Callout, Steps } from 'nextra/components'
+import { Cards, Card } from 'nextra/components'
+
+<Callout type="warning">
+🚧 Cortex is under construction.
+</Callout>
+
+# `cortex pull`
+
+Downloads models from a variety of model hubs, including 🤗 [Hugging Face](https://huggingface.co/).
+
+Models download to the `node_modules` library path by default ([see more](/cortex/cli#storage)).
+
+## Alias
+- `cortex pull _`
+- `cortex download _`
+
+## Usage
+
+### Preconfigured Models
+
+Reconfigured models (with optimal runtime parameters and templates) are available from the [Jan Model Hub](https://huggingface.co/janhq) on Hugging Face.
+
+These models can be easily downloaded via a Docker like interface, i.e. `model_name:variant_tag`
+
+```bash
+# Pull a model most compatible with your hardware
+cortex pull llama3
+
+# Download a specific variant
+cortex pull llama3:7b
+```
+
+Model variants, across quantizations and sizes, are stored in the Repo's branches. 
+
+### Hugging Face Models
+
+You can download any GGUF, TensorRT, or supported-format model directly from Hugging Face.
+
+```bash
+# cortex pull HF_MODEL_ID
+cortex pull microsoft/Phi-3-mini-4k-instruct-gguf
+```
+
+### Managing Models
+
+The `models` subcommand allows for managing models. To view the available options, run:
+
+```
+cortex models -h
+```
+
+To use:
+
+```
+Usage: cortex models [options] [command]
+
+Subcommands for managing models
+
+Options:
+  -h, --help     display help for command
+
+Commands:
+  pull|download  Download a model. Working with HuggingFace model id.
+                 Example: cortex models pull <model_id>
+
+  list           List all models locally.
+                 Example: cortex models list
+  
+  get            Get a model by ID.
+                 Example: cortex models get <model_id>
+
+  start          Start a model by ID.
+                 Example: cortex models start <model_id>
+
+  stop           Stop a model by ID.
+                 Example: cortex models stop <model_id>
+
+  remove         Remove a model by ID locally.
+                 Example: cortex models remove <model_id>
+```

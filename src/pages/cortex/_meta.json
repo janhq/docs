@@ -17,13 +17,21 @@
   "installation": {
     "title": "Installation"
   },
-  "cli": {
-    "title": "CLI",
-    "href": "/cortex/cli"
+  "basicusage": {
+    "title": "BASIC USAGE",
+    "type": "separator"
   },
-  "clients": {
-    "display": "hidden",
-    "title": "Client Library"
+  "cli": {
+    "title": "CLI"
+  },
+  "ts-library": {
+    "title": "Typescript Library"
+  },
+  "py-library": {
+    "title": "Python Library"
+  },
+  "server": {
+    "title": "Server Endpoint"
   },
   "capabilities": {
     "title": "CAPABILITIES",
@@ -64,6 +72,25 @@
   "assistants": {
     "display": "hidden",
     "title": "Overview"
+  },
+  "commandline": {
+    "title": "COMMAND LINE",
+    "type": "separator"
+  },
+  "cli-overview": {
+    "title": "Overview"
+  },
+  "cortex-pull": {
+    "title": "cortex pull"
+  },
+  "cortex-run": {
+    "title": "cortex run"
+  },
+  "cortex-chat": {
+    "title": "cortex chat"
+  },
+  "cortex-models": {
+    "title": "cortex models"
   },
   "training-engines": {
     "display": "hidden",
