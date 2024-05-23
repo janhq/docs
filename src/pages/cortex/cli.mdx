@@ -25,25 +25,31 @@ import { Cards, Card } from 'nextra/components'
 🚧 Cortex is under construction.
 </Callout>
 
-# CLI Overview
+# Command Line Interface
 
-Cortex is a Docker-inspired CLI that maps to the OpenAI API, providing tools to manage and interact with models efficiently.
+Cortex ships with a Docker/Github inspired CLI for easy installation and usage.
 
 ## Check Installation
 
-To check if Cortex CLI is set up correctly, run:
+To check if Cortex CLI is installed correctly, run:
 
 ```
 cortex -h
 ```
 
-This command displays the usage information and available commands for Cortex CLI.
+## Installation
+
+- Quickstart [installation instructions](/cortex/quickstart)
+- Device specific [installation instructions](/cortex/installation)
 
 ## Usage
 
-```
+For a full list of available CLI commands, [see here](/cortex/cli-overview).
+
+```bash
 Usage: cortex [options] [command]
 
+# Output
 Cortex CLI
 
 Options:
@@ -65,56 +71,31 @@ Commands:
                    Example: cortex run
 ```
 
-## Managing Models
+## Storage
 
-The `models` subcommand allows for managing models. To view the available options, run:
+By default, Cortex CLI stores model binaries, thread history, and other usage data in:
+`$(npm list -g @janhq/cortex)`. 
 
-```
-cortex models -h
-```
+You can find the respective folders within the `/lib/node_modules/@janhq/cortex/dist/` subdirectory.
 
-To use:
+In progress: 
+- Changing storage location
+- Additional database types like mysql or postgresql
 
-```
-Usage: cortex models [options] [command]
+## Syntax
 
-Subcommands for managing models
+For a full list of available CLI commands, [see here](/cortex/cli-overview).
 
-Options:
-  -h, --help     display help for command
+**OpenAI API Equivalence**
 
-Commands:
-  pull|download  Download a model. Working with HuggingFace model id.
-                 Example: cortex models pull <model_id>
+Cortex CLI commands strictly follows OpenAI API method names as a convention.
 
-  list           List all models locally.
-                 Example: cortex models list
-  
-  get            Get a model by ID.
-                 Example: cortex models get <model_id>
+For example, the `cortex chat` command is equivalent to the `POST /v1/chat/completions` endpoint ([read more](/cortex/cortex-chat)). 
 
-  start          Start a model by ID.
-                 Example: cortex models start <model_id>
+The `cortex models get ID` command is equivalent to the `GET /models ${ID}` endpoint ([read more](/cortex/cortex-models)).
 
-  stop           Stop a model by ID.
-                 Example: cortex models stop <model_id>
+**Command Chaining**
 
-  remove         Remove a model by ID locally.
-                 Example: cortex models remove <model_id>
-```
+To improve developer experience, Cortex CLI supports command chaining and syntactic sugar on top of the base CLI syntax. 
 
-## CLI Commands
-
-
-| Endpoints                | Method | Description                             | Command Line          | Example                        |
-|--------------------------|--------|-----------------------------------------|-----------------------|--------------------------------|
-| `/models`                | GET    | Model management                        | `cortex models`       |                                |
-| `/models`                | GET    | Lists all available models.             | `list`                | `cortex models list`           |
-| `/models/download/{model}` | GET    | Downloads a specified model.            | `pull`                | `cortex models pull llama3:8b` |
-| `/models/{model}/start`  | POST   | Starts a specified model.               | `start`               | `cortex models start llama3:8b`|
-| `/models/{model}`        | GET    | Retrieves the configuration of a model. | `get`                 | `cortex models get llama3:8b`  |
-| `/models/{model}`        | PUT    | Updates the configuration of a model.   | `update`              | `cortex models update llama3:8b`|
-| `/models/{model}/stop`   | POST   | Stops a specified model.                | `stop`                | `cortex models stop llama3:8b` |
-| `/models/{model}`        | DELETE | Deletes a specified model.              | `remove`              | `cortex models remove llama3:8b`|
-| `/chat`                  | OAI    | Inference                               | `cortex chat`         |                                |
-| `/chat/completions`      | POST   | Creates a model response                | `chat`                | `cortex chat`                  |
+For example, `cortex pull`, inspired by Docker and Github, downloads models from a variety of model hubs like Hugging Face ([read more](/cortex/cortex-pull)). 

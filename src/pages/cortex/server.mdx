@@ -25,19 +25,22 @@ import { Cards, Card } from 'nextra/components'
 🚧 Cortex is under construction.
 </Callout>
 
-# `cortex chat`
+# Server Endpoint
 
 Cortex is a Docker-inspired CLI that maps to the OpenAI API, providing tools to manage and interact with models efficiently.
 
 ## Check Installation
 
-To check if Cortex CLI is set up correctly, run:
+To check if Cortex CLI is installed correctly, run:
 
 ```
 cortex -h
 ```
 
-This command displays the usage information and available commands for Cortex CLI.
+## Installation
+
+- Quickstart [installation instructions](/cortex/quickstart)
+- Device specific [installation instructions](/cortex/installation)
 
 ## Usage
 
@@ -65,46 +68,29 @@ Commands:
                    Example: cortex run
 ```
 
-## Managing Models
+For a full list of available CLI commands, [see here](/cortex/cli-overview).
 
-The `models` subcommand allows for managing models. To view the available options, run:
+## Storage
 
-```
-cortex models -h
-```
+At the moment, Cortex CLI defaults to the following file locations: 
 
-To use:
+**Usage Data**
+``
 
-```
-Usage: cortex models [options] [command]
+**Model Binaries**
 
-Subcommands for managing models
 
-Options:
-  -h, --help     display help for command
+## Syntax
 
-Commands:
-  pull|download  Download a model. Working with HuggingFace model id.
-                 Example: cortex models pull <model_id>
+**OpenAI API Syntax**
 
-  list           List all models locally.
-                 Example: cortex models list
-  
-  get            Get a model by ID.
-                 Example: cortex models get <model_id>
+Cortex CLI strictly follows OpenAI API method names. For example, the `cortex chat` command is equivalent to the `POST /engines/davinci/completions` endpoint. The `cortex models` command is equivalent to the `/models` endpoint.
 
-  start          Start a model by ID.
-                 Example: cortex models start <model_id>
+**Command Chaining**
 
-  stop           Stop a model by ID.
-                 Example: cortex models stop <model_id>
-
-  remove         Remove a model by ID locally.
-                 Example: cortex models remove <model_id>
-```
+To improve developer experience, Cortex CLI supports command chaining. For example, `cortex pull` (Read more), inspired by Docker and Github. 
 
 ## CLI Commands
-
 
 | Endpoints                | Method | Description                             | Command Line          | Example                        |
 |--------------------------|--------|-----------------------------------------|-----------------------|--------------------------------|

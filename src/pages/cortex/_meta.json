@@ -22,14 +22,16 @@
     "type": "separator"
   },
   "cli": {
-    "title": "CLI",
-    "href": "/cortex/cli"
+    "title": "Command Line Interface"
   },
   "node-client": {
     "title": "Node Client Library"
   },
   "python-client": {
     "title": "Python Client Library"
+  },
+  "server": {
+    "title": "Server Endpoint"
   },
   "capabilities": {
     "title": "CAPABILITIES",
@@ -75,11 +77,17 @@
     "title": "COMMAND LINE",
     "type": "separator"
   },
+  "cli-overview": {
+    "title": "Overview"
+  },
   "cortex-pull": {
     "title": "cortex pull"
   },
   "cortex-chat": {
     "title": "cortex chat"
+  },
+  "cortex-models": {
+    "title": "cortex models"
   },
   "training-engines": {
     "display": "hidden",
