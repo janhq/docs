@@ -29,7 +29,11 @@ import { Cards, Card } from 'nextra/components'
 
 Downloads models from a variety of model hubs, including 🤗 [Hugging Face](https://huggingface.co/).
 
-Models download to the node_modules directory by default ([see more](/cortex/cli#storage)).
+Models download to the `node_modules` library path by default ([see more](/cortex/cli#storage)).
+
+## Alias
+- `cortex pull _`
+- `cortex download _`
 
 ## Usage
 
@@ -40,8 +44,14 @@ Reconfigured models (with optimal runtime parameters and templates) are availabl
 These models can be easily downloaded via a Docker like interface, i.e. `model_name:variant_tag`
 
 ```bash
+# Pull a model most compatible with your hardware
+cortex pull llama3
+
+# Download a specific variant
 cortex pull llama3:7b
 ```
+
+Model variants, across quantizations and sizes, are stored in the Repo's branches. 
 
 ### Hugging Face Models
 
@@ -49,7 +59,7 @@ You can download any GGUF, TensorRT, or supported-format model directly from Hug
 
 ```bash
 # cortex pull HF_MODEL_ID
-cortex pull TheBloke/Mistral-7B-Instruct-v0.1-GGUF
+cortex pull microsoft/Phi-3-mini-4k-instruct-gguf
 ```
 
 ### Managing Models

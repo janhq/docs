@@ -27,9 +27,17 @@ import { Cards, Card } from 'nextra/components'
 
 # `cortex models`
 
-Cortex is a Docker-inspired CLI that maps to the OpenAI API, providing tools to manage and interact with models efficiently.
+Starts, stops, and controls all model operations.
 
 ## Usage
+
+```bash
+cortex models API_COMMAND [OPTIONS]
+
+# Start & stop a downloaded model
+cortex models start MODEL_ID
+cortex models stop MODEL_ID
+```
 
 ### Managing Models
 

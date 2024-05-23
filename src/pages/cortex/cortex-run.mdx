@@ -27,9 +27,18 @@ import { Cards, Card } from 'nextra/components'
 
 # `cortex run`
 
-Downloads models from a variety of model hubs, including Hugging Face
+Starts an interactive chat shell with a model.
 
 ## Usage
 
-## Flags
+```bash
+cortex run MODEL_ID
+```
+
+## Command Chain
+
+`cortex run` is actually syntactic sugar that invokes the following command chain. 
+
+1. `cortex start MODEL_ID`
+2. `cortex chat`
 
