@@ -83,6 +83,9 @@
   "cortex-pull": {
     "title": "cortex pull"
   },
+  "cortex-run": {
+    "title": "cortex run"
+  },
   "cortex-chat": {
     "title": "cortex chat"
   },

@@ -1,5 +1,5 @@
 ---
-title: Command Line Interface
+title: Cortex Pull
 description: Cortex CLI.
 keywords:
   [
@@ -27,13 +27,32 @@ import { Cards, Card } from 'nextra/components'
 
 # `cortex pull`
 
-Downloads models from a variety of model hubs, including Hugging Face
+Downloads models from a variety of model hubs, including 🤗 [Hugging Face](https://huggingface.co/).
 
-## Hugging Face Models
+Models download to the node_modules directory by default ([see more](/cortex/cli#storage)).
 
-TODO: 
+## Usage
 
-## Managing Models
+### Preconfigured Models
+
+Reconfigured models (with optimal runtime parameters and templates) are available from the [Jan Model Hub](https://huggingface.co/janhq) on Hugging Face.
+
+These models can be easily downloaded via a Docker like interface, i.e. `model_name:variant_tag`
+
+```bash
+cortex pull llama3:7b
+```
+
+### Hugging Face Models
+
+You can download any GGUF, TensorRT, or supported-format model directly from Hugging Face.
+
+```bash
+# cortex pull HF_MODEL_ID
+cortex pull TheBloke/Mistral-7B-Instruct-v0.1-GGUF
+```
+
+### Managing Models
 
 The `models` subcommand allows for managing models. To view the available options, run:
 
