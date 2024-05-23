@@ -1,6 +1,6 @@
 ---
-title: Python Client Library
-description: Cortex Client Library.
+title: Typescript Client Library
+description: Cortex Node Client Library
 keywords:
   [
     Jan,
@@ -21,16 +21,20 @@ keywords:
 import { Callout, Steps } from 'nextra/components'
 import { Cards, Card } from 'nextra/components'
 
-# Python Client Library
+<Callout type="warning">
+🚧 Cortex is under construction.
+</Callout>
 
-Cortex comes with a Python client library that can be used as a **2-line, drop-in replacement for OpenAI's** [Python Client library](https://github.com/openai/openai-python).
+# Typescript Client Library
+
+Cortex comes with an Typescript client library that can be used as a **2-line, drop-in replacement for OpenAI's** [Node.js/Typescript library](https://github.com/openai/openai-node).
 
 ## Installation
 
 Coming soon: 
 
-```python
-pip install @janhq/cortex
+```js
+npm install @janhq/cortex
 ```
 
 ## OpenAI Replacement
@@ -38,13 +42,13 @@ pip install @janhq/cortex
 Replacing OpenAI Client Library with Cortex Client Library is as simple as replacing the import & construction statements.
 
 ```diff
-- import openai
-+ from cortex import Cortex
+- const openai = require('openai')
++ const { Cortex } = require('@janhq/cortexjs')
 ```
 
 Then just
 
 ```diff
-- client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY")
-+ client = Cortex()
+- const client = new openai.Client(process.env.OPENAI_SECRET_KEY)
++ const client = new Cortex()
 ```

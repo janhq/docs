@@ -24,8 +24,8 @@
   "cli": {
     "title": "Command Line Interface"
   },
-  "node-client": {
-    "title": "Node Client Library"
+  "ts-client": {
+    "title": "Typescript Client Library"
   },
   "python-client": {
     "title": "Python Client Library"
