@@ -22,13 +22,13 @@
     "type": "separator"
   },
   "cli": {
-    "title": "Command Line Interface"
+    "title": "CLI"
   },
-  "ts-client": {
-    "title": "Typescript Client Library"
+  "ts-library": {
+    "title": "Typescript Library"
   },
-  "python-client": {
-    "title": "Python Client Library"
+  "py-library": {
+    "title": "Python Library"
   },
   "server": {
     "title": "Server Endpoint"

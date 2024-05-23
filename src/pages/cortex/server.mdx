@@ -27,80 +27,12 @@ import { Cards, Card } from 'nextra/components'
 
 # Server Endpoint
 
-Cortex is a Docker-inspired CLI that maps to the OpenAI API, providing tools to manage and interact with models efficiently.
-
-## Check Installation
-
-To check if Cortex CLI is installed correctly, run:
-
-```
-cortex -h
-```
-
-## Installation
-
-- Quickstart [installation instructions](/cortex/quickstart)
-- Device specific [installation instructions](/cortex/installation)
+Cortex can run in headless server mode, providing an [OpenAI-API compatible](https://platform.openai.com/docs/api-reference/introduction) endpoint.
 
 ## Usage
 
 ```
-Usage: cortex [options] [command]
-
-Cortex CLI
-
-Options:
-  -h, --help       display help for command
-
-Commands:
-  models           Subcommands for managing models
-
-  init|setup       Init settings and download Cortex's dependencies
-                   Example: cortex init
-                   
-  serve [options]  Provide API endpoint for Cortex backend
-                   Example: cortex serve
-
-  chat [options]   Start a chat with a model
-                   Example: cortex chat --model <model_id>
-
-  run [options]    EXPERIMENTAL: Shortcut to start a model and chat
-                   Example: cortex run
+cortex serve
 ```
 
-For a full list of available CLI commands, [see here](/cortex/cli-overview).
-
-## Storage
-
-At the moment, Cortex CLI defaults to the following file locations: 
-
-**Usage Data**
-``
-
-**Model Binaries**
-
-
-## Syntax
-
-**OpenAI API Syntax**
-
-Cortex CLI strictly follows OpenAI API method names. For example, the `cortex chat` command is equivalent to the `POST /engines/davinci/completions` endpoint. The `cortex models` command is equivalent to the `/models` endpoint.
-
-**Command Chaining**
-
-To improve developer experience, Cortex CLI supports command chaining. For example, `cortex pull` (Read more), inspired by Docker and Github. 
-
-## CLI Commands
-
-| Endpoints                | Method | Description                             | Command Line          | Example                        |
-|--------------------------|--------|-----------------------------------------|-----------------------|--------------------------------|
-| `/models`                | GET    | Model management                        | `cortex models`       |                                |
-| `/models`                | GET    | Lists all available models.             | `list`                | `cortex models list`           |
-| `/models/download/{model}` | GET    | Downloads a specified model.            | `pull`                | `cortex models pull llama3:8b` |
-| `/models/{model}/start`  | POST   | Starts a specified model.               | `start`               | `cortex models start llama3:8b`|
-| `/models/{model}`        | GET    | Retrieves the configuration of a model. | `get`                 | `cortex models get llama3:8b`  |
-| `/models/{model}`        | PUT    | Updates the configuration of a model.   | `update`              | `cortex models update llama3:8b`|
-| `/models/{model}/stop`   | POST   | Stops a specified model.                | `stop`                | `cortex models stop llama3:8b` |
-| `/models/{model}`        | DELETE | Deletes a specified model.              | `remove`              | `cortex models remove llama3:8b`|
-| `/chat`                  | OAI    | Inference                               | `cortex chat`         |                                |
-| `/chat/completions`      | POST   | Creates a model response                | `chat`                | `cortex chat`                  |
+A full, local AI server will be started on port `7331` (customizable).

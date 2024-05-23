@@ -1,5 +1,5 @@
 ---
-title: Typescript Client Library
+title: Typescript Library
 description: Cortex Node Client Library
 keywords:
   [
@@ -25,9 +25,9 @@ import { Cards, Card } from 'nextra/components'
 🚧 Cortex is under construction.
 </Callout>
 
-# Typescript Client Library
+# Typescript Library
 
-Cortex comes with an Typescript client library that can be used as a **2-line, drop-in replacement for OpenAI's** [Node.js/Typescript library](https://github.com/openai/openai-node).
+Cortex comes with an Typescript client library that can be used as a **drop-in replacement for OpenAI's** [Node.js/Typescript library](https://github.com/openai/openai-node).
 
 ## Installation
 
@@ -39,16 +39,11 @@ npm install @janhq/cortex
 
 ## OpenAI Replacement
 
-Replacing OpenAI Client Library with Cortex Client Library is as simple as replacing the import & construction statements.
+Replacing OpenAI Client Library with Cortex Client Library is as simple as updating the import statement.
 
 ```diff
 - const openai = require('openai')
-+ const { Cortex } = require('@janhq/cortexjs')
++ const openai = require('@janhq/cortexjs')
 ```
 
-Then just
-
-```diff
-- const client = new openai.Client(process.env.OPENAI_SECRET_KEY)
-+ const client = new Cortex()
-```
+Replaces OpenAI with open AI. 

@@ -1,6 +1,6 @@
 ---
-title: Python Client Library
-description: Cortex Client Library.
+title: Python Library
+description: Cortex Python Library.
 keywords:
   [
     Jan,
@@ -21,9 +21,9 @@ keywords:
 import { Callout, Steps } from 'nextra/components'
 import { Cards, Card } from 'nextra/components'
 
-# Python Client Library
+# Python Library
 
-Cortex comes with a Python client library that can be used as a **2-line, drop-in replacement for OpenAI's** [Python Client library](https://github.com/openai/openai-python).
+Cortex comes with a Python client library that can be used as a **drop-in replacement for OpenAI's** [Python Client library](https://github.com/openai/openai-python).
 
 ## Installation
 
@@ -38,13 +38,8 @@ pip install @janhq/cortex
 Replacing OpenAI Client Library with Cortex Client Library is as simple as replacing the import & construction statements.
 
 ```diff
-- import openai
-+ from cortex import Cortex
+- import openai form openai
++ import openai from @janhq/cortex
 ```
 
-Then just
-
-```diff
-- client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY")
-+ client = Cortex()
-```
+Replaces OpenAI with open AI.
