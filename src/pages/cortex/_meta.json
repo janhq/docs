@@ -21,7 +21,7 @@
     "title": "BASIC USAGE",
     "type": "separator"
   },
-  "cli": {
+  "command-line": {
     "title": "CLI"
   },
   "ts-library": {
@@ -77,20 +77,24 @@
     "title": "COMMAND LINE",
     "type": "separator"
   },
-  "cli-overview": {
+  "cli": {
     "title": "Overview"
   },
-  "cortex-pull": {
-    "title": "cortex pull"
+  "pull": {
+    "title": "cortex pull",
+    "href": "/cortex/cli/pull"
   },
-  "cortex-run": {
-    "title": "cortex run"
+  "run": {
+    "title": "cortex run",
+    "href": "/cortex/cli/run"
   },
-  "cortex-chat": {
-    "title": "cortex chat"
+  "chat": {
+    "title": "cortex chat",
+    "href": "/cortex/cli/chat"
   },
-  "cortex-models": {
-    "title": "cortex models"
+  "models": {
+    "title": "cortex models",
+    "href": "/cortex/cli/models"
   },
   "training-engines": {
     "display": "hidden",

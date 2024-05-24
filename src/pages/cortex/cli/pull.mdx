@@ -27,12 +27,12 @@ import { Cards, Card } from 'nextra/components'
 
 # `cortex pull`
 
-Downloads models from a variety of model hubs, including 🤗 [Hugging Face](https://huggingface.co/).
+This command facilitates downloading machine learning models from various model hubs, including the popular 🤗 [Hugging Face](https://huggingface.co/).
 
-Models download to the `node_modules` library path by default ([see more](/cortex/cli#storage)).
+By default, models are downloaded to the `node_modules library path. For additional information on storage paths and options, refer [here](/cortex/cli#storage).
 
 ## Alias
-- `cortex pull _`
+The following alias is also available for downloading models:
 - `cortex download _`
 
 ## Usage
@@ -41,7 +41,7 @@ Models download to the `node_modules` library path by default ([see more](/corte
 
 Reconfigured models (with optimal runtime parameters and templates) are available from the [Jan Model Hub](https://huggingface.co/janhq) on Hugging Face.
 
-These models can be easily downloaded via a Docker like interface, i.e. `model_name:variant_tag`
+Models can be downloaded using a Docker-like interface with the following syntax: `model_name:variant_tag`. Each variant may include different quantizations and sizes, typically organized in the repository’s branches.
 
 ```bash
 # Pull a model most compatible with your hardware
@@ -50,8 +50,6 @@ cortex pull llama3
 # Download a specific variant
 cortex pull llama3:7b
 ```
-
-Model variants, across quantizations and sizes, are stored in the Repo's branches. 
 
 ### Hugging Face Models
 
