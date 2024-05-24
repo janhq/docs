@@ -41,13 +41,22 @@ The following alias is also available for downloading models:
 
 Reconfigured models (with optimal runtime parameters and templates) are available from the [Jan Model Hub](https://huggingface.co/janhq) on Hugging Face.
 
-Models can be downloaded using a Docker-like interface with the following syntax: `model_name:variant_tag`. Each variant may include different quantizations and sizes, typically organized in the repository’s branches.
+Models can be downloaded using a Docker-like interface with the following syntax: `repo_name:branch`. Each variant may include different quantizations and sizes, typically organized in the repository’s branches.
+
+The following models are available via repos: 
+- `llama3`: https://huggingface.co/janhq/llama3
+- `mistral`: https://huggingface.co/janhq/mistral
+- `tinyllama`: https://huggingface.co/janhq/tinyllama
+
+<Callout type="info">
+New models will soon be added to HuggingFace's janhq repository.
+</Callout>
 
 ```bash
 # Pull a model most compatible with your hardware
 cortex pull llama3
 
-# Download a specific variant
+# Download a specific variant with `repo_name:branch`
 cortex pull llama3:7b
 ```
 
