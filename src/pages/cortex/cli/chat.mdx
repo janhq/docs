@@ -1,6 +1,6 @@
 ---
-title: Cortex Run
-description: Cortex run command
+title: Cortex Chat
+description: Cortex chat command.
 keywords:
   [
     Jan,
@@ -25,20 +25,17 @@ import { Cards, Card } from 'nextra/components'
 🚧 Cortex is under construction.
 </Callout>
 
-# `cortex run`
+# `cortex chat`
 
-Starts an interactive chat shell with a model.
+This command initiates a Chat Completion inference request using a specified model. This command primarily opens an interactive chat shell where you can interact directly with the model.
 
 ## Usage
 
 ```bash
-cortex run MODEL_ID
+cortex chat --model MODEL_ID
 ```
-
-## Command Chain
-
-`cortex run` is actually syntactic sugar that invokes the following command chain. 
-
-1. `cortex start MODEL_ID`
-2. `cortex chat`
-
+### Options
+```
+  -m, --model <model_id>  Model Id to start chat with
+  -h, --help              display help for command
+```

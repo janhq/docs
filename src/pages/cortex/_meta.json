@@ -21,7 +21,7 @@
     "title": "BASIC USAGE",
     "type": "separator"
   },
-  "cli": {
+  "command-line": {
     "title": "CLI"
   },
   "ts-library": {
@@ -77,20 +77,8 @@
     "title": "COMMAND LINE",
     "type": "separator"
   },
-  "cli-overview": {
+  "cli": {
     "title": "Overview"
-  },
-  "cortex-pull": {
-    "title": "cortex pull"
-  },
-  "cortex-run": {
-    "title": "cortex run"
-  },
-  "cortex-chat": {
-    "title": "cortex chat"
-  },
-  "cortex-models": {
-    "title": "cortex models"
   },
   "training-engines": {
     "display": "hidden",

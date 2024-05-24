@@ -1,0 +1,18 @@
+{
+  "pull": {
+    "title": "cortex pull",
+    "href": "/cortex/cli/pull"
+  },
+  "run": {
+    "title": "cortex run",
+    "href": "/cortex/cli/run"
+  },
+  "chat": {
+    "title": "cortex chat",
+    "href": "/cortex/cli/chat"
+  },
+  "models": {
+    "title": "cortex models",
+    "href": "/cortex/cli/models"
+  }
+}
