@@ -56,13 +56,27 @@ That’s it!
 
 ### Model Registry
 
-You can download preconfigured models from Cortex's [Model Registry](https://huggingface.co/janhq) on Hugging Face. 
+You can download preconfigured models from Cortex's [Model Registry](https://huggingface.co/janhq) on Hugging Face. We maintain runtime settings for the most popular models and their variants. 
 
-We maintain runtime settings for the most popular models and their variants. This is the easiest way to import new models.
+This is the most concise way to import new models.
+
+The following models are available via repos (more coming soon): 
+- `llama3`: https://huggingface.co/janhq/llama3
+- `mistral`: https://huggingface.co/janhq/mistral
+- `tinyllama`: https://huggingface.co/janhq/tinyllama
 
 ```bash
-# cortex pull MODEL_NAME
+# cortex pull NAME (of repo)
 cortex pull llama3
+```
+
+Model variants (size, format, quantization) are available via branches: 
+- `llama3`: https://huggingface.co/janhq/llama3/tree/main
+- `llama3:7b`: https://huggingface.co/janhq/llama3/tree/7b
+
+```bash
+# cortex pull NAME:BRANCH
+cortex pull llama3:7b
 ```
 
 ### Hugging Face Hub
