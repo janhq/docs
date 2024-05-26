@@ -26,17 +26,122 @@ import { Cards, Card } from 'nextra/components'
 </Callout>
 # Cortex.llamacpp
 
-This guide walks you through how Cortex.llamacpp is designed, the codebase structure, and future plans.
+Cortex.llamacpp is a C++ inference library that can be loaded by any server at runtime. It submodules (and occasionally upstreams) [llama.cpp](https://github.com/ggerganov/llama.cpp) for GGUF inference. 
+
+In addition to llama.cpp, Cortex.llamacpp adds: 
+- OpenAI compatibility for the stateless endpoints
+- Model warm up
+- Model orchestration optimizations
+
+<Callout type="info">
+Cortex.llamacpp is formerly called "Nitro".
+</Callout>
+
+If you already use [Jan](/docs) or [Cortex](/cortex), cortex.llamacpp is bundled by default and you don’t need this guide. This guides walks you through how to use cortex.llamacpp as a standalone library, in any custom C++ server.
 
 ## Usage
 
-See [Quickstart](/cortex/quickstart)
+To include cortex.llamacpp in your own server implementation, follow this [server example](https://github.com/janhq/cortex.llamacpp/tree/main/examples/server).
 
 ## Interface
 
+Cortex.llamacpp has the following Interfaces:
+
+- **HandleChatCompletion:** Processes chat completion tasks
+    
+    ```cpp
+    void HandleChatCompletion(
+          std::shared_ptr<Json::Value> jsonBody,
+          std::function<void(Json::Value&&, Json::Value&&)>&& callback);
+    ```
+    
+- **HandleEmbedding:** Generates embeddings for the input data provided
+    
+    ```cpp
+    void HandleEmbedding(
+          std::shared_ptr<Json::Value> jsonBody,
+          std::function<void(Json::Value&&, Json::Value&&)>&& callback);
+    ```
+    
+- **LoadModel:** Loads a model based on the specifications
+    
+    ```cpp
+    void LoadModel(
+          std::shared_ptr<Json::Value> jsonBody,
+          std::function<void(Json::Value&&, Json::Value&&)>&& callback);
+    ```
+    
+- **UnloadModel:** Unloads a model as specified
+    
+    ```cpp
+    void UnloadModel(
+          std::shared_ptr<Json::Value> jsonBody,
+          std::function<void(Json::Value&&, Json::Value&&)>&& callback);
+    ```
+    
+- **GetModelStatus:** Retrieves the status of a model
+    
+    ```cpp
+    void GetModelStatus(
+          std::shared_ptr<Json::Value> jsonBody,
+          std::function<void(Json::Value&&, Json::Value&&)>&& callback);
+    ```
+    
+**Parameters:**
+
+- **`jsonBody`**: The request content in JSON format.
+- **`callback`**: A function that handles the response
+
 ## Architecture
 
+```mermaid
+```
+
+Interaction between components to provide an API for `embedding` and `inference` tasks using the **`llama.cpp`** library.
+
+Main components:
+
+- `cortex.cpp`: responsible for handling API requests and responses.
+- `cortex.llamacpp`: makes APIs accessible through an Engine Interface, allowing others to easily use its features.
+- **`enginei` i**mplements detailed logic for all **`llama engine`** APIs, handling endpoint logic and facilitating communication between **`cortex.cpp`** and **`llama engine`**.
+- **`llama engine` :** exposes APIs for embedding and inference. It loads and unloads models and simplifies API calls to **`llama.cpp`**.
+- **`llama.cpp` : a** submodule from the **`llama.cpp`** repository that provides the core functionality for embeddings and inferences.
+- **`llama server context` :** a wrapper offers a simpler and more user-friendly interface for **`llama.cpp`** APIs
+
+Communication:
+
+```mermaid
+```
+
+- Streaming: When streaming is enabled, the response is processed and returned as chunks of results. This is done by creating tokens through inferencing, one token at a time.
+- Non-streaming: the response is processed as a whole. After **`llama server context`** completes the entire process, it returns a single result back to **`cortex.cpp`**.
+
 ## Code Structure
+
+The source code is available at [@janhq/cortex.llamacpp](https://github.com/janhq/cortex.llamacpp)
+
+```markdown
+.
+├── base                              **# Engine interface definition**
+|   └── cortex-common                 # Common interfaces used for all engines
+|      └── enginei.h                  # Define abstract classes and interface methods for engines
+├── examples                          **# Server example to integrate engine**
+│   └── server.cc                     # Example server demonstrating engine integration
+├── llama.cpp                         **# Upstream llama.cpp repository**
+│   └── (files from upstream llama.cpp)
+├── src                               **# Source implementation for llama.cpp**
+│   ├── chat_completion_request.h     # OpenAI compatible request handling
+│   ├── llama_client_slot             # Manage vector of slots for parallel processing
+│   ├── llama_engine                  # Implementation llamacpp engine of model loading and inference 
+│   ├── llama_server_context          # Context management for chat completion requests
+│   │   ├── slot                      # Struct for slot management
+│   │   └── llama_context             # Struct for llama context management
+|   |   └── chat_completion           # Struct for chat completion management
+|   |   └── embedding                 # Struct for embedding management
+├── third-party                       **# Dependencies of the cortex.llamacpp project**
+│   └── (list of third-party dependencies)
+
+```
 
 ## Runtime
 
