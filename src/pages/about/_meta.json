@@ -21,7 +21,6 @@
   },
   "handbook-separator": {
     "title": "Handbook",
-    "type": "separator",
     "display": "hidden"
   },
   "handbook": {

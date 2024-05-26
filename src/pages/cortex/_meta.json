@@ -98,8 +98,7 @@
   },
   "training-engines": {
     "display": "hidden",
-    "title": "TRAINING ENGINES",
-    "type": "separator"
+    "title": "TRAINING ENGINES"
   },
   "extensions": {
     "display": "hidden",

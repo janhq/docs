@@ -3,6 +3,7 @@ import { FaGithub, FaDiscord } from 'react-icons/fa'
 import { RiStarSFill } from 'react-icons/ri'
 import { useDiscordWidget } from '@/hooks/useDiscordWidget'
 import { useData } from 'nextra/data'
+import { formatCompactNumber } from '@/utils/format'
 
 const BuiltWithLove = () => {
   const { data: discordWidget } = useDiscordWidget()
@@ -34,7 +35,7 @@ const BuiltWithLove = () => {
               <div className="text-black/60 dark:text-white/60 flex items-center space-x-1">
                 <RiStarSFill className="text-lg text-[#CA8A04]" />
                 <span className="font-semibold text-white dark:text-black">
-                  {stars} stars
+                  {formatCompactNumber(stars)} stars
                 </span>
               </div>
             </div>
@@ -52,7 +53,7 @@ const BuiltWithLove = () => {
               <div className="text-black/60 dark:text-white/60 flex items-center space-x-1">
                 <div className="w-2 h-2 bg-green-500 rounded-full" />
                 <span className="font-semibold text-white">
-                  {discordWidget.presence_count} online
+                  {formatCompactNumber(discordWidget.presence_count)} online
                 </span>
               </div>
             </div>
