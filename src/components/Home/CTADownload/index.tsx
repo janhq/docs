@@ -1,8 +1,9 @@
 import DropdownDownload from '@/components/DropdownDownload'
+import { totalDownload } from '@/utils/format'
 import { useData } from 'nextra/data'
 
 const CTADownload = () => {
-  const { lastRelease } = useData()
+  const { lastRelease, release } = useData()
 
   return (
     <div className="relative py-8">
@@ -19,7 +20,7 @@ const CTADownload = () => {
               <DropdownDownload lastRelease={lastRelease} />
             </div>
             <p className="mt-6 text-zinc-text-black/60 dark:text-white/60">
-              800K+ Downloads | Free & Open Source
+              {totalDownload(release)}+ Downloads | Free & Open Source
             </p>
           </div>
         </div>

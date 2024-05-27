@@ -1,11 +1,13 @@
 import DropdownDownload from '@/components/DropdownDownload'
 import ThemeImage from '@/components/ThemeImage'
+import { totalDownload } from '@/utils/format'
 import Link from 'next/link'
 import { useData } from 'nextra/data'
 import { useEffect, useState } from 'react'
 
 const Hero = () => {
-  const { lastVersion, lastRelease } = useData()
+  const { lastVersion, lastRelease, release } = useData()
+
   const [isChrome, setIsChrome] = useState(false)
   useEffect(() => {
     if (navigator.userAgent.includes('Chrome')) {
@@ -48,7 +50,7 @@ const Hero = () => {
           )}
         </div>
         <p className="mt-6 text-black/60 dark:text-white/60">
-          800K+ Downloads | Free & Open Source
+          {totalDownload(release)}+ Downloads | Free & Open Source
         </p>
         <div className="w-4/5 mx-auto mt-10">
           <ThemeImage
