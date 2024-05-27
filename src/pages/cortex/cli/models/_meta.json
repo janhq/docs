@@ -1,0 +1,20 @@
+{
+  "download": {
+    "title": "cortex models pull"
+  },
+  "list": {
+    "title": "cortex models list"
+  },
+  "get": {
+    "title": "cortex models get"
+  },
+  "start": {
+    "title": "cortex models start"
+  },
+  "stop": {
+    "title": "cortex models stop"
+  },
+  "remove": {
+    "title": "cortex models remove"
+  }
+}
