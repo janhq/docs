@@ -41,40 +41,9 @@ cortex models start MODEL_ID
 cortex models stop MODEL_ID
 ```
 
-### Managing Models
-
-The `models` subcommand allows for managing models. To view the available options, run:
+## Options
 
 ```
-cortex models -h
-```
-
-To use:
-
-```
-Usage: cortex models [options] [command]
-
-Subcommands for managing models
-
 Options:
   -h, --help     display help for command
-
-Commands:
-  pull|download  Download a model. Working with HuggingFace model id.
-                 Example: cortex models pull <model_id>
-
-  list           List all models locally.
-                 Example: cortex models list
-  
-  get            Get a model by ID.
-                 Example: cortex models get <model_id>
-
-  start          Start a model by ID.
-                 Example: cortex models start <model_id>
-
-  stop           Stop a model by ID.
-                 Example: cortex models stop <model_id>
-
-  remove         Remove a model by ID locally.
-                 Example: cortex models remove <model_id>
 ```
