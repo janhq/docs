@@ -1,6 +1,6 @@
 ---
-title: Cortex Chat
-description: Cortex chat command.
+title: Cortex Models Serve
+description: Cortex serve command.
 keywords:
   [
     Jan,
@@ -25,17 +25,18 @@ import { Cards, Card } from 'nextra/components'
 🚧 Cortex is under construction.
 </Callout>
 
-# `cortex chat`
+# `cortex serve`
 
-This command starts a chat session with a specified model, allowing you to interact directly with it through an interactive chat interface.
+This command runs the API endpoint server for the Cortex back-end.
 
 ## Usage
 
 ```bash
-cortex chat --model MODEL_ID
+cortex serve
 ```
-### Options
+
+## Options
 ```
-  -m, --model <model_id>  Model Id to start chat with
+  -h, --host              configure the host for the API endpoint server
   -h, --help              display help for command
 ```

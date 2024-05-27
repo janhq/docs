@@ -1,6 +1,6 @@
 ---
-title: Cortex Chat
-description: Cortex chat command.
+title: Cortex Models Pull
+description: Cortex models subcommands.
 keywords:
   [
     Jan,
@@ -25,16 +25,20 @@ import { Cards, Card } from 'nextra/components'
 🚧 Cortex is under construction.
 </Callout>
 
-# `cortex chat`
+# `cortex models pull`
 
-This command starts a chat session with a specified model, allowing you to interact directly with it through an interactive chat interface.
+This command downloads a model. You can use a HuggingFace `MODEL_ID` to download a model.
 
 ## Usage
 
 ```bash
-cortex chat --model MODEL_ID
+cortex models pull MODEL_ID
 ```
-### Options
+## Alias
+The following alias is also available for downloading models:
+- `cortex download _`
+
+## Options
 ```
   -m, --model <model_id>  Model Id to start chat with
   -h, --help              display help for command
