@@ -1,0 +1,75 @@
+---
+title: Anthropic
+description: Learn how to integrate Anthropic with Jan for enhanced functionality.
+keywords:
+  [
+    Anthropic API,
+    Jan,
+    Jan AI,
+    ChatGPT alternative,
+    conversational AI,
+    large language model,
+    integration,
+    Anthropic integration,
+    API integration
+  ]
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Anthropic
+
+## How to Integrate Anthropic with Jan
+
+This guide provides step-by-step instructions on integrating Anthropic with Jan, enabling users to chat with Claude's LLMs within Jan's conversational interface.
+
+Before proceeding, ensure you have the following:
+- Access to the Jan application
+- Anthropic API credentials
+
+## Integration Steps
+
+<Steps>
+
+### Step 1: Configure Anthropic API Key
+1. Obtain Anthropic API Keys from your [Anthropic Console](https://console.anthropic.com/).
+2. Copy your Anthropic API Key and the endpoint URL you want.
+3. Navigate to the **Jan app** > **Settings**.
+4. Select the **Anthropic Inference Engine**.
+5. Insert the **API Key** and the **endpoint URL** into their respective fields.
+<br/>
+![Server Setup](../_assets/server-anthropic.gif)
+
+<Callout type='info'>
+  You can also manually edit the JSON file in `~/jan/settings/@janhq/inference-anthropic-extension`.
+</Callout>
+
+### Step 2: Select Model
+
+1. Navigate to the **Hub** section.
+2. Ensure you have downloaded the Anthropic model you want to use.
+<br/>
+![Select Model](../_assets/model-anthropic.gif)
+
+<Callout type='info'>
+  The Anthropic Inference Engine is the default extension for the Jan application. All the Anthropic models are automatically installed when you install the Jan application.
+</Callout>
+
+### Step 3: Start the Model
+
+1. Navigate to the **Thread** section.
+2. Under the **Model** section, click **Remote**.
+3. Select the Anthropic model you want to use.
+3. Start the conversation with the Anthropic model.
+<br/>
+![Start Model](../_assets/start-anthropic.gif)
+
+</Steps>
+
+## Troubleshooting
+
+If you encounter any issues during the integration process or while using Anthropic with Jan, consider the following troubleshooting steps:
+
+- Double-check your API credentials to ensure they are correct.
+- Check for error messages or logs that may provide insight into the issue.
+- Reach out to Anthropic API support for assistance if needed.
