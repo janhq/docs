@@ -3,6 +3,10 @@
     "title": "OpenAI API",
     "href": "/docs/remote-models/openai"
   },
+  "azure": {
+    "title": "Azure OpenAI API",
+    "href": "/docs/remote-models/azure"
+  },
   "groq": { "title": "Groq API", "href": "/docs/remote-models/groq" },
   "mistralai": {
     "title": "Mistral AI API",

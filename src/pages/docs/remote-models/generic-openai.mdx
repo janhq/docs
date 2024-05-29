@@ -32,6 +32,11 @@ This guide outlines the process for configuring Jan as a client for both remote 
 
 1. Navigate to the **Jan app** > **Settings**.
 2. Select the **OpenAI Inference Engine**.
+
+<Callout type='info'>
+The **OpenAI Inference Engine** fields can be used for any OpenAI-compatible API.
+</Callout>
+
 3. Insert the **API Key** and the **endpoint URL** into their respective fields. For example, if you're going to communicate to Jan's API server, you can configure it as follows:
 ```json
 "full_url": "https://<server-ip-address>:1337/v1/chat/completions"
@@ -42,40 +47,12 @@ This guide outlines the process for configuring Jan as a client for both remote 
 <br/>
 ![Server Setup](../_assets/server-openai.gif)
 
-### Step 2: Create a Model JSON
+### Step 2: Select Model
 
-1. In `~/jan/models`, create a folder named `mistral-ins-7b-q4`.
-
-2. In this folder, add a `model.json` file with Filename as `model.json`, ensure the following configurations:
-
-- `id` matching folder name.
-- `Format` set to `api`.
-- `Engine` set to `openai`
-- `State` set to `ready`.
-
-```json ~/jan/models/mistral-ins-7b-q4/model.json
-{
-  "sources": [
-    {
-      "filename": "janai",
-      "url": "https://jan.ai"
-    }
-  ],
-  "id": "mistral-small-latest",
-  "object": "model",
-  "name": "Mistral Small",
-  "version": "1.0",
-  "description": "Jan integration with remote Jan API server",
-  "format": "api",
-  "settings": {},
-  "parameters": {},
-  "metadata": {
-    "author": "MistralAI, The Bloke",
-    "tags": ["remote", "awesome"]
-  },
-  "engine": "openai"
-}
-```
+1. Navigate to the **Hub** section.
+2. Ensure you have downloaded the model compatible with your selected OpenAI-compatible API.
+<br/>
+![Select Model](../_assets/model-openai.gif)
 
 ### Step 3: Start the Model
 
@@ -83,7 +60,7 @@ This guide outlines the process for configuring Jan as a client for both remote 
 2. Under the **Model** section, click **Remote**.
 3. Select the model you want to use.
 <br/>
-![Start Model](../_assets/start-mistral.gif)
+![Start Model](../_assets/select-openai.gif)
 </Steps>
 <Callout type='info'>
   If you have questions or want more preconfigured GGUF models, please join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
