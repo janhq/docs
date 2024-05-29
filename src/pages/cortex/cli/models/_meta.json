@@ -8,6 +8,9 @@
   "get": {
     "title": "cortex models get"
   },
+  "update": {
+    "title": "cortex models update"
+  },
   "start": {
     "title": "cortex models start"
   },
