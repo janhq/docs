@@ -622,4 +622,4 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /docs/remote-inference/groq /docs/remote-models/groq 302
 /docs/remote-inference/mistralai /docs/remote-models/mistralai 302
 /docs/remote-inference/openrouter /docs/remote-models/openrouter 302
-/docs/remote-models/generic-openai /docs/remote-models/generic-openai 302
+/docs/remote-inference/generic-openai /docs/remote-models/generic-openai 302
