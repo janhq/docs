@@ -1,0 +1,14 @@
+{
+    "llama3": {
+        "title": "Meta Llama3"
+    },
+    "mistral": {
+        "title": "Mistral"
+    },
+    "mixtral": {
+        "title": "Mixtral"
+    },
+    "phi3": {
+        "title": "Phi-3"
+    }
+}

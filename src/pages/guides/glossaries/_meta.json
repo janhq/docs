@@ -1,0 +1,8 @@
+{
+    "gguf": {
+        "title": "GGUF and quantization"
+    },
+    "data_types": {
+        "title": "Data type"
+    }
+}
