@@ -25,17 +25,29 @@ import { Cards, Card } from 'nextra/components'
 🚧 Cortex is under construction.
 </Callout>
 
-# CLI Overview
+# Cortex
 
-| Endpoints                | Method | Description                             | Command Line          | Example                        |
-|--------------------------|--------|-----------------------------------------|-----------------------|--------------------------------|
-| `/models`                | GET    | Model management                        | `cortex models`       |                                |
-| [`/models`](/api-reference#tag/models/get/models)                | GET    | Lists all available models.             | [`list`]((/cortex/cli/models/list))                | `cortex models list`           |
-| [`/models/download/{model}`](/api-reference#tag/models/get/models/download/{modelId}) | GET    | Downloads a specified model.            | [`pull`](/cortex/cli/models/download)                | `cortex models pull llama3:8b` |
-| [`/models/{model}/start`](/api-reference#tag/models/post/models/{modelId}/start)  | POST   | Starts a specified model.               | [`start`](/cortex/cli/models/start)               | `cortex models start llama3:8b`|
-| [`/models/{model}`](/api-reference#tag/models/get/models/{id})        | GET    | Retrieves the configuration of a model. | [`get`](/cortex/cli/models/get)                 | `cortex models get llama3:8b`  |
-| `/models/{model}`        | PUT    | Updates the configuration of a model.   | `update`              | `cortex models update llama3:8b`|
-| [`/models/{model}/stop`](/api-reference#tag/models/post/models/{modelId}/stop)   | POST   | Stops a specified model.                | [`stop`](/cortex/cli/models/stop)                | `cortex models stop llama3:8b` |
-| [`/models/{model}`](/api-reference#tag/models/delete/models/{id})        | DELETE | Deletes a specified model.              | [`remove`](/cortex/cli/models/remove)              | `cortex models remove llama3:8b`|
-| `/chat`                  | OAI    | Inference                               | `cortex chat`         |                                |
-| [`/chat/completions`](/api-reference#tag/inference/post/chat/completions)      | POST   | Creates a model response                | [`chat`](/cortex/cli/chat)                | `cortex chat`                  |
+Cortex is a CLI tool used to interact with the Jan application and its various functions.
+
+<Callout type="info">
+Cortex CLI is compatible with all OpenAI and OpenAI-compatible endpoints.
+</Callout>
+
+## Usage
+
+```bash
+cortex [command] [flag]
+```
+### Options
+```
+  -h, --help       display help for command
+```
+## Sub Commands
+-  [models](/cortex/cli/models): Manage models.
+-  [serve](/cortex/cli/serve): Start an API endpoint server for Cortex backend
+-  [chat](/cortex/cli/chat): Send a chat request to a model
+-  [init|setup](/cortex/cli/init): Init settings and download cortex's dependencies
+-  [ps](/cortex/cli/ps): Show running models and their status
+-  [kill](/cortex/cli/kill): Kill running cortex processes
+-  [pull|download](/cortex/cli/pull): Download a model. Working with HuggingFace model id.
+-  [run](/cortex/cli/run): Shortcut to start a model and chat **(EXPERIMENTAL)**.

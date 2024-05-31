@@ -1,6 +1,6 @@
 ---
-title: Cortex Models Pull
-description: Cortex models subcommands.
+title: Cortex Ps
+description: Cortex ps command.
 keywords:
   [
     Jan,
@@ -25,9 +25,9 @@ import { Cards, Card } from 'nextra/components'
 🚧 Cortex is under construction.
 </Callout>
 
-# `cortex models pull`
+# `cortex ps`
 
-This command downloads a model. You can use a HuggingFace `MODEL_ID` to download a model.
+This command shows the running model and its status.
 
 <Callout type="info">
 This command is compatible with all OpenAI and OpenAI-compatible endpoints.
@@ -36,14 +36,5 @@ This command is compatible with all OpenAI and OpenAI-compatible endpoints.
 ## Usage
 
 ```bash
-cortex models pull MODEL_ID
-```
-## Alias
-The following alias is also available for downloading models:
-- `cortex download _`
-
-## Options
-```
-  -m, --model <model_id>  Model Id to start chat with
-  -h, --help              display help for command
+cortex ps
 ```

@@ -29,6 +29,10 @@ import { Cards, Card } from 'nextra/components'
 
 This command lists all local models.
 
+<Callout type="info">
+This command is compatible with all OpenAI and OpenAI-compatible endpoints.
+</Callout>
+
 ## Usage
 
 ```bash
@@ -37,5 +41,6 @@ cortex models list
 
 ## Options
 ```
-  -h, --help              display help for command
+  -f, --format <format>  Print models list in table or json format (default: "json")
+  -h, --help             display help for command
 ```
