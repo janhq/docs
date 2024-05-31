@@ -11,8 +11,14 @@
   "models": {
     "title": "cortex models"
   },
+  "ps": {
+    "title": "cortex ps"
+  },
   "chat": {
     "title": "cortex chat"
+  },
+  "kill": {
+    "title": "cortex kill"
   },
   "serve": {
     "title": "cortex serve"

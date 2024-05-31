@@ -78,7 +78,7 @@
     "type": "separator"
   },
   "cli": {
-    "title": "Overview"
+    "title": "cortex"
   },
   "training-engines": {
     "display": "hidden",

@@ -29,6 +29,10 @@ import { Cards, Card } from 'nextra/components'
 
 This command facilitates the initiation of an interactive chat shell with a specified machine learning model.
 
+<Callout type="info">
+This command is compatible with all OpenAI and OpenAI-compatible endpoints.
+</Callout>
+
 ## Usage
 
 ```bash
@@ -36,8 +40,8 @@ cortex run MODEL_ID
 ```
 ### Options
 ```
-  -m, --model <model_id>  Model Id to start chat with
-  -h, --help              display help for command
+  -t, --thread <thread_id>  Thread Id. If not provided, will create new thread
+  -h, --help                display help for command
 ```
 
 ## Command Chain

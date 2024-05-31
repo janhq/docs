@@ -590,65 +590,11 @@
                 ]
             }
         },
-        "/cortex/start": {
-            "post": {
-                "operationId": "CortexController_startCortex",
-                "summary": "Start cortex",
-                "description": "Starts the cortex operation.",
-                "parameters": [],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/StartCortexDto"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Start Cortex successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CortexOperationSuccessfullyDto"
-                                }
-                            }
-                        }
-                    }
-                },
-                "tags": [
-                    "Cortex"
-                ]
-            }
-        },
-        "/cortex/stop": {
-            "post": {
-                "operationId": "CortexController_stopCortex",
-                "summary": "Stop cortex",
-                "description": "Stops the cortex operation.",
-                "parameters": [],
-                "responses": {
-                    "200": {
-                        "description": "Stop Cortex successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CortexOperationSuccessfullyDto"
-                                }
-                            }
-                        }
-                    }
-                },
-                "tags": [
-                    "Cortex"
-                ]
-            }
-        },
         "/chat/completions": {
             "post": {
                 "operationId": "ChatController_create",
+                "summary": "Create chat completion",
+                "description": "Creates a model response for the given conversation.",
                 "parameters": [],
                 "requestBody": {
                     "required": true,
@@ -799,10 +745,6 @@
         "contact": {}
     },
     "tags": [
-        {
-            "name": "Cortex",
-            "description": "These endpoints control the start and stop operations of the Cortex system."
-        },
         {
             "name": "Inference",
             "description": "This endpoint initiates interaction with a Language Learning Model (LLM)."
@@ -1771,7 +1713,7 @@
                     },
                     "engine": {
                         "type": "string",
-                        "example": "nitro"
+                        "example": "cortex"
                     }
                 },
                 "required": [
@@ -1849,44 +1791,6 @@
                     "id",
                     "object",
                     "deleted"
-                ]
-            },
-            "StartCortexDto": {
-                "type": "object",
-                "properties": {
-                    "host": {
-                        "type": "string",
-                        "description": "The Cortexcpp host.",
-                        "default": "127.0.0.1"
-                    },
-                    "port": {
-                        "type": "number",
-                        "minimum": 0,
-                        "maximum": 65535,
-                        "description": "The Cortexcpp port.",
-                        "default": 3928
-                    }
-                },
-                "required": [
-                    "host",
-                    "port"
-                ]
-            },
-            "CortexOperationSuccessfullyDto": {
-                "type": "object",
-                "properties": {
-                    "message": {
-                        "type": "string",
-                        "description": "The cortex operation status message."
-                    },
-                    "status": {
-                        "type": "string",
-                        "description": "The cortex operation status code."
-                    }
-                },
-                "required": [
-                    "message",
-                    "status"
                 ]
             },
             "ChatCompletionMessage": {

@@ -31,6 +31,10 @@ This command facilitates downloading machine learning models from various model 
 
 By default, models are downloaded to the `node_modules library path. For additional information on storage paths and options, refer [here](/cortex/cli#storage).
 
+<Callout type="info">
+This command is compatible with all OpenAI and OpenAI-compatible endpoints.
+</Callout>
+
 ## Alias
 The following alias is also available for downloading models:
 - `cortex download _`
@@ -56,7 +60,7 @@ New models will soon be added to HuggingFace's janhq repository.
 # Pull a model most compatible with your hardware
 cortex pull llama3
 
-# Download a specific variant with `repo_name:branch`
+# Pull a specific variant with `repo_name:branch`
 cortex pull llama3:7b
 ```
 

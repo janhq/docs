@@ -29,6 +29,10 @@ import { Cards, Card } from 'nextra/components'
 
 This command starts a model defined by a `MODEL_ID`.
 
+<Callout type="info">
+This command is compatible with all OpenAI and OpenAI-compatible endpoints.
+</Callout>
+
 ## Usage
 
 ```bash
@@ -37,5 +41,6 @@ cortex models start MODEL_ID
 
 ## Options
 ```
-  -h, --help              display help for command
+  -a, --attach  Attach to interactive chat session (default: false)
+  -h, --help    display help for command
 ```
