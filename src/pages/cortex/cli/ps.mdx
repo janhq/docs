@@ -38,3 +38,11 @@ This command is compatible with all OpenAI and OpenAI-compatible endpoints.
 ```bash
 cortex ps
 ```
+For example, it returns the following table:
+```bash
+┌─────────┬──────────────────────┬───────────────────┬───────────┬──────────┬─────┬──────┐
+│ (index) │ modelId              │ engine            │ status    │ duration │ ram │ vram │
+├─────────┼──────────────────────┼───────────────────┼───────────┼──────────┼─────┼──────┤
+│ 0       │ 'janhq/tinyllama/1b' │ 'cortex.llamacpp' │ 'running' │ '7s'     │ '-' │ '-'  │
+└─────────┴──────────────────────┴───────────────────┴───────────┴──────────┴─────┴──────┘
+```
