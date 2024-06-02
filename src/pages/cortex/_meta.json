@@ -17,6 +17,9 @@
   "installation": {
     "title": "Installation"
   },
+  "hardware": {
+    "title": "Hardware"
+  },
   "basicusage": {
     "title": "BASIC USAGE",
     "type": "separator"
