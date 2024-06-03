@@ -27,49 +27,24 @@ import { Cards, Card } from 'nextra/components'
 
 # Command Line Interface
 
-Cortex ships with a Docker/Github inspired CLI for easy installation and usage.
+The Cortex CLI provides a user-friendly platform for managing and operating large language models (LLMs), inspired by tools like Docker and GitHub CLI. Designed for straightforward installation and use, it simplifies the integration and management of LLMs.
 
-## Check Installation
-
-To check if Cortex CLI is installed correctly, run:
-
-```
-cortex -h
-```
+<Callout type="info">
+The Cortex CLI is OpenAI-compatible.
+</Callout>
 
 ## Installation
-
+To get started with the Cortex CLI, visit our
 - Quickstart [installation instructions](/cortex/quickstart)
 - Device specific [installation instructions](/cortex/installation)
 
+These resources provide detailed instructions to ensure Cortex is set up correctly on your machine, accommodating various hardware environments.
+
 ## Usage
 
-For a full list of available CLI commands, [see here](/cortex/cli-overview).
+The Cortex CLI has a robust command set that streamlines your LLM interactions.
 
-```bash
-Usage: cortex [options] [command]
-
-# Output
-Cortex CLI
-
-Options:
-  -h, --help       display help for command
-
-Commands:
-  models           Subcommands for managing models
-
-  init|setup       Init settings and download Cortex's dependencies
-                   Example: cortex init
-                   
-  serve [options]  Provide API endpoint for Cortex backend
-                   Example: cortex serve
-
-  chat [options]   Start a chat with a model
-                   Example: cortex chat --model <model_id>
-
-  run [options]    EXPERIMENTAL: Shortcut to start a model and chat
-                   Example: cortex run
-```
+Check out the [CLI reference pages](/cortex/cli) for a comprehensive guide on all available commands and their specific functions.
 
 ## Storage
 
@@ -78,24 +53,29 @@ By default, Cortex CLI stores model binaries, thread history, and other usage da
 
 You can find the respective folders within the `/lib/node_modules/@janhq/cortex/dist/` subdirectory.
 
-In progress: 
-- Changing storage location
-- Additional database types like mysql or postgresql
+<Callout type="info">
+**Ongoing Development**:
+- Customizable Storage Locations
+- Database Integration
+</Callout>
 
-## Syntax
+## CLI Syntax
 
-For a full list of available CLI commands, [see here](/cortex/cli-overview).
+The Cortex CLI improves the developer experience by incorporating command chaining and syntactic enhancements. 
+This approach automatically combines multiple operations into a single command, streamlining complex workflows. It simplifies the execution of extensive processes through integrated commands.
 
-**OpenAI API Equivalence**
+### OpenAI API Equivalence
 
-Cortex CLI commands strictly follows OpenAI API method names as a convention.
+The design of Cortex CLI commands strictly adheres to the method names used in the OpenAI API as a standard practice. This ensures a smooth transition for users familiar with OpenAI’s system.
 
-For example, the `cortex chat` command is equivalent to the `POST /v1/chat/completions` endpoint ([read more](/cortex/cortex-chat)). 
+For example:
+- The `cortex chat` command is equivalent to the [`POST /v1/chat/completions` endpoint](/cortex/cortex-chat). 
 
-The `cortex models get ID` command is equivalent to the `GET /models ${ID}` endpoint ([read more](/cortex/cortex-models)).
+- The `cortex models get ID` command is equivalent to the [`GET /models ${ID}` endpoint](/cortex/cortex-models).
 
-**Command Chaining**
+### Command Chaining
 
-To improve developer experience, Cortex CLI supports command chaining and syntactic sugar on top of the base CLI syntax. 
+Cortex CLI’s command chaining support allows multiple commands to be executed in sequence with a simplified syntax. This approach reduces the complexity of command inputs and speeds up development tasks.
 
-For example, `cortex run`, inspired by Docker and Github, starts the models and the inference engine, and provides a command line chat interface for easy testing ([read more](/cortex/cortex-run)).
+For example:
+- The [`cortex run`](/cortex/cortex-run), inspired by Docker and Github, starts the models and the inference engine, and provides a command line chat interface for easy testing.
