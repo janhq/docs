@@ -27,20 +27,19 @@ import { Cards, Card } from 'nextra/components'
 🚧 Cortex is under construction.
 </Callout>
 
-To get started, ensure minimal [hardware requirements](/cortex/hardware), and follow the steps below:
+To get started,  confirm that your system meets the [hardware requirements](/cortex/hardware), and follow the steps below:
 
 ```bash
+# 1. Install Cortex using NPM
 npm i -g @janhq/cortex
 
-# Initialize a compatible engine
-cortex init
-
-# Download a GGUF model
+# 2. Download a GGUF model
 cortex models pull llama3
 
+# 3. Run the model to start chatting
 cortex models run llama3
 ```
-
+## Cortex Server
 You can also run Cortex in OpenAI-compatible server mode:
 ```bash
 cortex serve
