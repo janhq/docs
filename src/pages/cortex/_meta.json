@@ -101,7 +101,7 @@
     "type": "separator"
   },
   "architecture": {
-    "title": "Cortex Architecture"
+    "title": "Cortex"
   },
   "cortex-cpp": {
     "title": "Cortex.cpp"
