@@ -14,11 +14,11 @@
   "quickstart": {
     "title": "Quickstart"
   },
-  "installation": {
-    "title": "Installation"
-  },
   "hardware": {
     "title": "Hardware"
+  },
+  "installation": {
+    "title": "Installation"
   },
   "basicusage": {
     "title": "BASIC USAGE",

@@ -27,20 +27,19 @@ import { Cards, Card } from 'nextra/components'
 🚧 Cortex is under construction.
 </Callout>
 
-To get started, ensure minimal [hardware requirements](/cortex/hardware), and follow the steps below:
+To get started,  confirm that your system meets the [hardware requirements](/cortex/hardware), and follow the steps below:
 
 ```bash
+# 1. Install Cortex using NPM
 npm i -g @janhq/cortex
 
-# Initialize a compatible engine
-cortex init
-
-# Download a GGUF model
+# 2. Download a GGUF model
 cortex models pull llama3
 
+# 3. Run the model to start chatting
 cortex models run llama3
 ```
-
+## Cortex Server
 You can also run Cortex in OpenAI-compatible server mode:
 ```bash
 cortex serve
@@ -50,37 +49,8 @@ Visit the API playground at: http://localhost:1337/api
 
 And that's it!
 
-## Best Practices
-
-### Model Registry
-
-By default, models download from Cortex's [model registry](https://huggingface.co/janhq) on Hugging Face. We include configurations for popular models. This is the easiest way to import new models. 
-
-```bash
-# cortex pull repo_name
-cortex pull llama3
-```
-
-Available models include [llama3](https://huggingface.co/janhq/llama3), [mistral](https://huggingface.co/janhq/mistral), [tinyllama](https://huggingface.co/janhq/tinyllama), and [many more](https://huggingface.co/janhq).
-
-You can also download `size`, `format`, and `quantization` variants of each model.
-
-```bash
-# cortex pull repo_name:branch_name
-cortex pull llama3:7b
-cortex pull llama3:8b-instruct-v3-gguf-Q4_K_M
-cortex pull llama3:8b-instruct-v3-tensorrt-llm
-```
-
-Model variants are provided via the `branches` in each model's Hugging Face repo.
-
-### Hugging Face Hub
-
-You can download any model from Hugging Face. 
-
-Depending on the model architecture, you may need to separately configure the runtime parameters.
-
-```bash
-# cortex pull org_name/repo_name
-cortex models pull janhq/meta-llama-3-8b-instruct-GGUF
-```
+## What's Next?
+With Cortex now fully operational, you're ready to delve deeper:
+- Explore how to [install Cortex](/cortex/installation) across various hardware environments.
+- Familiarize yourself with the comprehensive set of [Cortex CLI commands](/cortex/cli) available for use.
+- Gain insights into the system’s design by examining the [architecture](/cortex/architecture) of Cortex.
