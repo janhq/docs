@@ -117,9 +117,9 @@ Having at least 6GB VRAM when using NVIDIA, AMD, or Intel Arc GPUs is recommende
 
 ## Cortex Installation
 
-To install Cortex in Linux, follow the steps below:
-<Steps>
+To install Cortex, follow the steps below:
 
+<Steps>
 ### Step 1: Install Cortex
 
 Run the following command to install Cortex globally on your machine:
@@ -133,30 +133,20 @@ Install NPM on your machine before proceeding with this step.
 # Install globally on your system
 npm i -g @janhq/cortex
 ```
+<Callout type="info">
+Cortex automatically detects your CPU and GPU, downloading the appropriate CPU instruction sets and required dependencies to optimize GPU performance.
+
+</Callout>
 
 ### Step 2: Verify the Installation
 
-After installation, you can verify that Cortex is installed correctly by getting help information.
+1. After installation, you can verify that Cortex is installed correctly by getting help information.
 
 ```sh
 # Get the help information
 cortex -h
 ```
-### Step 3: Initialize Cortex
-
-Once verified, you need to initialize the Cortex engine.
-1. Initialize the Cortex engine:
-```sh
-cortex init
-```
-2. Select between `CPU` or `GPU` mode.
-```sh
-? Select run mode (Use arrow keys)
-> CPU
-  GPU
-```
-3. Cortex will download the required CPU instruction sets if you choose `CPU` mode. If you choose `GPU` mode, Cortex will download the necessary dependencies to use your GPU.
-4. Once downloaded, Cortex is ready to use!
+2. Cortex is ready to use!
 </Steps>
 ## Build from Source
 

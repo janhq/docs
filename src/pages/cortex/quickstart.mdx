@@ -29,20 +29,18 @@ import { Cards, Card } from 'nextra/components'
 
 ```bash
 # 1. Install the NPM package
+# (Once installed, Cortex automatically identifies your CPU and GPU and installs the necessary dependencies)
 npm i -g @janhq/cortex
 
-# 2. Initialize a compatible engine
-cortex init
-
-# 3. Download a GGUF model from Hugging Face
+# 2. Download a GGUF model from Hugging Face
 #    Models save to $(npm list -g)/node_modules
 cortex models pull janhq/TinyLlama-1.1B-Chat-v1.0-GGUF
 
-# 4. Load the model
+# 3. Load the model
 cortex models start janhq/TinyLlama-1.1B-Chat-v1.0-GGUF
 
-# 5. In a new tab, start chatting
-cortex chat --model janhq/TinyLlama-1.1B-Chat-v1.0-GGUF
+# 4. Start chatting with the model
+cortex chat 
 ```
 
 You can also run Cortex in server mode
@@ -52,44 +50,8 @@ cortex serve
 
 That’s it! 
 
-## Best Practices
-
-### Model Registry
-
-You can download preconfigured models from Cortex's [Model Registry](https://huggingface.co/janhq) on Hugging Face. We maintain runtime settings for the most popular models and their variants. 
-
-This is the most concise way to import new models.
-
-The following models are available via repos: 
-- `llama3`: https://huggingface.co/janhq/llama3
-- `mistral`: https://huggingface.co/janhq/mistral
-- `tinyllama`: https://huggingface.co/janhq/tinyllama
-
-<Callout type="info">
-New models will soon be added to HuggingFace's janhq repository.
-</Callout>
-
-```bash
-# cortex pull NAME (of repo)
-cortex pull llama3
-```
-
-Model variants (size, format, quantization) are available via branches: 
-- `llama3`: https://huggingface.co/janhq/llama3/tree/main
-- `llama3:7b`: https://huggingface.co/janhq/llama3/tree/7b
-
-```bash
-# cortex pull NAME:BRANCH
-cortex pull llama3:7b
-```
-
-### Hugging Face Hub
-
-You can also download any other model from Hugging Face. 
-
-Depending on the model architecture, you may need to configure the runtime parameters.
-
-```bash
-# cortex pull HUGGING_FACE_MODEL_ID
-cortex models pull janhq/meta-llama-3-8b-instruct-GGUF
-```
+## What's Next?
+With Cortex now fully operational, you're ready to delve deeper:
+- Explore how to [install Cortex](/cortex/installation) across various hardware environments.
+- Familiarize yourself with the comprehensive set of [Cortex CLI commands](/cortex/cli) available for use.
+- Gain insights into the system’s design by examining the [architecture](/cortex/architecture) of Cortex.
