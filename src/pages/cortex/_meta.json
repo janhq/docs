@@ -17,6 +17,9 @@
   "installation": {
     "title": "Installation"
   },
+  "hardware": {
+    "title": "Hardware"
+  },
   "basicusage": {
     "title": "BASIC USAGE",
     "type": "separator"
@@ -98,7 +101,7 @@
     "type": "separator"
   },
   "architecture": {
-    "title": "Cortex Architecture"
+    "title": "Cortex"
   },
   "cortex-cpp": {
     "title": "Cortex.cpp"
