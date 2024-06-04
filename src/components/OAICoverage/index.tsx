@@ -158,7 +158,7 @@ export default function OAICoverage({
 
     if (block?.passingRate === undefined)
       return (
-        <div className="w-5 h-5 bg-gray-200 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-800 cursor-pointer" />
+        <div className="w-5 h-5 bg-gray-200 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-800" />
       )
 
     return (
