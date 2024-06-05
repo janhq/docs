@@ -37,10 +37,13 @@ Jan Hub provides three convenient methods to access machine learning models. Her
 The Recommended List is a great starting point if you're looking for popular and pre-configured models that work well and quickly on most computers.
 
 1. Open the Jan app and navigate to the Hub.
+<br/>
+![Jan Hub](../_assets/hub.png)
+<br/>
 2. Select models, clicking the `v` dropdown for more information. Models with the `Recommended` label will likely run faster on your computer.
 3. Click **Download** to download the model.
 <br/>
-![Download Model](../_assets/hub.gif)
+![Download Model](../_assets/download-button.png)
 
 #### 2. Download with HuggingFace Model's ID or URL 
 If you need a specific model from [Hugging Face](https://huggingface.co/models), Jan Hub lets you download it directly using the model’s ID or URL.
@@ -51,11 +54,17 @@ Only `GGUF` models are supported for this feature.
 2. Select the model you want to use.
 3. Copy the Model's ID or URL, for example: `MaziyarPanahi/Mixtral-8x22B-Instruct-v0.1-GGUF` or `https://huggingface.co/MaziyarPanahi/Mixtral-8x22B-Instruct-v0.1-GGUF`.
 4. Return to the Jan app and click on the Hub tab.
+<br/>
+![Jan Hub](../_assets/hub.png)
+<br/>
 5. Paste the **URL** or the **model ID** you have copied into the search bar.
+<br/>
+![Search Bar](../_assets/search-bar.png)
+<br/>
 6. The app will show all available versions of the model.
 7. Click **Download** to download the model.
 <br/>
-![Import Model](../_assets/import-hf.gif)
+![Download Model](../_assets/download-button2.png)
 <br/>
 #### 3. Download with Deep Link
 You can also use Jan's deep link feature to download a specific model from [Hugging Face](https://huggingface.co/models). The deep link format is: `jan://models/huggingface/<model's ID>`.
@@ -70,11 +79,17 @@ You will need to download such models manually.
 2. Select the model you want to use.
 3. Copy the Model's ID or URL, for example: `TheBloke/Magicoder-S-DS-6.7B-GGUF`.
 4. Enter the deep link URL with your chosen model's ID in your browser. For example: `jan://models/huggingface/TheBloke/Magicoder-S-DS-6.7B-GGUF`
+<br/>
+![Paste the URL](../_assets/browser1.png)
+<br/>
 5. A prompt will appear, click **Open** to open the Jan app.
+<br/>
+![Click Open](../_assets/browser2.png)
+<br/>
 6. The app will show all available versions of the model.
 7. Click **Download** to download the model.
 <br/>
-![Import Model](../_assets/deeplink.gif)
+![Download Model](../_assets/download-button3.png)
 <br/>
 ### Import or Symlink Local Models
 
@@ -82,12 +97,23 @@ You can also point to existing model binary files on your local filesystem.
 This is the easiest and most space-efficient way if you have already used other local AI applications.
 
 1. Navigate to the Hub.
-2. Click on `Import Model` at the top.
-3. Select to import using `.GGUF` file or a folder.
-3. Select the model or the folder containing multiple models.
-4. Optionally, check the box to symlink the model files instead of copying them over the Jan Data Folder. This saves disk space.
 <br/>
-![Import Folder](../_assets/import-folder.gif)
+![Jan Hub](../_assets/hub.png)
+<br/>
+2. Click on `Import Model` at the top.
+<br/>
+![Import Model](../_assets/import.png)
+<br/>
+3. Click the download icon button.
+<br/>
+![Download Icon](../_assets/download-icon.png)
+<br/>
+4. Select to import using `.GGUF` file or a folder.
+<br/>
+![Import Model](../_assets/import2.png)
+<br/>
+5. Select the model or the folder containing multiple models.
+6. Optionally, check the box to symlink the model files instead of copying them over the Jan Data Folder. This saves disk space.
 
 <Callout type="warning">
 Windows users should drag and drop the model file, as **Click to Upload** might not show the model files in Folder Preview.

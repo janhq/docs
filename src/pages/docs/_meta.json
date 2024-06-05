@@ -19,7 +19,10 @@
     "type": "separator"
   },
   "models": "Models",
-  "assistants": "Assistants",
+  "assistants": {
+    "display": "hidden",
+    "title": "Assistants"
+  },
   "tools": "Tools",
   "threads": "Threads",
   "settings": "Settings",

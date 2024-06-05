@@ -32,18 +32,27 @@ Settings for the Jan application are stored in a `settings.json` file located at
 My Settings is where you can customize the color of Jan's desktop app UI. Here's how to personalize the color scheme of Jan's desktop app UI:
 1. Navigate to the main dashboard.
 2. Click the **Gear Icon (⚙️)** on the bottom left of your screen.
-3. Under the **Settings screen**, click the **Advanced Settings**.
-4. Click **My Settings**.
-5. Pick the **Base Color Scheme** for your Jan desktop app. Options include:
-  - Light
-  - Dark
-  - System color scheme.
-6. Choose the **Accent Color** for your Jan desktop app. Options include:
-  - Blue
-  - Purple
-  - Green
-  <br/>
-![Customize UI](./_assets/ui.gif)
+<br/>
+![Settings](./_assets/settings.png)
+<br/>
+3. Select the **Appearance** section.
+<br/>
+![Settings](./_assets/appearance.png)
+<br/>
+4. Pick the **Appearance Scheme** for your Jan desktop app. Options include:
+  - Joi Light
+  - Joi Dark
+  - Dark Dimmed
+  - Night Blue
+<br/>
+![Settings](./_assets/scheme.png)
+<br/>
+5. Choose the **Interface theme** for your Jan desktop app. Options include:
+  - Solid
+  - Transparent
+<br/>
+![Settings](./_assets/theme.png)
+
 
 ## Access Advanced Settings
 Advanced Settings is the GUI version of the `settings.json`. To access Jan's advanced settings, follow the steps below:
@@ -53,16 +62,22 @@ Whenever you make changes in the Jan application's Settings screen, they are aut
 
 1. Navigate to the main dashboard.
 2. Click the **Gear Icon (⚙️)** on the bottom left of your screen.
-3. Under the **Settings screen**, click the **Advanced Settings**.
+<br/>
+![Settings](./_assets/settings.png)
+<br/>
+3. Click the **Advanced Settings**.
+<br/>
+![Settings](./_assets/advance-settings2.png)
+<br/>
 4. You can configure the following settings:
 
 | Feature                                  | Description                                                                                                                                                                                                              |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Keyboard Shortcuts**                   | Keyboard shortcuts speed up your workflow. For a quick overview of useful keyboard shortcuts, refer to the list [below](settings#keyboard-shortcuts).                                                       |
 | **Experimental Mode**                    | Enables experimental features that may be unstable.                                                                                                                                                                      |
 | **GPU Acceleration**                     | Enables boosting your model performance by using your GPU devices for acceleration.                                                                                                                               |
 | **Jan Data Folder**                      | Location for messages, model configurations, and user data. Changeable to a different location.                                                                                                                          |
 | **HTTPS Proxy & Ignore SSL Certificate** | Use a proxy server for internet connections and ignore SSL certificates for self-signed certificates. Please check out the guide on setting up your HTTPS proxy server [here](settings#https-proxy). |
+| **Ignore SSL Certificates**                   | Enables the self-signed or unverified certificates                                                       |
 | **Clear Logs**                           | Removes all logs from the Jan application.                                                                                                                                                                               |
 | **Reset To Factory Default**             | Resets the application to its original state, deleting all data, including model customizations and conversation history.                                                                                                 |
 
@@ -70,12 +85,10 @@ Whenever you make changes in the Jan application's Settings screen, they are aut
 
 To try out new features that are still in the testing phase, follow the steps below:
 
-1. Navigate to the main dashboard.
-2. Click the **gear icon (⚙️)** on the bottom left of your screen.
-3. Under the **Settings screen**, click the **Advanced Settings**.
-4. On the **Experimental Mode**, click the slider to enable.
+1. Navigate to the **Advanced Settings**.
+2. On the **Experimental Mode**, click the slider to enable.
 <br/>
-![Experimental](./_assets/experimental.gif)
+![Experimental](./_assets/exp-mode.png)
 
 ## Enable the GPU Acceleration
 
@@ -87,27 +100,20 @@ To enhance your model performance, follow the steps below:
   assistance.
 </Callout>
 
-1. Navigate to the main dashboard.
-2. Click the **gear icon (⚙️)** on the bottom left of your screen.
-3. Under the **Settings screen**, click the **Advanced Settings**.
-4. On the **GPU Acceleration**, click the slider to enable.
+1. Navigate to the **Advanced Settings**.
+2. On the **GPU Acceleration**, click the slider to enable.
 <br/>
-![Enable GPU](./_assets/gpu.gif)
+![Enable GPU](./_assets/gpu-accel.png)
 
 ## Access the Jan Data Folder
 
 To access the folder where messages, model configurations, and user data are stored, follow the steps below:
 
-1. Navigate to the main dashboard.
-2. Click the **gear icon (⚙️)** on the bottom left of your screen.
-<br/>
-![Settings](./_assets/settings.png)
-<br/>
-3. Under the **Settings screen**, click the **Advanced Settings**.
+1. Navigate to the **Advanced Settings**.
 <br/>
 ![Settings](./_assets/advance-set.png)
 <br/>
-4. On the **Jan Data Folder** click the **folder icon (📂)** to access the data or the **pencil icon (✏️)** to change the folder where you keep your data.
+2. On the **Jan Data Folder** click the **folder icon (📂)** to access the data or the **pencil icon (✏️)** to change the folder where you keep your data.
 <br/>
 ![Jan Data Folder](./_assets/data-folder.png)
 <br/>
@@ -229,7 +235,7 @@ Once you set up your HTTPS proxy server, you can configure it for Jan.
 2. On the **HTTPS Proxy**, click the slider to enable.
 3. Input your domain in the blank field.
 <br/>
-![HTTPS Proxy](./_assets/https.gif)
+![HTTPS Proxy](./_assets/http.png)
 
 </Steps>
 
@@ -237,24 +243,11 @@ Once you set up your HTTPS proxy server, you can configure it for Jan.
 
 To Allow self-signed or unverified certificates, follow the steps below:
 
-1. Navigate to the main dashboard.
-2. Click the **gear icon (⚙️)** on the bottom left of your screen.
-3. Under the **Settings screen**, click the **Advanced Settings**.
-4. On the **Ignore SSL Certificates**, click the slider to enable.
+1. Navigate to the **Advanced Settings**.
+2. On the **Ignore SSL Certificates**, click the slider to enable.
 <br/>
-![Ignore SSL](./_assets/ssl.gif)
+![Ignore SSL](./_assets/ssl.png)
 
-## Enable Quick Ask
-
-To enable the Jan quick ask feature, follow the steps below:
-
-
-1. Navigate to the main dashboard.
-2. Click the **gear icon (⚙️)** on the bottom left of your screen.
-3. Under the **Settings screen**, click the **Advanced Settings**.
-4. On the **Jan Quick Ask**, click the slider to enable.
-<br/>
-![Jan Quick Ask](./_assets/quick-ask.gif)
 
 ## Clear Logs
 
@@ -264,12 +257,10 @@ To clear all logs on your Jan app, follow the steps below:
   This feature clears all the data in your **Jan Data Folder**.
 </Callout>
 
-1. Navigate to the main dashboard.
-2. Click the **gear icon (⚙️)** on the bottom left of your screen.
-3. Under the **Settings screen**, click the **Advanced Settings**.
-4. On the **Clear Logs** click the the **Clear** button.
+1. Navigate to the **Advanced Settings**.
+2. On the **Clear Logs** click the the **Clear** button.
 <br/>
-![Clear Logs](./_assets/clear.gif)
+![Clear Logs](./_assets/clear-logs.png)
 
 ## Reset To Factory Default
 
@@ -280,9 +271,7 @@ To reset the Jan app to its original state, follow the steps below:
 </Callout>
 
 
-1. Navigate to the main dashboard.
-2. Click the **gear icon (⚙️)** on the bottom left of your screen.
-3. Under the **Settings screen**, click the **Advanced Settings**.
-4. On the **Reset To Factory Default** click the the **Reset** button.
+1. Navigate to the **Advanced Settings**.
+2. On the **Reset To Factory Default** click the the **Reset** button.
 <br/>
-![Reset](./_assets/reset.gif)
+![Reset](./_assets/reset-jan.png)
