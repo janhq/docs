@@ -21,15 +21,6 @@
     "title": "Integrations",
     "display": "hidden"
   },
-  "api-reference": {
-    "type": "page",
-    "title": "API Reference",
-    "href": "/api-reference",
-    "theme": {
-      "layout": "raw",
-      "footer": false
-    }
-  },
   "changelog": {
     "type": "page",
     "title": "Changelog",

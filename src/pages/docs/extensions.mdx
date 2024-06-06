@@ -29,19 +29,24 @@ The default extensions are in the `Settings` > `Extensions`.
 
 ## List of Default Extensions
 
-| Extension Name                     | Version   | Description                                                                                                | Source Code Link                                                                                     |
-| ---------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Assistant Extension                | `v1.0.0`  | This extension enables assistants, including Jan, a default assistant that can call all downloaded models. | [Source](https://github.com/janhq/jan/tree/dev/extensions/assistant-extension)               |
-| Conversational Extension           | `v1.0.0`  | This extension enables conversations and state persistence via your filesystem.                            | [Source](https://github.com/janhq/jan/tree/dev/extensions/conversational-extension)          |
-| Inference Engine Nitro Extension   | `v1.0.0`  | This extension embeds Nitro, a lightweight (3 MB) inference engine in C++. See https://nitro.jan.ai.               | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-nitro-extension)         |
-| Inference Engine OpenAI Extension  | `v1.0.0`  | This extension enables OpenAI chat completion API calls.                                                   | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-openai-extension)        |
-| Inference Engine Triton TRT-LLM Extension | `v1.0.0`  | This extension enables Nvidia's TensorRT-LLM as an inference engine option.                                | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-triton-trtllm-extension) |
-| Inference Engine Tensor RT Llm Extension | `v0.0.3`  | This extension enables Nvidia's TensorRT-LLM for the fastest GPU acceleration.                                | [Source](https://github.com/janhq/jan/tree/dev/extensions/tensorrt-llm-extension) |
-| Inference Engine MistralAI Extension   | `v1.0.0`  |This extension enables Mistral chat completion API calls.               | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-mistral-extension)         |
-| Inference Engine Groq Extension   | `v1.0.0`  |This extension enables Groq chat completion API calls.               | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-groq-extension)         |
-| HuggingFace Extension   | `v1.0.0`  |This extension converts HF models to GGUF.               | [Source](https://github.com/janhq/jan/tree/dev/extensions/huggingface-extension)         |
-| Model Management Extension                    | `v1.0.30` | Model Management Extension provides model exploration and seamless downloads.                              | [Source](https://github.com/janhq/jan/tree/dev/extensions/model-extension)                   |
-| System Monitoring Extension               | `v1.0.10`  | This extension offers system health and OS-level data.                                                     | [Source](https://github.com/janhq/jan/tree/dev/extensions/monitoring-extension)              |
+| Extension Name                              | Version   | Description                                                                                                | Source Code Link                                                                                     |
+| ------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Assistant Extension                         | `v1.0.1`  | This extension enables assistants, including Jan, a default assistant that can call all downloaded models. | [Source](https://github.com/janhq/jan/tree/dev/extensions/assistant-extension)               |
+| Conversational Extension                    | `v1.0.0`  | This extension enables conversations and state persistence via your filesystem.                            | [Source](https://github.com/janhq/jan/tree/dev/extensions/conversational-extension)          |
+| Inference Engine Nitro Extension            | `v1.0.0`  | This extension embeds Nitro, a lightweight (3 MB) inference engine in C++. See https://nitro.jan.ai.       | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-nitro-extension)         |
+| Inference Engine OpenAI Extension           | `v1.0.2`  | This extension enables OpenAI chat completion API calls.                                                   | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-openai-extension)        |
+| Inference Engine Triton TRT-LLM Extension   | `v1.0.0`  | This extension enables Nvidia's TensorRT-LLM as an inference engine option.                                | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-triton-trtllm-extension) |
+| Inference Engine Tensor RT Llm Extension    | `v0.0.3`  | This extension enables Nvidia's TensorRT-LLM for the fastest GPU acceleration.                             | [Source](https://github.com/janhq/jan/tree/dev/extensions/tensorrt-llm-extension) |
+| Inference Engine MistralAI Extension        | `v1.0.1`  | This extension enables Mistral chat completion API calls.                                                  | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-mistral-extension)         |
+| Inference Engine Groq Extension             | `v1.0.1`  | This extension enables fast Groq chat completion API calls.                                                | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-groq-extension)         |
+| HuggingFace Extension                       | `v1.0.0`  | This extension converts HF models to GGUF.                                                                 | [Source](https://github.com/janhq/jan/tree/dev/extensions/huggingface-extension)         |
+| Model Management Extension                  | `v1.0.30` | Model Management Extension provides model exploration and seamless downloads.                              | [Source](https://github.com/janhq/jan/tree/dev/extensions/model-extension)                   |
+| System Monitoring Extension                 | `v1.0.10` | This extension offers system health and OS-level data.                                                     | [Source](https://github.com/janhq/jan/tree/dev/extensions/monitoring-extension)              |
+| Inference Engine Cortex Extension           | `v1.0.10` | This extension embeds cortex.cpp, a lightweight inference engine written in C++.                          | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-cortex-extension)         |
+| Inference Engine Martian Extension          | `v1.0.1`  | This extension enables Martian chat completion API calls.                                                  | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-martian-extension)        |
+| Inference Engine Anthropic Extension        | `v1.0.0`  | This extension enables Anthropic chat completion API calls.                                                | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-anthropic-extension)      |
+| Inference Engine Cohere Extension           | `v1.0.0`  | This extension enables Cohere chat completion API calls.                                                   | [Source](https://github.com/janhq/jan/tree/dev/extensions/inference-cohere-extension)         |
+
 
 ## Configure Extension Default Settings
 
@@ -81,32 +86,47 @@ To configure extension default settings:
         "description": "This extension enables conversations and state persistence via your filesystem",
         "url": "extension://@janhq/conversational-extension/dist/index.js"
     },
-    "@janhq/model-extension": {
+    "@janhq/inference-openai-extension": {
         "_active": true,
         "listeners": {},
-        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-model-extension-1.0.30.tgz",
+        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-inference-openai-extension-1.0.2.tgz",
         "installOptions": {
             "version": false,
             "fullMetadata": true
         },
-        "name": "@janhq/model-extension",
-        "productName": "Model Management",
-        "version": "1.0.30",
+        "name": "@janhq/inference-openai-extension",
+        "productName": "OpenAI Inference Engine",
+        "version": "1.0.2",
         "main": "dist/index.js",
-        "description": "Model Management Extension provides model exploration and seamless downloads",
-        "url": "extension://@janhq/model-extension/dist/index.js"
+        "description": "This extension enables OpenAI chat completion API calls",
+        "url": "extension://@janhq/inference-openai-extension/dist/index.js"
+    },
+    "@janhq/inference-cohere-extension": {
+        "_active": true,
+        "listeners": {},
+        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-inference-cohere-extension-1.0.0.tgz",
+        "installOptions": {
+            "version": false,
+            "fullMetadata": true
+        },
+        "name": "@janhq/inference-cohere-extension",
+        "productName": "Cohere Inference Engine",
+        "version": "1.0.0",
+        "main": "dist/index.js",
+        "description": "This extension enables Cohere chat completion API calls",
+        "url": "extension://@janhq/inference-cohere-extension/dist/index.js"
     },
     "@janhq/inference-mistral-extension": {
-        "_active": false,
+        "_active": true,
         "listeners": {},
-        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-inference-mistral-extension-1.0.0.tgz",
+        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-inference-mistral-extension-1.0.1.tgz",
         "installOptions": {
             "version": false,
             "fullMetadata": true
         },
         "name": "@janhq/inference-mistral-extension",
         "productName": "MistralAI Inference Engine",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "main": "dist/index.js",
         "description": "This extension enables Mistral chat completion API calls",
         "url": "extension://@janhq/inference-mistral-extension/dist/index.js"
@@ -114,32 +134,62 @@ To configure extension default settings:
     "@janhq/inference-groq-extension": {
         "_active": true,
         "listeners": {},
-        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-inference-groq-extension-1.0.0.tgz",
+        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-inference-groq-extension-1.0.1.tgz",
         "installOptions": {
             "version": false,
             "fullMetadata": true
         },
         "name": "@janhq/inference-groq-extension",
         "productName": "Groq Inference Engine",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "main": "dist/index.js",
         "description": "This extension enables fast Groq chat completion API calls",
         "url": "extension://@janhq/inference-groq-extension/dist/index.js"
     },
-    "@janhq/inference-openai-extension": {
+    "@janhq/inference-martian-extension": {
         "_active": true,
         "listeners": {},
-        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-inference-openai-extension-1.0.0.tgz",
+        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-inference-martian-extension-1.0.1.tgz",
         "installOptions": {
             "version": false,
             "fullMetadata": true
         },
-        "name": "@janhq/inference-openai-extension",
-        "productName": "OpenAI Inference Engine",
+        "name": "@janhq/inference-martian-extension",
+        "productName": "Martian Inference Engine",
+        "version": "1.0.1",
+        "main": "dist/index.js",
+        "description": "This extension enables Martian chat completion API calls",
+        "url": "extension://@janhq/inference-martian-extension/dist/index.js"
+    },
+    "@janhq/inference-openrouter-extension": {
+        "_active": true,
+        "listeners": {},
+        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-inference-openrouter-extension-1.0.0.tgz",
+        "installOptions": {
+            "version": false,
+            "fullMetadata": true
+        },
+        "name": "@janhq/inference-openrouter-extension",
+        "productName": "OpenRouter Inference Engine",
         "version": "1.0.0",
         "main": "dist/index.js",
-        "description": "This extension enables OpenAI chat completion API calls",
-        "url": "extension://@janhq/inference-openai-extension/dist/index.js"
+        "description": "This extension enables Open Router chat completion API calls",
+        "url": "extension://@janhq/inference-openrouter-extension/dist/index.js"
+    },
+    "@janhq/inference-anthropic-extension": {
+        "_active": true,
+        "listeners": {},
+        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-inference-anthropic-extension-1.0.0.tgz",
+        "installOptions": {
+            "version": false,
+            "fullMetadata": true
+        },
+        "name": "@janhq/inference-anthropic-extension",
+        "productName": "Anthropic Inference Engine",
+        "version": "1.0.0",
+        "main": "dist/index.js",
+        "description": "This extension enables Anthropic chat completion API calls",
+        "url": "extension://@janhq/inference-anthropic-extension/dist/index.js"
     },
     "@janhq/inference-triton-trt-llm-extension": {
         "_active": true,
@@ -156,20 +206,20 @@ To configure extension default settings:
         "description": "This extension enables Nvidia's TensorRT-LLM as an inference engine option",
         "url": "extension://@janhq/inference-triton-trt-llm-extension/dist/index.js"
     },
-    "@janhq/huggingface-extension": {
+    "@janhq/model-extension": {
         "_active": true,
         "listeners": {},
-        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-huggingface-extension-1.0.0.tgz",
+        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-model-extension-1.0.30.tgz",
         "installOptions": {
             "version": false,
             "fullMetadata": true
         },
-        "name": "@janhq/huggingface-extension",
-        "productName": "HuggingFace",
-        "version": "1.0.0",
+        "name": "@janhq/model-extension",
+        "productName": "Model Management",
+        "version": "1.0.30",
         "main": "dist/index.js",
-        "description": "Hugging Face extension for converting HF models to GGUF",
-        "url": "extension://@janhq/huggingface-extension/dist/index.js"
+        "description": "Model Management Extension provides model exploration and seamless downloads",
+        "url": "extension://@janhq/model-extension/dist/index.js"
     },
     "@janhq/monitoring-extension": {
         "_active": true,
@@ -216,20 +266,20 @@ To configure extension default settings:
         "description": "This extension enables Nvidia's TensorRT-LLM for the fastest GPU acceleration. See the [setup guide](https://jan.ai/guides/providers/tensorrt-llm/) for next steps.",
         "url": "extension://@janhq/tensorrt-llm-extension/dist/index.js"
     },
-    "@janhq/inference-nitro-extension": {
+    "@janhq/inference-cortex-extension": {
         "_active": true,
         "listeners": {},
-        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-inference-nitro-extension-1.0.0.tgz",
+        "origin": "C:\\Users\\ACER\\AppData\\Local\\Programs\\jan\\resources\\app.asar.unpacked\\pre-install\\janhq-inference-cortex-extension-1.0.10.tgz",
         "installOptions": {
             "version": false,
             "fullMetadata": true
         },
-        "name": "@janhq/inference-nitro-extension",
-        "productName": "Nitro Inference Engine",
-        "version": "1.0.0",
+        "name": "@janhq/inference-cortex-extension",
+        "productName": "Cortex Inference Engine",
+        "version": "1.0.10",
         "main": "dist/index.js",
-        "description": "This extension embeds Nitro, a lightweight (3mb) inference engine written in C++. See https://nitro.jan.ai.\nAdditional dependencies could be installed to run without Cuda Toolkit installation.",
-        "url": "extension://@janhq/inference-nitro-extension/dist/index.js"
+        "description": "This extension embeds cortex.cpp, a lightweight inference engine written in C++. See https://nitro.jan.ai.\nAdditional dependencies could be installed to run without Cuda Toolkit installation.",
+        "url": "extension://@janhq/inference-cortex-extension/dist/index.js"
     }
 }
 ```
@@ -240,9 +290,9 @@ Jan offers an Extensions settings menu for configuring extensions that have regi
 <br/>
 ![Settings](./_assets/settings.png)
 <br/>
-3. The registered extension settings can be customized under the **Extensions** section.
+3. Click **Extensions**.
 <br/>
-![Extensions](./_assets/extensions-page.png)
+![Extensions](./_assets/extensions-page2.png)
 
 ## System Monitor Extension Feature
 The System Monitor extension now offers enhanced customization for app logging. Users can toggle the application logging feature on or off and set a custom interval for clearing the app logs. To configure the app log feature, follow these steps:
@@ -251,17 +301,17 @@ The System Monitor extension now offers enhanced customization for app logging. 
 <br/>
 ![Settings](./_assets/settings.png)
 <br/>
-3. Under the **Extensions** section, select the **System Monitoring** extension.
+3. Under the **Model Providers** section, select the **System Monitoring** extension.
 <br/>
-![System Monitoring extension](./_assets/system-monitor.png)
+![System Monitoring extension](./_assets/system-monitor2.png)
 <br/>
 4. Use the **slider** to turn the app logging feature on or off.
 <br/>
-![System Monitoring Enable](./_assets/system-slider.png)
+![System Monitoring Enable](./_assets/system-slider2.png)
 <br/>
 5. Specify the log cleaning interval in milliseconds.
 <br/>
-![System Monitoring Interval](./_assets/system-mili.png)
+![System Monitoring Interval](./_assets/system-mili2.png)
 <br/>
 <Callout type='info'>
   - You can clear the app logs manually by clicking the **Clear logs** button in the advanced settings.
