@@ -52,10 +52,6 @@ const menus = [
         menu: 'Documentation',
         path: '/docs',
       },
-      {
-        menu: 'API Reference',
-        path: '/api-reference',
-      },
     ],
   },
   {
