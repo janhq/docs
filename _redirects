@@ -655,3 +655,4 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /cortex/architecture https://cortex.jan.ai/docs/architecture 301
 /cortex/cortex-cpp https://cortex.jan.ai/docs/cortex-cpp 301
 /cortex/cortex-llamacpp https://cortex.jan.ai/docs/cortex-llamacpp 301
+/api-reference https://cortex.jan.ai/api-reference 301
