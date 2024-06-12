@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+      - cron: '0 22 * * 1,2,3,4,5,6'
   pull_request:
     # Review gh actions docs if you want to further define triggers, paths, etc
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
