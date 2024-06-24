@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { FaWindows, FaApple, FaLinux } from 'react-icons/fa'
 import { IconType } from 'react-icons/lib'
 import { IoChevronDownOutline } from 'react-icons/io5'
@@ -66,25 +66,28 @@ const DropdownDownload = ({ lastRelease }: Props) => {
     type: '',
   })
 
-  const changeDefaultSystem = async (systems: SystemType[]) => {
-    const userAgent = navigator.userAgent
+  const changeDefaultSystem = useCallback(
+    async (systems: SystemType[]) => {
+      const userAgent = navigator.userAgent
 
-    if (userAgent.includes('Windows')) {
-      // windows user
-      setDefaultSystem(systems[2])
-    } else if (userAgent.includes('Linux')) {
-      // linux user
-      setDefaultSystem(systems[3])
-    } else if (userAgent.includes('Mac OS')) {
-      if (gpuInfo.type === 'Apple Silicon') {
-        setDefaultSystem(systems[0])
+      if (userAgent.includes('Windows')) {
+        // windows user
+        setDefaultSystem(systems[2])
+      } else if (userAgent.includes('Linux')) {
+        // linux user
+        setDefaultSystem(systems[3])
+      } else if (userAgent.includes('Mac OS')) {
+        if (gpuInfo.type === 'Apple Silicon') {
+          setDefaultSystem(systems[0])
+        } else {
+          setDefaultSystem(systems[1])
+        }
       } else {
         setDefaultSystem(systems[1])
       }
-    } else {
-      setDefaultSystem(systems[1])
-    }
-  }
+    },
+    [gpuInfo.type]
+  )
 
   useEffect(() => {
     const updateDownloadLinks = async () => {
