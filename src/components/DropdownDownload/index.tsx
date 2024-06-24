@@ -76,10 +76,10 @@ const DropdownDownload = ({ lastRelease }: Props) => {
       // linux user
       setDefaultSystem(systems[3])
     } else if (userAgent.includes('Mac OS')) {
-      if (gpuInfo.type === 'Intel') {
-        setDefaultSystem(systems[1])
-      } else {
+      if (gpuInfo.type === 'Apple Silicon') {
         setDefaultSystem(systems[0])
+      } else {
+        setDefaultSystem(systems[1])
       }
     } else {
       setDefaultSystem(systems[1])
