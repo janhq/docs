@@ -66,10 +66,11 @@ const DropdownDownload = ({ lastRelease }: Props) => {
     type: '',
   })
 
+  console.log(gpuInfo)
+
   const changeDefaultSystem = useCallback(
     async (systems: SystemType[]) => {
       const userAgent = navigator.userAgent
-
       if (userAgent.includes('Windows')) {
         // windows user
         setDefaultSystem(systems[2])
@@ -88,6 +89,56 @@ const DropdownDownload = ({ lastRelease }: Props) => {
     },
     [gpuInfo.type]
   )
+
+  function getUnmaskedInfo(gl: WebGLRenderingContext): {
+    renderer: string
+    vendor: string
+  } {
+    const unMaskedInfo = {
+      renderer: '',
+      vendor: '',
+    }
+    const dbgRenderInfo = gl.getExtension('WEBGL_debug_renderer_info')
+    if (dbgRenderInfo) {
+      unMaskedInfo.renderer = gl.getParameter(
+        dbgRenderInfo.UNMASKED_RENDERER_WEBGL
+      )
+      unMaskedInfo.vendor = gl.getParameter(dbgRenderInfo.UNMASKED_VENDOR_WEBGL)
+    }
+
+    return unMaskedInfo
+  }
+
+  function detectGPU() {
+    const canvas = document.createElement('canvas')
+    const gl =
+      canvas.getContext('webgl') ||
+      (canvas.getContext('experimental-webgl') as WebGLRenderingContext)
+    if (gl) {
+      const gpuInfo = getUnmaskedInfo(gl)
+
+      let gpuType = 'Unknown GPU vendor or renderer.'
+      if (gpuInfo.renderer.includes('Apple')) {
+        gpuType = 'Apple Silicon'
+      } else if (
+        gpuInfo.renderer.includes('Intel') ||
+        gpuInfo.vendor.includes('Intel')
+      ) {
+        gpuType = 'Intel'
+      }
+      setGpuInfo({
+        renderer: gpuInfo.renderer,
+        vendor: gpuInfo.vendor,
+        type: gpuType,
+      })
+    } else {
+      setGpuInfo({
+        renderer: 'N/A',
+        vendor: 'N/A',
+        type: 'Unable to initialize WebGL.',
+      })
+    }
+  }
 
   useEffect(() => {
     const updateDownloadLinks = async () => {
@@ -122,66 +173,12 @@ const DropdownDownload = ({ lastRelease }: Props) => {
       }
     }
 
+    if (gpuInfo.type.length === 0) {
+      detectGPU()
+    }
     updateDownloadLinks()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  useEffect(() => {
-    function getUnmaskedInfo(gl: WebGLRenderingContext): {
-      renderer: string
-      vendor: string
-    } {
-      const unMaskedInfo = {
-        renderer: '',
-        vendor: '',
-      }
-
-      const dbgRenderInfo = gl.getExtension('WEBGL_debug_renderer_info')
-      if (dbgRenderInfo) {
-        unMaskedInfo.renderer = gl.getParameter(
-          dbgRenderInfo.UNMASKED_RENDERER_WEBGL
-        )
-        unMaskedInfo.vendor = gl.getParameter(
-          dbgRenderInfo.UNMASKED_VENDOR_WEBGL
-        )
-      }
-
-      return unMaskedInfo
-    }
-
-    function detectGPU() {
-      const canvas = document.createElement('canvas')
-      const gl =
-        canvas.getContext('webgl') ||
-        (canvas.getContext('experimental-webgl') as WebGLRenderingContext)
-      if (gl) {
-        const gpuInfo = getUnmaskedInfo(gl)
-
-        let gpuType = 'Unknown GPU vendor or renderer.'
-        if (gpuInfo.renderer.includes('Apple')) {
-          gpuType = 'Apple Silicon'
-        } else if (
-          gpuInfo.renderer.includes('Intel') ||
-          gpuInfo.vendor.includes('Intel')
-        ) {
-          gpuType = 'Intel'
-        }
-        setGpuInfo({
-          renderer: gpuInfo.renderer,
-          vendor: gpuInfo.vendor,
-          type: gpuType,
-        })
-      } else {
-        setGpuInfo({
-          renderer: 'N/A',
-          vendor: 'N/A',
-          type: 'Unable to initialize WebGL.',
-        })
-      }
-    }
-
-    detectGPU()
-  }, [])
+  }, [gpuInfo])
 
   const [menu, setMenu] = useState<HTMLButtonElement | null>(null)
 
