@@ -8,13 +8,6 @@ import { useEffect, useState } from 'react'
 const Hero = () => {
   const { lastVersion, lastRelease, release } = useData()
 
-  const [isChrome, setIsChrome] = useState(false)
-  useEffect(() => {
-    if (navigator.userAgent.includes('Chrome')) {
-      setIsChrome(true)
-    }
-  }, [])
-
   return (
     <div className="nextra-wrap-container">
       <div className="mt-10 text-center">
@@ -38,16 +31,7 @@ const Hero = () => {
           Turn your computer into an AI computer
         </p>
         <div className="mb-4 mt-10">
-          {isChrome ? (
-            <DropdownDownload lastRelease={lastRelease} />
-          ) : (
-            <a
-              className="dark:nx-bg-neutral-900 dark:text-white bg-black text-white hover:text-white justify-center dark:border dark:border-neutral-800 flex-shrink-0 p-4 rounded-xl inline-flex items-center"
-              href="/download"
-            >
-              Download Jan for PC
-            </a>
-          )}
+          <DropdownDownload lastRelease={lastRelease} />
         </div>
         <p className="mt-6 text-black/60 dark:text-white/60">
           {totalDownload(release)}+ Downloads | Free & Open Source
