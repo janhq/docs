@@ -66,8 +66,6 @@ const DropdownDownload = ({ lastRelease }: Props) => {
     type: '',
   })
 
-  console.log(gpuInfo)
-
   const changeDefaultSystem = useCallback(
     async (systems: SystemType[]) => {
       const userAgent = navigator.userAgent
