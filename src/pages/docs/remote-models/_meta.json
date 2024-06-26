@@ -25,5 +25,9 @@
   "anthropic": {
     "title": "Anthropic API",
     "href": "/docs/remote-models/anthropic"
+  },
+  "nvidia-nim": {
+    "title": "NVIDIA NIM API",
+    "href": "/docs/remote-models/nvidia-nim"
   }
 }
