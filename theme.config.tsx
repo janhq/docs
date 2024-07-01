@@ -76,7 +76,7 @@ const config: DocsThemeConfig = {
               { title: 'Jan', path: '/docs', Icon: LibraryBig },
               {
                 title: 'Cortex',
-                path: 'https://cortex.jan.ai/docs/',
+                path: 'https://cortex.so/docs/',
                 Icon: BrainCircuit,
               },
               { title: 'Integrations', path: '/integrations', Icon: Blocks },
