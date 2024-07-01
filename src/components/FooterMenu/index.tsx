@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
 import { AiOutlineGithub, AiOutlineTwitter } from 'react-icons/ai'
+import { RiTwitterXFill } from 'react-icons/ri'
+
 import { BiLogoDiscordAlt } from 'react-icons/bi'
 import { useForm } from 'react-hook-form'
 import LogoMark from '@/components/LogoMark'
@@ -10,7 +12,7 @@ import Image from 'next/image'
 const socials = [
   {
     icon: (
-      <AiOutlineTwitter className="text-xl text-black/60 dark:text-white/60" />
+      <RiTwitterXFill className="text-lg text-black/60 dark:text-white/60" />
     ),
     href: 'https://twitter.com/janframework',
   },
