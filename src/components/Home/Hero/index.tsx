@@ -1,17 +1,12 @@
 import DropdownDownload from '@/components/DropdownDownload'
 import ThemeImage from '@/components/ThemeImage'
+import { totalDownload } from '@/utils/format'
 import Link from 'next/link'
 import { useData } from 'nextra/data'
 import { useEffect, useState } from 'react'
 
 const Hero = () => {
-  const { lastVersion, lastRelease } = useData()
-  const [isChrome, setIsChrome] = useState(false)
-  useEffect(() => {
-    if (navigator.userAgent.includes('Chrome')) {
-      setIsChrome(true)
-    }
-  }, [])
+  const { lastVersion, lastRelease, release } = useData()
 
   return (
     <div className="nextra-wrap-container">
@@ -33,22 +28,13 @@ const Hero = () => {
           Rethink the Computer
         </h1>
         <p className="text-xl -mt-1 leading-relaxed text-black/60 dark:text-white/60">
-          Turn your computer into an AI machine
+          Turn your computer into an AI computer
         </p>
         <div className="mb-4 mt-10">
-          {isChrome ? (
-            <DropdownDownload lastRelease={lastRelease} />
-          ) : (
-            <a
-              className="dark:nx-bg-neutral-900 dark:text-white bg-black text-white hover:text-white justify-center dark:border dark:border-neutral-800 flex-shrink-0 p-4 rounded-xl inline-flex items-center"
-              href="/download"
-            >
-              Download Jan for PC
-            </a>
-          )}
+          <DropdownDownload lastRelease={lastRelease} />
         </div>
         <p className="mt-6 text-black/60 dark:text-white/60">
-          800K+ Downloads | Free & Open Source
+          {totalDownload(release)}+ Downloads | Free & Open Source
         </p>
         <div className="w-4/5 mx-auto mt-10">
           <ThemeImage

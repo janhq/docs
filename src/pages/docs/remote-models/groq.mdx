@@ -1,0 +1,68 @@
+---
+title: Groq API
+description: Learn how to integrate Groq API with Jan for enhanced functionality.
+keywords:
+  [
+    Groq API,
+    Jan,
+    Jan AI,
+    ChatGPT alternative,
+    conversational AI,
+    large language model,
+    integration,
+    Groq integration,
+    API integration
+  ]
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Groq API
+
+## How to Integrate Groq API with Jan
+
+This guide provides step-by-step instructions on integrating the Groq API with Jan, enabling users to leverage Groq's capabilities within Jan's conversational interface.
+
+Before proceeding, ensure you have the following:
+- Access to the Jan application
+- Groq API credentials
+
+## Integration Steps
+
+<Steps>
+
+### Step 1: Configure Groq API Key
+1. Obtain Groq API Keys from your [Groq Console](https://console.groq.com/keys) dashboard.
+2. Copy your Groq API Key and the endpoint URL you want.
+3. Navigate to the **Jan app** > **Settings**.
+4. Select the **Groq**.
+5. Insert the **API Key** and the **endpoint URL** into their respective fields.
+<br/>
+![Server Setup](../_assets/Groq-1.gif)
+
+<Callout type='info'>
+  You can also manually edit the JSON file in `~/jan/settings/@janhq/inference-groq-extension`.
+</Callout>
+
+### Step 2: Start Chatting with the Model
+
+1. Navigate to the **Hub** section.
+2. Select the Groq model you want to use.
+
+<Callout type='info'>
+  The Groq Inference Engine is the default extension for the Jan application. All the Groq models are automatically installed when you install the Jan application.
+</Callout>
+3. Specify the model's parameters.
+4. Start the conversation with the Groq model.
+<br/>
+![Start Model](../_assets/Groq-2.gif)
+
+</Steps>
+
+## Troubleshooting
+
+If you encounter any issues during the integration process or while using Groq with Jan, consider the following troubleshooting steps:
+
+- Double-check your API credentials to ensure they are correct.
+- Check for error messages or logs that may provide insight into the issue.
+- Reach out to Groq API support for assistance if needed.

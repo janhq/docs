@@ -1,0 +1,73 @@
+---
+title: LM Studio
+description: A step-by-step guide on integrating Jan with LM Studio.
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    LM Studio integration,
+  ]
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# LM Studio
+
+## Integrate LM Studio with Jan
+
+[LM Studio](https://lmstudio.ai/) enables you to explore, download, and run local Large Language Models (LLMs). You can integrate Jan with LM Studio using two methods:
+
+1. Integrate the LM Studio server with Jan UI
+2. Migrate your downloaded model from LM Studio to Jan.
+
+To integrate LM Studio with Jan, follow the steps below:
+
+<Callout type="info">
+ This guide will demonstrate how to connect Jan to [LM Studio](https://lmstudio.ai/) using the second method. We'll use the [Phi 2 - GGUF](https://huggingface.co/TheBloke/phi-2-GGUF) model from Hugging Face as our example.
+</Callout>
+
+<Steps>
+
+### Step 1: Server Setup
+
+1. Access the `Local Inference Server` within LM Studio.
+2. Select your desired model.
+3. Start the server after configuring the port and options.
+4. Navigate back to Jan.
+5. Navigate to the **Settings** > **Model Provider**.
+6. In the **OpenAI** section, add the full web address of the LM Studio server.
+<br/>
+![Server Setup](../_assets/LM-Studio-v1.gif)
+
+<Callout type="info">
+  - Replace `(port)` with your chosen port number. The default is 1234.
+  - Leave the API Key field blank.
+</Callout>
+
+
+### Step 2: Model Configuration
+
+1. Navigate to the **Hub**.
+2. we will use the `phi-2` model in this example. Insert the `https://huggingface.co/TheBloke/phi-2-GGUF` link into the search bar.
+3. Select and download the model you want to use.
+<br/>
+![Download Model](../_assets/LM-Studio-v2.gif)
+
+
+### Step 3: Start the Model
+
+1. Proceed to the **Threads**.
+2. Click the **Model** tab.
+3. Select the `phi-2` model and configure the model parameters.
+3. Start chatting with the model.
+<br/>
+![Start Model](../_assets/LM-Studio-v3.gif)
+
+</Steps>

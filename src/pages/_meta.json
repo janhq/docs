@@ -11,9 +11,9 @@
     "type": "page",
     "title": "Documentation"
   },
-  "integrations": {
+  "cortex": {
     "type": "page",
-    "title": "Integrations",
+    "title": "Cortex",
     "display": "hidden"
   },
   "hardware": {
@@ -22,13 +22,10 @@
     "display": "hidden"
   },
   "api-reference": {
+  "integrations": {
     "type": "page",
-    "title": "API Reference",
-    "href": "/api-reference",
-    "theme": {
-      "layout": "raw",
-      "footer": false
-    }
+    "title": "Integrations",
+    "display": "hidden"
   },
   "changelog": {
     "type": "page",

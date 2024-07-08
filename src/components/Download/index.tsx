@@ -10,7 +10,7 @@ const Download = () => {
           Download Jan for your desktop
         </h1>
         <p className="text-xl mt-2 leading-relaxed text-black/60 dark:text-white/60">
-          Turn your computer into an AI machine
+          Turn your computer into an AI computer
         </p>
         <div className="my-10">
           <CardDownload lastRelease={lastRelease} />

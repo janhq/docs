@@ -1,0 +1,69 @@
+---
+title: Mistral AI API
+description: A step-by-step guide on integrating Jan with Mistral AI.
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    Mistral integration,
+  ]
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Mistral AI API
+
+## How to Integrate Mistral AI with Jan
+This guide provides step-by-step instructions for integrating the Mistral API with Jan, enabling users to utilize Mistral's capabilities within Jan's conversational interface.
+
+Before proceeding, ensure you have the following:
+- Access to the Jan Application
+- Mistral API credentials
+
+## Integration Steps
+<Steps>
+
+### Step 1: Configure Mistral API Key
+
+1. Obtain the Mistral API Key from your [Mistral](https://console.mistral.ai/user/api-keys/) dashboard.
+2. Copy your Mistral API Key and the endpoint URL you want.
+3. Navigate to the **Jan app** > **Settings**.
+4. Select the **MistralAI**.
+5. Insert the **API Key** and the **endpoint URL** into their respective fields.
+<br/>
+![Start Server](../_assets/Mistral-1.gif)
+
+<Callout type='info'>
+  - You can also manually edit the JSON file in `~/jan/settings/@janhq/inference-mistral-extension`.
+  - Mistral AI offers various endpoints. Refer to their [endpoint documentation](https://docs.mistral.ai/platform/endpoints/) to select the one that fits your requirements.
+</Callout>
+
+### Step 2: Start Chatting with the Model
+
+1. Navigate to the **Hub** section.
+2. Select the Mistral model you want to use.
+
+<Callout type='info'>
+  The MistralAI is the default extension for the Jan application. All the Mistral models are automatically installed when you install the Jan application.
+</Callout>
+3. Specify the model's parameters.
+4. Start the conversation with the Mistral model.
+<br/>
+![Start Model](../_assets/Mistral-2.gif)
+
+</Steps>
+
+## Troubleshooting
+
+If you encounter any issues during the integration process or while using Mistral with Jan, consider the following troubleshooting steps:
+
+- Double-check your API credentials to ensure they are correct.
+- Check for error messages or logs that may provide insight into the issue.
+- Reach out to Mistral API support for assistance if needed.

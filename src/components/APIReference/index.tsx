@@ -30,6 +30,7 @@ export const APIReference = () => {
             url: 'https://raw.githubusercontent.com/janhq/docs/main/public/openapi/jan.json',
           },
           theme: 'alternate',
+          hideModels: true,
           customCss: '.darklight{display:none!important;}',
         }}
       />

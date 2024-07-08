@@ -6,6 +6,9 @@ import JSONLD from '@/components/JSONLD'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { LibraryBig, Blocks, BrainCircuit, Computer } from 'lucide-react'
+import { AiOutlineGithub } from 'react-icons/ai'
+import { BiLogoDiscordAlt } from 'react-icons/bi'
+import { RiTwitterXFill } from 'react-icons/ri'
 
 const defaultUrl = 'https://jan.ai'
 const defaultImage = 'https://jan.ai/assets/images/general/og-image.png'
@@ -47,6 +50,21 @@ const config: DocsThemeConfig = {
       },
     }
   },
+  navbar: {
+    extraContent: (
+      <div className="inline-flex items-center gap-x-2">
+        <a href="https://discord.com/invite/FTk2MvZwJH" target="_blank">
+          <BiLogoDiscordAlt className="text-xl text-black/60 dark:text-white/60" />
+        </a>
+        <a href="https://twitter.com/janframework" target="_blank">
+          <RiTwitterXFill className="text-lg text-black/60 dark:text-white/60" />
+        </a>
+        <a href="https://github.com/janhq/jan" target="_blank">
+          <AiOutlineGithub className="text-xl text-black/60 dark:text-white/60" />
+        </a>
+      </div>
+    ),
+  },
   sidebar: {
     titleComponent: ({ type, title }) => {
       // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -58,6 +76,11 @@ const config: DocsThemeConfig = {
               { title: "Jan", path: "/docs", Icon: LibraryBig },
               { title: "Integrations", path: "/integrations", Icon: Blocks },
               { title: "Hardware Guide", path: "/hardware", Icon: Computer }
+              {
+                title: 'Cortex',
+                path: 'https://cortex.so/docs/',
+                Icon: BrainCircuit,
+              },
             ].map((item) =>
               asPath.startsWith(item.path) ? (
                 <div

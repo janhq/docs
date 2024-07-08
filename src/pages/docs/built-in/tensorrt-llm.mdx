@@ -50,10 +50,17 @@ This guide walks you through installing Jan's official [TensorRT-LLM Extension](
 
 ### Step 1: Install TensorRT-Extension
 
-1. Go to **Settings** > **Extensions**.
-2. Select the TensorRT-LLM Extension and click the **Install** button.
+1. Click the **Gear Icon (⚙️)** on the bottom left of your screen.
 <br/>
-![Install Extension](../_assets/install-tensor.gif)
+![Settings](../_assets/settings.png)
+<br/>
+2. Select the **TensorRT-LLM** under the **Model Provider** section.
+<br/>
+![Click Tensor](../_assets/tensor.png)
+<br/>
+3. Click **Install** to install the required dependencies to use TensorRT-LLM.
+<br/>
+![Install Extension](../_assets/install-tensor.png)
 <br/>
 3. Check that files are correctly downloaded.
 
@@ -77,10 +84,7 @@ We offer a handful of precompiled models for Ampere and Ada cards that you can i
 
 ![image](https://hackmd.io/_uploads/rJewrEgRp.png)
 
-3. Click Use and start chatting!
-4. You may need to allow Nitro in your network.
-
-![Nitro Network](../_assets/nitro-network.png)
+3. Click **Download** to download the model.
 
 ### Step 3: Configure Settings
 
@@ -91,6 +95,19 @@ We offer a handful of precompiled models for Ampere and Ada cards that you can i
   Please see [here](/docs/models/model-parameters) for more detailed model parameters.
 </Callout>
 <br/>
-![Configure Model](../_assets/set-tensor.gif)
+![Specific Conversation](../_assets/model-parameters.png)
 
 </Steps>
+
+## Build your own TensorRT Engine
+To create custom TensorRT engines, you can follow the step-by-step guide provided in the [NVIDIA documentation](https://nvidia.github.io/TensorRT-LLM/quick-start-guide.html#compile-the-model-into-a-tensorrt-engine).
+
+When compiling and running these models, please adhere to the following compatibility guidelines:
+- **GPU Architectures**: Models are specifically compiled for certain GPU architectures, such as Ada. Ensure that your model is compatible with the architecture of the GPU on which it will run.
+- **TensorRT-LLM Release**: Models need to be compiled and run on the same version of the TensorRT-LLM. For example, a model compiled with version 0.9.0 must be run on version 0.9.0.
+- **Operating System Compatibility**: As of version 0.9.0, models are designed to be cross-OS compatible. However, this feature is still under evaluation and might exhibit instability.
+- **GPU Topology**: It is crucial to understand your system's GPU topology, especially when dealing with multiple GPUs. This can be determined by the number of engine files in use.
+
+<Callout type='info'>
+Ensure these parameters are aligned correctly to avoid runtime issues and fully leverage TensorRT engines' capabilities.
+</Callout>
