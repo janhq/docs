@@ -75,7 +75,7 @@ const config: DocsThemeConfig = {
             {[
               { title: "Jan", path: "/docs", Icon: LibraryBig },
               { title: "Integrations", path: "/integrations", Icon: Blocks },
-              { title: "Hardware Guide", path: "/hardware", Icon: Computer }
+              { title: "Hardware Guide", path: "/hardware", Icon: Computer },
               {
                 title: 'Cortex',
                 path: 'https://cortex.so/docs/',
