@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { FaWindows, FaApple, FaLinux } from 'react-icons/fa'
 import { IconType } from 'react-icons/lib'
 import { IoChevronDownOutline } from 'react-icons/io5'
@@ -14,6 +14,12 @@ type SystemType = {
   logo: IconType
   fileFormat: string
   href?: string
+}
+
+type GpuInfo = {
+  renderer: string
+  vendor: string
+  type: string
 }
 
 const systemsTemplate: SystemType[] = [
@@ -54,19 +60,81 @@ const DropdownDownload = ({ lastRelease }: Props) => {
   const [systems, setSystems] = useState(systemsTemplate)
   const [defaultSystem, setDefaultSystem] = useState(systems[0])
   const [open, setOpen] = useState(false)
+  const [gpuInfo, setGpuInfo] = useState<GpuInfo>({
+    renderer: '',
+    vendor: '',
+    type: '',
+  })
 
-  const changeDefaultSystem = async (systems: SystemType[]) => {
-    const userAgent = navigator.userAgent
-    if (userAgent.includes('Windows')) {
-      // windows user
-      setDefaultSystem(systems[2])
-    } else if (userAgent.includes('Linux')) {
-      // linux user
-      setDefaultSystem(systems[3])
-    } else if (userAgent.includes('Mac OS')) {
-      setDefaultSystem(systems[0])
+  const changeDefaultSystem = useCallback(
+    async (systems: SystemType[]) => {
+      const userAgent = navigator.userAgent
+      if (userAgent.includes('Windows')) {
+        // windows user
+        setDefaultSystem(systems[2])
+      } else if (userAgent.includes('Linux')) {
+        // linux user
+        setDefaultSystem(systems[3])
+      } else if (userAgent.includes('Mac OS')) {
+        if (gpuInfo.type === 'Apple Silicon') {
+          setDefaultSystem(systems[0])
+        } else {
+          setDefaultSystem(systems[1])
+        }
+      } else {
+        setDefaultSystem(systems[1])
+      }
+    },
+    [gpuInfo.type]
+  )
+
+  function getUnmaskedInfo(gl: WebGLRenderingContext): {
+    renderer: string
+    vendor: string
+  } {
+    const unMaskedInfo = {
+      renderer: '',
+      vendor: '',
+    }
+    const dbgRenderInfo = gl.getExtension('WEBGL_debug_renderer_info')
+    if (dbgRenderInfo) {
+      unMaskedInfo.renderer = gl.getParameter(
+        dbgRenderInfo.UNMASKED_RENDERER_WEBGL
+      )
+      unMaskedInfo.vendor = gl.getParameter(dbgRenderInfo.UNMASKED_VENDOR_WEBGL)
+    }
+
+    return unMaskedInfo
+  }
+
+  function detectGPU() {
+    const canvas = document.createElement('canvas')
+    const gl =
+      canvas.getContext('webgl') ||
+      (canvas.getContext('experimental-webgl') as WebGLRenderingContext)
+    if (gl) {
+      const gpuInfo = getUnmaskedInfo(gl)
+
+      let gpuType = 'Unknown GPU vendor or renderer.'
+      if (gpuInfo.renderer.includes('Apple')) {
+        gpuType = 'Apple Silicon'
+      } else if (
+        gpuInfo.renderer.includes('Intel') ||
+        gpuInfo.vendor.includes('Intel')
+      ) {
+        gpuType = 'Intel'
+      }
+      setGpuInfo({
+        renderer: gpuInfo.renderer,
+        vendor: gpuInfo.vendor,
+        type: gpuType,
+      })
     } else {
-      setDefaultSystem(systems[1])
+      setGpuInfo({
+        renderer: 'N/A',
+        vendor: 'N/A',
+        type: 'Unable to initialize WebGL.',
+      })
     }
   }
 
@@ -103,9 +171,12 @@ const DropdownDownload = ({ lastRelease }: Props) => {
       }
     }
 
+    if (gpuInfo.type.length === 0) {
+      detectGPU()
+    }
     updateDownloadLinks()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [gpuInfo])
 
   const [menu, setMenu] = useState<HTMLButtonElement | null>(null)
 
@@ -117,7 +188,7 @@ const DropdownDownload = ({ lastRelease }: Props) => {
     <div className="inline-flex flex-shrink-0 justify-center relative">
       <a
         href={defaultSystem.href}
-        className="dark:border-r-0 dark:nx-bg-neutral-900 dark:text-white bg-black text-white hover:text-white justify-center dark:border dark:border-neutral-800 flex-shrink-0 pl-4 pr-6 py-4 rounded-l-xl inline-flex items-center"
+        className="dark:border-r-0 dark:nx-bg-neutral-900 dark:text-white bg-black text-white hover:text-white justify-center dark:border dark:border-neutral-800 flex-shrink-0 pl-4 pr-6 py-4 rounded-l-xl inline-flex items-center !rounded-r-none"
       >
         <defaultSystem.logo className="h-4 mr-2" />
         {defaultSystem.name}
@@ -133,7 +204,7 @@ const DropdownDownload = ({ lastRelease }: Props) => {
       </button>
       {open && (
         <div
-          className="absolute left-0 top-[64px] w-full dark:nx-bg-neutral-900 bg-black z-30 rounded-xl"
+          className="absolute left-0 top-[64px] w-full dark:nx-bg-neutral-900 bg-black z-30 rounded-xl lg:w-[300px]"
           ref={setRefDropdownContent}
         >
           {systems.map((system) => (

@@ -1,6 +1,10 @@
 import ThemeImage from '@/components/ThemeImage'
+import { useData } from 'nextra/data'
+import { totalDownload } from '@/utils/format'
 
 const Statistic = () => {
+  const { release } = useData()
+
   return (
     <div className="lg:w-4/5 w-full px-4 mx-auto py-10 lg:py-20">
       <div className="nextra-wrap-container">
@@ -25,7 +29,7 @@ const Statistic = () => {
               </p>
             </div>
             <div className="text-center">
-              <h1 className="text-4xl font-bold">800K+</h1>
+              <h1 className="text-4xl font-bold">{totalDownload(release)}+</h1>
               <p className="font-medium text-black/60 dark:text-white/60">
                 Downloads
               </p>

@@ -12,30 +12,35 @@
     "href": "/cortex"
   },
   "quickstart": {
-    "display": "hidden",
     "title": "Quickstart"
   },
-  "install": {
-    "display": "hidden",
-    "title": "Installation",
-    "href": "/cortex/install"
+  "hardware": {
+    "title": "Hardware"
   },
-  "cli": {
-    "display": "hidden",
-    "title": "CLI",
-    "href": "/cortex/cli"
+  "installation": {
+    "title": "Installation"
   },
-  "clients": {
-    "display": "hidden",
-    "title": "Client Library"
+  "basicusage": {
+    "title": "BASIC USAGE",
+    "type": "separator"
+  },
+  "command-line": {
+    "title": "CLI"
+  },
+  "ts-library": {
+    "title": "Typescript Library"
+  },
+  "py-library": {
+    "title": "Python Library"
+  },
+  "server": {
+    "title": "Server Endpoint"
   },
   "capabilities": {
-    "display": "hidden",
     "title": "CAPABILITIES",
     "type": "separator"
   },
   "text-generation": {
-    "display": "hidden",
     "title": "Text Generation"
   },
   "function-calling": {
@@ -71,10 +76,16 @@
     "display": "hidden",
     "title": "Overview"
   },
+  "commandline": {
+    "title": "COMMAND LINE",
+    "type": "separator"
+  },
+  "cli": {
+    "title": "cortex"
+  },
   "training-engines": {
     "display": "hidden",
-    "title": "TRAINING ENGINES",
-    "type": "separator"
+    "title": "TRAINING ENGINES"
   },
   "extensions": {
     "display": "hidden",
@@ -86,14 +97,29 @@
     "title": "Build an Extension"
   },
   "architectures": {
-    "display": "hidden",
     "title": "ARCHITECTURE",
     "type": "separator"
   },
   "architecture": {
-    "display": "hidden",
-    "title": "Architecture",
-    "href": "/cortex/architecture"
+    "title": "Cortex"
+  },
+  "cortex-cpp": {
+    "title": "Cortex.cpp"
+  },
+  "cortex-llamacpp": {
+    "title": "Cortex.llamacpp"
+  },
+  "cortex-tensorrt-llm": {
+    "title": "Cortex.tensorrt-llm",
+    "display": "hidden"
+  },
+  "cortex-python": {
+    "title": "Cortex.python",
+    "display": "hidden"
+  },
+  "cortex-openvino": {
+    "title": "Cortex.OpenVino",
+    "display": "hidden"
   },
   "ext-architecture": {
     "display": "hidden",

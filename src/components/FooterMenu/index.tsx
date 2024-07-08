@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 
 import { AiOutlineGithub, AiOutlineTwitter } from 'react-icons/ai'
+import { RiTwitterXFill } from 'react-icons/ri'
+
 import { BiLogoDiscordAlt } from 'react-icons/bi'
 import { useForm } from 'react-hook-form'
 import LogoMark from '@/components/LogoMark'
 import { FaLinkedin } from 'react-icons/fa'
+import Image from 'next/image'
 
 const socials = [
   {
     icon: (
-      <AiOutlineTwitter className="text-xl text-black/60 dark:text-white/60" />
+      <RiTwitterXFill className="text-lg text-black/60 dark:text-white/60" />
     ),
     href: 'https://twitter.com/janframework',
   },
@@ -51,10 +54,6 @@ const menus = [
       {
         menu: 'Documentation',
         path: '/docs',
-      },
-      {
-        menu: 'API Reference',
-        path: '/api-reference',
       },
     ],
   },
@@ -223,10 +222,7 @@ export default function Footer() {
         })}
       </div>
       <div className="mt-10">
-        <div className="flex w-full justify-between items-center">
-          <span>
-            &copy;{getCurrentYear}&nbsp;Homebrew Computer Company Pte Ltd.
-          </span>
+        <div className="flex w-full justify-between items-center flex-col md:flex-row gap-4">
           <div className="flex items-center gap-x-3">
             {socials.map((social, i) => {
               return (
@@ -242,6 +238,13 @@ export default function Footer() {
               )
             })}
           </div>
+          <span>&copy;{getCurrentYear}&nbsp;Homebrew Computer Company</span>
+          <Image
+            src="/assets/images/general/logo-homebrew.svg"
+            alt="Homebrew Logo"
+            width={100}
+            height={100}
+          />
         </div>
       </div>
     </div>
