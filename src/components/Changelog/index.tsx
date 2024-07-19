@@ -104,11 +104,11 @@ const Changelog = () => {
                 <div key={i} className="flex gap-8 items-start">
                   <div className="w-3/12 -mt-2">
                     <p className="text-black/60 dark:text-white/60 font-medium">
-                      {format(log.date, 'MMMM do, yyyy')}
+                      {format(log?.date, 'MMMM do, yyyy')}
                     </p>
                   </div>
                   <Link
-                    href={`./changelog/${log.url}`}
+                    href={`./changelog/${log?.url}`}
                     className="border-l dark:nx-border-neutral-800 w-full cursor-pointer"
                   >
                     <div className="flex gap-8 items-start w-full">
@@ -116,25 +116,25 @@ const Changelog = () => {
                       <div className="pb-14 w-full -mt-2">
                         <div className="w-full pb-4 px-8 rounded-lg flex flex-col lg:flex-row justify-between">
                           <div>
-                            {log.ogImage && (
+                            {log?.ogImage && (
                               <Image
-                                src={log.ogImage}
-                                alt={log.title}
+                                src={log?.ogImage}
+                                alt={log?.title}
                                 width={1200}
                                 height={630}
                                 className="mb-4 rounded-lg"
                               />
                             )}
                             <h6 className="text-lg lg:text-2xl font-bold">
-                              {log.title}
+                              {log?.title}
                             </h6>
-                            {log.description && (
+                            {log?.description && (
                               <p className="mt-2 text-medium">
-                                {log.description}
+                                {log?.description}
                               </p>
                             )}
                             <p className="mt-2 text-black/60 dark:text-white/60 text-medium">
-                              New release Jan App v{log.version}
+                              New release Jan App v{log?.version}
                             </p>
                           </div>
                         </div>

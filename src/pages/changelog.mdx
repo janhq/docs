@@ -31,18 +31,20 @@ export const getStaticProps = async() => {
   for (const item of getChangelog) {
     const content = fs.readFileSync(path.join(process.cwd(), `src/pages/changelog/${item}`), "utf8")
     const frontmatter = matter(content)
+
     if(!frontmatter.data.unlisted) {
       changelog.push({
         url: item.replace('.mdx', ''),
-        title: frontmatter.data?.title || null,
-        ogImage: frontmatter.data?.ogImage || null,
-        version: frontmatter.data?.version || null,
-        description: frontmatter.data?.description || null,
-        date: String(frontmatter.data?.date) || null,
+        title: frontmatter?.data?.title || '',
+        ogImage: frontmatter?.data?.ogImage || null,
+        version: frontmatter?.data?.version || null,
+        description: frontmatter?.data?.description || null,
+        date: String(frontmatter?.data?.date) || null,
       })
     }
     changelog.sort((a, b) => new Date(b.date) - new Date(a.date))
   }
+
 
   return {
     props: {
