@@ -1,19 +1,17 @@
 import React from 'react'
-import { getPagesUnderRoute } from 'nextra/context'
 import { format } from 'date-fns'
-import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
-const ChangelogHeader = () => {
-  const router = useRouter()
-  const changelogPages = getPagesUnderRoute('/changelog')
-  const page = changelogPages.find(
-    (page) => page.route === router.pathname
-  ) as { frontMatter: any }
+type ChangelogHeaderProps = {
+  title: string
+  ogImage: string
+  date: any
+}
 
-  const { title, ogImage, date } = page.frontMatter
+const ChangelogHeader = (props: ChangelogHeaderProps) => {
+  const { title, ogImage, date } = props
 
   return (
     <div className="mt-6">

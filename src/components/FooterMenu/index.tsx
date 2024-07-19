@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-
-import { AiOutlineGithub, AiOutlineTwitter } from 'react-icons/ai'
+import ThemeImage from '@/components/ThemeImage'
+import { AiOutlineGithub } from 'react-icons/ai'
 import { RiTwitterXFill } from 'react-icons/ri'
 
 import { BiLogoDiscordAlt } from 'react-icons/bi'
@@ -239,11 +239,14 @@ export default function Footer() {
             })}
           </div>
           <span>&copy;{getCurrentYear}&nbsp;Homebrew Computer Company</span>
-          <Image
-            src="/assets/images/general/logo-homebrew.svg"
-            alt="Homebrew Logo"
-            width={100}
-            height={100}
+          <ThemeImage
+            source={{
+              light: '/assets/images/general/homebrew-dark.svg',
+              dark: '/assets/images/general/homebrew-white.svg',
+            }}
+            alt="App screenshots"
+            width={140}
+            height={200}
           />
         </div>
       </div>
