@@ -40,8 +40,8 @@ const Hero = () => {
           <ThemeImage
             className="object-cover w-full object-center mx-auto h-full relative"
             source={{
-              light: '/assets/images/homepage/app-frame-light.webp',
-              dark: '/assets/images/homepage/app-frame-dark.webp',
+              light: '/assets/images/homepage/app-frame-light-fixed.webp',
+              dark: '/assets/images/homepage/app-frame-dark-fixed.webp',
             }}
             priority
             alt="App screenshots"
