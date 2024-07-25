@@ -12,7 +12,10 @@
     "title": "Quickstart"
   },
   "desktop": "Desktop",
-  "server-installation": "Server Installation",
+  "server-installation": {
+    "display": "hidden",
+    "title": "Server Installation"
+  },
   "data-folder": "Jan Data Folder",
   "user-guides": {
     "title": "BASIC USAGE",
