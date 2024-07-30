@@ -7,14 +7,13 @@ import { BiLogoDiscordAlt } from 'react-icons/bi'
 import { useForm } from 'react-hook-form'
 import LogoMark from '@/components/LogoMark'
 import { FaLinkedin } from 'react-icons/fa'
-import Image from 'next/image'
 
 const socials = [
   {
     icon: (
       <RiTwitterXFill className="text-lg text-black/60 dark:text-white/60" />
     ),
-    href: 'https://twitter.com/janframework',
+    href: 'https://twitter.com/jandotai',
   },
   {
     icon: (
@@ -30,7 +29,7 @@ const socials = [
   },
   {
     icon: <FaLinkedin className="text-lg text-black/60 dark:text-white/60" />,
-    href: 'https://www.linkedin.com/company/janframework/',
+    href: 'https://www.linkedin.com/company/homebrewltd',
   },
 ]
 
@@ -72,12 +71,12 @@ const menus = [
       },
       {
         menu: 'Twitter',
-        path: 'https://twitter.com/janframework',
+        path: 'https://twitter.com/jandotai',
         external: true,
       },
       {
         menu: 'LinkedIn',
-        path: 'https://www.linkedin.com/company/janframework/',
+        path: 'https://www.linkedin.com/company/homebrewltd',
         external: true,
       },
     ],
