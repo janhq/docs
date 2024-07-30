@@ -677,3 +677,9 @@ docs/guides/fine-tuning/what-models-can-be-fine-tuned/ /docs 302
 /cortex/cortex-cpp https://cortex.so/docs/cortex-cpp 301
 /cortex/cortex-llamacpp https://cortex.so/docs/cortex-llamacpp 301
 /api-reference https://cortex.so/api-reference 301
+/docs/assistants /docs 302
+/docs/server-installation/ /docs/desktop 302
+/docs/server-installation/onprem /docs/desktop 302
+/docs/server-installation/aws /docs/desktop 302
+/docs/server-installation/gcp /docs/desktop 302
+/docs/server-installation/azure /docs/desktop 302
