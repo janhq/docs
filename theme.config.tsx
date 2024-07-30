@@ -43,7 +43,7 @@ const config: DocsThemeConfig = {
       titleTemplate: '%s - Jan',
       twitter: {
         cardType: 'summary_large_image',
-        site: '@janframework',
+        site: '@jandotai',
       },
       openGraph: {
         type: 'website',
@@ -56,7 +56,7 @@ const config: DocsThemeConfig = {
         <a href="https://discord.com/invite/FTk2MvZwJH" target="_blank">
           <BiLogoDiscordAlt className="text-xl text-black/60 dark:text-white/60" />
         </a>
-        <a href="https://twitter.com/janframework" target="_blank">
+        <a href="https://twitter.com/jandotai" target="_blank">
           <RiTwitterXFill className="text-lg text-black/60 dark:text-white/60" />
         </a>
         <a href="https://github.com/janhq/jan" target="_blank">
