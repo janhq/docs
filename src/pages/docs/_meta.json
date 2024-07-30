@@ -12,20 +12,12 @@
     "title": "Quickstart"
   },
   "desktop": "Desktop",
-  "server-installation": {
-    "display": "hidden",
-    "title": "Server Installation"
-  },
   "data-folder": "Jan Data Folder",
   "user-guides": {
     "title": "BASIC USAGE",
     "type": "separator"
   },
   "models": "Models",
-  "assistants": {
-    "display": "hidden",
-    "title": "Assistants"
-  },
   "tools": "Tools",
   "threads": "Threads",
   "settings": "Settings",
