@@ -94,7 +94,7 @@ const menus = [
       },
       {
         menu: 'Careers',
-        path: 'https://janai.bamboohr.com/careers',
+        path: 'https://homebrew.bamboohr.com/careers',
         external: true,
       },
     ],
