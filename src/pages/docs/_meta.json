@@ -18,24 +18,15 @@
     "type": "separator"
   },
   "models": "Models",
-  "tools": "Tools",
   "threads": "Threads",
   "settings": "Settings",
   "shortcuts": "Keyboard Shortcuts",
-  "local-api": "",
   "inference-engines": {
     "title": "MODEL PROVIDER",
     "type": "separator"
   },
   "built-in": "Built-in Models",
-  "local-models": "Local Models",
   "remote-models": "Remote APIs",
-  "extensions-separator": {
-    "title": "EXTENSIONS",
-    "type": "separator"
-  },
-  "extensions": "Overview",
-  "installing-extension": "Installing an Extension",
   "troubleshooting-separator": {
     "title": "TROUBLESHOOTING",
     "type": "separator"
