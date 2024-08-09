@@ -194,12 +194,11 @@ By default, Jan is installed in the following directory:
 
 ```
 # Default installation directory
-Applications\\Users\\{username}\\Jan
+~/jan
 
 ```
 
 <Callout type="info">
-- You can move the Jan data folder to a specific folder by following the steps [here](/docs/settings#access-the-jan-data-folder).
 - Please see the [Jan Data Folder](/docs/data-folder) for more details about the data folder structure.
 </Callout>
 
@@ -248,9 +247,6 @@ To enable the use of your Intel Arc GPU in the Jan app, you need to activate the
 4. Enable the **GPU Acceleration** and choose the GPU you want to use.
 5. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
 
-<Callout type="info">
-If you have enabled the GPU acceleration, but it still doesn't work, go to **Settings** > **Model Provider** > **Cortex** > click the **Install** button for additional dependencies.
-</Callout>
 
 ## Uninstalling Jan
 
@@ -260,21 +256,29 @@ To uninstall Jan, follow the steps below:
 
 ### Ubuntu
 
-1. Open a terminal.
-2. Run the following command to uninstall Jan:
-
-```
+```bash
+# Uninstall Jan
 sudo apt-get remove jan
+
+# Remove the Jan data folder
+rm -rf jan
+
+# Delete the application data and cache
+rm -rf ~/.cache/jan
 ```
 </Tabs.Tab>
 <Tabs.Tab>
 ### Fedora
 
-1. Open a terminal.
-2. Run the following command to uninstall Jan:
-
-```
+```bash
+# Uninstall Jan
 sudo dnf remove jan
+
+# Remove the Jan data folder
+rm -rf jan
+
+# Delete the application data and cache
+rm -rf ~/.cache/jan
 ```
 </Tabs.Tab>
 </Tabs>
@@ -284,7 +288,7 @@ The deleted Data Folder cannot be restored.
 
 </Callout>
 
-## FAQs
+{/* ## FAQs
 
 <FAQBox title="What are Nightly Releases, and how can I access them?">
 Nightly Releases allow you to test new features and previews of upcoming stable releases. You can download them from Jan's GitHub repository. However, remember that these builds might contain bugs and crash frequently.
@@ -308,3 +312,4 @@ No, `.deb` files are specifically intended for Debian-based distributions and ma
 Warning: If you have any trouble during installation, please see our [Troubleshooting](https://www.notion.so/docs/troubleshooting) guide to resolve your problem.
 
 </Callout>
+*/}
