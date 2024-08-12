@@ -1,0 +1,62 @@
+---
+title: ONNX
+description: A step-by-step guide on customizing the ONNX engine.
+keywords:
+  [
+    Jan,
+    Customizable Intelligence, LLM,
+    local AI,
+    privacy focus,
+    free and open source,
+    private and offline,
+    conversational AI,
+    no-subscription fee,
+    large language models,
+    Onnx Engine,
+    ONNX,
+    onnx,
+    engine,
+  ]
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# ONNX
+
+## Overview
+
+This guide walks you through installing Jan's official [ONNX Engine](https://github.com/janhq/cortex.onnx). This engine uses `onnxruntime-genai` with DirectML to provide GPU acceleration for AMD, Intel, NVIDIA, and Qualcomm GPUs.
+
+<Callout type='warning' emoji="">
+ This feature is only available for Windows and Linux users.
+</Callout>
+
+### Pre-requisites
+
+- A Windows or Linux PC.
+- **Supported GPUs**:
+  - **AMD GPUs**: Radeon series with DirectML support.
+  - **Intel GPUs**: Intel Arc or integrated GPUs with DirectML support.
+  - **NVIDIA GPUs**: RTX or GTX series with DirectML support.
+  - **Qualcomm GPUs**: Adreno series with DirectML support.
+- Sufficient disk space for ONNX models and data files (space requirements vary depending on the model size).
+
+## Step-by-step Guide
+<Steps>
+### Step 1: Initialize the Engine
+1. Navigate to the **Advanced Settings** > enable the **Experimental Mode**.
+2. Click the **Engines** tab.
+3. Select **cortex.onnx** engine > click the **Install** button.
+4. This downloads the required dependencies and data to run a model using `ONNX` engine.
+
+### Step 2: Start the Model
+1. Restart the Jan application to make sure the engine is correctly installed.
+2. Navigate to Hub download a `ONNX` format model.
+3. Go to the **Threads** > **On-device** > select the downloaded model.
+4. Configure your model's parameters.
+5. Chat with your model.
+</Steps>
+
+<Callout type='info'>
+  If you have questions, please join our [Discord community](https://discord.gg/Dt7MxDyNNZ) for support, updates, and discussions.
+</Callout>
