@@ -49,19 +49,19 @@ pip install -r requirements.txt
   A valid Python installation is required.
 </Callout>
 
-### Step 3: Set the Environment
+### Step 3: Set the Config
 
-1. Create a copy of `.env.example`.
-2. Change the name to `.env`.
-3. Set the environment with the following options:
+1. Create a copy of `config-example.json`.
+2. Change the name to `config.json`.
+3. Set the config with the following options:
 
 | Setting                 | Instructions                                                                                                                                                                                  |
 | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `DISCORD_BOT_TOKEN`     | Create a new Discord bot at [discord.com/developers/applications](https://discord.com/developers/applications), obtain a token from the Bot tab, and enable MESSAGE CONTENT INTENT. |
-| `DISCORD_CLIENT_ID`     | Found under the OAuth2 tab of the Discord bot you just made. |
-| `LLM`                   | For Jan, set to `local/openai/(MODEL_NAME)`, where `(MODEL_NAME)` is your loaded model's name. |
-| `LLM_SYSTEM_PROMPT`  | Adjust the bot's behavior as needed. |
-| `LOCAL_SERVER_URL`      | URL of your local API server. For Jan, set it to `http://localhost:1337/v1`. |
+| `model`                   | For Jan, set to `local/openai/(MODEL_NAME)`, where `(MODEL_NAME)` is your loaded model's name. |
+| `local_server_url`      | URL of your local API server. For Jan, set it to `http://localhost:1337/v1`. |
+| `system_prompt`  | Adjust the bot's behavior as needed. |
+| `bot_token`     | Create a new Discord bot at [discord.com/developers/applications](https://discord.com/developers/applications), obtain a token from the Bot tab, and enable MESSAGE CONTENT INTENT. |
+| `client_id`     | Found under the OAuth2 tab of the Discord bot you just made. |
 
 For more configuration options, refer to llmcord.py's [README](https://github.com/jakobdylanc/discord-llm-chatbot/tree/main?tab=readme-ov-file#instructions).
 
