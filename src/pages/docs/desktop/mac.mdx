@@ -92,7 +92,7 @@ Make sure to verify the URL to ensure that it's the official Jan website and Git
 
 Nightly Releases let you test out new features, which may be buggy:
 
-- **Jan GitHub repository**: https://github.com/janhq/jan
+- **Jan GitHub repository**: [Github](https://github.com/janhq/jan/actions/workflows/jan-electron-build-nightly.yml)
 
 <Callout type="info">
 Keep in mind that this build might crash frequently and may contain bugs!
@@ -125,7 +125,7 @@ By default, Jan is installed in the following directory:
 
 ```sh
 # Default installation directory
-~/jan
+/Users/{user_name}/Library/Application Support/Jan
 ```
 
 <Callout type="info">
@@ -154,12 +154,20 @@ To uninstall Jan, follow the steps below:
 - Drag the app to the Trash.
 - Select the app and choose the Move to Trash option.
 - Select the app and press Command-Delete on your keyboard.
+6. Use the following command to delete Jan's user data and app cache:
+```bash
+# Remove all user data
+rm -rf ~/jan
+
+# Delete the application data and cache
+rm -rf ~/Library/Application\ Support/Jan
+```
 
 <Callout type="info">
 The deleted Data Folder cannot be restored.
 </Callout>
 
-## FAQs
+{/* ## FAQs
 
 <FAQBox title="What are Nightly Releases, and how can I access them?">
 Nightly Releases allow you to test new features and previews of upcoming stable releases. You can download them from Jan's GitHub repository. However, remember that these builds might contain bugs and crash frequently.
@@ -177,4 +185,4 @@ No, it cannot be restored once you delete the Jan data folder during uninstallat
 <Callout type="info">
 💡 Warning: If you have any trouble during installation, please see our [Troubleshooting](/docs/troubleshooting) guide to resolve your problem.
 
-</Callout>
+</Callout> */}

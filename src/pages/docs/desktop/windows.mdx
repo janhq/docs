@@ -90,7 +90,7 @@ Jan provides two types of releases:
 The stable release is a stable version of Jan. You can download a stable release Jan app via the following:
 
 - **Official Website**: [https://jan.ai](https://jan.ai/)
-- **Jan GitHub repository**: https://github.com/janhq/jan
+- **Jan GitHub repository**: [Github](https://github.com/janhq/jan/releases)
 
 <Callout type="info">
 Make sure to verify the URL to ensure that it's the official Jan website and GitHub repository.
@@ -101,7 +101,7 @@ Make sure to verify the URL to ensure that it's the official Jan website and Git
 
 The nightly Release allows you to test out new features and get a sneak peek at what might be included in future stable releases. You can download this version via:
 
-- **Jan GitHub repository**: https://github.com/janhq/jan
+- **Jan GitHub repository**: [Github](https://github.com/janhq/jan/actions/workflows/jan-electron-build-nightly.yml)
 
 <Callout type="info">
 Keep in mind that this build might crash frequently and may contain bugs!
@@ -120,7 +120,7 @@ By default, Jan is installed in the following directory:
 
 ```
 # Default installation directory
-Applications\\Users\\{username}\\Jan
+~/jan
 
 ```
 
@@ -193,12 +193,14 @@ To uninstall Jan, follow the steps below:
 4. Click **OK**.
 5. A message will appear: **"Do you also want to delete the DEFAULT Jan data folder at C:\Users\{username}\Jan?"**.
 6. Click **OK** to delete the entire Jan data folder, or click **Cancel** to save your Jan Data folder so you can use this on the new installation folder.
+7. Navigate to `users/{username}/AppData/Roaming`.
+8. Delete the `Jan` folder that contains the app cache.
 
 <Callout type="warning">
 The deleted Data Folder cannot be restored.
 </Callout>
 
-## FAQs
+{/* ## FAQs
 
 <FAQBox title="What are Nightly Releases, and how can I access them?">
 Nightly Releases allow you to test new features and previews of upcoming stable releases. You can download them from Jan's GitHub repository. However, remember that these builds might contain bugs and crash frequently.
@@ -215,4 +217,4 @@ No, it cannot be restored once you delete the Jan data folder during uninstallat
 
 <Callout type="warning">
 If you have any trouble during installation, please see our [Troubleshooting](https://www.notion.so/docs/troubleshooting) guide to resolve your problem.
-</Callout>
+</Callout> */}
