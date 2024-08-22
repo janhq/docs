@@ -18,7 +18,6 @@
     "type": "separator"
   },
   "models": "Models",
-  "tools": "Tools",
   "threads": "Threads",
   "settings": "Settings",
   "shortcuts": "Keyboard Shortcuts",
@@ -28,7 +27,6 @@
     "type": "separator"
   },
   "built-in": "Built-in Models",
-  "local-models": "Local Models",
   "remote-models": "Remote APIs",
   "extensions-separator": {
     "title": "EXTENSIONS",
