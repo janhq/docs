@@ -18,6 +18,7 @@
     "type": "separator"
   },
   "models": "Models",
+  "tools": "Tools",
   "assistants": "Assistants",
   "threads": "Threads",
   "settings": "Settings",
@@ -28,6 +29,12 @@
   },
   "built-in": "Built-in Models",
   "remote-models": "Remote APIs",
+  "extensions-separator": {
+    "title": "EXTENSIONS",
+    "type": "separator"
+  },
+  "extensions": "Overview",
+  "installing-extension": "Installing an Extension",
   "troubleshooting-separator": {
     "title": "TROUBLESHOOTING",
     "type": "separator"

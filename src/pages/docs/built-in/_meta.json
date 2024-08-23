@@ -3,10 +3,6 @@
     "title": "llama.cpp",
     "href": "/docs/built-in/llama-cpp"
   },
-  "onnx": {
-    "title": "ONNX",
-    "href": "/docs/built-in/onnx"
-  },
   "tensorrt-llm": {
     "title": "TensorRT-LLM",
     "href": "/docs/built-in/tensorrt-llm"

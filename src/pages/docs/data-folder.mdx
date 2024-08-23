@@ -34,71 +34,134 @@ To open the Jan data folder from the app:
 2. Click the App Log button.
 3. This redirects you to the Jan data folder.
 
+```
+# Windows
+~/AppData/Roaming/Jan
+
+# Mac
+~/Library/Application\ Support/Jan
+
+# Linux
+## Custom installation directory
+$XDG_CONFIG_HOME = /home/username/custom_config
+
+or
+
+## Default installation directory
+~/.config
+
+```
+
 ## Folder Structure
 Jan app data folder should have the following folder structure:
 <Callout type="info">
 Jan is stored in the root `~/jan` by default.
 </Callout>
 ```yaml
-/engines
-  /cortex.llamacpp
-  /cortex.onnx
-  /cortex.tensorrt-llm
+/assistants
+  /jan
+    assistant.json
+/extensions
+  extensions.json
+  /@janhq
+    /extension_A
+     package.json
+/logs
+  /app.txt
 /models
   /model_A
     model.yaml
   model_A.yaml
-/telemetry
-  sessions.json
+/settings
+  settings.json
+  /@janhq
+    /extension_A_Settings
+     settings.json
 /themes
   /dark-dimmed
   /joi-dark
   /joi-light
   /night-blue
-cortex.db 
-cortex.log
-jan.log
+/threads
+  /jan_thread_A
+   messages.jsonl
+   thread.json
+  messages.jsonl
 ```
 ### `jan/` (The Root Directory)
 
 This is the primary directory where all files related to Jan are stored. It typically resides in the user's home directory.
 
-### `engines/`
+### `assistants/`
 
-The engines directory contains different engine implementations used for processing various machine learning models. Each engine is specialized for a different type of hardware or software optimization.
+Stores configuration files for various AI assistants. Each assistant within this directory can have different settings.
+
+- **Default Assistant**: Located in `/assistants/jan/`, it includes an `assistant.json` configuring the default settings and capabilities. The default sample of `assistan.json` is as follows:
+
+```json
+{
+  "avatar": "",
+  "id": "jan",
+  "object": "assistant",
+  "created_at": 1715132389207,
+  "name": "Jan",
+  "description": "A default assistant that can use all downloaded models",
+  "model": "*",
+  "instructions": ""
+}
+
+```
+
+Each parameter in the file is defined as follows:
+
+| Parameter | Description |
+| --- | --- |
+| avatar | Path to the assistant's avatar image, allowing visual customization. |
+| id | Unique identifier for the assistant. |
+| object | Indicates that this is an assistant configuration. |
+| created_at | Timestamp of creation, in milliseconds since the epoch. |
+| name | The assistant's name. |
+| description | Describes the assistant’s capabilities and intended role. |
+| model | Defines accessible models, with "*" representing access to all models. |
+| instructions | Specifies queries and commands to tailor Jan's responses for improved interaction effectiveness. |
+
+### `extensions/`
+
+Extensions enhance Jan's functionality by adding new capabilities or integrating external services.
+
+- **Extension Configuration**: The `extensions.json` in the `/extensions/` directory provides settings for all installed extensions.
+- **Specific Extensions**: Subdirectories like `/@janhq/extension_A/` contain `package.json` files that import necessary modules for each extension.
+
+### `logs/`
+
+Logs from the application are stored here. This is useful for troubleshooting and monitoring the application's behavior over time. The file `/logs/app.txt` captures general application activity.
 
 ### `models/`
 
-The `models` directory stores various machine learning models and their configurations. There are two types of YAML files, each serving a distinct purpose.
+Stores the AI models that the assistants use to process requests and generate responses.
 
-- **model_A**: This folder contains files for `model_A` pulled from the HF (Hugging Face) repository.
-  - **model.yaml**: The original configuration file from the HF repository. It includes all files the author provided (e.g., README.md, model file) and is used to generate the configuration file in the main `models` directory.
-- **model_A.yaml**: Located in the main `models` directory, this Cortex-created YAML file contains metadata and configurations tailored for Cortex models. It is essential for models where metadata cannot be directly extracted from the model file, such as `ONNX` and `TensorRT` models.
+- **Model Configurations**: Each model directory, such as `/models/modelA/`, contains a `model.json` with settings specific to that model.
 
-In summary, `model.yaml` inside the `model_A` folder is the original HF configuration, while `model_A.yaml` in the main `models` directory is the Cortex-specific configuration.
+### `settings/`
 
-### `telemetry/`
+General settings for the application are stored here, separate from individual assistant or engine configurations.
 
-The `telemetry` directory is used for storing session data and user interactions.
+- **General Settings**: The `settings.json` in the `/settings/` directory holds application-wide settings.
+- **Extension-specific Settings**: Additional settings for extensions are stored in respective subdirectories under `/settings/@janhq/`.
 
-- **sessions.json**: This file logs the details of each user session, capturing information that can be used for analysis and improvement of user experience.
 
 ### `themes/`
 
 The `themes` directory contains different visual themes for the application, allowing customization of the user interface.
 
-### `cortex.db`
+### `threads/`
 
-This database file stores all threads, messages, and assistant interactions, enabling stateless endpoints for the Jan x Cortex app system except for the `chat completions` and `embeddings` endpoints.
-
-### `cortex.log`
-
-This log file captures logs for the Cortex server, recording events, errors, and other relevant information for troubleshooting and monitoring.
+Threads history is kept in this directory. Each session or thread is stored in a way that makes it easy to review past interactions. Each thread is stored in its subdirectory, such as `/threads/jan_unixstamp/`, with files like `messages.jsonl` and `thread.json` detailing the thread settings.
 
 
-### `jan.log`
+## Open the Data Folder
 
-This log file captures application logs for the Jan app, recording events, errors, and other relevant information for troubleshooting and monitoring.
+To open the Jan data folder, follow the steps in the [Settings](/docs/settings#access-the-jan-data-folder) guide.
 
 ## Delete Jan Data Folder
 
