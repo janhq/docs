@@ -70,7 +70,7 @@ const APIStructure = () => {
         <div className="w-full lg:w-1/2 mx-auto text-center my-8">
           <a
             className="text-black dark:text-white bg-[#F0F0F0] dark:bg-[#242424] cursor-pointer font-bold py-3 px-5 rounded-lg border border-ragy-200 dark:border-neutral-700"
-            href="/api-reference/"
+            href="https://cortex.so/api-reference"
             target="_blank"
           >
             API Reference
