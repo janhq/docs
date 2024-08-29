@@ -61,6 +61,9 @@ My Settings is where you can customize the color of Jan's desktop app UI. Here's
 <br/>
 3. Select the **Appearance** section.
 4. Click the **Spell Check** slider to enable it.
+<br/>
+![Spell](./_assets/spell.png)
+<br/>
 
 ## Access Advanced Settings
 Advanced Settings is the GUI version of the `settings.json`. To access Jan's advanced settings, follow the steps below:
@@ -112,6 +115,34 @@ To enhance your model performance, follow the steps below:
 <br/>
 ![Enable GPU](./_assets/gpu-accel.png)
 
+## Enable the Vulcan Support
+<Callout type="warning">
+  This feature is still in experimental phase.
+</Callout>
+
+To enable the Vulkan support for AMD or Intel ARC GPU, follow the steps below:
+
+1. Enable the **Experimental Mode**.
+2. Navigate to the **Advanced Settings**.
+3. On the **Vulcan Support**, click the slider to enable.
+<br/>
+![Vulcan](./_assets/vulkan.png)
+<br/>
+4. Restart the Jan app.
+
+## Enable the Preserve Model Settings
+<Callout type="warning">
+  This feature is still in experimental phase.
+</Callout>
+To enable the preserve model settings to be applied to the new thread, follow the steps below:
+
+1. Enable the **Experimental Mode**.
+2. Navigate to the **Advanced Settings**.
+3. On the **Preserve Model Settings**, click the slider to enable.
+<br/>
+![Preserve](./_assets/preserve.png)
+
+
 ## Access the Jan Data Folder
 
 To access the folder where messages, model configurations, and user data are stored, follow the steps below:
@@ -157,13 +188,44 @@ To Allow self-signed or unverified certificates, follow the steps below:
 <br/>
 ![Ignore SSL](./_assets/ssl.png)
 
+## Enable the Jan Quick Ask
+<Callout type="warning">
+  This feature is still in experimental phase.
+</Callout>
+To enable the Jan quick ask mode, follow the steps below:
 
-## Migrate Data From Old Version Of Jan App
+1. Enable the **Experimental Mode**.
+2. Navigate to the **Advanced Settings**.
+3. On the **Quick Ask**, click the slider to enable.
+<br/>
+![Quick Ask](./_assets/quick-ask.png)
+<br/>
+4. Restart the Jan app.
 
-To migrate your old Jan data folder to the new version, follow the steps below:
+## Clear Logs
+
+To clear all logs on your Jan app, follow the steps below:
+
+<Callout type="warning">
+  This feature clears all the data in your **Jan Data Folder**.
+</Callout>
 
 1. Navigate to the **Advanced Settings**.
-2. On the **Migrate Data From Old Version Of Jan App**, click the **Start migration** button to migrate the old data folder into the new version of Jan.
-<Callout type="info">
-If you don't want to duplicated the same thread when migrating data, click the **Remove threads and messages** before migrating.
+2. On the **Clear Logs** click the the **Clear** button.
+<br/>
+![Clear Logs](./_assets/clear-logs.png)
+
+## Reset To Factory Default
+
+To reset the Jan app to its original state, follow the steps below:
+
+<Callout type="error">
+  This irreversible action is only recommended if the application is corrupted.
 </Callout>
+
+
+1. Navigate to the **Advanced Settings**.
+2. On the **Reset To Factory Default** click the the **Reset** button.
+<br/>
+![Reset](./_assets/reset-jan.png)
+
