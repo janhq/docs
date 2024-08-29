@@ -227,7 +227,7 @@ If you encounter an error message indicating that loading a model requires addit
 1. Navigate to `Settings` > `Advanced Settings` > `Jan Data Folder` to access GPU settings.
 2. Open the `settings.json` file in the `settings` folder. Here's an example:
 
-```json title="~/jan/settings/settings.json"
+```json title="~/jan/data/settings/settings.json"
 {
   "notify": true,
   "run_mode": "gpu",
@@ -316,7 +316,7 @@ To get the error logs of your Jan application, follow the steps below:
 2. Use the following commands to get the recent 50 lines of log files:
 
 ```bash
-tail -n 50 ~/jan/logs/app.log
+tail -n 50 ~/jan/data/logs/app.log
 
 ```
 
@@ -326,7 +326,7 @@ tail -n 50 ~/jan/logs/app.log
 2. Use the following commands to get the recent 50 lines of log files:
 
 ```bash
-tail -n 50 ~/jan/logs/server.log
+tail -n 50 ~/jan/data/logs/server.log
 
 ```
 
@@ -401,7 +401,7 @@ When you start a chat with a model and encounter a Something's Amiss error, here
 
 ## Undefined Issue
 If you experience an undefined or unusual issue, please follow the steps below:
-1. Delete Jan's extension folder located at `~{users}/jan/`.
+1. Delete Jan's extension folder located at `~/jan/data`.
 2. Restart the Jan application.
 ## Unexpected Token
 
