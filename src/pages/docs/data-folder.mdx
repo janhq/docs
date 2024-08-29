@@ -25,7 +25,32 @@ import { Callout, Steps } from 'nextra/components'
 # Jan Data Folder
 Jan stores your data locally in your own filesystem in a universal file format (JSON). We build for privacy by default and do not collect or sell your data.
 
-This guide helps you understand where and how this data is stored. We'll also show you how to delete or move the data folder location.
+This guide helps you understand where and how this data is stored.
+
+## Open the Data Folder
+
+To open the Jan data folder from the app:
+1. Click the System monitor button on your Jan app.
+2. Click the App Log button.
+3. This redirects you to the Jan data folder.
+
+```bash
+# Windows
+~/AppData/Roaming/Jan/data
+
+# Mac
+~/Library/Application\ Support/Jan/data
+
+# Linux
+## Custom installation directory
+$XDG_CONFIG_HOME = /home/username/custom_config
+
+or
+
+## Default installation directory
+~/.config/Jan/data
+
+```
 
 ## Folder Structure
 Jan app data folder should have the following folder structure:
@@ -36,8 +61,6 @@ Jan is stored in the root `~/jan` by default.
 /assistants
   /jan
     assistant.json
-  /shakespeare
-    assistant.json
 /extensions
   extensions.json
   /@janhq
@@ -47,12 +70,18 @@ Jan is stored in the root `~/jan` by default.
   /app.txt
 /models
   /model_A
-    model.json
+    model.yaml
+  model_A.yaml
 /settings
   settings.json
   /@janhq
     /extension_A_Settings
      settings.json
+/themes
+  /dark-dimmed
+  /joi-dark
+  /joi-light
+  /night-blue
 /themes
   /dark-dimmed
   /joi-dark
@@ -100,7 +129,6 @@ Each parameter in the file is defined as follows:
 | description | Describes the assistant’s capabilities and intended role. |
 | model | Defines accessible models, with "*" representing access to all models. |
 | instructions | Specifies queries and commands to tailor Jan's responses for improved interaction effectiveness. |
-- **Custom Assistant Example**: The `/assistants/shakespeare/` shows a custom setup, also with its own `assistant.json`.
 
 ### `extensions/`
 
@@ -126,6 +154,7 @@ General settings for the application are stored here, separate from individual a
 - **General Settings**: The `settings.json` in the `/settings/` directory holds application-wide settings.
 - **Extension-specific Settings**: Additional settings for extensions are stored in respective subdirectories under `/settings/@janhq/`.
 
+
 ### `themes/`
 
 The `themes` directory contains different visual themes for the application, allowing customization of the user interface.
@@ -133,6 +162,7 @@ The `themes` directory contains different visual themes for the application, all
 ### `threads/`
 
 Threads history is kept in this directory. Each session or thread is stored in a way that makes it easy to review past interactions. Each thread is stored in its subdirectory, such as `/threads/jan_unixstamp/`, with files like `messages.jsonl` and `thread.json` detailing the thread settings.
+
 
 ## Open the Data Folder
 

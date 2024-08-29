@@ -1,6 +1,6 @@
 ---
 title: llama.cpp
-description: A step-by-step guide on how to customize the llama.cpp extension.
+description: A step-by-step guide on how to customize the llama.cpp engine.
 keywords:
   [
     Jan,
@@ -13,7 +13,7 @@ keywords:
     no-subscription fee,
     large language models,
     Llama CPP integration,
-    llama.cpp Extension,
+    llama.cpp Engine,
     Intel CPU,
     AMD CPU,
     NVIDIA GPU,
@@ -30,59 +30,28 @@ import { Callout, Steps } from 'nextra/components'
 
 ## Overview
 
-Jan has a default [C++ inference server](https://github.com/janhq/nitro) built on top of [llama.cpp](https://github.com/ggerganov/llama.cpp). This server provides an OpenAI-compatible API, queues, scaling, and additional features on top of the wide capabilities of `llama.cpp`.
+Jan has a default [C++ inference server](https://github.com/janhq/cortex) built on top of [llama.cpp](https://github.com/ggerganov/llama.cpp). This server provides an OpenAI-compatible API, queues, scaling, and additional features on top of the wide capabilities of `llama.cpp`.
 
-## llama.cpp Extension
+## llama.cpp Engine
 
-This guide shows you how to modify your engine's behavior by adjusting its settings in the `model.json` file.
+This guide shows you how to initialize the `llama.cpp` to download and install the required dependencies to start chatting with a model using the `llama.cpp` engine.
 
 ## Prerequisites
-<Tabs items={['Mac', 'Windows', 'Linux']}>
-    <Tabs.Tab >
-      <Tabs items={['Mac Intel', 'Mac Silicon']}>
-        <Tabs.Tab >
-          - Make sure you're using an Intel-based Mac. For a complete list of supported Intel CPUs, please see [here](https://en.wikipedia.org/wiki/MacBook_Pro_(Intel-based)).
-          - For Mac Intel, it is recommended to utilize smaller models.
-          <Callout type="info">
-            This uses CPU by default, and no acceleration option is available. 
-          </Callout>
+- Mac Intel:
+  - Make sure you're using an Intel-based Mac. For a complete list of supported Intel CPUs, please see [here](https://en.wikipedia.org/wiki/MacBook_Pro_(Intel-based)).
+  - For Mac Intel, it is recommended to utilize smaller models.
+- Mac Sillicon:
+  - Make sure you're using a Mac Silicon. For a complete list of supported Apple Silicon CPUs, please see [here](https://en.wikipedia.org/wiki/Apple_Silicon).
+  - Using an adequate model size based on your hardware is recommended for Mac Silicon.
+<Callout type="info">
+  This can use Apple GPU with Metal by default for acceleration. Apple ANE is not supported yet.
+</Callout>
+- Windows:
+  - Ensure that you have **Windows with x86_64** architecture.
+- Linux:
+  - Ensure that you have **Linux with x86_64** architecture.
 
-        </Tabs.Tab>
-
-        <Tabs.Tab >
-          - Make sure you're using a Mac Silicon. For a complete list of supported Apple Silicon CPUs, please see [here](https://en.wikipedia.org/wiki/Apple_Silicon).
-          - Using an adequate model size based on your hardware is recommended for Mac Silicon.
-          <Callout type="info">
-            This can use Apple GPU with Metal by default for acceleration. Apple ANE is not supported yet.
-          </Callout>
-        </Tabs.Tab>
-        
-      </Tabs>
-    </Tabs.Tab>
-    <Tabs.Tab >
-      - Ensure that you have **Windows with x86_64** architecture.
-      - Select a model size suited to your Windows hardware by looking for the `Recommended RAM` tag in the Hub.
-      
-      <Callout type="info">
-        - It will use CPU by default if you do not have any GPU/ NPU.
-        - Ensure that you have also installed the correct CPU instruction.
-      </Callout>
-      
-      
-    </Tabs.Tab>
-    <Tabs.Tab >
-        - Ensure that you have **Linux with x86_64** architecture.
-        - Select a model size suited to your Linux hardware based on the `Recommended` tag for `RAM` in the Hub.
-
-      <Callout type="info">
-        - It will use CPU by default if you do not have any GPU/ NPU.
-        - Ensure that you have also installed the correct CPU instruction.
-      </Callout>
-
-    </Tabs.Tab>
-</Tabs>
-
-### GPU Acceleration Options
+#### GPU Acceleration Options
 Enable the GPU acceleration option within the Jan application by following the [Installation Setup](/docs/desktop-installation) guide.
 ## Step-by-step Guide
 <Steps>

@@ -193,13 +193,17 @@ sudo apt-get install ./jan-linux-amd64-{version}.deb
 By default, Jan is installed in the following directory:
 
 ```
+# Custom installation directory
+$XDG_CONFIG_HOME = /home/username/custom_config
+
+or
+
 # Default installation directory
-~/jan
+~/.config/Jan/data
 
 ```
 
 <Callout type="info">
-- You can move the Jan data folder to a specific folder by following the steps [here](/docs/settings#access-the-jan-data-folder).
 - Please see the [Jan Data Folder](/docs/data-folder) for more details about the data folder structure.
 </Callout>
 
@@ -248,9 +252,6 @@ To enable the use of your Intel Arc GPU in the Jan app, you need to activate the
 4. Enable the **GPU Acceleration** and choose the GPU you want to use.
 5. A success notification saying **Successfully turned on GPU acceleration** will appear when GPU acceleration is activated.
 
-<Callout type="info">
-If you have enabled the GPU acceleration, but it still doesn't work, go to **Settings** > **Model Provider** > **Cortex** > click the **Install** button for additional dependencies.
-</Callout>
 
 ## Uninstalling Jan
 
@@ -259,15 +260,19 @@ To uninstall Jan, follow the steps below:
 <Tabs.Tab>
 
 ### Ubuntu
+
 ```bash
 # Uninstall Jan
 sudo apt-get remove jan
 
 # Remove the Jan data folder
-rm -rf jan
+rm -rf Jan
 
-# Delete the application data and cache
-rm -rf ~/.cache/jan
+# Delete the application data
+rm -rf ~/.config/Jan/data
+
+# Delete the application cache
+rm -rf ~/.config/Jan/cache
 ```
 </Tabs.Tab>
 <Tabs.Tab>
@@ -277,11 +282,11 @@ rm -rf ~/.cache/jan
 # Uninstall Jan
 sudo dnf remove jan
 
-# Remove the Jan data folder
-rm -rf jan
+# Delete the application data
+rm -rf ~/.config/Jan/data
 
-# Delete the application data and cache
-rm -rf ~/.cache/jan
+# Delete the application cache
+rm -rf ~/.config/Jan/cache
 ```
 </Tabs.Tab>
 </Tabs>
@@ -314,4 +319,5 @@ No, `.deb` files are specifically intended for Debian-based distributions and ma
 <Callout type="info">
 Warning: If you have any trouble during installation, please see our [Troubleshooting](/docs/troubleshooting) guide to resolve your problem.
 
-</Callout> */}
+</Callout>
+*/}

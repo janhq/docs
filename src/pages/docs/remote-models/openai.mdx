@@ -23,6 +23,10 @@ import { Callout, Steps } from 'nextra/components'
 
 # OpenAI API
 
+<Callout type='info'>
+The OpenAI Extension can be used for any OpenAI-compatible API endpoints.
+</Callout>
+
 ## How to Integrate OpenAI API with Jan
 This guide provides step-by-step instructions for integrating the OpenAI API with Jan, allowing users to utilize OpenAI's capabilities within Jan's conversational interface.
 
@@ -30,36 +34,28 @@ This guide provides step-by-step instructions for integrating the OpenAI API wit
 <Steps>
 ### Step 1: Configure OpenAI API Key
 1. Obtain OpenAI API Key from your [OpenAI Platform](https://platform.openai.com/api-keys) dashboard.
-2. Copy your OpenAI Key and the endpoint URL you want to use.
-3. Navigate to the **Jan app** > **Settings**.
-4. Select the **OpenAI**.
-<Callout type='info'>
-The **OpenAI** fields can be used for any OpenAI-compatible API.
-</Callout>
-5. Insert the **API Key** and the **endpoint URL** into their respective fields.
-<br/>
-![Server Setup](../_assets/OpenAi-1.gif)
-
-<Callout type='info'>
-You can also manually edit the JSON file in `~/jan/settings/@janhq/inference-openai-extension`.
-</Callout>
+2. Copy your **OpenAI API Key**.
+3. There are three ways to configure your API Key in Jan app:
+  - Navigate to the **Jan app** > **Gear Icon (⚙️)** > **My Models** tab > **Add Icon (➕)** next to **OpenAI**.
+  - Navigate to the **Jan app** > **Thread** > **Model** tab > **Add Icon (➕)** next to **OpenAI**.
+  - Navigate to the **Jan app** > **Gear Icon (⚙️)** > **OpenAI** section under Model Providers.
+4. Insert your **OpenAI API Key**.
 
 ### Step 2: Start Chatting with the Model
 
-1. Navigate to the **Hub** section.
-2. Select the OpenAI model you want to use.
+1. Select the OpenAI model you want to use.
+
 <Callout type='info'>
 The OpenAI is the default extension for the Jan application. All the OpenAI models are automatically installed when you install the Jan application.
 </Callout>
-3. Specify the model's parameters.
-4. Start the conversation with the OpenAI model.
-<br/>
-![Start Model](../_assets/OpenAi-2.gif)
+
+2. Specify the model's parameters.
+3. Start the conversation with the OpenAI model.
 </Steps>
 
 ### OpenAI Models
 
-You can also use specific OpenAI models you cannot find in the **Hub** section by customizing the `model.json` file, which you can see in the `~/jan/models/`. Follow the steps in the [Manage Models](/docs/models/manage-models) to manually add a model.
+You can also use specific OpenAI models you cannot find in the **Hub** section by customizing the `model.yaml` file, which you can see in the `~/jan/data/models/`. Follow the steps in the [Manage Models](/docs/models/manage-models) to manually add a model.
 
 <Callout type='info'>
 - You can find the list of available models in the [OpenAI Platform](https://platform.openai.com/docs/models/overview).

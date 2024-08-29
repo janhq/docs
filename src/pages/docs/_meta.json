@@ -19,10 +19,10 @@
   },
   "models": "Models",
   "tools": "Tools",
+  "assistants": "Assistants",
   "threads": "Threads",
   "settings": "Settings",
   "shortcuts": "Keyboard Shortcuts",
-  "local-api": "",
   "inference-engines": {
     "title": "MODEL PROVIDER",
     "type": "separator"
