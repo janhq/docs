@@ -39,13 +39,10 @@ To resolve the issue where your Jan is stuck in a broken build after installatio
 
       ```zsh
       # Step 1: Delete the application data
-      ## Newer versions
-      rm -rf ~/Library/Application\ Support/jan
-      ## Versions 0.2.0 and older
-      rm -rf ~/Library/Application\ Support/jan-electron
+      rm -rf ~/Library/Application\ Support/jan/data
 
       # Step 2: Clear application cache
-      rm -rf ~/Library/Caches/jan*
+      rm -rf ~/Library/Application\ Support/Jan/cache
 
       # Step 3: Remove all user data
       rm -rf ~/jan

@@ -125,7 +125,7 @@ By default, Jan is installed in the following directory:
 
 ```sh
 # Default installation directory
-~/Library/Application\ Support/Jan
+~/Library/Application\ Support/Jan/data
 ```
 
 <Callout type="info">
@@ -158,8 +158,11 @@ To uninstall Jan, follow the steps below:
 # Remove all user data
 rm -rf ~/jan
 
-# Delete the application data and cache
-rm -rf ~/Library/Application\ Support/Jan
+# Delete the application data
+rm -rf ~/Library/Application\ Support/Jan/data
+
+# Delete the application cache
+rm -rf ~/Library/Application\ Support/Jan/cache
 ```
 
 {/* ## FAQs
