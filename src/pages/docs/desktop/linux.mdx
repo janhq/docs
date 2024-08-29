@@ -266,10 +266,13 @@ To uninstall Jan, follow the steps below:
 sudo apt-get remove jan
 
 # Remove the Jan data folder
-rm -rf jan
+rm -rf Jan
 
-# Delete the application data and cache
-rm -rf ~/.cache/jan
+# Delete the application data
+rm -rf ~/.config/Jan/data
+
+# Delete the application cache
+rm -rf ~/.config/Jan/cache
 ```
 </Tabs.Tab>
 <Tabs.Tab>
@@ -279,11 +282,11 @@ rm -rf ~/.cache/jan
 # Uninstall Jan
 sudo dnf remove jan
 
-# Remove the Jan data folder
-rm -rf jan
+# Delete the application data
+rm -rf ~/.config/Jan/data
 
-# Delete the application data and cache
-rm -rf ~/.cache/jan
+# Delete the application cache
+rm -rf ~/.config/Jan/cache
 ```
 </Tabs.Tab>
 </Tabs>
@@ -314,7 +317,7 @@ Yes, `.AppImage` is designed to be distribution-agnostic, meaning it can run on 
 No, `.deb` files are specifically intended for Debian-based distributions and may not be compatible with other Linux distributions.
 </FAQBox>
 <Callout type="info">
-Warning: If you have any trouble during installation, please see our [Troubleshooting](https://www.notion.so/docs/troubleshooting) guide to resolve your problem.
+Warning: If you have any trouble during installation, please see our [Troubleshooting](/docs/troubleshooting) guide to resolve your problem.
 
 </Callout>
 */}

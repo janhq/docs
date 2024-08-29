@@ -5,7 +5,8 @@
   },
   "azure": {
     "title": "Azure OpenAI API",
-    "href": "/docs/remote-models/azure"
+    "href": "/docs/remote-models/azure",
+    "display": "hidden"
   },
   "groq": { "title": "Groq API", "href": "/docs/remote-models/groq" },
   "mistralai": {
@@ -29,5 +30,9 @@
   "nvidia-nim": {
     "title": "NVIDIA NIM API",
     "href": "/docs/remote-models/nvidia-nim"
+  },
+  "triton": {
+    "title": "Triton-TRT-LLM",
+    "href": "/docs/remote-models/triton"
   }
 }
