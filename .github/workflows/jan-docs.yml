@@ -7,6 +7,7 @@ on:
   pull_request:
     # Review gh actions docs if you want to further define triggers, paths, etc
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -66,7 +67,7 @@ jobs:
               Preview URL: ${{ steps.deployCloudflarePages.outputs.url }}
 
       - name: Publish to Cloudflare Pages Production
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.event.pull_request.head.repo.full_name != github.repository
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
