@@ -5,25 +5,25 @@ import { twMerge } from 'tailwind-merge'
 
 const features = [
   {
-    title: 'Local',
+    title: 'Chat with AI',
     description:
-      'Run AI models like Llama or Mistral directly on your device for enhanced privacy. No need for an internet connection- keep all your data and processing locally.',
+      'Ask your questions, brainstorm, and learn from the AI running on your device to be more productive.',
   },
   {
-    title: 'Remote API',
-    description: `Connect to remote APIs, like OpenAI, Groq, or Mistral API. Access AI capabilities without needing advanced hardware, with all processing handled in the cloud.`,
+    title: 'Model Hub',
+    description: `Download and Run powerful models like Llama3, Gemma or Mistral on your computer.`,
   },
   {
-    title: '100% offline',
-    description: `Conversations, preferences, and model usage stay on your computer. It's secure, exportable, and can be deleted at any time.`,
+    title: 'Connect to Cloud AIs',
+    description: `You can also route to more powerful cloud models, like OpenAI, Groq, Cohere etc., when needed.`,
   },
   {
-    title: 'Cross Platform',
-    description: `Jan is optimized for any device, from PCs to multi-GPU clusters. It's fast on NVIDIA GPUs and Apple M-series, supporting Apple Intel, Linux Debian, and Windows x64.`,
+    title: 'Local API Server',
+    description: `Set up and run your own OpenAI-compatible API server using local models with just one click.`,
   },
   {
-    title: 'Extensions',
-    description: `Customize Jan with Extensions to meet your specific needs, enhancing your AI experience to be uniquely yours.`,
+    title: 'Chat with your files',
+    description: `Set up and run your own OpenAI-compatible API server using local models with just one click.`,
   },
 ]
 
@@ -87,11 +87,11 @@ const Feature = () => {
                   alt="App Screenshot Feature"
                   width={800}
                   height={800}
-                  className="w-full"
+                  className="w-full h-full object-cover object-center"
                   priority
                   source={{
-                    light: '/assets/images/homepage/features01.webp',
-                    dark: '/assets/images/homepage/features01dark.webp',
+                    light: '/assets/images/homepage/features01.png',
+                    dark: '/assets/images/homepage/features01dark.png',
                   }}
                 />
               )}
@@ -100,11 +100,11 @@ const Feature = () => {
                   alt="App Screenshot Feature"
                   width={800}
                   height={800}
-                  className="w-full"
+                  className="w-full h-full object-cover object-center"
                   priority
                   source={{
-                    light: '/assets/images/homepage/features02.webp',
-                    dark: '/assets/images/homepage/features02dark.webp',
+                    light: '/assets/images/homepage/features02.png',
+                    dark: '/assets/images/homepage/features02dark.png',
                   }}
                 />
               )}
@@ -113,11 +113,11 @@ const Feature = () => {
                   alt="App Screenshot Feature"
                   width={800}
                   height={800}
-                  className="w-full"
+                  className="w-full h-full object-cover object-center"
                   priority
                   source={{
-                    light: '/assets/images/homepage/features03.webp',
-                    dark: '/assets/images/homepage/features03dark.webp',
+                    light: '/assets/images/homepage/features03.png',
+                    dark: '/assets/images/homepage/features03dark.png',
                   }}
                 />
               )}
@@ -126,11 +126,11 @@ const Feature = () => {
                   alt="App Screenshot Feature"
                   width={800}
                   height={800}
-                  className="w-full"
+                  className="w-full h-full object-cover object-center"
                   priority
                   source={{
-                    light: '/assets/images/homepage/features04.webp',
-                    dark: '/assets/images/homepage/features04dark.webp',
+                    light: '/assets/images/homepage/features04.png',
+                    dark: '/assets/images/homepage/features04dark.png',
                   }}
                 />
               )}
@@ -139,11 +139,11 @@ const Feature = () => {
                   alt="App Screenshot Feature"
                   width={800}
                   height={800}
-                  className="w-full"
+                  className="w-full h-full object-cover object-center"
                   priority
                   source={{
-                    light: '/assets/images/homepage/features05.webp',
-                    dark: '/assets/images/homepage/features05dark.webp',
+                    light: '/assets/images/homepage/features05.png',
+                    dark: '/assets/images/homepage/features05dark.png',
                   }}
                 />
               )}
