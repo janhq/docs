@@ -74,7 +74,7 @@ const Feature = () => {
                           <h6 className="text-xl font-bold">{feature.title}</h6>
                           {feature.experimantal && (
                             <div className="font-medium text-sm bg-blue-100 rounded-lg px-2 py-1 text-blue-700">
-                              Experimantal
+                              Experimental
                             </div>
                           )}
                         </div>
