@@ -9,26 +9,46 @@ const features = [
     experimantal: false,
     description:
       'Ask your questions, brainstorm, and learn from the AI running on your device to be more productive.',
+    image: {
+      light: '/assets/images/homepage/features01.png',
+      dark: '/assets/images/homepage/features01dark.png',
+    },
   },
   {
     title: 'Model Hub',
     experimantal: false,
     description: `Download and Run powerful models like Llama3, Gemma or Mistral on your computer.`,
+    image: {
+      light: '/assets/images/homepage/features02.png',
+      dark: '/assets/images/homepage/features02dark.png',
+    },
   },
   {
     title: 'Connect to Cloud AIs',
     experimantal: false,
     description: `You can also route to more powerful cloud models, like OpenAI, Groq, Cohere etc., when needed.`,
+    image: {
+      light: '/assets/images/homepage/features03.png',
+      dark: '/assets/images/homepage/features03dark.png',
+    },
   },
   {
     title: 'Local API Server',
     experimantal: false,
     description: `Set up and run your own OpenAI-compatible API server using local models with just one click.`,
+    image: {
+      light: '/assets/images/homepage/features04.png',
+      dark: '/assets/images/homepage/features04dark.png',
+    },
   },
   {
     title: 'Chat with your files',
     experimantal: true,
     description: `Set up and run your own OpenAI-compatible API server using local models with just one click.`,
+    image: {
+      light: '/assets/images/homepage/features05.png',
+      dark: '/assets/images/homepage/features05dark.png',
+    },
   },
 ]
 
@@ -90,12 +110,27 @@ const Feature = () => {
                         </p>
                       </div>
                     </div>
+                    {isActive && (
+                      <div className="lg:hidden block mt-4">
+                        <ThemeImage
+                          alt="App Screenshot Feature"
+                          width={800}
+                          height={800}
+                          className="w-full h-full object-cover object-center"
+                          priority
+                          source={{
+                            light: feature.image?.light,
+                            dark: feature.image?.dark,
+                          }}
+                        />
+                      </div>
+                    )}
                   </div>
                 )
               })}
             </div>
 
-            <div className="relative w-full overflow-hidden block">
+            <div className="relative w-full overflow-hidden  hidden lg:block">
               {activeFeature === 0 && (
                 <ThemeImage
                   alt="App Screenshot Feature"
