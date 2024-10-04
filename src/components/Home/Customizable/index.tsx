@@ -18,10 +18,12 @@ const Customizable = () => {
       <div className="flex gap-4 flex-col lg:flex-row mt-10 ">
         <div className="w-full lg:w-1/2 border border-neutral-200 rounded-2xl dark:border-neutral-800">
           <div className="p-6">
-            <div className="flex gap-2 items-center">
+            <div className="flex flex-col lg:flex-row gap-2 lg:items-center">
               <h1 className="text-2xl font-medium">Assistants & Memory</h1>
-              <div className="font-medium text-sm bg-blue-100 rounded-lg px-2 py-1 text-blue-700">
-                Coming Soon
+              <div className="flex">
+                <div className="font-medium text-sm bg-blue-100 rounded-lg px-2 py-1 text-blue-700">
+                  Coming Soon
+                </div>
               </div>
             </div>
             <p className="text-lg mt-4 text-black/60 dark:text-white/60">

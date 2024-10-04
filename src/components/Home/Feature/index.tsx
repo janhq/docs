@@ -70,11 +70,13 @@ const Feature = () => {
                         0{i + 1}
                       </h1>
                       <div>
-                        <div className="flex items-center gap-x-2">
+                        <div className="flex flex-col lg:flex-row lg:items-center gap-x-2">
                           <h6 className="text-xl font-bold">{feature.title}</h6>
                           {feature.experimantal && (
-                            <div className="font-medium text-sm bg-blue-100 rounded-lg px-2 py-1 text-blue-700">
-                              Experimental
+                            <div className="flex mt-2 lg:mt-0">
+                              <div className="font-medium text-sm bg-blue-100 rounded-lg px-2 py-1 text-blue-700">
+                                Experimental
+                              </div>
                             </div>
                           )}
                         </div>
