@@ -6,23 +6,28 @@ import { twMerge } from 'tailwind-merge'
 const features = [
   {
     title: 'Chat with AI',
+    experimantal: false,
     description:
       'Ask your questions, brainstorm, and learn from the AI running on your device to be more productive.',
   },
   {
     title: 'Model Hub',
+    experimantal: false,
     description: `Download and Run powerful models like Llama3, Gemma or Mistral on your computer.`,
   },
   {
     title: 'Connect to Cloud AIs',
+    experimantal: false,
     description: `You can also route to more powerful cloud models, like OpenAI, Groq, Cohere etc., when needed.`,
   },
   {
     title: 'Local API Server',
+    experimantal: false,
     description: `Set up and run your own OpenAI-compatible API server using local models with just one click.`,
   },
   {
     title: 'Chat with your files',
+    experimantal: true,
     description: `Set up and run your own OpenAI-compatible API server using local models with just one click.`,
   },
 ]
@@ -43,7 +48,7 @@ const Feature = () => {
           </div>
 
           <div className="flex lg:flex-row flex-col items-start gap-10 xl:gap-14 mt-10">
-            <div className="w-full lg:w-2/5 px-4 lg:p-0">
+            <div className="w-full lg:w-1/2 px-4 lg:p-0">
               {features.map((feature, i) => {
                 const isActive = activeFeature === i
                 return (
@@ -65,7 +70,14 @@ const Feature = () => {
                         0{i + 1}
                       </h1>
                       <div>
-                        <h6 className="text-xl font-bold">{feature.title}</h6>
+                        <div className="flex items-center gap-x-2">
+                          <h6 className="text-xl font-bold">{feature.title}</h6>
+                          {feature.experimantal && (
+                            <div className="font-medium text-sm bg-blue-100 rounded-lg px-2 py-1 text-blue-700">
+                              Experimantal
+                            </div>
+                          )}
+                        </div>
                         <p
                           className={twMerge(
                             'mt-1 leading-relaxed text-black/60 dark:text-white/60 hidden',

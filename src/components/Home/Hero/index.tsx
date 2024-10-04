@@ -13,7 +13,7 @@ const LifeHackerLogo = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_441_25128)">
+      <g clipPath="url(#clip0_441_25128)">
         <path
           d="M1.69082 1.5459H0.144928V30.4541H1.69082V1.5459Z"
           fill="#363636"
@@ -80,8 +80,8 @@ const LifeHackerLogo = () => {
           y2="16.0001"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6FB538" />
-          <stop offset="1" stop-color="#38B588" />
+          <stop stopColor="#6FB538" />
+          <stop offset="1" stopColor="#38B588" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_441_25128"
@@ -91,8 +91,8 @@ const LifeHackerLogo = () => {
           y2="16.0001"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6FB538" />
-          <stop offset="1" stop-color="#38B588" />
+          <stop stopColor="#6FB538" />
+          <stop offset="1" stopColor="#38B588" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_441_25128"
@@ -102,8 +102,8 @@ const LifeHackerLogo = () => {
           y2="16.0001"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6FB538" />
-          <stop offset="1" stop-color="#38B588" />
+          <stop stopColor="#6FB538" />
+          <stop offset="1" stopColor="#38B588" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_441_25128"
@@ -113,8 +113,8 @@ const LifeHackerLogo = () => {
           y2="16.0001"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6FB538" />
-          <stop offset="1" stop-color="#38B588" />
+          <stop stopColor="#6FB538" />
+          <stop offset="1" stopColor="#38B588" />
         </linearGradient>
         <clipPath id="clip0_441_25128">
           <rect
@@ -152,8 +152,8 @@ const QuoteIcon = () => {
             y2="39.9508"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#6FB538" />
-            <stop offset="1" stop-color="#38B588" />
+            <stop stopColor="#6FB538" />
+            <stop offset="1" stopColor="#38B588" />
           </linearGradient>
         </defs>
       </svg>
@@ -220,12 +220,23 @@ const Hero = () => {
           </span>
           &nbsp;downloads | Free & Open Source
         </p>
-        <div className="w-4/5 mx-auto mt-10">
+        <div className="w-4/5 mx-auto mt-10 relative">
+          <ThemeImage
+            className="absolute object-cover w-full object-center mx-auto h-full top-0 left-0 scale-150"
+            source={{
+              light: '/assets/images/homepage/glow.png',
+              dark: '/assets/images/homepage/glow.png',
+            }}
+            priority
+            alt="App screenshots"
+            width={800}
+            height={800}
+          />
           <ThemeImage
             className="object-cover w-full object-center mx-auto h-full relative"
             source={{
-              light: '/assets/images/homepage/app-frame-light-fixed.webp',
-              dark: '/assets/images/homepage/app-frame-dark-fixed.webp',
+              light: '/assets/images/homepage/app-frame-light-fixed.png',
+              dark: '/assets/images/homepage/app-frame-light-fixed.png',
             }}
             priority
             alt="App screenshots"
