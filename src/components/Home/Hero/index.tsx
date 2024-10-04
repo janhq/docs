@@ -183,7 +183,7 @@ const Hero = () => {
           </Link>
         </div>
 
-        <div className="py-10">
+        <div className="py-4 lg:py-10">
           <ThemeImage
             className="mx-auto h-full relative"
             source={{
