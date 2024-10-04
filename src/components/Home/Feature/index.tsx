@@ -5,25 +5,50 @@ import { twMerge } from 'tailwind-merge'
 
 const features = [
   {
-    title: 'Local',
+    title: 'Chat with AI',
+    experimantal: false,
     description:
-      'Run AI models like Llama or Mistral directly on your device for enhanced privacy. No need for an internet connection- keep all your data and processing locally.',
+      'Ask your questions, brainstorm, and learn from the AI running on your device to be more productive.',
+    image: {
+      light: '/assets/images/homepage/features01.png',
+      dark: '/assets/images/homepage/features01dark.png',
+    },
   },
   {
-    title: 'Remote API',
-    description: `Connect to remote APIs, like OpenAI, Groq, or Mistral API. Access AI capabilities without needing advanced hardware, with all processing handled in the cloud.`,
+    title: 'Model Hub',
+    experimantal: false,
+    description: `Download and Run powerful models like Llama3, Gemma or Mistral on your computer.`,
+    image: {
+      light: '/assets/images/homepage/features02.png',
+      dark: '/assets/images/homepage/features02dark.png',
+    },
   },
   {
-    title: '100% offline',
-    description: `Conversations, preferences, and model usage stay on your computer. It's secure, exportable, and can be deleted at any time.`,
+    title: 'Connect to Cloud AIs',
+    experimantal: false,
+    description: `You can also route to more powerful cloud models, like OpenAI, Groq, Cohere etc., when needed.`,
+    image: {
+      light: '/assets/images/homepage/features03.png',
+      dark: '/assets/images/homepage/features03dark.png',
+    },
   },
   {
-    title: 'Cross Platform',
-    description: `Jan is optimized for any device, from PCs to multi-GPU clusters. It's fast on NVIDIA GPUs and Apple M-series, supporting Apple Intel, Linux Debian, and Windows x64.`,
+    title: 'Local API Server',
+    experimantal: false,
+    description: `Set up and run your own OpenAI-compatible API server using local models with just one click.`,
+    image: {
+      light: '/assets/images/homepage/features04.png',
+      dark: '/assets/images/homepage/features04dark.png',
+    },
   },
   {
-    title: 'Extensions',
-    description: `Customize Jan with Extensions to meet your specific needs, enhancing your AI experience to be uniquely yours.`,
+    title: 'Chat with your files',
+    experimantal: true,
+    description: `Set up and run your own OpenAI-compatible API server using local models with just one click.`,
+    image: {
+      light: '/assets/images/homepage/features05.png',
+      dark: '/assets/images/homepage/features05dark.png',
+    },
   },
 ]
 
@@ -43,7 +68,7 @@ const Feature = () => {
           </div>
 
           <div className="flex lg:flex-row flex-col items-start gap-10 xl:gap-14 mt-10">
-            <div className="w-full lg:w-2/5 px-4 lg:p-0">
+            <div className="w-full lg:w-1/2 px-4 lg:p-0">
               {features.map((feature, i) => {
                 const isActive = activeFeature === i
                 return (
@@ -65,7 +90,16 @@ const Feature = () => {
                         0{i + 1}
                       </h1>
                       <div>
-                        <h6 className="text-xl font-bold">{feature.title}</h6>
+                        <div className="flex flex-col lg:flex-row lg:items-center gap-x-2">
+                          <h6 className="text-xl font-bold">{feature.title}</h6>
+                          {feature.experimantal && (
+                            <div className="flex mt-2 lg:mt-0">
+                              <div className="font-medium text-sm bg-blue-100 rounded-lg px-2 py-1 text-blue-700">
+                                Experimental
+                              </div>
+                            </div>
+                          )}
+                        </div>
                         <p
                           className={twMerge(
                             'mt-1 leading-relaxed text-black/60 dark:text-white/60 hidden',
@@ -76,22 +110,37 @@ const Feature = () => {
                         </p>
                       </div>
                     </div>
+                    {isActive && (
+                      <div className="lg:hidden block mt-4">
+                        <ThemeImage
+                          alt="App Screenshot Feature"
+                          width={800}
+                          height={800}
+                          className="w-full h-full object-cover object-center"
+                          priority
+                          source={{
+                            light: feature.image?.light,
+                            dark: feature.image?.dark,
+                          }}
+                        />
+                      </div>
+                    )}
                   </div>
                 )
               })}
             </div>
 
-            <div className="relative w-full overflow-hidden block">
+            <div className="relative w-full overflow-hidden  hidden lg:block">
               {activeFeature === 0 && (
                 <ThemeImage
                   alt="App Screenshot Feature"
                   width={800}
                   height={800}
-                  className="w-full"
+                  className="w-full h-full object-cover object-center"
                   priority
                   source={{
-                    light: '/assets/images/homepage/features01.webp',
-                    dark: '/assets/images/homepage/features01dark.webp',
+                    light: '/assets/images/homepage/features01.png',
+                    dark: '/assets/images/homepage/features01dark.png',
                   }}
                 />
               )}
@@ -100,11 +149,11 @@ const Feature = () => {
                   alt="App Screenshot Feature"
                   width={800}
                   height={800}
-                  className="w-full"
+                  className="w-full h-full object-cover object-center"
                   priority
                   source={{
-                    light: '/assets/images/homepage/features02.webp',
-                    dark: '/assets/images/homepage/features02dark.webp',
+                    light: '/assets/images/homepage/features02.png',
+                    dark: '/assets/images/homepage/features02dark.png',
                   }}
                 />
               )}
@@ -113,11 +162,11 @@ const Feature = () => {
                   alt="App Screenshot Feature"
                   width={800}
                   height={800}
-                  className="w-full"
+                  className="w-full h-full object-cover object-center"
                   priority
                   source={{
-                    light: '/assets/images/homepage/features03.webp',
-                    dark: '/assets/images/homepage/features03dark.webp',
+                    light: '/assets/images/homepage/features03.png',
+                    dark: '/assets/images/homepage/features03dark.png',
                   }}
                 />
               )}
@@ -126,11 +175,11 @@ const Feature = () => {
                   alt="App Screenshot Feature"
                   width={800}
                   height={800}
-                  className="w-full"
+                  className="w-full h-full object-cover object-center"
                   priority
                   source={{
-                    light: '/assets/images/homepage/features04.webp',
-                    dark: '/assets/images/homepage/features04dark.webp',
+                    light: '/assets/images/homepage/features04.png',
+                    dark: '/assets/images/homepage/features04dark.png',
                   }}
                 />
               )}
@@ -139,11 +188,11 @@ const Feature = () => {
                   alt="App Screenshot Feature"
                   width={800}
                   height={800}
-                  className="w-full"
+                  className="w-full h-full object-cover object-center"
                   priority
                   source={{
-                    light: '/assets/images/homepage/features05.webp',
-                    dark: '/assets/images/homepage/features05dark.webp',
+                    light: '/assets/images/homepage/features05.png',
+                    dark: '/assets/images/homepage/features05dark.png',
                   }}
                 />
               )}
