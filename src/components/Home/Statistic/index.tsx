@@ -42,8 +42,8 @@ const Statistic = () => {
           width={800}
           height={800}
           source={{
-            light: '/assets/images/homepage/mapbase-light.webp',
-            dark: '/assets/images/homepage/mapbase-dark.webp',
+            light: '/assets/images/homepage/mapbase-light.png',
+            dark: '/assets/images/homepage/mapbase-dark.png',
           }}
         />
       </div>
