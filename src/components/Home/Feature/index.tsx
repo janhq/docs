@@ -75,8 +75,8 @@ const Feature = () => {
                   <div
                     key={i}
                     className={twMerge(
-                      'mb-4 p-6 rounded-xl cursor-pointer',
-                      isActive && 'dark:bg-[#1F1F1F] bg-[#F5F5F5]'
+                      'mb-4 py-6 lg:p-6 rounded-xl cursor-pointer',
+                      isActive && 'lg:dark:bg-[#1F1F1F] lg:bg-[#F5F5F5]'
                     )}
                     onClick={() => setActiveFeature(i)}
                   >
@@ -110,21 +110,19 @@ const Feature = () => {
                         </p>
                       </div>
                     </div>
-                    {isActive && (
-                      <div className="lg:hidden block mt-4">
-                        <ThemeImage
-                          alt="App Screenshot Feature"
-                          width={800}
-                          height={800}
-                          className="w-full h-full object-cover object-center"
-                          priority
-                          source={{
-                            light: feature.image?.light,
-                            dark: feature.image?.dark,
-                          }}
-                        />
-                      </div>
-                    )}
+                    <div className="lg:hidden block mt-4">
+                      <ThemeImage
+                        alt="App Screenshot Feature"
+                        width={800}
+                        height={800}
+                        className="w-full h-full object-cover object-center"
+                        priority
+                        source={{
+                          light: feature.image?.light,
+                          dark: feature.image?.dark,
+                        }}
+                      />
+                    </div>
                   </div>
                 )
               })}
